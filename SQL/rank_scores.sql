@@ -28,26 +28,32 @@
                 | 3.50  | 4    |
                 +-------+------+
 */
-SELECT
-        score2.Score,
-        Subquery2.Rank
+SELECT 
+        SubQuery1.Score, 
+        CASE 
+                WHEN 
+                        CAST(SubQuery1.Rank AS UNSIGNED) = 0 
+                                THEN 1 
+                ELSE 
+                        CAST(SubQuery1.Rank AS UNSIGNED) 
+        END AS RANK
 FROM
 (
-    SELECT 
-        @row_number:= @row_number + 1 AS Rank,
-        Subquery1.Score
-    FROM 
-    (
-        SELECT
-            DISTINCT 
-                Scores.Score
-        FROM
-                Scores,
-        (SELECT @row_number := 0) AS row_number
+        SELECT 
+            Score,
+            @row_number :=   CASE 
+                                    WHEN
+                                        @check_score = Score
+                                                THEN
+                                                        @row_number
+                                    ELSE
+                                        @row_number := @row_number + 1
+                            END AS Rank,
+            @check_score := Score
+        FROM 
+            Scores,
+            (SELECT @row_number := 0) AS row_number,
+            (SELECT @check_score := ' ') AS check_score
         ORDER BY Scores.Score DESC
-    )AS Subquery1		
-)AS Subquery2
-
-INNER JOIN Scores AS score2 ON score2.Score = Subquery2.Score
-ORDER BY score2.Score DESC
+)AS SubQuery1
                 
