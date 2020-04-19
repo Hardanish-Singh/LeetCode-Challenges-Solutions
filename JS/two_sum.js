@@ -11,18 +11,18 @@
       return [0, 1].
 */
 var twoSum = function (nums, target) {
-	let twoSumHashMap = {	
-  	key: Number,
-    value: Number
+  let twoSumHashMap = {
+    key: Number,
+    value: Number,
   };
-  
-	for(let i=0; i<nums.length; i++){
-  	let difference = target - nums[i];
+
+  for (let i = 0; i < nums.length; i++) {
+    let difference = target - nums[i];
     let checkDictionaryIndex = twoSumHashMap[difference];
-    if(checkDictionaryIndex!=null || checkDictionaryIndex!=undefined){
+    if (checkDictionaryIndex != null || checkDictionaryIndex != undefined) {
       return [checkDictionaryIndex, i];
     } else {
-    	twoSumHashMap[nums[i]] = i;
+      twoSumHashMap[nums[i]] = i;
     }
   }
-}
+};
