@@ -16,47 +16,16 @@
             [-1, -1, 2]
         ]
 */
-function multiDimensionalUnique(arr) {
-  var uniques = [];
-  var itemsFound = {};
-  for (var i = 0, l = arr.length; i < l; i++) {
-    var stringified = JSON.stringify(arr[i]);
-    if (itemsFound[stringified]) {
-      continue;
-    }
-    uniques.push(arr[i]);
-    itemsFound[stringified] = true;
-  }
-  return uniques;
-}
-
-var threeSum = function (nums) {
+var threeSum = function(nums) {
   // SORT THE ARRAY
   nums.sort((a, b) => a - b);
 
-  if (nums.length > 3) {
-    let flags = false;
-    for (let i = 0; i < nums.length; i++) {
-      flags = nums.every((val, i, arr) => val === arr[0]);
-    }
-    if (flags === true) {
-      let a = nums[0];
-      nums = [];
-      for (let i = 0; i < 3; i++) {
-        nums.push(a);
-      }
-    }
-  }
-
-  let leftPosition = 0,
-    rightPosition = 0,
-    totalSum = 0,
-    lthPosition = 0,
-    rthPosition = 0;
+  let leftPosition = 0, rightPosition = 0, lthPosition = 0, rthPosition = 0;
   let threePairSumMultiDimensionArray = new Array();
 
   // LOOP THROUGH ARRAY
   for (let i = 0; i < nums.length; i++) {
+  	if(i > 0 && nums[i] === nums[i-1]) continue;
     leftPosition = nums[i + 1];
     rightPosition = nums[nums.length - 1];
     lthPosition = i + 1;
@@ -65,35 +34,28 @@ var threeSum = function (nums) {
     if (lthPosition === rthPosition) break;
 
     while (true) {
-      totalSum = nums[i] + leftPosition + rightPosition;
-      if (totalSum == 0) {
+      if (nums[i] + leftPosition + rightPosition == 0) {
         threePairSumMultiDimensionArray.push(
           new Array(nums[i], leftPosition, rightPosition)
         );
         lthPosition++;
         rthPosition--;
+        while (nums[lthPosition] == leftPosition) lthPosition++;
+        while (nums[rthPosition] == rightPosition) rthPosition--;
         leftPosition = nums[lthPosition];
         rightPosition = nums[rthPosition];
-      } else if (totalSum < 0) {
+      } else if (nums[i] + leftPosition + rightPosition < 0) {
         lthPosition++;
-        while (nums[lthPosition] == leftPosition) {
-          lthPosition++;
-        }
+        while (nums[lthPosition] == leftPosition) lthPosition++;
         leftPosition = nums[lthPosition];
-      } else if (totalSum > 0) {
+      } else if (nums[i] + leftPosition + rightPosition > 0) {
         rthPosition--;
-        while (nums[rthPosition] == rightPosition) {
-          rthPosition--;
-        }
+        while (nums[rthPosition] == rightPosition) rthPosition--;
         rightPosition = nums[rthPosition];
       }
-      if (lthPosition === rthPosition || lthPosition > rthPosition) {
-        break;
-      }
+      if (lthPosition === rthPosition || lthPosition > rthPosition) break; 
     }
   }
-  threePairSumMultiDimensionArray = multiDimensionalUnique(
-    threePairSumMultiDimensionArray
-  );
-  return threePairSumMultiDimensionArray;
+  return threePairSumMultiDimensionArray; 
 };
+
