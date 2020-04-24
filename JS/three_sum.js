@@ -25,7 +25,7 @@ var threeSum = function(nums) {
 
   // LOOP THROUGH ARRAY
   for (let i = 0; i < nums.length; i++) {
-  	if(i > 0 && nums[i] === nums[i-1]) continue;
+    if(i > 0 && nums[i] === nums[i-1]) continue;
     leftPosition = nums[i + 1];
     rightPosition = nums[nums.length - 1];
     lthPosition = i + 1;
