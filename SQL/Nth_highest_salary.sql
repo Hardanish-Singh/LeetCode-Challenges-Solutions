@@ -18,6 +18,7 @@
                 | 200                    |
                 +------------------------+
 */
+
 CREATE FUNCTION getNthHighestSalary(N INT) 
 
 RETURNS INT
