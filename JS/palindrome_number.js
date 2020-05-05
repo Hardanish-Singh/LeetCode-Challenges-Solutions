@@ -34,3 +34,9 @@ var isPalindrome = function(x) {
     }
     return palindrome;
 };
+
+/*
+SOLUTION EFFICIENCY
+    RUNTIME: 160 ms, faster than 99.18% of JavaScript online submissions for Palindrome Number.
+    MEMORY USAGE: 45.8 MB, less than 35.34% of JavaScript online submissions for Palindrome Number.
+*/
