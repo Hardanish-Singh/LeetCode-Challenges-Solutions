@@ -26,26 +26,26 @@
     Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
 
     Example 1:
-    Input: "III"
-    Output: 3
+      Input: "III"
+      Output: 3
 
     Example 2:
-    Input: "IV"
-    Output: 4
+      Input: "IV"
+      Output: 4
     
     Example 3:
-    Input: "IX"
-    Output: 9
+      Input: "IX"
+      Output: 9
     
     Example 4:
-    Input: "LVIII"
-    Output: 58
-    Explanation: L = 50, V= 5, III = 3.
+      Input: "LVIII"
+      Output: 58
+      Explanation: L = 50, V= 5, III = 3.
     
     Example 5:
-    Input: "MCMXCIV"
-    Output: 1994
-    Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+      Input: "MCMXCIV"
+      Output: 1994
+      Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 
     HINT TO SOLVE: So for a case like XXIX, we loop through from beginning to the end. 

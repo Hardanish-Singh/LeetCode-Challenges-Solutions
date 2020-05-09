@@ -6,17 +6,14 @@
     You may assume nums1 and nums2 cannot be both empty.
 
     Example 1:
-
-    nums1 = [1, 3]
-    nums2 = [2]
-
-    The median is 2.0
+        nums1 = [1, 3]
+        nums2 = [2]
+        The median is 2.0
+    
     Example 2:
-
-    nums1 = [1, 2]
-    nums2 = [3, 4]
-
-    The median is (2 + 3)/2 = 2.5
+        nums1 = [1, 2]
+        nums2 = [3, 4]
+        The median is (2 + 3)/2 = 2.5
 */
 var findMedianSortedArrays = function(array1, array2) {
     /*
@@ -58,6 +55,6 @@ var findMedianSortedArrays = function(array1, array2) {
 
 /*
 SOLUTION EFFICIENCY
-    RUNTIME: 100 ms, faster than 95.09% of JavaScript online submissions for Median of Two Sorted Arrays.
+    RUNTIME: 96 ms, faster than 98.17% of JavaScript online submissions for Median of Two Sorted Arrays.
     MEMORY USAGE: 40.3 MB, less than 23.40% of JavaScript online submissions for Median of Two Sorted Arrays.
 */
