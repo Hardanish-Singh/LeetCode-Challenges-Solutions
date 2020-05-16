@@ -27,13 +27,7 @@
     }
 */
 var removeDuplicates = function(nums) {
-    for(let i=0; i<nums.length; i++){
-        if(i==nums.length-1) { if(nums[i] === nums[i-1]) nums.splice(i, 1); }
-        else if(nums[i] === nums[i+1]) {
-            nums.splice(i, 1);
-            i=i-1;
-        }
-    }
+    for(let i=nums.length-1; i>0; i--)if(nums[i] === nums[i-1]) nums.splice(i, 1);
     return nums.length;
 };
 /*
