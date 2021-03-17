@@ -18,6 +18,9 @@
                 +---------------------+
 */
 
+/*
+        SOLUTION 1
+*/
 SELECT 
         CASE 
             WHEN 
@@ -37,3 +40,27 @@ FROM
         ORDER BY Employee.Salary DESC
         LIMIT 2
 )AS SubQuery
+
+/*
+        SOLUTION 2
+*/
+SELECT 
+    MAX(salary) AS SecondHighestSalary 
+FROM employee 
+WHERE salary != ( 
+                    SELECT 
+                            MAX(salary) 
+                    FROM employee 
+                )
+
+/*
+        SOLUTION 3
+*/
+SELECT 
+    MAX(salary) AS SecondHighestSalary 
+FROM employee 
+WHERE salary < ( 
+                    SELECT 
+                            MAX(salary) 
+                    FROM employee 
+                )
