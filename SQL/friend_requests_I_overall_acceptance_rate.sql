@@ -74,9 +74,9 @@ SELECT
     (
         ROUND
         (
-            ( SELECT SUM(requester_id) FROM ((SELECT COUNT(DISTINCT requester_id) AS requester_id FROM RequestAccepted GROUP BY accepter_id, requester_id) ) AS a)
+            ( SELECT COUNT(DISTINCT requester_id, accepter_id) AS requester_id FROM RequestAccepted )
             /
-            ( SELECT SUM(sender_id) FROM ((SELECT COUNT(DISTINCT sender_id) AS sender_id FROM FriendRequest GROUP BY sender_id, send_to_id) ) AS b)
+            ( SELECT COUNT(DISTINCT sender_id, send_to_id) AS sender_id FROM FriendRequest)
         ,2
         )
     ,0.00)
