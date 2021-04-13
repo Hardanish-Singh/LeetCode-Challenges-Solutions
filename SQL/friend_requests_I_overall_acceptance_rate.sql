@@ -81,4 +81,3 @@ SELECT
         )
     ,0.00)
 AS accept_rate
-    
