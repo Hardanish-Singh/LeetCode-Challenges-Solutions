@@ -29,17 +29,22 @@
 */
 function isAnagram(s1, {...s2}){
         for(i in s1) {
+                let flag = false;
                 for(j in s2) {
                         if(i == j && s1[i] == s2[j]) {
                                 delete s2[j];
+                                flag = true;
+                                break;
                         }
                 }
+                if(flag == false) return false;
         }
-        return Object.keys(s2).length == 0 ? true : false;
+        return true;
 }
       
 function countSubStringOccurences(start, words, end) {
         words[start] = words[start] - 1;
+        if(words[start] == 0) delete words[start];
         if(end in words) words[end] = words[end] + 1;
         else words[end] = 1;
         return words;
@@ -47,19 +52,11 @@ function countSubStringOccurences(start, words, end) {
       
 function countWordOccurences(word) {
         
-        let isBackward = false;
         let words = {};
         let count = 1;
 
         for( let i=0; i<word.length; i++){
-                isBackward = false;
-                for( let j=0; j<i; j++ ){
-                        if( word[i] == word[j] ) {
-                                isBackward = true;
-                                break;
-                        }
-                }
-                if( isBackward == true ) continue;
+                if(word[i] in words) continue;
                 for( let k=i+1; k<word.length; k++ ){
                         if( word[i] == word[k] ) count++;
                 }
