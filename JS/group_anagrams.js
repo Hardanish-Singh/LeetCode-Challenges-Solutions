@@ -1,5 +1,6 @@
 /*
-        Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+        Given an array of strings strs, group the anagrams together. 
+        You can return the answer in any order.
 
         An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
@@ -19,6 +20,30 @@
                 1) 1 <= strs.length <= 104
                 2) 0 <= strs[i].length <= 100
                 3) strs[i] consists of lower-case English letters.
+        
+        Companies Where this Question Was Asked Before:
+                1) Amazon
+                2) Microsoft
+                3) Goldman Sachs
+                4) Apple
+                5) Uber
+                6) eBay
+                7) VMware
+                8) Oracle
+                9) Facebook
+                10) Yandex
+                11) Twilio
+                12) BlackRock
+                13) Google
+                14) Expedia
+                15) Affirm
+                16) Docusign
+                17) Cisco
+                18) Two Sigma
+                19) ByteDance
+        
+        Difficulty Level: 
+                Medium
 */
 
  function sortAnagrams(a, b) {
