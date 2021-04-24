@@ -65,7 +65,7 @@ function sortAnagrams(a, b) {
 /*
         This function checks if two dictionaries are Anagrams or not
 */
-function isAnagram(s1, {...s2}) {
+function isAnagram(s1, s2) {
         for(i in s1) {
                 let isFound = false;
                 for(j in s2) {
@@ -107,7 +107,7 @@ var groupAnagrams = function(strs) {
         let tempArray = [];
         let groupAnagrams = [];
 
-        for( let i=0; i<strs.length; i++ ){
+        for( let i=0; i<strs.length; i++ ) {
                 tempArray.push(strs[i].split("").sort().join(""));
                 tempArray.push(strs[i]);
                 sortedArray.push(tempArray);
