@@ -27,38 +27,49 @@
         s and p consist of lowercase English letters.
 
 */
-function isAnagram(s1, {...s2}){
-        for(i in s1) {
-                let flag = false;
-                for(j in s2) {
-                        if(i == j && s1[i] == s2[j]) {
-                                delete s2[j];
-                                flag = true;
+function isAnagram(word1, {...word2}) {
+        for(key1 in word1) {
+                let isFound = false;
+                for(key2 in word2) {
+                        if(key1 == key2 && word1[key1] == word2[key2]) {
+                                delete word2[key2];
+                                isFound = true;
                                 break;
                         }
                 }
-                if(flag == false) return false;
+                if(isFound == false) return false;
         }
         return true;
 }
       
-function countSubStringOccurences(start, words, end) {
+function adjustSubStringCounts(start, words, end) {
         words[start] = words[start] - 1;
-        if(words[start] == 0) delete words[start];
-        if(end in words) words[end] = words[end] + 1;
-        else words[end] = 1;
+        if(words[start] == 0) {
+                delete words[start];
+        }
+        if(end in words) {
+                words[end] = words[end] + 1;
+        }
+        else{
+                words[end] = 1;
+        }
         return words;
 }
       
-function countWordOccurences(word) {
+/*
+        This function counts character occurrences in a word, and returns dictionary
+*/ 
+function countCharacterOccurrences(word) {
         
         let words = {};
         let count = 1;
 
-        for( let i=0; i<word.length; i++){
+        for( let i=0; i<word.length; i++) {
                 if(word[i] in words) continue;
-                for( let k=i+1; k<word.length; k++ ){
-                        if( word[i] == word[k] ) count++;
+                for( let j=i+1; j<word.length; j++ ) {
+                        if( word[i] == word[j] ) {
+                                count++;
+                        }
                 }
                 words[word[i]] = count;
                 count = 1;
@@ -73,18 +84,26 @@ var findAnagrams = function(s, p) {
         let anagramSize = p.length;
         let anagrams = [];
 
-        let words = countWordOccurences(p);
+        let words = countCharacterOccurrences(p);
         let breakwords = {};
 
 
         for( let i=0; i<s.length; i++ ){
 
-                substr = s.slice(i,anagramSize+i);
-                if( substr.length != p.length || substr.length < p.length) break;
+                substr = s.slice( i, anagramSize+i );
+                if( substr.length != p.length) {
+                        break;
+                }
                 else {
-                        if( i==0 ) breakwords = countWordOccurences(substr);
-                        else breakwords = countSubStringOccurences(s[i-1], breakwords, substr[substr.length-1]);
-                        if( isAnagram(breakwords, words) ) anagrams.push(i);
+                        if( i==0 ) {
+                                breakwords = countCharacterOccurrences(substr);
+                        }
+                        else {
+                                breakwords = adjustSubStringCounts(s[i-1], breakwords, substr[substr.length-1]);
+                        }
+                        if( isAnagram(breakwords, words) ) {
+                                anagrams.push(i);
+                        }
                 }  
         }
 
