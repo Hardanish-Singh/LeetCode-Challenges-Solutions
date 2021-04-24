@@ -1,34 +1,39 @@
-/*
-        Given two strings s and t, return true if t is an anagram of s, and false otherwise.
-
-        Example 1:
-                Input: s = "anagram", t = "nagaram"
-                Output: true
-        Example 2:
-                Input: s = "rat", t = "car"
-                Output: false
-        
-        Constraints:
-                1) 1 <= s.length, t.length <= 5 * 104
-                2) s and t consist of lowercase English letters.
-        
-        Companies Where this Question Was Asked Before:
-                1) Bloomberg
-                2) Amazon
-                3) Facebook
-                4) Microsoft
-                5) Google
-                6) Goldman Sachs
-                7) Apple
-                8) Oracle
-                9) Adobe
-                10) Cisco
-                11) Paypal
-                12) BlackRock
-        
-        Difficulty Level: 
-                Easy
-*/
+/****************************************************************
+ *                 LEETCODE VALID ANAGRAM CHALLENGE             *
+ *                                                              *
+ * Problem Statement                                            *
+ * Given two strings s & t, return true if t is an anagram of s *
+ * and false otherwise.                                         *
+ *                                                              *
+ * Examples                                                     *
+ * Input 1: s = "anagram", t = "nagaram"                        *
+ * Output 1: true                                               *
+ *                                                              *
+ * Input 2: s = "rat", t = "car"                                *
+ * Output 2: false                                              *
+ *                                                              *
+ * Constraints:                                                 *
+ * 1 <= s.length, t.length <= 5 * 104                           *       
+ * s and t consist of lowercase English letters.                *
+ *                                                              *
+ * Companies Where this Question Was Asked Before:              *
+ * Bloomberg                                                    *
+ * Amazon                                                       *
+ * Facebook                                                     *
+ * Microsoft                                                    *
+ * Google                                                       *
+ * Goldman Sachs                                                *
+ * Apple                                                        *
+ * Oracle                                                       *
+ * Adobe                                                        *
+ * Cisco                                                        *
+ * Paypal                                                       *
+ * BlackRock                                                    *
+ *                                                              *
+ * Difficulty Level:                                            *
+ * Easy                                                         *
+ *                                                              *
+ ***************************************************************/
 
 /*
         This function checks if two dictionaries are Anagrams or not
