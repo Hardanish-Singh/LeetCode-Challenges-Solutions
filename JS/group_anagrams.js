@@ -158,7 +158,6 @@ var groupAnagrams = function(strs) {
         var groupAnagrams = function(strs) {
 
                 let groupingAnagrams = {};
-                let temp = [];
 
                 for( let i=0; i<strs.length; i++ ){
 
