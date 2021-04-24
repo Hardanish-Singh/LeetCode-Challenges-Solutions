@@ -54,23 +54,23 @@
         This function sorts multi-dimensional array by its index.
         In this case, we are sorting by index 0
 */
-function sortAnagrams(a, b) {
-        if (a[0] === b[0]) {
+function sortAnagrams(value1, value2) {
+        if (value1[0] === value2[0]) {
             return 0;
         }
         else {
-            return (a[0] < b[0]) ? -1 : 1;
+            return (value1[0] < value2[0]) ? -1 : 1;
         }
 }
 /*
         This function checks if two dictionaries are Anagrams or not
 */
-function isAnagram(s1, s2) {
-        for(i in s1) {
+function isAnagram(word1, word2) {
+        for(i in word1) {
                 let isFound = false;
-                for(j in s2) {
-                        if(i == j && s1[i] == s2[j]) {
-                                delete s2[j];
+                for(j in word2) {
+                        if(i == j && word1[i] == word2[j]) {
+                                delete word2[j];
                                 isFound = true;
                                 break;
                         }
