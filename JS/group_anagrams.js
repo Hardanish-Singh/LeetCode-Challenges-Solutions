@@ -46,6 +46,10 @@
                 Medium
 */
 
+/* 
+        SOLUTION 1 
+*/
+
 /*
         This function sorts multi-dimensional array by its index.
         In this case, we are sorting by index 0
@@ -147,3 +151,28 @@ var groupAnagrams = function(strs) {
 
         return groupAnagrams;
 };
+
+/*
+        SOLUTION 2
+
+        var groupAnagrams = function(strs) {
+
+                let groupingAnagrams = {};
+                let temp = [];
+
+                for( let i=0; i<strs.length; i++ ){
+
+                let sortedAnagram = strs[i].split("").sort().join("");
+
+                if( !(sortedAnagram in groupingAnagrams) ) {
+                        groupingAnagrams[sortedAnagram] = [strs[i]];
+                } else {
+                        groupingAnagrams[sortedAnagram].push(strs[i]);
+                }
+
+                }
+
+                return Object.values(groupingAnagrams);
+
+        };
+*/
