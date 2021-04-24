@@ -46,7 +46,11 @@
                 Medium
 */
 
- function sortAnagrams(a, b) {
+/*
+        This function sorts multi-dimensional array by its index.
+        In this case, we are sorting by index 0
+*/
+function sortAnagrams(a, b) {
         if (a[0] === b[0]) {
             return 0;
         }
@@ -54,7 +58,7 @@
             return (a[0] < b[0]) ? -1 : 1;
         }
 }
-    
+
 function isAnagram(s1, {...s2}){
         for(i in s1) {
                 let flag = false;
