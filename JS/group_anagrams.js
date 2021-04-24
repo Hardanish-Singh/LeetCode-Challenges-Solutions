@@ -159,15 +159,15 @@ var groupAnagrams = function(strs) {
 
                 let groupingAnagrams = {};
 
-                for( let i=0; i<strs.length; i++ ){
+                for( let i=0; i<strs.length; i++ ) {
 
-                let sortedAnagram = strs[i].split("").sort().join("");
+                        let sortedAnagram = strs[i].split("").sort().join("");
 
-                if( !(sortedAnagram in groupingAnagrams) ) {
-                        groupingAnagrams[sortedAnagram] = [strs[i]];
-                } else {
-                        groupingAnagrams[sortedAnagram].push(strs[i]);
-                }
+                        if( !(sortedAnagram in groupingAnagrams) ) {
+                                groupingAnagrams[sortedAnagram] = [strs[i]];
+                        } else {
+                                groupingAnagrams[sortedAnagram].push(strs[i]);
+                        }
 
                 }
 
