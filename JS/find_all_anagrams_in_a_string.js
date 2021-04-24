@@ -3,29 +3,41 @@
         Given two strings s and p, return an array of all the start indices of p's anagrams in s. You may return the answer in any order.
 
         Example 1:
-
-        Input: s = "cbaebabacd", p = "abc"
-        Output: [0,6]
+                Input: s = "cbaebabacd", p = "abc"
+                Output: [0,6]
         
         Explanation:
-        The substring with start index = 0 is "cba", which is an anagram of "abc".
-        The substring with start index = 6 is "bac", which is an anagram of "abc".
+                The substring with start index = 0 is "cba", which is an anagram of "abc".
+                The substring with start index = 6 is "bac", which is an anagram of "abc".
         
         Example 2:
-
-        Input: s = "abab", p = "ab"
-        Output: [0,1,2]
+                Input: s = "abab", p = "ab"
+                Output: [0,1,2]
         
         Explanation:
-        The substring with start index = 0 is "ab", which is an anagram of "ab".
-        The substring with start index = 1 is "ba", which is an anagram of "ab".
-        The substring with start index = 2 is "ab", which is an anagram of "ab".
+                The substring with start index = 0 is "ab", which is an anagram of "ab".
+                The substring with start index = 1 is "ba", which is an anagram of "ab".
+                The substring with start index = 2 is "ab", which is an anagram of "ab".
         
         Constraints:
+                1) 1 <= s.length, p.length <= 3 * 104
+                2) s and p consist of lowercase English letters.
+        
+        Companies Where this Question Was Asked Before:
+                1) Amazon
+                2) Facebook
+                3) Microsoft
+                4) Bloomberg
+                5) Snapchat
+                6) Apple
+        
+        Difficulty Level: 
+                Medium
 
-        1 <= s.length, p.length <= 3 * 104
-        s and p consist of lowercase English letters.
+*/
 
+/*
+        This function checks if two dictionaries are Anagrams or not
 */
 function isAnagram(word1, {...word2}) {
         for(key1 in word1) {
@@ -41,7 +53,7 @@ function isAnagram(word1, {...word2}) {
         }
         return true;
 }
-      
+
 function adjustSubStringCounts(start, words, end) {
         words[start] = words[start] - 1;
         if(words[start] == 0) {
