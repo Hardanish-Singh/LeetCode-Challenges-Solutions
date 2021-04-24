@@ -100,22 +100,22 @@ function countCharacterOccurrences(word) {
 var groupAnagrams = function(strs) {
 
         let sortedArray = [];
-        let temp = [];
+        let tempArray = [];
         let groupAnagrams = [];
 
         for( let i=0; i<strs.length; i++ ){
-                temp.push(strs[i].split("").sort().join(""));
-                temp.push(strs[i]);
-                sortedArray.push(temp);
-                temp = [];
+                tempArray.push(strs[i].split("").sort().join(""));
+                tempArray.push(strs[i]);
+                sortedArray.push(tempArray);
+                tempArray = [];
         }
 
         sortedArray.sort(sortAnagrams);
 
         for( let i=0; i<sortedArray.length; i++ ) {
                 
-                temp = [];
-                let flag = false;
+                tempArray = [];
+                let checkAnagram = false;
 
                 let word1 = countCharacterOccurrences(sortedArray[i][0]);
                 
@@ -127,19 +127,19 @@ var groupAnagrams = function(strs) {
                         
                         let word2 = countCharacterOccurrences(sortedArray[j][0]);
                         if( isAnagram( word1, word2 ) ) {
-                                temp.push( sortedArray[j][1] );
+                                tempArray.push( sortedArray[j][1] );
                                 sortedArray.splice(j,1);
                                 j--;
-                                flag = true;
+                                checkAnagram = true;
                         } 
                 
                 }
                 
-                if( flag == true ) {
-                        temp.push( sortedArray[i][1] );
-                        groupAnagrams.push(temp);
+                if( checkAnagram == true ) {
+                        tempArray.push( sortedArray[i][1] );
+                        groupAnagrams.push(tempArray);
                 } 
-                else if(flag == false) {
+                else {
                         groupAnagrams.push([sortedArray[i][1]]);
                 } 
                 
