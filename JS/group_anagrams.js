@@ -61,7 +61,7 @@ function sortAnagrams(a, b) {
 /*
         This function checks if two dictionaries are Anagrams or not
 */
-function isAnagram(s1, {...s2}){
+function isAnagram(s1, {...s2}) {
         for(i in s1) {
                 let isFound = false;
                 for(j in s2) {
@@ -75,16 +75,18 @@ function isAnagram(s1, {...s2}){
         }
         return true;
 }
-    
-function countWordOccurences(word) {
+/*
+        This function counts character occurrences in a word, and returns dictionary
+*/ 
+function countCharacterOccurrences(word) {
         
         let words = {};
         let count = 1;
 
-        for( let i=0; i<word.length; i++){
+        for( let i=0; i<word.length; i++) {
                 if(word[i] in words) continue;
-                for( let k=i+1; k<word.length; k++ ){
-                        if( word[i] == word[k] ) {
+                for( let j=i+1; j<word.length; j++ ) {
+                        if( word[i] == word[j] ) {
                                 count++;
                         }
                 }
@@ -94,7 +96,7 @@ function countWordOccurences(word) {
 
         return words;
 }
-    
+
 var groupAnagrams = function(strs) {
 
         strs = strs.sort( ( a, b ) => a.length - b.length );
@@ -117,7 +119,7 @@ var groupAnagrams = function(strs) {
                 temp = [];
                 let flag = false;
 
-                let word1 = countWordOccurences(sortedArray[i][0]);
+                let word1 = countCharacterOccurrences(sortedArray[i][0]);
                 
                 for( let j=i+1; j<sortedArray.length; j++ ) {
                 
@@ -125,7 +127,7 @@ var groupAnagrams = function(strs) {
                                 break;
                         }
                         
-                        let word2 = countWordOccurences(sortedArray[j][0]);
+                        let word2 = countCharacterOccurrences(sortedArray[j][0]);
                         if( isAnagram( word1, word2 ) ) {
                                 temp.push( sortedArray[j][1] );
                                 sortedArray.splice(j,1);
