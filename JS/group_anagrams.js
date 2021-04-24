@@ -59,18 +59,18 @@ function sortAnagrams(value1, value2) {
             return 0;
         }
         else {
-            return (value1[0] < value2[0]) ? -1 : 1;
+            return ( value1[0] > value2[0] ) ? 1 : -1;
         }
 }
 /*
         This function checks if two dictionaries are Anagrams or not
 */
 function isAnagram(word1, word2) {
-        for(i in word1) {
+        for(key1 in word1) {
                 let isFound = false;
-                for(j in word2) {
-                        if(i == j && word1[i] == word2[j]) {
-                                delete word2[j];
+                for(key2 in word2) {
+                        if(key1 == key2 && word1[key1] == word2[key2]) {
+                                delete word2[key2];
                                 isFound = true;
                                 break;
                         }
