@@ -38,7 +38,7 @@
 /*
         This function checks if two dictionaries are Anagrams or not
 */
-function Check_Anagram(word1, word2) {
+function isValidAnagram(word1, word2) {
         for(key1 in word1) {
                 let isFound = false;
                 for(key2 in word2) {
@@ -52,6 +52,7 @@ function Check_Anagram(word1, word2) {
         }
         return true;
 }
+
 /*
         This function counts character occurrences in a word, and returns dictionary
 */ 
@@ -73,6 +74,7 @@ function countCharacterOccurrences(word) {
 
         return words;
 }
+
 /*
         Main Function
 */
@@ -83,5 +85,5 @@ var isAnagram = function(s, t) {
     let word1 = countCharacterOccurrences(s);
     let word2 = countCharacterOccurrences(t);
     
-    return Check_Anagram(word1, word2) ? true : false;
+    return isValidAnagram(word1, word2) ? true : false;
 };
