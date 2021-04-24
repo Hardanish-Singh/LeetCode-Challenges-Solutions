@@ -99,8 +99,6 @@ function countCharacterOccurrences(word) {
 
 var groupAnagrams = function(strs) {
 
-        strs = strs.sort( ( a, b ) => a.length - b.length );
-
         let sortedArray = [];
         let temp = [];
         let groupAnagrams = [];
