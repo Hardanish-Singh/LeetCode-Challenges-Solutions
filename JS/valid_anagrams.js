@@ -9,9 +9,25 @@
                 Output: false
         
         Constraints:
-
                 1) 1 <= s.length, t.length <= 5 * 104
                 2) s and t consist of lowercase English letters.
+        
+        Companies Where this Question Was Asked Before:
+                1) Bloomberg
+                2) Amazon
+                3) Facebook
+                4) Microsoft
+                5) Google
+                6) Goldman Sachs
+                7) Apple
+                8) Oracle
+                9) Adobe
+                10) Cisco
+                11) Paypal
+                12) BlackRock
+        
+        Difficulty Level: 
+                Easy
 */
 
 /*
