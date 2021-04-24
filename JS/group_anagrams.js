@@ -58,18 +58,20 @@ function sortAnagrams(a, b) {
             return (a[0] < b[0]) ? -1 : 1;
         }
 }
-
+/*
+        This function checks if two dictionaries are Anagrams or not
+*/
 function isAnagram(s1, {...s2}){
         for(i in s1) {
-                let flag = false;
+                let isFound = false;
                 for(j in s2) {
                         if(i == j && s1[i] == s2[j]) {
                                 delete s2[j];
-                                flag = true;
+                                isFound = true;
                                 break;
                         }
                 }
-                if(flag == false) return false;
+                if(isFound == false) return false;
         }
         return true;
 }
