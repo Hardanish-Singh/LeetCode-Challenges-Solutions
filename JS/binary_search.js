@@ -14,7 +14,7 @@
  * Output 2: -1                                                 *
  *                                                              *
  * Constraints:                                                 *
- * 1 <= array.length <= 104                                     *       
+ * 1 <= array.length <= 104                                     *
  * -9999 <= array[i], key <= 9999                               *
  * All the integers in array are unique.                        *
  * array is sorted in an ascending order.                       *
