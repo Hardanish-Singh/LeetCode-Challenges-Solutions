@@ -28,7 +28,7 @@
  * Output 4: 1                                                  *
  *                                                              *
  * Constraints:                                                 *
- * -231 <= dividend, divisor <= 231 - 1                         *       
+ * -231 <= dividend, divisor <= 231 - 1                         *
  * divisor != 0                                                 *
  *                                                              *
  * Companies Where this Question Was Asked Before:              *
