@@ -13,7 +13,7 @@
  * Output 2: false                                              *
  *                                                              *
  * Constraints:                                                 *
- * 1 <= s.length, t.length <= 5 * 104                           *       
+ * 1 <= s.length, t.length <= 5 * 104                           *
  * s and t consist of lowercase English letters.                *
  *                                                              *
  * Companies Where this Question Was Asked Before:              *
