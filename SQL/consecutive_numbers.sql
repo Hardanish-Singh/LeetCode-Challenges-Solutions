@@ -21,32 +21,28 @@
                +-----------------+
 */
 SELECT 
-        DISTINCT Num AS ConsecutiveNums
+     DISTINCT Num AS ConsecutiveNums
 FROM 
 (
-
-        SELECT 
-               COUNT(Num) AS Count_Nums,   
-               rank_order,
-               Num
-        FROM
-        (
-               SELECT 
-                    Num,
-                    @rownumber :=  CASE 
-                                        WHEN
-                                        @check_score = Num
-                                             THEN
-                                                  @rownumber
-                                        ELSE
-                                        @rownumber := @rownumber + 1
-                                   END AS rank_order,
-                    @check_score := Num
-               FROM 
-                    Logs,
-                    (SELECT @rownumber := 0) AS rownumber,
-                    (SELECT @check_score := ' ') AS check_score
-        )AS SubQuery1
-        GROUP BY SubQuery1.rank_order, SubQuery1.Num
+     SELECT 
+          COUNT(Num) AS Count_Nums,   
+          rank_order,
+          Num
+     FROM
+     (
+          SELECT 
+               Num,
+               @rownumber :=  CASE 
+                                   WHEN @check_score = Num
+                                        THEN @rownumber
+                                   ELSE @rownumber := @rownumber + 1
+                              END AS rank_order,
+               @check_score := Num
+          FROM 
+               Logs,
+               (SELECT @rownumber := 0) AS rownumber,
+               (SELECT @check_score := ' ') AS check_score
+     )AS SubQuery1
+     GROUP BY SubQuery1.rank_order, SubQuery1.Num
 )AS SubQuery2
 WHERE SubQuery2.Count_Nums >= 3
