@@ -36,9 +36,7 @@ WITH common_table_expression AS (
                                    HAVING COUNT(datas) >= 3
                                 ) 
 SELECT 
-        s2.id, 
-        s2.visit_date, 
-        s2.people 
+        s2.* 
 FROM 
         common_table_expression
 JOIN stadium s2 ON s2.id >= common_table_expression.limit1 AND s2.id <= common_table_expression.limit2
