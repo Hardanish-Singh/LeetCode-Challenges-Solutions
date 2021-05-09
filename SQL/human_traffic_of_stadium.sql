@@ -40,4 +40,4 @@ SELECT
 FROM 
         common_table_expression
 JOIN stadium s2 ON s2.id >= common_table_expression.limit1 AND s2.id <= common_table_expression.limit2
-ORDER BY s2.visit_date
+ORDER BY s2.visit_date;
