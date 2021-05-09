@@ -1,6 +1,6 @@
 WITH common_table_expression AS (
                                         SELECT 
-                                                COUNT(datas), 
+                                                COUNT(groupped_data), 
                                                 MIN(id) AS limit1, 
                                                 MAX(id) AS limit2
                                         FROM 
@@ -8,32 +8,32 @@ WITH common_table_expression AS (
                                                 SELECT  
                                                         *,
                                                         @rownumber :=  CASE 
-                                                                                WHEN @check_score = datas
+                                                                                WHEN @check_groupping = groupped_data
                                                                                         THEN
                                                                                                 @rownumber 
                                                                                 ELSE
                                                                                         @rownumber := @rownumber + 1
-                                                                        END AS rank_order,
-                                                        @check_score := datas
+                                                                        END AS rank_groupping,
+                                                        @check_groupping := groupped_data
                                                 FROM
                                                 (
                                                         SELECT
                                                                 *,
                                                                 CASE 
                                                                         WHEN people >= 100 
-                                                                                THEN @groupings :=  1
+                                                                                THEN @is_groupped :=  1
                                                                 ELSE 
-                                                                        @groupings := 0
-                                                                END AS datas,
+                                                                        @is_groupped := 0
+                                                                END AS groupped_data,
                                                                 ( SELECT @rownumber := 0 ) AS rownumber,
-                                                                ( SELECT @check_score := ' ' ) AS check_score
+                                                                ( SELECT @check_groupping := ' ' ) AS check_groupping
                                                         FROM
                                                                 stadium,
-                                                        ( SELECT @groupings := 0 )  AS groupings
+                                                        ( SELECT @is_groupped := 0 )  AS is_groupped
                                                 )AS SubQuery2
                                         )AS SubQuery3
-                                        GROUP BY SubQuery3.rank_order
-                                        HAVING COUNT(datas) >= 3
+                                        GROUP BY SubQuery3.rank_groupping
+                                        HAVING COUNT(groupped_data) >= 3
                                 ) 
 SELECT 
         s2.* 
