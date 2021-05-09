@@ -45,4 +45,4 @@ FROM
      )AS SubQuery1
      GROUP BY SubQuery1.rank_order, SubQuery1.Num
 )AS SubQuery2
-WHERE SubQuery2.Count_Nums >= 3
+WHERE SubQuery2.Count_Nums >= 3;
