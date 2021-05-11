@@ -61,8 +61,7 @@ FROM
         salesperson 
 WHERE sales_id NOT IN (
                         SELECT
-                                DISTINCT
-                                        sales_id
+                                sales_id
                         FROM
                                 orders
                         WHERE com_id = (
