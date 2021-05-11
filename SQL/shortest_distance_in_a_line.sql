@@ -22,7 +22,7 @@
         Follow-up: What if all these points have an id and are arranged from the left most to the right most of x axis?
 */
 SELECT 
-    MIN(distance) AS shortest
+    MIN( distance ) AS shortest
 FROM 
 (
     SELECT
@@ -31,7 +31,7 @@ FROM
     (
         SELECT
             x AS x1,
-            LAG(x, 1) OVER ( ) AS x2
+            LAG( x, 1 ) OVER ( ) AS x2
         FROM
             point
     )AS SubQuery1
