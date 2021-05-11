@@ -64,11 +64,6 @@ WHERE sales_id NOT IN (
                                 sales_id
                         FROM
                                 orders
-                        WHERE com_id = (
-                                                SELECT 
-                                                        com_id 
-                                                FROM 
-                                                        company 
-                                                WHERE name = 'RED'
-                                       )
+                        JOIN company ON company.com_id = orders.com_id
+                        WHERE company.name = 'RED'
                       )
