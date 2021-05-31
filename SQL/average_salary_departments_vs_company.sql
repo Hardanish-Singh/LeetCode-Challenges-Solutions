@@ -25,4 +25,4 @@ FROM
     ORDER BY pay_date DESC
 ) AS x
 GROUP BY DATE_FORMAT(pay_date,'%Y-%m'),
-department_id
+department_id 
