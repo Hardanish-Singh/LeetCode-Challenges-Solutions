@@ -15,7 +15,7 @@
                 | 6  | 3           | 8000   | 2017-02-28 |
         
 
-        The employee_id column refers to the employee_id in the following table employee.
+        Table: employee
 
                 | employee_id | department_id |
                 |-------------|---------------|
@@ -23,7 +23,7 @@
                 | 2           | 2             |
                 | 3           | 2             |
         
-        So for the sample data above, the result is:
+        Result:
 
                 | pay_month | department_id | comparison  |
                 |-----------|---------------|-------------|
