@@ -4,4 +4,9 @@ SELECT
 FROM 
     follow
 GROUP BY followee
-HAVING followee IN (SELECT follower FROM follow);
+HAVING followee IN (
+                        SELECT 
+                                follower 
+                        FROM 
+                                follow
+                   );
