@@ -41,4 +41,6 @@ HAVING followee IN (
                                 follower 
                         FROM 
                                 follow
-                   );
+                        ORDER BY followee
+                   )
+ORDER BY followee
