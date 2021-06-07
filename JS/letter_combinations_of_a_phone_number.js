@@ -12,7 +12,7 @@ const phoneNumberLetterCombinations = {
 /**
  * @param { string } digits
  * @return { string[] }
- */
+*/
 
 var letterCombinations = function( digits ) {
         if( digits.length < 1 ) {
@@ -26,7 +26,12 @@ var letterCombinations = function( digits ) {
                 return letterCombinationsOfPhoneNumber;
         }
 };
-   
+
+/**
+ * @param { string[] } value1
+ * @param { string[] } value2
+ * @return { string[] }
+*/
 function makeLetterCombinations( value1, value2 ) {
         let temp = [];
         if(value1.length === 0) {
