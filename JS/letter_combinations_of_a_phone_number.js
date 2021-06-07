@@ -58,7 +58,7 @@ function makeLetterCombinations( value1, value2 ) {
         else {
                 for( let i=0; i<value1.length; i++ ) {
                         for( let j=0; j<value2.length; j++ ) {
-                                temp.push(value1[i]+value2[j]);
+                                temp.push( value1[i] + value2[j] );
                         }
                 }
         }
