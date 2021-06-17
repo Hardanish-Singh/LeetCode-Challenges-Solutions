@@ -76,7 +76,7 @@ function RemoveDuplicateCharactersAndAddGroupCount(chars, index, i){
         }
     }
     let d = Math.abs((i+1) - (index-1)) + 1;
-    if(d==0) {
+    if( d==0 ) {
         d = 1;
     }
     chars.splice(i+1, d);
