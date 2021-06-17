@@ -40,12 +40,8 @@ var compress = function(chars) {
        return 1;
     }
     let charCount = 1;
-    let indexes = [];
     for( let i=0; i<chars.length; i++ ){
         charCount = 1;
-        if(indexes.includes(i)) {
-                continue;
-        }
         for( let j=i+1; j<chars.length; j++ ){
             if( chars[i] === chars[j] ) {
                 charCount++;
@@ -72,8 +68,8 @@ var compress = function(chars) {
             chars.splice(i+1, d);
             index = i+1;
             for( let k=0; k<String(charCount).length; k++ ) {
-                    chars.splice(index, 0, String(charCount)[k]);
-                indexes.push(index);
+                chars.splice(index, 0, String(charCount)[k]);
+                i = index;
                 index++;
             }
         } 
@@ -91,7 +87,7 @@ var compress = function(chars) {
             chars.splice(i+1, d);
             index = i+1;
             chars.splice(index, 0, String(charCount));
-            indexes.push(index);
+            i = index;
         }
     }
     return chars.length;
