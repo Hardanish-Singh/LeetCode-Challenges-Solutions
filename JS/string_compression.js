@@ -36,9 +36,6 @@
         2) chars[i] is a lower-case English letter, upper-case English letter, digit, or symbol.
 */
 var compress = function(chars) {
-    if(chars.length === 1) {
-       return 1;
-    }
     let charCount = 1;
     for( let i=0; i<chars.length; i++ ){
         charCount = 1;
@@ -55,18 +52,7 @@ var compress = function(chars) {
         }
         let index = -1;
         if( charCount > 9 ) {
-            for( let k=i; k<chars.length; k++ ){
-                if( chars[k] != chars[k+1]) {
-                    index = k+1;
-                    break;
-                }
-            }
-            let d = Math.abs((i+1) - (index-1)) + 1;
-            if(d==0) {
-                d = 1;
-            }
-            chars.splice(i+1, d);
-            index = i+1;
+            index = RemoveDuplicateCharactersAndAddGroupCount(chars, index, i);
             for( let k=0; k<String(charCount).length; k++ ) {
                 chars.splice(index, 0, String(charCount)[k]);
                 i = index;
@@ -74,21 +60,26 @@ var compress = function(chars) {
             }
         } 
         else {
-            for( let k=i; k<chars.length; k++ ){
-                if( chars[k] != chars[k+1]) {
-                    index = k+1;
-                    break;
-                }
-            }
-            let d = Math.abs((i+1) - (index-1)) + 1;
-            if(d==0) {
-                d = 1;
-            }
-            chars.splice(i+1, d);
-            index = i+1;
+            index = RemoveDuplicateCharactersAndAddGroupCount(chars, index, i);
             chars.splice(index, 0, String(charCount));
             i = index;
         }
     }
     return chars.length;
 };
+
+function RemoveDuplicateCharactersAndAddGroupCount(chars, index, i){
+    for( let k=i; k<chars.length; k++ ){
+        if( chars[k] != chars[k+1]) {
+            index = k+1;
+            break;
+        }
+    }
+    let d = Math.abs((i+1) - (index-1)) + 1;
+    if(d==0) {
+        d = 1;
+    }
+    chars.splice(i+1, d);
+    index = i+1;
+    return index;
+}
