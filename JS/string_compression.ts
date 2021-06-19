@@ -53,14 +53,14 @@ var compress = function( chars : Array<String> ) : number {
         if( charCount > 9 ) {
             index = RemoveDuplicateCharactersAndAddGroupCount(chars, index, i);
             for( let k : number = 0; k<String(charCount).length; k++ ) {
-                chars.splice(index, 0, String(charCount)[k]);
+                chars.splice( index, 0, String(charCount)[k] );
                 i = index;
                 index++;
             }
         } 
         else {
             index = RemoveDuplicateCharactersAndAddGroupCount(chars, index, i);
-            chars.splice(index, 0, String(charCount));
+            chars.splice( index, 0, String(charCount) );
             i = index;
         }
     }
@@ -78,7 +78,7 @@ function RemoveDuplicateCharactersAndAddGroupCount( chars : Array<String>, index
     if( splicingIndex === 0 ) {
         splicingIndex = 1;
     }
-    chars.splice(i+1, splicingIndex);
+    chars.splice( i+1, splicingIndex );
     index = i+1;
     return index;
 }
