@@ -35,11 +35,10 @@
         1) 1 <= chars.length <= 2000
         2) chars[i] is a lower-case English letter, upper-case English letter, digit, or symbol.
 */
-var compress = function(chars) {
-    let charCount = 1;
-    for( let i=0; i<chars.length; i++ ) {
-        charCount = 1;
-        for( let j=i+1; j<chars.length; j++ ) {
+var compress = function( chars : Array<String> ) : number {
+    for( let i : number = 0; i<chars.length; i++ ) {
+        let charCount : number = 1;
+        for( let j : number = i+1; j<chars.length; j++ ) {
             if( chars[i] === chars[j] ) {
                 charCount++;
             }
@@ -50,10 +49,10 @@ var compress = function(chars) {
         if( charCount === 1 ) {
             continue;
         }
-        let index = -1;
+        let index : number = -1;
         if( charCount > 9 ) {
             index = RemoveDuplicateCharactersAndAddGroupCount(chars, index, i);
-            for( let k=0; k<String(charCount).length; k++ ) {
+            for( let k : number = 0; k<String(charCount).length; k++ ) {
                 chars.splice(index, 0, String(charCount)[k]);
                 i = index;
                 index++;
@@ -68,18 +67,18 @@ var compress = function(chars) {
     return chars.length;
 };
 
-function RemoveDuplicateCharactersAndAddGroupCount(chars, index, i) {
-    for( let k=i; k<chars.length; k++ ) {
-        if( chars[k] != chars[k+1]) {
+function RemoveDuplicateCharactersAndAddGroupCount( chars : Array<String>, index : number, i : number ) : number {
+    for( let k : number = i; k<chars.length; k++ ) {
+        if( chars[k] !== chars[k+1]) {
             index = k+1;
             break;
         }
     }
-    let d = Math.abs((i+1) - (index-1)) + 1;
-    if( d == 0 ) {
-        d = 1;
+    let splicingIndex : number = Math.abs( ( i+1 ) - ( index-1 ) ) + 1;
+    if( splicingIndex === 0 ) {
+        splicingIndex = 1;
     }
-    chars.splice(i+1, d);
+    chars.splice(i+1, splicingIndex);
     index = i+1;
     return index;
 }
