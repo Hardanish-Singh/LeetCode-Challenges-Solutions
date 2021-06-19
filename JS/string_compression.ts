@@ -67,7 +67,7 @@ var compress = function( chars : Array<String> ) : number {
     return chars.length;
 };
 
-function RemoveDuplicateCharactersAndAddGroupCount( ...args ) : number {
+function RemoveDuplicateCharactersAndAddGroupCount( ...args : Array<any> ) : number {
     let [chars, index, i] = args;
     for( let k : number = i; k<chars.length; k++ ) {
         if( chars[k] !== chars[k+1]) {
