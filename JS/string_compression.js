@@ -37,9 +37,9 @@
 */
 var compress = function(chars) {
     let charCount = 1;
-    for( let i=0; i<chars.length; i++ ){
+    for( let i=0; i<chars.length; i++ ) {
         charCount = 1;
-        for( let j=i+1; j<chars.length; j++ ){
+        for( let j=i+1; j<chars.length; j++ ) {
             if( chars[i] === chars[j] ) {
                 charCount++;
             }
@@ -68,15 +68,15 @@ var compress = function(chars) {
     return chars.length;
 };
 
-function RemoveDuplicateCharactersAndAddGroupCount(chars, index, i){
-    for( let k=i; k<chars.length; k++ ){
+function RemoveDuplicateCharactersAndAddGroupCount(chars, index, i) {
+    for( let k=i; k<chars.length; k++ ) {
         if( chars[k] != chars[k+1]) {
             index = k+1;
             break;
         }
     }
     let d = Math.abs((i+1) - (index-1)) + 1;
-    if( d==0 ) {
+    if( d == 0 ) {
         d = 1;
     }
     chars.splice(i+1, d);
