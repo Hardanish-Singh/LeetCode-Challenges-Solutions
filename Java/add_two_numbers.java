@@ -20,21 +20,21 @@ public class Solution {
             
                 while( l1 != null || l2 != null ) {
                         try {
-                                vals1 = (short)l1.val;
+                                vals1 = (short) l1.val;
                         }
                         catch(Exception e) {
                                 vals1 = 0;
                         }
                         try {
-                                vals2 = (short)l2.val;
+                                vals2 = (short) l2.val;
                         }
                         catch(Exception e) {
                                 vals2 = 0;
                         }
                         if( vals1 + vals2 + remaining > 9 ) {
-                                remainder = (short) (( vals1 + vals2 + remaining ) % 10);
+                                remainder = (short) ( ( vals1 + vals2 + remaining ) % 10 );
                                 result = new ListNode( remainder, result );
-                                remaining = (short) (( vals1 + vals2 + remaining ) / 10);
+                                remaining = (short) ( ( vals1 + vals2 + remaining ) / 10 );
                         }
                         else {
                                 result = new ListNode( vals1 + vals2 + remaining, result );
@@ -43,13 +43,14 @@ public class Solution {
                         try {
                                 l1 = l1.next;
                         }
-                        catch(Exception e) {}
+                        catch(Exception e) { }
                         try {
                                 l2 = l2.next;
                         }
-                        catch(Exception e) {}
+                        catch(Exception e) { }
                 }
-                if(remaining > 0) {
+                
+                if( remaining > 0 ) {
                         result = new ListNode( remaining, result );
                         remaining = 0;
                 }
