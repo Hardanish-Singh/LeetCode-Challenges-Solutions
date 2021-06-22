@@ -22,13 +22,13 @@ public class Solution {
                         try {
                                 vals1 = (short) l1.val;
                         }
-                        catch(Exception e) {
+                        catch( Exception e ) {
                                 vals1 = 0;
                         }
                         try {
                                 vals2 = (short) l2.val;
                         }
-                        catch(Exception e) {
+                        catch( Exception e ) {
                                 vals2 = 0;
                         }
                         if( vals1 + vals2 + remaining > 9 ) {
@@ -43,11 +43,11 @@ public class Solution {
                         try {
                                 l1 = l1.next;
                         }
-                        catch(Exception e) { }
+                        catch( Exception e ) { }
                         try {
                                 l2 = l2.next;
                         }
-                        catch(Exception e) { }
+                        catch( Exception e ) { }
                 }
                 
                 if( remaining > 0 ) {
