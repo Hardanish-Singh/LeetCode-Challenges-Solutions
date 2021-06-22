@@ -9,6 +9,42 @@
  * }
 */
 public class Solution {
+        
+        public ListNode addTwoNodes( ListNode node1, ListNode node2, ListNode result ) {
+                int remaining = 0;
+                int remainder = 0;
+                int vals1 = 0;
+                while( node1 != null ) {
+                        try{
+                                vals1 = node2.val;
+                        }
+                        catch( Exception e ) {
+                                vals1 = 0;
+                        }
+                        if( node1.val + vals1 + remaining > 9 ) {
+                                remainder = ( node1.val + vals1 + remaining ) % 10;
+                                result = new ListNode( remainder, result );
+                                remaining = ( node1.val + vals1 + remaining ) / 10;
+                        }
+                        else {
+                                result = new ListNode( node1.val + vals1 + remaining, result );
+                                remaining = 0;
+                        }
+                        node1 = node1.next;
+                        try {
+                                node2 = node2.next;
+                        }
+                        catch( Exception e ) {
+
+                        }
+                }
+                if(remaining > 0) {
+                        result = new ListNode( remaining, result );
+                        remaining = 0;
+                }
+                return result;
+        }
+
         public ListNode addTwoNumbers( ListNode l1, ListNode l2 ) {
         
                 ListNode l3 = null;
@@ -33,71 +69,10 @@ public class Solution {
                 ListNode l5 = null;
         
                 if( count1 >= count2 ) {
-                        int remaining = 0;
-                        int remainder = 0;
-                        int vals1 = 0;
-
-                        while( l3 != null ) {
-                                try{
-                                        vals1 = l4.val;
-                                }
-                                catch( Exception e ) {
-                                        vals1 = 0;
-                                }
-                                if( l3.val + vals1 + remaining > 9 ) {
-                                        remainder = ( l3.val + vals1 + remaining ) % 10;
-                                        l5 = new ListNode( remainder, l5 );
-                                        remaining = ( l3.val + vals1 + remaining ) / 10;
-                                }
-                                else {
-                                        l5 = new ListNode( l3.val + vals1 + remaining, l5 );
-                                        remaining = 0;
-                                }
-                                l3 = l3.next;
-                                try {
-                                        l4 = l4.next;
-                                }
-                                catch( Exception e ) {
-                                        
-                                }
-                        }
-                        if( remaining > 0 ) {
-                                l5 = new ListNode( remaining, l5 );
-                                remaining = 0;
-                        }
+                        l5 = addTwoNodes( l3, l4, l5);
                 } 
                 else {
-                        int remaining = 0;
-                        int remainder = 0;
-                        int vals1 = 0;
-                        while( l4 != null ) {
-                                try{
-                                        vals1 = l3.val;
-                                }
-                                catch( Exception e ) {
-                                        vals1 = 0;
-                                }
-                                if( l4.val + vals1 + remaining > 9 ) {
-                                        remainder = ( l4.val + vals1 + remaining ) % 10;
-                                        l5 = new ListNode( remainder, l5 );
-                                        remaining = ( l4.val + vals1 + remaining ) / 10;
-                                }
-                                else {
-                                        l5 = new ListNode( l4.val + vals1 + remaining, l5 );
-                                        remaining = 0;
-                                }
-                                l4 = l4.next;
-                                try {
-                                        l3 = l3.next;
-                                }
-                                catch( Exception e ) {
-                                
-                                }
-                        }
-                        if(remaining > 0) {
-                                l5 = new ListNode( remaining, l5 );
-                                remaining = 0;
-                        }
+                        l5 = addTwoNodes( l4, l3, l5);
                 }
         
                 ListNode reversedList = null;
