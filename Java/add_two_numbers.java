@@ -19,17 +19,17 @@ public class Solution {
                 short remainder = 0;
             
                 while( l1 != null || l2 != null ) {
-                        try {
-                                vals1 = (short) l1.val;
-                        }
-                        catch( Exception e ) {
+                        if( l1 == null ) {
                                 vals1 = 0;
                         }
-                        try {
-                                vals2 = (short) l2.val;
+                        else {
+                                vals1 = (short) l1.val;
                         }
-                        catch( Exception e ) {
+                        if( l2 == null ) {
                                 vals2 = 0;
+                        }
+                        else {
+                                vals2 = (short) l2.val;
                         }
                         if( vals1 + vals2 + remaining > 9 ) {
                                 remainder = (short) ( ( vals1 + vals2 + remaining ) % 10 );
@@ -40,14 +40,12 @@ public class Solution {
                                 result = new ListNode( vals1 + vals2 + remaining, result );
                                 remaining = 0;
                         }
-                        try {
+                        if( l1 != null ) {
                                 l1 = l1.next;
                         }
-                        catch( Exception e ) { }
-                        try {
+                        if( l2 != null ) {
                                 l2 = l2.next;
                         }
-                        catch( Exception e ) { }
                 }
                 
                 if( remaining > 0 ) {
