@@ -10,10 +10,11 @@
 */
 public class Solution {
         
-        public ListNode addTwoNodes( ListNode node1, ListNode node2, ListNode result ) {
+        public ListNode addTwoNodes( ListNode node1, ListNode node2, ListNode result ) {        
                 int remaining = 0;
                 int remainder = 0;
                 int vals1 = 0;
+
                 while( node1 != null ) {
                         try{
                                 vals1 = node2.val;
@@ -38,15 +39,16 @@ public class Solution {
 
                         }
                 }
+
                 if(remaining > 0) {
                         result = new ListNode( remaining, result );
                         remaining = 0;
                 }
+
                 return result;
         }
 
         public ListNode addTwoNumbers( ListNode l1, ListNode l2 ) {
-        
                 ListNode l3 = null;
                 ListNode l4 = null;
                 
