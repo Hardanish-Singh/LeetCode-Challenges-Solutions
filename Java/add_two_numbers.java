@@ -13,47 +13,29 @@ public class Solution {
         public ListNode addTwoNumbers( ListNode l1, ListNode l2 ) {
                 
                 ListNode result = null;
+                ListNode reversedList = null;
                 short vals1 = 0;
                 short vals2 = 0;
-                short remaining = 0;
+                short carry = 0;
                 short remainder = 0;
             
                 while( l1 != null || l2 != null ) {
-                        if( l1 == null ) {
-                                vals1 = 0;
-                        }
-                        else {
-                                vals1 = (short) l1.val;
-                        }
-                        if( l2 == null ) {
-                                vals2 = 0;
-                        }
-                        else {
-                                vals2 = (short) l2.val;
-                        }
-                        if( vals1 + vals2 + remaining > 9 ) {
-                                remainder = (short) ( ( vals1 + vals2 + remaining ) % 10 );
+                        vals1 = (short) ( ( l1 == null ) ? 0 : l1.val );
+                        vals2 = (short) ( ( l2 == null ) ? 0 : l2.val );
+                        if( vals1 + vals2 + carry > 9 ) {
+                                remainder = (short) ( ( vals1 + vals2 + carry ) % 10 );
                                 result = new ListNode( remainder, result );
-                                remaining = (short) ( ( vals1 + vals2 + remaining ) / 10 );
+                                carry = (short) ( ( vals1 + vals2 + carry ) / 10 );
                         }
                         else {
-                                result = new ListNode( vals1 + vals2 + remaining, result );
-                                remaining = 0;
+                                result = new ListNode( vals1 + vals2 + carry, result );
+                                carry = 0;
                         }
-                        if( l1 != null ) {
-                                l1 = l1.next;
-                        }
-                        if( l2 != null ) {
-                                l2 = l2.next;
-                        }
+                        l1 = ( l1 != null ) ? l1.next : null;
+                        l2 = ( l2 != null ) ? l2.next : null;
                 }
                 
-                if( remaining > 0 ) {
-                        result = new ListNode( remaining, result );
-                        remaining = 0;
-                }
-                
-                ListNode reversedList = null;
+                result = ( carry > 0 ) ? new ListNode( carry, result ) :  result ;
                 
                 while( result != null ) {
                         reversedList = new ListNode( result.val, reversedList );
