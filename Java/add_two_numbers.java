@@ -70,7 +70,7 @@ public class Solution {
                         int remaining = 0;
                         int remainder = 0;
                         int vals1 = 0;
-                        while(l4 != null) {
+                        while( l4 != null ) {
                                 try{
                                         vals1 = l3.val;
                                 }
@@ -94,10 +94,10 @@ public class Solution {
                                 
                                 }
                         }
-                if(remaining > 0) {
-                        l5 = new ListNode( remaining, l5 );
-                        remaining = 0;
-                }
+                        if(remaining > 0) {
+                                l5 = new ListNode( remaining, l5 );
+                                remaining = 0;
+                        }
                 }
         
                 ListNode reversedList = null;
