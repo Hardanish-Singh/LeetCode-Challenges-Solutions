@@ -9,8 +9,7 @@
  * }
 */
 public class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        
+        public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode l3 = null;
         ListNode l4 = null;
         l3 = l1;
@@ -97,14 +96,14 @@ public class Solution {
             }
         }
         
-        ListNode ans = null;
-        
-        while(l5 != null) {
-            ans = new ListNode(l5.val, ans);
-            l5 = l5.next;
+                ListNode reversedList = null;
+                
+                while( l5 != null ) {
+                        reversedList = new ListNode( l5.val, reversedList );
+                        l5 = l5.next;
+                }
+                
+                return reversedList;
         }
-        
-        return ans;
-    }
 }
 
