@@ -31,10 +31,10 @@ public class Solution {
                         catch(Exception e) {
                                 vals2 = 0;
                         }
-                        if(vals1 + vals2 + remaining > 9) {
-                                remainder = (short)(( vals1 + vals2 + remaining ) % 10);
+                        if( vals1 + vals2 + remaining > 9 ) {
+                                remainder = (short) (( vals1 + vals2 + remaining ) % 10);
                                 result = new ListNode( remainder, result );
-                                remaining = (short)(( vals1 + vals2 + remaining ) / 10);
+                                remaining = (short) (( vals1 + vals2 + remaining ) / 10);
                         }
                         else {
                                 result = new ListNode( vals1 + vals2 + remaining, result );
