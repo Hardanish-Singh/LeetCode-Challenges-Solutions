@@ -2,26 +2,20 @@
         // Definition for Singly-Linked List
         public class ListNode
 	{
-
                 int val;
                 ListNode next;
-
                 public ListNode()
                 {
-
                 }
-
                 public ListNode( int val )
                 {
                         this.val = val;
                 }
-
                 public ListNode( int val, ListNode next )
                 {
                         this.val = val;
                         this.next = next;
                 }
-
         }
 */
 public class Solution
@@ -46,31 +40,22 @@ public class Solution
                         {
                                 remainder = (short) ( ( vals1 + vals2 + carry ) % 10 );
 				node = new ListNode( remainder );
-				if( head == null )
-				{
-				    head = tail = node;
-				}
-				else
-				{
-				    tail.next = node;
-				    tail = node;
-				}
                                 carry = (short) ( ( vals1 + vals2 + carry ) / 10 );
                         }
                         else
                         {
 				node = new ListNode( vals1 + vals2 + carry );
-				if( head == null )
-				{
-				    head = tail = node;
-				}
-				else
-				{
-				    tail.next = node;
-				    tail = node;
-				}
                                 carry = 0;
                         }
+			if( head == null )
+			{
+			    head = tail = node;
+			}
+			else
+			{
+			    tail.next = node;
+			    tail = node;
+			}
                         l1 = ( l1 != null ) ? l1.next : null;
                         l2 = ( l2 != null ) ? l2.next : null;
                 }
