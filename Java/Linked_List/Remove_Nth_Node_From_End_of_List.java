@@ -85,12 +85,12 @@ class Solution
 		previous = head;
 	        current = head.next;
 	        while( current != null )
-			{
-	                        ListNode next = current.next;
-	                        current.next = previous;
-	                        previous = current;
-	                        current = next;
-	                }
+		{
+                        ListNode next = current.next;
+                        current.next = previous;
+                        previous = current;
+                        current = next;
+                }
                 tail = head;
                 tail.next = null;
                 head = previous;
