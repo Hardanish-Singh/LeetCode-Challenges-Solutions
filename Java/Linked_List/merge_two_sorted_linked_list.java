@@ -33,6 +33,7 @@ class Solution
         	ListNode head = null;
         	ListNode tail = null;
 
+		// LOOP THROUGH LIST 1 AND ADD NODES
 		while( l1 != null )
 		{
 			ListNode node = new ListNode( l1.val );
@@ -48,6 +49,7 @@ class Solution
 			l1 = l1.next;
 		}
 
+		// LOOP THROUGH LIST 2 AND ADD NODES
 		while( l2 != null )
 		{
 			ListNode node = new ListNode( l2.val );
@@ -63,6 +65,7 @@ class Solution
 			l2 = l2.next;
 		}
 
+		// BUBBLE SORT
 		ListNode current = head;
 		ListNode next = null;
 		int temp = 0;
