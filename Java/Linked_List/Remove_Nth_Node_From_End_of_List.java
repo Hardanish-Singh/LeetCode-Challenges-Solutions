@@ -25,23 +25,19 @@
         }
 */
 
-import java.util.NoSuchElementException;
-
 class Solution
 {
 	public ListNode removeNthFromEnd( ListNode head, int n )
 	{
-		// IF HEAD IS NULL / HEAD DOES NOT EXISTS
-		if( head == null )
+
+		// IF HEAD IS NULL / HEAD DOES NOT EXISTS / IF THERE IS ONLY ONE SINGLE NODE IN THE LINKED LIST
+		if( head == null || head.next == null )
                 {
-                        throw new NoSuchElementException();
-                }
-		// IF THERE IS ONLY ONE SINGLE NODE IN THE LINKED LIST
-		if( head.next == null )
-		{
 			head = null;
 			return head;
-		}
+                }
+
+		// REVERSE LINKED LIST
                 ListNode previous = head;
                 ListNode current = head.next;
 		ListNode tail = null;
@@ -56,26 +52,27 @@ class Solution
                 tail.next = null;
                 head = previous;
 
+		// FIND THE ITEM & REMOVE IT FROM THE LINKED LIST
 		current = head;
 		int index = 1;
 		previous = null;
 		while( current != null )
 		{
-			if( n == 1 )
-			{
-				previous = current;
-				current = current.next;
-				previous.next = null;
-				previous = current;
-				head = previous;
-				break;
-			}
 			if( index + 1 == n )
 			{
 				previous = current;
 			}
 			else if( index == n )
 			{
+				if( previous == null )
+		                {
+		                    previous = current;
+		                    current = current.next;
+		                    previous.next = null;
+		                    previous = current;
+		                    head = previous;
+		                    break;
+		                }
 				previous.next = current.next;
 				current.next = null;
 				break;
