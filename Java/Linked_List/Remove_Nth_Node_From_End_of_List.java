@@ -79,13 +79,13 @@ class Solution
 			}
 			else if( index == n )
 			{
+				// REMOVING THE FIRST NODE FROM THE LINKEDLIST
 				if( previous == null )
 		                {
 		                    previous = current;
 		                    current = current.next;
 		                    previous.next = null;
-		                    previous = current;
-		                    head = previous;
+				    head = current;
 		                    break;
 		                }
 				previous.next = current.next;
@@ -98,6 +98,7 @@ class Solution
 
 		// REVERSE THE LINKED LIST AGAIN
 		head = reverse( head );
+
 	        return head;
 
 	}
