@@ -81,6 +81,7 @@ class Solution
 			index++;
 		}
 
+		// REVERSE THE LINKED LIST AGAIN
 		previous = head;
 	        current = head.next;
 	        while( current != null )
@@ -90,9 +91,9 @@ class Solution
 	                        previous = current;
 	                        current = next;
 	                }
-	                tail = head;
-	                tail.next = null;
-	                head = previous;
+                tail = head;
+                tail.next = null;
+                head = previous;
 
 	        return head;
 	}
