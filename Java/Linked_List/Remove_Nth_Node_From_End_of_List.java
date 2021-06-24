@@ -27,6 +27,29 @@
 
 class Solution
 {
+	public ListNode reverse( ListNode head )
+	{
+
+		ListNode previous = head;
+                ListNode current = head.next;
+		ListNode tail = null;
+
+		while( current != null )
+		{
+                        ListNode next = current.next;
+                        current.next = previous;
+                        previous = current;
+                        current = next;
+                }
+
+		tail = head;
+                tail.next = null;
+                head = previous;
+
+		return head;
+
+	}
+
 	public ListNode removeNthFromEnd( ListNode head, int n )
 	{
 
@@ -37,25 +60,17 @@ class Solution
 			return head;
                 }
 
+		ListNode current = null;
+		ListNode previous = null;
+
 		// REVERSE LINKED LIST
-                ListNode previous = head;
-                ListNode current = head.next;
-		ListNode tail = null;
-                while( current != null )
-		{
-                        ListNode next = current.next;
-                        current.next = previous;
-                        previous = current;
-                        current = next;
-                }
-                tail = head;
-                tail.next = null;
-                head = previous;
+		head = reverse( head );
 
 		// FIND THE ITEM & REMOVE IT FROM THE LINKED LIST
 		current = head;
-		int index = 1;
 		previous = null;
+		int index = 1;
+
 		while( current != null )
 		{
 			if( index + 1 == n )
@@ -82,19 +97,8 @@ class Solution
 		}
 
 		// REVERSE THE LINKED LIST AGAIN
-		previous = head;
-	        current = head.next;
-	        while( current != null )
-		{
-                        ListNode next = current.next;
-                        current.next = previous;
-                        previous = current;
-                        current = next;
-                }
-                tail = head;
-                tail.next = null;
-                head = previous;
-
+		head = reverse( head );
 	        return head;
+
 	}
 }
