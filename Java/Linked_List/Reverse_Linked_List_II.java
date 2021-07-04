@@ -27,130 +27,57 @@
 */
 class Solution
 {
-        public ListNode reverseBetween( ListNode head, int left, int right )
+	public ListNode reverseBetween( ListNode head, int left, int right )
         {
-                ListNode current = head;
-                ListNode firstBefore = null;
-                ListNode lastBefore = null;
-                ListNode firstAfter = null;
-                ListNode lastAfter = null;
-                ListNode first = null;
-                ListNode last = null;
-                ListNode node = null;
-                int index = 1;
+                if( head == null )
+		{
+			return null;
+		}
 
-                while( current != null )
+                if( left == right )
                 {
-                        if( index < left )
-                        {
-                                node = new ListNode( current.val );
-                                if( firstBefore == null )
-                                {
-                                    firstBefore = lastBefore = node;
-                                }
-                                else
-                                {
-                                    lastBefore.next = node;
-                                    lastBefore = node;
-                                }
-                        }
-                        else if( !( index >= left && index <= right ) )
-                        {
-                                node = new ListNode( current.val );
-                                if( firstAfter == null )
-                                {
-                                    firstAfter = lastAfter = node;
-                                }
-                                else
-                                {
-                                    lastAfter.next = node;
-                                    lastAfter = node;
-                                }
-                        }
-                        else
-                        {
-                                node = new ListNode( current.val );
-                                if( first == null )
-                                {
-                                    first = last = node;
-                                }
-                                else
-                                {
-                                    last.next = node;
-                                    last = node;
-                                }
-                        }
-                        current = current.next;
-                        index++;
+                        return head;
                 }
 
-                ListNode previous = first;
-                current = first.next;
-                ListNode tail = null;
+                ListNode beforeLinkingNode = head;
+		ListNode afterLinkingNode;
+		ListNode previous = null;
+                ListNode current = null;
+                short index = 1;
 
-                while( current != null )
-                {
+		while( index + 1 < left )
+		{
+                        beforeLinkingNode = beforeLinkingNode.next;
+			index++;
+		}
+
+                previous = beforeLinkingNode;
+                current = previous.next;
+                afterLinkingNode = current;
+		right -= index;
+
+                while( right > 0 )
+		{
                         ListNode next = current.next;
                         current.next = previous;
-                        previous = current;
-                        current = next;
-                }
+			previous = current;
+			current = next;
+			right--;
+		}
 
-                tail = first;
-                tail.next = null;
-                first = previous;
-
-                ListNode resultHead = null;
-                ListNode resultTail = null;
-
-                while( firstBefore != null )
+                if( previous == afterLinkingNode || index == left )
                 {
-                        node = new ListNode( firstBefore.val );
-                        if( resultHead == null )
-			{
-			    resultHead = resultTail = node;
-			}
-			else
-			{
-			    resultTail.next = node;
-			    resultTail = node;
-			}
-                        firstBefore = firstBefore.next;
+                        ListNode tail = head;
+                        tail.next = current;
+                        head = previous;
                 }
-
-                while( first != null )
+                else
                 {
-                        node = new ListNode( first.val );
-                        if( resultHead == null )
-			{
-			    resultHead = resultTail = node;
-			}
-			else
-			{
-			    resultTail.next = node;
-			    resultTail = node;
-			}
-                        first = first.next;
+                        beforeLinkingNode.next = previous;
+                        afterLinkingNode.next = current;
                 }
 
-                while( firstAfter != null )
-                {
-                        node = new ListNode( firstAfter.val );
-                        if( resultHead == null )
-			{
-			    resultHead = resultTail = node;
-			}
-			else
-			{
-			    resultTail.next = node;
-			    resultTail = node;
-			}
-                        firstAfter = firstAfter.next;
-                }
-
-
-
-                return resultHead;
+		return head;
 
         }
 }
