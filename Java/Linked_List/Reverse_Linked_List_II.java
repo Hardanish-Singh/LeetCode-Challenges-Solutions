@@ -45,8 +45,7 @@ class Solution
 		ListNode afterLinkingNode = null;
 		ListNode previous = null;
                 ListNode current = null;
-		ListNode tail = null;
-                short counter = 1;
+		short counter = 1;
 
 		while( counter + 1 < left )
 		{
@@ -59,6 +58,7 @@ class Solution
                 afterLinkingNode = current;
 		right -= counter;
 
+		// REVERSES NODES BETWEEN LEFT & RIGHT POINTER
                 while( right > 0 )
 		{
                         ListNode next = current.next;
@@ -82,8 +82,8 @@ class Solution
 		*/
                 if( previous == afterLinkingNode || counter == left )
                 {
-                        tail = head;
-                        tail.next = current;
+                        afterLinkingNode = head;
+                        afterLinkingNode.next = current;
                         head = previous;
                 }
                 else
