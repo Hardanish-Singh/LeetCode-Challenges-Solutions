@@ -29,32 +29,35 @@ class Solution
 {
 	public ListNode reverseBetween( ListNode head, int left, int right )
         {
+		// WHEN HEAD IS NULL/EMPTY THEN WE RETURN NULL
                 if( head == null )
 		{
 			return null;
 		}
 
+		// WHEN LEFT & RIGHT POINTERS ARE EQUAL, THEN NO SWAPPING/REVERSING OF ELEMENTS IS NEEDED
                 if( left == right )
                 {
                         return head;
                 }
 
                 ListNode beforeLinkingNode = head;
-		ListNode afterLinkingNode;
+		ListNode afterLinkingNode = null;
 		ListNode previous = null;
                 ListNode current = null;
-                short index = 1;
+		ListNode tail = null;
+                short counter = 1;
 
-		while( index + 1 < left )
+		while( counter + 1 < left )
 		{
                         beforeLinkingNode = beforeLinkingNode.next;
-			index++;
+			counter++;
 		}
 
                 previous = beforeLinkingNode;
                 current = previous.next;
                 afterLinkingNode = current;
-		right -= index;
+		right -= counter;
 
                 while( right > 0 )
 		{
@@ -64,10 +67,22 @@ class Solution
 			current = next;
 			right--;
 		}
-
-                if( previous == afterLinkingNode || index == left )
+		/*
+			HERE TWO IMPORTANT CASES ARE COVERED
+			CASE 1:
+				head: [1, 2]
+				left: 1
+				right: 2
+				WHEN AFTER REVERSING IN BETWEEN LEFT & RIGHT INDEX, IF previous == afterLinkingNode, THEN WE FOLLOW THE NORMAL REVERSING LOGIC
+			CASE 2:
+				head: [1, 2, 3]
+				left: 1
+				right: 3
+				WHEN counter == left, HERE counter = 1 & left = 1, THEN WE FOLLOW THE NORMAL REVERSING LOGIC
+		*/
+                if( previous == afterLinkingNode || counter == left )
                 {
-                        ListNode tail = head;
+                        tail = head;
                         tail.next = current;
                         head = previous;
                 }
