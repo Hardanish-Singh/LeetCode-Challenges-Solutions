@@ -42,9 +42,9 @@ class Solution
                 }
 
                 ListNode beforeLinkingNode = head;
-		ListNode afterLinkingNode = null;
-		ListNode previous = null;
-                ListNode current = null;
+		ListNode afterLinkingNode = head.next;
+		ListNode previous = head;
+                ListNode current = head.next;
 		short counter = 1;
 
 		while( counter + 1 < left )
@@ -73,14 +73,14 @@ class Solution
 				head: [1, 2]
 				left: 1
 				right: 2
-				WHEN AFTER REVERSING IN BETWEEN LEFT & RIGHT INDEX, IF previous == afterLinkingNode, THEN WE FOLLOW THE NORMAL REVERSING LOGIC
+				WHEN left = 1, THEN WE FOLLOW THE NORMAL REVERSING LOGIC, BECASUE beforeLinkingNode WILL ALWAYS POINT TO ITS ORIGINAL POSITION
 			CASE 2:
 				head: [1, 2, 3]
 				left: 1
 				right: 3
-				WHEN counter == left, HERE counter = 1 & left = 1, THEN WE FOLLOW THE NORMAL REVERSING LOGIC
+				WHEN left = 1, THEN WE FOLLOW THE NORMAL REVERSING LOGIC, BECASUE beforeLinkingNode WILL ALWAYS POINT TO ITS ORIGINAL POSITION
 		*/
-                if( previous == afterLinkingNode || counter == left )
+                if( left == 1 )
                 {
                         afterLinkingNode = head;
                         afterLinkingNode.next = current;
