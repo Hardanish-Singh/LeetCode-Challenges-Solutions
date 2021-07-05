@@ -47,19 +47,19 @@ class Solution
 		while( true )
 		{
 			next = current.next;
-                        if( previous == null || current == null || next == null )
+                        if( next == null )
 			{
                                 current.next = previous;
                                 previous.next = null;
 			        break;
 			}
                         current.next = previous;
-                        previous.next = next.next;
                         if( next.next == null )
                         {
                                 previous.next = next;
                                 break;
                         }
+			previous.next = next.next;
 			previous = next;
 			current = previous.next;
 		}
