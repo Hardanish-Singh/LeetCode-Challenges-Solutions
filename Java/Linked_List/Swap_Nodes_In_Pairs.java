@@ -34,10 +34,14 @@ class Solution
 			return null;
 		}
 
+		if( head.next == null )
+		{
+			return head;
+		}
+
 		ListNode previous = head;
 		ListNode current = head.next;
-                if( current == null ) return head;
-		ListNode next = null;
+                ListNode next = null;
                 head = current;
 
 		while( true )
