@@ -41,8 +41,8 @@ class Solution
                         return head;
                 }
 
-                ListNode beforeLinkingNode = head;
-		ListNode afterLinkingNode = head.next;
+                ListNode beforeLinkingNode = head; // HERE beforeLinkingNode IS THE HEAD
+		ListNode afterLinkingNode = head.next; // HERE afterLinkingNode IS THE TAIL
 		ListNode previous = head;
                 ListNode current = head.next;
 		short counter = 1;
