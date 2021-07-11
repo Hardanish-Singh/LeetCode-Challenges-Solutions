@@ -8,6 +8,7 @@
         Because nums[0] + nums[1] = 2 + 7 = 9,
         return [0, 1].
 */
+// SOLUTION 1
 var twoSum = function(nums, target) {
     let twoPointerArray = [...nums].sort((a, b) => a-b);
     let leftPosition = 0, rightPosition = 0, lthPosition = 0, rthPosition = 0;
@@ -27,7 +28,7 @@ var twoSum = function(nums, target) {
            break;
         } else if (leftPosition + rightPosition < target) {
             lthPosition++;
-            while (twoPointerArray[lthPosition] == leftPosition) lthPosition++;  
+            while (twoPointerArray[lthPosition] == leftPosition) lthPosition++;
             leftPosition = twoPointerArray[lthPosition];
         } else if (leftPosition + rightPosition > target) {
             rthPosition--;
@@ -35,9 +36,29 @@ var twoSum = function(nums, target) {
             rightPosition = twoPointerArray[rthPosition];
         }
         if (lthPosition === rthPosition || lthPosition > rthPosition) break;
-      } 
+      }
     }
 
     finalArray.push(nums.indexOf(leftPosition), nums.lastIndexOf(rightPosition));
     return finalArray;
+};
+
+// SOLUTION 2
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function( nums, target )
+{
+        for( let i=0; i<nums.length; i++ )
+        {
+                for( let j=i+1; j<nums.length; j++ )
+                {
+                        if( nums[i] + nums[j] === target )
+                        {
+                                return [ i, j ];
+                        }
+                }
+        }
 };
