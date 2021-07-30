@@ -45,6 +45,7 @@ function isValidAnagram( word1, word2 ) {
                 for( key2 in word2 ) {
                         if( key1 == key2 && word1[key1] == word2[key2] ) {
                                 delete word2[key2];
+                                delete word1[key1];
                                 isFound = true;
                                 break;
                         }
@@ -67,7 +68,7 @@ function countCharacterOccurrences( word ) {
         let count = 1;
 
         for( let i=0; i<word.length; i++) {
-                if(word[i] in words) {
+                if( word[i] in words ) {
                         continue;
                 }
                 for( let j=i+1; j<word.length; j++ ) {
