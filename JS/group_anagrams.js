@@ -71,6 +71,7 @@ function isAnagram(word1, word2) {
                 for(key2 in word2) {
                         if(key1 == key2 && word1[key1] == word2[key2]) {
                                 delete word2[key2];
+                                delete word1[key1];
                                 isFound = true;
                                 break;
                         }
