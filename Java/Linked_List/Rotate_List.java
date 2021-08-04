@@ -23,11 +23,13 @@ class Solution
 {
         public ListNode rotateRight( ListNode head, int k ) 
         {
+                // VALIDATION/SANITY CHECK
                 if( head == null )
                 {
                         return null;
                 }
                 
+                // STORE THE REFERENCE OF HEAD NODE
                 ListNode h = head;
                 int count = 1;
                 while( head.next != null )
@@ -35,8 +37,11 @@ class Solution
                         count++;
                         head = head.next;
                 }
-                k = k%count;
+                // UPDATE k
+                k = k % count;
+                // RESTORE HEAD NODE REFERENCE BACK
                 head = h;
+
                 for( int i=0; i<k; i++ ) 
                 {
                         ListNode current = head;
