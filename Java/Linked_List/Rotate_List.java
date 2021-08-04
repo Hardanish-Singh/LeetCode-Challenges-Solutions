@@ -42,6 +42,7 @@ class Solution
                 // RESTORE HEAD NODE REFERENCE BACK
                 head = h;
 
+                // ROTATE LINKED LIST k TIMES
                 for( int i=0; i<k; i++ ) 
                 {
                         ListNode current = head;
