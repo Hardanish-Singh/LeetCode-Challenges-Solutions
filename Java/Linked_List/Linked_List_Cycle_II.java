@@ -9,7 +9,7 @@
  *     }
  * }
  */
-public class Solution {
+public class Solution  {
     public ListNode detectCycle(ListNode head) {
             while( head != null )
 		{
