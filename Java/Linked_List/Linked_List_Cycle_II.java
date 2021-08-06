@@ -9,20 +9,22 @@
  *     }
  * }
  */
-public class Solution  {
-    public ListNode detectCycle(ListNode head) {
-            while( head != null )
-		{
-			if( head.val == -100002 )
-			{
-				return head;
-			}
-			else
-			{
-			        head.val = -100002;
-			}
-			head = head.next;
-		}
-		return null;
+public class Solution  
+{
+    public ListNode detectCycle( ListNode head ) 
+    {
+        while( head != null )
+        {
+                if( head.val == -100002 )
+                {
+                        return head;
+                }
+                else
+                {
+                        head.val = -100002;
+                }
+                head = head.next;
+        }
+        return null;
     }
 }
