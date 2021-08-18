@@ -1,7 +1,7 @@
 /**
- * @param {number[]} nums
- * @return {number}
- */
+ * @param { number[] } nums
+ * @return { number }
+*/
  var maxSubArray = function( nums ) {
         let sum = -100001;
         let temp = 0;
@@ -9,7 +9,9 @@
                 temp = nums[i];
                 for( let j=i+1; j<nums.length; j++ ){
                         temp += nums[j];
-                        if( temp < 0 ) break;
+                        if( temp < 0 ) {
+                                break;
+                        }
                         if( temp >= sum  ) {
                                 sum = temp;    
                         }        
