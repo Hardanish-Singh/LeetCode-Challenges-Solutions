@@ -9,6 +9,7 @@
                 temp = nums[i];
                 for( let j=i+1; j<nums.length; j++ ){
                         temp += nums[j];
+                        if( temp < 0 ) break;
                         if( temp >= sum  ) {
                                 sum = temp;    
                         }        
