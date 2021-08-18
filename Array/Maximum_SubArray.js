@@ -2,7 +2,13 @@
  * @param { number[] } nums
  * @return { number }
 */
- var maxSubArray = function( nums ) {
+
+/*
+        SOLUTION 1: BRUTE FORCE APPROACH
+                        Time Complexity: O(N^2), where N is the length of nums.
+                        Space Complexity: O(1)
+*/
+var maxSubArray = function( nums ) {
         let sum = -100001;
         let temp = 0;
         for( let i=0; i<nums.length; i++ ){
