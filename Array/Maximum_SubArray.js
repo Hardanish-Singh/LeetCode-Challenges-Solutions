@@ -16,8 +16,8 @@
                 Output: 23
 
         Constraints:
-                1) 1 <= nums.length <= 3 * 104
-                2) -105 <= nums[i] <= 105
+                1) 1 <= nums.length <= 3 * 10^4
+                2) -10^5 <= nums[i] <= 10^5
 
 */
 
@@ -34,9 +34,9 @@
 var maxSubArray = function( nums ) {
         let sum = -100001;
         let temp = 0;
-        for( let i=0; i<nums.length; i++ ){
+        for( let i=0; i<nums.length; i++ ) {
                 temp = nums[i];
-                for( let j=i+1; j<nums.length; j++ ){
+                for( let j=i+1; j<nums.length; j++ ) {
                         temp += nums[j];
                         if( temp < 0 ) {
                                 break;
@@ -64,7 +64,7 @@ var maxSubArray = function( nums ) {
 */
 var maxSubArray = function( nums ) {
         let max = nums[0];
-        for( let i=1; i<nums.length; i++ ){
+        for( let i=1; i<nums.length; i++ ) {
                 nums[i] = Math.max( nums[i], nums[i] + nums[i-1] );
                 max = Math.max( max, nums[i] );
         } 
