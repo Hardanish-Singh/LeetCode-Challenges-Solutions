@@ -1,7 +1,7 @@
-/**
- * @param {number[]} nums
- * @return {number}
- */
+/*
+ * @param { number[] } nums
+ * @return { number }
+*/
  var maxProduct = function(nums) {
         let sum = -11;
         let temp = 0;
