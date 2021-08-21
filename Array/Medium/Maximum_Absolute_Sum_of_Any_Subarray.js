@@ -33,9 +33,11 @@ var maxAbsoluteSum = function(nums) {
         let maxSubarray;
         let min;
         let minSubarray;
-        if(nums.length == 1) return Math.max(nums[0],Math.abs(nums[0]));
+        if(nums.length == 1) {
+                return Math.max(nums[0],Math.abs(nums[0]));
+        }
         for( let i=0; i<nums.length-1; i++ ) {
-                if(i==0) {
+                if( i==0 ) {
                         minSubarray = maxSubarray = nums[i];
                         max = min = nums[i];
                 }
