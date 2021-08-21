@@ -29,17 +29,13 @@ var maxAbsoluteSum = function(nums) {
 */
 
 var maxAbsoluteSum = function(nums) {
-        let max;
-        let maxSubarray;
-        let min;
-        let minSubarray;
         if(nums.length == 1) {
                 return Math.max(nums[0],Math.abs(nums[0]));
         }
+        let max, maxSubarray, min, minSubarray;
         for( let i=0; i<nums.length-1; i++ ) {
                 if( i==0 ) {
-                        minSubarray = maxSubarray = nums[i];
-                        max = min = nums[i];
+                        minSubarray = maxSubarray = min = max = nums[i];
                 }
                 maxSubarray = Math.max( nums[i+1], nums[i+1] + maxSubarray );
                 max = Math.max( max, maxSubarray );
