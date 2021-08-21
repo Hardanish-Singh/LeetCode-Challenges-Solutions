@@ -2,6 +2,13 @@
  * @param { number[] } nums
  * @return { number }
 */
+
+/*
+        SOLUTION 1: DYNAMIC PROGRAMMING, KADANE'S ALGORITHM
+                        Time Complexity: O(N), where N is the length of nums.
+                        Space Complexity: O(1)
+*/
+
 var maxAbsoluteSum = function(nums) {
         let max = nums[0];
         let maxSubarray = nums[0];
