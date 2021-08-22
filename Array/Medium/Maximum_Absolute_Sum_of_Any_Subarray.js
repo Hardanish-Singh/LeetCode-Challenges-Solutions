@@ -7,8 +7,12 @@
         SOLUTION 1: DYNAMIC PROGRAMMING, KADANE'S ALGORITHM
                         Time Complexity: O(N), where N is the length of nums.
                         Space Complexity: O(1)
+                   
+                        Here the idea is to run Kadane Algorithm twice 
+                        Once calculating the max sum & Once calculating the min sum
 */
 
+// APPROACH 1
 var maxAbsoluteSum = function( nums ) {
         let max = maxSubarray = min = minSubarray = nums[0];
         for( let i=1; i<nums.length; i++ ) {
@@ -17,7 +21,7 @@ var maxAbsoluteSum = function( nums ) {
                 minSubarray = Math.min( nums[i], nums[i] + minSubarray );
                 min = Math.min( min, minSubarray );
         }
-        return Math.max(max,Math.abs(min));
+        return Math.max( max, Math.abs( min ) );
 };
 
 /*
@@ -25,13 +29,14 @@ var maxAbsoluteSum = function( nums ) {
  * @return { number }
 */
 
-var maxAbsoluteSum = function(nums) {
-        if(nums.length == 1) {
-                return Math.max(nums[0],Math.abs(nums[0]));
+// APPROACH 2
+var maxAbsoluteSum = function( nums ) {
+        if( nums.length === 1 ) {
+                return Math.max( nums[0], Math.abs( nums[0] ) );
         }
         let max, maxSubarray, min, minSubarray;
         for( let i=0; i<nums.length-1; i++ ) {
-                if( i==0 ) {
+                if( i === 0 ) {
                         minSubarray = maxSubarray = min = max = nums[i];
                 }
                 maxSubarray = Math.max( nums[i+1], nums[i+1] + maxSubarray );
@@ -39,5 +44,5 @@ var maxAbsoluteSum = function(nums) {
                 minSubarray = Math.min( nums[i+1], nums[i+1] + minSubarray );
                 min = Math.min( min, minSubarray );
         }
-        return Math.max(max,Math.abs(min));
+        return Math.max( max, Math.abs( min ) );
 };
