@@ -9,11 +9,8 @@
                         Space Complexity: O(1)
 */
 
-var maxAbsoluteSum = function(nums) {
-        let max = nums[0];
-        let maxSubarray = nums[0];
-        let min = nums[0];
-        let minSubarray = nums[0];
+var maxAbsoluteSum = function( nums ) {
+        let max = maxSubarray = min = minSubarray = nums[0];
         for( let i=1; i<nums.length; i++ ) {
                 maxSubarray = Math.max( nums[i], nums[i] + maxSubarray );
                 max = Math.max( max, maxSubarray );
