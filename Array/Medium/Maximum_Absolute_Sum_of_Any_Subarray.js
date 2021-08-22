@@ -16,7 +16,6 @@
                 Explanation: The subarray [-5,1,-4] has absolute sum = abs(-5+1-4) = abs(-8) = 8.
  
         Constraints:
-
                 1) 1 <= nums.length <= 10^5
                 2) -10^4 <= nums[i] <= 10^4
 */
