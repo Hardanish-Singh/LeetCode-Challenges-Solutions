@@ -30,6 +30,7 @@
  * @param {number} target
  * @return {number}
 */
+
 var searchInsert = function( nums, target ) {        
         // CHECKS ARRAYS LAST ELEMENT FIRST WITH TARGET ELEMENT TO AVIOD LOOPING THROUGH ARRAY
         if( target > nums[nums.length-1]  ) {
