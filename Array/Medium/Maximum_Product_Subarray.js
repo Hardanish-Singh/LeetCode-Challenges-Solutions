@@ -21,6 +21,12 @@
 */
 
 /*
+        SOLUTION 1: BRUTE FORCE APPROACH
+                        Time Complexity: O(N^2), where N is the length of nums.
+                        Space Complexity: O(1)
+*/
+
+/*
  * @param { number[] } nums
  * @return { number }
 */
@@ -40,4 +46,31 @@
                 }
         }
         return sum;
+};
+
+/*
+        SOLUTION 2: DYNAMIC PROGRAMMING
+                        Time Complexity: O(N), where N is the length of nums.
+                        Space Complexity: O(1)
+*/
+
+/*
+ * @param { number[] } nums
+ * @return { number }
+*/
+var maxProduct = function( nums ) {
+        if( nums.length === 0 ) {
+                return 0;
+        }
+        
+        let max = min = result = nums[0];
+        
+        for( let i=1; i<nums.length; i++ ){
+                let temp_max = Math.max( nums[i], Math.max( nums[i] * max, nums[i] * min ) );
+                let temp_min = Math.min( nums[i], Math.min( nums[i] * max, nums[i] * min ) );
+                max = temp_max;
+                min = temp_min;
+                result = Math.max(max, min, result);
+        }
+        return result;
 };
