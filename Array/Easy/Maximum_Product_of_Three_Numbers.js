@@ -1,6 +1,6 @@
-/**
- * @param {number[]} nums
- * @return {number}
+/*
+ * @param { number[] } nums
+ * @return { number }
 */
 var maximumProduct = function(nums) {
         nums.sort( (a, b) => a - b );
