@@ -65,7 +65,7 @@ var maxProduct = function( nums ) {
         
         let max = min = result = nums[0];
         
-        for( let i=1; i<nums.length; i++ ){
+        for( let i=1; i<nums.length; i++ ) {
                 let temp_max = Math.max( nums[i], Math.max( nums[i] * max, nums[i] * min ) );
                 let temp_min = Math.min( nums[i], Math.min( nums[i] * max, nums[i] * min ) );
                 max = temp_max;
