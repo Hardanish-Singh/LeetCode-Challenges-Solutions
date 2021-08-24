@@ -40,14 +40,13 @@ var isNumber = function( s ) {
                 if( s[i] === 'e' ) {
                         is_e_count++;
                         is_e_found = true;
-                        if( !( Number(s[i-1]) >= 0 && Number(s[i-1]) <= 9 || s[i-1] === '.' )  ) {
+                        if( !( Number(s[i-1]) >= 0 && Number(s[i-1]) <= 9 || s[i-1] === '.' ) 
+                                || 
+                            !( ( Number(s[i+1]) >= 0 && Number(s[i+1]) <= 9 ) || s[i+1] === '+' || s[i+1] === '-' )
+                                ||
+                            s[i-1] === "." && !( Number(s[i-2]) >= 0 && Number(s[i-2]) <= 9 )
+                          ) {
                                 return false;   
-                        }
-                        if( !( ( Number(s[i+1]) >= 0 && Number(s[i+1]) <= 9 ) || s[i+1] === '+' || s[i+1] === '-' )  ) {
-                                return false;   
-                        }
-                        if( s[i-1] === "." && !( Number( s[i-2] >= 0 ) && Number( s[i-2] <= 9 ) ) ) {
-                                return false;
                         }
                 }
                 if( is_e_found && ( s[i] === '.' || is_e_count > 1 ) ) {
