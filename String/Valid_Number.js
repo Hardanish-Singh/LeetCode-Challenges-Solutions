@@ -30,17 +30,11 @@ var isNumber = function( s ) {
         let is_dot_count = 0;
         let is_digit_found = false;
         let is_e_count = 0;
-        if( s[s.length-1] === "+" ||  s[s.length-1] === "-"   ) {
+        if( s[s.length-1] === "+" ||  s[s.length-1] === "-" || s[s.length-1] === "e"  ) {
                 return false;
         }
         for( let i=0; i<s.length; i++  ) {
-                if( ( s[i] === '+' && s[i+1] === '+' ) || ( s[i] === '+' && s[i+1] === '-' ) || ( s[i] === '-' && s[i+1] === '+' ) || ( s[i] === '-' && s[i+1] === '-' ) ) {
-                        return false;
-                }
-                if( s[i] === "+" && i > 0 && s[i-1] != 'e' ) {
-                        return false;
-                }
-                if( s[i] === "-" && i > 0 && s[i-1] != 'e' ) {
+                if( ( s[i] === "+" && i > 0 && s[i-1] != 'e' ) || ( s[i] === "-" && i > 0 && s[i-1] != 'e' ) ) {
                         return false;
                 }
                 if( s[i] === 'e' ) {
