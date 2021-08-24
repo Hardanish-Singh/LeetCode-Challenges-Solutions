@@ -50,13 +50,8 @@ var isNumber = function( s ) {
                                 return false;
                         }
                 }
-                if( is_e_found ) {
-                        if( s[i] === '.' ) {
-                                return false;
-                        }
-                }
-                if( is_e_count > 1 ) {
-                        return false;
+                if( is_e_found && ( s[i] === '.' || is_e_count > 1 ) ) {
+                        return false;    
                 }
                 if( (s[i] >= "a" && s[i] <= "z") && s[i] != 'e' ) {
                         return false;
