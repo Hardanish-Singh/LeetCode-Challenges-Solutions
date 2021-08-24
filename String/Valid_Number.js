@@ -26,13 +26,13 @@
 
 var isNumber = function( s ) {
         s = s.toLowerCase();
+        if( s[s.length-1] === "+" ||  s[s.length-1] === "-" || s[s.length-1] === "e"  ) {
+                return false;
+        }
         let is_e_found = false;
         let is_dot_count = 0;
         let is_digit_found = false;
         let is_e_count = 0;
-        if( s[s.length-1] === "+" ||  s[s.length-1] === "-" || s[s.length-1] === "e"  ) {
-                return false;
-        }
         for( let i=0; i<s.length; i++  ) {
                 if( ( s[i] === "+" && i > 0 && s[i-1] != 'e' ) || ( s[i] === "-" && i > 0 && s[i-1] != 'e' ) ) {
                         return false;
@@ -58,15 +58,6 @@ var isNumber = function( s ) {
                 if( s[i] === '.' ) {
                         is_dot_count++;
                         if( is_dot_count > 1 ) {
-                                return false;
-                        }
-                        if( s[i-1] === '.' ) {
-                                return false;
-                        }
-                        if( s[i+1] === '.' ) {
-                                return false;
-                        }
-                        if( i === s.length-1 && s.length === 1 ) {
                                 return false;
                         }
                 }
