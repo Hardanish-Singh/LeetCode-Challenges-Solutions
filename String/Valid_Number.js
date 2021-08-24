@@ -34,7 +34,7 @@ var isNumber = function( s ) {
         let is_digit_found = false;
         let is_e_count = 0;
         for( let i=0; i<s.length; i++  ) {
-                if( ( s[i] === "+" && i > 0 && s[i-1] != 'e' ) || ( s[i] === "-" && i > 0 && s[i-1] != 'e' ) ) {
+                if( ( s[i] === "+" || s[i] === "-" )  && i > 0 && s[i-1] != 'e' ) {
                         return false;
                 }
                 if( s[i] === 'e' ) {
