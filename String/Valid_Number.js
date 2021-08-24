@@ -65,8 +65,5 @@ var isNumber = function( s ) {
                         is_digit_found = true;
                 }
         }
-        if( is_digit_found === false ) {
-                return false;
-        }
-        return true;
+        return is_digit_found ? true : false;
 };
