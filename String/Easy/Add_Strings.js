@@ -9,9 +9,8 @@ var addStrings = function( num1, num2 ) {
                 return addStrings( num2, num1 );
         }
         let count = num2.length;
-        while( count != num1.length ){
+        while( count++ != num1.length ) {
                 num2 = "0" + num2;
-                count++;
         }
         let carry = 0;
         let sum;
