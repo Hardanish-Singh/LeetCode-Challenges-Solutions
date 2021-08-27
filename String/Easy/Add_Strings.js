@@ -17,12 +17,7 @@ var addStrings = function( num1, num2 ) {
         for( let i = num1.length-1; i>=0; i-- ){
                 sum = String( +num1[i] + ( num2[i] ? +num2[i] : 0 ) + carry );
                 answer = String( +sum[sum.length-1] ) + answer;
-                if( sum.length > 1 ) {
-                        carry = +sum[0];
-                } 
-                else {
-                        carry = 0;
-                }
+                sum.length > 1 ? carry = +sum[0] : carry = 0;
         }
         if( carry > 0 ) {
                 answer = carry + answer;
