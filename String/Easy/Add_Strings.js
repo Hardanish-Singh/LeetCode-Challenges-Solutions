@@ -20,16 +20,16 @@ var addStrings = function( num1, num2 ) {
         for( let i=num1.length-1; i>=0; i-- ){
                 sum = String( +num1[i] + ( num2[i] ? +num2[i] : 0 ) + carry);
                 if( sum.length > 1 ) {
-                        answer = answer + String( +sum[1] );
+                        answer = String( +sum[1] ) + answer;
                         carry = +sum[0];
                 } 
                 else {
-                        answer = answer + String( +sum[0] );
+                        answer = String( +sum[0] ) + answer;
                         carry = 0;
                 }
         }
         if( carry > 0 ) {
-                answer += carry;
+                answer = carry + answer;
         }
-        return answer.split("").reverse().join("");
+        return answer;
 };
