@@ -19,8 +19,5 @@ var addStrings = function( num1, num2 ) {
                 answer = String( +sum[sum.length-1] ) + answer;
                 sum.length > 1 ? carry = +sum[0] : carry = 0;
         }
-        if( carry > 0 ) {
-                answer = carry + answer;
-        }
-        return answer;
+        return carry > 0 ? carry + answer : answer;
 };
