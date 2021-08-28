@@ -23,5 +23,21 @@
 */
 
 var multiply = function( num1, num2 ) {
-        
+        let answer = '';
+        for( let i = num1.length-1; i>=0; i-- ) {
+                let carry = product = 0;
+                for( let j = num2.length-1; j>=0; j-- ) {
+                        product = String( ( +num1[i] * +num2[j] ) + carry ) ;
+                        answer = String( +product[product.length-1] ) + answer;
+                        product.length > 1 ? carry = +product[0] : carry = 0 ;
+                        console.log( "Answer", answer, product, carry, +num1[i], +num2[j], +num1[i] * +num2[j] );
+                }
+                if( carry > 0 ) {
+                        answer = carry + answer;
+                }
+                break;
+        }
+        console.log(answer);
 };
+
+multiply( "123", "456" );
