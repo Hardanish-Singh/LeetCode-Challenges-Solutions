@@ -22,22 +22,47 @@
  * @return { string }
 */
 
-var multiply = function( num1, num2 ) {
+var addStrings = function( num1, num2, count ) {
+        for( let i=0; i<count; i++ ){
+                num1 = num1 + "0";
+        }
+        let carry = sum = 0;
         let answer = '';
+        let j = num2.length-1;
+        for( let i = num1.length-1; i>=0; i-- ){
+                sum = String( +num1[i] + ( num2[j] ? +num2[j--] : 0 ) + carry );
+                answer = String( +sum[sum.length-1] ) + answer;
+                sum.length > 1 ? carry = +sum[0] : carry = 0;
+        }
+        return carry > 0 ? carry + answer : answer;
+};
+
+var multiply = function( num1, num2 ) {
+        if( num2.length > num1.length ) {
+                return multiply( num2, num1 );
+        }
+        let count = num2.length;
+        while( count++ !== num1.length ) {
+                num2 = "0" + num2;
+        }
+        let answer = '';
+        let temp = '';
+        let counts = 0;
         for( let i = num1.length-1; i>=0; i-- ) {
                 let carry = product = 0;
                 for( let j = num2.length-1; j>=0; j-- ) {
                         product = String( ( +num1[i] * +num2[j] ) + carry ) ;
                         answer = String( +product[product.length-1] ) + answer;
                         product.length > 1 ? carry = +product[0] : carry = 0 ;
-                        console.log( "Answer", answer, product, carry, +num1[i], +num2[j], +num1[i] * +num2[j] );
                 }
                 if( carry > 0 ) {
                         answer = carry + answer;
                 }
-                break;
+                temp = addStrings( answer, temp, counts );
+                counts++;
+                answer = '';
         }
-        console.log(answer);
+        return temp;
 };
 
-multiply( "123", "456" );
+console.log( multiply( "123", "0" ) );
