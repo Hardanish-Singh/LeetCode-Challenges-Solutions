@@ -40,6 +40,7 @@ var multiply = function( num1, num2 ) {
         if( num2.length < num1.length ) {
                 return multiply( num2, num1 );
         }
+        if( [...new Set(num1.split(""))].join("") === "0" ) return "0";
         let answer = '';
         let temp = '';
         let counts = 0;
@@ -57,13 +58,5 @@ var multiply = function( num1, num2 ) {
                 counts++;
                 answer = '';
         }
-
-        let is_zeros = true;
-        for( let i=0; i<temp.length; i++ ){
-               if( +temp[i] > 0 ) {
-                       is_zeros = false; 
-                       break;
-               } 
-        }
-        return is_zeros ? "0" : temp;
+        return temp;
 };
