@@ -21,7 +21,6 @@
  * @param { string } num2
  * @return { string }
 */
-
 var addStrings = function( num1, num2, count ) {
         for( let i=0; i<count; i++ ){
                 num1 = num1 + "0";
@@ -38,12 +37,8 @@ var addStrings = function( num1, num2, count ) {
 };
 
 var multiply = function( num1, num2 ) {
-        if( num2.length > num1.length ) {
+        if( num2.length < num1.length ) {
                 return multiply( num2, num1 );
-        }
-        let count = num2.length;
-        while( count++ !== num1.length ) {
-                num2 = "0" + num2;
         }
         let answer = '';
         let temp = '';
@@ -62,7 +57,15 @@ var multiply = function( num1, num2 ) {
                 counts++;
                 answer = '';
         }
-        return temp;
+
+        let is_zeros = true;
+        for( let i=0; i<temp.length; i++ ){
+               if( +temp[i] > 0 ) {
+                       is_zeros = false; 
+                       break;
+               } 
+        }
+        return is_zeros ? "0" : temp;
 };
 
 console.log( multiply( "123", "0" ) );
