@@ -67,5 +67,3 @@ var multiply = function( num1, num2 ) {
         }
         return is_zeros ? "0" : temp;
 };
-
-console.log( multiply( "123", "0" ) );
