@@ -21,10 +21,7 @@
  * @param { string } num2
  * @return { string }
 */
-var addStrings = function( num1, num2, count ) {
-        for( let i=0; i<count; i++ ){
-                num1 = num1 + "0";
-        }
+var addStrings = function( num1, num2 ) {
         let carry = sum = 0;
         let answer = '';
         let j = num2.length-1;
@@ -41,11 +38,10 @@ var multiply = function( num1, num2 ) {
                 return multiply( num2, num1 );
         }
         if( [...new Set(num1.split(""))].join("") === "0" ) return "0";
-        let answer = '';
-        let temp = '';
-        let counts = 0;
+        let answer = temp = '';
+        let counts = carry = product = 0;
         for( let i = num1.length-1; i>=0; i-- ) {
-                let carry = product = 0;
+                carry = product = 0;
                 for( let j = num2.length-1; j>=0; j-- ) {
                         product = String( ( +num1[i] * +num2[j] ) + carry ) ;
                         answer = String( +product[product.length-1] ) + answer;
@@ -54,7 +50,10 @@ var multiply = function( num1, num2 ) {
                 if( carry > 0 ) {
                         answer = carry + answer;
                 }
-                temp = addStrings( answer, temp, counts );
+                for( let k=0; k<counts; k++ ){
+                        answer = answer + "0";
+                }
+                temp = addStrings( answer, temp );
                 counts++;
                 answer = '';
         }
