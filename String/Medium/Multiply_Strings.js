@@ -41,7 +41,7 @@ var multiply = function( num1, num2 ) {
                 return "0";
         }
         let answer = temp = '';
-        let counts = carry = product = 0;
+        let carry = product = 0;
         for( let i = num1.length-1; i>=0; i-- ) {
                 carry = product = 0;
                 for( let j = num2.length-1; j>=0; j-- ) {
@@ -52,11 +52,10 @@ var multiply = function( num1, num2 ) {
                 if( carry > 0 ) {
                         answer = carry + answer;
                 }
-                for( let k=0; k<counts; k++ ) {
+                for( let k=num1.length-1; k>i; k-- ) {
                         answer = answer + "0";
                 }
                 temp = addStrings( answer, temp );
-                counts++;
                 answer = '';
         }
         return temp;
