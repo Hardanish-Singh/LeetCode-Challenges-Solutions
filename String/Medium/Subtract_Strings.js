@@ -53,7 +53,7 @@ function subtract( num1, num2 ) {
                 }
           }
           
-        if(answer.startsWith("0") && answer.length>1) {
+        if( answer.startsWith("0") && answer.length>1 ) {
                 answer = answer.replace(/^0+/, '');
         }
         
@@ -76,4 +76,4 @@ function subtract( num1, num2 ) {
 //     console.log(subtract("58608473622772837728372827", "7586374672263726736374"), "58600887248100574001636453");
 //     console.log(subtract("9007199254740991", "9007199254740991"), "0");
 
-// console.log( subtract("111111111111111110", "111111111111111111"), +"111111111111111110", Number("111111111111111111") );
+console.log( subtract("111111111111111110", "111111111111111111") );
