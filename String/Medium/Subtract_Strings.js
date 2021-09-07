@@ -1,5 +1,4 @@
 /*
-
         describe('Some simple subtraction', function() {
                 it('simple', function() {
                         Test.assertEquals(subtract("2", "3"), "-1");
