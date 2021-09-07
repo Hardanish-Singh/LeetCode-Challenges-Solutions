@@ -4,10 +4,6 @@ function subtract( num1, num2 ) {
         num1 = num1.replace( /^0+/ , '' );
         num2 = num2.replace( /^0+/ , '' );
         
-        if( num1 === '' && num2 === '' ) {
-                return '0';
-        }
-
         let a = '';
         if( num1.length < num2.length || (num1.length == num2.length && num2 > num1) ) {
                 a = "-";
