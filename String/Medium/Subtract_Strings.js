@@ -39,16 +39,14 @@ function subtract( num1, num2 ) {
         for( let i = num1.length-1; i>=0; i-- ) {
                 if( flag < +num2[j] ) {
                         difference = String( flag + 10 + carry - ( num2[j] ? +num2[j--] : 0 ) );
-                        answer = String( +difference[difference.length-1] ) + answer;
-                        difference.length > 1 ? carry = +difference[0] : carry = 0;
                         flag = +num1[i-1] - 1;
                 }
                 else {
                         difference = String( flag + carry - ( num2[j] ? +num2[j--] : 0 ) );
-                        answer = String( +difference[difference.length-1] ) + answer;
-                        difference.length > 1 ? carry = +difference[0] : carry = 0;
                         flag = +num1[i-1];
                 }
+                answer = String( +difference[difference.length-1] ) + answer;
+                difference.length > 1 ? carry = +difference[0] : carry = 0;
           }
           
         if( answer.startsWith("0") && answer.length>1 ) {
