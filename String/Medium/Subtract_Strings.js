@@ -1,10 +1,11 @@
 function subtract( num1, num2 ) {
-        if(num1 === num2) {
+        if( num1 === num2 ) {
                 return "0";
         }
 
-        num1 = num1.replace(/^0+/, '');
-        num2 = num2.replace(/^0+/, '');
+        // REMOVE / TRUNCATE LEADING ZERIOS BY REHULAR EXPRESSIONSS
+        num1 = num1.replace( /^0+/ , '' );
+        num2 = num2.replace( /^0+/ , '' );
   
         let a = '';
         let temp;
@@ -17,10 +18,7 @@ function subtract( num1, num2 ) {
           
         if( !( num1.length > num2.length ) ) {
                 for( let i=0; i<num1.length; i++ ){
-                        if( +num1[i] === +num2[i] ) {
-                                continue;
-                        }
-                        else if( +num1[i] > +num2[i] ) {
+                        if( +num1[i] > +num2[i] ) {
                                 break;
                         }
                         else if( +num2[i] > +num1[i] ){
