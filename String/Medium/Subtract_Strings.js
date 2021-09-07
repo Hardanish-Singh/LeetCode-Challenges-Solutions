@@ -50,6 +50,7 @@ function subtract( num1, num2 ) {
           }
           
         if( answer.startsWith("0") && answer.length>1 ) {
+                // REMOVE / TRUNCATE LEADING ZERIOS BY REHULAR EXPRESSIONSS
                 answer = answer.replace(/^0+/, '');
         }
         
