@@ -1,6 +1,6 @@
 function subtract( num1, num2 ) {
         
-        // REMOVE / TRUNCATE LEADING ZERIOS BY REHULAR EXPRESSIONSS
+        // REMOVE / TRUNCATE LEADING ZERIOS BY REGULAR EXPRESSIONSS
         num1 = num1.replace( /^0+/ , '' );
         num2 = num2.replace( /^0+/ , '' );
         
