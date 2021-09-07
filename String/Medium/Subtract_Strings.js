@@ -1,35 +1,18 @@
 function subtract( num1, num2 ) {
-        if( num1 === num2 ) {
-                return "0";
-        }
-
+        
         // REMOVE / TRUNCATE LEADING ZERIOS BY REHULAR EXPRESSIONSS
         num1 = num1.replace( /^0+/ , '' );
         num2 = num2.replace( /^0+/ , '' );
-  
-        let a = '';
-        let temp;
-        if( num2.length > num1.length ) {
-                a = "-";
-                temp = num2;
-                num2 = num1;
-                num1 = temp;
+        
+        if( num1 === '' && num2 === '' ) {
+                return '0';
         }
-          
-        if( !( num1.length > num2.length ) ) {
-                for( let i=0; i<num1.length; i++ ){
-                        if( +num1[i] > +num2[i] ) {
-                                break;
-                        }
-                        else if( +num2[i] > +num1[i] ){
-                                a = "-";
-                                temp = num2;
-                                num2 = num1;
-                                num1 = temp;
-                                break;
-                        }
-                }
-          }
+
+        let a = '';
+        if( num1.length < num2.length || (num1.length == num2.length && num2 > num1) ) {
+                a = "-";
+                [num2, num1] = [num1, num2];
+        }
         
         let carry = difference = 0;
         let j = num2.length-1;
@@ -52,6 +35,10 @@ function subtract( num1, num2 ) {
         if( answer.startsWith("0") && answer.length>1 ) {
                 // REMOVE / TRUNCATE LEADING ZERIOS BY REHULAR EXPRESSIONSS
                 answer = answer.replace(/^0+/, '');
+        }
+
+        if( answer === '' ) {
+                return '0';
         }
         
         return a + answer;
