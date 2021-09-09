@@ -66,7 +66,7 @@ var fullJustify = function( str, len ) {
                                 temp += str[k]+" ";
                         }
                         temp = temp.trim();
-                         sc = temp.length;
+                        sc = temp.length;
                         let c = len - sc;
                         for( let k=0; k<c; k++ ) temp += " ";
                         output.push(temp);
