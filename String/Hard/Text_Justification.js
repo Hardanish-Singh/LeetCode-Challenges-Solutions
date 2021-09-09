@@ -22,6 +22,7 @@ var fullJustify = function( str, len ) {
                                 let g;
                                 if( j < str[i].length-1 ) {
                                         g = i;
+                                        i = i-1;
                                 } 
                                 else {
                                         g = i+1;
@@ -43,9 +44,6 @@ var fullJustify = function( str, len ) {
                                         temp += str[k];
                                         if( arr[CC] ) for( let p=0; p<arr[CC]; p++ ) temp += " ";
                                         CC++;
-                                }
-                                if( j < str[i].length-1 ) {
-                                        i = i-1;
                                 }
                                 
                                 initial = g;
