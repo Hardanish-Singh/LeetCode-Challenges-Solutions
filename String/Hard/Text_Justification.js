@@ -1,18 +1,15 @@
 function makeGreedyApproachSpaces(positions, c){
-        let arr = new Array(positions);
-        for( let l=0; l<arr.length; l++ ){
-                arr[l]=0;
-        }
+        let greedySpaces = new Array(positions).fill(0);;
         let I = 0;
         while( c > 0 ) {
-                arr[I] = arr[I] + 1;
+                greedySpaces[I] = greedySpaces[I] + 1;
                 I++;
                 if( I == positions ) {
                         I = 0;
                 }
                 c--;
         }
-        return arr;
+        return greedySpaces;
 }
 
 var fullJustify = function( str, len ) {
