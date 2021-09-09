@@ -1,3 +1,20 @@
+function makeGreedyApproachSpaces(positions, c){
+        let arr = new Array(positions);
+        for( let l=0; l<arr.length; l++ ){
+                arr[l]=0;
+        }
+        let I = 0;
+        while( c > 0 ) {
+                arr[I] = arr[I] + 1;
+                I++;
+                if( I == positions ) {
+                        I = 0;
+                }
+                c--;
+        }
+        return arr;
+}
+
 var fullJustify = function( str, len ) {
         let word_count = 0;
         let temp = '';
@@ -26,20 +43,7 @@ var fullJustify = function( str, len ) {
                                         positions--;
                                 }
                                 
-                                let arr = new Array(positions);
-                                for( let l=0; l<arr.length; l++ ){
-                                        arr[l]=0;
-                                }
-                                let c = len - sc;
-                                let I = 0;
-                                while( c > 0 ) {
-                                        arr[I] = arr[I] + 1;
-                                        I++;
-                                        if( I == positions ) {
-                                                I = 0;
-                                        }
-                                        c--;
-                                }
+                                let arr = makeGreedyApproachSpaces(positions, len - sc);
                                 
                                 let CC = 0;
                                 if( j < str[i].length-1 ) {
@@ -85,21 +89,12 @@ var fullJustify = function( str, len ) {
                                 sc += str[k].length;
                                 positions++;
                         }
-                        if(positions > 1) positions--;
-                        let arr = new Array(positions);
-                        for( let l=0; l<arr.length; l++ ){
-                                arr[l]=0;
+                        if(positions > 1) {
+                                positions--;
                         }
-                        let c = len - sc;
-                        let I = 0;
-                        while( c > 0 ) {
-                                arr[I] = arr[I] + 1;
-                                I++;
-                                if( I == positions ) {
-                                        I = 0;
-                                }
-                                c--;
-                        }
+
+                        let arr = makeGreedyApproachSpaces(positions, len - sc);
+                        
                         let CC = 0;
                         for( let k = initial; k<=i; k++ ) {
                                 temp += str[k];
