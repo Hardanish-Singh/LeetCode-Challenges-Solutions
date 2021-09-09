@@ -66,6 +66,7 @@ var fullJustify = function( str, len ) {
                                 break;
                         }
                 }
+                word_count++;
                 if( i === str.length-1 && word_count > 0) {
                         sc = 0;
                         for( let k = initial; k<=str.length-1; k++ ) {
@@ -77,8 +78,7 @@ var fullJustify = function( str, len ) {
                         for( let k=0; k<c; k++ ) temp += " ";
                         output.push(temp);
                 }
-                word_count++;
-                if(word_count===len && !( i === str.length-1 && word_count > 0 ) ) {
+                else if(word_count===len ) {
                         sc=0;
                         let positions = 0;
                         for( let k = initial; k<=i; k++ ) {
