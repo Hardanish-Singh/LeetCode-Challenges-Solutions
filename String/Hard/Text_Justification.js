@@ -54,12 +54,10 @@ var fullJustify = function( str, len ) {
                 if( i === str.length-1 && word_count > 0) {
                         sc = 0;
                         for( let k = initial; k<=str.length-1; k++ ) {
-                                temp += str[k]+" ";
+                                if( k != str.length ) temp += str[k]+" ";
                         }
-                        temp = temp.trim();
                         sc = temp.length;
-                        let c = len - sc;
-                        for( let k=0; k<c; k++ ) temp += " ";
+                        for( let k=0; k<len - sc; k++ ) temp += " ";
                         output.push(temp);
                 }
                 else if(word_count===len ) {
