@@ -9,17 +9,17 @@ var fullJustify = function( str, len ) {
                         word_count++;
                         if( word_count >= len ) {
                                 let positions = 0;
+                                let g;
                                 if( j < str[i].length-1 ) {
-                                        for( let k = initial; k<=i-1; k++ ) {
-                                                sc += str[k].length;
-                                                positions++;
-                                        }
+                                        g = i;
                                 } 
                                 else {
-                                        for( let k = initial; k<=i; k++ ) {
-                                                sc += str[k].length;
-                                                positions++;
-                                        }
+                                        g=i+1;
+                                }
+
+                                for( let k = initial; k<g; k++ ) {
+                                        sc += str[k].length;
+                                        positions++;
                                 }
 
                                 if(positions > 1) positions--;
