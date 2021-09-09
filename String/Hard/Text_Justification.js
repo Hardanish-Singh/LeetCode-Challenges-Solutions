@@ -1,13 +1,9 @@
 function makeGreedyApproachSpaces(positions, c){
         let greedySpaces = new Array(positions).fill(0);;
         let I = 0;
-        while( c > 0 ) {
-                greedySpaces[I] = greedySpaces[I] + 1;
-                I++;
-                if( I == positions ) {
-                        I = 0;
-                }
-                c--;
+        while( c-- > 0 ) {
+                greedySpaces[I] = greedySpaces[I++] + 1;
+                I === positions ? I = 0 : null; 
         }
         return greedySpaces;
 }
@@ -43,23 +39,16 @@ var fullJustify = function( str, len ) {
                                 let arr = makeGreedyApproachSpaces(positions, len - sc);
                                 
                                 let CC = 0;
+                                for( let k = initial; k<g; k++ ) {
+                                        temp += str[k];
+                                        if( arr[CC] ) for( let p=0; p<arr[CC]; p++ ) temp += " ";
+                                        CC++;
+                                }
                                 if( j < str[i].length-1 ) {
-                                        for( let k = initial; k<=i-1; k++ ) {
-                                                temp += str[k];
-                                                if( arr[CC] ) for( let p=0; p<arr[CC]; p++ ) temp += " ";
-                                                CC++;
-                                        }
-                                        initial = i;
                                         i = i-1;
                                 }
-                                else{
-                                        for( let k = initial; k<=i; k++ ) {
-                                                temp += str[k];
-                                                if( arr[CC] ) for( let p=0; p<arr[CC]; p++ ) temp += " ";
-                                                CC++;
-                                        }
-                                        initial = i+1;   
-                                }
+                                
+                                initial = g;
                                 sc = 0;
                                 output.push(temp);
                                 temp = '';
