@@ -30,12 +30,8 @@ var fullJustify = function( str, len ) {
                         word_count++;
                         if( word_count >= len ) {
                                 let g;
-                                if( j < str[i].length-1 ) {
-                                        g = i--;
-                                } 
-                                else {
-                                        g = i+1;
-                                }
+
+                                j < str[i].length-1 ? g = i-- : g = i+1;
 
                                 for( let k = initial; k<g; k++ ) {
                                         sc += str[k].length;
@@ -73,7 +69,7 @@ var fullJustify = function( str, len ) {
                                 sc += str[k].length;
                                 positions++;
                         }
-                        
+
                         positions > 1 ? positions-- : null;
 
                         let arr = makeGreedyApproachSpaces(positions, len - sc);
