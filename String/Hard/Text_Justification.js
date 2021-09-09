@@ -20,10 +20,8 @@ function makeGreedyString(initial, g, arr, str){
 }
 
 var fullJustify = function( str, len ) {
-        let word_count = 0;
+        let sc = positions = word_count = initial = 0;
         let temp = '';
-        let initial = 0;
-        let sc = positions = 0;
         let output = [];
         for( let i=0; i<str.length; i++ ) {
                 for( let j=0; j<str[i].length; j++ ) {
