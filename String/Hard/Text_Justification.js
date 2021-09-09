@@ -14,7 +14,7 @@ var fullJustify = function( str, len ) {
                                         g = i;
                                 } 
                                 else {
-                                        g=i+1;
+                                        g = i+1;
                                 }
 
                                 for( let k = initial; k<g; k++ ) {
@@ -22,7 +22,9 @@ var fullJustify = function( str, len ) {
                                         positions++;
                                 }
 
-                                if(positions > 1) positions--;
+                                if(positions > 1) {
+                                        positions--;
+                                }
                                 let arr = new Array(positions);
                                 for( let l=0; l<arr.length; l++ ){
                                         arr[l]=0;
