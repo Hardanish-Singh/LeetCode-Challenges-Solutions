@@ -70,7 +70,6 @@ var fullJustify = function( str, len ) {
                         sc = 0;
                         for( let k = initial; k<=str.length-1; k++ ) {
                                 temp += str[k]+" ";
-                                //sc += str[k].length;
                         }
                         temp = temp.trim();
                          sc = temp.length;
@@ -96,7 +95,9 @@ var fullJustify = function( str, len ) {
                         while( c > 0 ) {
                                 arr[I] = arr[I] + 1;
                                 I++;
-                                if( I == positions ) I = 0;
+                                if( I == positions ) {
+                                        I = 0;
+                                }
                                 c--;
                         }
                         let CC = 0;
