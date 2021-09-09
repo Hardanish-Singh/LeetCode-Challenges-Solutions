@@ -8,6 +8,17 @@ function makeGreedyApproachSpaces(positions, c){
         return greedySpaces;
 }
 
+function makeGreedyString(initial, g, arr, str){
+        let CC = 0;
+        let temp = '';
+        for( let k = initial; k<g; k++ ) {
+                temp += str[k];
+                if( arr[CC] ) for( let p=0; p<arr[CC]; p++ ) temp += " ";
+                CC++;
+        }
+        return temp;
+}
+
 var fullJustify = function( str, len ) {
         let word_count = 0;
         let temp = '';
@@ -21,8 +32,7 @@ var fullJustify = function( str, len ) {
                                 let positions = 0;
                                 let g;
                                 if( j < str[i].length-1 ) {
-                                        g = i;
-                                        i = i-1;
+                                        g = i--;
                                 } 
                                 else {
                                         g = i+1;
@@ -39,12 +49,7 @@ var fullJustify = function( str, len ) {
                                 
                                 let arr = makeGreedyApproachSpaces(positions, len - sc);
                                 
-                                let CC = 0;
-                                for( let k = initial; k<g; k++ ) {
-                                        temp += str[k];
-                                        if( arr[CC] ) for( let p=0; p<arr[CC]; p++ ) temp += " ";
-                                        CC++;
-                                }
+                                let temp = makeGreedyString(initial, g, arr, str);
                                 
                                 initial = g;
                                 sc = 0;
@@ -79,12 +84,8 @@ var fullJustify = function( str, len ) {
 
                         let arr = makeGreedyApproachSpaces(positions, len - sc);
                         
-                        let CC = 0;
-                        for( let k = initial; k<=i; k++ ) {
-                                temp += str[k];
-                                if( arr[CC] ) for( let p=0; p<arr[CC]; p++ ) temp += " ";
-                                CC++;
-                        }
+                        let temp = makeGreedyString(initial, i+1, arr, str);
+
                         initial = i+1;
                         sc = 0;
                         output.push(temp);
