@@ -10,7 +10,6 @@
         while( leftPointer <= rightPointer ) {
                 if( str[leftPointer] !== str[rightPointer] ) {
                         return false;
-                        break;
                 }
                 leftPointer++;
                 rightPointer--;
