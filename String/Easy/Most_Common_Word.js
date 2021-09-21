@@ -16,7 +16,9 @@ var mostCommonWord = function( paragraph, banned ) {
                         }
                 }
                 else {
-                        new_paragraph.push(temp);
+                        if( temp.length > 0 ) {
+                                new_paragraph.push(temp);
+                        }
                         temp = '';
                 }
         }
@@ -36,7 +38,7 @@ var mostCommonWord = function( paragraph, banned ) {
                 if( isBackward ) {
                         continue;
                 } 
-                if( banned.includes( new_paragraph[i] ) || new_paragraph[i] == "" ) {
+                if( banned.includes( new_paragraph[i] ) ) {
                         continue;
                 }
                 else {
