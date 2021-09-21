@@ -25,7 +25,7 @@ var intersection = function( nums1, nums2 ) {
                         if( nums1[i] === nums2[j] && !( intersection_of_arrays.includes( nums1[i] ) ) ) {
                                 intersection_of_arrays.push(nums1[i]);
                         }
-                        else if( nums1[i] < nums2[j] ){
+                        else if( nums1[i] < nums2[j] ) {
                                 break;
                         }
                 }
