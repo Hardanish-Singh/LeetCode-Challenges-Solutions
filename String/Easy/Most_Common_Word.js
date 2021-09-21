@@ -41,18 +41,16 @@ var mostCommonWord = function( paragraph, banned ) {
                 if( isBackward ) {
                         continue;
                 }
-                else {
-                        for( let j=i+1; j<new_paragraph.length; j++ ) {
-                                if( new_paragraph[j] == new_paragraph[i] ) {
-                                        count++;
-                                }
+                for( let j=i+1; j<new_paragraph.length; j++ ) {
+                        if( new_paragraph[j] == new_paragraph[i] ) {
+                                count++;
                         }
-                        if( count >= t ) {
-                                t = count;
-                                max = i;
-                        }
-                        count = 1;
                 }
+                if( count >= t ) {
+                        t = count;
+                        max = i;
+                }
+                count = 1;
         }
         return new_paragraph[max];
 };
