@@ -10,14 +10,14 @@ var mostCommonWord = function( paragraph, banned ) {
         for( let i=0; i<paragraph.length; i++ ){
                 if( paragraph[i] >= 'a' && paragraph[i] <= 'z' ) {
                         temp += paragraph[i];
+                        if( i === paragraph.length-1 ) {
+                                new_paragraph.push(temp);
+                        }
                 }
                 else {
                         new_paragraph.push(temp);
                         temp = '';
                 }
-        }
-        if( temp.length > 0 ) {
-                new_paragraph.push(temp);
         }
         
         let count = 1;
