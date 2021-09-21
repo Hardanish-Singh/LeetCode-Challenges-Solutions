@@ -7,6 +7,7 @@ var mostCommonWord = function( paragraph, banned ) {
         paragraph = paragraph.toLowerCase();
         let new_paragraph = [];
         let temp = "";
+        
         for( let i=0; i<paragraph.length; i++ ){
                 if( paragraph[i] >= 'a' && paragraph[i] <= 'z' ) {
                         temp += paragraph[i];
