@@ -28,6 +28,9 @@ var mostCommonWord = function( paragraph, banned ) {
         let t = 0;
         let isBackward = false;
         for( let i=0; i<new_paragraph.length; i++ ) {
+                if( banned.includes( new_paragraph[i] ) ) {
+                        continue;
+                }
                 isBackward = false;
                 for( let b=0; b<i; b++ ) {
                         if( new_paragraph[i] === new_paragraph[b] ) {
@@ -36,9 +39,6 @@ var mostCommonWord = function( paragraph, banned ) {
                         }
                 }
                 if( isBackward ) {
-                        continue;
-                } 
-                if( banned.includes( new_paragraph[i] ) ) {
                         continue;
                 }
                 else {
