@@ -16,15 +16,13 @@
         // }
         // return power;
         
-        // let ans = 1;
-        // let current_product = x;
-        // for (let i = Math.abs(n); i > 0; i = parseInt(i/2) ) {
-        //   if (i%2 == 1) {
-        //     ans = ans * current_product;
-        //   }
-        //   current_product = current_product * current_product;
-        // }
-        // return  n < 0 ? 1/ans:ans;
-
-        
+        let power = 1;
+        let product = x;
+        for( let i=Math.abs(n); i>0; i = parseInt( i/2 ) ){
+                if( i%2 !== 0 ) {
+                        power = power * product;
+                }
+                product = product * product;
+        }
+        return n < 0 ? 1/power : power;
 };
