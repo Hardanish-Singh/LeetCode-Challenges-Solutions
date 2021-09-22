@@ -4,17 +4,21 @@
  * @return {number}
 */
 
+// SOLUTION 1
+var myPow = function(x, n) {
+        let power = 1;
+        if( n < 0 ) {
+                x = 1/x;
+                n = -n;
+        }
+        for( let i=1; i<=n; i++ ) {
+                power *= x;
+        }
+        return power;
+};
 
- var myPow = function(x, n) {
-        // let power = 1;
-        // if( n < 0 ) {
-        //         x = 1/x;
-        //         n = -n;
-        // }
-        // for( let i=1; i<=n; i++ ) {
-        //         power *= x;
-        // }
-        // return power;
+// SOLUTION 2
+var myPow = function(x, n) {
         
         let power = 1;
         let product = x;
