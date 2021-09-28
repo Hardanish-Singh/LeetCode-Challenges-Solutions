@@ -28,44 +28,12 @@ var rotate = function( matrix ) {
                         temp = [];
                 }
         }
-        return rotate_image;
+
+        for( let i=0; i<rotate_image.length; i++ ){
+                for( let j=0; j<rotate_image[i].length; j++ ){
+                        matrix[i][j] = rotate_image[i][j];
+                }
+        }
+
+        return matrix;
 };
-
-// var rotate = function( matrix ) {
-//         // if( ( matrix.length - 1 ) % 2 === 0 ) {
-//         //         console.log( matrix.length/2, matrix.length/2 );
-//         // }
-//         let i = matrix.length - 1;
-//         let j = 0;
-//         let firstCycle = true;
-//         let firstCycleCount = 0;
-//         let count = 1;
-//         while( true ) {
-//                 if( firstCycle ) {
-//                         if( count == 1 ) {
-//                                 console.log( i, j );
-//                         }
-//                         else if( count == 2 ) {
-//                                 console.log( firstCycleCount, firstCycleCount );
-//                         }
-//                         else if( count == 3 ) {
-//                                 console.log( firstCycleCount, i );
-//                         }
-//                         else if( count == 4 ){
-//                                 console.log( i, i );
-//                         }
-//                         count++;
-//                 } 
-//                 else {
-//                         // i = i -1;
-//                         // firstCycleCount++;
-//                 }
-//                 if( count == 5 ) {
-//                         count = 1;
-//                         firstCycle = false;
-//                         break;
-//                 }
-//         }
-// }
-
-// console.log( rotate( [ [5, 1, 9, 11], [2, 4, 8, 10], [13, 3, 6, 7], [15, 14, 12, 16] ] ) ) ;
