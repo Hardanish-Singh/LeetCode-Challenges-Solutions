@@ -30,9 +30,7 @@ var rotate = function( matrix ) {
         }
 
         for( let i=0; i<rotate_image.length; i++ ){
-                for( let j=0; j<rotate_image[i].length; j++ ){
-                        matrix[i][j] = rotate_image[i][j];
-                }
+                matrix[i] = rotate_image[i];
         }
 
         return matrix;
