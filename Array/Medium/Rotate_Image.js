@@ -32,10 +32,7 @@ var rotate = function( matrix ) {
         let count = 0;
         let temp = [];
         
-        while( true ) {
-                if( i == 0 && j == matrix.length ) {
-                        break;
-                }
+        while( ! ( i == 0 && j == matrix.length ) ) {
                 temp.push( matrix[i][j] );
                 count++;
                 i--;
@@ -48,7 +45,7 @@ var rotate = function( matrix ) {
                 }
         }
 
-        for( let i=0; i<rotate_image.length; i++ ){
+        for( let i=0; i<rotate_image.length; i++ ) {
                 matrix[i] = rotate_image[i];
         }
 
