@@ -56,6 +56,7 @@ var rotate = function( matrix ) {
         SOLUTION 2: Reverse on Diagonal and then Reverse Left to Right
 */
 var rotate = function( matrix ) {
+        // Take Matrix Transpose
         for( let i=0; i<matrix.length; i++ ){
                 for( let j=0; j<matrix[i].length; j++ ){
                         if( j > i ) {
@@ -65,6 +66,7 @@ var rotate = function( matrix ) {
                         }
                 }
         }
+        // Reverse Each Matrix Index
         for( let i=0; i<matrix.length; i++ ){
                 let leftPointer = i;
                 let rightPointer = 0;
