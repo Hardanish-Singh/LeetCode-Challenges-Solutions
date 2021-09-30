@@ -19,7 +19,7 @@ var merge = function( nums1, m, nums2, n ) {
         }
         
         sorted_array.sort( ( num1, num2 ) => num1 - num2 );
-        for( let i=0; i<sorted_array.length; i++ ){
+        for( let i=0; i<sorted_array.length; i++ ) {
                 nums1[i] = sorted_array[i];
         }
         
