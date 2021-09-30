@@ -37,7 +37,7 @@ var rotate = function( matrix ) {
 };
 
 /*
-        SOLUTION 2
+        SOLUTION 2: Reverse on Diagonal and then Reverse Left to Right
 */
 var rotate = function( matrix ) {
         for( let i=0; i<matrix.length; i++ ){
