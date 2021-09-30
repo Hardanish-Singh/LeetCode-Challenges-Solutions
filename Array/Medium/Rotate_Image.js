@@ -57,8 +57,8 @@ var rotate = function( matrix ) {
 */
 var rotate = function( matrix ) {
         // Take Matrix Transpose
-        for( let i=0; i<matrix.length; i++ ){
-                for( let j=0; j<matrix[i].length; j++ ){
+        for( let i=0; i<matrix.length; i++ ) {
+                for( let j=0; j<matrix[i].length; j++ ) {
                         if( j > i ) {
                                 let temp = matrix[i][j];
                                 matrix[i][j] = matrix[j][i];
@@ -67,7 +67,7 @@ var rotate = function( matrix ) {
                 }
         }
         // Reverse Each Matrix Index
-        for( let i=0; i<matrix.length; i++ ){
+        for( let i=0; i<matrix.length; i++ ) {
                 let leftPointer = i;
                 let rightPointer = 0;
                 let count = matrix[i].length - 1;
