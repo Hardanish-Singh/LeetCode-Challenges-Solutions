@@ -1,7 +1,7 @@
 /*
- * @param {number} x
- * @param {number} n
- * @return {number}
+ * @param { number } x
+ * @param { number } n
+ * @return { number }
 */
 
 /*
