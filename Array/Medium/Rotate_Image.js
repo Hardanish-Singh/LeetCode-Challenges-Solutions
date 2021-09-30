@@ -27,7 +27,7 @@
 */
 var rotate = function( matrix ) {
         let rotate_image = [];
-        let i = matrix.length-1;
+        let i = matrix.length - 1;
         let j = 0;
         let count = 0;
         let temp = [];
@@ -40,7 +40,7 @@ var rotate = function( matrix ) {
                         count = 0;
                         j++;
                         i = matrix.length - 1;
-                        rotate_image.push(temp);
+                        rotate_image.push( temp );
                         temp = [];
                 }
         }
@@ -70,7 +70,7 @@ var rotate = function( matrix ) {
                 let rightPointer = 0;
                 let count = matrix[i].length - 1;
                 let c = 0;
-                while( c != parseInt(matrix[i].length/2) ) {
+                while( c != parseInt( matrix[i].length/2 ) ) {
                         let temp = matrix[leftPointer][rightPointer];
                         matrix[leftPointer][rightPointer] = matrix[leftPointer][count];
                         matrix[leftPointer][count] = temp;
