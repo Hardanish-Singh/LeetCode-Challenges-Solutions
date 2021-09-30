@@ -20,6 +20,13 @@
                 Explanation: The arrays we are merging are [] and [1].
                 The result of the merge is [1].
         Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
+
+        Constraints:
+                1) nums1.length == m + n
+                2) nums2.length == n
+                3) 0 <= m, n <= 200
+                4) 1 <= m + n <= 200
+                5) -10^9 <= nums1[i], nums2[j] <= 10^9
 */
 
 /*
