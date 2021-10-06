@@ -32,8 +32,8 @@ import java.util.HashMap;
 
 class Node
 {
-        int key;
-        int value;
+        private int key;
+        private int value;
         Node next;
         Node previous;
         
@@ -41,6 +41,16 @@ class Node
         {
                 this.key = key;
                 this.value = value;
+        }
+        
+        public int getKey() 
+        {
+                return key;
+        }
+        
+        public int getValue() 
+        {
+                return value;
         }
 }
 
@@ -75,7 +85,7 @@ class LRUCache
                         Node node = map.get( key );
                         delete( node );
                         insert( node );
-                        return node.value;
+                        return node.getValue();
                 }
                 else
                 {
@@ -94,7 +104,7 @@ class LRUCache
                 if( map.size() == capacity )
                 {
                         // Remove the Node before Tail Node from the Doubly Linked List
-                        Node node = map.get( tail.previous.key );
+                        Node node = map.get( tail.previous.getKey() );
                         delete( node );
                 }
                 Node node = new Node( key, value );
@@ -104,7 +114,7 @@ class LRUCache
         public void insert( Node node )
         {
                 // Add the key in HashMap
-                map.put( node.key, node );
+                map.put( node.getKey(), node );
                 // Add the node at the first position always
                 node.next = head.next;
                 node.next.previous = node;
@@ -115,7 +125,7 @@ class LRUCache
         public void delete( Node node )
         {
                 // Remove the key from the HashMap
-                map.remove( node.key );
+                map.remove( node.getKey() );
                 // Remove the node from the Doubly Linked List
                 node.previous.next = node.next;
                 node.next.previous = node.previous;
