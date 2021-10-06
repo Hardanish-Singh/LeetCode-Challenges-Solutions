@@ -28,7 +28,6 @@
                 lRUCache.get(4);    // return 4
 */
 
-
 import java.util.HashMap;
 
 class Node
@@ -36,44 +35,45 @@ class Node
         int key;
         int value;
         Node next;
-        Node prev;
+        Node previous;
         
-        Node( int key, int value )
+        public Node( int key, int value )
         {
                 this.key = key;
                 this.value = value;
         }
-
 }
 
 class LRUCache 
 {
-
-        int capacity = 0;
+        
+        int capacity;
         Node head = null;
         Node tail = null;
+        //HashMap is a key-value pair of Keys as "Key Number" & Value as "Node Address"
         HashMap<Integer, Node> map = null;
-
+        
         public LRUCache( int capacity ) 
         {
+                // Initialize Capacity
                 this.capacity = capacity;
-                
+                // Initialize Doubly Linked List
                 head = new Node( 0, 0 );
                 tail = new Node( 0, 0 );
                 head.next = tail;
-                tail.prev = head;
-                head.prev = null;
+                tail.previous = head;
+                head.previous = null;
                 tail.next = null;
-                
+                // Initialize HashMap
                 map = new HashMap<Integer, Node>();
         }
 
         public int get( int key ) 
         {
-                if( map.containsKey( key ) ) 
+                if( map.containsKey( key ) )
                 {
                         Node node = map.get( key );
-                        delete(node);
+                        delete( node );
                         insert( node );
                         return node.value;
                 }
@@ -82,46 +82,43 @@ class LRUCache
                         return -1;
                 }
         }
-        /*
-                Update the value of the key if the key exists. 
-                Otherwise, add the key-value pair to the cache
-        */
+
         public void put( int key, int value ) 
         {
                 if( map.containsKey( key ) )
                 {
+                        // Remove the Node from the Doubly Linked List
                         Node node = map.get( key );
-                        delete(node);
+                        delete( node );
                 }
                 if( map.size() == capacity )
                 {
-                       Node node = map.get(tail.prev.key);
-                       delete(node);
+                        // Remove the Node before Tail Node from the Doubly Linked List
+                        Node node = map.get( tail.previous.key );
+                        delete( node );
                 }
                 Node node = new Node( key, value );
                 insert( node );
         }
-
+        
         public void insert( Node node )
         {
-                //INSERT TO KEY & NODE TO HASHMAP
+                // Add the key in HashMap
                 map.put( node.key, node );
-
-                //INSERT THE NODE AT THE FRONT OF DOUBLY LINKED LIST
+                // Add the node at the first position always
                 node.next = head.next;
-                node.next.prev = node;
-                
+                node.next.previous = node;
                 head.next = node;
-                node.prev = head;
+                node.previous = head;
         }
 
         public void delete( Node node )
         {
-                //REMOVE THE KEY & NODE FROM HASHMAP 
-                map.remove(node.key);
-                //REMOVE THE NODE IN THE DOUBLY LINKED LIST
-                node.prev.next = node.next;
-                node.next.prev = node.prev; 
+                // Remove the key from the HashMap
+                map.remove( node.key );
+                // Remove the node from the Doubly Linked List
+                node.previous.next = node.next;
+                node.next.previous = node.previous;
         }
 
 }
