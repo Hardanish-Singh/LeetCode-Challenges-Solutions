@@ -34,8 +34,8 @@ class Node
 {
         private int key;
         private int value;
-        Node next;
-        Node previous;
+        private Node next;
+        private Node previous;
         
         public Node( int key, int value )
         {
@@ -51,6 +51,36 @@ class Node
         public int getValue() 
         {
                 return value;
+        }
+        
+        public void setNextNode( Node next )
+        {
+                this.next = next;
+        }
+        
+        public void setPreviousNode( Node previous )
+        {
+                this.previous = previous;
+        }
+        
+        public void setNextAndPreviousNode( Node node )
+        {
+                this.next.previous = node;
+        }
+        
+        public void setPreviousAndNextNode( Node node )
+        {
+                this.previous.next = node;
+        }
+        
+        public Node getNextNode()
+        {
+                return next;
+        }
+        
+        public Node getPreviousNode()
+        {
+                return previous;
         }
 }
 
@@ -70,10 +100,10 @@ class LRUCache
                 // Initialize Doubly Linked List
                 head = new Node( 0, 0 );
                 tail = new Node( 0, 0 );
-                head.next = tail;
-                tail.previous = head;
-                head.previous = null;
-                tail.next = null;
+                head.setNextNode( tail );
+                tail.setPreviousNode( head );
+                head.setPreviousNode( null );
+                tail.setNextNode( null );
                 // Initialize HashMap
                 map = new HashMap<Integer, Node>();
         }
@@ -104,7 +134,7 @@ class LRUCache
                 if( map.size() == capacity )
                 {
                         // Remove the Node before Tail Node from the Doubly Linked List
-                        Node node = map.get( tail.previous.getKey() );
+                        Node node = map.get( tail.getPreviousNode().getKey() );
                         delete( node );
                 }
                 Node node = new Node( key, value );
@@ -116,10 +146,10 @@ class LRUCache
                 // Add the key in HashMap
                 map.put( node.getKey(), node );
                 // Add the node at the first position always
-                node.next = head.next;
-                node.next.previous = node;
-                head.next = node;
-                node.previous = head;
+                node.setNextNode( head.getNextNode() );
+                node.setNextAndPreviousNode( node );
+                head.setNextNode( node );
+                node.setPreviousNode( head );
         }
 
         public void delete( Node node )
@@ -127,8 +157,8 @@ class LRUCache
                 // Remove the key from the HashMap
                 map.remove( node.getKey() );
                 // Remove the node from the Doubly Linked List
-                node.previous.next = node.next;
-                node.next.previous = node.previous;
+                node.setPreviousAndNextNode( node.getNextNode() );
+                node.setNextAndPreviousNode( node.getPreviousNode() );
         }
 
 }
