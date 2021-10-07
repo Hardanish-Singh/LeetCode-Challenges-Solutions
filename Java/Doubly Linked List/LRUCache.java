@@ -26,6 +26,11 @@
                 obj.get(4);    // return 4 & cache is { 4=4, 3=3 }
 */
 
+/*
+         THIS SOLUTION USES HASHMAP & DOUBLY LINKED LIST FOR ITS IMPLEMENTATION
+                1) HASHMAP for O(1) get operation
+                2) DOUBLY LINKED LIST FOR O(1) put operation
+*/
 import java.util.HashMap;
 
 class Node
