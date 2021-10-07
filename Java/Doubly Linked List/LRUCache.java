@@ -85,11 +85,11 @@ class Node
 class LRUCache 
 {
         
-        int capacity;
-        Node head = null;
-        Node tail = null;
+        private int capacity;
+        private Node head = null;
+        private Node tail = null;
         //HashMap is a key-value pair of Keys as "Key Number" & Value as "Node Address"
-        HashMap<Integer, Node> map = null;
+        private HashMap<Integer, Node> map = null;
         
         public LRUCache( int capacity ) 
         {
