@@ -1,41 +1,37 @@
 function is_visited( grid, i, j ) {
         if( grid[i][j] === '1' ) {
+                // MARK THE POSITION AS VISITED
                 grid[i][j] = '2';
                 return i + "," + j;
-        } 
-        return;
+        }
 }
 
 function moveLeft( grid, i, j ) {
         j--;
-        if( j < 0 ) {
-                return;
+        if( j >= 0 ) {
+                return is_visited( grid, i, j );
         }
-        return is_visited( grid, i, j );
 }
 
 function moveTop( grid, i, j ) {
         i--;
-        if( i < 0 ) {
-                return;
+        if( i >= 0 ) {
+                return is_visited( grid, i, j );
         }
-        return is_visited( grid, i, j );
 }
 
 function moveRight( grid, i, j ) {
         j++;
-        if( j > grid[i].length-1 ) {
-                return;
+        if( j <= grid[i].length-1 ) {
+                return is_visited( grid, i, j );
         }
-        return is_visited( grid, i, j );
 }
 
 function moveDown( grid, i, j ) {
         i++;
-        if( i > grid.length-1 ) {
-                return;
+        if( i <= grid.length-1 ) {
+                return is_visited( grid, i, j );
         }
-        return is_visited( grid, i, j );
 }
 
 function move_in_all_four_directions( grid, i, j, queue ) {
