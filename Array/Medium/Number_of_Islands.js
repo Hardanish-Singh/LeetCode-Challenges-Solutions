@@ -1,22 +1,12 @@
-function is_visited( grid, i, j ) {
-        return grid[i][j] === '1' ? ( grid[i][j] = '2', (i + "," + j) ) : null;
-}
+const is_visited = ( grid, i, j ) => grid[i][j] === '1' ? ( grid[i][j] = '2', (i + "," + j) ) : null;
 
-function move_left( grid, i, j ) {
-        return --j >= 00 ? is_visited( grid, i, j ) : null;
-}
+const move_left = ( grid, i, j ) => --j >= 00 ? is_visited( grid, i, j ) : null;
 
-function move_top( grid, i, j ) {
-        return --i >= 0 ? is_visited( grid, i, j ) : null;
-}
+const move_top = ( grid, i, j ) => --i >= 0 ? is_visited( grid, i, j ) : null;
 
-function move_right( grid, i, j ) {
-        return ++j <= grid[i].length-1 ? is_visited( grid, i, j ) : null;
-}
+const move_right = ( grid, i, j ) => ++j <= grid[i].length-1 ? is_visited( grid, i, j ) : null;
 
-function move_down( grid, i, j ) {
-        return ++i <= grid.length-1 ? is_visited( grid, i, j ) : null;
-}
+const move_down = ( grid, i, j ) => ++i <= grid.length-1 ? is_visited( grid, i, j ) : null;
 
 function move_in_all_four_directions( grid, i, j, queue ) {
         let position = "";
