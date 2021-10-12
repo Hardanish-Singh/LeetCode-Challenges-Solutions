@@ -83,8 +83,7 @@ function move_in_all_four_directions( grid, i, j, queue ) {
 function perform_enqueue_dequeue_operation( queue, grid ) {
         while( queue.length != 0 ) {
                 let positions = queue[0].split(",");
-                let i = positions[0];
-                let j = positions[1];
+                [i, j] = positions;
                 queue.splice(0,1);
                 move_in_all_four_directions( grid, i, j, queue )
         }
