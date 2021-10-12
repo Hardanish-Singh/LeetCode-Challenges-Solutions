@@ -86,18 +86,7 @@ function perform_enqueue_dequeue_operation( queue, grid ) {
                 let i = positions[0];
                 let j = positions[1];
                 queue.splice(0,1);
-                // MOVE LEFT & ADD COORDINATES TO QUEUE
-                position = moveLeft( grid, i, j );
-                if( position ) queue.push( position );
-                // MOVE TOP & ADD COORDINATES TO QUEUE
-                position = moveTop( grid, i, j );
-                if( position ) queue.push( position );
-                // MOVE RIGHT & ADD COORDINATES TO QUEUE
-                position = moveRight( grid, i, j );
-                if( position ) queue.push( position );
-                // MOVE DOWN & ADD COORDINATES TO QUEUE
-                position = moveDown( grid, i, j );
-                if( position ) queue.push( position );
+                move_in_all_four_directions( grid, i, j, queue )
         }
 }
 
