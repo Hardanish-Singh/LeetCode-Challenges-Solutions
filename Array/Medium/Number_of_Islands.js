@@ -1,8 +1,4 @@
-function moveLeft( grid, i, j ) {
-        j--;
-        if( j < 0 ) {
-                return;
-        }
+function is_visited( grid, i, j ) {
         if( grid[i][j] === '1' ) {
                 grid[i][j] = '2';
                 return i + "," + j;
@@ -10,6 +6,14 @@ function moveLeft( grid, i, j ) {
         else {
                 return;
         }
+}
+
+function moveLeft( grid, i, j ) {
+        j--;
+        if( j < 0 ) {
+                return;
+        }
+        return is_visited( grid, i, j );
 }
 
 function moveTop( grid, i, j ) {
@@ -17,13 +21,7 @@ function moveTop( grid, i, j ) {
         if( i < 0 ) {
                 return;
         }
-        if( grid[i][j] === '1' ) {
-                grid[i][j] = '2';
-                return i + "," + j;
-        } 
-        else {
-                return;
-        }
+        return is_visited( grid, i, j );
 }
 
 function moveRight( grid, i, j ) {
@@ -31,13 +29,7 @@ function moveRight( grid, i, j ) {
         if( j > grid[i].length-1 ) {
                 return;
         }
-        if( grid[i][j] === '1' ) {
-                grid[i][j] = '2';
-                return i + "," + j;
-        } 
-        else {
-                return;
-        }
+        return is_visited( grid, i, j );
 }
 
 function moveDown( grid, i, j ) {
@@ -45,13 +37,7 @@ function moveDown( grid, i, j ) {
         if( i > grid.length-1 ) {
                 return;
         }
-        if( grid[i][j] === '1' ) {
-                grid[i][j] = '2';
-                return i + "," + j;
-        } 
-        else {
-                return;
-        }
+        return is_visited( grid, i, j );
 }
 
 function move_in_all_four_directions( grid, i, j, queue ) {
