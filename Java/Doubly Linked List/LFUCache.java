@@ -1,6 +1,6 @@
 class Node
 {
-        
+
 }
 
 public class LFUCache 
@@ -19,6 +19,6 @@ public class LFUCache
         public void put(int key, int value) 
         {
 
-        }
+        } 
 
 }
