@@ -39,7 +39,7 @@ function move_in_all_four_directions( grid, i, j, queue ) {
 function perform_enqueue_dequeue_operation( queue, grid ) {
         while( queue.length != 0 ) {
                 [i, j] = queue.shift().split(",");
-                move_in_all_four_directions( grid, i, j, queue )
+                move_in_all_four_directions( grid, i, j, queue );
         }
 }
 
