@@ -99,7 +99,7 @@ function numIslands( grid ) {
                 for( let j=0; j<grid[i].length; j++ ) {
                         if( grid[i][j] === '1' ) {
                                 number_of_islands++;
-                                //MOVE IN ALL FOUR DIRECTIONS( LEFT, TOP, RIGHT, DOWN )
+                                // MOVE IN ALL FOUR DIRECTIONS( LEFT, TOP, RIGHT, DOWN )
                                 move_in_all_four_directions( grid, i, j, queue );
                                 // PICK COORDINATES FROM QUEUE, PERFORM ENQUEUE & DEQUEUE OPERATIONS UNTIL QUEUE IS EMPTY
                                 perform_enqueue_dequeue_operation( queue, grid );
