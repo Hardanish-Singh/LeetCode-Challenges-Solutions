@@ -1,5 +1,5 @@
 function is_visited( grid, i, j ) {
-        return grid[i][j] === '1' ? ( grid[i][j] = '2', (i + "," + j) ) : false;
+        return grid[i][j] === '1' ? ( grid[i][j] = '2', (i + "," + j) ) : null;
 }
 
 function move_left( grid, i, j ) {
