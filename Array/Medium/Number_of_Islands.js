@@ -55,6 +55,7 @@ function moveDown( grid, i, j ) {
 }
 
 function move_in_all_four_directions( grid, i, j, queue ) {
+        let position = "";
         // MARK THE POSITION AS VISITED 
         grid[i][j] = '2';
         // MOVE LEFT & ADD COORDINATES TO QUEUE
@@ -102,7 +103,6 @@ function perform_enqueue_dequeue_operation( queue, grid ) {
 
 function numIslands( grid ) {
         let queue = [];
-        let position = "";
         let number_of_islands = 0;
         for( let i=0; i<grid.length; i++ ) {
                 for( let j=0; j<grid[i].length; j++ ) {
