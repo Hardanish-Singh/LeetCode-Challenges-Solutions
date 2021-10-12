@@ -1,6 +1,6 @@
 const is_visited = ( grid, i, j ) => grid[i][j] === '1' ? ( grid[i][j] = '2', (i + "," + j) ) : null;
 
-const move_left = ( grid, i, j ) => --j >= 00 ? is_visited( grid, i, j ) : null;
+const move_left = ( grid, i, j ) => --j >= 0 ? is_visited( grid, i, j ) : null;
 
 const move_top = ( grid, i, j ) => --i >= 0 ? is_visited( grid, i, j ) : null;
 
