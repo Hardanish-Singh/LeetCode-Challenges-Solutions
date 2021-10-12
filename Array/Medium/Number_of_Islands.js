@@ -96,10 +96,14 @@ function numIslands( grid ) {
                                 }
                                 // MOVE RIGHT & ADD COORDINATES TO QUEUE
                                 position = moveRight( grid, i, j );
-                                if( position ) queue.push( position );
+                                if( position ) {
+                                        queue.push( position );
+                                }
                                 // MOVE DOWN & ADD COORDINATES TO QUEUE
                                 position = moveDown( grid, i, j );
-                                if( position ) queue.push( position );
+                                if( position ) {
+                                        queue.push( position );
+                                }
                                 // PICK COORDINATES FROM QUEUE, PERFORM ENQUEUE & DEQUEUE OPERATIONS UNTIL QUEUE IS EMPTY
                                 perform_enqueue_dequeue_operation( queue, grid );
                         }
