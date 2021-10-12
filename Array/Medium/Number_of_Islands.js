@@ -86,10 +86,14 @@ function numIslands( grid ) {
                                 grid[i][j] = '2';
                                 // MOVE LEFT & ADD COORDINATES TO QUEUE
                                 position = moveLeft( grid, i, j );
-                                if( position ) queue.push( position );
+                                if( position ) {
+                                        queue.push( position );
+                                }
                                 // MOVE TOP & ADD COORDINATES TO QUEUE
                                 position = moveTop( grid, i, j );
-                                if( position ) queue.push( position );
+                                if( position ) {
+                                        queue.push( position );
+                                }
                                 // MOVE RIGHT & ADD COORDINATES TO QUEUE
                                 position = moveRight( grid, i, j );
                                 if( position ) queue.push( position );
