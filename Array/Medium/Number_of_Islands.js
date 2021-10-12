@@ -3,9 +3,7 @@ function is_visited( grid, i, j ) {
                 grid[i][j] = '2';
                 return i + "," + j;
         } 
-        else {
-                return;
-        }
+        return;
 }
 
 function moveLeft( grid, i, j ) {
