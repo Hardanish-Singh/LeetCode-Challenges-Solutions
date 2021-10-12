@@ -31,6 +31,28 @@
                 2) n == grid[i].length
                 3) 1 <= m, n <= 300
                 4) grid[i][j] is '0' or '1'.
+        
+        Companies Who Asked this Question:
+                1) Amazon
+                2) Microsoft
+                3) Bloomberg
+                4) Google
+                5) LinkedIn
+                6) Facebook
+                7) Apple
+                8) Oracle
+                9) Qualtrics
+                10) Expedia
+                11) Goldman Sachs
+                12) Walmart Labs
+                13) Yandex
+                14) Uber
+                15) DoorDash
+                16) Adobe
+                17) eBay
+                18) SAP
+                19) Nvidia
+                20) ByteDance
 */
 
 const is_visited = ( grid, i, j ) => grid[i][j] === '1' ? ( grid[i][j] = '2', (i + "," + j) ) : null;
