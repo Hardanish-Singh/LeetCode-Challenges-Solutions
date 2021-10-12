@@ -84,7 +84,7 @@ function perform_enqueue_dequeue_operation( queue, grid ) {
         while( queue.length != 0 ) {
                 let positions = queue[0].split(",");
                 [i, j] = positions;
-                queue.splice(0,1);
+                queue.shift();
                 move_in_all_four_directions( grid, i, j, queue )
         }
 }
