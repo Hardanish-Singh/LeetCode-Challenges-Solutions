@@ -1,9 +1,5 @@
 function is_visited( grid, i, j ) {
-        if( grid[i][j] === '1' ) {
-                // MARK THE POSITION AS VISITED
-                grid[i][j] = '2';
-                return i + "," + j;
-        }
+        return grid[i][j] === '1' ? (grid[i][j] = '2', i + "," + j) : false;
 }
 
 function move_left( grid, i, j ) {
