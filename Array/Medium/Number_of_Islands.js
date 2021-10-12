@@ -6,28 +6,28 @@ function is_visited( grid, i, j ) {
         }
 }
 
-function moveLeft( grid, i, j ) {
+function move_left( grid, i, j ) {
         j--;
         if( j >= 0 ) {
                 return is_visited( grid, i, j );
         }
 }
 
-function moveTop( grid, i, j ) {
+function move_top( grid, i, j ) {
         i--;
         if( i >= 0 ) {
                 return is_visited( grid, i, j );
         }
 }
 
-function moveRight( grid, i, j ) {
+function move_right( grid, i, j ) {
         j++;
         if( j <= grid[i].length-1 ) {
                 return is_visited( grid, i, j );
         }
 }
 
-function moveDown( grid, i, j ) {
+function move_down( grid, i, j ) {
         i++;
         if( i <= grid.length-1 ) {
                 return is_visited( grid, i, j );
@@ -39,22 +39,22 @@ function move_in_all_four_directions( grid, i, j, queue ) {
         // MARK THE POSITION AS VISITED 
         grid[i][j] = '2';
         // MOVE LEFT & ADD COORDINATES TO QUEUE
-        position = moveLeft( grid, i, j );
+        position = move_left( grid, i, j );
         if( position ) {
                 queue.push( position );
         }
         // MOVE TOP & ADD COORDINATES TO QUEUE
-        position = moveTop( grid, i, j );
+        position = move_top( grid, i, j );
         if( position ) {
                 queue.push( position );
         }
         // MOVE RIGHT & ADD COORDINATES TO QUEUE
-        position = moveRight( grid, i, j );
+        position = move_right( grid, i, j );
         if( position ) {
                 queue.push( position );
         }
         // MOVE DOWN & ADD COORDINATES TO QUEUE
-        position = moveDown( grid, i, j );
+        position = move_down( grid, i, j );
         if( position ) {
                 queue.push( position );
         }
