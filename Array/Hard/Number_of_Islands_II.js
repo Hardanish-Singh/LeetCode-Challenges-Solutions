@@ -66,7 +66,6 @@ var numIslands2 = function( m, n, positions ) {
          for( let i=0; i<positions.length; i++ ) {
                  let m = positions[i][0];
                  let n = positions[i][1];
-                 if( grid.includes( m,n ) ) continue;
                  grid[m][n] = '1';
                  number_of_islands.push(numIslands( JSON.parse(JSON.stringify(grid))));
          }
