@@ -67,7 +67,7 @@ var numIslands2 = function( m, n, positions ) {
                 let m = positions[i][0];
                 let n = positions[i][1];
                 grid[m][n] = '1';
-                number_of_islands.push(numIslands( JSON.parse(JSON.stringify(grid))));
+                number_of_islands.push( numIslands( JSON.parse( JSON.stringify( grid ) ) ) );
         }
         return number_of_islands;
  };
