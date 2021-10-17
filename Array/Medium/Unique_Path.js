@@ -19,14 +19,16 @@ function move_in_right_down_directions( matrix, i, j, queue ) {
         position ? queue.push( position ) : null;
 }
 
-function perform_enqueue_dequeue_operation( queue, matrix, obj ) {
+function perform_enqueue_dequeue_operation( queue, matrix ) {
+        let count = 0;
         while( queue.length != 0 ) {
                 [i, j] = queue.shift().split(",");
                 if( i == matrix.length - 1 && j == matrix[0].length - 1 ) {
-                        obj.count++;
+                        count++;
                 }
                 move_in_right_down_directions( matrix, i, j, queue );
         }
+        return count;
 }
 
 var uniquePaths = function( m, n ) {
@@ -37,12 +39,9 @@ var uniquePaths = function( m, n ) {
         let i = 0;
         let j = 0;
         let queue = [];
-        let obj = {
-                count : 0 
-        };
         move_in_right_down_directions( matrix, i, j, queue );
-        perform_enqueue_dequeue_operation( queue, matrix, obj );
-        console.log(obj.count);
+        let count = perform_enqueue_dequeue_operation( queue, matrix );
+        return count;
 };
 
-uniquePaths( 10,10 );
+console.log( uniquePaths( 10,10 ) );
