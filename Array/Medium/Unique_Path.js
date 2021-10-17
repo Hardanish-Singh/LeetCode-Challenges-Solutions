@@ -4,6 +4,9 @@
  * @return { number }
 */
 
+/*
+        SOLUTION 1 (BRUTE FORCE)
+*/
 const move_right = ( matrix, i, j ) => ++j <= matrix[i].length-1 ? ( i + "," + j ) : null;
 
 const move_down  = ( matrix, i, j ) => ++i <= matrix.length-1 ? ( i + "," + j ) : null;
