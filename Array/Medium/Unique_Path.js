@@ -43,5 +43,3 @@ var uniquePaths = function( m, n ) {
         let count = perform_enqueue_dequeue_operation( queue, matrix );
         return count;
 };
-
-console.log( uniquePaths( 10,10 ) );
