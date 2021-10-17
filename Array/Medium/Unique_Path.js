@@ -12,7 +12,6 @@ const move_right = ( matrix, i, j ) => ++j <= matrix[i].length-1 ? ( i + "," + j
 const move_down  = ( matrix, i, j ) => ++i <= matrix.length-1 ? ( i + "," + j ) : null;
 
 function move_in_right_down_directions( matrix, i, j, queue ) {
-        // MOVE RIGHT
         let position = "";
         // MOVE RIGHT & ADD COORDINATES TO QUEUE
         position = move_right( matrix, i, j );
