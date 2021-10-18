@@ -46,6 +46,10 @@ var uniquePaths = function( m, n ) {
         return count;
 };
 
+/*
+        SOLUTION 2 
+*/
+
 function uniquePaths2( m, n ) {
         if( m === 1 || n === 1 ) {
                 return 1;
