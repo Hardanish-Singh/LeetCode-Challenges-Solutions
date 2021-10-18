@@ -70,8 +70,6 @@ function uniquePaths( m, n ) {
                 matrix[i][j] = 1;
                 j++;
         }
-        i = 1;
-        j = 1;
         for( let i = 1; i<m; i++ ){
                 for( let j=1; j<n; j++ ){
                         matrix[i][j] = matrix[i-1][j]+matrix[i][j-1];
