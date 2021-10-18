@@ -56,19 +56,7 @@ function uniquePaths( m, n ) {
         }
         const matrix = Array( m );
         for( let i = 0; i < m; i++ ) {
-                matrix[i] = Array( n );
-        }
-        let i = 0;
-        let j = 0;
-        while( i !== matrix.length ) {
-                matrix[i][j] = 1;
-                i++;
-        }
-        i = 0;
-        j = 0;
-        while( j !== matrix[0].length ) {
-                matrix[i][j] = 1;
-                j++;
+                matrix[i] = Array( n ).fill(1);
         }
         for( let i = 1; i<m; i++ ){
                 for( let j=1; j<n; j++ ){
