@@ -51,9 +51,6 @@ var uniquePaths = function( m, n ) {
 */
 
 function uniquePaths( m, n ) {
-        if( m === 1 || n === 1 ) {
-                return 1;
-        }
         const matrix = Array( m );
         for( let i = 0; i < m; i++ ) {
                 matrix[i] = Array( n ).fill(1);
