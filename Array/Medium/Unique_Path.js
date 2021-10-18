@@ -50,7 +50,7 @@ var uniquePaths = function( m, n ) {
         SOLUTION 2 
 */
 
-function uniquePaths2( m, n ) {
+function uniquePaths( m, n ) {
         if( m === 1 || n === 1 ) {
                 return 1;
         }
@@ -84,5 +84,3 @@ function uniquePaths2( m, n ) {
         }
         return matrix[m-1][n-1];
 }
-
-console.log( uniquePaths2( 6, 2 ) );
