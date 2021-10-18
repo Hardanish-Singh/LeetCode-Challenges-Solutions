@@ -47,9 +47,6 @@ var uniquePaths = function( m, n ) {
 };
 
 function uniquePaths2( m, n ) {
-        // if( n > m ) {
-        //         return uniquePaths2(n, m);
-        // }
         if( m === 1 || n === 1 ) {
                 return 1;
         }
