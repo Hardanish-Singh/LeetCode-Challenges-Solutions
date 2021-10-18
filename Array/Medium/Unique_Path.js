@@ -74,10 +74,7 @@ function uniquePaths( m, n ) {
         j = 1;
         for( let i = 0; i<m; i++ ){
                 for( let j=0; j<n; j++ ){
-                        if( matrix[i][j] == 1 ) {
-                                continue;
-                        }
-                        else {
+                        if( matrix[i][j] !== 1 ) {
                                 matrix[i][j] = matrix[i-1][j]+matrix[i][j-1];
                         }
                 }
