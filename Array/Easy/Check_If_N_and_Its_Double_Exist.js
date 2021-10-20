@@ -63,3 +63,24 @@ var checkIfExist = function( arr ) {
         }
         return false;
 };
+
+/*
+        SOLUTION 2 USING HASHMAP/DICTIONARY
+*/
+
+var checkIfExist = function( arr ) {
+        let dictionary = {
+                                
+        };
+        
+        for( let i=0; i<arr.length; i++ ) {
+                if( arr[i]*2 in dictionary ) {
+                        return true;
+                } 
+                else if( arr[i]/2 in dictionary ){
+                        return true;
+                }
+                dictionary[arr[i]] = i;
+        }
+        return false;
+};
