@@ -26,8 +26,6 @@
         
         If all assertions pass, then your solution will be accepted.
 
- 
-
     Example 1:
         Input: nums = [1,1,2]
         Output: 2, nums = [1,2,_]
@@ -40,7 +38,6 @@
         It does not matter what you leave beyond the returned k (hence they are underscores).
 
     Constraints:
-
         1) 0 <= nums.length <= 3 * 104
         2) -100 <= nums[i] <= 100
         3) nums is sorted in non-decreasing order.
