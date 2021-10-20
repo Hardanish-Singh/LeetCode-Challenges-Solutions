@@ -46,6 +46,10 @@
         3) nums is sorted in non-decreasing order.
 */
 var removeDuplicates = function(nums) {
-    for(let i=nums.length-1; i>0; i--)if(nums[i] === nums[i-1]) nums.splice(i, 1);
+    for(let i=nums.length-1; i>0; i--) {
+        if(nums[i] === nums[i-1]) {
+            nums.splice(i, 1);
+        }
+    }
     return nums.length;
 };
