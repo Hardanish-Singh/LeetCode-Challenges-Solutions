@@ -74,10 +74,7 @@ var checkIfExist = function( arr ) {
         };
         
         for( let i=0; i<arr.length; i++ ) {
-                if( arr[i]*2 in dictionary ) {
-                        return true;
-                } 
-                else if( arr[i]/2 in dictionary ){
+                if( arr[i]*2 in dictionary || arr[i]/2 in dictionary ) {
                         return true;
                 }
                 dictionary[arr[i]] = i;
