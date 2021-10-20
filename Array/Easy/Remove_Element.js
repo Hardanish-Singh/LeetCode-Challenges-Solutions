@@ -18,21 +18,17 @@
 */
 
 var removeElement = function( nums, val ) {
+        let k = 0;
         for( let i=0; i<nums.length; i++ ) {
                 if( nums[i] === val ) {
-                        let j;
-                        for( j = i+1; j<nums.length; j++ ) {
+                        k++;
+                        for( let j = i+1; j<nums.length; j++ ) {
                                 nums[j-1] = nums[j];
                         }
                         nums[nums.length-1] = "_";
                         i--;
                 }
         }
-        let k = 0;
-        for( let i=0; i<nums.length; i++ ){
-                if( typeof(nums[i]) === 'number' ) {
-                        k++;
-                }
-        }
+        k = nums.length - k;
         return k;
 };
