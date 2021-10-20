@@ -30,6 +30,9 @@
  * @return { boolean }
 */
 
+/*
+        SOLUTION 1 USING BINARY SEARCH
+*/
 const binarySearch = (array, target) => {
         let startIndex = 0;
         let endIndex = array.length - 1;
