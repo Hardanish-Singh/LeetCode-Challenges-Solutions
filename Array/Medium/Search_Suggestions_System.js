@@ -69,7 +69,7 @@
 */
 
 /*
-                        SOLUTION 1: USING LINEAR SEARCH
+        SOLUTION 1: USING LINEAR SEARCH
 */
 var suggestedProducts = function( products, searchWord ) {
         // LEXICOGRAPHICAL SORTING
