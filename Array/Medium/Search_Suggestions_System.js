@@ -94,5 +94,3 @@ var suggestedProducts = function( products, searchWord ) {
         }
         return suggested_products;
 };
-
-console.log( suggestedProducts( ["havana"], "tatiana" ) );
