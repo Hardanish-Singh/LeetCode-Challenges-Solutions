@@ -68,9 +68,6 @@
  * @return { string[][] }
 */
 
-/*
-        SOLUTION 1: USING LINEAR SEARCH
-*/
 var suggestedProducts = function( products, searchWord ) {
         // LEXICOGRAPHICAL SORTING
         products.sort( (a, b) => a.localeCompare(b) );
