@@ -48,18 +48,13 @@ function perform_enqueue_dequeue_operation( queue, grid ) {
 
 var getFood = function(grid) {
         let queue = [];
-        let flag = false;
         for( let i=0; i<grid.length; i++ ) {
                 for( let j=0; j<grid[i].length; j++ ) {
                         if( grid[i][j] === '*' ) {
                                 move_in_all_four_directions( grid, i, j, queue, 0 );
                                 perform_enqueue_dequeue_operation( queue, grid );
-                                flag = true;
                                 break;
                         }
-                }
-                if( flag ) {
-                        break;
                 }
         }
         return queue.length > 0 ? Number( queue[queue.length-1].split(",")[2] ) : -1;
