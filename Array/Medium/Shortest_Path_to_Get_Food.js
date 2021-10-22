@@ -53,10 +53,10 @@ var getFood = function(grid) {
                         if( grid[i][j] === '*' ) {
                                 move_in_all_four_directions( grid, i, j, queue, 0 );
                                 perform_enqueue_dequeue_operation( queue, grid );
+                                i = grid.length;
                                 break;
                         }
                 }
         }
         return queue.length > 0 ? Number( queue[queue.length-1].split(",")[2] ) : -1;
 };
-
