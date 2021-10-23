@@ -15,10 +15,12 @@
                 2) intervals[i].length == 2
                 3) 0 <= start(i) <= end(i) <= 10^4
 */
+
 /*
  * @param {number[][]} intervals
  * @return {number[][]}
 */
+
 var merge = function(intervals) {
         intervals.sort( (a,b) => a[0] - b[0] );
         for( let i=0; i<intervals.length; i++ ){
