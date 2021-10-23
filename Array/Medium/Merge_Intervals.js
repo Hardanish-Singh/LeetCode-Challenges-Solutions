@@ -14,6 +14,28 @@
                 1) 1 <= intervals.length <= 10^4
                 2) intervals[i].length == 2
                 3) 0 <= start(i) <= end(i) <= 10^4
+        
+        Companies Who Asked this Question:
+                1) Amazon
+                2) Facebook
+                3) Microsoft
+                4) JPMorgan
+                5) Salesforce
+                6) Google
+                7) Adobe
+                8) Bloomberg
+                9) Uber
+                11) Apple
+                12) IBM
+                13) VMware
+                14) eBay
+                15) ByteDance
+                16) LinkedIn
+                17) Twitter
+                18) Oracle
+                19) Splunk
+                20) tiktok
+                21) Reddit
 */
 
 /*
