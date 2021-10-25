@@ -64,8 +64,7 @@ var permute = function( nums ) {
                         let elementArray = temp_permutations.shift();
                         for( let j=0; j<temp.length; j++ ) {
                                 if( ! ( elementArray.includes( temp[j] ) ) ) {
-                                        let t = [ ...elementArray, temp[j] ];
-                                        temp_permutations.push( t );
+                                        temp_permutations.push( [ ...elementArray, temp[j] ] );
                                 }
                         }
                 }
