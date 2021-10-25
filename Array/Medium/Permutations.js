@@ -77,5 +77,3 @@ var permute = function( nums ) {
         }
         return permutations;
 };
-
-console.log( permute( [1,2,3,4] ) );
