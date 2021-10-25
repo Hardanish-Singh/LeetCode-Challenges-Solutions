@@ -15,14 +15,14 @@ var permute = function( nums ) {
                 
                 while( true ) {
                         
-                        let flag = false;
+                        let is_complete = true;
                         for( let k=0; k<temp_permutations.length; k++ ){
                                 if( temp_permutations[k].length !== nums.length ) {
-                                        flag = true;
+                                        is_complete = false;
                                         break;
                                 }
                         }
-                        if( flag === false ) {
+                        if( is_complete ) {
                                 break;
                         }
 
