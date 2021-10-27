@@ -32,26 +32,20 @@ function is_arrays_equal( array1, array2 ) {
 }
 
 var permuteUnique = function(nums) {
-        
         if( nums.length === 0 ) {
                 return [];
         }
-
         if( nums.length === 1 ) {
                 return [nums];
         }
-
         nums.sort((a, b) => a - b);
-
         let originalCounts = {};
         for ( const num of nums ) {
                 originalCounts[num] = originalCounts[num] ? originalCounts[num] + 1 : 1;
         }
-
         let permutations = [];
         let temp = [];
         let temp_permutations = [];
-        
         for( let i=0; i<nums.length; i++ ) {
                 if( nums[i] == nums[i-1] ) continue;
                 temp_permutations.push([nums[i]]);
@@ -67,7 +61,6 @@ var permuteUnique = function(nums) {
                         if( is_complete ) {
                                 break;
                         }
-                        
                         let elementArray = temp_permutations.shift();
                         for( let j=0; j<temp.length; j++ ) {
                                 if( temp[j] === temp[j-1] ) continue;
