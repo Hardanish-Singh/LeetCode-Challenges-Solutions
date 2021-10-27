@@ -14,6 +14,12 @@
         Constraints:
                 1) 1 <= s.length <= 5000
                 2) s consists of only lowercase English letters.
+
+        Hint:
+                If a String is a palindrome, following of the two conditions must hold
+                        1) All characters should have even character count
+                        or
+                        2) All characters except the one character which is in the middle, should have even character count. The one character which is in the middle will have odd character count of 1.
 */
 
 /*
