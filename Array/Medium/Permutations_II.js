@@ -71,6 +71,20 @@ function count_character_occurences( array ) {
         return dictionary;
 }
 
+function is_complete( array1, array2 ){
+        let is_complete = true;
+        for( let k=0; k<array1.length; k++ ){
+                if( array1[k].length !== array2.length ) {
+                        is_complete = false;
+                        break;
+                }
+        }
+        if( is_complete ) {
+                return false;
+        }
+        return true;
+}
+
 var permuteUnique = function(nums) {
         if( nums.length === 0 ) {
                 return [];
@@ -87,17 +101,7 @@ var permuteUnique = function(nums) {
                 if( nums[i] == nums[i-1] ) continue;
                 temp_permutations.push([nums[i]]);
                 temp = [...nums.slice(0,i), ...nums.slice(i+1)];
-                while( true ) {
-                        let is_complete = true;
-                        for( let k=0; k<temp_permutations.length; k++ ){
-                                if( temp_permutations[k].length !== nums.length ) {
-                                        is_complete = false;
-                                        break;
-                                }
-                        }
-                        if( is_complete ) {
-                                break;
-                        }
+                while( is_complete( temp_permutations, nums ) ) {
                         let elementArray = temp_permutations.shift();
                         for( let j=0; j<temp.length; j++ ) {
                                 if( temp[j] === temp[j-1] ) continue;
