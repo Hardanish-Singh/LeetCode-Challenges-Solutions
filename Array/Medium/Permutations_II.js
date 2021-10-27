@@ -58,6 +58,19 @@ function is_arrays_equal( array1, array2 ) {
         return true;
 }
 
+function count_character_occurences( array ) {
+        let dictionary = {};
+        for( let i=0; i<array.length; i++ ){
+                if( dictionary[array[i]] ) {
+                        dictionary[array[i]] += 1;
+                }
+                else {
+                        dictionary[array[i]] = 1;
+                }
+        }
+        return dictionary;
+}
+
 var permuteUnique = function(nums) {
         if( nums.length === 0 ) {
                 return [];
@@ -66,10 +79,7 @@ var permuteUnique = function(nums) {
                 return [nums];
         }
         nums.sort((a, b) => a - b);
-        let originalCounts = {};
-        for ( const num of nums ) {
-                originalCounts[num] = originalCounts[num] ? originalCounts[num] + 1 : 1;
-        }
+        let original_character_counts = count_character_occurences(nums);
         let permutations = [];
         let temp = [];
         let temp_permutations = [];
@@ -93,11 +103,8 @@ var permuteUnique = function(nums) {
                                 if( temp[j] === temp[j-1] ) continue;
                                 let t = [ ...elementArray, temp[j] ];
                                 if( t.length === nums.length ){
-                                        let permutationsCounts = {};
-                                        for ( const num of t ) {
-                                                permutationsCounts[num] = permutationsCounts[num] ? permutationsCounts[num] + 1 : 1;
-                                        }
-                                        if( (is_dictionary_equal(originalCounts, permutationsCounts)) ) {
+                                        let permutations_character_counts = count_character_occurences(t);
+                                        if( (is_dictionary_equal(original_character_counts, permutations_character_counts)) ) {
                                                 for( let i=0; i<permutations.length; i++ ){
                                                         if( is_arrays_equal( permutations[i], t ) ) {
                                                                 j = temp.length;
