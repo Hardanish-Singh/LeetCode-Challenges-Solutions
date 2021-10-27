@@ -50,9 +50,7 @@ var permute = function( nums ) {
         for( let i=0; i<nums.length; i++ ) {
                 temp_permutations.push([nums[i]]);
                 temp = [...nums.slice(0,i), ...nums.slice(i+1)];
-                
                 while( true ) {
-                        
                         let is_complete = true;
                         for( let k=0; k<temp_permutations.length; k++ ){
                                 if( temp_permutations[k].length !== nums.length ) {
@@ -63,7 +61,6 @@ var permute = function( nums ) {
                         if( is_complete ) {
                                 break;
                         }
-
                         let elementArray = temp_permutations.shift();
                         for( let j=0; j<temp.length; j++ ) {
                                 if( ! ( elementArray.includes( temp[j] ) ) ) {
@@ -75,7 +72,6 @@ var permute = function( nums ) {
                                 }
                         }
                 }
-                
                 temp_permutations = [];
         }
         return permutations;
