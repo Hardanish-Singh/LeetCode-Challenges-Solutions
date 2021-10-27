@@ -98,13 +98,17 @@ var permuteUnique = function(nums) {
         let temp = [];
         let temp_permutations = [];
         for( let i=0; i<nums.length; i++ ) {
-                if( nums[i] == nums[i-1] ) continue;
+                if( nums[i] == nums[i-1] ) {
+                        continue;
+                }
                 temp_permutations.push([nums[i]]);
                 temp = [...nums.slice(0,i), ...nums.slice(i+1)];
                 while( is_complete( temp_permutations, nums ) ) {
                         let elementArray = temp_permutations.shift();
                         for( let j=0; j<temp.length; j++ ) {
-                                if( temp[j] === temp[j-1] ) continue;
+                                if( temp[j] === temp[j-1] ) {
+                                        continue;
+                                }
                                 let t = [ ...elementArray, temp[j] ];
                                 if( t.length === nums.length ){
                                         let permutations_character_counts = count_character_occurences(t);
