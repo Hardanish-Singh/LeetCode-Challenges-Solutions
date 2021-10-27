@@ -23,8 +23,8 @@
 */
 
 /*
- * @param {string} s
- * @return {boolean}
+ * @param { string } s
+ * @return { boolean }
 */
 
 var canPermutePalindrome = function( nums ) {
@@ -47,6 +47,6 @@ var canPermutePalindrome = function( nums ) {
                         return false;
                 }
         }
-        
+
         return true;
 };
