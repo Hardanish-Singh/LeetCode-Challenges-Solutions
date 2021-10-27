@@ -17,7 +17,6 @@ function is_dictionary_equal(word1, word2) {
                         return false;
                 }
         }
-
         return true;
 }
 
