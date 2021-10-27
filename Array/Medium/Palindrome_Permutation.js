@@ -12,7 +12,6 @@
                 Output: true
 
         Constraints:
-
                 1) 1 <= s.length <= 5000
                 2) s consists of only lowercase English letters.
 */
