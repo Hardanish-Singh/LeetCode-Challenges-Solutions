@@ -47,5 +47,6 @@ var canPermutePalindrome = function( nums ) {
                         return false;
                 }
         }
+        
         return true;
 };
