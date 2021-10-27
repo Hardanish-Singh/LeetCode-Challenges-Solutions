@@ -41,6 +41,9 @@ var permute = function( nums ) {
         if( nums.length === 0 ) {
                 return [];
         }
+        if( nums.length === 1 ) {
+                return [nums];
+        }
         let permutations = [];
         let temp = [];
         let temp_permutations = [];
@@ -64,15 +67,16 @@ var permute = function( nums ) {
                         let elementArray = temp_permutations.shift();
                         for( let j=0; j<temp.length; j++ ) {
                                 if( ! ( elementArray.includes( temp[j] ) ) ) {
+                                        let t = [ ...elementArray, temp[j] ];
+                                        if( t.length === nums.length ){
+                                                permutations.push( t );
+                                        }
                                         temp_permutations.push( [ ...elementArray, temp[j] ] );
                                 }
                         }
                 }
-
-                for( let g=0; g<temp_permutations.length; g++ ) {
-                        permutations.push(temp_permutations[g]);
-                }
-
+                
+                temp_permutations = [];
         }
         return permutations;
 };
