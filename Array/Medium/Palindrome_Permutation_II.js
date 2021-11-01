@@ -15,8 +15,6 @@
                 2) s consists of only lowercase English letters.
 */
 
-//TESTING
-
 /*
  * @param {string} s
  * @return {string[]}
