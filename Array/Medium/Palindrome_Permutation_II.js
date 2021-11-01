@@ -1,10 +1,10 @@
 /*
-        Given a string s, return all the palindromic permutations (without duplicates) of it.
+        Given a string s, return all the palindromic permutations ( without duplicates ) of it.
         You may return the answer in any order. If s has no palindromic permutation, return an empty list.
         
         Example 1:
                 Input: s = "aabb"
-                Output: ["abba","baab"]
+                Output: [ "abba", "baab" ]
         
         Example 2:
                 Input: s = "abc"
@@ -16,22 +16,17 @@
 */
 
 /*
- * @param {string} s
- * @return {string[]}
+ * @param { string } s
+ * @return { string[] }
 */
 
-function is_complete( array1, array2 ){
-        let is_complete = true;
-        for( let k=0; k<array1.length; k++ ){
+function is_complete( array1, array2 ) {
+        for( let k=0; k<array1.length; k++ ) {
                 if( array1[k].length !== array2.length ) {
-                        is_complete = false;
-                        break;
+                        return true;
                 }
         }
-        if( is_complete ) {
-                return false;
-        }
-        return true;
+        return false;
 }
 
 var permute = function( nums ) {
