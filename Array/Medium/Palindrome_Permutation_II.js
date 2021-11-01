@@ -47,7 +47,7 @@ var permute = function( nums ) {
         for( let i=0; i<nums.length; i++ ) {
                 temp_permutations.push([nums[i]]);
                 temp = [...nums.slice(0,i), ...nums.slice(i+1)];
-                while( is_complete( temp_permutations, nums ) ) {
+                while( is_complete( temp_permutations, nums ) ){
                         let elementArray = temp_permutations.shift();
                         for( let j=0; j<temp.length; j++ ) {
                                 if( ! ( elementArray.includes( temp[j] ) ) ) {
@@ -150,7 +150,7 @@ var permuteUnique = function(nums) {
         }
         return permutations;
 };
-
+//testing
 var generatePalindromes = function( nums ) {
         let character_counts = {};
         let odd_count = 0;
