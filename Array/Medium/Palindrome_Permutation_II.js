@@ -27,7 +27,7 @@ var permute = function( nums ) {
         let permutations = [];
         let temp = [];
         let temp_permutations = [];
-        for( let i=0; i<nums.length; i++ ) {
+        for( let i=0; i<nums.length; i++ ){
                 temp_permutations.push([nums[i]]);
                 temp = [...nums.slice(0,i), ...nums.slice(i+1)];
                 while( is_complete( temp_permutations, nums ) ) {
