@@ -21,21 +21,19 @@
 */
 
 /*
- * @param {number[]} nums
- * @return {number[][]}
+ * @param { number[] } nums
+ * @return { number[][] }
 */
 
 function swap_index_values( leftIndex, rightIndex, nums ) {
-        let temp = nums[leftIndex];
-        nums[leftIndex] = nums[rightIndex];
-        nums[rightIndex] = temp;       
+        [ nums[rightIndex], nums[leftIndex] ]  = [ nums[leftIndex], nums[rightIndex] ];   
 }
 
 var nextPermutation = function(nums) {
         let leftIndex = -1; 
-        let rightIndex = -1;
+        let rightIndex = nums.length - 1;
         
-        for( let i=nums.length-1; i>=0; i-- ){
+        for( let i=nums.length-1; i>=0; i-- ) {
                 if( nums[i] > nums[i-1] ) {
                         leftIndex = i-1;
                         break;
@@ -46,15 +44,11 @@ var nextPermutation = function(nums) {
                 return nums.reverse();
         }
         
-        for( let i=nums.length-1; i>=0; i-- ){
+        for( let i=nums.length-1; i>=0; i-- ) {
                 if( nums[i] > nums[leftIndex] ) {
                         rightIndex = i;
                         break;
                 }
-        }
-        
-        if( rightIndex == -1 ) {
-             rightIndex = nums.length-1;  
         }
         
         swap_index_values(leftIndex, rightIndex, nums);
@@ -70,5 +64,4 @@ var nextPermutation = function(nums) {
         }
                 
         return nums;
-
 };
