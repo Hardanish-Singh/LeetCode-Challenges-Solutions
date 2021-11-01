@@ -150,7 +150,7 @@ var permuteUnique = function(nums) {
         }
         return permutations;
 };
-//testing
+
 var generatePalindromes = function( nums ) {
         let character_counts = {};
         let odd_count = 0;
