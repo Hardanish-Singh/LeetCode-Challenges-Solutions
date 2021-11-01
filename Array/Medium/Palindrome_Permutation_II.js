@@ -189,6 +189,5 @@ var generatePalindromes = function( nums ) {
                         palindromic_permutations.push( t[i].join("") + t[i].reverse().join("") );
                 }
         }
-        return palindromic_permutations;
-         
+        return palindromic_permutations;     
 };
