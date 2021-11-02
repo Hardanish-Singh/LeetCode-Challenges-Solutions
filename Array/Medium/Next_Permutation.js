@@ -30,7 +30,7 @@ function swap_index_values( leftIndex, rightIndex, nums ) {
 }
 
 var nextPermutation = function(nums) {
-        let leftIndex = -1; 
+        let leftIndex = -1;
         let rightIndex = nums.length - 1;
         
         for( let i=nums.length-1; i>=0; i-- ) {
