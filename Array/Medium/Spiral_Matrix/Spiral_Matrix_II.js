@@ -21,8 +21,8 @@
 */
 
 /*
- * @param {number} n
- * @return {number[][]}
+ * @param { number } n
+ * @return { number[][] }
 */
 
 function moveRight( matrix, i, j, obj ) {
