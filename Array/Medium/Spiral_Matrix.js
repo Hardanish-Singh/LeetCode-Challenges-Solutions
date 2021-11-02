@@ -85,6 +85,9 @@ function moveUp( matrix, i, j, sprialOrder ) {
 }
 
 var spiralOrder = function( matrix ) {
+        if( matrix[0].length == 0 ) {
+                return [];
+        }
         let sprialOrder = [];
         let i = 0;
         let j = 0;
