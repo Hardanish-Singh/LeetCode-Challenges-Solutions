@@ -65,14 +65,14 @@ const is_visited = ( grid, i, j ) => {
         }
 }
 
-const move_left  = ( grid, i, j ) => {
+const move_left = ( grid, i, j ) => {
         --j;
         if( j >= 0  ) {
                 return is_visited( grid, i, j );
         }
 }
 
-const move_top   = ( grid, i, j ) => {
+const move_top = ( grid, i, j ) => {
         --i;
         if( i >= 0 ) {
               return is_visited( grid, i, j );  
@@ -87,7 +87,7 @@ const move_right = ( grid, i, j ) => {
         return null;
 }
 
-const move_down  = ( grid, i, j ) => {
+const move_down = ( grid, i, j ) => {
         ++i;
         if( i <= grid.length - 1 ) {
               return is_visited( grid, i, j );  
