@@ -57,42 +57,77 @@
                 20) ByteDance
 */
 
-const is_visited = ( grid, i, j ) => grid[i][j] === '1' ? ( grid[i][j] = '2', (i + "," + j) ) : null;
+const is_visited = ( grid, i, j ) => {
+        if( grid[i][j] === '1' ) {
+                // MARK THE POSITION AS VISITED
+                grid[i][j] = '2';
+                return i + "," + j;
+        }
+}
 
-const move_left  = ( grid, i, j ) => --j >= 0 ? is_visited( grid, i, j ) : null;
+const move_left  = ( grid, i, j ) => {
+        --j;
+        if( j >= 0  ) {
+                return is_visited( grid, i, j );
+        }
+}
 
-const move_top   = ( grid, i, j ) => --i >= 0 ? is_visited( grid, i, j ) : null;
+const move_top   = ( grid, i, j ) => {
+        --i;
+        if( i >= 0 ) {
+              return is_visited( grid, i, j );  
+        }
+}
 
-const move_right = ( grid, i, j ) => ++j <= grid[i].length - 1 ? is_visited( grid, i, j ) : null;
+const move_right = ( grid, i, j ) => {
+        ++j;
+        if( j <= grid[i].length - 1 ) {
+                return is_visited( grid, i, j );
+        }
+        return null;
+}
 
-const move_down  = ( grid, i, j ) => ++i <= grid.length - 1 ? is_visited( grid, i, j ) : null;
+const move_down  = ( grid, i, j ) => {
+        ++i;
+        if( i <= grid.length - 1 ) {
+              return is_visited( grid, i, j );  
+        }
+}
 
-function move_in_all_four_directions( grid, i, j, queue ) {
+const move_in_all_four_directions = ( grid, i, j, queue ) => {
         let position = "";
         // MARK THE POSITION AS VISITED
         grid[i][j] = '2';
         // MOVE LEFT & ADD COORDINATES TO QUEUE
         position = move_left( grid, i, j );
-        position ? queue.push( position ) : null;
+        if( position ) {
+                queue.push(position);
+        }
         // MOVE TOP & ADD COORDINATES TO QUEUE
         position = move_top( grid, i, j );
-        position ? queue.push( position ) : null;
+        if( position ) {
+                queue.push(position);
+        }
         // MOVE RIGHT & ADD COORDINATES TO QUEUE
         position = move_right( grid, i, j );
-        position ? queue.push( position ) : null;
+        if( position ) {
+                queue.push(position);
+        }
         // MOVE DOWN & ADD COORDINATES TO QUEUE
         position = move_down( grid, i, j );
-        position ? queue.push( position ) : null;
+        if( position ) {
+                queue.push(position);
+        }
 }
 
-function perform_enqueue_dequeue_operation( queue, grid ) {
+const perform_enqueue_dequeue_operation = ( queue, grid ) => {
         while( queue.length != 0 ) {
                 [i, j] = queue.shift().split(",");
                 move_in_all_four_directions( grid, i, j, queue );
         }
 }
 
-function numIslands( grid ) {
+const numIslands = ( grid ) => {
         let queue = [];
         let number_of_islands = 0;
         for( let i=0; i<grid.length; i++ ) {
