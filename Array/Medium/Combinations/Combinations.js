@@ -40,7 +40,7 @@ var combine = function( n, k ) {
                 return [nums];
         }
         else if( k === 1 ) {
-                for( let i=0; i<nums.length; i++ ){
+                for( let i=0; i<nums.length; i++ ) {
                        combinations.push([nums[i]]); 
                 }
                 return combinations;
@@ -61,7 +61,7 @@ var combine = function( n, k ) {
                                                 
                                         let t = [ ...elementArray, temp[j] ];
                                         
-                                        if( t.length === k ){
+                                        if( t.length === k ) {
                                                 combinations.push( t );
                                         }
 
