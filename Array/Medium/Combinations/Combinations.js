@@ -53,10 +53,7 @@ var combine = function( n, k ) {
                 if( temp.length < k-1 ) {
                         break;
                 }
-                while( true ) {
-                        if( temp_combinations[0].length === k ) {
-                                break;
-                        }
+                while( !( temp_combinations[0].length === k ) ) {
                         let elementArray = temp_combinations.shift();
                         for( let j=0; j<temp.length; j++ ) {
                                
