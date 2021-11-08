@@ -34,7 +34,7 @@ function jump( array: number[] ): number {
                 if( index + max >= array.length - 1 ) {
                         break;
                 }
-                [ max, index, l ] = getMaxValue(array.slice( index+1, index+1 + array[index] ), index+1 );
+                [ max, index, l ] = getMaxValue( array.slice( index+1, index+1 + array[index] ), index+1 );
                 max = max + l;
                 if( max === -1 ) {
                         return 0;
