@@ -16,12 +16,27 @@
                 2) 0 <= nums[i] <= 1000
 */
 
-function getMaxValue( arr: number[], i: number ): number[] {
+function allArrayElementsEquals ( arr: number[] ): boolean {
+        arr.sort( ( a,b ) => a-b );
+        let leftPointer: number = 0;
+        let rightPointer: number = arr.length-1;
+        while( leftPointer < rightPointer ) {
+                if( arr[leftPointer] !== arr[rightPointer] ) {
+                        return false;
+                }
+                leftPointer++;
+                rightPointer--;
+        }
+        return true;
+}
+
+function getMaxValue( arr: number[], i: number, backLength: number ): number[] {
         let max: number = -1;
         let index: number = -1;
         let len: number = 0;
         let l: number = 0;
-
+        let check: number[] = [ ...arr ];
+        
         for( let i: number = 0; i < arr.length; i++ ) {
                 len = arr.slice( i+1 ).length;
                 arr[i] = arr[i] - ( arr.slice( i+1 ).length );
@@ -31,8 +46,7 @@ function getMaxValue( arr: number[], i: number ): number[] {
                         l = len;
                 }
         }
-
-        return [ max, index + i, l ];
+        return allArrayElementsEquals( arr ) ? [ check[check.length-1], check.length + backLength, 0 ] : [ max, index + i, l ];
 }
 
 function jump( array: number[] ): number {
@@ -52,7 +66,7 @@ function jump( array: number[] ): number {
                 if( index + max >= array.length - 1 ) {
                         break;
                 }
-                [ max, index, l ] = getMaxValue( array.slice( index+1, index+1 + array[index] ), index+1 );
+                [ max, index, l ] = getMaxValue( array.slice( index+1, index+1 + array[index] ), index+1, array.slice(0, index).length );
                 max = max + l;
                 if( max === -1 ) {
                         return 0;
