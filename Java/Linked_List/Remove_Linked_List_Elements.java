@@ -18,6 +18,11 @@
                       
                 Input: head = [7, 7, 7, 7], val = 7
                 Output: []
+        
+        Constraints:
+                1) The number of nodes in the list is in the range [0, 10^4].
+                2) 1 <= Node.val <= 50
+                3) 0 <= val <= 50
 */
 
 /*
