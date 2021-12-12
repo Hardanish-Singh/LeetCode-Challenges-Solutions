@@ -34,7 +34,8 @@ class Solution
                 {
                         if( current.val == val )
                         {
-                                // HEAD NODE/POINTER VALUE MATCHES CURRENT NODE/POINTER VALUE 
+                                // IF HEAD NODE ITSELF HOLDS THE KEY
+                                // OR MULTIPLE OCCURRENCES OF KEY
                                 if( previous == null )
                                 {
                                         // CHECKS IF THE CURRENT NODE/POINTER VALUE EXISTS MULTIPLE TIMES
@@ -57,6 +58,7 @@ class Solution
                                         }
                                 }
                                 // CHECKS IF THE CURRENT NODE/POINTER VALUE MATCHES THE NEXT NODE/POINTER VALUE
+                                // OR MULTIPLE OCCURRENCES OF KEY
                                 else if( current.next.val == val )
                                 {
                                         // CHECKS IF THE CURRENT NODE/POINTER VALUE EXISTS MULTIPLE TIMES
