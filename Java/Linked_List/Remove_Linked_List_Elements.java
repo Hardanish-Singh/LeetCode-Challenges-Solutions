@@ -11,7 +11,7 @@
                 
         Example 2:
                 
-                Input: head = [], val = 1
+                Input: head = [1], val = 1
                 Output: []
         
         Example 3:
