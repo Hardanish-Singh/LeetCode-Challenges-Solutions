@@ -65,7 +65,7 @@ class Solution
                                 // OR MULTIPLE OCCURRENCES OF KEY
                                 if( previous == null )
                                 {
-                                        // CHECKS IF THE CURRENT NODE/POINTER VALUE EXISTS MULTIPLE TIMES
+                                        // CHECKS IF THE CURRENT NODE/POINTER KEY EXISTS MULTIPLE TIMES
                                         while( current.val == val )
                                         {
                                                 if( current.next == null )
@@ -84,11 +84,11 @@ class Solution
                                                 return head;
                                         }
                                 }
-                                // CHECKS IF THE CURRENT NODE/POINTER VALUE MATCHES THE NEXT NODE/POINTER VALUE
+                                // CHECKS IF THE CURRENT NODE/POINTER KEY MATCHES THE NEXT NODE/POINTER KEY
                                 // OR MULTIPLE OCCURRENCES OF KEY
                                 else if( current.next.val == val )
                                 {
-                                        // CHECKS IF THE CURRENT NODE/POINTER VALUE EXISTS MULTIPLE TIMES
+                                        // CHECKS IF THE CURRENT NODE/POINTER KEY EXISTS MULTIPLE TIMES
                                         while( current.next.val == val )
                                         {
                                                 current = current.next;
