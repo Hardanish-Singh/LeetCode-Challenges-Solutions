@@ -34,9 +34,10 @@ class Solution
                 {
                         if( current.val == val )
                         {
-                                // HEAD HAS A CURRENT VAL 
+                                // HEAD NODE/POINTER VALUE MATCHES CURRENT NODE/POINTER VALUE 
                                 if( previous == null )
                                 {
+                                        // CHECKS IF THE CURRENT NODE/POINTER VALUE EXISTS MULTIPLE TIMES
                                         while( current.val == val )
                                         {
                                                 if( current.next == null )
@@ -48,28 +49,33 @@ class Solution
                                         head = current;
                                         if( head.val == val && head.next == null )
                                         {
-                                                return null; 
+                                                return null;
                                         }
                                         if( head.next == null )
                                         {
                                                 return head;
                                         }
                                 }
+                                // CHECKS IF THE CURRENT NODE/POINTER VALUE MATCHES THE NEXT NODE/POINTER VALUE
                                 else if( current.next.val == val )
                                 {
+                                        // CHECKS IF THE CURRENT NODE/POINTER VALUE EXISTS MULTIPLE TIMES
                                         while( current.next.val == val )
                                         {
                                                 current = current.next;
                                                 if( current.next == null )
                                                 {
+                                                        // UNLINK/DELETE THE CURRENT NODE/POINTER FROM THE LINKED LIST
                                                         previous.next = current.next;
                                                         return head;
                                                 }
                                         }
+                                        // UNLINK/DELETE THE CURRENT NODE/POINTER FROM THE LINKED LIST
                                         previous.next = current.next;
                                 }
-                                else 
+                                else
                                 {
+                                        // UNLINK/DELETE THE CURRENT NODE/POINTER FROM THE LINKED LIST
                                         previous.next = current.next;
                                 }
                         }
@@ -78,10 +84,12 @@ class Solution
                 }
                 if( current.val == val)
                 {
+                        //HEAD NODE HAS ONLY ONE NODE
                         if( previous == null )
                         {
                                 return null;
                         }
+                        // UNLINK/DELETE THE CURRENT NODE/POINTER FROM THE LINKED LIST
                         previous.next = current.next;
                 }
                 return head;
