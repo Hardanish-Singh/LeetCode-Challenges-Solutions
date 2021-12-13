@@ -23,6 +23,10 @@ class Solution
 {
         public ListNode deleteMiddle( ListNode head ) 
         {
+                if( head.next == null )
+                {
+                        return null;
+                }
                 ListNode current = head;
                 ListNode previous = null;
                 int count = 1;
@@ -38,10 +42,6 @@ class Solution
                 {
                         if( middle == count )
                         {
-                                if( previous == null )
-                                {
-                                        return null;
-                                }
                                 previous.next = current.next;
                                 break;
                         }
