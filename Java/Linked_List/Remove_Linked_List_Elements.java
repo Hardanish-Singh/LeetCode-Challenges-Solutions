@@ -57,6 +57,7 @@ class Solution
                 ListNode current = head;
                 ListNode previous = null;
                 
+                // SOLUTION 1
                 while( current.next != null )
                 {
                         if( current.val == val )
@@ -122,5 +123,33 @@ class Solution
                         previous.next = current.next;
                 }
                 return head;
+
+                /*
+                        SOLUTION 2
+
+                        while( current != null )
+                        {
+                                if( current.val == val )
+                                {
+                                        // IF HEAD NODE ITSELF HOLDS THE KEY
+                                        if( current == head )
+                                        {
+                                                head = current.next;
+                                        }
+                                        // UNLINK/DELETE THE CURRENT NODE/POINTER FROM THE LINKED LIST
+                                        else
+                                        {
+                                                previous.next = current.next;
+                                        }
+                                        current = current.next;
+                                }
+                                else
+                                {
+                                        previous = current;
+                                        current = current.next;
+                                }
+                        }
+                        return head;
+                */
         }
 }
