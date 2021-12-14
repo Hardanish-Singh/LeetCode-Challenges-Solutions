@@ -11,14 +11,14 @@
         while( true ) {
                 let openCount = parenthesis[0][1];
                 let closeCount = parenthesis[0][2];
-                // CHECK RULE 3
+                // RULE 3
                 if( openCount == closeCount && closeCount == n && openCount == n ) {
                         break;
                 }
                 let data = parenthesis.shift();
                 let temp = [];
                 let str = "";
-                // CHECK RULE 1
+                // RULE 1
                 if( openCount < n ) {
                         str = data[0] + "(";
                         [, o, c] = data;
@@ -26,7 +26,7 @@
                         parenthesis.push(temp);
                         temp = [];
                 }
-                // CHECK RULE 2
+                // RULE 2
                 if( openCount > closeCount ) {
                         str = data[0] + ")";
                         [, o, c] = data;
