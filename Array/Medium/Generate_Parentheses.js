@@ -32,17 +32,17 @@
                 ['(', 1, 0]
         ];
         while( true ) {
-                let openCount = parenthesis[0][1];
-                let closeCount = parenthesis[0][2];
+                let openParenthesisCount = parenthesis[0][1];
+                let closeParenthesisCount = parenthesis[0][2];
                 // RULE 3
-                if( openCount == closeCount && closeCount == n && openCount == n ) {
+                if( openParenthesisCount == closeParenthesisCount && closeParenthesisCount == n && openParenthesisCount == n ) {
                         break;
                 }
                 let data = parenthesis.shift();
                 let temp = [];
                 let str = "";
                 // RULE 1
-                if( openCount < n ) {
+                if( openParenthesisCount < n ) {
                         str = data[0] + "(";
                         [, o, c] = data;
                         temp.push(str, ++o, c);
@@ -50,7 +50,7 @@
                         temp = [];
                 }
                 // RULE 2
-                if( openCount > closeCount ) {
+                if( openParenthesisCount > closeParenthesisCount ) {
                         str = data[0] + ")";
                         [, o, c] = data;
                         temp.push(str, o, ++c);
