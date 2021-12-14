@@ -27,7 +27,7 @@
 */
 
 
- var generateParenthesis = function( n ) {
+var generateParenthesis = function( n ) {
         let parenthesis = [
                 ['(', 1, 0]
         ];
