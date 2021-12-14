@@ -35,9 +35,5 @@
                         temp = [];
                 }
         }
-        let result = [];
-        for( let i=0; i<parenthesis.length; i++ ){
-                result.push(parenthesis[i][0]);
-        }
-        return result;
+        return parenthesis.map( result => result[0] );
 };
