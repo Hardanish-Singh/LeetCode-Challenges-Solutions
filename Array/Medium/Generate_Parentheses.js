@@ -18,7 +18,7 @@
         Rules:
                 1) Only add open parenthesis if open < n
                 2) Only add closing parenthesis if open > close
-                3) We get a valid combination if and only if, openParenthesisCount == closeParenthesisCount && closeParenthesisCount == n && openParenthesisCount == n
+                3) We get a valid combination IIF,  openParenthesisCount == closeParenthesisCount && closeParenthesisCount == n && openParenthesisCount == n
 */
 
 /*
