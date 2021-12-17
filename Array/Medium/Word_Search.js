@@ -37,54 +37,64 @@ const move_in_all_four_directions = ( grid, i, j, queue, c, word, snapshot_array
         let top_position = "";
         let right_position = "";
         let bottom_position = "";
-        let a = 0;
-        let b = 0;
-        let cc = 0;
-        let d = 0;
+        let leftCounter = 0;
+        let topCounter = 0;
+        let rightCounter = 0;
+        let bottomCounter = 0;
+
         grid[i][j] = '2';
+        
         // MOVE LEFT & ADD COORDINATES TO QUEUE
         left_position = move_left( grid, i, j, c, word );
         if( left_position ) {
-                queue.push(left_position + "," + ( Number(c) + 1 ));
-                a = ( Number(c) + 1 );
+                leftCounter = ( Number(c) + 1 )
+                queue.push( left_position + "," + leftCounter );
         }
         // MOVE TOP & ADD COORDINATES TO QUEUE
         top_position = move_top( grid, i, j, c, word );
         if( top_position ) {
-                queue.push(top_position + "," + ( Number(c) + 1 ));
-                b = ( Number(c) + 1 );
+                topCounter = ( Number(c) + 1 );
+                queue.push( top_position + "," + topCounter );
         }
         // MOVE RIGHT & ADD COORDINATES TO QUEUE
         right_position = move_right( grid, i, j, c, word );
         if( right_position ) {
-                queue.push(right_position + "," + ( Number(c) + 1 ));
-                cc = ( Number(c) + 1 );
+                rightCounter = ( Number(c) + 1 );
+                queue.push( right_position + "," + rightCounter );
         }
         // MOVE DOWN & ADD COORDINATES TO QUEUE
         bottom_position = move_down( grid, i, j, c, word );
         if( bottom_position ) {
-                queue.push(bottom_position + "," + ( Number(c) + 1 ));
-                d = ( Number(c) + 1 );
+                bottomCounter = ( Number(c) + 1 );
+                queue.push( bottom_position + "," + bottomCounter );
         }
-        if( left_position == undefined && top_position == undefined && right_position == undefined && bottom_position == undefined ) {
+        if( 
+                ! left_position 
+                        && 
+                ! top_position 
+                        && 
+                ! right_position
+                        && 
+                ! bottom_position
+        ) {
                 grid = snapshot_array.pop();
         }
-        if( a == b && a > 0 && b > 0 ) {
+        if( leftCounter == topCounter && leftCounter > 0 && topCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
-        if( a == cc && a > 0 && cc > 0 ) {
+        if( leftCounter == rightCounter && leftCounter > 0 && rightCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
-        if( a == d && a > 0 && d > 0 ) {
+        if( leftCounter == bottomCounter && leftCounter > 0 && bottomCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
-        if( b == cc && b > 0 && cc > 0 ) {
+        if( topCounter == rightCounter && topCounter > 0 && rightCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
-        if( b == d && b > 0 && d > 0 ) {
+        if( topCounter == bottomCounter && topCounter > 0 && bottomCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
-        if( cc == d && cc > 0 && d > 0 ) {
+        if( rightCounter == bottomCounter && rightCounter > 0 && bottomCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
         return grid;
