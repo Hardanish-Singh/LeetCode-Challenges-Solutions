@@ -32,7 +32,7 @@ const move_down = ( grid, i, j, c, word ) => {
         }
 }
 
-const move_in_all_four_directions = ( grid, i, j, queue, c, word, snapshot_array ) => {
+const move_in_all_four_directions = ( grid, i, j, stack, c, word, snapshot_array ) => {
         let leftPosition = "";
         let topPosition = "";
         let rightPosition = "";
@@ -44,29 +44,29 @@ const move_in_all_four_directions = ( grid, i, j, queue, c, word, snapshot_array
 
         grid[i][j] = '2';
         
-        // MOVE LEFT & ADD COORDINATES TO QUEUE
+        // MOVE LEFT & ADD COORDINATES TO STACK
         leftPosition = move_left( grid, i, j, c, word );
         if( leftPosition ) {
                 leftCounter = ( Number(c) + 1 )
-                queue.push( leftPosition + "," + leftCounter );
+                stack.push( leftPosition + "," + leftCounter );
         }
-        // MOVE TOP & ADD COORDINATES TO QUEUE
+        // MOVE TOP & ADD COORDINATES TO STACK
         topPosition = move_top( grid, i, j, c, word );
         if( topPosition ) {
                 topCounter = ( Number(c) + 1 );
-                queue.push( topPosition + "," + topCounter );
+                stack.push( topPosition + "," + topCounter );
         }
-        // MOVE RIGHT & ADD COORDINATES TO QUEUE
+        // MOVE RIGHT & ADD COORDINATES TO STACK
         rightPosition = move_right( grid, i, j, c, word );
         if( rightPosition ) {
                 rightCounter = ( Number(c) + 1 );
-                queue.push( rightPosition + "," + rightCounter );
+                stack.push( rightPosition + "," + rightCounter );
         }
-        // MOVE DOWN & ADD COORDINATES TO QUEUE
+        // MOVE DOWN & ADD COORDINATES TO STACK
         bottomPosition = move_down( grid, i, j, c, word );
         if( bottomPosition ) {
                 bottomCounter = ( Number(c) + 1 );
-                queue.push( bottomPosition + "," + bottomCounter );
+                stack.push( bottomPosition + "," + bottomCounter );
         }
 
         if( 
@@ -104,14 +104,15 @@ const move_in_all_four_directions = ( grid, i, j, queue, c, word, snapshot_array
 }
 
 
-const perform_enqueue_dequeue_operation = ( queue, grid, word, snapshot_array ) => {
-        while( queue.length != 0 ) {
-                [i, j, c] = queue.pop().split(",");
+const perform_push_pop_operation = ( stack, grid, word, snapshot_array ) => {
+        while( stack.length != 0 ) {
+                // DFS METHOD
+                [i, j, c] = stack.pop().split(",");
                 if( c == word.length ) {
                         grid[i][j] = '2';
                         return true;
                 }
-                grid = move_in_all_four_directions( grid, i, j, queue, c, word, snapshot_array );
+                grid = move_in_all_four_directions( grid, i, j, stack, c, word, snapshot_array );
         }
 }
 
@@ -122,9 +123,9 @@ var exist = function( grid, word ) {
                 for( let j=0; j<grid[i].length; j++ ) {
                         grid = JSON.parse(JSON.stringify(copy_grid));
                         if( grid[i][j] === word[0] ) {
-                                let queue = [];
-                                move_in_all_four_directions( grid, i, j, queue, 1, word, snapshot_array );
-                                let f = perform_enqueue_dequeue_operation( queue, grid, word, snapshot_array );
+                                let stack = [];
+                                move_in_all_four_directions( grid, i, j, stack, 1, word, snapshot_array );
+                                let f = perform_push_pop_operation( stack, grid, word, snapshot_array );
                                 if( f ) {
                                         return true;
                                 }
