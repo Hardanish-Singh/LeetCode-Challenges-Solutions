@@ -42,6 +42,7 @@ const move_in_all_four_directions = ( grid, i, j, stack, c, word, snapshot_array
         let rightCounter = 0;
         let bottomCounter = 0;
 
+        // MARK THE COORDINATES AS VISITED
         grid[i][j] = '2';
         
         // MOVE LEFT & ADD COORDINATES TO STACK
@@ -102,7 +103,7 @@ const move_in_all_four_directions = ( grid, i, j, stack, c, word, snapshot_array
         if( topCounter == bottomCounter && topCounter > 0 && bottomCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
-        
+
         if( rightCounter == bottomCounter && rightCounter > 0 && bottomCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
@@ -126,6 +127,7 @@ const perform_push_pop_operation = ( stack, grid, word, snapshot_array ) => {
 var exist = function( grid, word ) {
         let copy_grid = JSON.parse(JSON.stringify(grid));
         let snapshot_array = [];
+
         for( let i=0; i<grid.length; i++ ) {
                 for( let j=0; j<grid[i].length; j++ ) {
                         grid = JSON.parse(JSON.stringify(copy_grid));
@@ -143,6 +145,5 @@ var exist = function( grid, word ) {
                 }
         }
 
-        
         return false;
 };
