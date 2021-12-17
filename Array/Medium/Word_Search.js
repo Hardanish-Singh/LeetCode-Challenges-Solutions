@@ -33,10 +33,10 @@ const move_down = ( grid, i, j, c, word ) => {
 }
 
 const move_in_all_four_directions = ( grid, i, j, queue, c, word, snapshot_array ) => {
-        let left_position = "";
-        let top_position = "";
-        let right_position = "";
-        let bottom_position = "";
+        let leftPosition = "";
+        let topPosition = "";
+        let rightPosition = "";
+        let bottomPosition = "";
         let leftCounter = 0;
         let topCounter = 0;
         let rightCounter = 0;
@@ -45,40 +45,42 @@ const move_in_all_four_directions = ( grid, i, j, queue, c, word, snapshot_array
         grid[i][j] = '2';
         
         // MOVE LEFT & ADD COORDINATES TO QUEUE
-        left_position = move_left( grid, i, j, c, word );
-        if( left_position ) {
+        leftPosition = move_left( grid, i, j, c, word );
+        if( leftPosition ) {
                 leftCounter = ( Number(c) + 1 )
-                queue.push( left_position + "," + leftCounter );
+                queue.push( leftPosition + "," + leftCounter );
         }
         // MOVE TOP & ADD COORDINATES TO QUEUE
-        top_position = move_top( grid, i, j, c, word );
-        if( top_position ) {
+        topPosition = move_top( grid, i, j, c, word );
+        if( topPosition ) {
                 topCounter = ( Number(c) + 1 );
-                queue.push( top_position + "," + topCounter );
+                queue.push( topPosition + "," + topCounter );
         }
         // MOVE RIGHT & ADD COORDINATES TO QUEUE
-        right_position = move_right( grid, i, j, c, word );
-        if( right_position ) {
+        rightPosition = move_right( grid, i, j, c, word );
+        if( rightPosition ) {
                 rightCounter = ( Number(c) + 1 );
-                queue.push( right_position + "," + rightCounter );
+                queue.push( rightPosition + "," + rightCounter );
         }
         // MOVE DOWN & ADD COORDINATES TO QUEUE
-        bottom_position = move_down( grid, i, j, c, word );
-        if( bottom_position ) {
+        bottomPosition = move_down( grid, i, j, c, word );
+        if( bottomPosition ) {
                 bottomCounter = ( Number(c) + 1 );
-                queue.push( bottom_position + "," + bottomCounter );
+                queue.push( bottomPosition + "," + bottomCounter );
         }
+
         if( 
-                ! left_position 
+                ! leftPosition 
                         && 
-                ! top_position 
+                ! topPosition 
                         && 
-                ! right_position
+                ! rightPosition
                         && 
-                ! bottom_position
+                ! bottomPosition
         ) {
                 grid = snapshot_array.pop();
         }
+
         if( leftCounter == topCounter && leftCounter > 0 && topCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
@@ -97,6 +99,7 @@ const move_in_all_four_directions = ( grid, i, j, queue, c, word, snapshot_array
         if( rightCounter == bottomCounter && rightCounter > 0 && bottomCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
+
         return grid;
 }
 
