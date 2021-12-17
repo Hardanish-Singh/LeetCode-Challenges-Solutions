@@ -77,6 +77,8 @@ const move_in_all_four_directions = ( grid, i, j, stack, c, word, snapshot_array
                 ! rightPosition
                         && 
                 ! bottomPosition
+                        &&
+                snapshot_array.length > 0
         ) {
                 grid = snapshot_array.pop();
         }
@@ -84,18 +86,23 @@ const move_in_all_four_directions = ( grid, i, j, stack, c, word, snapshot_array
         if( leftCounter == topCounter && leftCounter > 0 && topCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
+
         if( leftCounter == rightCounter && leftCounter > 0 && rightCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
+
         if( leftCounter == bottomCounter && leftCounter > 0 && bottomCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
+
         if( topCounter == rightCounter && topCounter > 0 && rightCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
+
         if( topCounter == bottomCounter && topCounter > 0 && bottomCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
+        
         if( rightCounter == bottomCounter && rightCounter > 0 && bottomCounter > 0 ) {
                 snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
         }
