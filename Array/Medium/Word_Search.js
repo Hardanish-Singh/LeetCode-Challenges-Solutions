@@ -1,44 +1,44 @@
 function is_visited ( ...args ) {
-        let [ grid, i, j, c, word ] = args;
-        if( grid[i][j] === word[c] && grid[i][j] != '2' ) {
+        let [ grid, i, j, count, word ] = args;
+        if( grid[i][j] === word[count] && grid[i][j] != '2' ) {
                 return i + "," + j;
         }
 }
 
 function move_left( ...args ) {
-        let [ grid, i, j, c, word ] = args;
+        let [ grid, i, j, count, word ] = args;
         --j;
         if( j >= 0  ) {
-                return is_visited( grid, i, j, c, word );
+                return is_visited( grid, i, j, count, word );
         }
 }
 
 function move_top( ...args ) {
-        let [ grid, i, j, c, word ] = args;
+        let [ grid, i, j, count, word ] = args;
         --i;
         if( i >= 0 ) {
-                return is_visited( grid, i, j, c, word );  
+                return is_visited( grid, i, j, count, word );  
         }
 }
 
 function move_right( ...args ) {
-        let [ grid, i, j, c, word ] = args;
+        let [ grid, i, j, count, word ] = args;
         ++j;
         if( j <= grid[i].length - 1 ) {
-                return is_visited( grid, i, j, c, word );
+                return is_visited( grid, i, j, count, word );
         }
 }
 
 function move_down( ...args ) {
-        let [ grid, i, j, c, word ] = args;
+        let [ grid, i, j, count, word ] = args;
         ++i;
         if( i <= grid.length - 1 ) {
-                return is_visited( grid, i, j, c, word );  
+                return is_visited( grid, i, j, count, word );  
         }
 }
 
 function move_in_all_four_directions ( ...args ) {
-        let [ grid, i, j, stack, c, word, snapshot_array ] = args;
+        let [ grid, i, j, stack, count, word, snapshot_array ] = args;
         let leftPosition = "";
         let topPosition = "";
         let rightPosition = "";
@@ -52,27 +52,27 @@ function move_in_all_four_directions ( ...args ) {
         grid[i][j] = '2';
         
         // MOVE LEFT & ADD COORDINATES TO STACK
-        leftPosition = move_left( grid, i, j, c, word );
+        leftPosition = move_left( grid, i, j, count, word );
         if( leftPosition ) {
-                leftCounter = ( Number(c) + 1 );
+                leftCounter = ( Number( count ) + 1 );
                 stack.push( leftPosition + "," + leftCounter );
         }
         // MOVE TOP & ADD COORDINATES TO STACK
-        topPosition = move_top( grid, i, j, c, word );
+        topPosition = move_top( grid, i, j, count, word );
         if( topPosition ) {
-                topCounter = ( Number(c) + 1 );
+                topCounter = ( Number( count ) + 1 );
                 stack.push( topPosition + "," + topCounter );
         }
         // MOVE RIGHT & ADD COORDINATES TO STACK
-        rightPosition = move_right( grid, i, j, c, word );
+        rightPosition = move_right( grid, i, j, count, word );
         if( rightPosition ) {
-                rightCounter = ( Number(c) + 1 );
+                rightCounter = ( Number( count ) + 1 );
                 stack.push( rightPosition + "," + rightCounter );
         }
         // MOVE DOWN & ADD COORDINATES TO STACK
-        bottomPosition = move_down( grid, i, j, c, word );
+        bottomPosition = move_down( grid, i, j, count, word );
         if( bottomPosition ) {
-                bottomCounter = ( Number(c) + 1 );
+                bottomCounter = ( Number( count ) + 1 );
                 stack.push( bottomPosition + "," + bottomCounter );
         }
 
@@ -122,12 +122,12 @@ function perform_push_pop_operation( ...args ) {
         let [stack, grid, word, snapshot_array] = args;
         while( stack.length != 0 ) {
                 // DFS METHOD
-                [i, j, c] = stack.pop().split(",");
-                if( c == word.length ) {
+                [i, j, count] = stack.pop().split(",");
+                if( count == word.length ) {
                         grid[i][j] = '2';
                         return true;
                 }
-                grid = move_in_all_four_directions( grid, i, j, stack, c, word, snapshot_array );
+                grid = move_in_all_four_directions( grid, i, j, stack, count, word, snapshot_array );
         }
 }
 
@@ -146,7 +146,7 @@ var exist = function( grid, word ) {
                                                                 i,
                                                                 j,
                                                                 stack,
-                                                                1,
+                                                                defaultCount = 1,
                                                                 word,
                                                                 snapshot_array
                                                         );
