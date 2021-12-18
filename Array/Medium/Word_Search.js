@@ -150,6 +150,9 @@ var exist = function( grid, word ) {
                                                                 word,
                                                                 snapshot_array
                                                         );
+                                if( grid[i][j] == '2' && word.length == 1 ) {
+                                        return true;
+                                }
                                 let isFound = perform_push_pop_operation( 
                                                                                 stack,
                                                                                 grid,
@@ -157,9 +160,6 @@ var exist = function( grid, word ) {
                                                                                 snapshot_array
                                                                         );
                                 if( isFound ) {
-                                        return true;
-                                }
-                                if( grid[i][j] == '2' && word.length == 1 ) {
                                         return true;
                                 }
                         }
