@@ -141,7 +141,7 @@ var exist = function( grid, word ) {
                         grid = JSON.parse( JSON.stringify( copy_grid ) );
                         if( grid[i][j] === word[0] ) {
                                 let stack = [];
-                                move_in_all_four_directions( 
+                                grid = move_in_all_four_directions(
                                                                 grid,
                                                                 i,
                                                                 j,
@@ -153,7 +153,7 @@ var exist = function( grid, word ) {
                                 if( grid[i][j] == '2' && word.length == 1 ) {
                                         return true;
                                 }
-                                let isFound = perform_push_pop_operation( 
+                                let isFound = perform_push_pop_operation(
                                                                                 stack,
                                                                                 grid,
                                                                                 word,
