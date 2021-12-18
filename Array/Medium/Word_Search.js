@@ -1,38 +1,44 @@
-const is_visited = ( grid, i, j, c, word ) => {
+function is_visited ( ...args ) {
+        let [ grid, i, j, c, word ] = args;
         if( grid[i][j] === word[c] && grid[i][j] != '2' ) {
                 return i + "," + j;
         }
 }
 
-const move_left = ( grid, i, j, c, word ) => {
+function move_left( ...args ) {
+        let [ grid, i, j, c, word ] = args;
         --j;
         if( j >= 0  ) {
                 return is_visited( grid, i, j, c, word );
         }
 }
 
-const move_top = ( grid, i, j, c, word ) => {
+function move_top( ...args ) {
+        let [ grid, i, j, c, word ] = args;
         --i;
         if( i >= 0 ) {
                 return is_visited( grid, i, j, c, word );  
         }
 }
 
-const move_right = ( grid, i, j, c, word ) => {
+function move_right( ...args ) {
+        let [ grid, i, j, c, word ] = args;
         ++j;
         if( j <= grid[i].length - 1 ) {
                 return is_visited( grid, i, j, c, word );
         }
 }
 
-const move_down = ( grid, i, j, c, word ) => {
+function move_down( ...args ) {
+        let [ grid, i, j, c, word ] = args;
         ++i;
         if( i <= grid.length - 1 ) {
                 return is_visited( grid, i, j, c, word );  
         }
 }
 
-const move_in_all_four_directions = ( grid, i, j, stack, c, word, snapshot_array ) => {
+function move_in_all_four_directions ( ...args ) {
+        let [ grid, i, j, stack, c, word, snapshot_array ] = args;
         let leftPosition = "";
         let topPosition = "";
         let rightPosition = "";
@@ -42,13 +48,13 @@ const move_in_all_four_directions = ( grid, i, j, stack, c, word, snapshot_array
         let rightCounter = 0;
         let bottomCounter = 0;
 
-        // MARK THE COORDINATES AS VISITED
+        // MARK THE COORDINATE AS VISITED
         grid[i][j] = '2';
         
         // MOVE LEFT & ADD COORDINATES TO STACK
         leftPosition = move_left( grid, i, j, c, word );
         if( leftPosition ) {
-                leftCounter = ( Number(c) + 1 )
+                leftCounter = ( Number(c) + 1 );
                 stack.push( leftPosition + "," + leftCounter );
         }
         // MOVE TOP & ADD COORDINATES TO STACK
@@ -112,7 +118,8 @@ const move_in_all_four_directions = ( grid, i, j, stack, c, word, snapshot_array
 }
 
 
-const perform_push_pop_operation = ( stack, grid, word, snapshot_array ) => {
+function perform_push_pop_operation( ...args ) {
+        let [stack, grid, word, snapshot_array] = args;
         while( stack.length != 0 ) {
                 // DFS METHOD
                 [i, j, c] = stack.pop().split(",");
@@ -125,17 +132,31 @@ const perform_push_pop_operation = ( stack, grid, word, snapshot_array ) => {
 }
 
 var exist = function( grid, word ) {
-        let copy_grid = JSON.parse(JSON.stringify(grid));
+        let copy_grid = JSON.parse( JSON.stringify( grid ) );
         let snapshot_array = [];
 
-        for( let i=0; i<grid.length; i++ ) {
-                for( let j=0; j<grid[i].length; j++ ) {
-                        grid = JSON.parse(JSON.stringify(copy_grid));
+        for( let i = 0; i < grid.length; i++ ) {
+                for( let j = 0; j < grid[i].length; j++ ) {
+                        // RESTORE TO ORGINIAL GRID
+                        grid = JSON.parse( JSON.stringify( copy_grid ) );
                         if( grid[i][j] === word[0] ) {
                                 let stack = [];
-                                move_in_all_four_directions( grid, i, j, stack, 1, word, snapshot_array );
-                                let f = perform_push_pop_operation( stack, grid, word, snapshot_array );
-                                if( f ) {
+                                move_in_all_four_directions( 
+                                                                grid, 
+                                                                i, 
+                                                                j, 
+                                                                stack, 
+                                                                1, 
+                                                                word, 
+                                                                snapshot_array 
+                                                        );
+                                let isFound = perform_push_pop_operation( 
+                                                                                stack, 
+                                                                                grid, 
+                                                                                word, 
+                                                                                snapshot_array 
+                                                                        );
+                                if( isFound ) {
                                         return true;
                                 }
                                 if( grid[i][j] == '2' && word.length == 1 ) {
