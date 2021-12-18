@@ -142,19 +142,19 @@ var exist = function( grid, word ) {
                         if( grid[i][j] === word[0] ) {
                                 let stack = [];
                                 move_in_all_four_directions( 
-                                                                grid, 
-                                                                i, 
-                                                                j, 
-                                                                stack, 
-                                                                1, 
-                                                                word, 
-                                                                snapshot_array 
+                                                                grid,
+                                                                i,
+                                                                j,
+                                                                stack,
+                                                                1,
+                                                                word,
+                                                                snapshot_array
                                                         );
                                 let isFound = perform_push_pop_operation( 
-                                                                                stack, 
-                                                                                grid, 
-                                                                                word, 
-                                                                                snapshot_array 
+                                                                                stack,
+                                                                                grid,
+                                                                                word,
+                                                                                snapshot_array
                                                                         );
                                 if( isFound ) {
                                         return true;
