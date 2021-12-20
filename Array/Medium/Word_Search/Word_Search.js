@@ -38,7 +38,7 @@ function move_down( ...args ) {
 }
 
 function move_in_all_four_directions ( ...args ) {
-        let [ grid, i, j, stack, count, word, snapshot_array ] = args;
+        let [ grid, i, j, stack, count, word, gridTraversal ] = args;
         let leftPosition = "";
         let topPosition = "";
         let rightPosition = "";
@@ -85,33 +85,33 @@ function move_in_all_four_directions ( ...args ) {
                         && 
                 ! bottomPosition
                         &&
-                snapshot_array.length > 0
+                gridTraversal.length > 0
         ) {
-                grid = snapshot_array.pop();
+                grid = gridTraversal.pop();
         }
 
         if( leftCounter == topCounter && leftCounter > 0 && topCounter > 0 ) {
-                snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
+                gridTraversal.push( JSON.parse( JSON.stringify( grid ) ) );
         }
 
         if( leftCounter == rightCounter && leftCounter > 0 && rightCounter > 0 ) {
-                snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
+                gridTraversal.push( JSON.parse( JSON.stringify( grid ) ) );
         }
 
         if( leftCounter == bottomCounter && leftCounter > 0 && bottomCounter > 0 ) {
-                snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
+                gridTraversal.push( JSON.parse( JSON.stringify( grid ) ) );
         }
 
         if( topCounter == rightCounter && topCounter > 0 && rightCounter > 0 ) {
-                snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
+                gridTraversal.push( JSON.parse( JSON.stringify( grid ) ) );
         }
 
         if( topCounter == bottomCounter && topCounter > 0 && bottomCounter > 0 ) {
-                snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
+                gridTraversal.push( JSON.parse( JSON.stringify( grid ) ) );
         }
 
         if( rightCounter == bottomCounter && rightCounter > 0 && bottomCounter > 0 ) {
-                snapshot_array.push( JSON.parse( JSON.stringify( grid ) ) );
+                gridTraversal.push( JSON.parse( JSON.stringify( grid ) ) );
         }
 
         return grid;
@@ -119,7 +119,7 @@ function move_in_all_four_directions ( ...args ) {
 
 
 function perform_push_pop_operation( ...args ) {
-        let [stack, grid, word, snapshot_array] = args;
+        let [stack, grid, word, gridTraversal] = args;
         while( stack.length != 0 ) {
                 // DFS METHOD
                 [i, j, count] = stack.pop().split(",");
@@ -127,18 +127,18 @@ function perform_push_pop_operation( ...args ) {
                         grid[i][j] = '2';
                         return true;
                 }
-                grid = move_in_all_four_directions( grid, i, j, stack, count, word, snapshot_array );
+                grid = move_in_all_four_directions( grid, i, j, stack, count, word, gridTraversal );
         }
 }
 
 var exist = function( grid, word ) {
-        let copy_grid = JSON.parse( JSON.stringify( grid ) );
-        let snapshot_array = [];
+        let originalGrid = JSON.parse( JSON.stringify( grid ) );
+        let gridTraversal = [];
 
         for( let i = 0; i < grid.length; i++ ) {
                 for( let j = 0; j < grid[i].length; j++ ) {
-                        // RESTORE TO ORGINIAL GRID
-                        grid = JSON.parse( JSON.stringify( copy_grid ) );
+                        // RESTORE ORIGINIAL GRID
+                        grid = JSON.parse( JSON.stringify( originalGrid ) );
                         if( grid[i][j] === word[0] ) {
                                 let stack = [];
                                 grid = move_in_all_four_directions(
@@ -148,7 +148,7 @@ var exist = function( grid, word ) {
                                                                 stack,
                                                                 defaultCount = 1,
                                                                 word,
-                                                                snapshot_array
+                                                                gridTraversal
                                                         );
                                 if( grid[i][j] == '2' && word.length == 1 ) {
                                         return true;
@@ -157,7 +157,7 @@ var exist = function( grid, word ) {
                                                                                 stack,
                                                                                 grid,
                                                                                 word,
-                                                                                snapshot_array
+                                                                                gridTraversal
                                                                         );
                                 if( isFound ) {
                                         return true;
