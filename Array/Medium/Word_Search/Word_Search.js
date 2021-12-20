@@ -167,4 +167,4 @@ var exist = function( grid, word ) {
         }
 
         return false;
-};
+}; 
