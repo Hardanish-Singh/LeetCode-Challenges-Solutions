@@ -122,7 +122,7 @@ function perform_push_pop_operation( ...args ) {
         let [stack, grid, word, gridTraversal] = args;
         while( stack.length != 0 ) {
                 // DFS METHOD
-                [i, j, count] = stack.pop().split(",");
+                [i, j, count] = stack.pop().split(",").map(Number);
                 if( count == word.length ) {
                         grid[i][j] = '2';
                         return true;
@@ -131,7 +131,8 @@ function perform_push_pop_operation( ...args ) {
         }
 }
 
-var exist = function( grid, word ) {
+var exist = function( ...args ) {
+        let [ grid, word ] = args;
         let originalGrid = JSON.parse( JSON.stringify( grid ) );
         let gridTraversal = [];
 
