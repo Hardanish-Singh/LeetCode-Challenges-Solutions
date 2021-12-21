@@ -1,6 +1,24 @@
 /*
- * @param {string} s
- * @return {number}
+        Given a string, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+        
+        Example 1:
+                Input: string = "leetcode"
+                Output: 0
+        Example 2:
+                Input: string = "loveleetcode"
+                Output: 2
+        Example 3:
+                Input: string = "aabb"
+                Output: -1
+
+        Constraints:
+                1) 1 <= s.length <= 10^5
+                2) s consists of only lowercase English letters.
+*/
+
+/*
+ * @param { string } string
+ * @return { number }
 */
 
 // SOLUTION 1
