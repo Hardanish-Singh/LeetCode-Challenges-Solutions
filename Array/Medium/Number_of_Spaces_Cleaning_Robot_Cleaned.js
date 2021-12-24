@@ -9,25 +9,12 @@ var numberOfCleanRooms = function( room ) {
         let i = 0;
         let j = 0;
         let noOfCellsRobotCleaned = 0;
-        let isCleaned = false;
-        let visitedPositions = [];
+        let visitedPositions = {};
 
 
-        while( true ) {
-                // BREAK WHEN POSITION IS VISITED WITH SAME DIRECTION
-                for( let m = 0; m < visitedPositions.length; m++ ){
-                        if( 
-                                visitedPositions[m] === i + "," + j + "," + currentDirection
-                        ) {
-                                isCleaned = true;
-                                break;
-                        }
-                }
-                if( isCleaned ) {
-                        break;
-                }
+        while( !( visitedPositions[i + "," + j + "," + currentDirection] ) ) {
 
-                visitedPositions.push( i + "," + j + "," + currentDirection );
+                visitedPositions[i + "," + j + "," + currentDirection] = true;
 
                 //MOVE RIGHT
                 if( currentDirection == "right" ) {
@@ -91,4 +78,3 @@ var numberOfCleanRooms = function( room ) {
 
         return noOfCellsRobotCleaned;
 };
-
