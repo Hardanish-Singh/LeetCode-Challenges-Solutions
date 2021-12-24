@@ -20,7 +20,7 @@ var numberOfCleanRooms = function( room ) {
                         noOfCellsRobotCleaned++;
                 }
                 room[i][j] = 2;
-                
+
                 //MOVE RIGHT
                 if( currentDirection == "right" ) {
                         j = j + 1;
@@ -54,6 +54,7 @@ var numberOfCleanRooms = function( room ) {
                         }
                 }
 
+                //MOVE TOP
                 else if( currentDirection == "top" ) {
                         i = i - 1;
                         //OUT OF GRID OR ROTATE 90 deg CLOCKWISE
