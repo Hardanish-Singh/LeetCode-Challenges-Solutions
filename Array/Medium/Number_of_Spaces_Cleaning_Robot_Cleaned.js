@@ -15,13 +15,14 @@ var numberOfCleanRooms = function( room ) {
         while( !( visitedPositions[i + "," + j + "," + currentDirection] ) ) {
 
                 visitedPositions[i + "," + j + "," + currentDirection] = true;
-
+                
+                if( room[i][j] != 2 ) {
+                        noOfCellsRobotCleaned++;
+                }
+                room[i][j] = 2;
+                
                 //MOVE RIGHT
                 if( currentDirection == "right" ) {
-                        if( room[i][j] != 2 ) {
-                                noOfCellsRobotCleaned++;
-                        }
-                        room[i][j] = 2;
                         j = j + 1;
                         //OUT OF GRID OR ROTATE 90 deg CLOCKWISE
                         if( j == room[i].length || room[i][j] == 1 ) {
@@ -33,10 +34,6 @@ var numberOfCleanRooms = function( room ) {
 
                 //MOVE DOWN
                 else if( currentDirection == "down" ) {
-                        if( room[i][j] != 2 ) {
-                                noOfCellsRobotCleaned++;
-                        }
-                        room[i][j] = 2;
                         i = i + 1;
                         //OUT OF GRID OR ROTATE 90 deg CLOCKWISE
                         if( i == room.length || room[i][j] == 1 ) {
@@ -48,10 +45,6 @@ var numberOfCleanRooms = function( room ) {
 
                 //MOVE LEFT
                 else if( currentDirection == "left" ) {
-                        if( room[i][j] != 2 ) {
-                                noOfCellsRobotCleaned++;
-                        }
-                        room[i][j] = 2;
                         j = j - 1;
                         //OUT OF GRID OR ROTATE 90 deg CLOCKWISE
                         if( j < 0 ||  room[i][j] == 1 ) {
@@ -62,10 +55,6 @@ var numberOfCleanRooms = function( room ) {
                 }
 
                 else if( currentDirection == "top" ) {
-                        if( room[i][j] != 2 ) {
-                                noOfCellsRobotCleaned++;
-                        }
-                        room[i][j] = 2;
                         i = i - 1;
                         //OUT OF GRID OR ROTATE 90 deg CLOCKWISE
                         if( i < 0 || room[i][j] == 1 ) {
