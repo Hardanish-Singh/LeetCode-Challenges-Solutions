@@ -1,9 +1,9 @@
 var numberOfCleanRooms = function( room ) {
         const direction = {
-                "right": "down",
-                "down": "left",
-                "left": "top",
-                "top": "right",
+                "right" :  "down",
+                "down"  :  "left",
+                "left"  :  "top",
+                "top"   :  "right",
         }
         const visitedPositions = {};
         let currentDirection = "right";
