@@ -15,11 +15,11 @@ var numberOfCleanRooms = function( room ) {
                         THAT IT HAS ALREADY CLEANED & IS FACING THE SAME DIRECTION AS BEFORE, 
                         WE CAN STOP THE SIMULATION.
                 */
-                if( visitedPositions[i + "," + j + "," + currentDirection] ) {
+                if( visitedPositions[ i + "," + j + "," + currentDirection ] ) {
                         break;
                 }
                 
-                visitedPositions[i + "," + j + "," + currentDirection] = true;
+                visitedPositions[ i + "," + j + "," + currentDirection ] = true;
                 
                 if( room[i][j] != 2 ) {
                         noOfCellsRobotCleaned++;
