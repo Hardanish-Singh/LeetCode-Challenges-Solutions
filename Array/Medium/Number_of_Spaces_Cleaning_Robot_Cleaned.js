@@ -3,17 +3,18 @@ var numberOfCleanRooms = function( room ) {
                 "right": "down",
                 "down": "left",
                 "left": "top",
-                "top": "right"
+                "top": "right",
         }
+        const visitedPositions = {};
         let currentDirection = "right";
-        let i = 0;
-        let j = 0;
-        let noOfCellsRobotCleaned = 0;
-        let visitedPositions = {};
+        let i = 0, j = 0, noOfCellsRobotCleaned = 0;
 
-
-        while( !( visitedPositions[i + "," + j + "," + currentDirection] ) ) {
-
+        while( true ) {
+                
+                if( visitedPositions[i + "," + j + "," + currentDirection] ) {
+                        break;
+                }
+                
                 visitedPositions[i + "," + j + "," + currentDirection] = true;
                 
                 if( room[i][j] != 2 ) {
