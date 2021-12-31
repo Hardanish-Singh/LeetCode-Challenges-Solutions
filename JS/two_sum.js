@@ -7,7 +7,12 @@
 	        return [0, 1].
 */
 
-// SOLUTION 1
+/*
+        SOLUTION 1: BRUTE FORCE
+                Time Complexity: O( n ^ 2 )
+                Space Complexity: O( n )
+*/
+
 /**
  * @param { number[] } nums
  * @param { number } target
@@ -24,7 +29,12 @@ var twoSum = function( nums, target ) {
         }
 };
 
-// SOLUTION 2
+/*
+        SOLUTION 2: USING HASH TABLE
+                Time Complexity: O( n )
+                Space Complexity: O( n )
+*/
+
 /**
  * @param { number[] } nums
  * @param { number } target
