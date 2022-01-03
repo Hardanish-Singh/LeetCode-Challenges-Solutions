@@ -65,3 +65,27 @@ var twoSum = function( nums, target ) {
 		}
 	}
 }
+
+// SOLUTION 3
+
+/**
+ * @param { number[] } nums
+ * @param { number } target
+ * @return { number[] }
+*/
+
+var twoSum = function( nums, target ) {
+	let leftIndex = 0;
+	let rightIndex = nums.length-1;
+	while( leftIndex < rightIndex ){
+		if( nums[leftIndex] + nums[rightIndex] < target) {
+			leftIndex++;
+		}
+		else if( nums[leftIndex] + nums[rightIndex] > target) {
+			rightIndex--;
+		}
+		else if( nums[leftIndex] + nums[rightIndex] === target) {
+			return [ leftIndex+1, rightIndex+1 ];
+		}
+	}
+}
