@@ -18,7 +18,7 @@
                 3) -10^4 <= target <= 10^4
 */
 
-/*
+/**
  * @param { number[] } nums
  * @param { number } target
  * @return { number }
