@@ -87,7 +87,7 @@ var twoSum = function( nums, target ) {
 var twoSum = function( nums, target ) {
 	let leftIndex = 0;
 	let rightIndex = nums.length-1;
-	while( leftIndex < rightIndex ){
+	while( leftIndex < rightIndex ) {
 		if( nums[leftIndex] + nums[rightIndex] < target) {
 			leftIndex++;
 		}
