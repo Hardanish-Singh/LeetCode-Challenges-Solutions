@@ -1,8 +1,6 @@
 /*
 	Given an array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number.
-
 	Return the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 <= answer[0] < answer[1] <= numbers.length.
-
 	The tests are generated such that there is exactly one solution. You may not use the same element twice.
 
 	Example 1:
@@ -24,7 +22,11 @@
 		5) The tests are generated such that there is exactly one solution.
 */
 
-// SOLUTION 1
+/*
+        SOLUTION 1: BRUTE FORCE
+                Time Complexity: O( n ^ 2 )
+                Space Complexity: O( n )
+*/
 
 /**
  * @param { number[] } nums
@@ -45,7 +47,11 @@ var twoSum = function( nums, target ) {
         }
 };
 
-// SOLUTION 2
+/*
+        SOLUTION 2: USING HASH TABLE
+                Time Complexity: O( n )
+                Space Complexity: O( n )
+*/
 
 /**
  * @param { number[] } nums
@@ -66,7 +72,11 @@ var twoSum = function( nums, target ) {
 	}
 }
 
-// SOLUTION 3
+/*
+	SOLUTION 3( MOST OPTIMAL )
+		Time Complexity: O( nlog(n) )
+		Space Complexity: O( 1 )
+*/
 
 /**
  * @param { number[] } nums
