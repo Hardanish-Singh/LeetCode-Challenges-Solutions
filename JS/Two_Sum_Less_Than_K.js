@@ -3,26 +3,20 @@
  * @param { number } target
  * @return { number }
 */
-var twoSumLessThanK = function( nums, target ) {
-        let min = -1;
-        let difference = -1;
-        for( let i = 0; i < nums.length; i++ ) {
-                for( let j = i+1; j < nums.length; j++ ) {
-                        if( nums[i] + nums[j] < target ) {
-                                if( target - (nums[i] + nums[j]) > 0 ) {
-                                        if( difference == -1 ) {
-                                                difference = target - (nums[i] + nums[j]);
-                                                min = nums[i] + nums[j];
-                                        }
-                                        else {
-                                                if( target - (nums[i] + nums[j]) < difference ) {
-                                                        difference = target - (nums[i] + nums[j]);
-                                                        min = nums[i] + nums[j];
-                                                }
-                                        }
-                                }
-                        }
+
+var twoSumLessThanK = function( nums, k ) {
+        nums.sort( (a, b) => a - b );
+        let leftIndex = 0;
+        let rightIndex = nums.length-1;
+        let max = -1;
+        while( leftIndex < rightIndex ) {
+                if( nums[leftIndex] + nums[rightIndex] < k) {
+                        max = Math.max( max, nums[leftIndex] + nums[rightIndex] );
+                        leftIndex++;
+                }
+                else if( nums[leftIndex] + nums[rightIndex] >= k) {
+                        rightIndex--;
                 }
         }
-        return min;
+        return max;
 };
