@@ -23,21 +23,45 @@
 		4) -1000 <= target <= 1000
 		5) The tests are generated such that there is exactly one solution.
 */
+
+// SOLUTION 1
+
 /**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function( nums, target )
-{
-        for( let i=0; i<nums.length; i++ )
-        {
-                for( let j=i+1; j<nums.length; j++ )
-                {
-                        if( nums[i] + nums[j] === target )
-                        {
+ * @param { number[] } nums
+ * @param { number } target
+ * @return { number[] }
+*/
+
+var twoSum = function( nums, target ) {
+        for( let i = 0; i < nums.length; i++ ) {
+                for( let j = i+1; j < nums.length; j++ ) {
+                        if( nums[i] + nums[j] === target ) {
                                 return [ i+1, j+1 ];
                         }
+			else if( nums[i] + nums[j] > target ) {
+				break;
+			}
                 }
         }
 };
+
+// SOLUTION 2
+
+/**
+ * @param { number[] } nums
+ * @param { number } target
+ * @return { number[] }
+*/
+
+var twoSum = function( nums, target ) {
+	let hash_table = { }
+	for( let i = 0; i < nums.length; i++ ) {
+		let diff = target - nums[i];
+		if( !( diff in hash_table ) ) {
+                        hash_table[ nums[i] ] = i+1;
+		}
+		else {
+			return[ hash_table[ diff ], i+1 ];
+		}
+	}
+}
