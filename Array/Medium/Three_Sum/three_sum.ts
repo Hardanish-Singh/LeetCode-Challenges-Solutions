@@ -35,7 +35,7 @@ function threeSum( nums: Array<number> ): Array<Array<number>> {
 		let leftIndex: number = i+1;
 		let rightIndex: number = nums.length-1;
 		
-		while( leftIndex < rightIndex ){
+		while( leftIndex < rightIndex ) {
                         if( nums[leftIndex] === nums[leftIndex-1] && leftIndex != i + 1 ) {
                                 leftIndex++;
                         }
