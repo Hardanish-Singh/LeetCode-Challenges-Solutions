@@ -10,9 +10,9 @@
                 Input: nums = [1,1,1]
                 Output: 3
                 Explanation: You can do the following operations:
-                1) Increment nums[2], so nums becomes [1,1,2].
-                2) Increment nums[1], so nums becomes [1,2,2].
-                3) Increment nums[2], so nums becomes [1,2,3].
+                        1) Increment nums[2], so nums becomes [1,1,2].
+                        2) Increment nums[1], so nums becomes [1,2,2].
+                        3) Increment nums[2], so nums becomes [1,2,3].
         Example 2:
                 Input: nums = [1,5,2,4,1]
                 Output: 14
