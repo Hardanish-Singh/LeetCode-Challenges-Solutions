@@ -17,7 +17,7 @@
 
         Constraints:
                 1) 1 <= s.length <= 2000
-                2) string only contains lower case English characters and parentheses.
+                2) s only contains lower case English characters and parentheses.
                 3) It is guaranteed that all parentheses are balanced.
 */
 
@@ -26,29 +26,29 @@
  * @return {string}
 */
 
-const reverseString = ( string, leftIndex, rightIndex ) => {
+const reverseString = ( s, leftIndex, rightIndex ) => {
         while( leftIndex < rightIndex ) {
-                [ string[leftIndex], string[rightIndex] ] = [ string[rightIndex], string[leftIndex] ];
+                [ s[leftIndex], s[rightIndex] ] = [ s[rightIndex], s[leftIndex] ];
                 leftIndex++;
                 rightIndex--;
         }
 }
 
-var reverseParentheses = function( string ) {
-        string = string.split("");
+var reverseParentheses = function( s ) {
+        s = s.split("");
         let indexes = [];
-        for( let i = 0; i < string.length; i++ ) {
-                if( string[i] === "(" ) {
+        for( let i = 0; i < s.length; i++ ) {
+                if( s[i] === "(" ) {
                       indexes.push( i );  
                 }
-                else if( string[i] === ")" ) {
-                        reverseString( string, indexes.pop() + 1, i-1 );
+                else if( s[i] === ")" ) {
+                        reverseString( s, indexes.pop() + 1, i-1 );
                 }
         }
         let reversedSubString = "";
-        for( let i = 0; i < string.length; i++ ) {
-                if( string[i] !== "(" && string[i] !== ")") {
-                        reversedSubString += string[i];
+        for( let i = 0; i < s.length; i++ ) {
+                if( s[i] !== "(" && s[i] !== ")") {
+                        reversedSubString += s[i];
                 }
         }
         return reversedSubString;
