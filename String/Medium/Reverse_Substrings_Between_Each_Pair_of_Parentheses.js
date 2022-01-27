@@ -22,8 +22,8 @@
 */
 
 /*
- * @param {string} s
- * @return {string}
+ * @param { string } s
+ * @return { string }
 */
 
 const reverseString = ( s, leftIndex, rightIndex ) => {
