@@ -39,10 +39,10 @@ var reverseParentheses = function( s ) {
         let indexes = [];
         for( let i = 0; i < s.length; i++ ) {
                 if( s[i] === "(" ) {
-                      indexes.push( i );  
+                      indexes.push( i + 1 );  
                 }
                 else if( s[i] === ")" ) {
-                        reverseString( s, indexes.pop() + 1, i-1 );
+                        reverseString( s, indexes.pop(), i - 1 );
                 }
         }
         let reversedSubString = "";
