@@ -43,7 +43,7 @@ var rearrangeArray = function( nums ) {
                 nums[i] >= 0 ? positives.push( nums[i] ) : negatives.push( nums[i] );
         }
         for( let i = 0; i < nums.length; i++ ) {
-                i % 2 === 0 ? result.push( positives[index1++] ) : result.push( negatives[index2++] ) ;
+                i % 2 === 0 ? result.push( positives[index1++] ) : result.push( negatives[index2++] );
         }
         return result;
 };
