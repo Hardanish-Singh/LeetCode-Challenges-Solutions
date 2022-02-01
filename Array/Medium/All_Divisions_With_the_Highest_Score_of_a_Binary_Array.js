@@ -7,6 +7,19 @@
         
         The division score of an index i is the sum of the number of 0's in nums(left) and the number of 1's in nums(right).
         Return all distinct indices that have the highest possible division score. You may return the answer in any order.
+
+        Example 1:
+                Input: nums = [0,0,1,0]
+                Output: [2,4]
+                Explanation: Division at index
+                        0: nums(left) is []. nums(right) is [0,0,1,0]. The score is 0 + 1 = 1.
+                        1: nums(left) is [0]. nums(right) is [0,1,0]. The score is 1 + 1 = 2.
+                        2: nums(left) is [0,0]. nums(right) is [1,0]. The score is 2 + 1 = 3.
+                        3: nums(left) is [0,0,1]. nums(right) is [0]. The score is 2 + 0 = 2.
+                        4: nums(left) is [0,0,1,0]. nums(right) is []. The score is 3 + 0 = 3.
+                
+                        Indices 2 and 4 both have the highest possible division score 3.
+                        Note the answer [4,2] would also be accepted.
 */
 var maxScoreIndices = function(nums) {
         let hash_table = {
