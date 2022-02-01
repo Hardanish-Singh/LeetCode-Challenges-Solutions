@@ -20,6 +20,16 @@
                 
                         Indices 2 and 4 both have the highest possible division score 3.
                         Note the answer [4,2] would also be accepted.
+        
+        Example 2:
+                Input: nums = [0,0,0]
+                Output: [3]
+                Explanation: Division at index
+                        0: nums(left) is []. nums(right) is [0,0,0]. The score is 0 + 0 = 0.
+                        1: nums(left) is [0]. nums(right) is [0,0]. The score is 1 + 0 = 1.
+                        2: nums(left) is [0,0]. nums(right) is [0]. The score is 2 + 0 = 2.
+                        3: nums(left) is [0,0,0]. nums(right) is []. The score is 3 + 0 = 3.
+                Only index 3 has the highest possible division score 3.
 */
 var maxScoreIndices = function(nums) {
         let hash_table = {
