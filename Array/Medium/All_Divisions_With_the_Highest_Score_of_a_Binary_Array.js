@@ -29,8 +29,25 @@
                         1: nums(left) is [0]. nums(right) is [0,0]. The score is 1 + 0 = 1.
                         2: nums(left) is [0,0]. nums(right) is [0]. The score is 2 + 0 = 2.
                         3: nums(left) is [0,0,0]. nums(right) is []. The score is 3 + 0 = 3.
-                Only index 3 has the highest possible division score 3.
+
+                        Only index 3 has the highest possible division score 3.
+        
+        Example 3:
+                Input: nums = [1,1]
+                Output: [0]
+                Explanation: Division at index
+                        0: nums(left) is []. nums(right) is [1,1]. The score is 0 + 2 = 2.
+                        1: nums(left) is [1]. nums(right) is [1]. The score is 0 + 1 = 1.
+                        2: nums(left) is [1,1]. nums(right) is []. The score is 0 + 0 = 0.
+
+                        Only index 0 has the highest possible division score 2.
+        
+        Constraints:
+                1) n == nums.length
+                2) 1 <= n <= 10^5
+                3) nums[i] is either 0 or 1
 */
+
 var maxScoreIndices = function(nums) {
         let hash_table = {
 
