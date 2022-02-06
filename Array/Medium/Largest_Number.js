@@ -13,6 +13,12 @@
                 1) 1 <= nums.length <= 100
                 2) 0 <= nums[i] <= 10^9
 */
+
+/*
+ * @param { number[] } nums
+ * @return { string }
+*/
+
 const allEqual = nums => nums.every( n => n === 0 );
 
 var largestNumber = function( nums ) {
