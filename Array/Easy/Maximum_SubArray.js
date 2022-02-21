@@ -32,21 +32,15 @@
  * @return { number }
 */
 var maxSubArray = function( nums ) {
-        let sum = -100001;
-        let temp = 0;
+        let sum = Number.NEGATIVE_INFINITY;
         for( let i=0; i<nums.length; i++ ) {
-                temp = nums[i];
-                for( let j=i+1; j<nums.length; j++ ) {
+                let temp = 0;
+                for( let j=i; j<nums.length; j++ ) {
                         temp += nums[j];
+                        sum = Math.max( sum, temp );
                         if( temp < 0 ) {
                                 break;
                         }
-                        if( temp >= sum  ) {
-                                sum = temp;    
-                        }      
-                }
-                if( nums[i] > sum ) {
-                        sum = nums[i];
                 }
         }
         return sum;
