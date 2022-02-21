@@ -33,9 +33,9 @@
 */
 var maxSubArray = function( nums ) {
         let sum = Number.NEGATIVE_INFINITY;
-        for( let i=0; i<nums.length; i++ ) {
+        for( let i = 0; i < nums.length; i++ ) {
                 let temp = 0;
-                for( let j=i; j<nums.length; j++ ) {
+                for( let j = i; j < nums.length; j++ ) {
                         temp += nums[j];
                         sum = Math.max( sum, temp );
                         if( temp < 0 ) {
