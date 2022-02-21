@@ -22,7 +22,7 @@
 */
 
 /*
-        SOLUTION 1: BRUTE FORCE APPROACH
+        SOLUTION 1: OPTIMIZED BRUTE FORCE APPROACH
                         Time Complexity: O(N^2), where N is the length of nums.
                         Space Complexity: O(1)
 */
