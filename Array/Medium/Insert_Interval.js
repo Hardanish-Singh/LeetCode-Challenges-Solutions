@@ -10,10 +10,17 @@
                 Input: intervals = [ [1,3], [6,9] ], newInterval = [2,5]
                 Output: [ [1,5], [6,9] ]
         Example 2:
-
-        Input: intervals = [ [1,2], [3,5], [6,7], [8,10], [12,16] ], newInterval = [4,8]
-        Output: [ [1,2], [3,10], [12,16] ]
-        Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
+                Input: intervals = [ [1,2], [3,5], [6,7], [8,10], [12,16] ], newInterval = [4,8]
+                Output: [ [1,2], [3,10], [12,16] ]
+                Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
+        
+        Constraints:
+                1) 0 <= intervals.length <= 10^4
+                2) intervals[i].length == 2
+                3) 0 <= start(i) <= end(i) <= 10^5
+                4) intervals is sorted by start(i) in ascending order.
+                5) newInterval.length == 2
+                6) 0 <= start <= end <= 10^5
 */
 
 /*
