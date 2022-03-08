@@ -4,15 +4,15 @@
         You can return the answer in any order.
 
         Example 1:
-                Input: nums = [2,7,11,15], target = 9
-                Output: [0,1]
+                Input: nums = [2, 7, 11, 15], target = 9
+                Output: [0, 1]
                 Output: Because nums[0] + nums[1] == 9, we return [0, 1].
         Example 2:
-                Input: nums = [3,2,4], target = 6
-                Output: [1,2]
+                Input: nums = [3, 2, 4], target = 6
+                Output: [1, 2]
         Example 3:
-                Input: nums = [3,3], target = 6
-                Output: [0,1]
+                Input: nums = [3, 3], target = 6
+                Output: [0, 1]
         
         Constraints:
                 1) 2 <= nums.length <= 10^4
@@ -34,8 +34,10 @@
 */
 
 var twoSum = function( nums, target ) {
-        for( let i = 0; i < nums.length; i++ ) {
-                for( let j = i+1; j < nums.length; j++ ) {
+        var i;
+        var j;
+        for( i = 0; i < nums.length; i++ ) {
+                for( j = i+1; j < nums.length; j++ ) {
                         if( nums[i] + nums[j] === target ) {
                                 return [ i, j ];
                         }
@@ -56,14 +58,15 @@ var twoSum = function( nums, target ) {
 */
 
 var twoSum = function( nums, target ) {
-        let hash_table = { }
-	for( let i = 0; i < nums.length; i++ ) {
-		let diff = target - nums[i];
-		if( !( diff in hash_table ) ) {
+        var hash_table = { };
+        var i;
+        for( i = 0; i < nums.length; i++ ) {
+                let difference = target - nums[i];
+                if( difference in hash_table ) {
+                        return[ hash_table[ difference ], i ];
+                }
+                else {
                         hash_table[ nums[i] ] = i;
-		}
-		else {
-			return[ hash_table[ diff ], i ];
-		}
-	}
-}
+                }
+        }
+};
