@@ -34,10 +34,8 @@
 */
 
 var twoSum = function( nums, target ) {
-        var i;
-        var j;
-        for( i = 0; i < nums.length; i++ ) {
-                for( j = i+1; j < nums.length; j++ ) {
+        for( let i = 0; i < nums.length; i++ ) {
+                for( let j = i+1; j < nums.length; j++ ) {
                         if( nums[i] + nums[j] === target ) {
                                 return [ i, j ];
                         }
@@ -59,8 +57,7 @@ var twoSum = function( nums, target ) {
 
 var twoSum = function( nums, target ) {
         var hash_table = { };
-        var i;
-        for( i = 0; i < nums.length; i++ ) {
+        for( let i = 0; i < nums.length; i++ ) {
                 let difference = target - nums[i];
                 if( difference in hash_table ) {
                         return[ hash_table[ difference ], i ];
