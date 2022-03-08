@@ -43,7 +43,7 @@ var reverse = function( x ) {
         return parseInt( reversedNumber );
 }
 
-// SOLUTION 2
+// SOLUTION 2 ( CONVERT TO STRING & USE STRING FUNCTIONS )
 var reverse = function( x ) {
         x = x.toString();
         var isNegative = false;
