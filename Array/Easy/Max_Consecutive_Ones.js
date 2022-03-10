@@ -24,7 +24,7 @@ var findMaxConsecutiveOnes = function( nums ) {
         var count = 0;
         var maxConsecutiveOnes = 0;
 
-        for( let i = 0; i <= nums.length; i++ ) {
+        for( let i = 0; i < nums.length; i++ ) {
                 if( nums[i] ) {
                         count++;  
                 } else {
@@ -32,6 +32,8 @@ var findMaxConsecutiveOnes = function( nums ) {
                         count = 0;
                 }
         }
-        
+        if( count > 0 ) {
+                maxConsecutiveOnes = Math.max( count, maxConsecutiveOnes );
+        }
         return maxConsecutiveOnes;
 };
