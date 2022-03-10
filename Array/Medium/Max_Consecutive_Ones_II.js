@@ -1,3 +1,8 @@
+/*
+ * @param { number[] } nums
+ * @return { number }
+*/
+
 var findMaxConsecutiveOnes = function(nums) {
         var count = 0;
         var maxConsecutiveOnes = 0;
