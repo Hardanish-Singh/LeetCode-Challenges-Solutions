@@ -22,7 +22,7 @@
 */
 
 var sortArrayByParity = function( nums ) {
-        for( let i = 0; i < nums.length; i++ ) {
+        for( let i = 0; i < nums.length - 1; i++ ) {
                 if( nums[i] % 2 !== 0 ) {    
                         for( let j = i + 1; j < nums.length; j++ ) {
                                 if( nums[j] % 2 === 0 ) {
