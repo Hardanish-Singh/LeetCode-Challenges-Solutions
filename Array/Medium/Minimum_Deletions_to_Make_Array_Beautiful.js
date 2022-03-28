@@ -15,12 +15,6 @@ var minDeletion = function( nums ) {
                         count++;
                 }
         }
-        return nums.length % 2 !== 0 ? count + 1 : count;
-//         if( nums.length % 2 !== 0 ) {
-//                 //nums.splice( nums.length - 1, 1 );
-//                 nums.unshift();
-//                 count++;
-//         }
         
-//         return count;
+        return nums.length % 2 !== 0 ? count + 1 : count;
 };
