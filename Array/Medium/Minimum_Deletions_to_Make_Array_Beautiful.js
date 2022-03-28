@@ -35,7 +35,7 @@ var minDeletion = function( nums ) {
         
         for( let i = 0; i < nums.length ; i++ ) {
                 if( i % 2 === 0 && nums[i] === nums[i + 1] ) {
-                        // We can use both
+                        // We can use either splice or shift, but I prefer to use shift because of better performance.
                         // nums.splice( i, 1 );
                         nums.shift();
                         i--;
