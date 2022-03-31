@@ -29,10 +29,10 @@ var differentElements = function( array1, array2 ) {
 var findDifference = function( nums1, nums2 ) {
         nums1.sort( ( a, b ) => a - b );
         nums2.sort( ( a, b ) => a - b );
-        var result = [];
         
+        var result = [];
         result.push( differentElements( nums1, nums2 ) );
         result.push( differentElements( nums2, nums1 ) );
-        
+
         return result;
 };
