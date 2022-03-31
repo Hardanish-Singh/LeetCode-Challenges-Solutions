@@ -25,7 +25,7 @@ var addBinary = function(a, b) {
                 return addBinary( b, a );
         }
         let carry = 0;
-        let sum = 0;
+        let sum = '';
         let answer = '';
         let j = b.length-1;
         let temp = b[j];
