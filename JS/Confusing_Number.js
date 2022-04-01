@@ -12,6 +12,19 @@
                 Input: 6
                 Output: true
                 Explanation: We get 9 after rotating 6, 9 is a valid number, and 9 != 6.
+        
+        Example 2:
+                Input: n = 89
+                Output: true
+                Explanation: We get 68 after rotating 89, 68 is a valid number and 68 != 89.
+
+        Example 3:
+                Input: n = 11
+                Output: false
+                Explanation: We get 11 after rotating 11, 11 is a valid number but the value remains the same, thus 11 is not a confusing number
+
+        Constraints:
+                1) 0 <= n <= 10^9
 */
 
 /*
