@@ -9,6 +9,19 @@
 
         Example 1:
                 Input: [1, 2, 3, 4, 5]
+                        1       2       3       4       5
+                         \     /\      / \     / \     /
+                          \   /  \    /   \   /   \   /
+                            3       5       7       9
+                             \     / \     / \     /
+                              \   /   \   /   \   /
+                                8       2       6
+                                 \     / \     /
+                                  \   /   \   /
+                                    0       8
+                                     \     /
+                                      \   /
+                                        8
                 Output: 8
                 Explanation: The above diagram depicts the process from which we obtain the triangular sum of the array.
         
