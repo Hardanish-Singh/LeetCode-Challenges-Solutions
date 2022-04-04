@@ -25,7 +25,7 @@
 */
 
 var smallestNumber = function( num ) {
-        let n = num;
+        var n = num;
         num = Array.from( num.toString() );
         if( n > 0 ) {
                 num = num.map( Number ).sort( ( a, b ) => a - b );
