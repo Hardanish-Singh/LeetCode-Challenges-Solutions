@@ -30,9 +30,9 @@
 */
 
 var search = function(array, target) {
-        
         let startIndex = 0;
         let endIndex = array.length - 1;
+        
         while( startIndex <= endIndex ) {
                 let middleIndex = Math.floor( (startIndex + endIndex) / 2 );
                 if( target === array[middleIndex] ) {
@@ -53,5 +53,6 @@ var search = function(array, target) {
                         }
                 }
         }
+
         return -1;
 };
