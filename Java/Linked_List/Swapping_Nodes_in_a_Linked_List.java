@@ -3,6 +3,10 @@
         Return the head of the linked list after swapping the values of the k^th node from the beginning and the k^th node from the end (the list is 1-indexed).
         
         Example 1:
+                1 ---> 2 ---> 3 ---> 4 ---> 5
+                              ↓
+                1 ---> 4 ---> 3 ---> 2 ---> 5
+
                 Input: head = [1, 2, 3, 4, 5], k = 2
                 Output: [1, 4, 3, 2, 5]
 */
