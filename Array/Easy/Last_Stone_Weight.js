@@ -20,6 +20,10 @@
         Example 2:
                 Input: stones = [1]
                 Output: 1
+        
+        Constraints:
+                1) 1 <= stones.length <= 30
+                2) 1 <= stones[i] <= 1000
 */
 
 /*
