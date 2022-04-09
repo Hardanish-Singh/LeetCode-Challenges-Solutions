@@ -41,7 +41,7 @@ var threeSumMulti = function( nums, target ) {
         
                                 start = leftIndex + 1;
                                 end = rightIndex;
-                                
+                                //FIX RIGHT POINTER
                                 while( start < end ) {
                                         if( nums[ i ] + nums[ start ] + nums[ end ] === target ) {
                                                 count++;
