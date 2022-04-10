@@ -4,7 +4,7 @@
         As the answer can be very large, return it modulo 10^9 + 7.
 
         Example 1:
-                Input: arr = [1,1,2,2,3,3,4,4,5,5], target = 8
+                Input: arr = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5], target = 8
                 Output: 20
                 Explanation: 
                         Enumerating by the values (arr[i], arr[j], arr[k]):
@@ -14,12 +14,12 @@
                         (2, 3, 3) occurs 2 times.
         
         Example 2:
-                Input: arr = [1,1,2,2,2,2], target = 5
+                Input: arr = [1, 1, 2, 2, 2, 2], target = 5
                 Output: 12
                 Explanation: 
                         arr[i] = 1, arr[j] = arr[k] = 2 occurs 12 times:
                         We choose one 1 from [1,1] in 2 ways,
-                        and two 2s from [2,2,2,2] in 6 ways.
+                        and two 2s from [2, 2, 2, 2] in 6 ways.
 
         Constraints:
                 1) 3 <= arr.length <= 3000
