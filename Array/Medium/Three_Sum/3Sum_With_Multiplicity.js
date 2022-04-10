@@ -50,7 +50,7 @@ var threeSumMulti = function( nums, target ) {
 				rightIndex--;
 			}
 			else if( nums[leftIndex] + nums[rightIndex] + nums[i] === target) {
-                                if( nums[leftIndex] === nums[rightIndex] && rightIndex - leftIndex > 1 ) {
+                                if( nums[leftIndex] === nums[rightIndex] ) {
                                         let n = ( rightIndex - leftIndex ) + 1;
                                         count += Math.floor( ( n * (n - 1) ) / 2 ) ;
                                         break;
