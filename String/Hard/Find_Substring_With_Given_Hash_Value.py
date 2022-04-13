@@ -1,3 +1,9 @@
+"""
+(a+b) % modulo = ( (a % modulo) + (b % modulo) ) % modulo;
+(a-b) % modulo = ( (a % modulo) - (b % modulo) + modulo ) % modulo;
+(a*b) % modulo = ( (a % modulo) * (b % modulo) ) % modulo;
+(a/b) % modulo = ( (a % modulo) * ( (b^-1) % modulo) ) % modulo;
+"""
 class Solution(object):
     def subStrHash(self, s, power, modulo, k, hashValue):
         """
