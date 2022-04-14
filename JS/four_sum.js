@@ -16,54 +16,49 @@
           [-2,  0, 0, 2]
         ]
 */
-var fourSum = function (nums, target) {
-  // SORT THE ARRAY
-  nums.sort((a, b) => a - b);
 
-  let leftPosition = 0,
-    rightPosition = 0,
-    lthPosition = 0,
-    rthPosition = 0;
-  let threePairSumMultiDimensionArray = new Array();
-  let flag = false;
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[][]}
+*/
+ 
+var fourSum = function(nums, target) {
+  nums.sort( (a, b) => a - b );
+  let triplets = [];
+  let leftIndexes = { };
+  for (let u = 0; u < nums.length; u++) {
+          if( u > 0 && nums[u] == nums[u - 1] ) {
+                  continue;
+          }
+          for( let i = u + 1; i<nums.length; i++ ) {
+                  if( i > u + 1 && nums[i] == nums[i-1]) {
+                          continue;
+                  }
+                  leftIndexes[i] = true;
+                  let leftIndex = i+1;
+                  let rightIndex = nums.length-1;
 
-  // LOOP THROUGH ARRAY
-  for (let i = 0; i < nums.length; i++) {
-    flag = false;
-    if (i > 0 && nums[i] === nums[i - 1]) continue;
-    for (let j = i + 1; j < nums.length; j++) {
-      if (flag == true && nums[j] === nums[j - 1]) continue;
-      leftPosition = nums[j + 1];
-      rightPosition = nums[nums.length - 1];
-      lthPosition = j + 1;
-      rthPosition = nums.length - 1;
-      if (leftPosition === undefined || rightPosition === undefined) break;
-      if (lthPosition === rthPosition) break;
-
-      while (true) {
-        if (nums[i] + nums[j] + leftPosition + rightPosition == target) {
-          threePairSumMultiDimensionArray.push(
-            new Array(nums[i], nums[j], leftPosition, rightPosition)
-          );
-          lthPosition++;
-          rthPosition--;
-          while (nums[lthPosition] == leftPosition) lthPosition++;
-          while (nums[rthPosition] == rightPosition) rthPosition--;
-          leftPosition = nums[lthPosition];
-          rightPosition = nums[rthPosition];
-        } else if (nums[i] + nums[j] + leftPosition + rightPosition < target) {
-          lthPosition++;
-          while (nums[lthPosition] == leftPosition) lthPosition++;
-          leftPosition = nums[lthPosition];
-        } else if (nums[i] + nums[j] + leftPosition + rightPosition > target) {
-          rthPosition--;
-          while (nums[rthPosition] == rightPosition) rthPosition--;
-          rightPosition = nums[rthPosition];
-        }
-        if (lthPosition === rthPosition || lthPosition > rthPosition) break;
-      }
-      flag = true;
-    }
+                  while( leftIndex < rightIndex ) {
+                          if( nums[leftIndex] === nums[leftIndex-1] && !( leftIndexes[ leftIndex - 1 ] ) ) {
+                                  leftIndex++;
+                          }
+                          else if( nums[rightIndex] === nums[rightIndex+1] ) {
+                                  rightIndex--;
+                          }
+                          else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] < target) {
+                                  leftIndex++;
+                          }
+                          else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] > target) {
+                                  rightIndex--;
+                          }
+                          else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] === target) {
+                                  triplets.push( [ nums[u], nums[i], nums[leftIndex], nums[rightIndex] ] );
+                                  leftIndex++;
+                                  rightIndex--;
+                          }
+                  }
+          }
   }
-  return threePairSumMultiDimensionArray;
+  return triplets;
 };
