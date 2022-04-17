@@ -32,9 +32,9 @@ var fourSum = function(nums, target) {
                 continue;
         }
         for( let i = u + 1; i<nums.length; i++ ) {
-                  if( i > u + 1 && nums[i] == nums[i-1]) {
-                          continue;
-                  }
+                if( i > u + 1 && nums[i] == nums[i-1]) {
+                        continue;
+                }
                   leftIndexes[i] = true;
                   let leftIndex = i+1;
                   let rightIndex = nums.length-1;
