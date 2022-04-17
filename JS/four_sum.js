@@ -35,29 +35,29 @@ var fourSum = function(nums, target) {
                 if( i > u + 1 && nums[i] == nums[i-1]) {
                         continue;
                 }
-                  leftIndexes[i] = true;
-                  let leftIndex = i+1;
-                  let rightIndex = nums.length-1;
+                leftIndexes[i] = true;
+                let leftIndex = i+1;
+                let rightIndex = nums.length-1;
 
-                  while( leftIndex < rightIndex ) {
-                          if( nums[leftIndex] === nums[leftIndex-1] && !( leftIndexes[ leftIndex - 1 ] ) ) {
-                                  leftIndex++;
-                          }
-                          else if( nums[rightIndex] === nums[rightIndex+1] ) {
-                                  rightIndex--;
-                          }
-                          else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] < target) {
-                                  leftIndex++;
-                          }
-                          else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] > target) {
-                                  rightIndex--;
-                          }
-                          else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] === target) {
-                                  triplets.push( [ nums[u], nums[i], nums[leftIndex], nums[rightIndex] ] );
-                                  leftIndex++;
-                                  rightIndex--;
-                          }
-                  }
+                while( leftIndex < rightIndex ) {
+                        if( nums[leftIndex] === nums[leftIndex-1] && !( leftIndexes[ leftIndex - 1 ] ) ) {
+                                leftIndex++;
+                        }
+                        else if( nums[rightIndex] === nums[rightIndex+1] ) {
+                                rightIndex--;
+                        }
+                        else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] < target) {
+                                leftIndex++;
+                        }
+                        else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] > target) {
+                                rightIndex--;
+                        }
+                        else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] === target) {
+                                triplets.push( [ nums[u], nums[i], nums[leftIndex], nums[rightIndex] ] );
+                                leftIndex++;
+                                rightIndex--;
+                        }
+                }
         }
   }
   return triplets;
