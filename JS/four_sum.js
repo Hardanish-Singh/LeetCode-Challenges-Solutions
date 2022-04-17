@@ -28,9 +28,9 @@ var fourSum = function(nums, target) {
   let triplets = [];
   let leftIndexes = { };
   for (let u = 0; u < nums.length; u++) {
-          if( u > 0 && nums[u] == nums[u - 1] ) {
+        if( u > 0 && nums[u] == nums[u - 1] ) {
                 continue;
-          }
+        }
           for( let i = u + 1; i<nums.length; i++ ) {
                   if( i > u + 1 && nums[i] == nums[i-1]) {
                           continue;
