@@ -25,7 +25,7 @@
  
 var fourSum = function(nums, target) {
   nums.sort( (a, b) => a - b );
-  let triplets = [];
+  let quadruplets = [];
   let leftIndexes = { };
   for (let u = 0; u < nums.length; u++) {
         if( u > 0 && nums[u] == nums[u - 1] ) {
@@ -53,12 +53,12 @@ var fourSum = function(nums, target) {
                                 rightIndex--;
                         }
                         else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] === target) {
-                                triplets.push( [ nums[u], nums[i], nums[leftIndex], nums[rightIndex] ] );
+                                quadruplets.push( [ nums[u], nums[i], nums[leftIndex], nums[rightIndex] ] );
                                 leftIndex++;
                                 rightIndex--;
                         }
                 }
         }
   }
-  return triplets;
+  return quadruplets;
 };
