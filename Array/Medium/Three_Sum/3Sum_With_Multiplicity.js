@@ -86,6 +86,6 @@ var threeSumMulti = function( nums, target ) {
 			}
 		}
 	}
-        let m = 1000000007;
-	return count % m;
+        let mod = 1000000007;
+	return count % mod;
 };
