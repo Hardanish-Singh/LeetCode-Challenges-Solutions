@@ -4,11 +4,11 @@ var minPathSum = function( grid ) {
         var sum = grid[i][j];
         var key = i + "," + j;
         var paths = {
-            [key] : sum
+                [key] : sum
         };
         var index = 0;
-        var keys = [key];
-        var values = [sum];
+        var keys = [ key ];
+        var values = [ sum ];
             
         while( true ) {
             let k = keys[index];
