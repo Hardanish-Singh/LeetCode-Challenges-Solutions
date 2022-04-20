@@ -12,10 +12,8 @@ var minPathSum = function( grid ) {
             
         while( true ) {
             let k = keys[index];
-            // let k = Object.keys(paths)[index];
             if( !k ) break;
             let v = values[index++];
-            // let v = Object.values(paths)[index++];
             [i, j] = k.split(",").map(Number);
             let temp;
                 
