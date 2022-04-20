@@ -44,7 +44,7 @@ var minPathSum = function( grid ) {
                 index++;
                 k = keys[index];
                 v = values[index];
-        }while( k !== undefined );
+        }while( k );
         
         return Object.values( paths )[ Object.values( paths ).length - 1 ];
 }
