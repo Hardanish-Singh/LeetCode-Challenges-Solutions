@@ -43,7 +43,7 @@ var containsNearbyDuplicate = function( nums, k ) {
 };
 
 /*
-        SOLUTION 1: HASH TABLE
+        SOLUTION 2: HASH TABLE
                         Time Complexity: O(n)
                         Space Complexity: O(n)
 */
