@@ -4,6 +4,12 @@
  * @return { boolean }
 */
 
+/*
+        SOLUTION 1: BRUTE FORCE
+                        Time Complexity: O(n^2)
+                        Space Complexity: O(1)
+*/
+
 var containsNearbyDuplicate = function( nums, k ) {
         for( let i = 0; i < nums.length - 1; i++ ) {
                 for( let j = i + 1; j < nums.length; j++ ) {
@@ -15,6 +21,11 @@ var containsNearbyDuplicate = function( nums, k ) {
         return false;
 };
 
+/*
+        SOLUTION 1: HASH TABLE
+                        Time Complexity: O(n)
+                        Space Complexity: O(n)
+*/
 var containsNearbyDuplicate = function( nums, k ) {
         var countOccurrences = { };
         var i;
