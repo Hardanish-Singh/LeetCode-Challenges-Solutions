@@ -12,6 +12,12 @@
         Example 3:
                 Input: nums = [1, 5, 9, 1, 5, 9], k = 2, t = 3
                 Output: false
+        
+        Constraints:
+                1) 1 <= nums.length <= 2 * 10^4
+                2) -2^31 <= nums[i] <= 2^31 - 1
+                3) 0 <= k <= 10^4
+                4) 0 <= t <= 2^31 - 1
 */
 
 /*
