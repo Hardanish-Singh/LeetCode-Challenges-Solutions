@@ -120,11 +120,13 @@ const move_in_all_four_directions = ( grid, i, j, queue ) => {
         }
 }
 
-const perform_enqueue_dequeue_operation = ( queue, grid ) => {
-        while( queue.length != 0 ) {
-                [i, j] = queue.shift().split(",");
+const perform_enqueue_dequeue_operation = ( queue, grid, i, j ) => {
+        do{
+                if( queue.length != 0 ) {
+                        [i, j] = queue.shift().split(",");
+                } 
                 move_in_all_four_directions( grid, i, j, queue );
-        }
+        } while( queue.length != 0 );
 }
 
 const numIslands = ( grid ) => {
@@ -134,10 +136,8 @@ const numIslands = ( grid ) => {
                 for( let j=0; j<grid[i].length; j++ ) {
                         if( grid[i][j] === '1' ) {
                                 number_of_islands++;
-                                // MOVE IN ALL FOUR DIRECTIONS( LEFT, TOP, RIGHT, DOWN )
-                                move_in_all_four_directions( grid, i, j, queue );
                                 // PICK COORDINATES FROM QUEUE, PERFORM ENQUEUE & DEQUEUE OPERATIONS UNTIL QUEUE IS EMPTY
-                                perform_enqueue_dequeue_operation( queue, grid );
+                                perform_enqueue_dequeue_operation( queue, grid, i , j );
                         }
                 }
         }
