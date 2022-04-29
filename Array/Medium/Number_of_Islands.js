@@ -136,7 +136,6 @@ const numIslands = ( grid ) => {
                 for( let j = 0; j < grid[i].length; j++ ) {
                         if( grid[i][j] === '1' ) {
                                 number_of_islands++;
-                                // PICK COORDINATES FROM QUEUE, PERFORM ENQUEUE & DEQUEUE OPERATIONS UNTIL QUEUE IS EMPTY
                                 perform_enqueue_dequeue_operation( queue, grid, i , j );
                         }
                 }
