@@ -121,7 +121,7 @@ const move_in_all_four_directions = ( grid, i, j, queue ) => {
 }
 
 const perform_enqueue_dequeue_operation = ( queue, grid, i, j ) => {
-        do{
+        do {
                 if( queue.length != 0 ) {
                         [i, j] = queue.shift().split(",");
                 } 
