@@ -1,6 +1,6 @@
 /*
- * @param {string[]} strs
- * @return {string}
+ * @param { string[] } strs
+ * @return { string }
 */
 
 var longestCommonPrefix = function( strs ) {
