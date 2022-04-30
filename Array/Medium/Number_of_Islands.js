@@ -84,7 +84,6 @@ const move_right = ( grid, i, j ) => {
         if( j <= grid[i].length - 1 ) {
                 return is_visited( grid, i, j );
         }
-        return null;
 }
 
 const move_down = ( grid, i, j ) => {
