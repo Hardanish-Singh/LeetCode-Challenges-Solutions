@@ -66,33 +66,13 @@ const is_visited = ( grid, i, j ) => {
         }
 }
 
-const move_left = ( grid, i, j ) => {
-        --j;
-        if( j >= 0  ) {
-                return is_visited( grid, i, j );
-        }
-}
+const move_left = ( grid, i, j ) =>  --j >= 0 ? is_visited( grid, i, j ) : null;
 
-const move_top = ( grid, i, j ) => {
-        --i;
-        if( i >= 0 ) {
-                return is_visited( grid, i, j );  
-        }
-}
+const move_top = ( grid, i, j ) => --i >= 0 ? is_visited( grid, i, j ) : null;
 
-const move_right = ( grid, i, j ) => {
-        ++j;
-        if( j <= grid[i].length - 1 ) {
-                return is_visited( grid, i, j );
-        }
-}
+const move_right = ( grid, i, j ) => ++j <= grid[i].length - 1 ? is_visited( grid, i, j ) : null;
 
-const move_down = ( grid, i, j ) => {
-        ++i;
-        if( i <= grid.length - 1 ) {
-                return is_visited( grid, i, j );
-        }
-}
+const move_down = ( grid, i, j ) => ++i <= grid.length - 1 ? is_visited( grid, i, j ) : null;
 
 const move_in_all_four_directions = ( grid, i, j, queue ) => {
         let position = "";
