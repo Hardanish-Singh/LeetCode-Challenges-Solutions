@@ -87,7 +87,12 @@ const move_right = ( grid, i, j ) => {
         return null;
 }
 
-const move_down = ( grid, i, j ) => i <= grid.length - 1 ? is_visited( grid, i, j ) : null;
+const move_down = ( grid, i, j ) => {
+        ++i;
+        if( i <= grid.length - 1 ) {
+                return is_visited( grid, i, j );
+        }
+}
 
 const move_in_all_four_directions = ( grid, i, j, queue ) => {
         let position = "";
@@ -109,7 +114,7 @@ const move_in_all_four_directions = ( grid, i, j, queue ) => {
                 queue.push(position);
         }
         // MOVE DOWN & ADD COORDINATES TO QUEUE
-        position = move_down( grid, ++i, j );
+        position = move_down( grid, i, j );
         if( position ) {
                 queue.push(position);
         }
