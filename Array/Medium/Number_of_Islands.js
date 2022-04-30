@@ -58,6 +58,7 @@
 */
 
 const is_visited = ( grid, i, j ) => {
+        // NOT VISITED
         if( grid[i][j] === '1' ) {
                 // MARK THE POSITION AS VISITED
                 grid[i][j] = '2';
