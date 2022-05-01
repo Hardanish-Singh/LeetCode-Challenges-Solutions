@@ -86,9 +86,7 @@ const move_in_all_four_directions = ( grid, i, j, queue ) => {
         position ? queue.push(position) : null;
         // MOVE RIGHT & ADD COORDINATES TO QUEUE
         position = move_right( grid, i, j );
-        if( position ) {
-                queue.push(position);
-        }
+        position ? queue.push(position) : null;
         // MOVE DOWN & ADD COORDINATES TO QUEUE
         position = move_down( grid, i, j );
         if( position ) {
