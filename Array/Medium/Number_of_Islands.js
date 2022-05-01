@@ -69,8 +69,6 @@ const move_down = ( grid, i, j ) => ++i <= grid.length - 1 ? is_visited( grid, i
 
 const move_in_all_four_directions = ( grid, i, j, queue ) => {
         let position = "";
-        // MARK THE POSITION AS VISITED
-        grid[i][j] = '2';
         // MOVE LEFT & ADD COORDINATES TO QUEUE
         position = move_left( grid, i, j );
         position ? queue.push(position) : null;
