@@ -57,14 +57,7 @@
                 20) ByteDance
 */
 
-const is_visited = ( grid, i, j ) => {
-        // NOT VISITED
-        if( grid[i][j] === '1' ) {
-                // MARK THE POSITION AS VISITED
-                grid[i][j] = '2';
-                return i + "," + j;
-        }
-}
+const is_visited = ( grid, i, j ) => grid[i][j] === '1' ? ( grid[i][j] = '2', i + "," + j ) : null;
 
 const move_left = ( grid, i, j ) => --j >= 0 ? is_visited( grid, i, j ) : null;
 
