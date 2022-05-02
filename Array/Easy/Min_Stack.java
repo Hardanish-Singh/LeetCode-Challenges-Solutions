@@ -13,10 +13,10 @@
                         ["MinStack", "push", "push", "push", "getMin", "pop", "top","getMin"]
                         [[], [-2], [0], [-3], [], [], [], []]
 
-                Output
+                Output:
                         [null, null, null, null, -3, null, 0, -2]
 
-                Explanation
+                Explanation:
                         MinStack minStack = new MinStack();
                         minStack.push(-2);
                         minStack.push(0);
@@ -34,28 +34,36 @@
 
 import java.util.*;
 
-class MinStack {
+class MinStack 
+{
         ArrayList<Integer> stack = null;
-        public MinStack() {
+        public MinStack() 
+        {
                 stack = new ArrayList<Integer>();
         }
     
-        public void push(int val) {
+        public void push(int val) 
+        {
                 stack.add( val );
         }
 
-        public void pop() {
+        public void pop() 
+        {
                 stack.remove( stack.size() - 1 );
         }
 
-        public int top() {
+        public int top() 
+        {
                 return stack.get( stack.size() - 1 );
         }
 
-        public int getMin() {
+        public int getMin() 
+        {
                 int minimum = stack.get(0);
-                for (int i = 1; i < stack.size(); i++) {
-                        if (minimum > stack.get(i)) {
+                for (int i = 1; i < stack.size(); i++) 
+                {
+                        if (minimum > stack.get(i)) 
+                        {
                                 minimum = stack.get(i);
                         }
                 }
