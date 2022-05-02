@@ -13,10 +13,10 @@
                 Input:
                         ["MaxStack", "push", "push", "push", "top", "popMax", "top", "peekMax", "pop", "top"]
                         [[], [5], [1], [5], [], [], [], [], [], []]
-                Output
+                Output:
                         [null, null, null, null, 5, 5, 1, 5, 1, 5]
 
-                Explanation
+                Explanation:
                         MaxStack stk = new MaxStack();
                         stk.push(5);   // [5] the top of the stack and the maximum number is 5.
                         stk.push(1);   // [5, 1] the top of the stack is 1, but the maximum is 5.
@@ -27,6 +27,12 @@
                         stk.peekMax(); // return 5, [5, 1] the stack did not change.
                         stk.pop();     // return 1, [5] the top of the stack and the max element is now 5.
                         stk.top();     // return 5, [5] the stack did not change.
+        
+        Constraints:
+                1) -10^7 <= x <= 10^7
+                2) At most 10^4 calls will be made to push, pop, top, peekMax, and popMax.
+                3) There will be at least one element in the stack when pop, top, peekMax, or popMax is called.
+
 */
 
 import java.util.*;
