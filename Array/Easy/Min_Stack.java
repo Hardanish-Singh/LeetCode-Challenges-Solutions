@@ -25,6 +25,11 @@
                         minStack.pop();
                         minStack.top();    // return 0
                         minStack.getMin(); // return -2
+        
+        Constraints:
+                1) -2^31 <= val <= 2^31 - 1
+                2) Methods pop, top and getMin operations will always be called on non-empty stacks.
+                3) At most 3 * 10^4 calls will be made to push, pop, top, and getMin.
 */
 
 import java.util.*;
