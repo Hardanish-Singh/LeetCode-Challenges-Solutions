@@ -37,9 +37,9 @@
  * @return {number[][]}
 */
 
-function is_complete( array1, array2 ){
+function is_complete( array1, array2 ) {
         let is_complete = true;
-        for( let k=0; k<array1.length; k++ ){
+        for( let k=0; k<array1.length; k++ ) {
                 if( array1[k].length !== array2.length ) {
                         is_complete = false;
                         break;
