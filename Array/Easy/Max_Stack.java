@@ -75,8 +75,10 @@ class MaxStack
         {
                 int maximum = stack.get(0);
                 int index = 0;
-                for (int i = 1; i < stack.size(); i++) {
-                        if (maximum <= stack.get(i)) {
+                for (int i = 1; i < stack.size(); i++) 
+                {
+                        if (maximum <= stack.get(i)) 
+                        {
                                 maximum = stack.get(i);
                                 index = i;
                         }
