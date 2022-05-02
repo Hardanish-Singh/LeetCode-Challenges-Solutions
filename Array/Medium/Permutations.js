@@ -45,10 +45,7 @@ function is_complete( array1, array2 ) {
                         break;
                 }
         }
-        if( is_complete ) {
-                return false;
-        }
-        return true;
+        return is_complete ? false : true;
 }
 
 var permute = function( nums ) {
