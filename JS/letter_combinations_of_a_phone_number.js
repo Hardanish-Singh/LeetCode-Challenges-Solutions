@@ -53,6 +53,7 @@ var letterCombinations = function( digits ) {
  * @param { string[] } value2
  * @return { string[] }
 */
+
 function makeLetterCombinations( value1, value2 ) {
         let temp = [];
         if( value1.length === 0 ) {
