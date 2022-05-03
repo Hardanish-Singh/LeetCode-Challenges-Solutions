@@ -42,7 +42,7 @@ var letterCombinations = function( digits ) {
         else {
                 let letterCombinationsOfPhoneNumber = [];
                 for( let i = 0; i < digits.length; i++ ) {
-                        letterCombinationsOfPhoneNumber = makeLetterCombinations(letterCombinationsOfPhoneNumber, phoneNumberLetterCombinations[digits[i]]);
+                        letterCombinationsOfPhoneNumber = makeLetterCombinations( letterCombinationsOfPhoneNumber, phoneNumberLetterCombinations[ digits[ i ] ] );
                 }
                 return letterCombinationsOfPhoneNumber;
         }
