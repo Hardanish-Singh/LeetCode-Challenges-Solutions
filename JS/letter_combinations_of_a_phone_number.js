@@ -55,13 +55,13 @@ var letterCombinations = function( digits ) {
 */
 function makeLetterCombinations( value1, value2 ) {
         let temp = [];
-        if(value1.length === 0) {
+        if( value1.length === 0 ) {
                 return value2.split('');
         }
         else {
-                for( let i=0; i<value1.length; i++ ) {
-                        for( let j=0; j<value2.length; j++ ) {
-                                temp.push( value1[i] + value2[j] );
+                for( let i = 0; i < value1.length; i++ ) {
+                        for( let j = 0; j < value2.length; j++ ) {
+                                temp.push( value1[ i ] + value2[ j ] );
                         }
                 }
         }
