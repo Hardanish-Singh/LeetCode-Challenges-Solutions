@@ -13,8 +13,8 @@
                 Input: digits = "2"
                 Output: ["a", "b", "c"]
         Constraints:
-                0 <= digits.length <= 4
-                digits[i] is a digit in the range ['2', '9'].
+                1) 0 <= digits.length <= 4
+                2) digits[i] is a digit in the range ['2', '9'].
 */
 
 const phoneNumberLetterCombinations = {
@@ -41,7 +41,7 @@ var letterCombinations = function( digits ) {
         }
         else {
                 let letterCombinationsOfPhoneNumber = [];
-                for( let i=0; i<digits.length; i++ ) {
+                for( let i = 0; i < digits.length; i++ ) {
                         letterCombinationsOfPhoneNumber = makeLetterCombinations(letterCombinationsOfPhoneNumber, phoneNumberLetterCombinations[digits[i]]);
                 }
                 return letterCombinationsOfPhoneNumber;
