@@ -17,6 +17,8 @@
                 digits[i] is a digit in the range ['2', '9'].
 */
 const phoneNumberLetterCombinations = {
+        '0' : '0',
+        '1' : '1',
         '2' : 'abc',
         '3' : 'def',
         '4' : 'ghi',
