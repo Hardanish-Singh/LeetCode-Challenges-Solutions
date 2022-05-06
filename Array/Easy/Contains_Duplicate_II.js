@@ -19,7 +19,7 @@
                 3) 0 <= k <= 10^5
 */
 
-/*
+/**
  * @param { number[] } nums
  * @param { number } k
  * @return { boolean }
@@ -47,6 +47,7 @@ var containsNearbyDuplicate = function( nums, k ) {
                         Time Complexity: O(n)
                         Space Complexity: O(n)
 */
+
 var containsNearbyDuplicate = function( nums, k ) {
         var countOccurrences = { };
         var i;
