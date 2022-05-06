@@ -35,66 +35,23 @@
  *                                                              *
  ***************************************************************/
 
-/*
-        This function checks if two dictionaries are Anagrams or not
-*/
-function isValidAnagram( word1, word2 ) {
+var isAnagram = function( s, t ) {
+        if( s.length !== t.length ) {
+                return false;
+        }
+        var dictionaryOne = { };
+        var dictionaryTwo = { };
 
-        for( key1 in word1 ) {
-                let isFound = false;
-                for( key2 in word2 ) {
-                        if( key1 == key2 && word1[key1] == word2[key2] ) {
-                                delete word2[key2];
-                                delete word1[key1];
-                                isFound = true;
-                                break;
-                        }
-                }              
-                if( isFound == false ) {
+        for( let i = 0; i < s.length; i++ ) {
+                dictionaryOne[ s[ i ] ] ? dictionaryOne[ s[ i ] ] += 1 : dictionaryOne[ s[ i ] ] = 1;
+                dictionaryOne[ t[ i ] ] ? dictionaryOne[ t[ i ] ] += 1 : dictionaryOne[ t[ i ] ] = 1;
+        }
+
+        for( const[ key, value ] of Object.entries( dictionaryOne ) ) {
+                if( dictionaryTwo[ key ] !== value ) {
                         return false;
                 }
         }
 
         return true;
-
-}
-
-/*
-        This function counts each character occurrences in a word, and returns dictionary
-*/ 
-function countCharacterOccurrences( word ) {
-        
-        let words = {};
-        let count = 1;
-
-        for( let i=0; i<word.length; i++) {
-                if( word[i] in words ) {
-                        continue;
-                }
-                for( let j=i+1; j<word.length; j++ ) {
-                        if( word[i] == word[j] ) {
-                                count++;
-                        }
-                }
-                words[word[i]] = count;
-                count = 1;
-        }
-
-        return words;
-
-}
-
-/*
-        Main Function
-*/
-var isAnagram = function( s, t ) {
-    
-    if( s.length != t.length ) {
-        return false;
-    }
-    
-    let word1 = countCharacterOccurrences( s );
-    let word2 = countCharacterOccurrences( t );
-    
-    return isValidAnagram( word1, word2 ) ? true : false;
 };
