@@ -44,7 +44,7 @@ var isAnagram = function( s, t ) {
 
         for( let i = 0; i < s.length; i++ ) {
                 dictionaryOne[ s[ i ] ] ? dictionaryOne[ s[ i ] ] += 1 : dictionaryOne[ s[ i ] ] = 1;
-                dictionaryOne[ t[ i ] ] ? dictionaryOne[ t[ i ] ] += 1 : dictionaryOne[ t[ i ] ] = 1;
+                dictionaryTwo[ t[ i ] ] ? dictionaryTwo[ t[ i ] ] += 1 : dictionaryTwo[ t[ i ] ] = 1;
         }
 
         for( const[ key, value ] of Object.entries( dictionaryOne ) ) {
