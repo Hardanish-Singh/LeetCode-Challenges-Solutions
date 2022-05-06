@@ -20,7 +20,7 @@
                 4) 0 <= t <= 2^31 - 1
 */
 
-/*
+/**
  * @param { number[] } nums
  * @param { number } k
  * @param { number } t
