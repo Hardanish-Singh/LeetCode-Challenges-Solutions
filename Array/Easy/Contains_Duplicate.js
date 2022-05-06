@@ -18,7 +18,7 @@
                 2) -10^9 <= nums[i] <= 10^9
 */
 
-/*
+/**
  * @param { number[] } nums
  * @return { boolean }
 */
