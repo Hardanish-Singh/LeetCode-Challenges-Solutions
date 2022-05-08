@@ -5,10 +5,6 @@
 */
 
 var rotate = function(nums, k) {
-        // for( let i = 0; i < k; i++ ) {
-        //         let element = nums.pop();
-        //         nums.splice(0,0,element)
-        // }
         while( k > nums.length ) {
                 k -= nums.length;
         }
