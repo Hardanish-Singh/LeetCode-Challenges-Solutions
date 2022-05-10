@@ -133,7 +133,7 @@ function perform_push_pop_operation( ...args ) {
 
 var exist = function( ...args ) {
         let [ grid, word ] = args;
-        // DEEP COPY ARRAY 
+        // DEEP COPY ARRAY
         let originalGrid = JSON.parse( JSON.stringify( grid ) );
         let gridTraversal = [];
 
