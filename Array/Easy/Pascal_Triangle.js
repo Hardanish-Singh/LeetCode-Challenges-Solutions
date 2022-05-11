@@ -19,8 +19,11 @@ var generate = function( numRows ) {
                         ]
                 );
         }
-        var result = [ [ 1 ], [ 1, 1 ] ];
-        let prev = result[ 1 ];
+        var result = [ 
+                        [ 1 ], 
+                        [ 1, 1 ] 
+                ];
+        var prev = result[ 1 ];
         for( let i = 3; i <= numRows; i++ ) {
                 let temp = new Array( i ).fill( 1 );
                 let index1 = 0;
