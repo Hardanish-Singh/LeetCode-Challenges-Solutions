@@ -5,10 +5,19 @@
 
 var generate = function( numRows ) {
         if( numRows == 1 ) {
-                return [ [ 1 ] ];
+                return (
+                        [ 
+                                [ 1 ] 
+                        ]
+                );
         }
         if( numRows == 2 ) {
-                return [ [ 1 ], [ 1, 1 ] ];
+                return (
+                        [ 
+                                [ 1 ], 
+                                [ 1, 1 ] 
+                        ]
+                );
         }
         var result = [ [ 1 ], [ 1, 1 ] ];
         let prev = result[ 1 ];
