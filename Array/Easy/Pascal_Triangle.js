@@ -6,7 +6,7 @@
 var generate = function( numRows ) {
         if( numRows == 1 ) {
                 return (
-                        [ 
+                        [
                                 [ 1 ] 
                         ]
                 );
@@ -19,7 +19,7 @@ var generate = function( numRows ) {
                         ]
                 );
         }
-        var result = [ 
+        var result = [
                         [ 1 ], 
                         [ 1, 1 ] 
                 ];
