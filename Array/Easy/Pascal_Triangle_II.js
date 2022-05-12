@@ -26,7 +26,10 @@ var getRow = function(numRows) {
         if( numRows == 1 ) {
                 return [1,1];
         }
-        var result = [ [ 1 ], [ 1, 1 ] ];
+        var result = [ 
+                        [ 1 ], 
+                        [ 1, 1 ] 
+                ];
         let prev = result[ 1 ];
         for( let i = 2; i <= numRows; i++ ) {
                 let temp = new Array( i + 1 ).fill( 1 );
