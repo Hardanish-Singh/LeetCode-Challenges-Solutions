@@ -24,7 +24,7 @@
  * @return { number[] }
 */
 
-var getRow = function(numRows) {
+var getRow = function( numRows ) {
         if( numRows == 0 ) {
                 return [1];
         }
