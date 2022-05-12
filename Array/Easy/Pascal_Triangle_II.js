@@ -14,6 +14,9 @@
         Example 3:
                 Input: rowIndex = 1
                 Output: [1, 1]
+        
+        Constraints:
+                1) 0 <= numRows <= 33
 */
 
 /**
