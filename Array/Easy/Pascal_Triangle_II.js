@@ -1,6 +1,6 @@
 /**
- * @param {number} rowIndex
- * @return {number[]}
+ * @param { number } rowIndex
+ * @return { number[] }
 */
 
 var getRow = function(numRows) {
