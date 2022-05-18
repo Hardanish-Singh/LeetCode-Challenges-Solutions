@@ -15,6 +15,6 @@ var fizzBuzz = function( n ) {
                 } else {
                         result.push(i.toString())
                 }
-        } 
+        }
         return result;
 };
