@@ -1,9 +1,9 @@
 /**
- * @param {number} n
- * @return {string[]}
+ * @param { number } n
+ * @return { string[] }
 */
 
-var fizzBuzz = function(n) {
+var fizzBuzz = function( n ) {
         let result = [];
         for( let i = 1; i <= n; i++ ) {
                 if( i % 3 === 0 && i % 5 === 0 ) {
