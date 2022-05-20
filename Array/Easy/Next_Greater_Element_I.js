@@ -25,6 +25,12 @@
                 Explanation: The next greater element for each value of nums1 is as follows:
                         - 2 is underlined in nums2 = [1, 2, 3, 4]. The next greater element is 3.
                         - 4 is underlined in nums2 = [1, 2, 3, 4]. There is no next greater element, so the answer is -1.
+        
+        Constraints:
+                1) 1 <= nums1.length <= nums2.length <= 1000
+                2) 0 <= nums1[i], nums2[i] <= 104
+                3) All integers in nums1 and nums2 are unique.
+                4) All the integers of nums1 also appear in nums2
 */
 
 /*
