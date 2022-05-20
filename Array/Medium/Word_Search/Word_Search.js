@@ -168,5 +168,5 @@ var exist = function( ...args ) {
                 }
         }
 
-        return false; 
+        return false;
 };
