@@ -17,11 +17,7 @@ var nextGreaterElement = function( nums1, nums2 ) {
 
         var result = [];
         for( let i = 0; i < nums1.length; i++ ) {
-                if( hash_table[ nums1[ i ] ] ) {
-                        result.push( hash_table[ nums1[ i ] ] );
-                } else {
-                        result.push( -1 );
-                }
+                hash_table[ nums1[ i ] ] ? result.push( hash_table[ nums1[ i ] ] ) : result.push( -1 );
         }
         return result;
 };
