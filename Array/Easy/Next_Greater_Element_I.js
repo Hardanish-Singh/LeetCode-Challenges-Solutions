@@ -5,19 +5,19 @@
 */
 
 var nextGreaterElement = function( nums1, nums2 ) {
-        var hash_table = { };
-        for( let i = 0; i < nums2.length; i++ ) {
-                for( let j = i + 1; j < nums2.length; j++ ) {
-                        if( nums2[ i ] < nums2[ j ] ) {
-                                hash_table[ nums2[ i ] ] = nums2[ j ];
-                                break;
-                        }
-                }
-        }
-
         var result = [];
         for( let i = 0; i < nums1.length; i++ ) {
-                hash_table[ nums1[ i ] ] ? result.push( hash_table[ nums1[ i ] ] ) : result.push( -1 );
+                let isFound = false;
+                for( let j = nums2.indexOf( nums1[ i ] ); j < nums2.length; j++ ) {
+                       if( nums1[ i ] < nums2[ j ] ) {
+                               isFound = true;
+                               result.push( nums2[ j ] );
+                               break;
+                       }
+                }
+                if( !isFound ) {
+                        result.push( -1 );
+                }
         }
         return result;
 };
