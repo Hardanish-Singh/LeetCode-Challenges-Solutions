@@ -1,6 +1,6 @@
-/*
- * @param {number[]} heights
- * @return {number}
+/**
+ * @param { number[] } heights
+ * @return { number }
 */
 
 var largestRectangleArea = function(buildings) {
