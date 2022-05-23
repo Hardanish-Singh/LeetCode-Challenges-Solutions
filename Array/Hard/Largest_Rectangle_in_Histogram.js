@@ -32,7 +32,7 @@ var largestRectangleArea = function(buildings) {
                         height = Math.min(height, buildings[j])
                         let area = (width) * height;
                         maxArea = Math.max( area, maxArea);
-                        width++;
+                        width++; 
                 }
         }
         
