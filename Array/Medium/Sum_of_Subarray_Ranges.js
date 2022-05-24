@@ -28,6 +28,10 @@
                                 [3,3], range = 3 - 3 = 0
                                 [1,3,3], range = 3 - 1 = 2
                                 So the sum of all ranges is 0 + 0 + 0 + 2 + 0 + 2 = 4.
+        
+        Constraints:
+                1) 1 <= nums.length <= 1000
+                2) -10^9 <= nums[i] <= 10^9
 */
 
 /**
