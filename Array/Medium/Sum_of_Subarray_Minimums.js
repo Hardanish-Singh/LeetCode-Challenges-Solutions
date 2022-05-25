@@ -1,6 +1,6 @@
 /**
- * @param {number[]} arr
- * @return {number}
+ * @param { number[] } arr
+ * @return { number }
 */
 
 var sumSubarrayMins = function(array) {
