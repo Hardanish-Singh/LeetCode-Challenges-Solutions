@@ -13,6 +13,12 @@
         Example 3:
                 Input: nums = [], target = 0
                 Output: [-1, -1]
+        
+        Constraints:
+                1) 0 <= nums.length <= 10^5
+                2) -10^9 <= nums[i] <= 10^9
+                3) nums is a non-decreasing array.
+                4) -10^9 <= target <= 10^9
 */
 
 /**
