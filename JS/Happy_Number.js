@@ -16,6 +16,13 @@
                         8^2 + 2^2 = 68
                         6^2 + 8^2 = 100
                         1^2 + 0^2 + 0^2 = 1
+        
+        Example 2:
+                Input: n = 2
+                Output: false
+
+        Constraints:
+                1) 1 <= n <= 2^31 - 1
 */
 
 /**
