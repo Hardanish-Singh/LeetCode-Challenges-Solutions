@@ -1,3 +1,4 @@
+// SOLUTION 1
 var climbStairs = function(n) {
         let stairs = new Set();
         stairs.add( '1'.repeat( n ) );
