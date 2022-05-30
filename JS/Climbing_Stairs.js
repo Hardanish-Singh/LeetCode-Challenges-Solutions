@@ -22,7 +22,9 @@
 */
 
 
-// SOLUTION 1
+/*
+        SOLUTION 1: BRUTE FORCE( TIME LIMIT EXEECED )
+*/
 var climbStairs = function(n) {
         let stairs = new Set();
         stairs.add( '1'.repeat( n ) );
@@ -45,7 +47,9 @@ var climbStairs = function(n) {
         return count;
 };
 
-// SOLUTION 2
+/*
+        SOLUTION 2: DYNAMIC PROGRAMMING
+*/
 var climbStairs = function( n ) {
         let stairs = [0, 1, 2];        
         for( let i = 3; i <= n; i++ ) {
