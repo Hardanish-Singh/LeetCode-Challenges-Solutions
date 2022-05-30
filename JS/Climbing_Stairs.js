@@ -41,7 +41,7 @@ var climbStairs = function(n) {
                 count++;
                 stair = iterator.next().value;
         }
-        
+
         return count;
 };
 
