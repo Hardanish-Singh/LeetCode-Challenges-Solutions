@@ -51,7 +51,7 @@ var climbStairs = function(n) {
         SOLUTION 2: DYNAMIC PROGRAMMING
 */
 var climbStairs = function( n ) {
-        let stairs = [0, 1, 2];        
+        var stairs = [0, 1, 2];        
         for( let i = 3; i <= n; i++ ) {
                 stairs[ i ] = stairs[ i - 1 ] + stairs[ i - 2 ]; 
         }
