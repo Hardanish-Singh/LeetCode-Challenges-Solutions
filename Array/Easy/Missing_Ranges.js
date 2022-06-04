@@ -3,6 +3,8 @@
         A number x is considered missing if x is in the range [lower, upper] and x is not in nums.
         Return the smallest sorted list of ranges that cover every missing number exactly. That is, no element of nums is in any of the ranges, and each missing number is in one of the ranges.
         Each range [a,b] in the list should be output as:
+                1) "a->b" if a != b
+                2) "a" if a == b
 */
 
 /**
