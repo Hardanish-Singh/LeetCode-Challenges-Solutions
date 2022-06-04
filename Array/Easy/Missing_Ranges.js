@@ -19,6 +19,12 @@
                 Input: nums = [-1], lower = -1, upper = -1
                 Output: []
                 Explanation: There are no missing ranges since there are no missing numbers.
+        
+        Constraints:
+                1) -10^9 <= lower <= upper <= 10^9
+                2) 0 <= nums.length <= 100
+                3) lower <= nums[i] <= upper
+                4) All the values of nums are unique.
 */
 
 /**
