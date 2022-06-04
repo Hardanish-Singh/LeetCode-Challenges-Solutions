@@ -6,7 +6,7 @@
 */
 
 
-var findMissingRanges = function(nums, lower, upper) {
+var findMissingRanges = function( nums, lower, upper ) {
         if( ! ( nums.includes( lower ) ) ) {
                 nums.push( lower - 1 );
         }
