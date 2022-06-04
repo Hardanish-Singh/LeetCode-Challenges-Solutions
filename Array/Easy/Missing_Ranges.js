@@ -13,7 +13,7 @@ var findMissingRanges = function(nums, lower, upper) {
         if( ! ( nums.includes( upper ) ) ) {
                 nums.push( upper + 1 );
         }
-        
+        // SORT AGAIN FOR NEGATIVE NUMBERS
         nums.sort( ( a,b) => a-b );
         
         let result = [];
