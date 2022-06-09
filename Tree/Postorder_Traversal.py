@@ -5,6 +5,10 @@
 #         self.left = left
 #         self.right = right
 
+"""
+        Solution 1: Recursive
+"""
+
 def postorderRecursiveTraversal( root, answer ):
         if root is None:
                 return
@@ -21,3 +25,18 @@ class Solution(object):
                 answer = []
                 postorderRecursiveTraversal( root, answer )
                 return answer
+
+"""
+        Solution 2: Iterative
+"""
+
+class Solution(object):
+        def postorderTraversal(self, root):
+                res, stack = [], [root]
+                while stack:
+                        node = stack.pop()
+                        if node:
+                                res.append(node.val)
+                                stack.append(node.left)
+                                stack.append(node.right)
+                return res[::-1]
