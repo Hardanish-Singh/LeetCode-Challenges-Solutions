@@ -5,6 +5,10 @@
 #         self.left = left
 #         self.right = right
 
+"""
+        Solution 1: Recursive
+"""
+
 def preorderRecursiveTraversal( root, answer ):
                 if root is None:
                         return
