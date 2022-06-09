@@ -9,12 +9,12 @@
         Solution 1: Recursive
 """
 
-def preorderRecursiveTraversal( root, answer ):
+def preorderRecursiveTraversal( root, preOrderList ):
                 if root is None:
                         return
-                answer.append( root.val )
-                preorderRecursiveTraversal( root.left, answer)
-                preorderRecursiveTraversal( root.right, answer )
+                preOrderList.append( root.val )
+                preorderRecursiveTraversal( root.left, preOrderList )
+                preorderRecursiveTraversal( root.right, preOrderList )
                 
 class Solution(object):
         def preorderTraversal(self, root):
@@ -22,9 +22,9 @@ class Solution(object):
                 :type root: TreeNode
                 :rtype: List[int]
                 """
-                answer = []
-                preorderRecursiveTraversal( root, answer )
-                return answer
+                preOrderList = []
+                preorderRecursiveTraversal( root, preOrderList )
+                return preOrderList
 
 """
         Solution 2: Iterative
