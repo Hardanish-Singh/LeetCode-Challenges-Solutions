@@ -36,19 +36,21 @@ class Solution(object):
                 :type root: TreeNode
                 :rtype: List[int]
                 """
-                answer = []
+
+                if root is None:
+                        return []
+
+                preOrderList = []
                 stack = []
                 stack.append( root )
                 
                 while len( stack ) > 0:
-                        if root is None:
-                                return answer
                         currentNode = stack.pop()
-                        answer.append( currentNode.val )
+                        preOrderList.append( currentNode.val )
                         
                         if currentNode.right:
                                 stack.append( currentNode.right )
                         if currentNode.left:
                                 stack.append( currentNode.left )
                 
-                return answer
+                return preOrderList
