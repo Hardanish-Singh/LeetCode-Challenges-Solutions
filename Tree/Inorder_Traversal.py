@@ -30,3 +30,29 @@ class Solution(object):
 """
         Solution 2: Iterative
 """
+
+class Solution(object):
+        def inorderTraversal(self, root):
+                """
+                :type root: TreeNode
+                :rtype: List[int]
+                """
+
+                if root is None:
+                        return []
+
+                inOrderList = []
+                stack = []
+                currentNode = root
+
+                while stack or currentNode:
+                        if currentNode:
+                                stack.append( currentNode )
+                                currentNode = currentNode.left
+                        else:
+                                currentNode = stack.pop()
+                                inOrderList.append( currentNode.val )
+                                currentNode = currentNode.right
+                        
+                        
+                return inOrderList
