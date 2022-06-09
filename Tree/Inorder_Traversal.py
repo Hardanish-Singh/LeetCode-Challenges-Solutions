@@ -8,7 +8,6 @@
 def inorderRecursiveTraversal( root, answer ):
         if root is None:
                 return
-        
         inorderRecursiveTraversal( root.left, answer )
         answer.append( root.val )
         inorderRecursiveTraversal( root.right, answer )
@@ -19,7 +18,6 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-        
         answer = []
         inorderRecursiveTraversal( root, answer )
         return answer
