@@ -25,3 +25,30 @@ class Solution(object):
                 answer = []
                 preorderRecursiveTraversal( root, answer )
                 return answer
+
+"""
+        Solution 2: Iterative
+"""
+
+class Solution(object):
+        def preorderTraversal(self, root):
+                """
+                :type root: TreeNode
+                :rtype: List[int]
+                """
+                answer = []
+                stack = []
+                stack.append( root )
+                
+                while len( stack ) > 0:
+                        if root is None:
+                                return answer
+                        currentNode = stack.pop()
+                        answer.append( currentNode.val )
+                        
+                        if currentNode.right:
+                                stack.append( currentNode.right )
+                        if currentNode.left:
+                                stack.append( currentNode.left )
+                
+                return answer
