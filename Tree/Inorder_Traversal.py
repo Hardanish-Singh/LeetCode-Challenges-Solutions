@@ -5,6 +5,10 @@
 #         self.left = left
 #         self.right = right
 
+"""
+        Solution 1: Recursive
+"""
+
 def inorderRecursiveTraversal( root, answer ):
         if root is None:
                 return
@@ -21,3 +25,8 @@ class Solution(object):
         answer = []
         inorderRecursiveTraversal( root, answer )
         return answer
+
+
+"""
+        Solution 2: Iterative
+"""
