@@ -32,11 +32,11 @@ class Solution(object):
 
 class Solution(object):
         def postorderTraversal(self, root):
-                res, stack = [], [root]
+                postOrderList, stack = [], [root]
                 while stack:
                         node = stack.pop()
                         if node:
-                                res.append(node.val)
+                                postOrderList.append(node.val)
                                 stack.append(node.left)
                                 stack.append(node.right)
-                return res[::-1]
+                return postOrderList[::-1]
