@@ -37,6 +37,6 @@ class Solution(object):
                         node = stack.pop()
                         if node:
                                 postOrderList.append(node.val)
-                                stack.append(node.left) 
+                                stack.append(node.left)
                                 stack.append(node.right)
                 return postOrderList[::-1]
