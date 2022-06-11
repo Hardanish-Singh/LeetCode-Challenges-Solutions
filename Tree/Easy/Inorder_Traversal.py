@@ -45,7 +45,7 @@ class Solution(object):
                 stack = []
                 currentNode = root
 
-                while stack or currentNode:
+                while len( stack ) > 0 or currentNode:
                         if currentNode:
                                 stack.append( currentNode )
                                 currentNode = currentNode.left
