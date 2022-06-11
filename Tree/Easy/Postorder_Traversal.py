@@ -32,7 +32,8 @@ class Solution(object):
 
 class Solution(object):
         def postorderTraversal(self, root):
-                postOrderList, stack = [], [root]
+                postOrderList = []
+                stack = [ root ]
                 while stack:
                         currentNode = stack.pop()
                         if currentNode:
