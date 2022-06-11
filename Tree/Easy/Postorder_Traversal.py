@@ -34,9 +34,9 @@ class Solution(object):
         def postorderTraversal(self, root):
                 postOrderList, stack = [], [root]
                 while stack:
-                        node = stack.pop()
-                        if node:
-                                postOrderList.append(node.val)
-                                stack.append(node.left)
-                                stack.append(node.right)
+                        currentNode = stack.pop()
+                        if currentNode:
+                                postOrderList.append(currentNode.val)
+                                stack.append(currentNode.left)
+                                stack.append(currentNode.right)
                 return postOrderList[::-1]
