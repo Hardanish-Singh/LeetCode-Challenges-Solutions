@@ -22,5 +22,3 @@ class Solution(object):
                                 queue.append( currentNode.left )
                         if currentNode.right:
                                 queue.append( currentNode.right )
-                        
-        
