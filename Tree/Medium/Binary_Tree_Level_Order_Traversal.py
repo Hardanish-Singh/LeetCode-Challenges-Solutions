@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution(object):
         def levelOrder(self, root):
                 """
@@ -30,8 +31,3 @@ class Solution(object):
                                 if item.right:
                                         queue.append( item.right )
                 return result
-                
-                
-                
-                
-        
