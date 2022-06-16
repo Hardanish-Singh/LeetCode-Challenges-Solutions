@@ -37,6 +37,7 @@ class Solution(object):
 
                 if root is None:
                         return 0
+
                 queue = [ root ]
                 result = [ ]
 
@@ -54,4 +55,5 @@ class Solution(object):
                                         queue.append( item.left )
                                 if item.right:
                                         queue.append( item.right )
+
                 return len( result )
