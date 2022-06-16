@@ -5,6 +5,11 @@
 #         self.left = left
 #         self.right = right
 
+
+"""
+        SOLUTION 1:
+                RECURSIVE DFS
+"""
 class Solution(object):
         def maxDepth(self, root):
                 """
