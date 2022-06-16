@@ -28,3 +28,30 @@ class Solution(object):
                 ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 """
 
+class Solution(object):
+        def maxDepth(self, root):
+                """
+                :type root: TreeNode
+                :rtype: int
+                """
+
+                if root is None:
+                        return 0
+                queue = [ root ]
+                result = [ ]
+
+                while len( queue ) > 0:
+                        temp = []
+                        # POP ALL ELEMENTS FROM QUEUE
+                        for item in queue:
+                                temp.append( item.val )
+                        result.append( temp )
+
+                        n = len( queue )
+                        for i in range( n ):
+                                item = queue.pop(0)
+                                if item.left:
+                                        queue.append( item.left )
+                                if item.right:
+                                        queue.append( item.right )
+                return len( result )
