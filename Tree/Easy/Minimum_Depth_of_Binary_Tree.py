@@ -5,6 +5,12 @@
 #         self.left = left
 #         self.right = right
 
+
+
+"""
+        SOLUTION 2:
+                ITERATIVE SOLUTION
+"""
 class Solution(object):
         def minDepth(self, root):
                 """
