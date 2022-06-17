@@ -6,6 +6,11 @@
 #         self.right = right
 
 
+"""
+        SOLUTION 1:
+                RECURSIVE SOLUTION
+"""
+
 
 """
         SOLUTION 2:
