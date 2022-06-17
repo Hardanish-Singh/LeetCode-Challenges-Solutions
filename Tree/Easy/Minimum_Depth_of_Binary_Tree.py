@@ -11,6 +11,25 @@
                 RECURSIVE SOLUTION
 """
 
+class Solution(object):
+        def minDepth(self, root):
+                """
+                :type root: TreeNode
+                :rtype: int
+                """
+                # base case
+                if root is None:
+                        return 0
+                # if there is only right child get depth of it
+                if root.left is None:
+                        return self.minDepth(root.right) + 1
+                # similarly if there is only left child  get depth of it
+                elif root.right is None:
+                        return self.minDepth(root.left) + 1
+                # in case there are both  get the min of both
+                else:
+                        return 1 + min( self.minDepth(root.right), self.minDepth(root.left) )
+
 
 """
         SOLUTION 2:
