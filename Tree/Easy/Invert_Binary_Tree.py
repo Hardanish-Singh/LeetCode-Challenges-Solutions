@@ -9,6 +9,7 @@
         SOLUTION 1:
                 RECURSIVE
 """
+
 class Solution(object):
         def invertTree(self, root):
                 """
