@@ -23,6 +23,7 @@ class Solution(object):
                                 temp.append( item.val )
                         result.append( temp )
                         
+                        # POP ALL ELEMENTS FROM QUEUE
                         n = len( queue )
                         for i in range( n ):
                                 item = queue.pop(0)
