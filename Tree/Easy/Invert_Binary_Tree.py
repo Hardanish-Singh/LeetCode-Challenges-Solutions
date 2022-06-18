@@ -31,3 +31,26 @@ class Solution(object):
         SOLUTION 2:
                 ITERATIVE
 """
+
+class Solution(object):
+        def invertTree(self, root):
+                """
+                :type root: TreeNode
+                :rtype: TreeNode
+                """
+                if root is None:
+                        return None
+                queue = [ root ]
+                
+                # POP ALL ELEMENTS FROM QUEUE
+                while len( queue ) > 0:
+                        n = len( queue )
+                        for i in range( n ):
+                                node = queue.pop(0)
+                                node.right, node.left = node.left, node.right
+                                if node.left:
+                                        queue.append( node.left )
+                                if node.right:
+                                        queue.append( node.right )
+                
+                return root
