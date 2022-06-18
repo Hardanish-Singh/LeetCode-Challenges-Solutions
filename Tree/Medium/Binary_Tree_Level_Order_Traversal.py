@@ -19,16 +19,16 @@ class Solution(object):
                 while len( queue ) > 0:
                         temp = []
                         # GET ALL ELEMENTS FROM QUEUE
-                        for item in queue:
-                                temp.append( item.val )
+                        for node in queue:
+                                temp.append( node.val )
                         result.append( temp )
                         
                         # POP ALL ELEMENTS FROM QUEUE
                         n = len( queue )
                         for i in range( n ):
-                                item = queue.pop(0)
-                                if item.left:
-                                        queue.append( item.left )
-                                if item.right:
-                                        queue.append( item.right )
+                                node = queue.pop(0)
+                                if node.left:
+                                        queue.append( node.left )
+                                if node.right:
+                                        queue.append( node.right )
                 return result
