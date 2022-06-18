@@ -18,7 +18,7 @@ class Solution(object):
 
                 while len( queue ) > 0:
                         temp = []
-                        # POP ALL ELEMENTS FROM QUEUE
+                        # GET ALL ELEMENTS FROM QUEUE
                         for item in queue:
                                 temp.append( item.val )
                         result.append( temp )
