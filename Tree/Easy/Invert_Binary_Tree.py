@@ -26,3 +26,8 @@ class Solution(object):
                 self.invertTree( root.right )
                 
                 return root
+
+"""
+        SOLUTION 2:
+                ITERATIVE
+"""
