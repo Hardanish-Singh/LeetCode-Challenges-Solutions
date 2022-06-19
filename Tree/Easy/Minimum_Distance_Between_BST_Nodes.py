@@ -30,7 +30,7 @@ class Solution(object):
                 temp = []
 
                 while i < length:
-                        temp.append( answer[i] - answer[i-1] )
+                        temp.append( answer[ i ] - answer[ i - 1 ] )
                         i = i + 1
 
                 return min(temp)
