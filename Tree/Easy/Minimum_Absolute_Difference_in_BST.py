@@ -27,9 +27,9 @@ class Solution(object):
                 i = 1
                 length = len( answer )
                 temp = []
+
                 while i < length:
                         temp.append( answer[i] - answer[i-1] )
                         i = i + 1
 
                 return min(temp)
-        
