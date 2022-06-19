@@ -41,8 +41,7 @@ class Solution(object):
                         return []
 
                 preOrderList = []
-                stack = []
-                stack.append( root )
+                stack = [ root ]
                 
                 while len( stack ) > 0:
                         currentNode = stack.pop()
