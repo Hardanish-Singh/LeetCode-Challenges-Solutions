@@ -22,10 +22,10 @@ class Solution(object):
                         return 0
                 # if there is only left child get depth of it
                 if root.left and root.right is None:
-                        return self.minDepth(root.left) + 1
+                        return 1 + self.minDepth(root.left)
                 # similarly if there is only right child get depth of it
                 elif root.right and root.left is None:
-                        return self.minDepth(root.right) + 1
+                        return 1 + self.minDepth(root.right)
                 # in case there are both  get the min of both
                 else:
                         return 1 + min( self.minDepth(root.right), self.minDepth(root.left) )
