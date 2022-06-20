@@ -26,7 +26,7 @@ class Solution(object):
                 # similarly if there is only right child then we get depth of it
                 elif root.right and root.left is None:
                         return 1 + self.minDepth(root.right)
-                # in case there are both  get the min of both
+                # in case there are both then we get the min of both
                 else:
                         return 1 + min( self.minDepth(root.right), self.minDepth(root.left) )
 
