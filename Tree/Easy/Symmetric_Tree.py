@@ -32,3 +32,15 @@ class Solution(object):
                         return True
                 else:
                         return False
+
+"""
+        SOLUTION 2:
+                ITERATIVE
+"""
+        class Solution(object):
+                def isSymmetric(self, root):
+                        """
+                        :type root: TreeNode
+                        :rtype: bool
+                        """
+                        pass
