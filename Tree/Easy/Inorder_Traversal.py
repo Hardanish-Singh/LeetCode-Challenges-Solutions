@@ -40,6 +40,7 @@ class Solution(object):
                 :rtype: List[int]
                 """
                 return self.inorderRecursiveTraversal( root, [] )
+
         def inorderRecursiveTraversal( self, root, inOrderList ):
                 if root is None:
                         return None
