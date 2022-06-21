@@ -18,8 +18,8 @@ def preorderRecursiveTraversal( root, preOrderList ):
                 preorderRecursiveTraversal( root.left, preOrderList )
                 preorderRecursiveTraversal( root.right, preOrderList )
                 
-class Solution(object):
-        def preorderTraversal(self, root):
+class Solution( object ):
+        def preorderTraversal( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: List[int]
@@ -32,8 +32,8 @@ class Solution(object):
         SOLUTION 2: RECURSIVE
 """
 
-class Solution(object):
-        def preorderTraversal(self, root):
+class Solution( object ):
+        def preorderTraversal( self, root ):
                 return self.preorderRecursiveTraversal( root, [] )
         
         def preorderRecursiveTraversal( self, root, preOrderList ):
@@ -48,8 +48,8 @@ class Solution(object):
         SOLUTION 3: ITERATIVE
 """
 
-class Solution(object):
-        def preorderTraversal(self, root):
+class Solution( object ):
+        def preorderTraversal( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: List[int]
