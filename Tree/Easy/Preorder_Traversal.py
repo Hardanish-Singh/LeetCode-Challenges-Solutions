@@ -29,7 +29,7 @@ class Solution(object):
                 return preOrderList
 
 """
-        SOLUTION 2: RECURSIVE 
+        SOLUTION 2: RECURSIVE
 """
 
 class Solution(object):
