@@ -19,18 +19,38 @@ def inorderRecursiveTraversal( root, answer ):
         inorderRecursiveTraversal( root.right, answer )
         
 class Solution(object):
-    def inorderTraversal(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
-        answer = []
-        inorderRecursiveTraversal( root, answer )
-        return answer
+        def inorderTraversal(self, root):
+                """
+                :type root: TreeNode
+                :rtype: List[int]
+                """
+                answer = []
+                inorderRecursiveTraversal( root, answer )
+                return answer
 
 
 """
-        Solution 2: Iterative
+        SOLUTION 2: RECURSIVE
+"""
+
+class Solution(object):
+        def inorderTraversal(self, root):
+                """
+                :type root: TreeNode
+                :rtype: List[int]
+                """
+                return self.inorderRecursiveTraversal( root, [] )
+        def inorderRecursiveTraversal( self, root, inOrderList ):
+                if root is None:
+                        return None
+                self.inorderRecursiveTraversal( root.left, inOrderList )
+                inOrderList.append( root.val )
+                self.inorderRecursiveTraversal( root.right, inOrderList  )
+                return inOrderList
+
+
+"""
+        SOLUTION 3: ITERATIVE
 """
 
 class Solution(object):
