@@ -15,6 +15,8 @@ class Solution(object):
                 :type root: TreeNode
                 :rtype: bool
                 """
+                if root is None:
+                        return False
                 return self.isTreeSymmetric( root.left, root.right )
         
         def isTreeSymmetric( self, left, right ):
@@ -43,4 +45,20 @@ class Solution(object):
                         :type root: TreeNode
                         :rtype: bool
                         """
-                        pass
+                        if root is None:
+                                return False
+                        stack = [ [ root.left, root.right ] ]
+
+                        while len( stack ) > 0:
+                                leftNode, rightNode = stack.pop()
+                                if leftNode is None and rightNode is None:
+                                        continue
+                                if leftNode is None or rightNode is None:
+                                        return False
+                                if leftNode.val != rightNode.val:
+                                        return False
+                                # values of left & right node is equal
+                                else:
+                                        stack.append( [ leftNode.right, rightNode.left ]  )
+                                        stack.append( [ leftNode.left, rightNode.right ] )
+                        return True
