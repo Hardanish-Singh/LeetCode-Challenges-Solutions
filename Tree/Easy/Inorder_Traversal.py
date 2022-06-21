@@ -13,7 +13,7 @@
 
 def inorderRecursiveTraversal( root, inOrderList ):
         if root is None:
-                return
+                return None
         inorderRecursiveTraversal( root.left, inOrderList )
         inOrderList.append( root.val )
         inorderRecursiveTraversal( root.right, inOrderList )
