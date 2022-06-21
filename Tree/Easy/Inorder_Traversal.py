@@ -1,12 +1,14 @@
+# Leetcode: https://leetcode.com/problems/binary-tree-inorder-traversal/
+
 # Definition for a binary tree node.
 # class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
+#     def __init__( self, val = 0, left = None, right = None ):
 #         self.val = val
 #         self.left = left
 #         self.right = right
 
 """
-        Solution 1: Recursive
+        SOLUTION 1: RECURSIVE
 """
 
 def inorderRecursiveTraversal( root, answer ):
