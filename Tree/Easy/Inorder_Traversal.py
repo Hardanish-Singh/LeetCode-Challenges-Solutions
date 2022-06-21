@@ -11,12 +11,12 @@
         SOLUTION 1: RECURSIVE
 """
 
-def inorderRecursiveTraversal( root, answer ):
+def inorderRecursiveTraversal( root, inOrderList ):
         if root is None:
                 return
-        inorderRecursiveTraversal( root.left, answer )
-        answer.append( root.val )
-        inorderRecursiveTraversal( root.right, answer )
+        inorderRecursiveTraversal( root.left, inOrderList )
+        inOrderList.append( root.val )
+        inorderRecursiveTraversal( root.right, inOrderList )
         
 class Solution(object):
         def inorderTraversal(self, root):
@@ -24,9 +24,9 @@ class Solution(object):
                 :type root: TreeNode
                 :rtype: List[int]
                 """
-                answer = []
-                inorderRecursiveTraversal( root, answer )
-                return answer
+                inOrderList = []
+                inorderRecursiveTraversal( root, inOrderList )
+                return inOrderList
 
 
 """
