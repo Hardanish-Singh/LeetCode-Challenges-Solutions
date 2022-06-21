@@ -6,15 +6,15 @@
 #         self.right = right
 
 """
-        Solution 1: Recursive
+        SOLUTION 1: RECURSIVE
 """
 
-def postorderRecursiveTraversal( root, answer ):
+def postorderRecursiveTraversal( root, postOrderList ):
         if root is None:
                 return
-        postorderRecursiveTraversal( root.left, answer )
-        postorderRecursiveTraversal( root.right, answer )
-        answer.append( root.val )
+        postorderRecursiveTraversal( root.left, postOrderList )
+        postorderRecursiveTraversal( root.right, postOrderList )
+        postOrderList.append( root.val )
         
 class Solution(object):
         def postorderTraversal(self, root):
@@ -22,12 +22,33 @@ class Solution(object):
                 :type root: TreeNode
                 :rtype: List[int]
                 """
-                answer = []
-                postorderRecursiveTraversal( root, answer )
-                return answer
+                postOrderList = []
+                postorderRecursiveTraversal( root, postOrderList )
+                return postOrderList
 
 """
-        Solution 2: Iterative
+        SOLUTION 2: RECURSIVE
+"""
+
+class Solution(object):
+        def postorderTraversal(self, root):
+                """
+                :type root: TreeNode
+                :rtype: List[int]
+                """
+                return self.postorderRecursiveTraversal( root, [] )
+        
+        def postorderRecursiveTraversal( self, root, postOrderList  ):
+                if root is None:
+                        return None
+                self.postorderRecursiveTraversal( root.left, postOrderList )
+                self.postorderRecursiveTraversal( root.right, postOrderList )
+                postOrderList.append( root.val )
+                return postOrderList
+
+
+"""
+        SOLUTION 3: ITERATIVE
 """
 
 class Solution(object):
