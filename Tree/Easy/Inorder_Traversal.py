@@ -76,6 +76,5 @@ class Solution(object):
                                 currentNode = stack.pop()
                                 inOrderList.append( currentNode.val )
                                 currentNode = currentNode.right
-                        
-                        
+
                 return inOrderList
