@@ -12,8 +12,9 @@
         SOLUTION 1:
                 RECURSIVE
 """
-class Solution(object):
-        def isSymmetric(self, root):
+
+class Solution( object ):
+        def isSymmetric( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: bool
@@ -42,8 +43,8 @@ class Solution(object):
         SOLUTION 2:
                 ITERATIVE
 """
-        class Solution(object):
-                def isSymmetric(self, root):
+        class Solution( object ):
+                def isSymmetric( self, root ):
                         """
                         :type root: TreeNode
                         :rtype: bool
@@ -64,4 +65,5 @@ class Solution(object):
                                 else:
                                         stack.append( [ leftNode.right, rightNode.left ]  )
                                         stack.append( [ leftNode.left, rightNode.right ] )
+
                         return True
