@@ -6,12 +6,12 @@
 #         self.right = right
 
 """
-        Solution 1: Recursive
+        SOLUTION 1: RECURSIVE
 """
 
 def preorderRecursiveTraversal( root, preOrderList ):
                 if root is None:
-                        return
+                        return None
                 preOrderList.append( root.val )
                 preorderRecursiveTraversal( root.left, preOrderList )
                 preorderRecursiveTraversal( root.right, preOrderList )
@@ -27,7 +27,23 @@ class Solution(object):
                 return preOrderList
 
 """
-        Solution 2: Iterative
+        SOLUTION 2: RECURIVE
+"""
+
+class Solution(object):
+        def preorderTraversal(self, root):
+                return self.preorderRecursiveTraversal( root, [] )
+        
+        def preorderRecursiveTraversal( self, root, preOrderList ):
+                if root is None:
+                        return None
+                preOrderList.append( root.val )
+                self.preorderRecursiveTraversal( root.left, preOrderList )
+                self.preorderRecursiveTraversal( root.right, preOrderList )
+                return preOrderList
+
+"""
+        SOLUTION 3: ITERATIVE
 """
 
 class Solution(object):
