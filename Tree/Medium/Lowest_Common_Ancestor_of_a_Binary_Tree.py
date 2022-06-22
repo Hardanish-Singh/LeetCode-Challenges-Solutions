@@ -53,12 +53,12 @@ class Solution( object ):
                 
                 while len( stack ) > 0:
                         currentNode = stack.pop()
-                        if currentNode.left:
-                                stack.append( currentNode.left )
-                                parentNodeReference[ currentNode.left ] = currentNode
                         if currentNode.right:
                                 stack.append( currentNode.right )
                                 parentNodeReference[ currentNode.right ] = currentNode
+                        if currentNode.left:
+                                stack.append( currentNode.left )
+                                parentNodeReference[ currentNode.left ] = currentNode
                 
                 pList = [ p.val ]
                 qList = [ q.val ]
