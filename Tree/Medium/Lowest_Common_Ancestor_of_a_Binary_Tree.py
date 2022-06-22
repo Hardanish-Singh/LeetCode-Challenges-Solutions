@@ -83,4 +83,4 @@ class Solution( object ):
                         if node.val == commonElement:
                                 return node
                 
-                return None
+                return None 
