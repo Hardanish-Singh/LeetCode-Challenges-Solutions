@@ -46,8 +46,12 @@ class Solution( object ):
                 :type q: TreeNode
                 :rtype: TreeNode
                 """
-                parentNodeReference = { root.val: float('inf') }
-                test = { root: None }
+                parentNodeReference = { 
+                        root.val: float('inf') 
+                }
+                test = { 
+                        root: None 
+                }
                 stack = [ root ]
                 
                 while len( stack ) > 0:
