@@ -5,8 +5,8 @@
 #         self.left = None
 #         self.right = None
 
-class Solution(object):
-        def lowestCommonAncestor(self, root, p, q):
+class Solution( object ):
+        def lowestCommonAncestor( self, root, p, q ):
                 """
                 :type root: TreeNode
                 :type p: TreeNode
