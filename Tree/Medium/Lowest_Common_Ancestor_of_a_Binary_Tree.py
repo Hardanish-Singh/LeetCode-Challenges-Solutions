@@ -46,10 +46,10 @@ class Solution( object ):
                 :type q: TreeNode
                 :rtype: TreeNode
                 """
-                parentNodeReference = { 
+                parentNodeValues = { 
                         root.val: float('inf') 
                 }
-                test = { 
+                parentNodeReference = { 
                         root: None 
                 }
                 stack = [ root ]
@@ -58,25 +58,25 @@ class Solution( object ):
                         currentNode = stack.pop()
                         if currentNode.left:
                                 stack.append( currentNode.left )
-                                parentNodeReference[ currentNode.left.val ] = currentNode.val
-                                test[ currentNode.left ] = currentNode
+                                parentNodeValues[ currentNode.left.val ] = currentNode.val
+                                parentNodeReference[ currentNode.left ] = currentNode
                         if currentNode.right:
                                 stack.append( currentNode.right )
-                                parentNodeReference[ currentNode.right.val ] = currentNode.val
-                                test[ currentNode.right ] = currentNode
+                                parentNodeValues[ currentNode.right.val ] = currentNode.val
+                                parentNodeReference[ currentNode.right ] = currentNode
                 
                 pList = [ p.val ]
                 qList = [ q.val ]
                 
                 key = p.val
-                while( key in parentNodeReference ):
-                        pList.append( parentNodeReference[ key ] )
-                        key = parentNodeReference[ key ]
+                while( key in parentNodeValues ):
+                        pList.append( parentNodeValues[ key ] )
+                        key = parentNodeValues[ key ]
                 
                 key = q.val
-                while( key in parentNodeReference ):
-                        qList.append( parentNodeReference[ key ] )
-                        key = parentNodeReference[ key ]
+                while( key in parentNodeValues ):
+                        qList.append( parentNodeValues[ key ] )
+                        key = parentNodeValues[ key ]
                 
                 commonElement = None
                 for i in pList:
@@ -84,7 +84,7 @@ class Solution( object ):
                                 commonElement = i;
                                 break
                 
-                for node in test:
+                for node in parentNodeReference:
                         if node.val == commonElement:
                                 return node
                 
