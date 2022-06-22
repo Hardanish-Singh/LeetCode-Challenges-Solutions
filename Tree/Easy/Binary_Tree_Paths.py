@@ -15,15 +15,15 @@ class Solution( object ):
                 :rtype: List[str]
                 """
                 paths = [ ]
-                stack = [ ( root, str( root.val ) )  ]
+                stack = [ [ root, str( root.val ) ]  ]
 
                 while len( stack ) > 0:
                         currentNode, path = stack.pop()
                         if currentNode.left is None and currentNode.right is None:
                                 paths.append( path )
                         if currentNode.right:
-                                stack.append( ( currentNode.right, path + "->" + str( currentNode.right.val ) ) )
+                                stack.append( [ currentNode.right, path + "->" + str( currentNode.right.val ) ] )
                         if currentNode.left:
-                                stack.append( ( currentNode.left, path + "->" + str( currentNode.left.val ) ) )
+                                stack.append( [ currentNode.left, path + "->" + str( currentNode.left.val ) ] )
 
                 return paths
