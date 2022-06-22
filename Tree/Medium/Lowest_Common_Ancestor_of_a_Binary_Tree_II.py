@@ -92,7 +92,7 @@ class Solution( object ):
                 commonElement = None
                 for i in pList:
                         if i in qList:
-                                commonElement = i;
+                                commonElement = i
                                 break
                 
                 for node in parentNodeReference:
