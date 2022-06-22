@@ -49,3 +49,59 @@ class Solution( object ):
                         return left
                 else:
                         return right
+
+"""
+        SOLUTION 2: ITERATIVE
+"""
+
+class Solution( object ):
+        def lowestCommonAncestor( self, root, p, q ):
+                """
+                :type root: TreeNode
+                :type p: TreeNode
+                :type q: TreeNode
+                :rtype: TreeNode
+                """
+                parentNodeValue = { 
+                        root.val: float('inf') 
+                }
+                parentNodeReference = { 
+                        root: None 
+                }
+                stack = [ root ]
+                
+                while len( stack ) > 0:
+                        currentNode = stack.pop()
+                        if currentNode.left:
+                                stack.append( currentNode.left )
+                                parentNodeValue[ currentNode.left.val ] = currentNode.val
+                                parentNodeReference[ currentNode.left ] = currentNode
+                        if currentNode.right:
+                                stack.append( currentNode.right )
+                                parentNodeValue[ currentNode.right.val ] = currentNode.val
+                                parentNodeReference[ currentNode.right ] = currentNode
+                
+                pList = [ p.val ]
+                qList = [ q.val ]
+                
+                key = p.val
+                while( key in parentNodeValue ):
+                        pList.append( parentNodeValue[ key ] )
+                        key = parentNodeValue[ key ]
+                
+                key = q.val
+                while( key in parentNodeValue ):
+                        qList.append( parentNodeValue[ key ] )
+                        key = parentNodeValue[ key ]
+                
+                commonElement = None
+                for i in pList:
+                        if i in qList:
+                                commonElement = i;
+                                break
+                
+                for node in parentNodeReference:
+                        if node.val == commonElement:
+                                return node
+                
+                return None
