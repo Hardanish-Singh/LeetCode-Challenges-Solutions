@@ -25,3 +25,35 @@ class Solution( object ):
                         return True
                 else:
                         return False
+
+"""
+        SOLUTION 2: ITERATIVE
+                        IF THE TREE IS VALID BST, THEN WE WILL USE INORDER TRAVERSAL ON BST WHICH WILL LEAD TO SORTED LIST
+"""
+
+class Solution( object ):
+        def isValidBST( self, root ):
+                """
+                :type root: TreeNode
+                :rtype: bool
+                """
+                if root is None:
+                        return False
+                inOrderList = [ ]
+                currentNode = root
+                stack = [ ]
+
+                while currentNode or len( stack ) > 0:
+                        if currentNode:
+                                stack.append( currentNode )
+                                currentNode = currentNode.left
+                        else:
+                                currentNode = stack.pop()
+                                inOrderList.append( currentNode.val )
+                                currentNode = currentNode.right
+
+                clonedList = list( sorted( set( inOrderList ) ) )
+                if clonedList == inOrderList:
+                        return True
+                else:
+                        return False
