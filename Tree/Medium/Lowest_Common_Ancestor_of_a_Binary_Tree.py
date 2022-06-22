@@ -46,7 +46,7 @@ class Solution( object ):
                 :type q: TreeNode
                 :rtype: TreeNode
                 """
-                parentNodeValues = { 
+                parentNodeValue = { 
                         root.val: float('inf') 
                 }
                 parentNodeReference = { 
@@ -58,25 +58,25 @@ class Solution( object ):
                         currentNode = stack.pop()
                         if currentNode.left:
                                 stack.append( currentNode.left )
-                                parentNodeValues[ currentNode.left.val ] = currentNode.val
+                                parentNodeValue[ currentNode.left.val ] = currentNode.val
                                 parentNodeReference[ currentNode.left ] = currentNode
                         if currentNode.right:
                                 stack.append( currentNode.right )
-                                parentNodeValues[ currentNode.right.val ] = currentNode.val
+                                parentNodeValue[ currentNode.right.val ] = currentNode.val
                                 parentNodeReference[ currentNode.right ] = currentNode
                 
                 pList = [ p.val ]
                 qList = [ q.val ]
                 
                 key = p.val
-                while( key in parentNodeValues ):
-                        pList.append( parentNodeValues[ key ] )
-                        key = parentNodeValues[ key ]
+                while( key in parentNodeValue ):
+                        pList.append( parentNodeValue[ key ] )
+                        key = parentNodeValue[ key ]
                 
                 key = q.val
-                while( key in parentNodeValues ):
-                        qList.append( parentNodeValues[ key ] )
-                        key = parentNodeValues[ key ]
+                while( key in parentNodeValue ):
+                        qList.append( parentNodeValue[ key ] )
+                        key = parentNodeValue[ key ]
                 
                 commonElement = None
                 for i in pList:
