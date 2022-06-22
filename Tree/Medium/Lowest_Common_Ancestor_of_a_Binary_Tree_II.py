@@ -7,6 +7,10 @@
 #         self.left = None
 #         self.right = None
 
+"""
+        SOLUTION 1: RECURSIVE
+"""
+
 class Solution( object ):
         def lowestCommonAncestor( self, root, p, q ):
                 """
