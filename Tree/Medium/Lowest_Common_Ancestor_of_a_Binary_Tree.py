@@ -26,7 +26,6 @@ class Solution( object ):
                 
                 if left and right:
                         return root
-                
                 if left:
                         return left
                 else:
