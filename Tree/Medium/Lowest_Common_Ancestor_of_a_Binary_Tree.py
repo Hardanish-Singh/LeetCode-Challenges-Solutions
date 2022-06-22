@@ -17,7 +17,6 @@ class Solution( object ):
                 """
                 if root is None:
                         return None
-
                 if root.val == p.val or root.val == q.val:
                         return root
 
