@@ -80,15 +80,13 @@ class Solution( object ):
                 qList = [ q.val ]
                 
                 key = p
-                while( key in parentNodeReference ):
-                        if parentNodeReference[ key ]:
-                                pList.append( parentNodeReference[ key ].val )
+                while( key in parentNodeReference and parentNodeReference[ key ] ):
+                        pList.append( parentNodeReference[ key ].val )
                         key = parentNodeReference[ key ]
                 
                 key = q
-                while( key in parentNodeReference ):
-                        if parentNodeReference[ key ]: 
-                                qList.append( parentNodeReference[ key ].val )
+                while( key in parentNodeReference and parentNodeReference[ key ] ):
+                        qList.append( parentNodeReference[ key ].val )
                         key = parentNodeReference[ key ]
                 
                 commonElement = None
