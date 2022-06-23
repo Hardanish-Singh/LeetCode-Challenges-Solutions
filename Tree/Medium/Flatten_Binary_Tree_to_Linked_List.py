@@ -31,3 +31,28 @@ class Solution( object ):
                 root.left = None
                 self.prev = root
 
+"""
+        SOLUTION 2: USING AN EXTRA TREE 
+"""
+
+class Solution( object ):
+        def flatten( self, root ):
+                """
+                :type root: TreeNode
+                :rtype: None Do not return anything, modify root in-place instead.
+                """
+                if root is None:
+                        return []
+                linkedListRoot = TreeNode()
+                stack = [ root ]
+                while len( stack ) > 0:
+                        currentNode = stack.pop()
+                        linkedListRoot.right = currentNode
+                        linkedListRoot.left = None
+                        if currentNode.right:
+                                stack.append( currentNode.right )
+                        if currentNode.left:
+                                stack.append( currentNode.left )
+                        linkedListRoot = currentNode
+                
+
