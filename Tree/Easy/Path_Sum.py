@@ -38,3 +38,29 @@ class Solution( object ):
                                 return True
                 
                 return False
+
+"""
+        SOLUTION 2
+"""
+class Solution( object ):
+        def hasPathSum( self, root, targetSum ):
+                """
+                :type root: TreeNode
+                :type targetSum: int
+                :rtype: bool
+                """
+                if root is None:
+                        return False
+                
+                stack = [ [ root, targetSum - root.val ]  ]
+                
+                while len( stack ) > 0:
+                        currentNode, pathSum = stack.pop()
+                        if currentNode.left is None and currentNode.right is None and pathSum == 0:
+                                return True
+                        if currentNode.right:
+                                stack.append( [ currentNode.right, pathSum - currentNode.right.val ] )
+                        if currentNode.left:
+                                stack.append( [ currentNode.left, pathSum - currentNode.left.val ] )
+                
+                return False
