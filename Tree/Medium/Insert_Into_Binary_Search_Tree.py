@@ -12,4 +12,6 @@ class Solution( object ):
                 :type val: int
                 :rtype: TreeNode
                 """
-                pass
+                if root is None:
+                        return TreeNode( val )
+                
