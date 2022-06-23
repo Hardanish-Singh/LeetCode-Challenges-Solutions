@@ -7,6 +7,10 @@
 #         self.left = left
 #         self.right = right
 
+"""
+        SOLUTION 1: RECURSIVE
+"""
+
 class Solution( object ):
         def flatten( self, root ):
                 """
