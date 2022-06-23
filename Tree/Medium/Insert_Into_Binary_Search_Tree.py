@@ -5,6 +5,11 @@
 #         self.left = left
 #         self.right = right
 
+
+"""
+        SOLUTION 2: ITERATIVE
+"""
+
 class Solution( object ):
         def insertIntoBST( self, root, val ):
                 """
