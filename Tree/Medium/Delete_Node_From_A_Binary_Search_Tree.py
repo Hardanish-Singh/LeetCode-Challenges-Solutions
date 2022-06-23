@@ -16,19 +16,27 @@ class Solution( object ):
                 if root is None:
                         return None
                 if root.val == key:
-                        return moveNodePointers( root )
+                        return self.moveNodePointers( root )
                 currentNode = root
 
                 while currentNode:
                         if val > currentNode.val:
                                 if root.right is not None and root.right.val == key:
-                                        root.right = moveNodePointers( root.right )
+                                        root.right = self.moveNodePointers( root.right )
                                 else:
                                         root = root.right
                         else:
                                 if root.left is not None and root.left.val == key:
-                                        root.left = moveNodePointers( root.left )
+                                        root.left = self.moveNodePointers( root.left )
                                 else:
                                         root = root.left
 
                 return root
+
+        def moveNodePointers( self, root ):
+                if root.left is None:
+                        return root.right
+                elif root.right is None:
+                        return root.left
+                else:
+                        pass
