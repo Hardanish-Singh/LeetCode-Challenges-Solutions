@@ -17,10 +17,11 @@ class Solution( object ):
                         return None
                 if root.val == key:
                         return self.moveNodePointers( root )
+                
                 currentNode = root
 
-                while currentNode:
-                        if key > currentNode.val:
+                while root:
+                        if key > root.val:
                                 if root.right is not None and root.right.val == key:
                                         root.right = self.moveNodePointers( root.right )
                                         break
@@ -33,7 +34,7 @@ class Solution( object ):
                                 else:
                                         root = root.left
 
-                return root
+                return currentNode
 
         def moveNodePointers( self, root ):
                 if root.left is None:
