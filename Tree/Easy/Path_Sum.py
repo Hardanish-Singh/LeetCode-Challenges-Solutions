@@ -42,6 +42,7 @@ class Solution( object ):
 """
         SOLUTION 2
 """
+
 class Solution( object ):
         def hasPathSum( self, root, targetSum ):
                 """
