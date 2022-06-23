@@ -7,6 +7,24 @@
 #         self.left = left
 #         self.right = right
 
+"""
+        SOLUTION 1: RECURSIVE
+"""
+
+class Solution( object ):
+        def insertIntoBST( self, root, val ):
+                """
+                :type root: TreeNode
+                :type val: int
+                :rtype: TreeNode
+                """
+                if root is None:
+                        return TreeNode( val )
+                if val > root.right:
+                        root.right = self.insertIntoBST( root.right, val )
+                else:
+                        root.left = self.insertIntoBST( root.left, val )
+                return root
 
 """
         SOLUTION 2: ITERATIVE
