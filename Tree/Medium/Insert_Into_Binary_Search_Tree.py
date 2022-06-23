@@ -15,3 +15,19 @@ class Solution( object ):
                 if root is None:
                         return TreeNode( val )
                 
+                previousNode = None
+                currentNode = root
+
+                while currentNode:
+                        previousNode = currentNode
+                        if val > currentNode.val:
+                                currentNode = currentNode.right
+                        else:
+                                currentNode = currentNode.left
+                
+                if val > previousNode.val:
+                        previousNode.right = TreeNode ( val )
+                else:
+                        previousNode.left = TreeNode( val )
+
+                return root
