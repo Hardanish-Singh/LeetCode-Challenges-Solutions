@@ -39,4 +39,14 @@ class Solution( object ):
                 elif root.right is None:
                         return root.left
                 else:
-                        pass
+                        rootRightNodePointer = root.right
+                        rootLeftNodeLastRightPointer = self.findLastRight( root.left )
+                        rootLeftNodeLastRightPointer.right = rootRightNodePointer
+                        return root.left
+        
+        def findLastRight( self, root ):
+                while root:
+                        if root.right is None:
+                                return root
+                        else:
+                                root = root.right
