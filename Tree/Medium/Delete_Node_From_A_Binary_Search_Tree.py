@@ -20,7 +20,7 @@ class Solution( object ):
                 currentNode = root
 
                 while currentNode:
-                        if val > currentNode.val:
+                        if key > currentNode.val:
                                 if root.right is not None and root.right.val == key:
                                         root.right = self.moveNodePointers( root.right )
                                 else:
