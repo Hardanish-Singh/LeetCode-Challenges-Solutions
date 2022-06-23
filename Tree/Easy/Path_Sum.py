@@ -7,6 +7,10 @@
 #         self.left = left
 #         self.right = right
 
+"""
+        SOLUTION 1
+"""
+
 class Solution( object ):
         def hasPathSum( self, root, targetSum ):
                 """
