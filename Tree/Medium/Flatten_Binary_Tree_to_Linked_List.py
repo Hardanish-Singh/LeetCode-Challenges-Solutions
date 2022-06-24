@@ -54,5 +54,25 @@ class Solution( object ):
                         if currentNode.left:
                                 stack.append( currentNode.left )
                         linkedListRoot = currentNode
+
+"""
+        SOLUTION 3: ITERATIVE
+"""
+
+class Solution(object):
+        def flatten(self, root):
+                while root:
+                        if root.left:
+                                node = self.findLastRight( root.left )
+                                node.right = root.right
+                                root.right = root.left
+                                root.left = None
+                        root = root.right
                 
+        def findLastRight( self, root ):
+                while root:
+                        if root.right is None:
+                                return root
+                        else:
+                                root = root.right
 
