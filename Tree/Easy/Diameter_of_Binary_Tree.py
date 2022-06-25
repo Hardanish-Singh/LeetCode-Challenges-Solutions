@@ -21,4 +21,8 @@ class Solution( object ):
                 left = self.findDiameterOfBinaryTree( root.left )
                 right = self.findDiameterOfBinaryTree(  root.right )
 
-                
+                """
+                        AT EACH NODE LEVEL, WE FIND THE DIAMETER & HEIGHT OF THAT NODE IN THE TREE
+                """
+                self.diameter = max( self.diameter, left + right )
+                return 1 + max( left + right )
