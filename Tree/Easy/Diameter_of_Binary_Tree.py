@@ -10,6 +10,7 @@
 """
         SOLUTION 1: RECURSIVE
 """
+
 class Solution( object ):
         def diameterOfBinaryTree( self, root ):
                 """
@@ -31,3 +32,25 @@ class Solution( object ):
                 """
                 self.diameter = max( self.diameter, left + right )
                 return 1 + max( left, right )
+
+"""
+        SOLUTION 2: ITERATIVE
+"""
+
+class Solution( object ):
+        def diameterOfBinaryTree( self, root ):
+                """
+                :type root: TreeNode
+                :rtype: int
+                """
+                stack = [ root ]
+                preOrderList = [ ]
+
+                while stack:
+                        currentNode = stack.pop()
+                        preOrderList.append( current )
+
+                        if currentNode.right:
+                                stack.append( currentNode.right )
+                        if currentNode.left:
+                                stack.append( currentNode.left )
