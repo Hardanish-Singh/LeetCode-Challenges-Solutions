@@ -48,7 +48,7 @@ class Solution( object ):
 
                 while len( stack ) > 0:
                         currentNode = stack.pop()
-                        preOrderList.append( current )
+                        preOrderList.append( currentNode )
 
                         if currentNode.right:
                                 stack.append( currentNode.right )
