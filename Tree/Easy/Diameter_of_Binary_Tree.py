@@ -15,4 +15,10 @@ class Solution( object ):
                 self.findDiameterOfBinaryTree( root )
                 return self.diameter
         
-        
+        def findDiameterOfBinaryTree( self, root ):
+                if root is None:
+                        return 0
+                left = self.findDiameterOfBinaryTree( root.left )
+                right = self.findDiameterOfBinaryTree(  root.right )
+
+                
