@@ -11,4 +11,8 @@ class Solution( object ):
                 :type root: TreeNode
                 :rtype: int
                 """
-                pass
+                self.diameter = 0
+                self.findDiameterOfBinaryTree( root )
+                return self.diameter
+        
+        
