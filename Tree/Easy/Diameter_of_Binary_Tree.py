@@ -43,6 +43,10 @@ class Solution( object ):
                 :type root: TreeNode
                 :rtype: int
                 """
+
+                """
+                        TRAVERSE THE TREE IN PREORDER WAY
+                """
                 stack = [ root ]
                 preOrderList = [ ]
 
@@ -62,6 +66,7 @@ class Solution( object ):
 
                 """
                         TRAVERSE/POP THE ITEMS FROM PREORDERLIST IN REVERSE WAY( SO THAT IT TURNS INTO POSTORDER TRAVERSAL )
+                        WHY DO WE USE POSTORDER TRAVERSAL, SO THAT WE PROCESS LEAF FIRST
                 """
                 while len( preOrderList ) > 0:
                         currentNode = preOrderList.pop()
