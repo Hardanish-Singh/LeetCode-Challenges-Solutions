@@ -46,7 +46,7 @@ class Solution( object ):
                 stack = [ root ]
                 preOrderList = [ ]
 
-                while stack:
+                while len( stack ) > 0:
                         currentNode = stack.pop()
                         preOrderList.append( current )
 
@@ -54,3 +54,33 @@ class Solution( object ):
                                 stack.append( currentNode.right )
                         if currentNode.left:
                                 stack.append( currentNode.left )
+                
+                diameter = 0
+                height = {
+
+                }
+
+                """
+                        TRAVERSE/POP THE ITEMS FROM PREORDERLIST IN REVERSE WAY( SO THAT IT TURNS INTO POSTORDER TRAVERSAL )
+                """
+                while len( preOrderList ) > 0:
+                        currentNode = preOrderList.pop()
+                        left = None
+                        right = None
+
+                        if currentNode.left is None:
+                                left = 0
+                        else:
+                                left = height[ currentNode.left ]
+                        if currentNode.right is None:
+                                right = 0
+                        else:
+                                right = height[ currentNode.right ]
+                        
+                        """
+                                AT EACH NODE LEVEL, WE FIND THE DIAMETER & HEIGHT OF THAT NODE IN THE TREE
+                        """
+                        diameter = max( diameter, left + right )
+                        height[ currentNode ] = 1 + max( left, right )
+
+                return diameter
