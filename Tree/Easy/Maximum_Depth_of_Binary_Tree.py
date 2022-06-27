@@ -9,8 +9,7 @@
 
 
 """
-        SOLUTION 1:
-                RECURSIVE DFS
+        SOLUTION 1: RECURSIVE DFS
 """
 
 class Solution(object):
@@ -28,8 +27,7 @@ class Solution(object):
                 return 1 + max( left, right )
 
 """
-        SOLUTION 2:
-                ITERATIVE BFS / LEVEL ORDER TRAVERSAL
+        SOLUTION 2: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 """
 
 class Solution(object):
