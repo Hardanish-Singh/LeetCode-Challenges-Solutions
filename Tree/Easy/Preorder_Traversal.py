@@ -34,6 +34,10 @@ class Solution( object ):
 
 class Solution( object ):
         def preorderTraversal( self, root ):
+                """
+                :type root: TreeNode
+                :rtype: List[int]
+                """
                 return self.preorderRecursiveTraversal( root, [] )
         
         def preorderRecursiveTraversal( self, root, preOrderList ):
