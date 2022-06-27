@@ -12,8 +12,8 @@
         SOLUTION 1: RECURSIVE DFS
 """
 
-class Solution(object):
-        def maxDepth(self, root):
+class Solution( object ):
+        def maxDepth( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: int
@@ -30,8 +30,8 @@ class Solution(object):
         SOLUTION 2: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 """
 
-class Solution(object):
-        def maxDepth(self, root):
+class Solution( object ):
+        def maxDepth( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: int
