@@ -17,7 +17,7 @@ class Solution(object):
                 :type root: TreeNode
                 :rtype: int
                 """
-                # base case
+                # BASE CASE
                 if root is None:
                         return 0
                 # if there is only left child then we get depth of it
