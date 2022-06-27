@@ -7,8 +7,7 @@
 
 
 """
-        SOLUTION 1:
-                RECURSIVE SOLUTION
+        SOLUTION 1: RECURSIVE SOLUTION
 """
 
 class Solution(object):
@@ -32,9 +31,9 @@ class Solution(object):
 
 
 """
-        SOLUTION 2:
-                ITERATIVE SOLUTION
+        SOLUTION 2: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 """
+
 class Solution(object):
         def minDepth(self, root):
                 """
