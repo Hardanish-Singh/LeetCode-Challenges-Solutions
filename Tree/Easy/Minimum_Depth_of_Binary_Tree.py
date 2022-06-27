@@ -1,7 +1,7 @@
 # Leetcode: https://leetcode.com/problems/minimum-depth-of-binary-tree/
 
 # Definition for a binary tree node.
-# class TreeNode(object):
+# class TreeNode( object ):
 #     def __init__( self, val = 0, left = None, right = None ):
 #         self.val = val
 #         self.left = left
@@ -12,8 +12,8 @@
         SOLUTION 1: RECURSIVE SOLUTION
 """
 
-class Solution(object):
-        def minDepth(self, root):
+class Solution( object ):
+        def minDepth( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: int
@@ -23,21 +23,21 @@ class Solution(object):
                         return 0
                 # IF THERE IS ONLY LEFT CHILD, THEN WE GET ITS DEPTH
                 if root.left and root.right is None:
-                        return 1 + self.minDepth(root.left)
+                        return 1 + self.minDepth( root.left )
                 # IF THERE IS ONLY RIGHT CHILD, THEN WE GET ITS DEPTH
                 elif root.right and root.left is None:
-                        return 1 + self.minDepth(root.right)
+                        return 1 + self.minDepth( root.right )
                 # WHEN BOTH LEFT AND RIGHT CHILD EXISTS
                 else:
-                        return 1 + min( self.minDepth(root.right), self.minDepth(root.left) )
+                        return 1 + min( self.minDepth( root.right ), self.minDepth( root.left ) )
 
 
 """
         SOLUTION 2: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 """
 
-class Solution(object):
-        def minDepth(self, root):
+class Solution( object ):
+        def minDepth( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: int
