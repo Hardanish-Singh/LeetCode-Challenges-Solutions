@@ -20,13 +20,13 @@ class Solution(object):
                 # BASE CASE
                 if root is None:
                         return 0
-                # if there is only left child then we get depth of it
+                # IF THERE IS ONLY LEFT CHILD, THEN WE GET ITS DEPTH
                 if root.left and root.right is None:
                         return 1 + self.minDepth(root.left)
-                # similarly if there is only right child then we get depth of it
+                # IF THERE IS ONLY RIGHT CHILD, THEN WE GET ITS DEPTH
                 elif root.right and root.left is None:
                         return 1 + self.minDepth(root.right)
-                # in case there are both then we get the min of both
+                # WHEN BOTH LEFT AND RIGHT CHILD EXISTS
                 else:
                         return 1 + min( self.minDepth(root.right), self.minDepth(root.left) )
 
