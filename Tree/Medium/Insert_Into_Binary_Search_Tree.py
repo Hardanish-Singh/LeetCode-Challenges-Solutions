@@ -47,8 +47,10 @@ class Solution( object ):
                         previousNode = currentNode
                         if val > currentNode.val:
                                 currentNode = currentNode.right
-                        else:
+                        elif val < currentNode.val:
                                 currentNode = currentNode.left
+                        else:
+                                currentNode = None
                 
                 if val > previousNode.val:
                         previousNode.right = TreeNode ( val )
