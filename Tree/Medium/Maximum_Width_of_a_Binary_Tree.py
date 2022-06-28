@@ -15,6 +15,7 @@ class Solution(object):
                 """
                 if root is None:
                         return 0
+
                 width = 1
                 queue = [ [ root, 1 ] ]
                 
