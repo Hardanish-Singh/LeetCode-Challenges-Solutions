@@ -46,18 +46,17 @@ class Solution( object ):
                 """
 
                 def postorderTraversal( root ):
-                        preOrderList = [ ]
+                        postOrderList = []
                         stack = [ root ]
 
                         while len( stack ) > 0:
                                 currentNode = stack.pop()
-                                preOrderList.append( currentNode )
-                                if currentNode.right:
-                                        stack.append( currentNode.right )
-                                if currentNode.left:
+                                if currentNode:
+                                        postOrderList.append( currentNode )
                                         stack.append( currentNode.left )
+                                        stack.append( currentNode.right )
 
-                        return preOrderList[::-1]
+                        return postOrderList[::-1]
 
                 postOrderList = postorderTraversal(root)
                 
