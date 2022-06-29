@@ -54,5 +54,6 @@ class Solution( object ):
                         # Same as finding diameter
                         # diameter = max( diameter, left + right )
                         maxPathSum = max( maxPathSum, leftMax + currentNode.val + rightMax )
+
                 return maxPathSum
         
