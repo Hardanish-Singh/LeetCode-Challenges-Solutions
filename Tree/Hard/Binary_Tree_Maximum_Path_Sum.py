@@ -51,7 +51,7 @@ class Solution( object ):
                                 # height[ currentNode ] = 1 + max( leftMax, rightMax )
                                 height[ currentNode ] = currentNode.val + max( leftMax, rightMax )
                         
-                        # same as finding diameter
+                        # Same as finding diameter
                         # diameter = max( diameter, left + right )
                         maxPathSum = max( maxPathSum, leftMax + currentNode.val + rightMax )
                 return maxPathSum
