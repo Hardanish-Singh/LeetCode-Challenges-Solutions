@@ -1,12 +1,12 @@
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
+# class TreeNode( object ):
+#     def __init__( self, val = 0, left = None, right = None ):
 #         self.val = val
 #         self.left = left
 #         self.right = right
 
-class Solution(object):
-        def maxPathSum(self, root):
+class Solution( object ):
+        def maxPathSum( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: int
@@ -47,9 +47,9 @@ class Solution(object):
                         if currentNode.val + max( leftMax, rightMax ) < 0:
                                 height[ currentNode ] = 0
                         else:
-                                height[ currentNode ] = currentNode.val + max( leftMax, rightMax )
                                 # Same as max height/depth of binary tree
                                 # height[ currentNode ] = 1 + max( leftMax, rightMax )
+                                height[ currentNode ] = currentNode.val + max( leftMax, rightMax )
                         
                         # same as finding diameter
                         # diameter = max( diameter, left + right )
