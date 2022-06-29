@@ -45,20 +45,20 @@ class Solution( object ):
                 :rtype: int
                 """
 
-                """
-                        TRAVERSE THE TREE IN PREORDER WAY
-                """
-                stack = [ root ]
-                preOrderList = [ ]
+                def postorderTraversal( root ):
+                        postOrderList = [ ]
+                        stack = [ root ]
 
-                while len( stack ) > 0:
-                        currentNode = stack.pop()
-                        preOrderList.append( currentNode )
+                        while len( stack ) > 0:
+                                currentNode = stack.pop()
+                                if currentNode:
+                                        postOrderList.append( currentNode )
+                                        stack.append( currentNode.left )
+                                        stack.append( currentNode.right )
 
-                        if currentNode.right:
-                                stack.append( currentNode.right )
-                        if currentNode.left:
-                                stack.append( currentNode.left )
+                        return postOrderList[::-1]
+
+                postOrderList = postorderTraversal(root)
                 
                 diameter = 0
                 height = {
@@ -66,11 +66,10 @@ class Solution( object ):
                 }
 
                 """
-                        TRAVERSE/POP THE ITEMS FROM PREORDERLIST IN REVERSE WAY( SO THAT IT TURNS INTO POSTORDER TRAVERSAL )
-                        WHY DO WE USE POSTORDER TRAVERSAL, SO THAT WE PROCESS LEAF FIRST ( BOTTOM UP APPROACH )
+                        TRAVERSE/POP/GET THE ITEMS FROM POSTORDER LIST, WHY DO WE USE POSTORDER TRAVERSAL, SO THAT WE PROCESS LEAF FIRST ( BOTTOM UP APPROACH )
                 """
-                while len( preOrderList ) > 0:
-                        currentNode = preOrderList.pop()
+                while len( postOrderList ) > 0:
+                        currentNode = postOrderList.pop( 0 )
                         left = None
                         right = None
 
