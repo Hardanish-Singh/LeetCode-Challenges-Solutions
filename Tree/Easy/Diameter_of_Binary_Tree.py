@@ -68,8 +68,7 @@ class Solution( object ):
                 """
                         TRAVERSE/POP/GET THE ITEMS FROM POSTORDER LIST, WHY DO WE USE POSTORDER TRAVERSAL, SO THAT WE PROCESS LEAF FIRST ( BOTTOM UP APPROACH )
                 """
-                while len( postOrderList ) > 0:
-                        currentNode = postOrderList.pop( 0 )
+                for currentNode in postOrderList:
                         left = None
                         right = None
 
