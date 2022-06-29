@@ -82,7 +82,7 @@ class Solution( object ):
                                 right = height[ currentNode.right ]
                         
                         """
-                                AT EACH NODE LEVEL, WE FIND THE DIAMETER & HEIGHT OF THAT NODE IN THE TREE
+                                AT EACH NODE LEVEL, WE FIND THE DIAMETER & HEIGHT/DEPTH OF THAT NODE IN THE TREE
                         """
                         diameter = max( diameter, left + right )
                         height[ currentNode ] = 1 + max( left, right )
