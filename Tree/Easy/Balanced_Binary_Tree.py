@@ -40,3 +40,48 @@ class Solution( object ):
 """
         SOLUTION 2: ITERATIVE
 """
+
+
+class Solution(object):
+        def isBalanced(self, root):
+                """
+                :type root: TreeNode
+                :rtype: bool
+                """
+                def postorderTraversal( root ):
+                        postOrderList = []
+                        stack = [ root ]
+
+                        while len( stack ) > 0:
+                                currentNode = stack.pop()
+                                if currentNode:
+                                        postOrderList.append( currentNode )
+                                        stack.append( currentNode.left )
+                                        stack.append( currentNode.right )
+
+                        return postOrderList[::-1]
+
+                postOrderList = postorderTraversal(root)
+
+                height = {
+                        
+                }
+                
+                for currentNode in postOrderList:
+                        left = None
+                        right = None
+                        if currentNode.left is None:
+                                left = 0
+                        else:
+                                left = height[ currentNode.left ]
+                        if currentNode.right is None:
+                                right = 0
+                        else:
+                                right = height[ currentNode.right ]
+                        
+                        if abs( left - right ) > 1:
+                                return False
+                        
+                        height[ currentNode ] = 1 + max( left, right )
+
+                return True
