@@ -13,20 +13,20 @@ class Solution(object):
                 """
                 def helper(root):
                         if root is None:
-                                return 0;
+                                return 0
 
-                        leftSubtreeHeight = helper(root.left);
-                        rightSubtreeHeight = helper(root.right);
+                        leftSubtreeHeight = helper(root.left)
+                        rightSubtreeHeight = helper(root.right)
 
                         if abs(leftSubtreeHeight - rightSubtreeHeight) > 1:
                                 self.res = False
                                 return False
 
-                        return 1 + max(leftSubtreeHeight, rightSubtreeHeight);
+                        return 1 + max(leftSubtreeHeight, rightSubtreeHeight)
 
                 if root is None:
-                        return True;
+                        return True
                 else:
                         self.res = True
-                        helper(root);
-                        return self.res; 
+                        helper(root)
+                        return self.res
