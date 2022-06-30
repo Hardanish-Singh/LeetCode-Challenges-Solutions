@@ -11,22 +11,22 @@ class Solution(object):
                 :type root: TreeNode
                 :rtype: bool
                 """
-                def helper(root):
-                        if root is None:
-                                return 0
-
-                        leftSubtreeHeight = helper(root.left)
-                        rightSubtreeHeight = helper(root.right)
-
-                        if abs(leftSubtreeHeight - rightSubtreeHeight) > 1:
-                                self.res = False
-                                return False
-
-                        return 1 + max(leftSubtreeHeight, rightSubtreeHeight)
-
                 if root is None:
                         return True
-                else:
-                        self.res = True
-                        helper(root)
-                        return self.res
+
+                self.result = True
+                self.isTreeBalanced( root )
+                return self.result
+
+        def isTreeBalanced( self, root ):
+                if root is None:
+                        return 0
+                
+                left = self.isTreeBalanced( root.left )
+                right = self.isTreeBalanced( root.right )
+
+                if abs( left - right ) > 1:
+                        self.result = False
+                        return self.result
+                
+                return 1 + max( left, right )
