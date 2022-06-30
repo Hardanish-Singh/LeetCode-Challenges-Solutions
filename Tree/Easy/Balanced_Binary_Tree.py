@@ -7,6 +7,10 @@
 #         self.left = left
 #         self.right = right
 
+"""
+        SOLUTION 1: RECURSIVE
+"""
+
 class Solution( object ):
         def isBalanced( self, root ):
                 """
@@ -32,3 +36,7 @@ class Solution( object ):
                         return self.result
                 
                 return 1 + max( left, right )
+
+"""
+        SOLUTION 2: ITERATIVE
+"""
