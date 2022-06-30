@@ -41,8 +41,8 @@ class Solution( object ):
         SOLUTION 2: ITERATIVE
 """
 
-class Solution(object):
-        def isBalanced(self, root):
+class Solution( object ):
+        def isBalanced( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: bool
