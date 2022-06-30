@@ -41,7 +41,6 @@ class Solution( object ):
         SOLUTION 2: ITERATIVE
 """
 
-
 class Solution(object):
         def isBalanced(self, root):
                 """
