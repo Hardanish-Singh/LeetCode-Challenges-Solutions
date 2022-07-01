@@ -8,7 +8,7 @@
 #         self.right = right
 
 """
-        SOLUTION 1: RECURSIVE 
+        SOLUTION 1: RECURSIVE
 """
 
 class Solution( object ):
