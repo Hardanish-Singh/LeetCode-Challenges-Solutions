@@ -16,6 +16,7 @@ class Solution( object ):
                 :rtype: TreeNode
                 """
                 queue = [ cloned ]
+
                 while len( queue ) > 0:
                         currentNode = queue.pop(0)
                         if currentNode.val == target.val:
@@ -24,3 +25,5 @@ class Solution( object ):
                                 queue.append( currentNode.left )
                         if currentNode.right:
                                 queue.append( currentNode.right )
+
+                return None
