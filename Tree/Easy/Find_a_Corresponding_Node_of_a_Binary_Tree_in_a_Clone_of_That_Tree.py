@@ -5,7 +5,7 @@
 #         self.left = None
 #         self.right = None
 
-class Solution(object):
+class Solution( object ):
         def getTargetCopy(self, original, cloned, target):
                 """
                 :type original: TreeNode
