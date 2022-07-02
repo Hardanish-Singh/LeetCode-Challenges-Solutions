@@ -10,6 +10,7 @@
 """
         SOLUTION 1: ITERATIVE
 """
+
 class Solution( object ):
         def binaryTreePaths( self, root ):
                 """
