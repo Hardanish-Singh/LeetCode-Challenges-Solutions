@@ -7,7 +7,9 @@
 #         self.left = left
 #         self.right = right
 
-
+"""
+        SOLUTION 1: ITERATIVE
+"""
 class Solution( object ):
         def binaryTreePaths( self, root ):
                 """
