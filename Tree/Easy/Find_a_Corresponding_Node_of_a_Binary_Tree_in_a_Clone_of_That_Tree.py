@@ -26,4 +26,4 @@ class Solution( object ):
                         if currentNode.right:
                                 queue.append( currentNode.right )
 
-                return None 
+                return None
