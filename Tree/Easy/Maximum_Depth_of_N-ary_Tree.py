@@ -1,10 +1,10 @@
-"""
+# Leetcode: https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
+
 # Definition for a Node.
-class Node( object ):
-    def __init__( self, val = None, children = None):
-        self.val = val
-        self.children = children
-"""
+# class Node( object ):
+#         def __init__( self, val = None, children = None):
+#                 self.val = val
+#                 self.children = children
 
 class Solution( object ):
         def maxDepth( self, root ):
