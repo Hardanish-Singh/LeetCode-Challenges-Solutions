@@ -5,8 +5,8 @@
 #         self.left = None
 #         self.right = None
 
-class Solution(object):
-        def inorderSuccessor(self, root, p):
+class Solution( object ):
+        def inorderSuccessor( self, root, p ):
                 """
                 :type root: TreeNode
                 :type p: TreeNode
