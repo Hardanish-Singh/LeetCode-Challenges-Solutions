@@ -38,7 +38,7 @@ SELECT
 FROM
     courses
 GROUP BY class
-HAVING COUNT(DISTINCT student) >= 5
+HAVING COUNT(DISTINCT student) >= 5;
 
 -- SOLUTION 2
 
@@ -47,7 +47,7 @@ SELECT
 FROM
     courses
 GROUP BY class
-HAVING COUNT( * ) >= 5
+HAVING COUNT( * ) >= 5;
 
 -- SOLUTION 3
 
