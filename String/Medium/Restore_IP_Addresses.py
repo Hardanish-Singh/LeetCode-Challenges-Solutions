@@ -27,9 +27,9 @@ class Solution:
                 return ip_addresses
         
         def isIpAddressValid( self, ip_list ):
-                for s in ip_list:
-                        if s[0] == "0" and len( s ) > 1:
+                for ip in ip_list:
+                        if ip[0] == "0" and len( ip ) > 1:
                                 return False
-                        if int( s ) > 255:
+                        if int( ip ) > 255:
                                 return False
                 return True
