@@ -26,8 +26,8 @@ class Solution:
                                                 ip_addresses.append( ip_address )
                 return ip_addresses
         
-        def isIpAddressValid(self,str_list):
-                for s in str_list:
+        def isIpAddressValid( self, ip_list ):
+                for s in ip_list:
                         if s[0] == "0" and len( s ) > 1:
                                 return False
                         if int( s ) > 255:
