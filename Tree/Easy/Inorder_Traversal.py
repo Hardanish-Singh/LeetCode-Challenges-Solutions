@@ -39,7 +39,9 @@ class Solution( object ):
                 :type root: TreeNode
                 :rtype: List[int]
                 """
-                return self.inorderRecursiveTraversal( root, [] )
+                inOrderList = []
+                self.inorderRecursiveTraversal( root, inOrderList )
+                return inOrderList
 
         def inorderRecursiveTraversal( self, root, inOrderList ):
                 if root is None:
@@ -47,7 +49,6 @@ class Solution( object ):
                 self.inorderRecursiveTraversal( root.left, inOrderList )
                 inOrderList.append( root.val )
                 self.inorderRecursiveTraversal( root.right, inOrderList  )
-                return inOrderList
 
 
 """
