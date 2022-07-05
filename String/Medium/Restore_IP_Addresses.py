@@ -21,12 +21,12 @@ class Solution:
                                         s2 = s[i:j]
                                         s3 = s[j:k]
                                         s4 = s[k:]
-                                        if self.check_valid( [s1, s2, s3, s4] ):
+                                        if self.isIpAddressValid( [s1, s2, s3, s4] ):
                                                 new_string = s1 + "." + s2 + "." + s3 + "." + s4
                                                 ip_addresses.append( new_string )
                 return ip_addresses
         
-        def check_valid(self,str_list):
+        def isIpAddressValid(self,str_list):
                 for s in str_list:
                         if s[0] == "0" and len( s ) > 1:
                                 return False
