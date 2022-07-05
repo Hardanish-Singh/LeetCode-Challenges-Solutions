@@ -38,7 +38,9 @@ class Solution( object ):
                 :type root: TreeNode
                 :rtype: List[int]
                 """
-                return self.preorderRecursiveTraversal( root, [] )
+                preOrderList = []
+                self.preorderRecursiveTraversal( root, preOrderList )
+                return preOrderList
         
         def preorderRecursiveTraversal( self, root, preOrderList ):
                 if root is None:
@@ -46,7 +48,6 @@ class Solution( object ):
                 preOrderList.append( root.val )
                 self.preorderRecursiveTraversal( root.left, preOrderList )
                 self.preorderRecursiveTraversal( root.right, preOrderList )
-                return preOrderList
 
 """
         SOLUTION 3: ITERATIVE
