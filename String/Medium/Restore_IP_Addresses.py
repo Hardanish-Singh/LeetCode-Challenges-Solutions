@@ -1,12 +1,11 @@
-# class Solution(object):
-#     def restoreIpAddresses(self, s):
-#         """
-#         :type s: str
-#         :rtype: List[str]
-#         """
+# Leetcode: https://leetcode.com/problems/restore-ip-addresses/
         
 class Solution:
         def restoreIpAddresses( self, s ):
+                """
+                :type s: str
+                :rtype: List[str]
+                """
                 if len( s ) > 12 or len( s ) < 4:
                         return []
                 
