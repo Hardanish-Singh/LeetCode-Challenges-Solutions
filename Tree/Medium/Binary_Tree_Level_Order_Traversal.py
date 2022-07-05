@@ -15,6 +15,7 @@ class Solution(object):
                 """
                 if root is None:
                         return []
+
                 queue = [ root ]
                 result = [ ]
 
