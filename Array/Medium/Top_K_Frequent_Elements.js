@@ -8,6 +8,11 @@
         Example 2:
                 Input: nums = [1], k = 1
                 Output: [1]
+        
+        Constraints:
+                1) 1 <= nums.length <= 10^5
+                2) k is in the range [1, the number of unique elements in the array].
+                3) It is guaranteed that the answer is unique.
 */
 
 function sortDictionaryByValues(dict) {
