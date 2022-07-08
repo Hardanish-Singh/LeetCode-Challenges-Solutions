@@ -9,7 +9,9 @@ function sortDictionaryByValues(dict) {
 
 
 var topKFrequent = function(nums, k) {
-        let frequencies = { };
+        let frequencies = { 
+
+        };
         for( let i = 0; i < nums.length; i++ ) {
                 if( nums[i] in frequencies ) {
                         frequencies[ nums[ i ] ] += 1;
