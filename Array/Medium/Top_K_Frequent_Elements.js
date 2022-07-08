@@ -13,7 +13,7 @@ var topKFrequent = function(nums, k) {
 
         };
         for( let i = 0; i < nums.length; i++ ) {
-                if( nums[i] in frequencies ) {
+                if( nums[ i ] in frequencies ) {
                         frequencies[ nums[ i ] ] += 1;
                 } else {
                         frequencies[ nums[ i ] ] = 1;
