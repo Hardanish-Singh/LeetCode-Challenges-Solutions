@@ -14,7 +14,7 @@
         Constraints:
                 1) 1 <= nums.length <= 10
                 2) -10 <= nums[i] <= 10
-*/
+*/ 
 
 var subsetsWithDup = function( array ) {
         if( array.length === 0 ) {
