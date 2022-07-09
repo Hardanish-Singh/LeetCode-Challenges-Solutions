@@ -8,6 +8,11 @@
         Example 2:
                 Input: nums = [0]
                 Output: [[], [0]]
+        
+        Constraints:
+                1) 1 <= nums.length <= 10
+                2) -10 <= nums[i] <= 10
+                3) All the numbers of nums are unique.
 */
 
 var subsets = function( array ) {
