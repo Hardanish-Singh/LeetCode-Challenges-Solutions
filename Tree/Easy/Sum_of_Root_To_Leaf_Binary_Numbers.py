@@ -27,4 +27,3 @@ class Solution( object ):
                 for path in paths:
                         result = result + int(''.join(path.split("->")), 2)
                 return result
-        
