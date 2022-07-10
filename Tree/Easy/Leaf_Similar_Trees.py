@@ -26,4 +26,3 @@ class Solution(object):
                         if currentNode.left:
                                 stack.append( currentNode.left )
                 return leafs
-        
