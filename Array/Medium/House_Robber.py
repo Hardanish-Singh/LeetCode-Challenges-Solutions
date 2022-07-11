@@ -25,8 +25,8 @@
                 2) 0 <= nums[i] <= 400
 """
 
-class Solution(object):
-        def rob(self, nums):
+class Solution( object ):
+        def rob( self, nums ):
                 """
                 :type nums: List[int]
                 :rtype: int
