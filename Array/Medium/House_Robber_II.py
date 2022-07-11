@@ -43,7 +43,7 @@ class Solution( object ):
                         # This problem is exactly the House Robber part I problem with a variation that here there can be two possibilites-
                         # 1) Rob last house and skip the first house  
                         # 2) Rob first house and skip last house
-                        return max( self.robHouses( nums[1:] ), self.robHouses( nums[:-1] ) )
+                        return max( self.robHouses( nums[ 1: ] ), self.robHouses( nums[ :-1 ] ) )
         
         def robHouses( self, nums ):
                 if len( nums ) == 0:
@@ -51,9 +51,9 @@ class Solution( object ):
                 elif len( nums ) == 1:
                         return nums[0]
                 else:
-                        dp = [0] * len( nums )
-                        dp[0] = nums[0]
-                        dp[1] = max( nums[0], nums[1] )
+                        dp = [ 0 ] * len( nums )
+                        dp[ 0 ] = nums[ 0 ]
+                        dp[ 1 ] = max( nums[ 0 ], nums[ 1 ] )
                         for i in range( 2, len( nums ) ):
                                 dp[ i ] = max( dp[ i - 1 ], nums[ i ] + dp[ i - 2 ] )
-                        return dp[-1] 
+                        return dp[ -1 ] 
