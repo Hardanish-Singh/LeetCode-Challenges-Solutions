@@ -61,7 +61,6 @@ class Solution( object ):
                                         return False
                                 if leftNode.val != rightNode.val:
                                         return False
-                                # values of left & right node is equal
                                 else:
                                         stack.append( [ leftNode.right, rightNode.left ]  )
                                         stack.append( [ leftNode.left, rightNode.right ] )
