@@ -19,7 +19,7 @@ class Solution( object ):
         def robHouses( self, nums ):
                 if len( nums ) == 0:
                         return 0
-                elif len( nums ) == 1
+                elif len( nums ) == 1:
                         return nums[0]
                 else:
                         dp = [0] * len( nums )
