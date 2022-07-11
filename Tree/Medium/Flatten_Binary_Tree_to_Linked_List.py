@@ -59,8 +59,8 @@ class Solution( object ):
         SOLUTION 3: ITERATIVE
 """
 
-class Solution(object):
-        def flatten(self, root):
+class Solution( object ):
+        def flatten( self, root ):
                 while root:
                         if root.left:
                                 node = self.findLastRight( root.left )
