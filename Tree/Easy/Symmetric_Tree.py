@@ -1,6 +1,5 @@
 # Leetcode: https://leetcode.com/problems/symmetric-tree/
 
-
 # Definition for a binary tree node.
 # class TreeNode( object ):
 #     def __init__( self, val = 0, left = None, right = None ):
@@ -43,6 +42,7 @@ class Solution( object ):
         SOLUTION 2:
                 ITERATIVE
 """
+
         class Solution( object ):
                 def isSymmetric( self, root ):
                         """
