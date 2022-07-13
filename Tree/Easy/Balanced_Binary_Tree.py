@@ -65,10 +65,9 @@ class Solution( object ):
                 height = {
                         
                 }
-                
+                left = None
+                right = None
                 for currentNode in postOrderList:
-                        left = None
-                        right = None
                         if currentNode.left is None:
                                 left = 0
                         else:
