@@ -46,7 +46,7 @@ class Solution(object):
                 return max( left, right )
 
 """
-        SOLUTION 2: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
+        SOLUTION 3: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 """
 
 class Solution( object ):
