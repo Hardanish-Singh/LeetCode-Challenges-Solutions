@@ -64,14 +64,12 @@ class Solution( object ):
                 height = {
 
                 }
-
+                left = None
+                right = None
                 """
                         TRAVERSE/POP/GET THE ITEMS FROM POSTORDER LIST, WHY DO WE USE POSTORDER TRAVERSAL, SO THAT WE PROCESS LEAF FIRST ( BOTTOM UP APPROACH )
                 """
                 for currentNode in postOrderList:
-                        left = None
-                        right = None
-
                         if currentNode.left is None:
                                 left = 0
                         else:
