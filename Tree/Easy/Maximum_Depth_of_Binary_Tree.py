@@ -30,8 +30,8 @@ class Solution( object ):
         SOLUTION 2: RECURSIVE DFS
 """
 
-class Solution(object):
-        def maxDepth(self, root):
+class Solution( object ):
+        def maxDepth( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: int
