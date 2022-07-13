@@ -32,10 +32,9 @@ class Solution( object ):
                 height = {
                         
                 }
-                
+                leftMax = None
+                rightMax = None
                 for currentNode in postOrderList:
-                        leftMax = None
-                        rightMax = None
                         if currentNode.left is None:
                                 leftMax = 0
                         else:
