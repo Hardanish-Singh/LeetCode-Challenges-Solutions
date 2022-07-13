@@ -11,8 +11,8 @@
         SOLUTION 1: RECURSIVE
 """
 
-class Solution(object):
-        def invertTree(self, root):
+class Solution( object ):
+        def invertTree( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: TreeNode
@@ -31,8 +31,8 @@ class Solution(object):
         SOLUTION 2: ITERATIVE
 """
 
-class Solution(object):
-        def invertTree(self, root):
+class Solution( object ):
+        def invertTree( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: TreeNode
