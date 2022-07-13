@@ -1,13 +1,14 @@
+# Leetcode: https://leetcode.com/problems/invert-binary-tree/
+
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
+# class TreeNode( object):
+#     def __init__( self, val = 0, left = None, right = None ):
 #         self.val = val
 #         self.left = left
 #         self.right = right
 
 """
-        SOLUTION 1:
-                RECURSIVE
+        SOLUTION 1: RECURSIVE
 """
 
 class Solution(object):
@@ -27,8 +28,7 @@ class Solution(object):
                 return root
 
 """
-        SOLUTION 2:
-                ITERATIVE
+        SOLUTION 2: ITERATIVE
 """
 
 class Solution(object):
