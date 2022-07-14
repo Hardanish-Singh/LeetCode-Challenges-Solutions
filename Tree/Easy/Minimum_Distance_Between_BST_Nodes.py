@@ -25,7 +25,7 @@ class Solution(object):
                 
                 preOrderList.sort()
                 difference = [ ]
-                for i in range( 0, len( answer ) - 1 ):
-                        difference.append( answer[ i + 1 ] - answer[ i ] )
+                for i in range( 0, len( preOrderList ) - 1 ):
+                        difference.append( preOrderList[ i + 1 ] - preOrderList[ i ] )
 
                 return min( difference )
