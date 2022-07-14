@@ -13,23 +13,18 @@ def preorderRecursiveTraversal( root, preOrderList ):
         preorderRecursiveTraversal( root.right, preOrderList )
         
         
-class Solution(object):
-        def getMinimumDifference(self, root):
+class Solution( object ):
+        def getMinimumDifference( self, root ):
                 """
                 :type root: TreeNode
                 :rtype: int
                 """
-                answer = []
-                preorderRecursiveTraversal( root, answer )
+                preOrderList = []
+                preorderRecursiveTraversal( root, preOrderList )
                 
-                answer.sort()
-                minimum = answer[0]
-                i = 1
-                length = len( answer )
-                temp = []
+                preOrderList.sort()
+                difference = [ ]
+                for i in range( 0, len( answer ) - 1 ):
+                        difference.append( answer[ i + 1 ] - answer[ i ] )
 
-                while i < length:
-                        temp.append( answer[i] - answer[i-1] )
-                        i = i + 1
-
-                return min(temp)
+                return min(difference)
