@@ -7,7 +7,7 @@
 
 def preorderRecursiveTraversal( root, answer ):
         if root is None:
-                return
+                return None
         answer.append( root.val )
         preorderRecursiveTraversal( root.left, answer )
         preorderRecursiveTraversal( root.right, answer )
