@@ -1,6 +1,8 @@
+# Leetcode: https://leetcode.com/problems/minimum-absolute-difference-in-bst/
+
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
+# class TreeNode( object ):
+#     def __init__( self, val = 0, left = None, right = None ):
 #         self.val = val
 #         self.left = left
 #         self.right = right
@@ -27,4 +29,4 @@ class Solution( object ):
                 for i in range( 0, len( answer ) - 1 ):
                         difference.append( answer[ i + 1 ] - answer[ i ] )
 
-                return min(difference)
+                return min( difference )
