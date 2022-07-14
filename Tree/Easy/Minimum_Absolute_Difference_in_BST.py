@@ -5,12 +5,12 @@
 #         self.left = left
 #         self.right = right
 
-def preorderRecursiveTraversal( root, answer ):
+def preorderRecursiveTraversal( root, preOrderList ):
         if root is None:
                 return None
-        answer.append( root.val )
-        preorderRecursiveTraversal( root.left, answer )
-        preorderRecursiveTraversal( root.right, answer )
+        preOrderList.append( root.val )
+        preorderRecursiveTraversal( root.left, preOrderList )
+        preorderRecursiveTraversal( root.right, preOrderList )
         
         
 class Solution(object):
