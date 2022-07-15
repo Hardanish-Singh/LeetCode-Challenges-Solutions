@@ -32,4 +32,4 @@ class Solution( object ):
                                 width = max( width, ( ( temp[-1][1] - temp[0][1] ) + 1 ) )
                         queue = temp
                 
-                return width 
+                return width
