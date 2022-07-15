@@ -1,5 +1,6 @@
 /*
         Design a Data Structure that follows the constraints of a LEAST RECENTLY USED (LRU) CACHE.
+        
         Implement the LRUCache class:
                 1) LRUCache( int capacity ) Initialize the LRU Cache with positive size capacity.
                 2) int get( int key ) Return the value of the key if the key exists, otherwise return -1.
@@ -31,6 +32,7 @@
                 1) HASHMAP for O(1) get operation
                 2) DOUBLY LINKED LIST FOR O(1) put operation
 */
+
 import java.util.HashMap;
 
 class Node
