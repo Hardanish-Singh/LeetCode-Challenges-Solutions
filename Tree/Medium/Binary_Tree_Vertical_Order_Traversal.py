@@ -22,9 +22,7 @@ class Solution(object):
                                 continue
                         
                         if order in dictionary:
-                                nodesList = dictionary [ order ]
-                                nodesList.append( node.val )
-                                dictionary[ order ] = nodesList
+                                dictionary[ order ].append( node.val )
                         else:
                                 dictionary[ order ] = [ node.val ]
                         
