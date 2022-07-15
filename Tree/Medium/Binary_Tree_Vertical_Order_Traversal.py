@@ -17,19 +17,19 @@ class Solution(object):
                 queue = [ [ root, 0 ] ]
 
                 while queue:
-                        node, value = queue.pop( 0 )
+                        node, order = queue.pop( 0 )
                         if node is None:
                                 continue
                         
-                        if value in dictionary:
-                                nodesList = dictionary [ value ]
+                        if order in dictionary:
+                                nodesList = dictionary [ order ]
                                 nodesList.append( node.val )
-                                dictionary[ value ] = nodesList
+                                dictionary[ order ] = nodesList
                         else:
-                                dictionary[ value ] = [ node.val ]
+                                dictionary[ order ] = [ node.val ]
                         
-                        queue.append( [ node.left, value - 1 ] )
-                        queue.append( [ node.right, value + 1 ] )
+                        queue.append( [ node.left, order - 1 ] )
+                        queue.append( [ node.right, order + 1 ] )
                 
                 
                 result = [ ]
