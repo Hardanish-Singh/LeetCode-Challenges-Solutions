@@ -29,4 +29,4 @@ class Solution( object ):
                         if node.right:
                                 stack.append(node.right)
         
-                return total
+                return total 
