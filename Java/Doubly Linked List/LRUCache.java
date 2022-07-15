@@ -57,6 +57,16 @@ class Node
         {
                 return value;
         }
+
+        public Node getNextNode()
+        {
+                return next;
+        }
+        
+        public Node getPreviousNode()
+        {
+                return previous;
+        }
         
         public void setNextNode( Node next )
         {
@@ -76,16 +86,6 @@ class Node
         public void setPreviousAndNextNode( Node node )
         {
                 this.previous.next = node;
-        }
-        
-        public Node getNextNode()
-        {
-                return next;
-        }
-        
-        public Node getPreviousNode()
-        {
-                return previous;
         }
 }
 
