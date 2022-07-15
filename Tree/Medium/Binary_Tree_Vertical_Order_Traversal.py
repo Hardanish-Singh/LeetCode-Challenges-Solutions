@@ -30,7 +30,7 @@ class Solution(object):
                         queue.append( [ node.right, order + 1 ] )
                 
                 
-                result = [ ]
-                for key in sorted(dictionary):
-                        result.append( dictionary [ key ] )
-                return result
+                verticalOrderTraversal = [ ]
+                for key in sorted( dictionary ):
+                        verticalOrderTraversal.append( dictionary [ key ] )
+                return verticalOrderTraversal
