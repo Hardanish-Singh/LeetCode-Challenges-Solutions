@@ -41,6 +41,7 @@ class Solution
                         value1 = linkedList1 == null ? 0 : linkedList1.val;
                         value2 = linkedList2 == null ? 0 : linkedList2.val;
                         sum = value1 + value2 + carry;
+                        carry = 0;
                         if( sum > 9 )
                         {
                                 remainder = sum % 10;
@@ -50,7 +51,6 @@ class Solution
                         else
                         {
 				node = new ListNode( sum );
-                                carry = 0;
                         }
 			if( head == null && tail == null )
 			{
