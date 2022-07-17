@@ -33,21 +33,23 @@ class Solution
 		int value1 = 0;
                 int value2 = 0;
                 int carry = 0;
+                int sum = 0;
                 int remainder = 0;
 
                 while( linkedList1 != null || linkedList2 != null )
                 {
                         value1 = linkedList1 == null ? 0 : linkedList1.val;
                         value2 = linkedList2 == null ? 0 : linkedList2.val;
-                        if( value1 + value2 + carry > 9 )
+                        sum = value1 + value2 + carry;
+                        if( sum > 9 )
                         {
-                                remainder = ( value1 + value2 + carry ) % 10;
+                                remainder = sum % 10;
 				node = new ListNode( remainder );
-                                carry = ( value1 + value2 + carry ) / 10;
+                                carry = sum / 10;
                         }
                         else
                         {
-				node = new ListNode( value1 + value2 + carry );
+				node = new ListNode( sum );
                                 carry = 0;
                         }
 			if( head == null && tail == null )
