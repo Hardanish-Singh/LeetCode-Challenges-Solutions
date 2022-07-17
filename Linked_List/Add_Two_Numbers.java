@@ -36,7 +36,7 @@ class Solution
                 int sum = 0;
                 int remainder = 0;
 
-                while( linkedList1 != null || linkedList2 != null )
+                while( linkedList1 != null || linkedList2 != null || carry > 0 )
                 {
                         value1 = linkedList1 == null ? 0 : linkedList1.val;
                         value2 = linkedList2 == null ? 0 : linkedList2.val;
@@ -67,13 +67,6 @@ class Solution
                         linkedList1 = linkedList1 != null ? linkedList1.next : null;
                         linkedList2 = linkedList2 != null ? linkedList2.next : null;
                 }
-
-                if( carry > 0 )
-		{
-			node = new ListNode( carry );
-			tail.next = node;
-			tail = node;
-		}
 
 		return head;
 
