@@ -23,10 +23,8 @@
 
 class Solution
 {
-
         public ListNode addTwoNumbers( ListNode linkedList1, ListNode linkedList2 )
         {
-
 		ListNode head = null;
 		ListNode tail = null;
 		ListNode node = null;
@@ -69,6 +67,5 @@ class Solution
                 }
 
 		return head;
-
         }
 }
