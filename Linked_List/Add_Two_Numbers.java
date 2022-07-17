@@ -30,24 +30,24 @@ class Solution
 		ListNode head = null;
 		ListNode tail = null;
 		ListNode node = null;
-		int vals1 = 0;
-                int vals2 = 0;
+		int value1 = 0;
+                int value2 = 0;
                 int carry = 0;
                 int remainder = 0;
 
                 while( linkedList1 != null || linkedList2 != null )
                 {
-                        vals1 = linkedList1 == null ? 0 : linkedList1.val;
-                        vals2 = linkedList2 == null ? 0 : linkedList2.val;
-                        if( vals1 + vals2 + carry > 9 )
+                        value1 = linkedList1 == null ? 0 : linkedList1.val;
+                        value2 = linkedList2 == null ? 0 : linkedList2.val;
+                        if( value1 + value2 + carry > 9 )
                         {
-                                remainder = ( vals1 + vals2 + carry ) % 10;
+                                remainder = ( value1 + value2 + carry ) % 10;
 				node = new ListNode( remainder );
-                                carry = ( vals1 + vals2 + carry ) / 10;
+                                carry = ( value1 + value2 + carry ) / 10;
                         }
                         else
                         {
-				node = new ListNode( vals1 + vals2 + carry );
+				node = new ListNode( value1 + value2 + carry );
                                 carry = 0;
                         }
 			if( head == null )
