@@ -50,7 +50,7 @@ class Solution
 				node = new ListNode( value1 + value2 + carry );
                                 carry = 0;
                         }
-			if( head == null )
+			if( head == null && tail == null )
 			{
 			    head = tail = node;
 			}
