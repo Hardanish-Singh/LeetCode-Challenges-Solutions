@@ -24,7 +24,7 @@
 class Solution
 {
 
-        public ListNode addTwoNumbers( ListNode l1, ListNode l2 )
+        public ListNode addTwoNumbers( ListNode linkedList1, ListNode linkedList2 )
         {
 
 		ListNode head = null;
@@ -35,10 +35,10 @@ class Solution
                 int carry = 0;
                 int remainder = 0;
 
-                while( l1 != null || l2 != null )
+                while( linkedList1 != null || linkedList2 != null )
                 {
-                        vals1 = l1 == null ? 0 : l1.val;
-                        vals2 = l2 == null ? 0 : l2.val;
+                        vals1 = linkedList1 == null ? 0 : linkedList1.val;
+                        vals2 = linkedList2 == null ? 0 : linkedList2.val;
                         if( vals1 + vals2 + carry > 9 )
                         {
                                 remainder = ( vals1 + vals2 + carry ) % 10;
@@ -59,8 +59,8 @@ class Solution
 			    tail.next = node;
 			    tail = node;
 			}
-                        l1 = l1 != null ? l1.next : null;
-                        l2 = l2 != null ? l2.next : null;
+                        linkedList1 = linkedList1 != null ? linkedList1.next : null;
+                        linkedList2 = linkedList2 != null ? linkedList2.next : null;
                 }
 
                 if( carry > 0 )
