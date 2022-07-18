@@ -1,25 +1,4 @@
-/****************************************************************
- *             LEETCODE REVERSE LINKED LIST CHALLENGE           *
- *                                                              *
- * Problem Statement                                            *
- * Given the head of a singly linked list, reverse the list,	*
- * and return the reversed list.      				*
- *                                                              *
- * Examples                                                     *
- * Input 1: head = [1,2,3,4,5]                                  *
- * Output 1: [5,4,3,2,1]                                        *
- *                                                              *
- * Input 2: head = [1,2]                                        *
- * Output 2: [2,1]                                              *
- *								*
- * Input 3: head = []	                                        *
- * Output 3: []        	                                        *
- *                                                              *
- * Constraints							*
- * 1) The number of nodes in the list is the range [0, 5000].	*
- * 2) -5000 <= Node.val <= 5000					*
- *								*
- ***************************************************************/
+// Leetcode: https://leetcode.com/problems/reverse-linked-list/
 
 /*
         // Definition for Singly-Linked List
@@ -41,6 +20,7 @@
                 }
         }
 */
+
 class Solution
 {
         public ListNode reverseList( ListNode head )
