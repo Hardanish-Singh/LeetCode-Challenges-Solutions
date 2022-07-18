@@ -2,25 +2,24 @@ class Solution
 {
         public ListNode middleNode(ListNode head) 
         {
-                double count = 0;
+                double middle = 0;
                 ListNode current = head;
                         
                 while( current != null )
                 {
-                        count++;
+                        middle++;
                         current = current.next;
                 }
-                if( count % 2 == 0 )
+                if( middle % 2 == 0 )
                 {
-                        count++;
+                        middle++;
                 }
-                count = Math.ceil( count / 2 );
+                middle = Math.ceil( middle / 2 );
                 
                 double c = 1;
-                System.out.println(count);
                 while( head != null )
                 {
-                        if( c == count ) 
+                        if( c == middle ) 
                         {
                                 break;
                         }
