@@ -16,15 +16,15 @@ class Solution
                 }
                 middle = Math.ceil( middle / 2 );
                 
-                double c = 1;
+                double count = 1;
                 while( head != null )
                 {
-                        if( c == middle ) 
+                        if( count == middle ) 
                         {
                                 break;
                         }
                         head = head.next;
-                        c++;
+                        count++;
                 }
                 
                 return head;
