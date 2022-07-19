@@ -31,7 +31,7 @@ class Solution
                                 }
                                 current = current.next;
                         }
-                        return head;
                 }
+                return head;
         }
 }
