@@ -7,7 +7,6 @@ class Solution
         public ListNode sortList(ListNode head) 
         {
                 ListNode current = head;
-                ListNode index = null;
                 
                 if (head == null) 
                 {
@@ -16,14 +15,14 @@ class Solution
 
                 while (current != null) 
                 {
-                        index = current.next;
-                        while (index != null) 
+                        ListNode next = current.next;
+                        while (next != null) 
                         {
-                                if (current.val > index.val) 
+                                if (current.val > next.val) 
                                 {
-                                        swapNodes( current, index );
+                                        swapNodes( current, next );
                                 }
-                                index = index.next;
+                                next = next.next;
                         }
                         current = current.next;
                 }
