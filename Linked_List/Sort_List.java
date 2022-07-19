@@ -8,8 +8,7 @@ class Solution
         {
                 ListNode current = head;
                 ListNode index = null;
-                int temp;
-        
+                
                 if (head == null) 
                 {
                         return null;
@@ -23,9 +22,7 @@ class Solution
                                 {
                                         if (current.val > index.val) 
                                         {
-                                                temp = current.val;
-                                                current.val = index.val;
-                                                index.val = temp;
+                                                swapNodes( current, index );
                                         }
                                         index = index.next;
                                 }
@@ -33,5 +30,12 @@ class Solution
                         }
                 }
                 return head;
+        }
+
+        public void swapNodes( ListNode node1, ListNode node2 )
+        {
+                int temp = node1.val;
+                node1.val = node2.val;
+                node2.val = temp;
         }
 }
