@@ -1,6 +1,11 @@
 import java.util.Arrays;
-class Solution {
-    public ListNode sortList(ListNode head) {
+
+// SOLUTION 1: BUBBLE SORT 
+
+class Solution 
+{
+        public ListNode sortList(ListNode head) 
+        {
                 ListNode current = head;
                 ListNode index = null;
                 int temp;
@@ -28,5 +33,5 @@ class Solution {
                         }
                         return head;
                 }
-    }
+        }
 }
