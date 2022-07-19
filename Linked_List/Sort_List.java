@@ -43,8 +43,8 @@ class Solution
 {
         public ListNode sortList( ListNode head ) 
         {
-                int count = 0;
                 ListNode current = head;
+                int count = 0;
 
                 while( current != null )
                 {
@@ -52,7 +52,7 @@ class Solution
                         current = current.next;
                 }
 
-                int arr[] = new int[count];
+                int arr[] = new int[ count ];
                 current = head;
                 int i = 0;
             
@@ -62,5 +62,24 @@ class Solution
                         current = current.next;
                 }
                 Arrays.sort( arr );
+
+                head = null;
+                ListNode tail = null;
+
+                for( i = 0; i < arr.length; i++ )
+                {
+                        ListNode node = new ListNode( arr[ i ] );
+                        if( head == null && tail == null )
+                        {
+                                head = tail = node;
+                        }
+                        else
+                        {
+                                tail.next = node;
+                                tail = node;
+                        }
+                }
+                
+                return head;
         }
 }
