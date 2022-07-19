@@ -13,21 +13,19 @@ class Solution
                 {
                         return null;
                 }
-                else 
+
+                while (current != null) 
                 {
-                        while (current != null) 
+                        index = current.next;
+                        while (index != null) 
                         {
-                                index = current.next;
-                                while (index != null) 
+                                if (current.val > index.val) 
                                 {
-                                        if (current.val > index.val) 
-                                        {
-                                                swapNodes( current, index );
-                                        }
-                                        index = index.next;
+                                        swapNodes( current, index );
                                 }
-                                current = current.next;
+                                index = index.next;
                         }
+                        current = current.next;
                 }
                 return head;
         }
