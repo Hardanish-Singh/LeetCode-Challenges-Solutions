@@ -36,3 +36,5 @@ class Solution
                 node2.val = temp;
         }
 }
+
+// SOLUTION 2: USING ADDITIONAL DATA STRUCTURE ARRAY
