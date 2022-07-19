@@ -1,10 +1,10 @@
 import java.util.Arrays;
 
-// SOLUTION 1: BUBBLE SORT 
+// SOLUTION 1: BUBBLE SORT
 
 class Solution 
 {
-        public ListNode sortList(ListNode head) 
+        public ListNode sortList( ListNode head ) 
         {
                 ListNode current = head;
                 
@@ -13,12 +13,12 @@ class Solution
                         return null;
                 }
 
-                while (current != null) 
+                while( current != null ) 
                 {
                         ListNode next = current.next;
-                        while (next != null) 
+                        while( next != null ) 
                         {
-                                if (current.val > next.val) 
+                                if( current.val > next.val )
                                 {
                                         swapNodes( current, next );
                                 }
@@ -38,3 +38,29 @@ class Solution
 }
 
 // SOLUTION 2: USING ADDITIONAL DATA STRUCTURE ARRAY
+
+class Solution 
+{
+        public ListNode sortList( ListNode head ) 
+        {
+                int count = 0;
+                ListNode current = head;
+
+                while( current != null )
+                {
+                        count++;
+                        current = current.next;
+                }
+
+                int arr[] = new int[count];
+                current = head;
+                int i = 0;
+            
+                while( current != null )
+                {
+                        arr[i++] = current.val;
+                        current = current.next;
+                }
+                Arrays.sort( arr );
+        }
+}
