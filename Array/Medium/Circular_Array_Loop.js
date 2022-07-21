@@ -54,7 +54,7 @@ var circularArrayLoop = function( array ) {
                                         break;
                                 }
                         }
-        
+
                         hash_map[ index ] = array[ index ];
                 }
     
