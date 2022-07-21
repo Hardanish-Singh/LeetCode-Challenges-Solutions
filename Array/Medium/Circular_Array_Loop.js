@@ -11,8 +11,7 @@ var circularArrayLoop = function(array) {
             while( true ) {
                 if( array[index] > 0 ) {
                     if( index + array[index] > array.length - 1 ) {
-                        // index = findPositiveIndex( index, array );
-                        index = ( index + array[index] ) % array.length;
+                        index = findPositiveIndex( index, array );
                     } else {
                         index = index + array[index];
                     }
