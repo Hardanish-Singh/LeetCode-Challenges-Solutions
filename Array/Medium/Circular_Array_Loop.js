@@ -38,7 +38,11 @@ var circularArrayLoop = function( array ) {
                                 }
                         }
                         
-                        if( ( array[ i ] > 0 && array[ index ] < 0 ) || ( array[ i ] < 0 && array[ index ] > 0 ) ) {
+                        if( 
+                                ( array[ i ] > 0 && array[ index ] < 0 ) 
+                                        ||
+                                ( array[ i ] < 0 && array[ index ] > 0 ) 
+                        ) {
                                 break;
                         }
                         
