@@ -1,4 +1,21 @@
 // SOLUTION 1
+
+function findNegativeIndex( index, array ) {
+        let val = index + array[index];
+        while( val < 0 ) {
+                val = array.length + val;
+        }
+        return val;
+}
+
+function findPositiveIndex( index, array ) {
+        let val = index + array[index];
+        while( val >= array.length ) {
+                val = val - array.length ;
+        }
+        return val;
+}
+
 var circularArrayLoop = function( array ) {
         for( let i = 0; i < array.length; i++ ) {
                 let hash_map = { };
