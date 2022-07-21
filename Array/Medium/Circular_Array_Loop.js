@@ -1,3 +1,5 @@
+// Leetcode: https://leetcode.com/problems/circular-array-loop/
+
 // SOLUTION 1
 
 function findNegativeIndex( index, array ) {
@@ -36,6 +38,44 @@ var circularArrayLoop = function( array ) {
                                 } else {
                                         index = index + array[ index ];
                                 }
+                        }
+                        
+                        if( 
+                                ( array[ i ] > 0 && array[ index ] < 0 )
+                                        ||
+                                ( array[ i ] < 0 && array[ index ] > 0 )
+                        ) {
+                                break;
+                        }
+                        
+                        if( index in hash_map ) {
+                                if( i === index && Object.keys( hash_map ).length > 1 ) {
+                                        return true;  
+                                }
+                                else  {
+                                        break;
+                                }
+                        }
+
+                        hash_map[ index ] = array[ index ];
+                }
+    
+        }
+        return false;
+};
+
+// SOLUTION 2
+
+var circularArrayLoop = function( array ) {
+        for( let i = 0; i < array.length; i++ ) {
+                let hash_map = { };
+                hash_map[ i ] = array[ i ];
+                let index = i;
+            
+                while( true ) {
+                        index = ( index + array[index] ) % array.length;
+                        if( index < 0 ) {
+                                index = index + array.length;
                         }
                         
                         if( 
