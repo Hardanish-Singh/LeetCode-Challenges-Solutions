@@ -1,19 +1,19 @@
 // SOLUTION 1
 
 function findNegativeIndex( index, array ) {
-        let val = index + array[index];
-        while( val < 0 ) {
-                val = array.length + val;
+        let value = index + array[index];
+        while( value < 0 ) {
+                value = array.length + value;
         }
-        return val;
+        return value;
 }
 
 function findPositiveIndex( index, array ) {
-        let val = index + array[index];
-        while( val >= array.length ) {
-                val = val - array.length ;
+        let value = index + array[index];
+        while( value >= array.length ) {
+                value = value - array.length ;
         }
-        return val;
+        return value;
 }
 
 var circularArrayLoop = function( array ) {
