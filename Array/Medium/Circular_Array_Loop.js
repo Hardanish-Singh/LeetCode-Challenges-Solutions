@@ -6,14 +6,14 @@ var circularArrayLoop = function( array ) {
                 let index = i;
             
                 while( true ) {
-                        if( array[index] > 0 ) {
-                                if( index + array[index] > array.length - 1 ) {
+                        if( array[ index ] > 0 ) {
+                                if( index + array[ index ] > array.length - 1 ) {
                                         index = findPositiveIndex( index, array );
                                 } else {
-                                        index = index + array[index];
+                                        index = index + array[ index ];
                                 }
                         }
-                        else if( array[index] < 0 ) {
+                        else if( array[ index ] < 0 ) {
                                 if( index + array[index] < 0 ) {
                                         index = findNegativeIndex( index, array );
                                 } else {
