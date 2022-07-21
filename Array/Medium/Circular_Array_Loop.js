@@ -14,6 +14,20 @@
                 3) k > 1
         
         Return true if there is a cycle in nums, or false otherwise
+
+        Example 1:
+                Input: nums = [2,-1,1,2,2]
+                Output: true
+                Explanation:
+                        There is a cycle from index 0 -> 2 -> 3 -> 0 -> ...
+                        The cycle's length is 3.
+        
+        Example 2:
+                Input: nums = [-1,2]
+                Output: false
+                Explanation:
+                        The sequence from index 1 -> 1 -> 1 -> ... is not a cycle because the sequence's length is 1.
+                        By definition the sequence's length must be strictly greater than 1 to be a cycle.
 */
 
 // SOLUTION 1
