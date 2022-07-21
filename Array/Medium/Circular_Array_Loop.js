@@ -28,6 +28,18 @@
                 Explanation:
                         The sequence from index 1 -> 1 -> 1 -> ... is not a cycle because the sequence's length is 1.
                         By definition the sequence's length must be strictly greater than 1 to be a cycle.
+        
+        Example 3:
+                Input: nums = [-2,1,-1,-2,-2]
+                Output: false
+                Explanation:
+                        The sequence from index 1 -> 2 -> 1 -> ... is not a cycle because nums[1] is positive, but nums[2] is negative.
+                        Every nums[seq[j]] must be either all positive or all negative.
+        
+        Constraints:
+                1) 1 <= nums.length <= 5000
+                2) -1000 <= nums[i] <= 1000
+                3) nums[i] != 0
 */
 
 // SOLUTION 1
