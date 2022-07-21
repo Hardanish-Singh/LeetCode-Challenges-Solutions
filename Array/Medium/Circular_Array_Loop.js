@@ -14,10 +14,10 @@ var circularArrayLoop = function( array ) {
                                 }
                         }
                         else if( array[ index ] < 0 ) {
-                                if( index + array[index] < 0 ) {
+                                if( index + array[ index ] < 0 ) {
                                         index = findNegativeIndex( index, array );
                                 } else {
-                                        index = index + array[index];
+                                        index = index + array[ index ];
                                 }
                         }
                         
