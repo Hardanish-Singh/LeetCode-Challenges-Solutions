@@ -34,6 +34,7 @@ var maximumUnits = function( boxTypes, truckSize ) {
 */
 
 var maximumUnits = function( boxTypes, truckSize ) {
+        // SORT BOXES IN DESCENDING ORDER
         boxTypes.sort( (a, b) => b[ 1 ] - a[ 1 ] );
         let totalUnits = 0;
         for( let i = 0; i < boxTypes.length; i++ ) {
