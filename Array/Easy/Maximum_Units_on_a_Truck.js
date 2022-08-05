@@ -79,5 +79,5 @@ var maximumUnits = function( boxTypes, truckSize ) {
                         break;
                 }
         }
-        return totalUnits; 
+        return totalUnits;
 };
