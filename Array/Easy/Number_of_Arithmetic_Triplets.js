@@ -9,9 +9,7 @@ var arithmeticTriplets = function(nums, diff) {
         let hash_table = { };
         
         for( let i = 0; i < nums.length; i++ ) {
-                if( hash_table[ nums[ i ] ] ) {
-                        continue;
-                } else {
+                if( !hash_table[ nums[ i ] ] ) {
                         hash_table[ nums[ i ] ] = true;
                 }
         }
