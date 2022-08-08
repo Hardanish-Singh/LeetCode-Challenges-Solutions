@@ -4,6 +4,7 @@
                 1) i < j < k,
                 2) nums[j] - nums[i] == diff, and
                 3) nums[k] - nums[j] == diff.
+        Return the number of unique arithmetic triplets.
 */
 
 function arithmeticTriplets( nums: number[], diff: number ): number {
