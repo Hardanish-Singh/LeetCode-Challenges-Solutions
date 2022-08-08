@@ -1,3 +1,5 @@
+// Leetcode: https://leetcode.com/problems/number-of-arithmetic-triplets/
+
 /*
         You are given a 0-indexed, strictly increasing integer array nums and a positive integer diff. 
         A triplet (i, j, k) is an arithmetic triplet if the following conditions are met:
@@ -19,6 +21,12 @@
                 Explanation:
                         (0, 2, 4) is an arithmetic triplet because both 8 - 6 == 2 and 6 - 4 == 2.
                         (1, 3, 5) is an arithmetic triplet because both 9 - 7 == 2 and 7 - 5 == 2.
+        
+        Constraints:
+                1) 3 <= nums.length <= 200
+                2) 0 <= nums[i] <= 200
+                3) 1 <= diff <= 50
+                4) nums is strictly increasing.
 */
 
 function arithmeticTriplets( nums: number[], diff: number ): number {
