@@ -1,3 +1,11 @@
+/*
+        You are given a 0-indexed, strictly increasing integer array nums and a positive integer diff. 
+        A triplet (i, j, k) is an arithmetic triplet if the following conditions are met:
+                1) i < j < k,
+                2) nums[j] - nums[i] == diff, and
+                3) nums[k] - nums[j] == diff.
+*/
+
 function arithmeticTriplets( nums: number[], diff: number ): number {
         let numberOfArithmeticTriplets: number = 0;
         
