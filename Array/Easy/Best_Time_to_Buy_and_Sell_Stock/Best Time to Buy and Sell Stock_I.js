@@ -20,7 +20,7 @@
 */
 
 function greedySearchFindMaxProfit( prices, index ) {
-        let max = prices[index]; 
+        let max = prices[index];
         let maxElementIndexes = [];
         let j = index;
         for( let i = index+1; i < prices.length; i++ ){
