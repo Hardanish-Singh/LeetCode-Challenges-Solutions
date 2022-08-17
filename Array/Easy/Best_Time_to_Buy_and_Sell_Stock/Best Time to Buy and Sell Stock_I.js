@@ -47,7 +47,7 @@ var maxProfit = function( prices )
         
         let max = 0;
         let data = -1;
-        let maxElementIndexes = [];
+        let maxElementIndexes = []; 
         
         for( let i = 0; i < prices.length-1; i++ ) { 
                 if( i == 0 || !(maxElementIndexes.indexOf(i)) ) {
