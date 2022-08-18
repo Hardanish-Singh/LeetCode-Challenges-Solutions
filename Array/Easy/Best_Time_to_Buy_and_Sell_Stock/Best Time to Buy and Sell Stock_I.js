@@ -51,9 +51,6 @@ var maxProfit = function( prices )
                 if( i == 0 || maxElementIndexes == i ) {
                         maxElementIndexes = greedySearchFindMaxProfit(prices, i+1);
                         data = prices[maxElementIndexes];
-                        if( prices[i] >= data ) {
-                                continue;
-                        }
                 }
                 let diff = data - prices[i];
                 if( diff > max ) {
