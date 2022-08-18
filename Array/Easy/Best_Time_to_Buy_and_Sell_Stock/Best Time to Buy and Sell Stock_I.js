@@ -34,9 +34,9 @@ function greedySearchFindMaxProfit( prices, index ) {
 }
 
 function removeConsecutiveDuplicates( prices ) {
-        for( let i = prices.length - 1; i>0; i-- ) {
-                if( prices[i] == prices[i-1] ) {
-                        prices.splice(i,1);
+        for( let i = prices.length - 1; i > 0; i-- ) {
+                if( prices[ i ] == prices[ i - 1 ] ) {
+                        prices.splice( i, 1 );
                 }
         }
 }
