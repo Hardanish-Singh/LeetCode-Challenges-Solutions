@@ -21,7 +21,6 @@
 
 function greedySearchFindMaxProfit( prices, index ) {
         let max = prices[index];
-        let maxElementIndexes = [];
         let j = index;
         for( let i = index + 1; i < prices.length; i++ ){
                 if( prices[i] > max ) {
@@ -29,8 +28,7 @@ function greedySearchFindMaxProfit( prices, index ) {
                         j = i;
                 } 
         }
-        maxElementIndexes.push(j);
-        return maxElementIndexes.length > 0 ? maxElementIndexes : [ ( prices[index] > prices[index+1] || prices[index+1] == null ) ? index : index+1 ] ;
+        return j;
 }
 
 function removeConsecutiveDuplicates( prices ) {
@@ -47,12 +45,12 @@ var maxProfit = function( prices )
         
         let max = 0;
         let data = -1;
-        let maxElementIndexes = [];
+        let maxElementIndexes = -1;
         
         for( let i = 0; i < prices.length-1; i++ ) { 
-                if( i == 0 || !(maxElementIndexes.indexOf(i)) ) {
-                        maxElementIndexes = greedySearchFindMaxProfit( prices, i+1 );
-                        data = prices[maxElementIndexes[maxElementIndexes.length-1]];
+                if( i == 0 || maxElementIndexes == i ) {
+                        maxElementIndexes = greedySearchFindMaxProfit(prices, i+1);
+                        data = prices[maxElementIndexes];
                         if( prices[i] >= data ) {
                                 continue;
                         }
