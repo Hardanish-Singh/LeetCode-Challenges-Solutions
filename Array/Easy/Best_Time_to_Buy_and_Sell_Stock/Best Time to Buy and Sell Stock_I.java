@@ -21,7 +21,7 @@
 
 class Solution 
 {
-        public int maxProfit(int[] prices) 
+        public int maxProfit( int[] prices ) 
         {
                 int k = 1;
                 int[] buy = new int[k + 1];
@@ -38,5 +38,5 @@ class Solution
                 }
 
                 return sell[ k ]; 
-    }
+        }
 }
