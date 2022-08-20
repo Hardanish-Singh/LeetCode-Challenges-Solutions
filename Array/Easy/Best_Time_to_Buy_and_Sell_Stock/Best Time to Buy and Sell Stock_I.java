@@ -19,8 +19,10 @@
                 2) 0 <= prices[i] <= 10^4
 */
 
-class Solution {
-    public int maxProfit(int[] prices) {
+class Solution 
+{
+        public int maxProfit(int[] prices) 
+        {
         if (prices == null || prices.length <= 1) {
              return 0;
          }
