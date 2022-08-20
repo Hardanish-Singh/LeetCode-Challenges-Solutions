@@ -24,7 +24,6 @@ class Solution
         public int maxProfit(int[] prices) 
         {
                 int k = 1;
-
                 int[] buy = new int[k + 1];
                 int[] sell = new int[k + 1];
                 Arrays.fill(buy, Integer.MAX_VALUE);
