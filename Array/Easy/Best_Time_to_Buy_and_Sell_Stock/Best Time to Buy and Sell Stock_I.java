@@ -28,7 +28,6 @@ class Solution
                 int[] buy = new int[k + 1];
                 int[] sell = new int[k + 1];
                 Arrays.fill(buy, Integer.MAX_VALUE);
-                Arrays.fill(sell, 0);
 
                 for (int price : prices) 
                 {
