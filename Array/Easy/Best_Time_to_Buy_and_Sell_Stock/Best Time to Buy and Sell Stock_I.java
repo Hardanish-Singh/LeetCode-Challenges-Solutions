@@ -23,23 +23,20 @@ class Solution
 {
         public int maxProfit(int[] prices) 
         {
-        if (prices == null || prices.length <= 1) {
-             return 0;
-         }
-            int k = 1;
-        
-        int[] buy = new int[k + 1];
-        int[] sell = new int[k + 1];
-        Arrays.fill(buy, Integer.MAX_VALUE);
-        Arrays.fill(sell, 0);
-            
-        for (int price : prices) {
+                int k = 1;
+
+                int[] buy = new int[k + 1];
+                int[] sell = new int[k + 1];
+                Arrays.fill(buy, Integer.MAX_VALUE);
+                Arrays.fill(sell, 0);
+
+                for (int price : prices) {
                 for( int i = 1; i <= k; i++ ) {
-                        buy[ i ] = Math.min( buy[ i ], price - sell[ i - 1 ] );
-                        sell[ i ] = Math.max( sell[ i ], price - buy[ i ] );
+                buy[ i ] = Math.min( buy[ i ], price - sell[ i - 1 ] );
+                sell[ i ] = Math.max( sell[ i ], price - buy[ i ] );
                 }
-        }
-        
-        return sell[ k ]; 
+                }
+
+                return sell[ k ]; 
     }
 }
