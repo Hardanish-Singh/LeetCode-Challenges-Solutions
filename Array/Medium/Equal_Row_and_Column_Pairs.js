@@ -18,7 +18,7 @@ var equalPairs = function( grid ) {
                 }
         }
         let count = 0;
-        let m = grid.length ;
+        let m = grid.length;
         for( let i = 0; i < m; i++ ) {
                 for( let j = 0; j < m; j++ ) {
                         if( JSON.stringify( grid[i] ) === JSON.stringify( matrix[j] ) ) {
