@@ -37,6 +37,6 @@ class Solution
                         }
                 }
 
-                return sell[ k ]; 
+                return sell[ k ];
         }
 }
