@@ -35,13 +35,5 @@
 */
 
 function reverseWords( str:string ):string {
-        let split_at_space:string[] = str.split(" ");
-        let reverse_word:string = "";
-        for( let i:number = split_at_space.length-1; i>=0; i-- ) {
-                if( split_at_space[i] != "" ) {
-                        reverse_word += split_at_space[i] + " ";
-                }
-        }
-        return reverse_word.trim();
-        // return reverse_word.slice( 0,reverse_word.length - 1 );
+        return str.trim().split(/\s+/).reverse().join(" ");
 };
