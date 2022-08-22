@@ -1,7 +1,7 @@
 class Solution( object ):
-        def reverse( self, s, left, right ):
+        def reverse( self, str, left, right ):
                 while left < right:
-                        s[left], s[right] = s[right], s[left]
+                        str[left], str[right] = str[right], str[left]
                         left, right = left + 1, right - 1
         
         def reverseWords( self, str ):
