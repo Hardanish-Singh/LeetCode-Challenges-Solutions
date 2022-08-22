@@ -26,7 +26,7 @@
  * @return { void }
 */
 
-var rotate = function(nums, k) {
+var rotate = function( nums, k ) {
         k %= nums.length;
         let temp = [...nums.slice( nums.length - k ), ...nums.slice(0, nums.length - k)];
         for( let i = 0; i < temp.length; i++ ) {
