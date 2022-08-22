@@ -1,12 +1,12 @@
 # Leetcode: https://leetcode.com/problems/reverse-words-in-a-string-iii/
 
-class Solution(object):
+class Solution( object ):
         def reverse( self, str, left, right ):
                 while left < right:
                         str[left], str[right] = str[right], str[left]
                         left, right = left + 1, right - 1
         
-        def reverseWords(self, str):
+        def reverseWords( self, str ):
                 """
                 :type s: List[str]
                 :rtype: None Do not return anything, modify s in-place instead.
