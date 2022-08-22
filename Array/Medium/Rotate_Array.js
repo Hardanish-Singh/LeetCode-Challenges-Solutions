@@ -28,15 +28,8 @@
 
 var rotate = function(nums, k) {
         k %= nums.length;
-        let temp = [];
-        let index = 0;
-        for( let i = nums.length - k; i < nums.length; i++ ) {
-                temp[index++] = nums[i];
-        }
-        for( let i = 0; i < nums.length - k; i++ ) {
-                temp[index++] = nums[i];
-        }
-        for( let i = 0; i < nums.length; i++ ) {
+        let temp = [...nums.slice( nums.length - k ), ...nums.slice(0, nums.length - k)];
+        for( let i = 0; i < temp.length; i++ ) {
                 nums[i] = temp[i];
         }
 };
