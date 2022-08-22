@@ -7,11 +7,9 @@ class Solution( object ):
         def reverseWords( self, str ):
                 """
                 :type s: List[str]
-                :rtype: None Do not return anything, modify s in-place instead.
+                :rtype: None Do not return anything, modify str in-place instead.
                 """
-
                 str.reverse()
-                
                 left = 0
                 for i in range( len( str ) ):
                         if str[i] == " ":
