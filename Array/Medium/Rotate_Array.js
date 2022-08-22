@@ -29,7 +29,7 @@
 var rotate = function(nums, k) {
         k %= nums.length;
         let temp = [];
-        var index = 0;
+        let index = 0;
         for( let i = nums.length - k; i < nums.length; i++ ) {
                 temp[index++] = nums[i];
         }
