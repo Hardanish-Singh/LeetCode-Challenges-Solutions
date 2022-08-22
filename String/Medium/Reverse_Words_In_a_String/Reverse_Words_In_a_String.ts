@@ -35,8 +35,8 @@
                 3) There is at least one word in s.
 */
 
-/*
- * @param { string } s
+/**
+ * @param { string } str
  * @return { string }
 */
 
