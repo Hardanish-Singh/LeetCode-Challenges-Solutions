@@ -19,4 +19,4 @@ class Solution( object ):
                                 left = i + 1
                         elif i == len( str ) - 1:
                                 self.reverse( str, left, i )
-                return ''.join( str ) 
+                return ''.join( str )
