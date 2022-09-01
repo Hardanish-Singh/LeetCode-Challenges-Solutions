@@ -62,12 +62,12 @@ var twoSum = function( nums, target ) {
 var twoSum = function( nums, target ) {
 	let hash_table = { }
 	for( let i = 0; i < nums.length; i++ ) {
-		let diff = target - nums[i];
-		if( !( diff in hash_table ) ) {
+		let difference = target - nums[i];
+		if( !( difference in hash_table ) ) {
                         hash_table[ nums[i] ] = i+1;
 		}
 		else {
-			return[ hash_table[ diff ], i+1 ];
+			return[ hash_table[ difference ], i+1 ];
 		}
 	}
 }
