@@ -63,11 +63,10 @@ var twoSum = function( nums, target ) {
 	let hash_table = { }
 	for( let i = 0; i < nums.length; i++ ) {
 		let difference = target - nums[i];
-		if( !( difference in hash_table ) ) {
-                        hash_table[ nums[i] ] = i+1;
-		}
-		else {
-			return[ hash_table[ difference ], i+1 ];
+		if( difference in hash_table ) {
+			return[ hash_table[ difference ], i+1 ];	
+		} else {
+			hash_table[ nums[i] ] = i+1;
 		}
 	}
 }
