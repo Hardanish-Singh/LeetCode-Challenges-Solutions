@@ -73,7 +73,7 @@ var twoSum = function( nums, target ) {
 
 /*
 	SOLUTION 3( MOST OPTIMAL )
-		Time Complexity: O( nlog(n) )
+		Time Complexity: O( nlogn )
 		Space Complexity: O( 1 )
 */
 
