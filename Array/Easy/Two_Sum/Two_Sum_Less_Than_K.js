@@ -17,6 +17,7 @@ var twoSumLessThanK = function( nums, k ) {
         let leftIndex = 0;
         let rightIndex = nums.length-1;
         let max = -1;
+
         while( leftIndex < rightIndex ) {
                 if( nums[leftIndex] + nums[rightIndex] < k) {
                         max = Math.max( max, nums[leftIndex] + nums[rightIndex] );
@@ -26,5 +27,6 @@ var twoSumLessThanK = function( nums, k ) {
                         rightIndex--;
                 }
         }
+
         return max;
 };
