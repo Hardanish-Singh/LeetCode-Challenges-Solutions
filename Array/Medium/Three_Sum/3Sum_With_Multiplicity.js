@@ -11,18 +11,18 @@ var threeSumMulti = function( nums, target ) {
         nums.sort( (a, b) => a - b );
         let count = 0;
         
-	for( let i = 0; i<nums.length; i++ ) {
-		let leftIndex = i+1;
-		let rightIndex = nums.length-1;
+	for( let i = 0; i < nums.length; i++ ) {
+		let leftIndex = i + 1;
+		let rightIndex = nums.length - 1;
 		
 		while( leftIndex < rightIndex ) {
-                        if( nums[leftIndex] + nums[rightIndex] + nums[i] < target) {
+                        if( nums[leftIndex] + nums[rightIndex] + nums[i] < target ) {
 				leftIndex++;
 			}
-			else if( nums[leftIndex] + nums[rightIndex] + nums[i] > target) {
+			else if( nums[leftIndex] + nums[rightIndex] + nums[i] > target ) {
 				rightIndex--;
 			}
-			else if( nums[leftIndex] + nums[rightIndex] + nums[i] === target) {
+			else if( nums[leftIndex] + nums[rightIndex] + nums[i] === target ) {
                                 if( nums[leftIndex] === nums[rightIndex] ) {
                                         let n = ( rightIndex - leftIndex ) + 1;
                                         count += Math.floor( ( n * (n - 1) ) / 2 ) ;
@@ -30,7 +30,7 @@ var threeSumMulti = function( nums, target ) {
                                 }
                                 
                                 count++;
-                                //FIX LEFT POINTER
+                                // FIX RIGHT POINTER
                                 let start = leftIndex;
                                 let end = rightIndex - 1;
                                 while( start < end ) {
@@ -44,7 +44,7 @@ var threeSumMulti = function( nums, target ) {
         
                                 start = leftIndex + 1;
                                 end = rightIndex;
-                                //FIX RIGHT POINTER
+                                // FIX LEFT POINTER
                                 while( start < end ) {
                                         if( nums[ i ] + nums[ start ] + nums[ end ] === target ) {
                                                 count++;
