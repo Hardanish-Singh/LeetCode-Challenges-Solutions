@@ -15,12 +15,12 @@
 var twoSumLessThanK = function( nums, k ) {
         nums.sort( (a, b) => a - b );
         let leftIndex = 0;
-        let rightIndex = nums.length-1;
-        let max = -1;
+        let rightIndex = nums.length - 1;
+        let maximumSumClosestToK = -1;
 
         while( leftIndex < rightIndex ) {
                 if( nums[leftIndex] + nums[rightIndex] < k) {
-                        max = Math.max( max, nums[leftIndex] + nums[rightIndex] );
+                        maximumSumClosestToK = Math.max( maximumSumClosestToK, nums[leftIndex] + nums[rightIndex] );
                         leftIndex++;
                 }
                 else if( nums[leftIndex] + nums[rightIndex] >= k) {
@@ -28,5 +28,5 @@ var twoSumLessThanK = function( nums, k ) {
                 }
         }
 
-        return max;
+        return maximumSumClosestToK;
 };
