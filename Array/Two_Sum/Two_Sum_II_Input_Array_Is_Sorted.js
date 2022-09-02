@@ -72,7 +72,7 @@ var twoSum = function( nums, target ) {
 			rightIndex--;
 		}
 		else if( nums[leftIndex] + nums[rightIndex] === target) {
-			return [ leftIndex+1, rightIndex+1 ];
+			return [ leftIndex + 1, rightIndex + 1 ];
 		}
 	}
 }
