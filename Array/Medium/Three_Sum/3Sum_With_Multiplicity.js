@@ -24,8 +24,6 @@ var threeSumMulti = function( nums, target ) {
 			}
 			else if( nums[leftIndex] + nums[rightIndex] + nums[i] === target ) {
                                 if( nums[leftIndex] === nums[rightIndex] ) {
-                                        // let n = ( rightIndex - leftIndex ) + 1;
-                                        // count += Math.floor( ( n * (n - 1) ) / 2 ) ;
                                         let n = rightIndex - leftIndex;
                                         count += Math.floor( ( n * (n + 1) ) / 2 ) ;
                                         break;
