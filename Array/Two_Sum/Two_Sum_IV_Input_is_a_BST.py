@@ -21,6 +21,7 @@ class Solution( object ):
                 """
                 if root is None:
                         return None
+
                 preOrderList = []
                 self.preorderRecursiveTraversal( root, preOrderList )
                 
