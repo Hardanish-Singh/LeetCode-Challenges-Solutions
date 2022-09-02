@@ -15,7 +15,7 @@ class Solution( object ):
                 self.preorderRecursiveTraversal( root.left, preOrderList )
                 self.preorderRecursiveTraversal( root.right, preOrderList )
         
-        def findTarget(self, root, k):
+        def findTarget( self, root, k ):
                 """
                 :type root: TreeNode
                 :type k: int
