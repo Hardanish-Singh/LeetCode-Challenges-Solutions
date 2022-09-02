@@ -30,7 +30,7 @@ var threeSumMulti = function( nums, target ) {
                                 }
                                 
                                 count++;
-                                // FIX RIGHT POINTER
+                                // FIX LEFT POINTER
                                 let start = leftIndex;
                                 let end = rightIndex - 1;
                                 while( start < end ) {
@@ -44,7 +44,7 @@ var threeSumMulti = function( nums, target ) {
         
                                 start = leftIndex + 1;
                                 end = rightIndex;
-                                // FIX LEFT POINTER
+                                // FIX RIGHT POINTER
                                 while( start < end ) {
                                         if( nums[ i ] + nums[ start ] + nums[ end ] === target ) {
                                                 count++;
