@@ -41,10 +41,10 @@ var threeSumMulti = function( nums, target ) {
                                         }
                                         end--;
                                 }
-        
+
+                                // FIX RIGHT POINTER & MOVE LEFT POINTER
                                 start = leftIndex + 1;
                                 end = rightIndex;
-                                // FIX RIGHT POINTER & MOVE LEFT POINTER
                                 while( start < end ) {
                                         if( nums[ i ] + nums[ start ] + nums[ end ] === target ) {
                                                 count++;
