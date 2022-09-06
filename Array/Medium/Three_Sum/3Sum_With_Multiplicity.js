@@ -30,6 +30,7 @@ var threeSumMulti = function( nums, target ) {
                                 }
                                 
                                 count++;
+
                                 // FIX LEFT POINTER & MOVE RIGHT POINTER
                                 let start = leftIndex;
                                 let end = rightIndex - 1;
