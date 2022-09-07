@@ -16,23 +16,19 @@ class TwoSum( object ):
                         self.hash_table[ number ] = 1
 
 
-        def find( self, value ):
+        def find( self, target ):
                 """
-                :type value: int
+                :type target: int
                 :rtype: bool
                 """
                 temp = { }
-                for key, val in self.hash_table.items():
-                        difference = value - key
-                        if ( difference in self.hash_table and val == 2 ) or ( difference in temp ):
+                for key, value in self.hash_table.items():
+                        difference = target - key
+                        if ( difference in self.hash_table and value == 2 ) or ( difference in temp ):
                                 return True
                         else:
                                 temp[ key ] = 1
                 return False
-                        
-                
-        
-
 
 # Your TwoSum object will be instantiated and called as such:
 # obj = TwoSum()
