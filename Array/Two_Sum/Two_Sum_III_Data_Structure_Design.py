@@ -1,9 +1,9 @@
 class TwoSum( object ):
 
-        def __init__(self):
+        def __init__( self ):
                 self.hash_table = { }
 
-        def add(self, number):
+        def add( self, number ):
                 """
                 :type number: int
                 :rtype: None
@@ -14,7 +14,7 @@ class TwoSum( object ):
                         self.hash_table[ number ] = 1
 
 
-        def find(self, value):
+        def find( self, value ):
                 """
                 :type value: int
                 :rtype: bool
