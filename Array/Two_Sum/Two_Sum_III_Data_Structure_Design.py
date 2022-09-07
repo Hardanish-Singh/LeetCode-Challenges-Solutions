@@ -15,7 +15,6 @@ class TwoSum( object ):
                 else:
                         self.hash_table[ number ] = 1
 
-
         def find( self, target ):
                 """
                 :type target: int
