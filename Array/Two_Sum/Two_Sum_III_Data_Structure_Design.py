@@ -21,13 +21,13 @@ class TwoSum( object ):
                 :type target: int
                 :rtype: bool
                 """
-                temp = { }
+                dictionary = { }
                 for key, value in self.hash_table.items():
                         difference = target - key
-                        if ( difference in self.hash_table and value == 2 ) or ( difference in temp ):
+                        if ( difference in self.hash_table and value == 2 ) or ( difference in dictionary ):
                                 return True
                         else:
-                                temp[ key ] = 1
+                                dictionary[ key ] = 1
                 return False
 
 # Your TwoSum object will be instantiated and called as such:
