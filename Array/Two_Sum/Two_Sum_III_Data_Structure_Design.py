@@ -24,9 +24,7 @@ class TwoSum( object ):
                 temp = { }
                 for key, val in self.hash_table.items():
                         difference = value - key
-                        if difference in self.hash_table and val == 2:
-                                return True
-                        elif difference in temp:
+                        if ( difference in self.hash_table and val == 2 ) or ( difference in temp ):
                                 return True
                         else:
                                 temp[ key ] = 1
