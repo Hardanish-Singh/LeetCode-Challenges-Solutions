@@ -1,4 +1,4 @@
-class TwoSum(object):
+class TwoSum( object ):
 
         def __init__(self):
                 self.hash_table = { }
