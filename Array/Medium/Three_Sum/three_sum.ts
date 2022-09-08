@@ -13,20 +13,20 @@ function threeSum( nums: Array<number> ): Array<Array<number>> {
         let target: number = 0;
 
 	for( let i: number = 0; i < nums.length; i++ ) {
-		let leftIndex: number = i + 1;
-		let rightIndex: number = nums.length - 1;
+		let leftPointer: number = i + 1;
+		let rightPointer: number = nums.length - 1;
 		
-		while( leftIndex < rightIndex ) {
-			if( nums[leftIndex] + nums[rightIndex] + nums[i] < target) {
-				leftIndex++;
+		while( leftPointer < rightPointer ) {
+			if( nums[leftPointer] + nums[rightPointer] + nums[i] < target ) {
+				leftPointer++;
 			}
-			else if( nums[leftIndex] + nums[rightIndex] + nums[i] > target) {
-				rightIndex--;
+			else if( nums[leftPointer] + nums[rightPointer] + nums[i] > target ) {
+				rightPointer--;
 			}
-			else if( nums[leftIndex] + nums[rightIndex] + nums[i] === target) {
-				hash_table[ nums[i] + "," + nums[leftIndex] + "," + nums[rightIndex] ] = true;
-				leftIndex++;
-				rightIndex--;
+			else if( nums[leftPointer] + nums[rightPointer] + nums[i] === target ) {
+				hash_table[ nums[i] + "," + nums[leftPointer] + "," + nums[rightPointer] ] = true;
+				leftPointer++;
+				rightPointer--;
 			}
 		}	
 		
