@@ -8,10 +8,10 @@
 function threeSum( nums: Array<number> ): Array<Array<number>> {
 	nums.sort( (a, b) => a - b );
 	let hash_table: {
-		[key: string]: boolean
+		[ key: string ]: boolean
 	} = {};
         let target: number = 0;
-	for( let i: number = 0; i<nums.length; i++ ) {
+	for( let i: number = 0; i < nums.length; i++ ) {
 		let leftIndex: number = i + 1;
 		let rightIndex: number = nums.length - 1;
 		
