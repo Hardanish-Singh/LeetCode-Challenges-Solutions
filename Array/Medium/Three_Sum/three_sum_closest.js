@@ -35,13 +35,13 @@ function threeSumClosest( nums, target ) {
                                 prevAbsDiff = absDiff;
                                 threeSumClosestSum = min;
                         }
-                        if( nums[leftIndex] + nums[rightIndex] + nums[i] < target) {
+                        if( nums[leftIndex] + nums[rightIndex] + nums[i] < target ) {
 				leftIndex++;
 			}
-			else if( nums[leftIndex] + nums[rightIndex] + nums[i] > target) {
+			else if( nums[leftIndex] + nums[rightIndex] + nums[i] > target ) {
 				rightIndex--;
 			}
-			else if( nums[leftIndex] + nums[rightIndex] + nums[i] === target) {
+			else if( nums[leftIndex] + nums[rightIndex] + nums[i] === target ) {
                                return min;
 			}
 		}	
