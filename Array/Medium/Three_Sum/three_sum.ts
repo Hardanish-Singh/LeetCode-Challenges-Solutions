@@ -32,8 +32,8 @@ function threeSum( nums: Array<number> ): Array<Array<number>> {
 	}
 	
 	let triplets: Array<Array<number>> = [];
-        for(const key of Object.keys(hash_table)) {
-		triplets.push(key.split(",").map(Number));     
+        for( const key of Object.keys( hash_table ) ) {
+		triplets.push( key.split(",").map( Number ) );     
         }
 	return triplets;
 }
