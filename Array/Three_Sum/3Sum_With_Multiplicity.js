@@ -12,19 +12,19 @@ var threeSumMulti = function( nums, target ) {
         let count = 0;
         
 	for( let i = 0; i < nums.length; i++ ) {
-		let leftIndex = i + 1;
-		let rightIndex = nums.length - 1;
+		let leftPointer = i + 1;
+		let rightPointer = nums.length - 1;
 		
-		while( leftIndex < rightIndex ) {
-                        if( nums[leftIndex] + nums[rightIndex] + nums[i] < target ) {
-				leftIndex++;
+		while( leftPointer < rightPointer ) {
+                        if( nums[leftPointer] + nums[rightPointer] + nums[i] < target ) {
+				leftPointer++;
 			}
-			else if( nums[leftIndex] + nums[rightIndex] + nums[i] > target ) {
-				rightIndex--;
+			else if( nums[leftPointer] + nums[rightPointer] + nums[i] > target ) {
+				rightPointer--;
 			}
-			else if( nums[leftIndex] + nums[rightIndex] + nums[i] === target ) {
-                                if( nums[leftIndex] === nums[rightIndex] ) {
-                                        let n = rightIndex - leftIndex;
+			else if( nums[leftPointer] + nums[rightPointer] + nums[i] === target ) {
+                                if( nums[leftPointer] === nums[rightPointer] ) {
+                                        let n = rightPointer - leftPointer;
                                         count += Math.floor( ( n * (n + 1) ) / 2 ) ;
                                         break;
                                 }
@@ -32,8 +32,8 @@ var threeSumMulti = function( nums, target ) {
                                 count++;
 
                                 // FIX LEFT POINTER & MOVE RIGHT POINTER
-                                let start = leftIndex;
-                                let end = rightIndex - 1;
+                                let start = leftPointer;
+                                let end = rightPointer - 1;
                                 while( start < end ) {
                                         if( nums[ i ] + nums[ start ] + nums[ end ] === target ) {
                                                 count++;
@@ -44,8 +44,8 @@ var threeSumMulti = function( nums, target ) {
                                 }
 
                                 // FIX RIGHT POINTER & MOVE LEFT POINTER
-                                start = leftIndex + 1;
-                                end = rightIndex;
+                                start = leftPointer + 1;
+                                end = rightPointer;
                                 while( start < end ) {
                                         if( nums[ i ] + nums[ start ] + nums[ end ] === target ) {
                                                 count++;
@@ -55,8 +55,8 @@ var threeSumMulti = function( nums, target ) {
                                         start++;
                                 }
                                 
-				leftIndex++;
-				rightIndex--;
+				leftPointer++;
+				rightPointer--;
 			}
 		}
 	}
