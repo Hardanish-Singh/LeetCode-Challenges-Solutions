@@ -25,7 +25,7 @@ var threeSumSmaller = function( nums, target ) {
                                         if( nums[ i ] + nums[ start ] + nums[ end ] < target ) {
                                                 sum++;
                                         } 
-                                        else{
+                                        else {
                                                 break;
                                         }
                                         end--;
