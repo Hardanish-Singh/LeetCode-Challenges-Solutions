@@ -30,7 +30,7 @@ function threeSumClosest( nums, target ) {
 				rightIndex--;
 			}
 			else if( nums[leftIndex] + nums[rightIndex] + nums[i] === target ) {
-                               break;
+                               return sum;
 			}
 		}	
 		
