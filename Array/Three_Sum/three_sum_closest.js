@@ -13,23 +13,23 @@ function threeSumClosest( nums, target ) {
         let prevAbsDiff = Number.MAX_VALUE;
 	
 	for( let i = 0; i < nums.length-1; i++ ) {
-                let leftIndex = i + 1;
-		let rightIndex = nums.length - 1;
+                let leftPointer = i + 1;
+		let rightPointer = nums.length - 1;
 		
-		while( leftIndex < rightIndex ) {
-                        let sum = nums[i] + nums[leftIndex] + nums[rightIndex];
+		while( leftPointer < rightPointer ) {
+                        let sum = nums[i] + nums[leftPointer] + nums[rightPointer];
                         currentAbsDiff = Math.abs( sum - target );
                         if( currentAbsDiff < prevAbsDiff ) {
                                 prevAbsDiff = currentAbsDiff;
                                 threeSumClosestSum = sum;
                         }
-                        if( nums[leftIndex] + nums[rightIndex] + nums[i] < target ) {
-				leftIndex++;
+                        if( nums[leftPointer] + nums[rightPointer] + nums[i] < target ) {
+				leftPointer++;
 			}
-			else if( nums[leftIndex] + nums[rightIndex] + nums[i] > target ) {
-				rightIndex--;
+			else if( nums[leftPointer] + nums[rightPointer] + nums[i] > target ) {
+				rightPointer--;
 			}
-			else if( nums[leftIndex] + nums[rightIndex] + nums[i] === target ) {
+			else if( nums[leftPointer] + nums[rightPointer] + nums[i] === target ) {
                                return sum;
 			}
 		}	
