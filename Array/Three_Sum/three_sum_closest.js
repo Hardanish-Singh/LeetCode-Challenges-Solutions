@@ -10,7 +10,7 @@ function threeSumClosest( nums, target ) {
 	nums.sort( (a, b) => a - b );
         let threeSumClosestSum = 0;
         let absDiff;
-        let prevAbsDiff = null;
+        let prevAbsDiff = Number.MAX_VALUE;
         let min;
 	
 	for( let i = 0; i < nums.length-1; i++ ) {
