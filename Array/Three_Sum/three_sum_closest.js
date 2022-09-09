@@ -11,14 +11,13 @@ function threeSumClosest( nums, target ) {
         let threeSumClosestSum = 0;
         let currentAbsDiff;
         let prevAbsDiff = Number.MAX_VALUE;
-        let sum;
 	
 	for( let i = 0; i < nums.length-1; i++ ) {
                 let leftIndex = i + 1;
 		let rightIndex = nums.length - 1;
 		
 		while( leftIndex < rightIndex ) {
-                        sum = nums[i] + nums[leftIndex] + nums[rightIndex];
+                        let sum = nums[i] + nums[leftIndex] + nums[rightIndex];
                         currentAbsDiff = Math.abs( sum - target );
                         if( prevAbsDiff > currentAbsDiff ) {
                                 prevAbsDiff = currentAbsDiff;
