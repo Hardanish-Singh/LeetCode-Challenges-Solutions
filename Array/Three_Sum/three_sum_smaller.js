@@ -6,7 +6,7 @@
  * @return { number }
 */
 
-var threeSumSmaller = function(nums, target) {
+var threeSumSmaller = function( nums, target ) {
         nums.sort( (a, b) => a - b );
         let sum = 0;
 	
