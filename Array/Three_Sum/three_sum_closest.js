@@ -18,14 +18,6 @@ function threeSumClosest( nums, target ) {
 		let rightIndex = nums.length - 1;
 		
 		while( leftIndex < rightIndex ) {
-                        if( nums[leftIndex] === nums[leftIndex-1] && leftIndex != i + 1 ) {
-                                leftIndex++;
-                                continue;
-                        }
-                        if( nums[rightIndex] === nums[rightIndex+1] && rightIndex != nums.length - 1 ) {
-                                rightIndex--;
-                                continue;
-                        }
                         min = nums[i] + nums[leftIndex] + nums[rightIndex];
                         absDiff = Math.abs( min - target );
                         if( prevAbsDiff == null || prevAbsDiff > absDiff ) {
