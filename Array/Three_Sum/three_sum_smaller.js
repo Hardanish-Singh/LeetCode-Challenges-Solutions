@@ -11,16 +11,16 @@ var threeSumSmaller = function( nums, target ) {
         let sum = 0;
 	
 	for( let i = 0; i < nums.length-1; i++ ) {
-                let leftIndex = i + 1;
-		let rightIndex = nums.length - 1;
+                let leftPointer = i + 1;
+		let rightPointer = nums.length - 1;
 		
-		while( leftIndex < rightIndex ) {
-                        if( nums[leftIndex] + nums[rightIndex] + nums[i] < target ) {
+		while( leftPointer < rightPointer ) {
+                        if( nums[leftPointer] + nums[rightPointer] + nums[i] < target ) {
                                 sum++;
                                 
                                 // FIX LEFT POINTER & MOVE RIGHT POINTER
-                                let start = leftIndex;
-                                let end = rightIndex - 1;
+                                let start = leftPointer;
+                                let end = rightPointer - 1;
                                 while( start < end ) {
                                         if( nums[ i ] + nums[ start ] + nums[ end ] < target ) {
                                                 sum++;
@@ -31,10 +31,10 @@ var threeSumSmaller = function( nums, target ) {
                                         end--;
                                 }
                                 
-				leftIndex++;
+				leftPointer++;
 			}
 			else{
-				rightIndex--;
+				rightPointer--;
 			}
 		}	
 		
