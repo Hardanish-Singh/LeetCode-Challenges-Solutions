@@ -17,7 +17,7 @@ var threeSumSmaller = function( nums, target ) {
 		while( leftPointer < rightPointer ) {
                         if( nums[leftPointer] + nums[rightPointer] + nums[i] < target ) {
                                 sum++;
-                                
+                                // NOW WE NEED TO FIND HOW MANY PAIRS WITH leftPointer index THAT SATISFY THIS CONDITION?
                                 // FIX LEFT POINTER & MOVE RIGHT POINTER
                                 let start = leftPointer;
                                 let end = rightPointer - 1;
