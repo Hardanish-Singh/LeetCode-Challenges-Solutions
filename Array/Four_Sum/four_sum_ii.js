@@ -14,10 +14,10 @@ var fourSumCount = function( nums1, nums2, nums3, nums4 ) {
         
         for( let i = 0; i < nums1.length; i++ ) {
                 for( let j = 0; j < nums2.length; j++ ) {
-                        if( !hash_table[ nums1[i] + nums2[j] ] ) {
-                                hash_table[ nums1[i] + nums2[j] ] = 1;
-                        } else {
+                        if( nums1[i] + nums2[j] in hash_table ) {
                                 hash_table[ nums1[i] + nums2[j] ] += 1;
+                        } else {
+                                hash_table[ nums1[i] + nums2[j] ] = 1;
                         }
                 }
         }
@@ -25,7 +25,7 @@ var fourSumCount = function( nums1, nums2, nums3, nums4 ) {
         for( let i = 0; i < nums3.length; i++ ) {
                 for( let j = 0; j < nums4.length; j++ ) {
                         let compliment = - ( nums3[i] + nums4[j] );
-                        if( hash_table[ compliment ] ) {
+                        if( compliment in hash_table ) {
                                 count += hash_table[ compliment ];
                         }
                 }
