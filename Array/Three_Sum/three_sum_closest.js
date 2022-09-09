@@ -9,7 +9,7 @@
 function threeSumClosest( nums, target ) {
 	nums.sort( (a, b) => a - b );
         let threeSumClosestSum = 0;
-        let absDiff;
+        let currentAbsDiff;
         let prevAbsDiff = Number.MAX_VALUE;
         let sum;
 	
@@ -19,9 +19,9 @@ function threeSumClosest( nums, target ) {
 		
 		while( leftIndex < rightIndex ) {
                         sum = nums[i] + nums[leftIndex] + nums[rightIndex];
-                        absDiff = Math.abs( sum - target );
-                        if( prevAbsDiff > absDiff ) {
-                                prevAbsDiff = absDiff;
+                        currentAbsDiff = Math.abs( sum - target );
+                        if( prevAbsDiff > currentAbsDiff ) {
+                                prevAbsDiff = currentAbsDiff;
                                 threeSumClosestSum = sum;
                         }
                         if( nums[leftIndex] + nums[rightIndex] + nums[i] < target ) {
