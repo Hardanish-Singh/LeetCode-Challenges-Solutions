@@ -19,7 +19,7 @@ function threeSumClosest( nums, target ) {
 		while( leftIndex < rightIndex ) {
                         let sum = nums[i] + nums[leftIndex] + nums[rightIndex];
                         currentAbsDiff = Math.abs( sum - target );
-                        if( prevAbsDiff > currentAbsDiff ) {
+                        if( currentAbsDiff < prevAbsDiff ) {
                                 prevAbsDiff = currentAbsDiff;
                                 threeSumClosestSum = sum;
                         }
