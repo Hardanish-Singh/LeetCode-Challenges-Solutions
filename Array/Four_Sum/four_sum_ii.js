@@ -24,9 +24,9 @@ var fourSumCount = function( nums1, nums2, nums3, nums4 ) {
 
         for( let i = 0; i < nums3.length; i++ ) {
                 for( let j = 0; j < nums4.length; j++ ) {
-                        let diff = - ( nums3[i] + nums4[j] );
-                        if( hash_table[ diff ] ) {
-                                count += hash_table[ diff ];
+                        let compliment = - ( nums3[i] + nums4[j] );
+                        if( hash_table[ compliment ] ) {
+                                count += hash_table[ compliment ];
                         }
                 }
         }
