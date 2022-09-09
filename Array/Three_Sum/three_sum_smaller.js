@@ -30,10 +30,9 @@ var threeSumSmaller = function( nums, target ) {
                                         }
                                         end--;
                                 }
-                                
 				leftPointer++;
 			}
-			else{
+			else {
 				rightPointer--;
 			}
 		}	
