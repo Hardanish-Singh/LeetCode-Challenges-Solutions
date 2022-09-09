@@ -14,9 +14,6 @@ function threeSumClosest( nums, target ) {
         let min;
 	
 	for( let i=0; i<nums.length-1; i++ ) {
-                if( nums[i] === nums[i-1] ) {
-                        continue;
-                }
                 let leftIndex = i + 1;
 		let rightIndex = nums.length - 1;
 		
