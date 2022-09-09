@@ -24,8 +24,8 @@ var fourSum = function( nums, target ) {
         let hash_table = {};
         for( let u = 0; u < nums.length; u++ ) {
                 for( let i = u + 1; i < nums.length; i++ ) {
-                        let leftIndex = i+1;
-                        let rightIndex = nums.length-1;
+                        let leftIndex = i + 1;
+                        let rightIndex = nums.length - 1;
 
                         while( leftIndex < rightIndex ) {
                                 if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] < target) {
