@@ -19,42 +19,33 @@
  * @return { number[][] }
 */
  
-var fourSum = function(nums, target) {
+var fourSum = function( nums, target ) {
         nums.sort( (a, b) => a - b );
-        let quadruplets = [];
-        let leftIndexes = { };
+        let hash_table = {};
         for (let u = 0; u < nums.length; u++) {
-                if( u > 0 && nums[u] == nums[u - 1] ) {
-                        continue;
-                }
                 for( let i = u + 1; i<nums.length; i++ ) {
-                        if( i > u + 1 && nums[i] == nums[i-1]) {
-                                continue;
-                        }
-                        leftIndexes[i] = true;
                         let leftIndex = i+1;
                         let rightIndex = nums.length-1;
 
                         while( leftIndex < rightIndex ) {
-                                if( nums[leftIndex] === nums[leftIndex-1] && !( leftIndexes[ leftIndex - 1 ] ) ) {
-                                        leftIndex++;
-                                }
-                                else if( nums[rightIndex] === nums[rightIndex+1] ) {
-                                        rightIndex--;
-                                }
-                                else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] < target) {
+                                if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] < target) {
                                         leftIndex++;
                                 }
                                 else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] > target) {
                                         rightIndex--;
                                 }
                                 else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] === target) {
-                                        quadruplets.push( [ nums[u], nums[i], nums[leftIndex], nums[rightIndex] ] );
+                                        // quadruplets.push( [ nums[u], nums[i], nums[leftIndex], nums[rightIndex] ] );
+                                        hash_table[ nums[i] + "," + nums[u] + "," + nums[leftIndex] + "," + nums[rightIndex] ] = true;
                                         leftIndex++;
                                         rightIndex--;
                                 }
                         }
                 }
+        }
+        let quadruplets = [];
+        for( const key of Object.keys( hash_table ) ) {
+		quadruplets.push( key.split(",").map( Number ) );     
         }
         return quadruplets;
 };
