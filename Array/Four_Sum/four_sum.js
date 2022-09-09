@@ -22,8 +22,8 @@
 var fourSum = function( nums, target ) {
         nums.sort( (a, b) => a - b );
         let hash_table = {};
-        for(let u = 0; u < nums.length; u++) {
-                for( let i = u + 1; i<nums.length; i++ ) {
+        for( let u = 0; u < nums.length; u++ ) {
+                for( let i = u + 1; i < nums.length; i++ ) {
                         let leftIndex = i+1;
                         let rightIndex = nums.length-1;
 
@@ -35,7 +35,6 @@ var fourSum = function( nums, target ) {
                                         rightIndex--;
                                 }
                                 else if( nums[u] + nums[leftIndex] + nums[rightIndex] + nums[i] === target) {
-                                        // quadruplets.push( [ nums[u], nums[i], nums[leftIndex], nums[rightIndex] ] );
                                         hash_table[ nums[i] + "," + nums[u] + "," + nums[leftIndex] + "," + nums[rightIndex] ] = true;
                                         leftIndex++;
                                         rightIndex--;
