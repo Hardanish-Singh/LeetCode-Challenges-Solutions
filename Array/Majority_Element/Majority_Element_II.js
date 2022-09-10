@@ -10,7 +10,6 @@ var majorityElement = function( nums ) {
         let numbers = {
                 
         };
-        let index = 0;
         let result = [];
 
         for( let i = 0; i < nums.length; i++ ) {
@@ -18,15 +17,14 @@ var majorityElement = function( nums ) {
                 if( nums[i] in numbers ) {
                         continue;
                 }
-                for( let j = i + 1; j < nums.length; j++ ){
+                for( let j = i + 1; j < nums.length; j++ ) {
                         if( nums[i] === nums[j] ) {
                                 numbers[nums[i]] = true;
                                 count++;
                         }
                 }
                 if( count >= majority ) {
-                        index = i;
-                        result.push( nums[index] );
+                        result.push( nums[i] );
                 }
         }
 
