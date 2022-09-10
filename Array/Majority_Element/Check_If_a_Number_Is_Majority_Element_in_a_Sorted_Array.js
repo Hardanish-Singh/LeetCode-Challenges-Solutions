@@ -18,7 +18,7 @@ var isMajorityElement = function( nums, target ) {
                 if( nums[i] in numbers ) {
                         continue;
                 }
-                for( let j = i + 1; j < nums.length; j++ ){
+                for( let j = i + 1; j < nums.length; j++ ) {
                         if( nums[i] === nums[j] ) {
                                 numbers[nums[i]] = true;
                                 count++;
