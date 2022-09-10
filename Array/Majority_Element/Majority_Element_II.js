@@ -1,12 +1,12 @@
 // Leetcode: https://leetcode.com/problems/majority-element-ii/
 
-/*
+/**
  * @param { number[] } nums
  * @return { number[] }
 */
 
 var majorityElement = function( nums ) {
-        let majority = Math.floor( nums.length / 3 );
+        let majority = parseInt( nums.length / 3 );
         let numbers = {
                 
         };
