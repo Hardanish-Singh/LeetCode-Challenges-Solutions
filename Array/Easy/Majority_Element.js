@@ -10,11 +10,10 @@ var majorityElement = function( nums ) {
         let numbers = {
                 
         };
-        let count = 0;
         let index = 0;
 
         for( let i = 0; i < nums.length; i++ ) {
-                count = 0;
+                let count = 0;
                 if( nums[i] in numbers ) {
                         continue;
                 }
