@@ -15,5 +15,5 @@ var containsNearbyAlmostDuplicate = function( nums, k, t ) {
                         }
                 }
         }
-        return false;
+        return false; 
 };
