@@ -6,7 +6,7 @@
 */
 
 var containsDuplicate = function( nums ) {
-        var countOccurrences = { };
+        let countOccurrences = { };
         for( let i = 0; i < nums.length; i++ ) {
                 if( countOccurrences[ nums[ i ] ] ) {
                         return true;
