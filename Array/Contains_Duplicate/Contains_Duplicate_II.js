@@ -30,7 +30,7 @@ var containsNearbyDuplicate = function( nums, k ) {
 */
 
 var containsNearbyDuplicate = function( nums, k ) {
-        let countOccurrences = { }; 
+        let countOccurrences = { };
         for( let i = 0; i < nums.length; i++ ) {
                 if( nums[ i ] in countOccurrences && Math.abs( i - countOccurrences[ nums[ i ] ] ) <= k ) {
                         return true;
