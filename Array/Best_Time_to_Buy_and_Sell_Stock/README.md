@@ -1,6 +1,6 @@
 We will consider each day and see how many possible "states" do we have for each day and then find "choices" corresponding to each state.
 
-Let's talk about the constraints first:
+Let's talk about the constraints first: \n
         1) Sell must be after Buy.
         2) Buy must be after Sell.
         3) Limit on the number of transaction(k), k>0.
