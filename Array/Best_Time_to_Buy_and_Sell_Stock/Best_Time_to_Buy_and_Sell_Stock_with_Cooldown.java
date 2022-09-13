@@ -8,13 +8,10 @@ class Solution {
                 int[] sell = new int[k + 1];
                 Arrays.fill(buy, Integer.MAX_VALUE);
 
-                int i = 1;
-                int cooldown = sell[ i - 1 ];
-
                 for (int price : prices) {
-                        for( i = 1; i <= k; i++ ) {
-                                buy[ i ] = Math.min( buy[ i ], price - cooldown );
-                                cooldown = sell[i];
+                        for( int i = 1; i <= k; i++ ) {
+                                buy[ i ] = Math.min( buy[ i ], price - sell[i-1] );
+                                sell[i-1] = sell[i];
                                 sell[ i ] = Math.max( sell[ i ], price - buy[ i ] );
                         }
                 }
