@@ -10,7 +10,7 @@ class Solution
                 int[] sell = new int[k + 1];
                 Arrays.fill( buy, Integer.MAX_VALUE );
 
-                for (int price : prices) 
+                for(int price : prices) 
                 {
                         for(int i = 1; i <= k; i++) 
                         {
