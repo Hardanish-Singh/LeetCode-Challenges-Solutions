@@ -9,9 +9,9 @@ class Solution
                 int[] sell = new int[k + 1];
                 Arrays.fill( buy, Integer.MAX_VALUE );
 
-                for( int price : prices )
+                for(int price : prices)
                 {
-                        for( int i = 1; i <= k; i++ )
+                        for(int i = 1; i <= k; i++)
                         {
                                 buy[ i ] = Math.min( buy[ i ], price - sell[ i - 1 ] );
                                 sell[ i ] = Math.max( sell[ i ], price - buy[ i ] );
