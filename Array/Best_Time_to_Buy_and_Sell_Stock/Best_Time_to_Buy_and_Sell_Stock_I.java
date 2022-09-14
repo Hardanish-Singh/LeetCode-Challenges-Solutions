@@ -13,7 +13,7 @@ class Solution
                 {
                         for(int i = 1; i <= k; i++)
                         {
-                                buy[i] = Math.min( buy[i], price - sell[i - 1] );
+                                buy[i] = Math.min( buy[i], price - sell[i - 1] ); 
                                 sell[i] = Math.max( sell[i], price - buy[i] );
                         }
                 }
