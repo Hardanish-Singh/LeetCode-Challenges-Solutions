@@ -46,11 +46,11 @@ var checkIfExist = function( arr ) {
 var checkIfExist = function( arr ) {
         let dictionary = { };
         
-        for( let i=0; i<arr.length; i++ ) {
+        for( let i = 0; i < arr.length; i++ ) {
                 if( arr[i] * 2 in dictionary || arr[i] / 2 in dictionary ) {
                         return true;
                 }
-                dictionary[arr[i]] = i;
+                dictionary[ arr[i] ] = true;
         }
 
         return false;
