@@ -5,6 +5,7 @@
  * @return { string }
 */
 
+// SOLUTION 1
 var longestCommonPrefix = function( strs ) {
         strs = strs.sort( ( a, b ) => a.length - b.length );
         let word = strs[0];
@@ -25,3 +26,10 @@ var longestCommonPrefix = function( strs ) {
 
         return "";
 };
+
+// SOLUTION 2
+
+/**
+ * @param { string[] } strs
+ * @return { string }
+*/
