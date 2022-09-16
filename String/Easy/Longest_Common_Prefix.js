@@ -13,7 +13,7 @@ var longestCommonPrefix = function( strs ) {
         while( word.length !== 0 ) {
                 let isLongestPrefix = true;
                 for( let i = 1; i < strs.length; i++ ) {
-                        if( !strs[i].startsWith(word) ) {
+                        if( strs[i].indexOf(word) !== 0 ) {
                                 isLongestPrefix = false;
                                 break;
                         }
