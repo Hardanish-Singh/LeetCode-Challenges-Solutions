@@ -1,12 +1,12 @@
 var isValid = function( s ) {
-    var stack = s.split("");
-    var validBrackets = {
+    let stack = s.split("");
+    let validBrackets = {
         ')' : '(',
         ']' : '[',
         '}' : '{'
-    };
-    var i = 0;
-    
+        };
+    let i = 0;
+
     while( true ) {
         if( stack.length === 0 ) {
             return true;
