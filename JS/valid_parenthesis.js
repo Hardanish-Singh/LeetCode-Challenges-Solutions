@@ -9,7 +9,7 @@ var isValid = function( s ) {
         ')' : '(',
         ']' : '[',
         '}' : '{'
-        };
+    };
     let i = 0;
 
     while( true ) {
