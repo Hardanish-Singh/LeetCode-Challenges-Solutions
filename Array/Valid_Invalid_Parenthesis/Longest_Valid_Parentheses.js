@@ -27,7 +27,7 @@ var longestValidParentheses = function( s ) {
         let stack = [];
         let temp = [];
 
-       for( let i = 0; i < s.length; i++ ) {
+        for( let i = 0; i < s.length; i++ ) {
                 if( s[i] === '(' ) {
                         stack.push( i ); 
                 }
@@ -39,15 +39,15 @@ var longestValidParentheses = function( s ) {
                 }
         }
         
-        // MERGE NESTED BRACKETS
+        // MERGE NESTED BRACKETS/INTERVALS & OVERLAPPING INTERVALS
         temp = mergeIntervals(temp);
-        // MAKE CONSECUTIVE BRACKETS SAME 
+        // CONSTRUCT CONSECUTIVE BRACKETS 
         for( let i = 0; i < temp.length - 1; i++ ) {
                 if( temp[i + 1][0] - temp[i][1] === 1 ) {
                         temp[i + 1][0] = temp[i][1];
                 }
         }
-        // MERGE CONSECUTIVE BRACKTES
+        // MERGE OVERLAPPING INTERVALS
         temp = mergeIntervals(temp);
         if( temp.length == 0 ) {
                 return 0;
@@ -55,7 +55,7 @@ var longestValidParentheses = function( s ) {
         
         let result = [];
         for( let i = 0; i < temp.length; i++ ) {
-                result.push( ( temp[i][1] - temp[i][0] ) + 1 );
+                result.push( temp[i][1] - temp[i][0] + 1 );
         }
         return Math.max.apply( null, result );
 };
