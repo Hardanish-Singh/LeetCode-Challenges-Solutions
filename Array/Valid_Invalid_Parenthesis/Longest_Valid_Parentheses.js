@@ -25,17 +25,15 @@ var merge = function( intervals ) {
 var longestValidParentheses = function( s ) {
 
         let stack = [];
-        let i = 0;
-        let count = 0;
         let temp = [];
 
-       for(let i = 0; i < s.length; i++) {
+       for( let i = 0; i < s.length; i++ ) {
                 if( s[i] === '(' ) {
                         stack.push( i ); 
                 }
                 else {
                         let item = stack.pop();
-                        if(item != null) {
+                        if( item != null ) {
                                 temp.push( [item, i] );
                         }
                 }
@@ -51,15 +49,13 @@ var longestValidParentheses = function( s ) {
         }
         // MERGE CONSECUTIVE BRACKTES
         temp = merge(temp);
-        if(temp.length == 0) {
+        if( temp.length == 0 ) {
                 return 0;
         }
         
-        let t2 = [];
+        let result = [];
         for( let i = 0; i < temp.length; i++ ) {
-                t2.push( ( temp[i][1] - temp[i][0] ) + 1 );
+                result.push( ( temp[i][1] - temp[i][0] ) + 1 );
         }
-        return Math.max.apply(null, t2);
+        return Math.max.apply( null, result );
 };
-
-
