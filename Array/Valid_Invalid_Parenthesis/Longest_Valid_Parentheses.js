@@ -5,7 +5,7 @@
  * @return { number }
 */
 
-var merge = function( intervals ) {
+var mergeIntervals = function( intervals ) {
         intervals.sort( (a,b) => a[0] - b[0] );
         for( let i = 0; i < intervals.length - 1; i++ ) {
                 let j = i + 1;
@@ -40,7 +40,7 @@ var longestValidParentheses = function( s ) {
         }
         
         // MERGE NESTED BRACKETS
-        temp = merge(temp);
+        temp = mergeIntervals(temp);
         // MAKE CONSECUTIVE BRACKETS SAME 
         for( let i = 0; i < temp.length - 1; i++ ) {
                 if( temp[i + 1][0] - temp[i][1] === 1 ) {
@@ -48,7 +48,7 @@ var longestValidParentheses = function( s ) {
                 }
         }
         // MERGE CONSECUTIVE BRACKTES
-        temp = merge(temp);
+        temp = mergeIntervals(temp);
         if( temp.length == 0 ) {
                 return 0;
         }
