@@ -13,9 +13,9 @@ var mergeIntervals = function( intervals ) {
                         intervals[i + 1][0] = intervals[i][1];
                 }
                 if( 
-                        intervals[j][0] >= intervals[i][0] 
-                                && 
-                        intervals[j][0] <= intervals[i][1] 
+                        intervals[j][0] >= intervals[i][0]
+                                &&
+                        intervals[j][0] <= intervals[i][1]
                 ) {
                         intervals[i] = [ intervals[i][0], Math.max( intervals[i][1], intervals[j][1] ) ];
                         intervals.splice(j, 1);
