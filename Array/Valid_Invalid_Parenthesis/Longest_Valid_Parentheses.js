@@ -9,6 +9,9 @@ var mergeIntervals = function( intervals ) {
         intervals.sort( (a,b) => a[0] - b[0] );
         for( let i = 0; i < intervals.length - 1; i++ ) {
                 let j = i + 1;
+                if( intervals[i + 1][0] - intervals[i][1] === 1 ) {
+                        intervals[i + 1][0] = intervals[i][1];
+                }
                 if( 
                         intervals[j][0] >= intervals[i][0] 
                                 && 
@@ -35,15 +38,6 @@ var longestValidParentheses = function( s ) {
                         if( stack.length > 0 ) {
                                 brackets.push( [stack.pop(), i] );    
                         }
-                }
-        }
-        
-        // MERGE NESTED BRACKETS/INTERVALS & OVERLAPPING INTERVALS
-        brackets = mergeIntervals(brackets);
-        // CONSTRUCT CONSECUTIVE BRACKETS 
-        for( let i = 0; i < brackets.length - 1; i++ ) {
-                if( brackets[i + 1][0] - brackets[i][1] === 1 ) {
-                        brackets[i + 1][0] = brackets[i][1];
                 }
         }
         // MERGE OVERLAPPING INTERVALS
