@@ -51,7 +51,7 @@ var longestValidParentheses = function( s ) {
                 return 0;
         }
         
-        let max = 0;
+        let max = 0; 
         for( let i = 0; i < brackets.length; i++ ) {
                 max = Math.max( max, brackets[i][1] - brackets[i][0] + 1 );
         }
