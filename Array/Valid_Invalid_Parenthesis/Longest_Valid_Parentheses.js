@@ -46,9 +46,9 @@ var longestValidParentheses = function( s ) {
                 return 0;
         }
         
-        let result = [];
+        let max = -1;
         for( let i = 0; i < brackets.length; i++ ) {
-                result.push( brackets[i][1] - brackets[i][0] + 1 );
+                max = Math.max( max, brackets[i][1] - brackets[i][0] + 1 );
         }
-        return Math.max.apply( null, result );
+        return max;
 };
