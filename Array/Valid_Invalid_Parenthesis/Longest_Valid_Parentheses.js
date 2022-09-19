@@ -1,8 +1,8 @@
 // Leetcode: https://leetcode.com/problems/longest-valid-parentheses/
 
 /**
- * @param { string } s
- * @return { number }
+ * @param { number[][] } intervals
+ * @return { number[][] }
 */
 
 var mergeIntervals = function( intervals ) {
@@ -24,6 +24,11 @@ var mergeIntervals = function( intervals ) {
         }
         return intervals;
 };
+
+/**
+ * @param { string } s
+ * @return { number }
+*/
 
 var longestValidParentheses = function( s ) {
 
