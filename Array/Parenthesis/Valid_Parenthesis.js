@@ -25,13 +25,11 @@ var isValid = function( s ) {
                 } else {
                         if( stack.length > 0 && stack[ stack.length - 1 ] === validBrackets[ bracket ] ) {
                                 stack.pop();
-                        } 
-                        else {
+                        } else {
                                 return false;
                         }
                 }
         }
     
-        return stack.length > 0 ? false : true;
-        
+        return stack.length > 0 ? false : true;      
 };
