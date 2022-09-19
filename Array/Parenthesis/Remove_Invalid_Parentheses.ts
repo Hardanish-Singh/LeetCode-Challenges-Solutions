@@ -1,14 +1,18 @@
 // Leetcode: https://leetcode.com/problems/remove-invalid-parentheses/
 
+type Paranthesis = {
+        [key: string]: boolean
+}
+
 /**
  * @param { string } str
  * @param { number } minimumNumberOfBracketsToBeRemoved
  * @param { Set<string> } hash_set
- * @param { { [key: string]: boolean } } isVisited
+ * @param { Paranthesis } isVisited
  * @return { number }
 */
 
-function generateValidParenthesis( str: string, minimumNumberOfBracketsToBeRemoved: number, hash_set: Set<string>, isVisited: { [key: string]: boolean } ) {
+function generateValidParenthesis( str: string, minimumNumberOfBracketsToBeRemoved: number, hash_set: Set<string>, isVisited: Paranthesis ): void {
         if( minimumNumberOfBracketsToBeRemoved === 0 ) {
                 // CHECK IF THE STRING IS VALID
                 if( getMinimumNumberOfBracketsToBeRemoved( str ) === 0 ) {
@@ -59,7 +63,7 @@ function getMinimumNumberOfBracketsToBeRemoved( str: string ): number{
 var removeInvalidParentheses = function( s: string ): Array<string> {
         let minimumNumberOfBracketsToBeRemoved: number = getMinimumNumberOfBracketsToBeRemoved( s );
         let hash_set: Set<string> = new Set<string>();
-        let isVisited: { [key: string]: boolean } = {};
+        let isVisited: Paranthesis = {};
         generateValidParenthesis( s, minimumNumberOfBracketsToBeRemoved, hash_set, isVisited );
         return Array.from( hash_set );
 };
