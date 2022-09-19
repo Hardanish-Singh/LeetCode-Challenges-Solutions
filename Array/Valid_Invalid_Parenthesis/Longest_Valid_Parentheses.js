@@ -36,7 +36,7 @@ var longestValidParentheses = function( s ) {
                 }
                 else {
                         if( stack.length > 0 ) {
-                                brackets.push( [stack.pop(), i] );    
+                                brackets.push( [stack.pop(), i] );
                         }
                 }
         }
