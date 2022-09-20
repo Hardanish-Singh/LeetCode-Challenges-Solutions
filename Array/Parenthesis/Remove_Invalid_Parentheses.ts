@@ -52,12 +52,10 @@ function getMinimumNumberOfBracketsToBeRemoved(str: string): number {
                 if (bracket === "(") {
                         stack.push(bracket);
                 } else if (bracket === ")") {
-                        if (stack.length === 0) {
-                                stack.push(bracket);
-                        } else if (stack[stack.length - 1] === ")") {
-                                stack.push(bracket);
-                        } else if (stack[stack.length - 1] === "(") {
+                        if (stack[stack.length - 1] === "(") {
                                 stack.pop();
+                        } else {
+                                stack.push(bracket);
                         }
                 }
         }
