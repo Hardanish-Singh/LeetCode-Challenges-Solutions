@@ -1,5 +1,13 @@
 // Leetcode: https://leetcode.com/problems/valid-parentheses/
 
+type openingBrackets = {
+        [key: string]: boolean;
+};
+
+type validBrackets = {
+        [key: string]: string;
+};
+
 /**
  * @param { string } s
  * @return { boolean }
@@ -7,16 +15,12 @@
 
 var isValid = function (s: string): boolean {
         let stack: Array<string> = [];
-        let openingBrackets: {
-                [key: string]: boolean;
-        } = {
+        let openingBrackets: openingBrackets = {
                 "(": true,
                 "[": true,
                 "{": true,
         };
-        let validBrackets: {
-                [key: string]: string;
-        } = {
+        let validBrackets: validBrackets = {
                 ")": "(",
                 "]": "[",
                 "}": "{",
