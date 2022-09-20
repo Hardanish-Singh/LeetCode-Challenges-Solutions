@@ -5,21 +5,25 @@
  * @return { boolean }
  */
 
-var isValid = function (s) {
-        let stack = [];
-        let openingBrackets = {
+var isValid = function (s: string): boolean {
+        let stack: Array<string> = [];
+        let openingBrackets: {
+                [key: string]: boolean;
+        } = {
                 "(": true,
                 "[": true,
                 "{": true,
         };
-        let validBrackets = {
+        let validBrackets: {
+                [key: string]: string;
+        } = {
                 ")": "(",
                 "]": "[",
                 "}": "{",
         };
 
-        for (let i = 0; i < s.length; i++) {
-                let bracket = s[i];
+        for (let i: number = 0; i < s.length; i++) {
+                let bracket: string = s[i];
                 if (bracket in openingBrackets) {
                         stack.push(bracket);
                 } else {
