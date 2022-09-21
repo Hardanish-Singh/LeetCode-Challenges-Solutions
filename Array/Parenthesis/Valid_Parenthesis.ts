@@ -9,11 +9,11 @@ type validBrackets = {
 };
 
 /**
- * @param { string } s
+ * @param { string } str
  * @return { boolean }
  */
 
-var isValid = function (s: string): boolean {
+var isValid = function (str: string): boolean {
         let stack: Array<string> = [];
         let openingBrackets: openingBrackets = {
                 "(": true,
@@ -26,8 +26,8 @@ var isValid = function (s: string): boolean {
                 "}": "{",
         };
 
-        for (let i: number = 0; i < s.length; i++) {
-                let bracket: string = s[i];
+        for (let i: number = 0; i < str.length; i++) {
+                let bracket: string = str[i];
                 if (bracket in openingBrackets) {
                         stack.push(bracket);
                 } else {
