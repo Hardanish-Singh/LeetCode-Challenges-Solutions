@@ -13,8 +13,7 @@ function scoreOfParentheses(str: string): number {
                 if (bracket === "(") {
                         stack.push(0);
                 } else {
-                        let item = stack.pop();
-                        let score = 2 * item || 1;
+                        let score = 2 * stack.pop() || 1;
                         stack.length > 0 ? (stack[stack.length - 1] += score) : (stack[0] = score);
                 }
         }
