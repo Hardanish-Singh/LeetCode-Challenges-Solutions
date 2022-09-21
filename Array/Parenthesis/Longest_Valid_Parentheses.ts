@@ -40,7 +40,7 @@ var longestValidParentheses = function (str: string): number {
                 }
         }
         // MERGE OVERLAPPING INTERVALS
-        brackets = mergeIntervals(brackets);
+        mergeIntervals(brackets);
         if (brackets.length == 0) {
                 return 0;
         }
