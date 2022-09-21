@@ -5,10 +5,10 @@
  * @return { number[][] }
  */
 
-var mergeIntervals = function (intervals) {
+var mergeIntervals = function (intervals: Array<Array<number>>): Array<Array<number>> {
         intervals.sort((a, b) => a[0] - b[0]);
-        for (let i = 0; i < intervals.length - 1; i++) {
-                let j = i + 1;
+        for (let i: number = 0; i < intervals.length - 1; i++) {
+                let j: number = i + 1;
                 if (intervals[i + 1][0] - intervals[i][1] === 1) {
                         intervals[i + 1][0] = intervals[i][1];
                 }
@@ -22,16 +22,16 @@ var mergeIntervals = function (intervals) {
 };
 
 /**
- * @param { string } s
+ * @param { string } str
  * @return { number }
  */
 
-var longestValidParentheses = function (s) {
-        let stack = [];
-        let brackets = [];
+var longestValidParentheses = function (str: string): number {
+        let stack: Array<number> = [];
+        let brackets: Array<Array<number>> = [];
 
-        for (let i = 0; i < s.length; i++) {
-                if (s[i] === "(") {
+        for (let i: number = 0; i < str.length; i++) {
+                if (str[i] === "(") {
                         stack.push(i);
                 } else {
                         if (stack.length > 0) {
@@ -46,7 +46,7 @@ var longestValidParentheses = function (s) {
         }
 
         let max = 0;
-        for (let i = 0; i < brackets.length; i++) {
+        for (let i: number = 0; i < brackets.length; i++) {
                 max = Math.max(max, brackets[i][1] - brackets[i][0] + 1);
         }
         return max;
