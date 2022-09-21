@@ -41,7 +41,7 @@ var longestValidParentheses = function (str: string): number {
         }
         // MERGE OVERLAPPING INTERVALS
         mergeIntervals(brackets);
-        if (brackets.length == 0) {
+        if (brackets.length === 0) {
                 return 0;
         }
 
