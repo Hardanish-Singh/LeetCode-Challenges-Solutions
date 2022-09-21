@@ -1,5 +1,10 @@
 // Leetcode: https://leetcode.com/problems/score-of-parentheses/
 
+/**
+ * @param { string } str
+ * @return { number }
+ */
+
 function scoreOfParentheses(str: string): number {
         const stack: Array<number> = [];
 
