@@ -1,16 +1,6 @@
+// Leetcode: https://leetcode.com/problems/generate-parentheses/
+
 /*
-        Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
-
-        Example 1:
-                Input: n = 3
-                Output: [ "((()))", "(()())", "(())()", "()(())", "()()()" ]
-
-        Example 2:
-                Input: n = 1
-                Output: [ "()" ]
-
-        Constraints:
-                1) 1 <= n <= 8
 
         Coding Tips:
                 1) if n = 3, then we can have 3 open & 3 closing parenthesis
@@ -24,25 +14,26 @@
 /*
  * @param { number } n
  * @return { string[] }
-*/
+ */
 
-
-var generateParenthesis = function( n ) {
-        let parenthesis = [
-                ['(', 1, 0]
-        ];
-        while( true ) {
+var generateParenthesis = function (n) {
+        let parenthesis = [["(", 1, 0]];
+        while (true) {
                 let openParenthesisCount = parenthesis[0][1];
                 let closeParenthesisCount = parenthesis[0][2];
                 // RULE 3
-                if( openParenthesisCount == closeParenthesisCount && closeParenthesisCount == n && openParenthesisCount == n ) {
+                if (
+                        openParenthesisCount == closeParenthesisCount &&
+                        closeParenthesisCount == n &&
+                        openParenthesisCount == n
+                ) {
                         break;
                 }
                 let data = parenthesis.shift();
                 let temp = [];
                 let str = "";
                 // RULE 1
-                if( openParenthesisCount < n ) {
+                if (openParenthesisCount < n) {
                         str = data[0] + "(";
                         [, o, c] = data;
                         temp.push(str, ++o, c);
@@ -50,7 +41,7 @@ var generateParenthesis = function( n ) {
                         temp = [];
                 }
                 // RULE 2
-                if( openParenthesisCount > closeParenthesisCount ) {
+                if (openParenthesisCount > closeParenthesisCount) {
                         str = data[0] + ")";
                         [, o, c] = data;
                         temp.push(str, o, ++c);
@@ -58,5 +49,5 @@ var generateParenthesis = function( n ) {
                         temp = [];
                 }
         }
-        return parenthesis.map( result => result[0] );
+        return parenthesis.map((result) => result[0]);
 };
