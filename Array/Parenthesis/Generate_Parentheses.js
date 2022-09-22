@@ -18,12 +18,12 @@
 var generateParenthesis = function (n) {
         let parenthesis = [["(", 1, 0]];
         while (true) {
-                let [bracket, open, close] = parenthesis.shift();
+                let [bracket, open, close] = parenthesis[0];
                 // RULE 3
                 if (open == close && close == n && open == n) {
-                        parenthesis.push([bracket, open, close]);
                         break;
                 }
+                parenthesis.shift();
                 // RULE 1
                 if (open < n) {
                         parenthesis.push([bracket + "(", 1 + open, close]);
