@@ -19,8 +19,7 @@
 var generateParenthesis = function (n) {
         let parenthesis = [["(", 1, 0]];
         while (true) {
-                let open = parenthesis[0][1];
-                let close = parenthesis[0][2];
+                let [, open, close] = parenthesis[0];
                 // RULE 3
                 if (open == close && close == n && open == n) {
                         break;
