@@ -8,7 +8,7 @@
         Rules:
                 1) Only add open parenthesis if open < n
                 2) Only add closing parenthesis if open > close
-                3) We get a valid combination IIF,  openParenthesisCount == closeParenthesisCount && closeParenthesisCount == n && openParenthesisCount == n
+                3) We get a valid combination IIF,  open == close && close == n && open == n
 */
 
 /**
@@ -19,21 +19,17 @@
 var generateParenthesis = function (n) {
         let parenthesis = [["(", 1, 0]];
         while (true) {
-                let openParenthesisCount = parenthesis[0][1];
-                let closeParenthesisCount = parenthesis[0][2];
+                let open = parenthesis[0][1];
+                let close = parenthesis[0][2];
                 // RULE 3
-                if (
-                        openParenthesisCount == closeParenthesisCount &&
-                        closeParenthesisCount == n &&
-                        openParenthesisCount == n
-                ) {
+                if (open == close && close == n && open == n) {
                         break;
                 }
                 let data = parenthesis.shift();
                 let temp = [];
                 let str = "";
                 // RULE 1
-                if (openParenthesisCount < n) {
+                if (open < n) {
                         str = data[0] + "(";
                         [, o, c] = data;
                         temp.push(str, ++o, c);
@@ -41,7 +37,7 @@ var generateParenthesis = function (n) {
                         temp = [];
                 }
                 // RULE 2
-                if (openParenthesisCount > closeParenthesisCount) {
+                if (open > close) {
                         str = data[0] + ")";
                         [, o, c] = data;
                         temp.push(str, o, ++c);
