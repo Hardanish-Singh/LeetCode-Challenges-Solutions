@@ -16,7 +16,7 @@
  */
 
 var generateParenthesis = function (n: number): Array<string> {
-        let parenthesis: Array<[string, number, number]> = [["(", 1, 0]];
+        const parenthesis: Array<[string, number, number]> = [["(", 1, 0]];
         while (true) {
                 const [bracket, open, close]: [string, number, number] = parenthesis[0];
                 // RULE 3
@@ -26,11 +26,11 @@ var generateParenthesis = function (n: number): Array<string> {
                 parenthesis.shift();
                 // RULE 1
                 if (open < n) {
-                        parenthesis.push([bracket + "(", 1 + open, close]);
+                        parenthesis.push([bracket + "(", open + 1, close]);
                 }
                 // RULE 2
                 if (open > close) {
-                        parenthesis.push([bracket + ")", open, 1 + close]);
+                        parenthesis.push([bracket + ")", open, close + 1]);
                 }
         }
         return parenthesis.map((result) => result[0]);
