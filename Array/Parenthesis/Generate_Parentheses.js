@@ -11,7 +11,7 @@
                 3) We get a valid combination IIF,  openParenthesisCount == closeParenthesisCount && closeParenthesisCount == n && openParenthesisCount == n
 */
 
-/*
+/**
  * @param { number } n
  * @return { string[] }
  */
