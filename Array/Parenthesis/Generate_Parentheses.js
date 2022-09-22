@@ -24,15 +24,13 @@ var generateParenthesis = function (n) {
                         parenthesis.push([bracket, open, close]);
                         break;
                 }
-                let str = "";
+                // RULE 1
                 if (open < n) {
-                        str = bracket + "(";
-                        parenthesis.push([str, 1 + open, close]);
+                        parenthesis.push([bracket + "(", 1 + open, close]);
                 }
                 // RULE 2
                 if (open > close) {
-                        str = bracket + ")";
-                        parenthesis.push([str, open, 1 + close]);
+                        parenthesis.push([bracket + ")", open, 1 + close]);
                 }
         }
         return parenthesis.map((result) => result[0]);
