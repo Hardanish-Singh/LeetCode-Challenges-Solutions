@@ -15,10 +15,10 @@
  * @return { string[] }
  */
 
-var generateParenthesis = function (n) {
-        let parenthesis = [["(", 1, 0]];
+var generateParenthesis = function (n: number): Array<string> {
+        let parenthesis: Array<[string, number, number]> = [["(", 1, 0]];
         while (true) {
-                let [bracket, open, close] = parenthesis[0];
+                const [bracket, open, close]: [string, number, number] = parenthesis[0];
                 // RULE 3
                 if (open == close && close == n && open == n) {
                         break;
