@@ -24,21 +24,21 @@ var generateParenthesis = function (n) {
                 if (open == close && close == n && open == n) {
                         break;
                 }
-                let data = parenthesis.shift();
+                let bracket = parenthesis.shift();
                 let temp = [];
                 let str = "";
                 // RULE 1
                 if (open < n) {
-                        str = data[0] + "(";
-                        [, o, c] = data;
+                        str = bracket[0] + "(";
+                        [, o, c] = bracket;
                         temp.push(str, ++o, c);
                         parenthesis.push(temp);
                         temp = [];
                 }
                 // RULE 2
                 if (open > close) {
-                        str = data[0] + ")";
-                        [, o, c] = data;
+                        str = bracket[0] + ")";
+                        [, o, c] = bracket;
                         temp.push(str, o, ++c);
                         parenthesis.push(temp);
                         temp = [];
