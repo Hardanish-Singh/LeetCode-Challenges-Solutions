@@ -18,24 +18,22 @@ function generateValidParenthesis(
         hash_set: Set<string>,
         isVisited: Paranthesis
 ): void {
-        if (minimumNumberOfBracketsToBeRemoved === 0) {
-                // CHECK IF THE STRING IS VALID
-                if (getMinimumNumberOfBracketsToBeRemoved(str) === 0) {
-                        hash_set.add(str);
+        let queue: Array<[string, number]> = [[str, minimumNumberOfBracketsToBeRemoved]];
+        while (queue.length > 0) {
+                let [string, count] = queue.shift();
+                if (count === 0) {
+                        // CHECK IF THE STRING IS VALID
+                        if (getMinimumNumberOfBracketsToBeRemoved(string) === 0) {
+                                hash_set.add(string);
+                        }
                 }
-                return;
-        }
-        for (let i: number = 0; i < str.length; i++) {
-                let left: string = str.slice(0, i);
-                let right: string = str.slice(i + 1);
-                if (!isVisited[left + right]) {
-                        isVisited[left + right] = true;
-                        generateValidParenthesis(
-                                left + right,
-                                minimumNumberOfBracketsToBeRemoved - 1,
-                                hash_set,
-                                isVisited
-                        );
+                for (let i = 0; i < string.length; i++) {
+                        let left: string = string.slice(0, i);
+                        let right: string = string.slice(i + 1);
+                        if (!isVisited[left + right] && count - 1 >= 0) {
+                                isVisited[left + right] = true;
+                                queue.push([left + right, count - 1]);
+                        }
                 }
         }
 }
