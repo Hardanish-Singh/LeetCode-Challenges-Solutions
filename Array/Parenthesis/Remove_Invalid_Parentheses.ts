@@ -27,7 +27,7 @@ function generateValidParenthesis(
                                 hash_set.add(string);
                         }
                 }
-                for (let i = 0; i < string.length; i++) {
+                for (let i: number = 0; i < string.length; i++) {
                         let left: string = string.slice(0, i);
                         let right: string = string.slice(i + 1);
                         if (!isVisited[left + right] && count - 1 >= 0) {
