@@ -1,5 +1,10 @@
 // Leetcode: https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
 
+/**
+ * @param { string } str
+ * @return { number }
+ */
+
 function minAddToMakeValid(str: string): number {
         let stack: Array<string> = [];
         for (let i: number = 0; i < str.length; i++) {
