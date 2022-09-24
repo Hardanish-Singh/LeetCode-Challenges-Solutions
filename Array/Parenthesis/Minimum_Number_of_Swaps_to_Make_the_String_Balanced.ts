@@ -19,6 +19,6 @@ function minSwaps(str: string): number {
                         }
                 }
         }
-        let length = stack.length / 2;
+        let length = stack.length / 2; // Because the string consists of exactly n / 2 opening brackets '[' and n / 2 closing brackets ']'.
         return length % 2 === 0 ? length / 2 : Math.floor(length / 2) + 1;
 }
