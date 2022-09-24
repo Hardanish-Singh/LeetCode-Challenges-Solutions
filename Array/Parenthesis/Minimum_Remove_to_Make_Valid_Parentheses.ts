@@ -1,5 +1,10 @@
 // Leetcode: https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
 
+/**
+ * @param { string } str
+ * @returns { string }
+ */
+
 // SOLUTION 1( USING STACK )
 function minRemoveToMakeValid1(str: string): string {
         let stack: Array<number> = [];
@@ -24,6 +29,11 @@ function minRemoveToMakeValid1(str: string): string {
         }
         return result;
 }
+
+/**
+ * @param {string} str
+ * @returns {string}
+ */
 
 // SOLUTION 2
 function minRemoveToMakeValid2(str: string): string {
