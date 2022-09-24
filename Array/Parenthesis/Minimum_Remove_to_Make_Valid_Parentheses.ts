@@ -39,6 +39,7 @@ function minRemoveToMakeValid1(str: string): string {
 function minRemoveToMakeValid2(str: string): string {
         let temp: string = "";
         let open: number = 0;
+
         for (let i: number = 0; i < str.length; i++) {
                 if (str[i] === "(") {
                         open++;
@@ -50,6 +51,7 @@ function minRemoveToMakeValid2(str: string): string {
                 }
                 temp += str[i];
         }
+
         let result: string = "";
         for (let i = temp.length - 1; i >= 0; i--) {
                 if (temp[i] === "(" && open > 0) {
@@ -58,5 +60,6 @@ function minRemoveToMakeValid2(str: string): string {
                 }
                 result += temp[i];
         }
+
         return result.split("").reverse().join("");
 }
