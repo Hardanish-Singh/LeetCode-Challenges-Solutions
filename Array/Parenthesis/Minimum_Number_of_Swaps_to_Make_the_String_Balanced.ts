@@ -1,9 +1,10 @@
 // Leetcode: https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/
 
 /**
- * @param {string} str
- * @returns {number}
+ * @param { string } str
+ * @returns { number }
  */
+
 function minSwaps(str: string): number {
         let stack: Array<string> = [];
         for (let i: number = 0; i < str.length; i++) {
