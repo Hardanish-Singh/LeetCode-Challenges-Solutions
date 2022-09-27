@@ -21,13 +21,18 @@ function minRemoveToMakeValid1(str: string): string {
                 }
         }
 
-        let result = "";
-        for (let i: number = 0; i < str.length; i++) {
-                if (!stack.includes(i)) {
-                        result += str[i];
+        // If Stack Length > 0, then we have extra '(' in str for which ')' was not found.
+        if (stack.length > 0) {
+                let result = "";
+                for (let i: number = 0; i < str.length; i++) {
+                        if (!stack.includes(i)) {
+                                result += str[i];
+                        }
                 }
+                return result;
+        } else {
+                return str;
         }
-        return result;
 }
 
 /**
