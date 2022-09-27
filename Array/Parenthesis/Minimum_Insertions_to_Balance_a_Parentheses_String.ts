@@ -9,6 +9,7 @@ function minInsertions(str: string): number {
         let stack: Array<string> = [];
         let open: number = 0;
         let close: number = 0;
+
         for (let i: number = 0; i < str.length; i++) {
                 if (str[i] === "(") {
                         stack.push(str[i]);
