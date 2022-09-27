@@ -31,8 +31,8 @@ function minRemoveToMakeValid1(str: string): string {
 }
 
 /**
- * @param {string} str
- * @returns {string}
+ * @param { string } str
+ * @returns { string }
  */
 
 // SOLUTION 2
