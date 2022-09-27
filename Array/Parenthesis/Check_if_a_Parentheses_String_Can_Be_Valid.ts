@@ -18,23 +18,20 @@ function canBeValid(str: string, locked: string): boolean {
                 if (locked[i] === "0" || str[i] === "(") {
                         open++;
                 } else {
-                        close++;
+                        open--;
                 }
-                if (close > open) {
+                if (open < 0) {
                         return false;
                 }
         }
-
-        open = 0;
-        close = 0;
 
         for (let i: number = str.length - 1; i >= 0; i--) {
                 if (locked[i] === "0" || str[i] === ")") {
                         close++;
                 } else {
-                        open++;
+                        close--;
                 }
-                if (open > close) {
+                if (close < 0) {
                         return false;
                 }
         }
