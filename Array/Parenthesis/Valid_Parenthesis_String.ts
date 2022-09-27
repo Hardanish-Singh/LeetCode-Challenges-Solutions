@@ -6,8 +6,9 @@
  */
 
 function checkValidString(str: string): boolean {
-        let openCount = 0;
-        let closedCount = 0;
+        let openCount: number = 0;
+        let closedCount: number = 0;
+
         for (let i: number = 0; i < str.length; i++) {
                 if (str[i] == "*" || str[i] == "(") {
                         openCount++;
