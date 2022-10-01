@@ -1,5 +1,5 @@
 /**
- * @param { Array<Array<number>> } intervals
+ * @param { number[][] } intervals
  * @return { number }
  */
 
