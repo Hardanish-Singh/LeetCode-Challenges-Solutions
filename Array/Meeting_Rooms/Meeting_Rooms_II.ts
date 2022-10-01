@@ -1,3 +1,8 @@
+/**
+ * @param { Array<Array<number>> } intervals
+ * @return { number }
+ */
+
 function minMeetingRooms(intervals: Array<Array<number>>): number {
         let meetingStartTime: Array<number> = [];
         let meetingEndTime: Array<number> = [];
