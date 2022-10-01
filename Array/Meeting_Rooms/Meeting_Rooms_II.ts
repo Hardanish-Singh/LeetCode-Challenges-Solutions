@@ -1,3 +1,12 @@
+// Leetcode:
+
+/*
+        Here is the thought process, whenever there is a start meeting, we need to add one room. 
+        But before adding rooms, we check to see if any previous meeting ends, which is why we check start with the end. 
+        When the start is bigger than end, it means at this time one of the previous meeting ends, and it can take and reuse that room. 
+        Then the next meeting need to compare with the second end because the first end's room is already taken. 
+*/
+
 /**
  * @param { number[][] } intervals
  * @return { number }
