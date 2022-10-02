@@ -7,6 +7,7 @@
  */
 
 function uniquePaths(m, n) {
+        // Construct a 2D Array of size m x n
         const matrix = Array(m);
         for (let i = 0; i < m; i++) {
                 matrix[i] = Array(n).fill(1);
