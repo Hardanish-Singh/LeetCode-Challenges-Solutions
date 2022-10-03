@@ -1,14 +1,13 @@
 /**
- * @param {number[][]} obstacleGrid
- * @return {number}
+ * @param { number[][] } obstacleGrid
+ * @return { number }
  */
 
 var uniquePathsWithObstacles = function (obstacleGrid) {
         let row = obstacleGrid.length;
         let column = obstacleGrid[0].length;
 
-        // If the starting cell has an obstacle, then simply return as there would be
-        // no paths to the destination.
+        // If the starting cell has an obstacle, then simply return as there would be no paths to the destination.
         if (obstacleGrid[0][0] == 1) {
                 return 0;
         }
