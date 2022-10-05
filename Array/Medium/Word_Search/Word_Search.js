@@ -131,12 +131,11 @@ var exist = function (...args) {
                         // RESTORE ORIGINIAL GRID
                         grid = JSON.parse(JSON.stringify(originalGrid));
                         if (grid[i][j] === word[0]) {
-                                let stack = [];
                                 grid = move_in_all_four_directions(
                                         grid,
                                         i,
                                         j,
-                                        stack,
+                                        (stack = []),
                                         (defaultCount = 1),
                                         word,
                                         gridTraversal
