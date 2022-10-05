@@ -28,7 +28,7 @@ function move_down(...args) {
 }
 
 function move_in_all_four_directions(...args) {
-        let [grid, i, j, stack, count, word, gridTraversal] = args;
+        let [grid, i, j, stack, count, word, backtracking] = args;
         let leftPosition = null;
         let topPosition = null;
         let rightPosition = null;
@@ -66,74 +66,77 @@ function move_in_all_four_directions(...args) {
                 stack.push(bottomPosition + "," + bottomCounter);
         }
 
-        if (!leftPosition && !topPosition && !rightPosition && !bottomPosition && gridTraversal.length > 0) {
-                grid = gridTraversal.pop();
+        if (!leftPosition && !topPosition && !rightPosition && !bottomPosition && backtracking.length > 0) {
+                grid = backtracking.pop();
         }
 
         if (leftCounter == topCounter && leftCounter > 0 && topCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         if (leftCounter == rightCounter && leftCounter > 0 && rightCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         if (leftCounter == bottomCounter && leftCounter > 0 && bottomCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         if (topCounter == rightCounter && topCounter > 0 && rightCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         if (topCounter == bottomCounter && topCounter > 0 && bottomCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         if (rightCounter == bottomCounter && rightCounter > 0 && bottomCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         return grid;
 }
 
 function perform_push_pop_operation(...args) {
-        let [stack, grid, word, gridTraversal] = args;
-        while (stack.length != 0) {
-                // DFS METHOD
-                [i, j, count] = stack.pop().split(",").map(Number);
-                if (count == word.length) {
-                        grid[i][j] = "2";
+        let [stack, grid, word, backtracking, row, column, count] = args;
+        do {
+                if (stack.length != 0) {
+                        // DFS METHOD
+                        const [i, j, Count] = stack.pop().split(",").map(Number);
+                        row = i;
+                        column = j;
+                        count = Count;
+                        if (Count == word.length) {
+                                grid[i][j] = "2";
+                                return true;
+                        }
+                }
+                grid = move_in_all_four_directions(grid, row, column, stack, count, word, backtracking);
+                if (grid[row][column] == "2" && word.length == 1) {
                         return true;
                 }
-                grid = move_in_all_four_directions(grid, i, j, stack, count, word, gridTraversal);
-        }
+        } while (stack.length != 0);
 }
 
 var exist = function (...args) {
         let [grid, word] = args;
-        // DEEP COPY ORIGINIAL GRID
+        // DEEP COPY ORIGINIAL GRID FOR BACKTRACKING
         let originalGrid = JSON.parse(JSON.stringify(grid));
-        let gridTraversal = [];
 
-        for (let i = 0; i < grid.length; i++) {
-                for (let j = 0; j < grid[i].length; j++) {
+        for (let row = 0; row < grid.length; row++) {
+                for (let column = 0; column < grid[row].length; column++) {
                         // RESTORE ORIGINIAL GRID
                         grid = JSON.parse(JSON.stringify(originalGrid));
-                        if (grid[i][j] === word[0]) {
-                                grid = move_in_all_four_directions(
-                                        grid,
-                                        i,
-                                        j,
+                        if (grid[row][column] === word[0]) {
+                                let isFound = perform_push_pop_operation(
                                         (stack = []),
-                                        (defaultCount = 1),
+                                        grid,
                                         word,
-                                        gridTraversal
+                                        (backtracking = []),
+                                        row,
+                                        column,
+                                        (defaultCount = 1)
                                 );
-                                if (grid[i][j] == "2" && word.length == 1) {
-                                        return true;
-                                }
-                                let isFound = perform_push_pop_operation(stack, grid, word, gridTraversal);
                                 if (isFound) {
                                         return true;
                                 }
