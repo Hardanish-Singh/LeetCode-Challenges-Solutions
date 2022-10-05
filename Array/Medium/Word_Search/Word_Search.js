@@ -7,7 +7,7 @@ function is_visited(...args) {
 
 function move_left(...args) {
         let [grid, i, j, count, word] = args;
-        --j;
+        j = j - 1;
         if (j >= 0) {
                 return is_visited(grid, i, j, count, word);
         }
@@ -15,7 +15,7 @@ function move_left(...args) {
 
 function move_top(...args) {
         let [grid, i, j, count, word] = args;
-        --i;
+        i = i - 1;
         if (i >= 0) {
                 return is_visited(grid, i, j, count, word);
         }
@@ -23,7 +23,7 @@ function move_top(...args) {
 
 function move_right(...args) {
         let [grid, i, j, count, word] = args;
-        ++j;
+        j = j + 1;
         if (j <= grid[i].length - 1) {
                 return is_visited(grid, i, j, count, word);
         }
@@ -31,7 +31,7 @@ function move_right(...args) {
 
 function move_down(...args) {
         let [grid, i, j, count, word] = args;
-        ++i;
+        i = i + 1;
         if (i <= grid.length - 1) {
                 return is_visited(grid, i, j, count, word);
         }
