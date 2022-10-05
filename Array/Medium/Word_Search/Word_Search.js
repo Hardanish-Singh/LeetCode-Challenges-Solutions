@@ -1,48 +1,38 @@
 function is_visited(...args) {
         let [grid, i, j, count, word] = args;
-        if (grid[i][j] === word[count] && grid[i][j] != "2") {
-                return i + "," + j;
-        }
+        return grid[i][j] === word[count] && grid[i][j] != "2" ? i + "," + j : null;
 }
 
 function move_left(...args) {
         let [grid, i, j, count, word] = args;
         j = j - 1;
-        if (j >= 0) {
-                return is_visited(grid, i, j, count, word);
-        }
+        return j >= 0 ? is_visited(grid, i, j, count, word) : null;
 }
 
 function move_top(...args) {
         let [grid, i, j, count, word] = args;
         i = i - 1;
-        if (i >= 0) {
-                return is_visited(grid, i, j, count, word);
-        }
+        return i >= 0 ? is_visited(grid, i, j, count, word) : null;
 }
 
 function move_right(...args) {
         let [grid, i, j, count, word] = args;
         j = j + 1;
-        if (j <= grid[i].length - 1) {
-                return is_visited(grid, i, j, count, word);
-        }
+        return j <= grid[i].length - 1 ? is_visited(grid, i, j, count, word) : null;
 }
 
 function move_down(...args) {
         let [grid, i, j, count, word] = args;
         i = i + 1;
-        if (i <= grid.length - 1) {
-                return is_visited(grid, i, j, count, word);
-        }
+        return i <= grid.length - 1 ? is_visited(grid, i, j, count, word) : null;
 }
 
 function move_in_all_four_directions(...args) {
         let [grid, i, j, stack, count, word, gridTraversal] = args;
-        let leftPosition = "";
-        let topPosition = "";
-        let rightPosition = "";
-        let bottomPosition = "";
+        let leftPosition = null;
+        let topPosition = null;
+        let rightPosition = null;
+        let bottomPosition = null;
         let leftCounter = 0;
         let topCounter = 0;
         let rightCounter = 0;
@@ -53,25 +43,25 @@ function move_in_all_four_directions(...args) {
 
         // MOVE LEFT & ADD COORDINATES TO STACK
         leftPosition = move_left(grid, i, j, count, word);
-        if (leftPosition) {
+        if (leftPosition != null) {
                 leftCounter = count + 1;
                 stack.push(leftPosition + "," + leftCounter);
         }
         // MOVE TOP & ADD COORDINATES TO STACK
         topPosition = move_top(grid, i, j, count, word);
-        if (topPosition) {
+        if (topPosition != null) {
                 topCounter = count + 1;
                 stack.push(topPosition + "," + topCounter);
         }
         // MOVE RIGHT & ADD COORDINATES TO STACK
         rightPosition = move_right(grid, i, j, count, word);
-        if (rightPosition) {
+        if (rightPosition != null) {
                 rightCounter = count + 1;
                 stack.push(rightPosition + "," + rightCounter);
         }
         // MOVE DOWN & ADD COORDINATES TO STACK
         bottomPosition = move_down(grid, i, j, count, word);
-        if (bottomPosition) {
+        if (bottomPosition != null) {
                 bottomCounter = count + 1;
                 stack.push(bottomPosition + "," + bottomCounter);
         }
