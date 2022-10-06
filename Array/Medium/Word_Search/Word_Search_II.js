@@ -1,4 +1,4 @@
-// Leetcode: https://leetcode.com/problems/word-search-ii/submissions/
+// Leetcode: https://leetcode.com/problems/word-search-ii/
 
 function is_visited(...args) {
         let [grid, i, j, count, word] = args;
