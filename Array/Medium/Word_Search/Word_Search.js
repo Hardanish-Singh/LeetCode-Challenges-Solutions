@@ -1,3 +1,5 @@
+// Leetcode: https://leetcode.com/problems/word-search/
+
 function is_visited(...args) {
         let [grid, i, j, count, word] = args;
         return grid[i][j] === word[count] && grid[i][j] != "2" ? i + "," + j : null;
