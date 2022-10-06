@@ -312,9 +312,6 @@ function perform_push_pop_operation(...args) {
         while (stack.length != 0) {
                 // DFS METHOD
                 [i, j, count] = stack.pop().split(",").map(Number);
-                if (count < 0) {
-                        continue;
-                }
                 if (count == 0) {
                         grid[i][j] = "2";
                         return true;
@@ -326,6 +323,7 @@ function perform_push_pop_operation(...args) {
 var findWords = function (...args) {
         let [grid, words] = args;
         let result = [];
+        // DEEP COPY ORIGINIAL GRID FOR BACKTRACKING
         let originalGrid = JSON.parse(JSON.stringify(grid));
         words = filterWords(grid, words);
 
