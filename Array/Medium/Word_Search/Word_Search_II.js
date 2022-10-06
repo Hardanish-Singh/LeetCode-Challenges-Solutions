@@ -38,7 +38,7 @@
 // }
 
 // function move_in_all_four_directions(...args) {
-//         let [grid, i, j, stack, count, word, gridTraversal] = args;
+//         let [grid, i, j, stack, count, word, backtracking] = args;
 //         let leftPosition = "";
 //         let topPosition = "";
 //         let rightPosition = "";
@@ -84,39 +84,39 @@
 //                 }
 //         }
 
-//         if (!leftPosition && !topPosition && !rightPosition && !bottomPosition && gridTraversal.length > 0) {
-//                 grid = gridTraversal.pop();
+//         if (!leftPosition && !topPosition && !rightPosition && !bottomPosition && backtracking.length > 0) {
+//                 grid = backtracking.pop();
 //         }
 
 //         if (leftCounter == topCounter && leftCounter > 0 && topCounter > 0) {
-//                 gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+//                 backtracking.push(JSON.parse(JSON.stringify(grid)));
 //         }
 
 //         if (leftCounter == rightCounter && leftCounter > 0 && rightCounter > 0) {
-//                 gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+//                 backtracking.push(JSON.parse(JSON.stringify(grid)));
 //         }
 
 //         if (leftCounter == bottomCounter && leftCounter > 0 && bottomCounter > 0) {
-//                 gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+//                 backtracking.push(JSON.parse(JSON.stringify(grid)));
 //         }
 
 //         if (topCounter == rightCounter && topCounter > 0 && rightCounter > 0) {
-//                 gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+//                 backtracking.push(JSON.parse(JSON.stringify(grid)));
 //         }
 
 //         if (topCounter == bottomCounter && topCounter > 0 && bottomCounter > 0) {
-//                 gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+//                 backtracking.push(JSON.parse(JSON.stringify(grid)));
 //         }
 
 //         if (rightCounter == bottomCounter && rightCounter > 0 && bottomCounter > 0) {
-//                 gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+//                 backtracking.push(JSON.parse(JSON.stringify(grid)));
 //         }
 
 //         return grid;
 // }
 
 // function perform_push_pop_operation(...args) {
-//         let [stack, grid, word, gridTraversal] = args;
+//         let [stack, grid, word, backtracking] = args;
 //         while (stack.length != 0) {
 //                 // DFS METHOD
 //                 [i, j, count] = stack.pop().split(",").map(Number);
@@ -127,7 +127,7 @@
 //                         grid[i][j] = "2";
 //                         return true;
 //                 }
-//                 grid = move_in_all_four_directions(grid, i, j, stack, count, word, gridTraversal);
+//                 grid = move_in_all_four_directions(grid, i, j, stack, count, word, backtracking);
 //         }
 // }
 
@@ -140,13 +140,13 @@
 //         // console.log(rs);
 
 //         // for( let o = 0; o< words.length; o++) {
-//         // let gridTraversal = [];
+//         // let backtracking = [];
 //         // let word = words[o];
 
 //         for (let i = 0; i < grid.length; i++) {
 //                 for (let j = 0; j < grid[i].length; j++) {
 //                         for (let o = 0; o < words.length; o++) {
-//                                 let gridTraversal = [];
+//                                 let backtracking = [];
 //                                 let word = words[o];
 //                                 // RESTORE ORIGINIAL GRID
 //                                 grid = JSON.parse(JSON.stringify(originalGrid));
@@ -159,12 +159,12 @@
 //                                                 stack,
 //                                                 (defaultCount = 1),
 //                                                 word,
-//                                                 gridTraversal
+//                                                 backtracking
 //                                         );
 //                                         if (grid[i][j] == "2" && word.length == 1 && !result.includes(word)) {
 //                                                 result.push(word);
 //                                         }
-//                                         let isFound = perform_push_pop_operation(stack, grid, word, gridTraversal);
+//                                         let isFound = perform_push_pop_operation(stack, grid, word, backtracking);
 //                                         if (isFound && !result.includes(word)) {
 //                                                 result.push(word);
 //                                         }
@@ -239,7 +239,7 @@ function move_down(...args) {
 }
 
 function move_in_all_four_directions(...args) {
-        let [grid, i, j, stack, count, word, gridTraversal] = args;
+        let [grid, i, j, stack, count, word, backtracking] = args;
         let leftPosition = "";
         let topPosition = "";
         let rightPosition = "";
@@ -276,39 +276,39 @@ function move_in_all_four_directions(...args) {
                 stack.push(bottomPosition + "," + count);
         }
 
-        if (!leftPosition && !topPosition && !rightPosition && !bottomPosition && gridTraversal.length > 0) {
-                grid = gridTraversal.pop();
+        if (!leftPosition && !topPosition && !rightPosition && !bottomPosition && backtracking.length > 0) {
+                grid = backtracking.pop();
         }
 
         if (leftCounter == topCounter && leftCounter > 0 && topCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         if (leftCounter == rightCounter && leftCounter > 0 && rightCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         if (leftCounter == bottomCounter && leftCounter > 0 && bottomCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         if (topCounter == rightCounter && topCounter > 0 && rightCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         if (topCounter == bottomCounter && topCounter > 0 && bottomCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         if (rightCounter == bottomCounter && rightCounter > 0 && bottomCounter > 0) {
-                gridTraversal.push(JSON.parse(JSON.stringify(grid)));
+                backtracking.push(JSON.parse(JSON.stringify(grid)));
         }
 
         return grid;
 }
 
 function perform_push_pop_operation(...args) {
-        let [stack, grid, word, gridTraversal] = args;
+        let [stack, grid, word, backtracking] = args;
         while (stack.length != 0) {
                 // DFS METHOD
                 [i, j, count] = stack.pop().split(",").map(Number);
@@ -319,7 +319,7 @@ function perform_push_pop_operation(...args) {
                         grid[i][j] = "2";
                         return true;
                 }
-                grid = move_in_all_four_directions(grid, i, j, stack, count - 1, word, gridTraversal);
+                grid = move_in_all_four_directions(grid, i, j, stack, count - 1, word, backtracking);
         }
 }
 
@@ -327,13 +327,13 @@ var findWords = function (...args) {
         let [grid, words] = args;
         let result = [];
         let originalGrid = JSON.parse(JSON.stringify(grid));
-        words = findWords(grid, words);
+        words = filterWords(grid, words);
 
-        for (let i = 0; i < grid.length; i++) {
-                for (let j = 0; j < grid[i].length; j++) {
-                        for (let o = 0; o < words.length; o++) {
-                                let gridTraversal = [];
-                                let word = words[o];
+        for (let k = 0; k < words.length; k++) {
+                let backtracking = [];
+                let word = words[k];
+                for (let i = 0; i < grid.length; i++) {
+                        for (let j = 0; j < grid[i].length; j++) {
                                 // RESTORE ORIGINIAL GRID
                                 grid = JSON.parse(JSON.stringify(originalGrid));
                                 if (grid[i][j] === word[word.length - 1]) {
@@ -345,12 +345,12 @@ var findWords = function (...args) {
                                                 stack,
                                                 word.length - 2,
                                                 word,
-                                                gridTraversal
+                                                backtracking
                                         );
                                         if (grid[i][j] == "2" && word.length == 1 && !result.includes(word)) {
                                                 result.push(word);
                                         }
-                                        let isFound = perform_push_pop_operation(stack, grid, word, gridTraversal);
+                                        let isFound = perform_push_pop_operation(stack, grid, word, backtracking);
                                         if (isFound && !result.includes(word)) {
                                                 result.push(word);
                                         }
@@ -366,7 +366,7 @@ var findWords = function (...args) {
         Check each word to see if every letter in the word appear somewhere on the board. 
         If a letter in the word is not found on the board, then reject the entire word before wasting time on DFS searching.
 */
-function findWords(grid, words) {
+function filterWords(grid, words) {
         let str = "";
         for (let i = 0; i < grid.length; i++) {
                 str += grid[i].join("");
