@@ -174,7 +174,7 @@ function filterWords(grid, words) {
         for (let i = 0; i < grid.length; i++) {
                 str += grid[i].join("");
         }
-        let rs = [];
+        let result = [];
         for (let i = 0; i < words.length; i++) {
                 let temp = words[i];
                 let flag = true;
@@ -188,7 +188,7 @@ function filterWords(grid, words) {
                                 break;
                         }
                 }
-                if (flag) rs.push(temp);
+                if (flag) result.push(temp);
         }
-        return rs;
+        return result;
 }
