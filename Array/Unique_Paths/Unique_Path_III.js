@@ -43,6 +43,7 @@ var uniquePathsIII = function (grid) {
 
         while (stack.length > 0) {
                 let [row, column, path, count] = stack.pop();
+
                 let leftPosition = move_left(grid, row, column);
                 if (leftPosition != null) {
                         let [ni, nj] = leftPosition.split(",");
