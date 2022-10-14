@@ -20,7 +20,7 @@ function move_right(...args) {
 
 function move_down(...args) {
         let [grid, i, j] = args;
-        i++;
+        i = i + 1;
         return i <= grid.length - 1 ? i + "," + j : null;
 }
 
