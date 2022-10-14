@@ -24,6 +24,25 @@ function move_down(...args) {
         return i <= grid.length - 1 ? i + "," + j : null;
 }
 
+function findPaths(...args) {
+        let [grid, path, count, position, zeros, stack, result] = args;
+        let [ni, nj] = position.split(",");
+        if (grid[ni][nj] !== -1) {
+                if (grid[ni][nj] === 2) {
+                        if (count === zeros) {
+                                result++;
+                        }
+                } else {
+                        if (!path.includes(`${ni},${nj}`)) {
+                                let temp = JSON.parse(JSON.stringify(path));
+                                temp.push(`${ni},${nj}`);
+                                stack.push([+ni, +nj, temp, count + 1]);
+                        }
+                }
+        }
+        return result;
+}
+
 var uniquePathsIII = function (grid) {
         let zeros = 0;
         let starting_row = null;
@@ -48,74 +67,22 @@ var uniquePathsIII = function (grid) {
 
                 let leftPosition = move_left(grid, row, column);
                 if (leftPosition != null) {
-                        let [ni, nj] = leftPosition.split(",");
-                        if (grid[ni][nj] !== -1) {
-                                if (grid[ni][nj] === 2) {
-                                        if (count === zeros) {
-                                                result++;
-                                        }
-                                } else {
-                                        if (!path.includes(`${ni},${nj}`)) {
-                                                let temp = JSON.parse(JSON.stringify(path));
-                                                temp.push(`${ni},${nj}`);
-                                                stack.push([+ni, +nj, temp, count + 1]);
-                                        }
-                                }
-                        }
+                        result = findPaths(grid, path, count, leftPosition, zeros, stack, result);
                 }
 
                 let topPosition = move_top(grid, row, column);
                 if (topPosition != null) {
-                        let [ni, nj] = topPosition.split(",");
-                        if (grid[ni][nj] !== -1) {
-                                if (grid[ni][nj] === 2) {
-                                        if (count === zeros) {
-                                                result++;
-                                        }
-                                } else {
-                                        if (!path.includes(`${ni},${nj}`)) {
-                                                let temp = JSON.parse(JSON.stringify(path));
-                                                temp.push(`${ni},${nj}`);
-                                                stack.push([+ni, +nj, temp, count + 1]);
-                                        }
-                                }
-                        }
+                        result = findPaths(grid, path, count, topPosition, zeros, stack, result);
                 }
 
                 let bottomPosition = move_down(grid, row, column);
                 if (bottomPosition != null) {
-                        let [ni, nj] = bottomPosition.split(",");
-                        if (grid[ni][nj] !== -1) {
-                                if (grid[ni][nj] === 2) {
-                                        if (count === zeros) {
-                                                result++;
-                                        }
-                                } else {
-                                        if (!path.includes(`${ni},${nj}`)) {
-                                                let temp = JSON.parse(JSON.stringify(path));
-                                                temp.push(`${ni},${nj}`);
-                                                stack.push([+ni, +nj, temp, count + 1]);
-                                        }
-                                }
-                        }
+                        result = findPaths(grid, path, count, bottomPosition, zeros, stack, result);
                 }
 
                 let rightPosition = move_right(grid, row, column);
                 if (rightPosition != null) {
-                        let [ni, nj] = rightPosition.split(",");
-                        if (grid[ni][nj] !== -1) {
-                                if (grid[ni][nj] === 2) {
-                                        if (count === zeros) {
-                                                result++;
-                                        }
-                                } else {
-                                        if (!path.includes(`${ni},${nj}`)) {
-                                                let temp = JSON.parse(JSON.stringify(path));
-                                                temp.push(`${ni},${nj}`);
-                                                stack.push([+ni, +nj, temp, count + 1]);
-                                        }
-                                }
-                        }
+                        result = findPaths(grid, path, count, rightPosition, zeros, stack, result);
                 }
         }
         return result;
