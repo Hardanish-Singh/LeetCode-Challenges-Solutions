@@ -81,7 +81,7 @@ var uniquePathsIII = function (grid) {
                 }
 
                 let rightPosition = move_right(grid, row, column);
-                if (rightPosition != null) {
+                if (rightPosition !== null) {
                         result = findPaths(grid, path, count, rightPosition, zeros, stack, result);
                 }
         }
