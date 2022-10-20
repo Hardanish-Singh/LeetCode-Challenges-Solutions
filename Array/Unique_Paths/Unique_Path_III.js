@@ -44,8 +44,8 @@ function findPaths(...args) {
 }
 
 /**
- * @param {number[][]} grid
- * @return {number}
+ * @param { number[][] } grid
+ * @return { number }
  */
 
 var uniquePathsIII = function (grid) {
