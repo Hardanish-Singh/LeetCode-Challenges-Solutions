@@ -2,7 +2,7 @@
 
 -- SOLUTION 1
 SELECT 
-        MAX(num) AS num 
+        MAX(num) AS num
 FROM
 (
         SELECT
@@ -11,7 +11,7 @@ FROM
         FROM
                 my_numbers
         GROUP BY num
-)AS x 
+)AS x
 WHERE x.count_num = 1
 
 -- SOLUTION 2
