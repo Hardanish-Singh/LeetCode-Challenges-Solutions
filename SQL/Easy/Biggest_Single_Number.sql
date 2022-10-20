@@ -9,7 +9,7 @@ FROM
                 COUNT(num) AS count_num,
                 num
         FROM
-                my_numbers
+                mynumbers
         GROUP BY num
 )AS x
 WHERE x.count_num = 1
@@ -21,7 +21,7 @@ SELECT
                         SELECT 
                                 num 
                         FROM 
-                                my_numbers
+                                mynumbers
                         GROUP BY num
                         HAVING COUNT(num) = 1
                         ORDER BY num DESC
