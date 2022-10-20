@@ -43,6 +43,11 @@ function findPaths(...args) {
         return result;
 }
 
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+
 var uniquePathsIII = function (grid) {
         let zeros = 0;
         let starting_row = null;
