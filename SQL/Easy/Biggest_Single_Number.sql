@@ -28,4 +28,4 @@ SELECT
                         LIMIT 1
                 ),
                 NULL
-              ) AS num
+              ) AS num 
