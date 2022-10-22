@@ -24,7 +24,7 @@ SELECT
     DISTINCT
         c2.class
 FROM
-    courses as c1
+    courses AS c1
 JOIN
 (
     SELECT
