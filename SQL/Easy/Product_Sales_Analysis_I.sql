@@ -5,5 +5,5 @@ SELECT
         Sales.year,
         Sales.price
 FROM
-        Product
+        Product 
 JOIN Sales ON Sales.product_id = Product.product_id;
