@@ -14,5 +14,5 @@ WHERE ( year, product_id ) IN (
                 product_id
         FROM
                 Sales
-        GROUP BY product_id       
+        GROUP BY product_id      
 )
