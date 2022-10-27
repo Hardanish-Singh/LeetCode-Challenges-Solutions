@@ -1,4 +1,4 @@
-# Write your MySQL query statement below
+-- Leetcode: https://leetcode.com/problems/product-sales-analysis-iv/
 
 SELECT 
         user_id, 
