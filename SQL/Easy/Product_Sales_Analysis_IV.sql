@@ -2,7 +2,7 @@
 
 SELECT 
         user_id, 
-        product_id  
+        product_id
 FROM 
 (
         SELECT
