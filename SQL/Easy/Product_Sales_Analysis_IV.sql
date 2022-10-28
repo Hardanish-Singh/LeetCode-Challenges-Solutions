@@ -1,7 +1,7 @@
 -- Leetcode: https://leetcode.com/problems/product-sales-analysis-iv/
 
 SELECT 
-        user_id, 
+        user_id,
         product_id
 FROM 
 (
