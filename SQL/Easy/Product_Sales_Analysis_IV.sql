@@ -9,7 +9,7 @@ FROM
                 user_id,
                 product_id,
                 data,
-                dense_rank() OVER ( partition by user_id order by data desc )  AS ranks 
+                dense_rank() OVER ( partition by user_id order by data desc )  AS ranks
         FROM
         (    
                 SELECT
