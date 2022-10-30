@@ -13,9 +13,9 @@ FROM
         FROM
         (    
                 SELECT
-                        x.user_id,
-                        x.product_id,
-                        x.quantity * Product.price AS data
+                        Subquery1.user_id,
+                        Subquery1.product_id,
+                        Subquery1.quantity * Product.price AS data
                 FROM 
                 (
                         SELECT
@@ -25,10 +25,9 @@ FROM
                         FROM
                                 Sales
                         GROUP BY user_id, product_id
-                ) AS x
-                JOIN Product ON Product.product_id = x.product_id
-                ORDER BY x.user_id, x.product_id
-        ) AS xx
-) AS xxx
-WHERE xxx.ranks = 1;
-        
+                ) AS Subquery1
+                JOIN Product ON Product.product_id = Subquery1.product_id
+                ORDER BY Subquery1.user_id, Subquery1.product_id
+        ) AS Subquery2
+) AS Subquery3
+WHERE Subquery3.ranks = 1;
