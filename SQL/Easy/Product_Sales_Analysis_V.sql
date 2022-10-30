@@ -1,10 +1,11 @@
+-- Leetcode: https://leetcode.com/problems/product-sales-analysis-v/
 
-select 
+SELECT 
         user_id,
-        sum(quantity*price) as spending
-from Sales s
+        SUM(quantity * price) AS spending
+FROM Sales s
 
-join Product p on s.product_id = p.product_id
+JOIN Product p ON s.product_id = p.product_id
 
-group by user_id
-order by spending desc
+GROUP BY user_id
+ORDER BY spending DESC
