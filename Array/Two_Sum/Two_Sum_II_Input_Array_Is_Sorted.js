@@ -10,17 +10,16 @@
  * @param { number[] } nums
  * @param { number } target
  * @return { number[] }
-*/
+ */
 
-var twoSum = function( nums, target ) {
-        for( let i = 0; i < nums.length; i++ ) {
-                for( let j = i + 1; j < nums.length; j++ ) {
-                        if( nums[i] + nums[j] === target ) {
-                                return [ i + 1, j + 1 ];
+var twoSum = function (nums, target) {
+        for (let i = 0; i < nums.length; i++) {
+                for (let j = i + 1; j < nums.length; j++) {
+                        if (nums[i] + nums[j] === target) {
+                                return [i + 1, j + 1];
+                        } else if (nums[i] + nums[j] > target) {
+                                break;
                         }
-			else if( nums[i] + nums[j] > target ) {
-				break;
-			}
                 }
         }
 };
@@ -35,19 +34,19 @@ var twoSum = function( nums, target ) {
  * @param { number[] } nums
  * @param { number } target
  * @return { number[] }
-*/
+ */
 
-var twoSum = function( nums, target ) {
-	let hash_table = { }
-	for( let i = 0; i < nums.length; i++ ) {
-		let difference = target - nums[i];
-		if( difference in hash_table ) {
-			return[ hash_table[ difference ], i + 1 ];	
-		} else {
-			hash_table[ nums[i] ] = i+1;
-		}
-	}
-}
+var twoSum = function (nums, target) {
+        let hash_table = {};
+        for (let i = 0; i < nums.length; i++) {
+                let difference = target - nums[i];
+                if (difference in hash_table) {
+                        return [hash_table[difference], i + 1];
+                } else {
+                        hash_table[nums[i]] = i + 1;
+                }
+        }
+};
 
 /*
 	SOLUTION 3( MOST OPTIMAL )
@@ -59,20 +58,18 @@ var twoSum = function( nums, target ) {
  * @param { number[] } nums
  * @param { number } target
  * @return { number[] }
-*/
+ */
 
-var twoSum = function( nums, target ) {
-	let leftIndex = 0;
-	let rightIndex = nums.length-1;
-	while( leftIndex < rightIndex ) {
-		if( nums[leftIndex] + nums[rightIndex] < target) {
-			leftIndex++;
-		}
-		else if( nums[leftIndex] + nums[rightIndex] > target) {
-			rightIndex--;
-		}
-		else if( nums[leftIndex] + nums[rightIndex] === target) {
-			return [ leftIndex + 1, rightIndex + 1 ];
-		}
-	}
-}
+var twoSum = function (nums, target) {
+        let leftIndex = 0;
+        let rightIndex = nums.length - 1;
+        while (leftIndex < rightIndex) {
+                if (nums[leftIndex] + nums[rightIndex] < target) {
+                        leftIndex++;
+                } else if (nums[leftIndex] + nums[rightIndex] > target) {
+                        rightIndex--;
+                } else if (nums[leftIndex] + nums[rightIndex] === target) {
+                        return [leftIndex + 1, rightIndex + 1];
+                }
+        }
+};
