@@ -29,10 +29,7 @@ class Solution( object ):
                 self.preorderRecursiveTraversal( root1, preOrderList1 )
                 
                 preOrderList1 = list( set( preOrderList1 ) ) 
-                hash_table = { }
-                
-                for i in range( 0, len( preOrderList1 ) ):
-                        hash_table[ preOrderList1[i] ] = True
+                hash_table = dict.fromkeys(preOrderList1, True)
                 
                 preOrderList2 = []
                 self.preorderRecursiveTraversal( root2, preOrderList2 )
