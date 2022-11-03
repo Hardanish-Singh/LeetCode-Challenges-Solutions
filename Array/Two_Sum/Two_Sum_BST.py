@@ -27,7 +27,6 @@ class Solution( object ):
 
                 preOrderList1 = []
                 self.preorderRecursiveTraversal( root1, preOrderList1 )
-                
                 preOrderList1 = list( set( preOrderList1 ) )
                 
                 preOrderList2 = []
