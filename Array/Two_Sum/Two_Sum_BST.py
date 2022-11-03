@@ -33,12 +33,13 @@ class Solution( object ):
                 
                 preOrderList2 = []
                 self.preorderRecursiveTraversal( root2, preOrderList2 )
+                preOrderList2 = list( set( preOrderList2 ) )
                 
                 for i in range( 0, len( preOrderList2 ) ):
                         difference = target - preOrderList2[ i ]
-                        if difference in hash_table:
+                        if difference in preOrderList1:
                                 return True
                         else:
-                                hash_table[ preOrderList2[ i ] ] = True
+                                preOrderList1.append(preOrderList2[ i ])
                 
                 return False
