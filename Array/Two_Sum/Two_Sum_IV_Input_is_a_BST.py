@@ -34,7 +34,7 @@ class Solution( object ):
                         if difference in hash_table:
                                 return True
                         else:
-                                hash_table[ preOrderList[ i ] ] = i
+                                hash_table[ preOrderList[ i ] ] = True
                 
                 return False
         
