@@ -28,7 +28,7 @@ class Solution( object ):
                 preOrderList1 = []
                 self.preorderRecursiveTraversal( root1, preOrderList1 )
                 
-                preOrderList1 = list( set( preOrderList1 ) )
+                preOrderList1 = list( set( preOrderList1 ) ) 
                 hash_table = { }
                 
                 for i in range( 0, len( preOrderList1 ) ):
