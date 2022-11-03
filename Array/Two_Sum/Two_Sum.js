@@ -40,8 +40,7 @@ var twoSum = function (nums, target) {
                 let difference = target - nums[i];
                 if (difference in hash_table) {
                         return [hash_table[difference], i];
-                } else {
-                        hash_table[nums[i]] = i;
                 }
+                hash_table[nums[i]] = i;
         }
 };
