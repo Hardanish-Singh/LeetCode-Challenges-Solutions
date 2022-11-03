@@ -28,13 +28,11 @@ class Solution( object ):
                 preOrderList1 = []
                 self.preorderRecursiveTraversal( root1, preOrderList1 )
                 
+                preOrderList1 = list( set( preOrderList1 ) )
                 hash_table = { }
                 
                 for i in range( 0, len( preOrderList1 ) ):
-                        if preOrderList1[i] in hash_table:
-                                continue
-                        else:
-                                hash_table[ preOrderList1[i] ] = True
+                        hash_table[ preOrderList1[i] ] = True
                 
                 preOrderList2 = []
                 self.preorderRecursiveTraversal( root2, preOrderList2 )
