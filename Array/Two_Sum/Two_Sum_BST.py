@@ -34,10 +34,10 @@ class Solution( object ):
                 preOrderList2 = list( set( preOrderList2 ) )
                 
                 for i in range( 0, len( preOrderList2 ) ):
-                        difference = target - preOrderList2[ i ]
+                        difference = target - preOrderList2[i]
                         if difference in preOrderList1:
                                 return True
                         else:
-                                preOrderList1.append(preOrderList2[ i ])
+                                preOrderList1.append(preOrderList2[i])
                 
                 return False
