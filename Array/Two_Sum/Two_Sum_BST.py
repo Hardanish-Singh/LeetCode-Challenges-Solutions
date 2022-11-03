@@ -28,8 +28,8 @@ class Solution( object ):
                 preOrderList1 = []
                 self.preorderRecursiveTraversal( root1, preOrderList1 )
                 
-                preOrderList1 = list( set( preOrderList1 ) ) 
-                hash_table = dict.fromkeys(preOrderList1, True) 
+                preOrderList1 = list( set( preOrderList1 ) )
+                hash_table = dict.fromkeys(preOrderList1, True)
                 
                 preOrderList2 = []
                 self.preorderRecursiveTraversal( root2, preOrderList2 )
