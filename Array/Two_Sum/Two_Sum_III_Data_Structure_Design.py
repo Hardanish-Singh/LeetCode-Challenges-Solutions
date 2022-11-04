@@ -1,7 +1,5 @@
 # Leetcode: https://leetcode.com/problems/two-sum-iii-data-structure-design/
 
-# Leetcode: https://leetcode.com/problems/two-sum-iii-data-structure-design/
-
 class TwoSum:
         def __init__(self):
                 self.numbers = []
