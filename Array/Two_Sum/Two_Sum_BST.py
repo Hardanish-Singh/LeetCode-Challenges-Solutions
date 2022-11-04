@@ -7,21 +7,15 @@
 #         self.left = left
 #         self.right = right
 
-class Solution( object ):
-        def preorderRecursiveTraversal( self, root, preOrderList ):
+class Solution:
+        def preorderRecursiveTraversal( self, root: Optional[TreeNode], preOrderList: List[int] ) -> List[int]:
                 if root is None:
                         return None
                 preOrderList.append( root.val )
                 self.preorderRecursiveTraversal( root.left, preOrderList )
                 self.preorderRecursiveTraversal( root.right, preOrderList )
                 
-        def twoSumBSTs( self, root1, root2, target ):
-                """
-                :type root1: TreeNode
-                :type root2: TreeNode
-                :type target: int
-                :rtype: bool
-                """
+        def twoSumBSTs(self, root1: Optional[TreeNode], root2: Optional[TreeNode], target: int) -> bool:
                 if root1 is None or root2 is None:
                         return None
 
