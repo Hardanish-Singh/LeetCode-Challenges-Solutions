@@ -7,20 +7,15 @@
 #         self.left = left
 #         self.right = right
 
-class Solution( object ):
-        def preorderRecursiveTraversal( self, root, preOrderList ):
+class Solution:
+        def preorderRecursiveTraversal( self, root: Optional[TreeNode], preOrderList: List[int] ) -> List[int]:
                 if root is None:
                         return None
                 preOrderList.append( root.val )
                 self.preorderRecursiveTraversal( root.left, preOrderList )
                 self.preorderRecursiveTraversal( root.right, preOrderList )
-        
-        def findTarget( self, root, k ):
-                """
-                :type root: TreeNode
-                :type k: int
-                :rtype: bool
-                """
+                
+        def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
                 if root is None:
                         return None
 
