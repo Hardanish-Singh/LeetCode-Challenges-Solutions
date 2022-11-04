@@ -6,7 +6,7 @@ class TwoSum:
 
         def add(self, number: int) -> None:
                 if number in self.hash_table:
-                        self.hash_table[ number ] = self.hash_table[ number ] + 1
+                        self.hash_table[ number ] += 1
                 else:
                         self.hash_table[ number ] = 1
 
