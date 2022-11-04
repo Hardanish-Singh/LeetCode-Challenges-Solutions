@@ -1,25 +1,16 @@
 # Leetcode: https://leetcode.com/problems/two-sum-iii-data-structure-design/
 
-class TwoSum( object ):
-
-        def __init__( self ):
+class TwoSum:
+        def __init__(self):
                 self.hash_table = { }
 
-        def add( self, number ):
-                """
-                :type number: int
-                :rtype: None
-                """
+        def add(self, number: int) -> None:
                 if number in self.hash_table:
                         self.hash_table[ number ] = self.hash_table[ number ] + 1
                 else:
                         self.hash_table[ number ] = 1
 
-        def find( self, target ):
-                """
-                :type target: int
-                :rtype: bool
-                """
+        def find(self, target: int) -> bool:
                 dictionary = { }
                 for key, value in self.hash_table.items():
                         difference = target - key
