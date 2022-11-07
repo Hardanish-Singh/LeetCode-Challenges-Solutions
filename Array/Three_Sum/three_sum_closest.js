@@ -6,7 +6,7 @@
  * @return { number }
  */
 
-const findClosest = (closestSumArray, num) => {
+const findClosestElementToTarget = (closestSumArray, num) => {
         if (closestSumArray.length == 0) {
                 return 0;
         }
@@ -41,5 +41,5 @@ function threeSumClosest(nums, target) {
                 }
         }
 
-        return findClosest(closestSumArray, target);
+        return findClosestElementToTarget(closestSumArray, target);
 }
