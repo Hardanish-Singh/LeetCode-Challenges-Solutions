@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/3sum-with-multiplicity/
 
 /**
- * @param { number[] } arr
+ * @param { number[] } nums
  * @param { number } target
  * @return { number }
  */
