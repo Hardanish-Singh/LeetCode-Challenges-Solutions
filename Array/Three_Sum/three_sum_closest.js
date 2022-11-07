@@ -4,37 +4,42 @@
  * @param { number[] } nums
  * @param { number } target
  * @return { number }
-*/
+ */
 
-function threeSumClosest( nums, target ) {
-	nums.sort( (a, b) => a - b );
-        let threeSumClosestSum = 0;
-        let currentAbsDiff;
-        let prevAbsDiff = Number.MAX_VALUE;
-	
-	for( let i = 0; i < nums.length-1; i++ ) {
+const findClosest = (arr, num) => {
+        if (arr == null) {
+                return;
+        }
+
+        let closest = arr[0];
+        for (let item of arr) {
+                if (Math.abs(item - num) < Math.abs(closest - num)) {
+                        closest = item;
+                }
+        }
+        return closest;
+};
+
+function threeSumClosest(nums, target) {
+        nums.sort((a, b) => a - b);
+        let arr = [];
+
+        for (let i = 0; i < nums.length - 1; i++) {
                 let leftPointer = i + 1;
-		let rightPointer = nums.length - 1;
-		
-		while( leftPointer < rightPointer ) {
+                let rightPointer = nums.length - 1;
+
+                while (leftPointer < rightPointer) {
                         let sum = nums[i] + nums[leftPointer] + nums[rightPointer];
-                        currentAbsDiff = Math.abs( sum - target );
-                        if( currentAbsDiff < prevAbsDiff ) {
-                                prevAbsDiff = currentAbsDiff;
-                                threeSumClosestSum = sum;
+                        arr.push(sum);
+                        if (nums[leftPointer] + nums[rightPointer] + nums[i] < target) {
+                                leftPointer++;
+                        } else if (nums[leftPointer] + nums[rightPointer] + nums[i] > target) {
+                                rightPointer--;
+                        } else if (nums[leftPointer] + nums[rightPointer] + nums[i] === target) {
+                                return sum;
                         }
-                        if( nums[leftPointer] + nums[rightPointer] + nums[i] < target ) {
-				leftPointer++;
-			}
-			else if( nums[leftPointer] + nums[rightPointer] + nums[i] > target ) {
-				rightPointer--;
-			}
-			else if( nums[leftPointer] + nums[rightPointer] + nums[i] === target ) {
-                               return sum;
-			}
-		}	
-		
-	}
-	
-	return threeSumClosestSum;
+                }
+        }
+
+        return findClosest(arr, target);
 }
