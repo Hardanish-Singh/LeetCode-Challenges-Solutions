@@ -1,3 +1,5 @@
+// Leetcode: https://leetcode.com/problems/minimum-amount-of-time-to-collect-garbage/
+
 type garbageCount = {
         [key: string]: number;
 };
