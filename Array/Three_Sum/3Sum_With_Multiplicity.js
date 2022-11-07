@@ -6,7 +6,6 @@
  * @return { number }
  */
 
-// SOLUTION 1 ( USING THREE POINTER )
 var threeSumMulti = function (nums, target) {
         nums.sort((a, b) => a - b);
         let count = 0;
