@@ -20,9 +20,9 @@ var calculateCost = function (garbage, travel, map, key) {
 };
 
 /**
- * @param {string[]} garbage
- * @param {number[]} travel
- * @return {number}
+ * @param { string[] } garbage
+ * @param { number[] } travel
+ * @return { number }
  */
 
 var garbageCollection = function (garbage: Array<string>, travel: Array<number>): number {
