@@ -6,13 +6,13 @@
  * @return { number }
  */
 
-var threeSumSmaller = function (nums, target) {
+var threeSumSmaller = function (nums: Array<number>, target: number): number {
         nums.sort((a, b) => a - b);
-        let sum = 0;
+        let sum: number = 0;
 
-        for (let i = 0; i < nums.length - 1; i++) {
-                let leftPointer = i + 1;
-                let rightPointer = nums.length - 1;
+        for (let i: number = 0; i < nums.length - 1; i++) {
+                let leftPointer: number = i + 1;
+                let rightPointer: number = nums.length - 1;
 
                 while (leftPointer < rightPointer) {
                         if (nums[leftPointer] + nums[rightPointer] + nums[i] < target) {
@@ -21,8 +21,8 @@ var threeSumSmaller = function (nums, target) {
                                         NOW WE NEED TO FIND HOW MANY PAIRS WITH leftPointer index THAT SATISFY THIS CONDITION?
                                         FIX LEFT POINTER & MOVE RIGHT POINTER
                                 */
-                                let start = leftPointer;
-                                let end = rightPointer - 1;
+                                let start: number = leftPointer;
+                                let end: number = rightPointer - 1;
                                 while (start < end) {
                                         if (nums[i] + nums[start] + nums[end] < target) {
                                                 sum++;
