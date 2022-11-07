@@ -6,13 +6,13 @@
  * @return { number }
  */
 
-var threeSumMulti = function (nums, target) {
+var threeSumMulti = function (nums: Array<number>, target: number): number {
         nums.sort((a, b) => a - b);
-        let count = 0;
+        let count: number = 0;
 
-        for (let i = 0; i < nums.length; i++) {
-                let leftPointer = i + 1;
-                let rightPointer = nums.length - 1;
+        for (let i: number = 0; i < nums.length; i++) {
+                let leftPointer: number = i + 1;
+                let rightPointer: number = nums.length - 1;
 
                 while (leftPointer < rightPointer) {
                         if (nums[leftPointer] + nums[rightPointer] + nums[i] < target) {
@@ -21,7 +21,7 @@ var threeSumMulti = function (nums, target) {
                                 rightPointer--;
                         } else if (nums[leftPointer] + nums[rightPointer] + nums[i] === target) {
                                 if (nums[leftPointer] === nums[rightPointer]) {
-                                        let n = rightPointer - leftPointer;
+                                        let n: number = rightPointer - leftPointer;
                                         count += Math.floor((n * (n + 1)) / 2);
                                         break;
                                 }
@@ -29,8 +29,8 @@ var threeSumMulti = function (nums, target) {
                                 count++;
 
                                 // FIX LEFT POINTER & MOVE RIGHT POINTER
-                                let start = leftPointer;
-                                let end = rightPointer - 1;
+                                let start: number = leftPointer;
+                                let end: number = rightPointer - 1;
                                 while (start < end) {
                                         if (nums[i] + nums[start] + nums[end] === target) {
                                                 count++;
