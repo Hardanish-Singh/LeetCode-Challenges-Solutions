@@ -6,13 +6,13 @@
  * @return { number }
  */
 
-const findClosest = (arr, num) => {
-        if (arr.length == 0) {
+const findClosest = (closestSumArray, num) => {
+        if (closestSumArray.length == 0) {
                 return 0;
         }
 
-        let closest = arr[0];
-        for (let item of arr) {
+        let closest = closestSumArray[0];
+        for (let item of closestSumArray) {
                 if (Math.abs(item - num) < Math.abs(closest - num)) {
                         closest = item;
                 }
@@ -22,7 +22,7 @@ const findClosest = (arr, num) => {
 
 function threeSumClosest(nums, target) {
         nums.sort((a, b) => a - b);
-        let arr = [];
+        let closestSumArray = [];
 
         for (let i = 0; i < nums.length - 1; i++) {
                 let leftPointer = i + 1;
@@ -30,7 +30,7 @@ function threeSumClosest(nums, target) {
 
                 while (leftPointer < rightPointer) {
                         let sum = nums[i] + nums[leftPointer] + nums[rightPointer];
-                        arr.push(sum);
+                        closestSumArray.push(sum);
                         if (nums[leftPointer] + nums[rightPointer] + nums[i] < target) {
                                 leftPointer++;
                         } else if (nums[leftPointer] + nums[rightPointer] + nums[i] > target) {
@@ -41,5 +41,5 @@ function threeSumClosest(nums, target) {
                 }
         }
 
-        return findClosest(arr, target);
+        return findClosest(closestSumArray, target);
 }
