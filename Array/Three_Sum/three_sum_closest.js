@@ -7,8 +7,8 @@
  */
 
 const findClosest = (arr, num) => {
-        if (arr == null) {
-                return;
+        if (arr.length == 0) {
+                return 0;
         }
 
         let closest = arr[0];
