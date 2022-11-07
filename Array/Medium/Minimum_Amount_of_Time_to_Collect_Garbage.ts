@@ -1,8 +1,8 @@
-type garbage = {
+type garbageCount = {
         [key: string]: number;
 };
 
-var calculateCost = function (garbage, travel, map, key) {
+var calculateCost = function (garbage: Array<string>, travel: Array<number>, map: garbageCount, key: string) {
         if (!map.hasOwnProperty(key)) {
                 return 0;
         }
@@ -30,16 +30,16 @@ var calculateCost = function (garbage, travel, map, key) {
  */
 
 var garbageCollection = function (garbage: Array<string>, travel: Array<number>): number {
-        let map: garbage = {};
+        let map: garbageCount = {};
         for (let i: number = 0; i < garbage.length; i++) {
                 let garbageType: Array<string> = garbage[i].split("");
-                for (let j = 0; j < garbageType.length; j++) {
+                for (let j: number = 0; j < garbageType.length; j++) {
                         garbageType[j] in map ? (map[garbageType[j]] += 1) : (map[garbageType[j]] = 1);
                 }
         }
-        let cost = 0;
-        let garbageTypes = ["M", "P", "G"];
-        for (let i = 0; i < garbageTypes.length; i++) {
+        let cost: number = 0;
+        let garbageTypes: Array<string> = ["M", "P", "G"];
+        for (let i: number = 0; i < garbageTypes.length; i++) {
                 cost += calculateCost(garbage, travel, map, garbageTypes[i]);
         }
         return cost;
