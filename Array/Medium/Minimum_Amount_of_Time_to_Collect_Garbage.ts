@@ -2,6 +2,14 @@ type garbageCount = {
         [key: string]: number;
 };
 
+/**
+ * @param { string[] } garbage
+ * @param { number[] } travel
+ * @param { garbageCount } map
+ * @param { string } key
+ * @return { number }
+ */
+
 var calculateCost = function (garbage: Array<string>, travel: Array<number>, map: garbageCount, key: string): number {
         if (!map.hasOwnProperty(key)) {
                 return 0;
