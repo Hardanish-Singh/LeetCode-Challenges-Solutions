@@ -22,10 +22,24 @@ function move_top(i: number, j: number): string {
         return i >= 0 ? i + "," + j : "";
 }
 
+/**
+ * @param { number[][] } grid
+ * @param { number } i
+ * @param { number } j
+ * @return { string }
+ */
+
 function move_right(grid: number[][], i: number, j: number): string {
         j = j + 1;
         return j <= grid[i].length - 1 ? i + "," + j : "";
 }
+
+/**
+ * @param { number[][] } grid
+ * @param { number } i
+ * @param { number } j
+ * @return { string }
+ */
 
 function move_down(grid: number[][], i: number, j: number): string {
         i = i + 1;
