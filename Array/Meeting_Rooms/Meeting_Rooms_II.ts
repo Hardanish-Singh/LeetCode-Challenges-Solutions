@@ -19,13 +19,13 @@ function minMeetingRooms(intervals: Array<Array<number>>): number {
         startTime.sort((a, b) => a - b);
         endTime.sort((a, b) => a - b);
 
-        let start2: number = 0;
-        for (let start1: number = 0; start1 < startTime.length; start1++) {
+        let endTimeIndex: number = 0;
+        for (let startTimeIndex: number = 0; startTimeIndex < startTime.length; startTimeIndex++) {
                 rooms++;
                 // When the start is bigger than end, it means at this time one of the previous meeting ends, and it can take and reuse that room.
-                if (startTime[start1] >= endTime[start2]) {
+                if (startTime[startTimeIndex] >= endTime[endTimeIndex]) {
                         rooms--;
-                        start2++;
+                        endTimeIndex++;
                 }
         }
 
