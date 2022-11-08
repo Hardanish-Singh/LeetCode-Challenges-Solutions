@@ -6,23 +6,24 @@
  */
 
 function minMeetingRooms(intervals: Array<Array<number>>): number {
-        let meetingStartTime: Array<number> = [];
-        let meetingEndTime: Array<number> = [];
+        let startTime: Array<number> = [];
+        let endTime: Array<number> = [];
         let rooms = 0;
 
         for (let i: number = 0; i < intervals.length; i++) {
-                meetingStartTime.push(intervals[i][0]);
-                meetingEndTime.push(intervals[i][1]);
+                const [start, end] = intervals[i];
+                startTime.push(start);
+                endTime.push(end);
         }
 
-        meetingStartTime.sort((a, b) => a - b);
-        meetingEndTime.sort((a, b) => a - b);
+        startTime.sort((a, b) => a - b);
+        endTime.sort((a, b) => a - b);
 
         let start2: number = 0;
-        for (let start1: number = 0; start1 < meetingStartTime.length; start1++) {
+        for (let start1: number = 0; start1 < startTime.length; start1++) {
                 rooms++;
                 // When the start is bigger than end, it means at this time one of the previous meeting ends, and it can take and reuse that room.
-                if (meetingStartTime[start1] >= meetingEndTime[start2]) {
+                if (startTime[start1] >= endTime[start2]) {
                         rooms--;
                         start2++;
                 }
