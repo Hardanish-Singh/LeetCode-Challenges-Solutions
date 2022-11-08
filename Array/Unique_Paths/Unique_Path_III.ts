@@ -1,9 +1,21 @@
 type Path = [number, number, string[], number][];
 
+/**
+ * @param { number } i
+ * @param { number } j
+ * @return { string }
+ */
+
 function move_left(i: number, j: number): string {
         j = j - 1;
         return j >= 0 ? i + "," + j : "";
 }
+
+/**
+ * @param { number } i
+ * @param { number } j
+ * @return { string }
+ */
 
 function move_top(i: number, j: number): string {
         i = i - 1;
