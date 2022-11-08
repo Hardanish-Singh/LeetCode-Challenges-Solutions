@@ -20,6 +20,17 @@ function move_down(grid: number[][], i: number, j: number): string {
         return i <= grid.length - 1 ? i + "," + j : "";
 }
 
+/**
+ * @param { number[][] } grid
+ * @param { string[] } path
+ * @param { number } count
+ * @param { string } position
+ * @param { number } zeros
+ * @param { Path } stack
+ * @param { number } result
+ * @return { number }
+ */
+
 function findPaths(
         grid: number[][],
         path: string[],
