@@ -20,18 +20,17 @@ var mostBooked = function (n, meetings) {
                 let earliestRoom = -1;
                 let earliestTime = Number.MAX_VALUE;
                 let freeRoomFound = false;
-                for (let i = 0; i < n; i++) {
-                        if (start >= rooms[i]) {
+                for (let j = 0; j < n; j++) {
+                        if (start >= rooms[j]) {
                                 //This is the room with the smallest index which is free on or before start time of the current meeting
-                                meetingCount[i]++;
-                                rooms[i] = end; //This room will be avialable at 'end' time of the current meeting.
+                                meetingCount[j]++;
+                                rooms[j] = end; //This room will be avialable at 'end' time of the current meeting.
                                 freeRoomFound = true;
                                 break;
-                        }
-                        if (earliestTime > rooms[i]) {
+                        } else if (earliestTime > rooms[j]) {
                                 //Let's keep track of the "room with smallest index and being available at the earliest"
-                                earliestTime = rooms[i];
-                                earliestRoom = i;
+                                earliestTime = rooms[j];
+                                earliestRoom = j;
                         }
                 }
                 if (freeRoomFound === false) {
