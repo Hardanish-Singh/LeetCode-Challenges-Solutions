@@ -2,8 +2,7 @@ class Solution:
         def mostBooked(self, n: int, meetings: List[List[int]]) -> int:
                 meetingCount = [0] * n
                 endTime = [0] * n
-                # Sort Meeting by start time
-                meetings.sort(key = lambda x: x[0])
+                meetings.sort(key = lambda x: x[0]) # Sort Meeting by start time
                 for startTime, end in meetings:
                         for j in range(n):
                                 if(startTime >= endTime[j] or endTime[j] == -1):
