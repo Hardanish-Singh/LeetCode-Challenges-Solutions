@@ -5,13 +5,8 @@
  */
 
 var mostBooked = function (n: number, meetings: Array<Array<number>>): number {
-        let meetingCount: Array<number> = [];
-        let endTime: Array<number> = [];
-        //Intialize meetingCount & endTime
-        for (let i: number = 0; i < n; i++) {
-                endTime[i] = -1;
-                meetingCount[i] = 0;
-        }
+        let meetingCount: Array<number> = new Array(n).fill(0);
+        let endTime: Array<number> = new Array(n).fill(-1);
         //Sort meeting by their startTime time
         meetings.sort((a, b) => a[0] - b[0]);
 
