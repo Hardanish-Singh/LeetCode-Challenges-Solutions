@@ -4,8 +4,7 @@ class Solution:
                 endTime = [0] * n
                 # Sort Meeting by start time
                 meetings.sort(key = lambda x: x[0])
-                for i in range(len(meetings)):
-                        [startTime, end] = meetings[i]
+                for startTime, end in meetings:
                         for j in range(n):
                                 if(startTime >= endTime[j] or endTime[j] == -1):
                                         meetingCount[j] = meetingCount[j] + 1 
