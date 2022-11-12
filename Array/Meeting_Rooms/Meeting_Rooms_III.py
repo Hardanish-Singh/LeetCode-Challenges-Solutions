@@ -8,12 +8,12 @@ class Solution:
                 for startTime, end in meetings:
                         for j in range(n):
                                 if(startTime >= endTime[j] or endTime[j] == -1):
-                                        meetingCount[j] = meetingCount[j] + 1 
+                                        meetingCount[j] += 1
                                         endTime[j] = end
                                         break
                         else:
                                 minEndTimeIndex = endTime.index(min(endTime))
                                 duration = end - startTime
                                 endTime[minEndTimeIndex] += duration
-                                meetingCount[minEndTimeIndex] = meetingCount[minEndTimeIndex] + 1 
+                                meetingCount[minEndTimeIndex] += 1
                 return meetingCount.index(max(meetingCount))
