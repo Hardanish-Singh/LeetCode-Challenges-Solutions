@@ -20,7 +20,11 @@ var mostBooked = function (n, meetings) {
                 let end = meetings[i][1];
                 let freeRoomFound = false;
                 for (let j = 0; j < n; j++) {
-                        // When the start is bigger than end, it means at this time one of the previous meeting ends, and it can take and reuse that room.
+                        /*
+                                When the start is bigger than end, it means at this time one of the previous meeting ends, and it can take and reuse that room.
+                                or
+                                If a room is empty means (-1)
+                        */
                         if (startTime >= endTime[j] || endTime[j] == -1) {
                                 meetingCount[j]++; // This is the room with the smallest index which is free on or before startTime time of the current meeting
                                 endTime[j] = end; // This room will be avialable at 'end' time of the current meeting.
