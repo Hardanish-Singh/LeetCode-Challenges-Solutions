@@ -6,15 +6,9 @@
  */
 
 function minMeetingRooms(intervals: Array<Array<number>>): number {
-        let startTime: Array<number> = [];
-        let endTime: Array<number> = [];
+        let startTime: Array<number> = intervals.map((interval) => interval[0]);
+        let endTime: Array<number> = intervals.map((interval) => interval[1]);
         let rooms = 0;
-
-        for (let i: number = 0; i < intervals.length; i++) {
-                const [start, end] = intervals[i];
-                startTime.push(start);
-                endTime.push(end);
-        }
 
         startTime.sort((a, b) => a - b);
         endTime.sort((a, b) => a - b);
