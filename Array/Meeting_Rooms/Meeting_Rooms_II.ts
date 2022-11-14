@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/meeting-rooms-ii/
 
 /**
- * @param { number[][] } intervals
+ * @param { number[][]} intervals
  * @return { number }
  */
 
