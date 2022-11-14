@@ -1,13 +1,13 @@
 // Leetcode: https://leetcode.com/problems/meeting-rooms-ii/
 
 /**
- * @param { number[][] } intervals
+ * @param { number[][] } meetings
  * @return { number }
  */
 
-function minMeetingRooms(intervals: Array<Array<number>>): number {
-        let startTime: Array<number> = intervals.map((interval) => interval[0]).sort((a, b) => a - b);
-        let endTime: Array<number> = intervals.map((interval) => interval[1]).sort((a, b) => a - b);
+function minMeetingRooms(meetings: Array<Array<number>>): number {
+        let startTime: Array<number> = meetings.map((interval) => interval[0]).sort((a, b) => a - b);
+        let endTime: Array<number> = meetings.map((interval) => interval[1]).sort((a, b) => a - b);
         let rooms = 0;
 
         let endTimeIndex: number = 0;
