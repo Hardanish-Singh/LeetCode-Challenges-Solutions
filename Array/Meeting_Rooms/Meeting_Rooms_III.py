@@ -7,7 +7,7 @@ class Solution:
                 meetings.sort(key = lambda x: x[0]) # Sort Meeting by start time
                 for startTime, end in meetings:
                         for j in range(n):
-                                if(startTime >= endTime[j] or endTime[j] == -1):
+                                if(startTime >= endTime[j]):
                                         meetingCount[j] += 1
                                         endTime[j] = end
                                         break
