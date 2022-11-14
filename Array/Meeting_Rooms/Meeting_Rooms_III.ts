@@ -8,7 +8,7 @@
 
 var mostBooked = function (n: number, meetings: Array<Array<number>>): number {
         let meetingCount: Array<number> = new Array(n).fill(0);
-        let endTime: Array<number> = new Array(n).fill(-1);
+        let endTime: Array<number> = new Array(n).fill(0);
         //Sort meeting by their startTime time
         meetings.sort((a, b) => a[0] - b[0]);
 
@@ -18,10 +18,8 @@ var mostBooked = function (n: number, meetings: Array<Array<number>>): number {
                 for (let j: number = 0; j < n; j++) {
                         /*
                                 When the start is bigger than end, it means at this time one of the previous meeting ends, and it can take and reuse that room.
-                                or
-                                If a room is empty means (-1)
                         */
-                        if (startTime >= endTime[j] || endTime[j] == -1) {
+                        if (startTime >= endTime[j]) {
                                 meetingCount[j]++; // This is the room with the smallest index which is free on or before startTime time of the current meeting
                                 endTime[j] = end; // This room will be avialable at 'end' time of the current meeting.
                                 freeRoomFound = true;
