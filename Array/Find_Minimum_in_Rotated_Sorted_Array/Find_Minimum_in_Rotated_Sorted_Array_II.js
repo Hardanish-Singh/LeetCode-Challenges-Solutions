@@ -1,8 +1,8 @@
 // Leetcode: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
 
 /**
- * @param {number[]} nums
- * @return {number}
+ * @param { number[] } nums
+ * @return { number }
  */
 
 var findMin = function (nums) {
