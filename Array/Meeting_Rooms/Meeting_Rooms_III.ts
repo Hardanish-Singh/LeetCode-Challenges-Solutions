@@ -1,9 +1,9 @@
 // Leetcode: https://leetcode.com/problems/meeting-rooms-iii/
 
 /**
- * @param {number} n
- * @param {number[][]} meetings
- * @return {number}
+ * @param { number } n
+ * @param { number[][] } meetings
+ * @return { number }
  */
 
 var mostBooked = function (n: number, meetings: Array<Array<number>>): number {
