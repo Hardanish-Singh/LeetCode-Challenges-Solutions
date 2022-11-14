@@ -1,25 +1,6 @@
 // Leetcode: https://leetcode.com/problems/3sum-closest/
 
 /**
- * @param { number[] } closestSumArray
- * @param { number } target
- * @return { number }
- */
-
-function findClosestElementToTarget(closestSumArray: Array<number>, target: number): number {
-        if (closestSumArray.length == 0) {
-                return 0;
-        }
-        let closest: number = closestSumArray[0];
-        for (let item of closestSumArray) {
-                if (Math.abs(item - target) < Math.abs(closest - target)) {
-                        closest = item;
-                }
-        }
-        return closest;
-}
-
-/**
  * @param { number[] } nums
  * @param { number } target
  * @return { number }
@@ -46,5 +27,9 @@ function threeSumClosest(nums: Array<number>, target: number): number {
                 }
         }
 
-        return findClosestElementToTarget(closestSumArray, target);
+        let absoluteDifference: Array<number> = [];
+        for (let i: number = 0; i < closestSumArray.length; i++) {
+                absoluteDifference.push(Math.abs(closestSumArray[i] - target));
+        }
+        return closestSumArray[absoluteDifference.indexOf(Math.min.apply(null, absoluteDifference))];
 }
