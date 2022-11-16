@@ -1,8 +1,10 @@
 // Leetcode: https://leetcode.com/problems/sort-colors/
 
 /**
- Do not return anything, modify nums in-place instead.
+ * @param { number[] } nums
+ * @return { void }
  */
+
 function sortColors(nums: number[]): void {
         let red = 0;
         let white = 0;
