@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/sort-colors/
 
 /**
- * @param { number[] } nums
+ * @param { number[]} nums
  * @return { void }
  */
 
