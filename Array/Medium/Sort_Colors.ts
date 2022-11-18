@@ -2,7 +2,7 @@
 
 /**
  * @param { number[] } nums
- * @return { void }
+ * @return { void}
  */
 
 function sortColors(nums: number[]): void {
