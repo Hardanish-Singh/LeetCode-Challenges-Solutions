@@ -10,9 +10,7 @@ function compress(chars: string[]): number {
                         j++;
                 }
                 chars.push(chars[i]);
-                if (count > 1) {
-                        chars.push(...String(count).split(""));
-                }
+                count > 1 && chars.push(...String(count).split(""));
                 i = j + 1;
         }
         let index = chars.indexOf("+-");
