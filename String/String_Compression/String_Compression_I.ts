@@ -1,4 +1,10 @@
-function compress(chars: string[]): number {
+/**
+ *
+ * @param { string[] }  chars
+ * @returns { number }
+ */
+
+function compress(chars: Array<string>): number {
         chars.push("+-");
         let i = 0;
 
