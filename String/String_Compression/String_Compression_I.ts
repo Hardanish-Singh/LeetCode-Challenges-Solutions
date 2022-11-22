@@ -1,6 +1,12 @@
 // Leetcode: https://leetcode.com/problems/string-compression/
 
-function compress(chars: string[]): number {
+/**
+ *
+ * @param { string[] } chars
+ * @returns { number }
+ */
+
+function compress(chars: Array<string>): number {
         chars.push("π");
         let i = 0;
 
