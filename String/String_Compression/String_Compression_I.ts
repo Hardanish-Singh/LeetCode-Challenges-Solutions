@@ -2,7 +2,7 @@
 
 /**
  *
- * @param { string[]} chars
+ * @param { string[] } chars
  * @returns { number }
  */
 
