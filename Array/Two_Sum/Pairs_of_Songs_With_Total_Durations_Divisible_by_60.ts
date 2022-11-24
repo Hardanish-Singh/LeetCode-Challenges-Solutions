@@ -1,5 +1,10 @@
 // Leetcode: https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/
 
+/**
+ * @param { number[] }time
+ * @returns { number }
+ */
+
 function numPairsDivisibleBy60(time: number[]): number {
         let count: number = 0;
         for (let i: number = 0; i < time.length; i++) {
