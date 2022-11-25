@@ -1,6 +1,6 @@
 /**
- * @param {number[]} nums
- * @return {number[][]}
+ * @param { number[] } nums
+ * @return { number[][] }
  */
 
 function is_dictionary_equal(word1, word2) {
