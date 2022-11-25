@@ -1,6 +1,6 @@
 /**
- * @param {number[]} nums
- * @return {number[][]}
+ * @param { number[] } nums
+ * @return { number[][] }
  */
 
 function is_complete(array1, array2) {
