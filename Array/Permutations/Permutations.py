@@ -1,8 +1,7 @@
 class Solution:
         def permute(self, nums: List[int]) -> List[List[int]]:
                 nums = sorted(nums)
-                stack = []
-                result = []
+                stack, result = [], []
                 
                 for num in nums:
                         stack.append([num])
