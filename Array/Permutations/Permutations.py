@@ -16,4 +16,4 @@ class Solution:
                                 for num in nums:
                                         if num not in item:
                                                 stack.append(item + [num])
-                return result 
+                return result
