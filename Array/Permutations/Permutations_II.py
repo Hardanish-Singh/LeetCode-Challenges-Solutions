@@ -5,7 +5,7 @@ class Solution:
                 nums = sorted(nums)
                 stack, result = [], []
                 
-                for i in range(0, len(nums)):
+                for i in range(len(nums)):
                         stack.append([ [nums[i]], [i] ])
 
                 while stack: 
