@@ -7,7 +7,7 @@ class Solution(object):
                 result = []
                 
                 for candidate in candidates:
-                        stack.append([candidate])
+                        stack.append( [candidate] )
 
                 while stack: 
                         item = stack.pop(0)
