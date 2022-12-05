@@ -13,7 +13,7 @@ class Solution:
                         if len(item) == len(nums) and item not in result:
                                 result.append(item)
                         else:
-                                for i in range(0, len(nums)):
+                                for i in range(len(nums)):
                                         if i not in indexes:
                                                 stack.append([ item + [nums[i]], indexes + [i] ])
                 return result
