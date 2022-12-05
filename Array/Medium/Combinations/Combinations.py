@@ -17,7 +17,8 @@ class Solution:
                         if len(item) == k:
                                 result.append( item )
                         
-                        for i in range( index+1, n+1 ):
-                                stack.append( item + [i] )
+                        else:
+                                for i in range( index+1, n+1 ):
+                                        stack.append( item + [i] )
                 
                 return result
