@@ -8,8 +8,8 @@ class Solution:
                 for i in range(len(nums)):
                         stack.append([ [nums[i]], [i] ])
 
-                while stack: 
-                        item, indexes = stack.pop(0)
+                while stack:
+                        item, indexes = stack.pop()
                         if len(item) == len(nums) and item not in result:
                                 result.append(item)
                         else:
