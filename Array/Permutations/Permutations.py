@@ -6,7 +6,7 @@ class Solution:
                 stack, result = [], []
                 
                 for num in nums:
-                        stack.append([num])
+                        stack.append( [num] )
 
                 while stack:
                         item = stack.pop()
