@@ -9,14 +9,9 @@ class Solution:
                 
                 while stack:
                         item = stack.pop()
-                        
-                        index = 0
-                        if item:
-                                index = item[-1]      
-                        
+                        index = item[-1] or 0      
                         if len(item) == k:
                                 result.append( item )
-                        
                         else:
                                 for i in range( index+1, n+1 ):
                                         stack.append( item + [i] )
