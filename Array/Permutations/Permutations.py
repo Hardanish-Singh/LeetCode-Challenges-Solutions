@@ -9,7 +9,7 @@ class Solution:
                         stack.append([num])
 
                 while stack: 
-                        item = stack.pop(0)
+                        item = stack.pop()
                         if len(item) == len(nums):
                                 result.append(item)
                         else:
