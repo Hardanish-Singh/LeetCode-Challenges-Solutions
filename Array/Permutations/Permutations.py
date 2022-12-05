@@ -8,7 +8,7 @@ class Solution:
                 for num in nums:
                         stack.append([num])
 
-                while stack: 
+                while stack:
                         item = stack.pop()
                         if len(item) == len(nums):
                                 result.append(item)
