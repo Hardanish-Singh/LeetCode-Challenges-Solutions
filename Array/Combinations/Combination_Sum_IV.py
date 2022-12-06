@@ -16,7 +16,7 @@ class Solution:
                                 result.append(item)
                         else:
                                 for candidate in candidates:
-                                        if candidate > target or remainder > target:
+                                        if candidate > target or remainder > target or remainder - candidate > target:
                                                 break
                                         if remainder >= candidate:
                                                 stack.append(item + [candidate])
