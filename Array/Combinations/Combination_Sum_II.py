@@ -3,20 +3,21 @@
 class Solution:
         def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
                 candidates.sort()
-                stack = [ [0, []] ]
-                result = []
+                stack, result, combinations_tried = [], [], []
+                
+                for i in range(len(candidates)):
+                        stack.append( [ [candidates[i]], [i] ] )
 
                 while stack:
-                        index, item = stack.pop()
+                        item, indexes = stack.pop()
                         combinationSum = sum(item)
                         if combinationSum == target and item not in result:
                                 result.append(item)
                         else:
-                                for i in range(index, len(candidates)):
-                                        if i != index and candidates[i] == candidates[i-1]:
-                                                continue
-                                        elif combinationSum + candidates[i] > target:
-                                                break
-                                        elif combinationSum + candidates[i] <= target:
-                                                stack.append( [i+1, item + [candidates[i]]] )
+                                for i in range(len(candidates)):
+                                        if i not in indexes and combinationSum + candidates[i] <= target:
+                                                temp = sorted(item + [candidates[i]])
+                                                if temp not in combinations_tried:
+                                                        combinations_tried.append(temp)
+                                                        stack.append( [ temp , indexes + [i] ] )
                 return result
