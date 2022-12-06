@@ -1,7 +1,9 @@
+# Leetcode: https://leetcode.com/problems/combination-sum-ii
+
 class Solution:
         def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
                 candidates.sort()
-                stack = [[0, []]]
+                stack = [ [0, []] ]
                 result = []
 
                 while stack:
@@ -16,6 +18,5 @@ class Solution:
                                         elif comboSum + candidates[i] > target:
                                                 break
                                         elif comboSum + candidates[i] <= target:
-                                                newCombo = combo + [candidates[i]]
-                                                stack.append([i+1, newCombo])
+                                                stack.append( [i+1, combo + [candidates[i]]] )
                 return result
