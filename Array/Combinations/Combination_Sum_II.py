@@ -7,16 +7,16 @@ class Solution:
                 result = []
 
                 while stack:
-                        index, combo = stack.pop()
-                        comboSum = sum(combo)
-                        if comboSum == target and combo not in result:
-                                result.append(combo)
+                        index, item = stack.pop()
+                        combinationSum = sum(item)
+                        if combinationSum == target and item not in result:
+                                result.append(item)
                         else:
                                 for i in range(index, len(candidates)):
                                         if i != index and candidates[i] == candidates[i-1]:
                                                 continue
-                                        elif comboSum + candidates[i] > target:
+                                        elif combinationSum + candidates[i] > target:
                                                 break
-                                        elif comboSum + candidates[i] <= target:
-                                                stack.append( [i+1, combo + [candidates[i]]] )
+                                        elif combinationSum + candidates[i] <= target:
+                                                stack.append( [i+1, item + [candidates[i]]] )
                 return result
