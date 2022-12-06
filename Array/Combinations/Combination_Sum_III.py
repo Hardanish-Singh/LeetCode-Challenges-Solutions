@@ -1,4 +1,4 @@
-# Leetcode: https://leetcode.com/problems/combination-sum-iii/description/
+# Leetcode: https://leetcode.com/problems/combination-sum-iii
 
 class Solution:
         def combinationSum3(self, k: int, n: int) -> List[List[int]]:
