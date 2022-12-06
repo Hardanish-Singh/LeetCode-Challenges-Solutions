@@ -3,8 +3,7 @@
 class Solution(object):
         def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
                 candidates = sorted(candidates)
-                stack = []
-                result = []
+                stack, result = [], []
                 
                 for candidate in candidates:
                         stack.append( [candidate] )
