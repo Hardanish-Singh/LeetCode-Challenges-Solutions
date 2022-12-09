@@ -19,6 +19,6 @@ class Solution:
                                         if candidate > target or remainder > target or remainder - candidate > target:
                                                 break
                                         if remainder >= candidate:
-                                                stack.append( item + [candidate] )
+                                                stack.append( item + [candidate] ) 
         
                 return len(result)
