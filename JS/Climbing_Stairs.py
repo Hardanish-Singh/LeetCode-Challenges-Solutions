@@ -13,12 +13,10 @@ class Solution:
                 stairs.append( before + '2' + stair[ i + 2: ] )
                 before += stair[i]
                 break
-
-            index = index + 1
-            try:
-                stair = stairs[index]
-            except:
+            else:
                 break
+            index = index + 1
+            stair = stairs[index]
         
         for item in stairs:
             count = count + math.comb(len(item), item.count('2'))
