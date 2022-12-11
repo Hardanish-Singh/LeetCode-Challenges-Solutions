@@ -1,6 +1,6 @@
 # Leetcode: https://leetcode.com/problems/climbing-stairs
 
-import math
+from math import comb
 
 class Solution:
     def climbStairs(self, n: int) -> int:
@@ -21,6 +21,6 @@ class Solution:
             stair = stairs[index]
         
         for item in stairs:
-            count = count + math.comb(len(item), item.count('2'))
+            count = count + comb(len(item), item.count('2'))
 
         return count
