@@ -7,13 +7,11 @@ class Solution:
         stairs = []
         stair = '1' * n
         count = 0
-        str = stair
 
-        while sum(list(map(int, str))) <= n:
-            index = str.rfind('2') + 1
-            stairs.append( str )
-            str = stair[0:index] + '2' + stair[index + 2:]
-            stair = str
+        while sum(list(map(int, stair))) <= n:
+            index = stair.rfind('2') + 1
+            stairs.append( stair )
+            stair = stair[0:index] + '2' + stair[index + 2:]
         
         for item in stairs:
             count = count + comb(len(item), item.count('2'))
