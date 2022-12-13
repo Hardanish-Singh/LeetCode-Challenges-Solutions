@@ -4,21 +4,16 @@ from math import comb
 
 class Solution:
     def climbStairs(self, n: int) -> int:
-        stairs = [ '1' * n ]
-        index = 0
-        stair = stairs[index]
+        stairs = []
+        stair = '1' * n
         count = 0
+        str = stair
 
-        while True:
-            before = stair[0: stair.rfind( '2' ) + 1 ]
-            for i in range(stair.rfind( '2' ) + 1, len(stair) - 1):
-                stairs.append( before + '2' + stair[ i + 2: ] )
-                before += stair[i]
-                break
-            else:
-                break
-            index = index + 1
-            stair = stairs[index]
+        while sum(list(map(int, str))) <= n:
+            index = str.rfind('2') + 1
+            stairs.append( str )
+            str = stair[0:index] + '2' + stair[index + 2:]
+            stair = str
         
         for item in stairs:
             count = count + comb(len(item), item.count('2'))
