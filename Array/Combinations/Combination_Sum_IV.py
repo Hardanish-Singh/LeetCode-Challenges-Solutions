@@ -6,9 +6,9 @@ class Solution:
                 @lru_cache(None)
                 def solve(amount):
                         if amount == 0: 
-                                return True
+                                return 1
                         if amount < 0:
-                                return False
+                                return 0
                         cand = 0
                         for candidate in candidates:
                                 cand = cand + solve(amount - candidate)
