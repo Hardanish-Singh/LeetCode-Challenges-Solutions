@@ -1,24 +1,17 @@
 # Leetcode: https://leetcode.com/problems/combination-sum-iv
 
-class Solution:    
-        def combinationSum4(self, nums: List[int], target: int) -> int:
-                candidates = nums
-                candidates = sorted(candidates)
-                stack, result = [], []
-                
-                for candidate in candidates:
-                        stack.append( [candidate] )
+from functools import lru_cache
+class Solution:
+        def combinationSum4(self, candidates: List[int], target: int) -> int:
+                @lru_cache(None)
+                def solve(amount):
+                        if amount == 0: 
+                                return True
+                        if amount < 0:
+                                return False
+                        cand = 0
+                        for candidate in candidates:
+                                cand = cand + solve(amount - candidate)
+                        return cand
 
-                while stack: 
-                        item = stack.pop()
-                        remainder = target - sum(item)
-                        if remainder == 0:
-                                result.append(item)
-                        else:
-                                for candidate in candidates:
-                                        if candidate > target or remainder > target or remainder - candidate > target:
-                                                break
-                                        if remainder >= candidate:
-                                                stack.append( item + [candidate] )
-        
-                return len(result)
+                return solve(target)
