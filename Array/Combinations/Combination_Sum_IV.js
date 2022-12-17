@@ -1,3 +1,10 @@
+/**
+ *
+ * @param { number[] } nums
+ * @param { number } target
+ * @returns { number }
+ */
+
 var combinationSum4 = function (nums, target) {
         let count = 0;
 
