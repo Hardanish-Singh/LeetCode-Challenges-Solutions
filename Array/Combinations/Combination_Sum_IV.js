@@ -7,6 +7,7 @@
  * @returns { number }
  */
 
+// SOLUTION 1: RECURSION
 var combinationSum4 = function (nums, target) {
         let count = 0;
 
@@ -35,6 +36,13 @@ var combinationSum4 = function (nums, target) {
         permute();
         return count;
 };
+
+/**
+ *
+ * @param { number[] } nums
+ * @param { number } target
+ * @returns { number }
+ */
 
 // SOLUTION 2: RECURSION WITH MEMOIZATION
 var combinationSum4 = function (nums, target) {
