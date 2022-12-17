@@ -19,7 +19,7 @@ var combinationSum4 = function (nums, target) {
                 }
         }
 
-        let permute = function (sum = 0) {
+        function permute(sum = 0) {
                 if (sum < 0 || sum > target) {
                         return count;
                 }
@@ -31,7 +31,7 @@ var combinationSum4 = function (nums, target) {
                 for (let num of nums) {
                         permute(sum + num);
                 }
-        };
+        }
 
         permute();
         return count;
@@ -56,7 +56,7 @@ var combinationSum4 = function (nums, target) {
                 }
         }
 
-        let permute = function (sum = 0) {
+        function permute(sum = 0) {
                 let count = 0;
                 if (sum < 0 || sum > target) {
                         return count;
@@ -76,7 +76,7 @@ var combinationSum4 = function (nums, target) {
                 }
                 memo[sum] = count;
                 return count;
-        };
+        }
 
         return permute();
 };
