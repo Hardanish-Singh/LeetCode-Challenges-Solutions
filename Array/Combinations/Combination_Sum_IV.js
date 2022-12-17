@@ -58,6 +58,10 @@ var combinationSum4 = function (nums, target) {
 
         let permute = function (sum = 0) {
                 let count = 0;
+                if (sum < 0 || sum > target) {
+                        return count;
+                }
+
                 if (sum in memo) {
                         count += memo[sum];
                         return count;
@@ -67,11 +71,8 @@ var combinationSum4 = function (nums, target) {
                         return ++count;
                 }
 
-                for (let num of nums) {
-                        let temp = sum + num;
-                        if (temp > 0 && temp <= target) {
-                                count += permute(temp);
-                        }
+                for (const num of nums) {
+                        count += permute(sum + num);
                 }
                 memo[sum] = count;
                 return count;
