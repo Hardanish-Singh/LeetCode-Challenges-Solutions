@@ -24,5 +24,6 @@ var combinationSum4 = function (nums, targetElement) {
                 }
         };
 
+        permute(targetElement);
         return count;
 };
