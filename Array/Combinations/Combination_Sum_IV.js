@@ -46,7 +46,6 @@ var combinationSum4 = function (nums, target) {
 
 // SOLUTION 2: RECURSION WITH MEMOIZATION
 var combinationSum4 = function (nums, target) {
-        //   let count = 0;
         const memo = {};
 
         nums.sort((a, b) => a - b);
@@ -79,5 +78,4 @@ var combinationSum4 = function (nums, target) {
         };
 
         return permute();
-        //   return count;
 };
