@@ -59,7 +59,7 @@ var change = function (amount, coins) {
                         count += combinationSum(sum + coins[i], i);
                 }
                 cache[key] = count;
-                return cache[key];
+                return count;
         }
 
         return combinationSum();
