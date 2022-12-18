@@ -58,7 +58,7 @@ var change = function (amount, coins) {
                 }
 
                 for (let i = idx; i < coins.length; i++) {
-                        count += combinationSum(sum + coins[i], idx);
+                        count += combinationSum(sum + coins[i], i);
                 }
                 cache[key] = count;
                 return count;
