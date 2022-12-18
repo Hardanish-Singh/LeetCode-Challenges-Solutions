@@ -12,7 +12,7 @@ var change = function (amount, coins) {
 
         nums.sort((a, b) => a - b);
 
-        function permute(sum = 0, idx = 0) {
+        function combinationSum(sum = 0, idx = 0) {
                 if (sum < 0 || sum > target) {
                         return 0;
                 }
@@ -22,10 +22,10 @@ var change = function (amount, coins) {
                 }
 
                 for (let i = idx; i < nums.length; i++) {
-                        permute(sum + nums[i], i);
+                        combinationSum(sum + nums[i], i);
                 }
         }
 
-        permute();
+        combinationSum();
         return count;
 };
