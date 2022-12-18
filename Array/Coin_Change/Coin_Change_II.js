@@ -15,7 +15,8 @@ var change = function (amount, coins) {
                 }
 
                 if (sum == amount) {
-                        return ++count;
+                        count = count + 1;
+                        return count;
                 }
 
                 for (let i = idx; i < coins.length; i++) {
@@ -52,7 +53,8 @@ var change = function (amount, coins) {
                 }
 
                 if (sum == amount) {
-                        return ++count;
+                        count = count + 1;
+                        return count;
                 }
 
                 for (let i = idx; i < coins.length; i++) {
