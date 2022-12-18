@@ -5,24 +5,20 @@
  */
 
 var change = function (amount, coins) {
-        nums = coins;
-        target = amount;
-
         let count = 0;
-
-        nums.sort((a, b) => a - b);
+        coins.sort((a, b) => a - b);
 
         function combinationSum(sum = 0, idx = 0) {
-                if (sum < 0 || sum > target) {
+                if (sum < 0 || sum > amount) {
                         return 0;
                 }
 
-                if (sum == target) {
+                if (sum == amount) {
                         return ++count;
                 }
 
-                for (let i = idx; i < nums.length; i++) {
-                        combinationSum(sum + nums[i], i);
+                for (let i = idx; i < coins.length; i++) {
+                        combinationSum(sum + coins[i], i);
                 }
         }
 
