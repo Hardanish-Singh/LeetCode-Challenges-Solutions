@@ -10,14 +10,7 @@
 // SOLUTION 1: RECURSION
 var combinationSum4 = function (nums, target) {
         let count = 0;
-
         nums.sort((a, b) => a - b);
-        for (let i = 0; i < nums.length; i++) {
-                if (nums[i] > target || nums[i] < 0) {
-                        nums.splice(i, 1);
-                        i--;
-                }
-        }
 
         function permutationSum(sum = 0) {
                 if (sum < 0 || sum > target) {
@@ -47,14 +40,7 @@ var combinationSum4 = function (nums, target) {
 // SOLUTION 2: RECURSION WITH MEMOIZATION
 var combinationSum4 = function (nums, target) {
         const memo = {};
-
         nums.sort((a, b) => a - b);
-        for (let i = 0; i < nums.length; i++) {
-                if (nums[i] > target || nums[i] < 0) {
-                        nums.splice(i, 1);
-                        i--;
-                }
-        }
 
         function permutationSum(sum = 0) {
                 let count = 0;
