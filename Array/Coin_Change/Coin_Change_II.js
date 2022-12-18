@@ -1,8 +1,9 @@
 /**
- * @param {number} amount
- * @param {number[]} coins
- * @return {number}
+ * @param { number } amount
+ * @param { number[] } coins
+ * @return { number }
  */
+
 var change = function (amount, coins) {
         nums = coins;
         target = amount;
