@@ -18,7 +18,8 @@ var combinationSum4 = function (nums, target) {
                 }
 
                 if (sum === target) {
-                        return ++count;
+                        count = count + 1;
+                        return count;
                 }
 
                 for (let num of nums) {
@@ -54,7 +55,8 @@ var combinationSum4 = function (nums, target) {
                 }
 
                 if (sum === target) {
-                        return ++count;
+                        count = count + 1;
+                        return count;
                 }
 
                 for (const num of nums) {
