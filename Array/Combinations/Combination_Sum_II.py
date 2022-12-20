@@ -3,7 +3,7 @@
 class Solution:
         def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
                 candidates.sort()
-                stack, result, combinations_tried = [], [], []
+                stack, result, combinationstried = [], [], []
                 
                 for i in range(len(candidates)):
                         stack.append( [ [candidates[i]], [i] ] )
@@ -17,7 +17,7 @@ class Solution:
                                 for i in range(len(candidates)):
                                         if i not in indexes and combinationSum + candidates[i] <= target:
                                                 temp = sorted(item + [candidates[i]])
-                                                if temp not in combinations_tried:
-                                                        combinations_tried.append(temp)
+                                                if temp not in combinationstried:
+                                                        combinationstried.append(temp)
                                                         stack.append( [ temp , indexes + [i] ] )
                 return result
