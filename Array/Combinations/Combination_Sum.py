@@ -2,7 +2,7 @@
 
 class Solution(object):
         def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-                candidates = sorted(candidates)
+                candidates.sort()
                 queue, result = [], []
                 
                 for candidate in candidates:
