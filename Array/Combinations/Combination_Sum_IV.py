@@ -5,15 +5,15 @@ class Solution:
                 nums.sort()
                 cache = { }
                 visited = set()
-                stack = []
+                queue = []
 
                 for num in nums:
                         cache[num] = 1
-                        stack.append(num)
+                        queue.append(num)
                         visited.add(num)
 
-                while stack:
-                        item = stack.pop(0)
+                while queue:
+                        item = queue.pop(0)
                         for num in nums:
                                 number = item + num
                                 if target >= number:
@@ -23,10 +23,7 @@ class Solution:
                                                 cache[number] = cache[item]
                                         if number not in visited:
                                                 visited.add(number)
-                                                stack.append(number)
-                                                stack.sort()
+                                                queue.append(number)
+                                                queue.sort()
 
-                if target in cache.keys():
-                        return cache.get(target)
-                else:
-                        return 0
+                return cache.get(target) if target in cache.keys() else 0
