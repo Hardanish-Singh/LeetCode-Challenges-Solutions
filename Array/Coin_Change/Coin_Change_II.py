@@ -18,14 +18,12 @@ class Solution:
                         elif instruction == 'ENTER':
                                 stack.append([currentsum, index, 'EXIT'])
                         
-                                if (index+1) < len(coins):
-                                        if (currentsum, index+1) not in cache.keys():
-                                                stack.append([currentsum, index+1, 'ENTER'])
+                                if (index+1) < len(coins) and (currentsum, index+1) not in cache.keys()::
+                                        stack.append([currentsum, index+1, 'ENTER'])
                         
                                 newsum = currentsum + coins[index]
-                                if newsum <= amount:
-                                        if (newsum, index) not in cache.keys():
-                                                stack.append([newsum, index, 'ENTER'])
+                                if newsum <= amount and (newsum, index) not in cache.keys():
+                                        stack.append([newsum, index, 'ENTER'])
                                 
 
                         elif instruction == 'EXIT':
