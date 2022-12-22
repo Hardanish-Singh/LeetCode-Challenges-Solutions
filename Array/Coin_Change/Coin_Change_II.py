@@ -20,7 +20,6 @@ class Solution:
                                 stack.append([currentsum, index, 'EXIT'])
                                 if (index+1) < len(coins) and (currentsum, index+1) not in cache.keys():
                                         stack.append([currentsum, index+1, 'ENTER'])
-                        
                                 if newsum <= amount and (newsum, index) not in cache.keys():
                                         stack.append([newsum, index, 'ENTER'])
                         elif instruction == 'EXIT':
