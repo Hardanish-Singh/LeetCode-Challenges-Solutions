@@ -1,6 +1,6 @@
 class Solution:
         def change(self, amount: int, coins: List[int]) -> int:
-                if amount<=0:
+                if amount <= 0:
                         return 1
                 if len(coins) == 0:
                         return 0  
