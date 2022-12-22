@@ -6,7 +6,7 @@ class Solution:
                         return 0  
                 
                 cache = {}
-                coins.sort()
+                coins.sort() 
                 
                 #currentsum, index, instruction
                 stack = [[0, 0, 'ENTER']]
