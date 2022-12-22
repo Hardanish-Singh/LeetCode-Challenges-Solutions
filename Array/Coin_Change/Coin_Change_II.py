@@ -17,7 +17,6 @@ class Solution:
                                 cache[(currentsum, index)] = 1
                         elif instruction == 'ENTER':
                                 stack.append([currentsum, index, 'EXIT'])
-                        
                                 if (index+1) < len(coins) and (currentsum, index+1) not in cache.keys():
                                         stack.append([currentsum, index+1, 'ENTER'])
                         
