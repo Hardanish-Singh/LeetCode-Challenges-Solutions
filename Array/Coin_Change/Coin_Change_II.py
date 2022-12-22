@@ -24,8 +24,6 @@ class Solution:
                                 if newsum <= amount and (newsum, index) not in cache.keys():
                                         stack.append([newsum, index, 'ENTER'])
                         elif instruction == 'EXIT':
-                                left = cache.get((newsum, index)) or 0
-                                right = cache.get((currentsum, index+1)) or 0
-                                cache[(currentsum, index)] = left + right
+                                cache[(currentsum, index)] = ( cache.get((newsum, index)) or 0 ) + ( cache.get((currentsum, index+1)) or 0 )
                 
                 return cache[(0,0)]
