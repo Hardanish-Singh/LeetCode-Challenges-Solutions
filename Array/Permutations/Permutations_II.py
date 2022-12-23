@@ -2,7 +2,7 @@
 
 class Solution:
         def permuteUnique(self, nums: List[int]) -> List[List[int]]:
-                nums = sorted(nums)
+                nums.sort()
                 stack, result = [], []
                 
                 for i in range(len(nums)):
