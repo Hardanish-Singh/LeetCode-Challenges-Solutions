@@ -6,7 +6,7 @@ class Solution:
                 stack, result = [], []
                 
                 for i in range(len(nums)):
-                        stack.append( [ [ nums[i]], [i] ] )
+                        stack.append( [ [ nums[i] ], [i] ] )
 
                 while stack:
                         item, indexes = stack.pop()
