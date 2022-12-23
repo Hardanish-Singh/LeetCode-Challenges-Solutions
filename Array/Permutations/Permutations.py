@@ -2,7 +2,7 @@
 
 class Solution:
         def permute(self, nums: List[int]) -> List[List[int]]:
-                nums = sorted(nums)
+                nums.sort()
                 stack, result = [], []
                 
                 for num in nums:
