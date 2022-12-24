@@ -11,13 +11,11 @@ class Solution(object):
                 while queue: 
                         item = queue.pop(0)
                         remainder = target - sum(item)
-                        if remainder == 0:
+                        if remainder == 0 and item not in result:
                                 result.append(item)
                         else:
                                 for candidate in candidates:
                                         if remainder >= candidate:
-                                                temp = sorted(item + [candidate])
-                                                if temp not in queue:
-                                                        queue.append(temp)
+                                                queue.append(sorted(item + [candidate]))
 
                 return result
