@@ -1,3 +1,5 @@
+# Leetcode: https://leetcode.com/problems/min-cost-climbing-stairs/
+
 from typing import Dict, List
 
 class Solution:
