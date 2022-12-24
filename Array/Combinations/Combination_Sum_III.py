@@ -3,7 +3,7 @@
 class Solution:
         def combinationSum3(self, k: int, n: int) -> List[List[int]]:
                 combinations = []
-                stack = [[[], 1]]
+                stack = [ [[], 1] ]
 
                 while stack:
                         currentCombination, integer = stack.pop()
@@ -14,6 +14,6 @@ class Solution:
                                 for i in range(integer, 10):
                                         if combinationSum + i > n: 
                                                 break
-                                        stack.append([currentCombination + [i], i + 1])
+                                        stack.append( [currentCombination + [i], i + 1] )
                 
                 return combinations
