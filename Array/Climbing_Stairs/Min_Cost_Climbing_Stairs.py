@@ -18,4 +18,4 @@ class Solution:
                         cache[stepIndex] = minCost
                         return minCost
 
-        return min( minSteps( 0 ), minSteps( 1 ) )
+                return min( minSteps( 0 ), minSteps( 1 ) )
