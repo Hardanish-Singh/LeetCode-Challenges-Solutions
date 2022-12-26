@@ -1,5 +1,15 @@
 # Leetcode: https://leetcode.com/problems/decode-ways/
 
+"""
+        This question is exactly same as the standard solution to find fibonacci series of nth number.
+        Except that you can't simply add previous two values as they may not be valid in context of current digit.
+
+        Recurrence for the problem:
+                                        f(0) = 0
+                                        f(1) = 1
+                                        f(n) = f(n-1) if valid + f(n-2) if valid
+"""
+
 class Solution:
     def numDecodings(self, string: str) -> int:
         f0, f1 = 0, 1
