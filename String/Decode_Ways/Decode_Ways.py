@@ -6,12 +6,12 @@
 
         Recurrence for the problem:
         
-        f(0) = 0
-        f(1) = 1
-        f(n) = f(n-1) if valid + f(n-2) if valid
+                f(0) = 0
+                f(1) = 1
+                f(n) = f(n-1) if valid + f(n-2) if valid
 
-        f(n-1) can be added if current digit is not 0. It is guaranteed that all characters are digits, so this is the only condition we need.
-        f(n-2) has more contrived conditions. First, previous digit needs to be either 1 or 2. Second, if the previous digit is 2, the current digit must be betwen [0, 6].
+                f(n-1) can be added if current digit is not 0. It is guaranteed that all characters are digits, so this is the only condition we need.
+                f(n-2) First, previous digit needs to be either 1 or 2. Second, if the previous digit is 2, the current digit must be betwen [0, 6].
 """
 
 class Solution:
