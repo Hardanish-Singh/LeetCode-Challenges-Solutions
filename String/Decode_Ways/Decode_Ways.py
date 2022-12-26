@@ -15,16 +15,17 @@
 """
 
 class Solution:
-    def numDecodings(self, string: str) -> int:
-        f0, f1 = 0, 1
-        
-        for i, ch in enumerate(string):
-            # f(n-1) validity
-            decodeFN1 = f1 if ch != '0' else 0
+        def numDecodings(self, string: str) -> int:
+                f0, f1 = 0, 1
 
-            # f(n-2) validity
-            decodeFN2 = f0 if string[i-1] == '1' or (string[i-1] == '2' and '0' <= ch <= '6') else 0
+                for i, ch in enumerate(string):
+                        # f(n-1) validity
+                        decodeFN1 = f1 if ch != '0' else 0
 
-            f0, f1 = f1, (decodeFN2 + decodeFN1)
+                        # f(n-2) validity
+                        decodeFN2 = f0 if string[i-1] == '1' or (string[i-1] == '2' and '0' <= ch <= '6') else 0
+                        # decodeFN2 = f0 if (string[i-1] == '1' and '0' <= ch <= '9') or (string[i-1] == '2' and '0' <= ch <= '6') else 0
 
-        return f1
+                        f0, f1 = f1, (decodeFN2 + decodeFN1)
+
+                return f1
