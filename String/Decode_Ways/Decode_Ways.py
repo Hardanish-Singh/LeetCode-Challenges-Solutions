@@ -10,8 +10,9 @@
                 f(1) = 1
                 f(n) = f(n-1) if valid + f(n-2) if valid
 
-                f(n-1) can be added if current digit is not 0. It is guaranteed that all characters are digits, so this is the only condition we need.
-                f(n-2) 
+                f(n-1): 
+                        can be added if current digit is not 0. It is guaranteed that all characters are digits, so this is the only condition we need.
+                f(n-2): 
                         First, previous digit needs to be either 1 or 2.
                         Second, if the previous digit is 1, then current digit must be between [0,9] 
                         Second, if the previous digit is 2, then current digit must be betwen [0, 6].
