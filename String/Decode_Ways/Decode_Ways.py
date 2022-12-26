@@ -1,3 +1,5 @@
+# Leetcode: https://leetcode.com/problems/decode-ways/
+
 class Solution:
     def numDecodings(self, string: str) -> int:
         f0, f1 = 0, 1
