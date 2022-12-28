@@ -6,14 +6,13 @@
  */
 
 var addDigits = function (num) {
-        let sum = num;
-        num = String(num);
+        num = num.toString();
         while (num.length > 1) {
-                sum = 0;
-                for (let i = 0; i < num.length; i++) {
-                        sum += Number(num[i]);
-                }
-                num = String(sum);
+                num = num
+                        .split("")
+                        .map(Number)
+                        .reduce((a, b) => a + b, 0)
+                        .toString();
         }
-        return sum;
+        return num;
 };
