@@ -5,7 +5,9 @@ class Solution:
                 f0, f1 = 0, 1  
 
                 for i, ch in enumerate(s):
+                        # f(n-1) validity
                         decodeFN1 = 0
+                        # f(n-2) validity
                         decodeFN2 = 0
                         if ch == '*':
                                 decodeFN1 = f1 * 9
