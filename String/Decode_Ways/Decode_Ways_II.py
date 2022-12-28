@@ -25,6 +25,6 @@ class Solution:
                                                 decodeFN2 += f0
                                         if s[i-1] in '2*' and '0' <= ch <= '6':
                                                 decodeFN2 += f0
-                        f0, f1 = f1, (decodeFN1 + decodeFN2) % 1_000_000_007
+                        f0, f1 = f1, ((decodeFN1 + decodeFN2) % 1_000_000_007)
 
                 return f1
