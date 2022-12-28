@@ -27,10 +27,11 @@ class Solution:
                         decodeFN1 = f1 if ch != '0' else 0
                         # f(n-2) validity
                         decodeFN2 = 0
-                        if i > 0 and string[i-1] == '1' and '0' <= ch <= '9':
-                                decodeFN2 += f0
-                        if i > 0 and string[i-1] == '2' and '0' <= ch <= '6':
-                                decodeFN2 += f0
+                        if i > 0 and string[i-1] in '12':
+                                if string[i-1] == '1' and '0' <= ch <= '9':
+                                        decodeFN2 += f0
+                                if string[i-1] == '2' and '0' <= ch <= '6':
+                                        decodeFN2 += f0
 
                         f0, f1 = f1, (decodeFN2 + decodeFN1)
 
