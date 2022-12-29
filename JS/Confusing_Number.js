@@ -32,6 +32,5 @@ var confusingNumber = function (n) {
                 }
         }
 
-        s2 = s2.replace(/^0+/, "");
-        return s1 !== s2 && s2.length > 0 ? true : false;
+        return s1 !== s2 ? true : false;
 };
