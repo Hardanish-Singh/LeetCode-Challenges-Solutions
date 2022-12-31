@@ -62,9 +62,9 @@ var confusingNumberII = function (n) {
                 if (isConfusingNumber(number)) {
                         count++;
                 }
-                for (const k of canRotateNumbers) {
-                        if (Number(number + k) <= n) {
-                                stack.push(number + k);
+                for (const item of canRotateNumbers) {
+                        if (Number(number + item) <= n) {
+                                stack.push(number + item);
                         }
                 }
         }
