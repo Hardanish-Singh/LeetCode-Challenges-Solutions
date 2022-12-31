@@ -1,3 +1,10 @@
+// Leetcode: https://leetcode.com/problems/confusing-number-ii/
+
+/**
+ * @param { number } n
+ * @return { boolean }
+ */
+
 var isConfusingNumber = function (n) {
         var rotation = {
                 0: "0",
@@ -28,19 +35,26 @@ var isConfusingNumber = function (n) {
         return s1 !== s2 ? true : false;
 };
 
+/**
+ * @param { number } n
+ * @return { number }
+ */
+
 var confusingNumberII = function (n) {
+        // SOLUTION 1 (TLE)
         // var count = 0;
 
-        // for( let i = n; i >= 0; i-- ) {
-        //     if (isConfusingNumber( i )) {
-        //             count++;
+        // for (let i = n; i >= 0; i--) {
+        //         if (isConfusingNumber(i)) {
+        //                 count++;
         //         }
         // }
 
         // return count;
 
+        // SOLUTION 2
         let canRotateNumbers = ["0", "1", "6", "8", "9"];
-        let stack = ["1", "9", "8", "6"];
+        let stack = ["1", "6", "8", "9"];
         let count = 0;
 
         while (stack.length > 0) {
