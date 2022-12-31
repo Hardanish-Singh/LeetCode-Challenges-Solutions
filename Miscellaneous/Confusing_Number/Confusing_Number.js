@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/confusing-number/
 
-/*
+/**
  * @param { number } n
  * @return { boolean }
  */
