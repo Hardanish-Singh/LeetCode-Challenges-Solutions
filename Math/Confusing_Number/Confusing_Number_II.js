@@ -41,7 +41,7 @@ var isConfusingNumber = function (n) {
  */
 
 var confusingNumberII = function (n) {
-        // SOLUTION 1 (TLE)
+        // SOLUTION 1 ( TLE )
         // var count = 0;
 
         // for (let i = n; i >= 0; i--) {
