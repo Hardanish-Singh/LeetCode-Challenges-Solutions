@@ -1,8 +1,8 @@
 // Leetcode: https://leetcode.com/problems/sum-of-digits-in-the-minimum-number/
 
 /**
- * @param {number[]} nums
- * @return {number}
+ * @param { number[] } nums
+ * @return { number }
  */
 
 var sumOfDigits = function (nums: number[]): number {
