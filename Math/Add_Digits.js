@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/add-digits/
 
 /**
- * @param { number} num
+ * @param { number } num
  * @return { number }
  */
 
