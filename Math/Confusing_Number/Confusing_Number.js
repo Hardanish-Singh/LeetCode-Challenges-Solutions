@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/confusing-number/
 
 /**
- * @param { number } n
+ * @param { number} n
  * @return { boolean }
  */
 
