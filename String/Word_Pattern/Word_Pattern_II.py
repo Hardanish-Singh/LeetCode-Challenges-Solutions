@@ -17,16 +17,15 @@ class Solution:
                 return len(map.values()) == len(set(map.values()))
 
         def wordPatternMatch(self, pattern: str, s: str) -> bool:
-                lp, ls = len(pattern), len(s)
                 combinations = []
 
-                for nums in itertools.combinations(range(1, ls), lp-1):
-                        nums += (ls,)
+                for nums in itertools.combinations(range(len(s)), len(pattern)):
+                        nums += (len(s),)
                         temp = []
-                        index = 0
-                        for i in range(len(nums)):
-                                temp.append(s[index:nums[i]])
-                                index = nums[i]
+                        if(nums[0] != 0): 
+                                break
+                        for i in range(len(nums)-1):
+                                temp.append(s[nums[i]:nums[i+1]])
                         combinations.append(temp)
 
                 for item in combinations:
