@@ -1,5 +1,10 @@
 // Leetcode: https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
 
+/**
+ * @param { number[] } nums
+ * @return { number[] }
+ */
+
 var findLonely = function (nums) {
         let lonelyNumbers = [];
         let hash_table = {};
