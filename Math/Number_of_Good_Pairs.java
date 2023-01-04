@@ -1,3 +1,5 @@
+// Leetcode: https://leetcode.com/problems/number-of-good-pairs/
+
 import java.util.Arrays;
 
 class Solution
