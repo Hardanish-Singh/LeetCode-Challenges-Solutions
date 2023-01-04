@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-class Solution 
+class Solution
 {
-        public int numIdenticalPairs(int[] nums) 
+        public int numIdenticalPairs(int[] nums)
         {
                 Arrays.sort(nums);
                 int goodPairs = 0;
