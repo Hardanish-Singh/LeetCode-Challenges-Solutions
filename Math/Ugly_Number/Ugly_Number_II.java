@@ -11,6 +11,7 @@ class Solution
                 uglyNumbers.add(1L);
                 int count = 0;
                 int index = 0;
+                int[] primeFactors = new int[] {2, 3, 5};
 
                 while( true )
                 {
@@ -19,17 +20,11 @@ class Solution
                         if(count == n) {
                                 return (int)top;
                         }
-                        if(top * 2 < Integer.MAX_VALUE && !visited.contains(top * 2)){
-                                visited.add(top * 2);
-                                uglyNumbers.add(top * 2);
-                        }
-                        if(top * 3 < Integer.MAX_VALUE && !visited.contains(top * 3)){
-                                visited.add(top * 3);
-                                uglyNumbers.add(top * 3);
-                        }
-                        if(top * 5 < Integer.MAX_VALUE && !visited.contains(top * 5)){
-                                visited.add(top * 5);
-                                uglyNumbers.add(top * 5);
+                        for (int factor : primeFactors) {
+                                if( top * factor < Integer.MAX_VALUE && !visited.contains(top * factor) ) {
+                                        visited.add(top * factor);
+                                        uglyNumbers.add(top * factor);
+                                }
                         }
                         Collections.sort(uglyNumbers);
                 }
