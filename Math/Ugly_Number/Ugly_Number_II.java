@@ -10,12 +10,12 @@ class Solution
                 ArrayList<Long> uglyNumbers = new ArrayList<Long>();
                 uglyNumbers.add(1L);
                 int count = 0;
-                int index = 0;
                 int[] primeFactors = new int[] {2, 3, 5};
 
                 while( true )
                 {
-                        long top = uglyNumbers.get(index++);
+                        long top = uglyNumbers.get(0);
+                        uglyNumbers.remove(0);
                         count++;
                         if(count == n) {
                                 return (int)top;
