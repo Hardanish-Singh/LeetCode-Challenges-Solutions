@@ -31,6 +31,5 @@ class Solution
                         }
                         Collections.sort(uglyNumbers);
                 }
-
         }
 }
