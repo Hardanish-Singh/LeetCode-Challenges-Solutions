@@ -14,16 +14,17 @@ class Solution
 
                 while( true )
                 {
-                        long top = uglyNumbers.get(0);
+                        long number = uglyNumbers.get(0);
                         uglyNumbers.remove(0);
                         count++;
                         if(count == n) {
-                                return (int)top;
+                                return (int)number;
                         }
                         for (int factor : primeFactors) {
-                                if( top * factor < Integer.MAX_VALUE && !visited.contains(top * factor) ) {
-                                        visited.add(top * factor);
-                                        uglyNumbers.add(top * factor);
+                                long uglyNumber = number * factor;
+                                if( uglyNumber < Integer.MAX_VALUE && !visited.contains(uglyNumber) ) {
+                                        visited.add(uglyNumber);
+                                        uglyNumbers.add(uglyNumber);
                                 }
                         }
                         Collections.sort(uglyNumbers);
