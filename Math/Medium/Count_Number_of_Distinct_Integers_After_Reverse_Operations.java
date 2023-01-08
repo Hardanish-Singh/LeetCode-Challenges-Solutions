@@ -1,6 +1,6 @@
-class Solution 
+class Solution
 {
-        public int countDistinctIntegers(int[] nums) 
+        public int countDistinctIntegers(int[] nums)
         {
                 Set<Integer>st=new HashSet<>();
 
@@ -13,7 +13,7 @@ class Solution
                 return st.size();
         }
 
-        public static int reverse(int num) 
+        public static int reverse(int num)
         {
                 String strNum = Integer.toString(num);
                 StringBuilder sb = new StringBuilder();
