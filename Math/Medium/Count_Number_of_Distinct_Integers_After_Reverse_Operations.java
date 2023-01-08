@@ -4,16 +4,16 @@ class Solution
         {
                 Set<Integer>st=new HashSet<>();
 
-                for(int i=0;i<nums.length;i++)
+                for(int i = 0; i < nums.length; i++)
                 {
                         st.add(nums[i]);
-                        st.add(reverse(nums[i]));
+                        st.add(reverseNumber(nums[i]));
                 }
 
                 return st.size();
         }
 
-        public static int reverse(int num)
+        public static int reverseNumber(int num)
         {
                 String strNum = Integer.toString(num);
                 StringBuilder sb = new StringBuilder();
