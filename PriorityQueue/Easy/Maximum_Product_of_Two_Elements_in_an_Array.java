@@ -9,9 +9,9 @@ class Solution
                         pq.add(nums[i]);
                 }
 
-                int val1 = pq.poll();
-                int val2 = pq.poll();
+                int element1 = pq.poll();
+                int element2 = pq.poll();
 
-                return (val1 - 1) * (val2 - 1);
+                return (element1 - 1) * (element2 - 1);
         }
 }
