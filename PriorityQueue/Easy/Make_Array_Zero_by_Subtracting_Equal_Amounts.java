@@ -1,3 +1,5 @@
+// Leetcode: https://leetcode.com/problems/make-array-zero-by-subtracting-equal-amounts/
+
 class Solution 
 {
         public int minimumOperations(int[] nums) 
