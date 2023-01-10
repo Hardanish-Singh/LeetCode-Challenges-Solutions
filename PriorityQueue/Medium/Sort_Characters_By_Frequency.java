@@ -18,7 +18,7 @@ class Solution
                         }
                 }
 
-                PriorityQueue<Character> pq = new PriorityQueue((a,b) -> (map.get(b) - map.get(a)));
+                PriorityQueue<Character> pq = new PriorityQueue<Character>((a,b) -> (map.get(b) - map.get(a)));
                 for (Character c : map.keySet()) 
                 {
                         pq.add(c);
