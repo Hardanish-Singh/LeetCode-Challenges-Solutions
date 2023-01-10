@@ -4,7 +4,7 @@ class Solution
 {
         public int maxProduct(int[] nums) 
         {
-                PriorityQueue<Integer> pq = new PriorityQueue<>((a,b) -> b-a);
+                PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a,b) -> b-a);
 
                 for(int i=0; i<nums.length; i++)
                 {
