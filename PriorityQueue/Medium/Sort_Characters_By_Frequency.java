@@ -14,7 +14,7 @@ class Solution
                         }
                         else
                         {
-                                map.put(key, 1); 
+                                map.put(key, 1);
                         }
                 }
 
