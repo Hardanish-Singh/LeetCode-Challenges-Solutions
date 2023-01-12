@@ -10,8 +10,10 @@ class Solution
                         int count=0;
                         for(int j=0; j<mat[0].length; j++)
                         {
-                        if(mat[i][j]==1)
-                                count++;
+                                if(mat[i][j] == 1)
+                                {
+                                        count++;
+                                }
                         }
                         map.put(i, count);
                 }
