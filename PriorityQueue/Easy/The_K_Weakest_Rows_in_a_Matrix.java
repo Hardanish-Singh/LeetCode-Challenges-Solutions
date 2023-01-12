@@ -20,9 +20,13 @@ class Solution
 
                 PriorityQueue<Map.Entry<Integer, Integer>> pq= new PriorityQueue<>((a,b)->{
                         if(a.getValue() == b.getValue())
-                        return a.getKey() - b.getKey();
+                        {
+                                return a.getKey() - b.getKey();
+                        }
                         else 
-                        return a.getValue() - b.getValue(); 
+                        {
+                                return a.getValue() - b.getValue();
+                        }
                 });
                 for(Map.Entry<Integer, Integer> key: map.entrySet())
                 {
