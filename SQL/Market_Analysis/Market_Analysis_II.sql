@@ -1,3 +1,5 @@
+-- Leetcode: https://leetcode.com/problems/market-analysis-ii/
+
 SELECT
         users.user_id AS seller_id,
         CASE WHEN items.item_brand = users.favorite_brand THEN 'yes' ELSE 'no' END AS 2nd_item_fav_brand
