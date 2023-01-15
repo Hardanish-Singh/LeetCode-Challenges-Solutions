@@ -20,7 +20,8 @@
                 }
         }
 */
-public class Solution 
+
+class Solution 
 {
         public ListNode getIntersectionNode( ListNode headA, ListNode headB ) 
         {
