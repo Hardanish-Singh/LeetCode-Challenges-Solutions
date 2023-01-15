@@ -1,3 +1,5 @@
+// Leetcode: https://leetcode.com/problems/merge-k-sorted-lists/
+
 /*
         // Definition for Singly-Linked List
         public class ListNode
@@ -18,6 +20,7 @@
                 }
         }
 */
+
 class Solution
 {
         public ListNode mergeKLists( ListNode[] lists )
@@ -34,39 +37,39 @@ class Solution
                                 ListNode node = new ListNode( k.val );
                                 if( head == null )
                                 {
-                                    head = tail = node;
+                                        head = tail = node;
                                 }
                                 else
                                 {
-                                    tail.next = node;
-                                    tail = node;
+                                        tail.next = node;
+                                        tail = node;
                                 }
                                 k = k.next;
                         }
                 }
 
                 // BUBBLE SORT
-		ListNode current = head;
-		ListNode next = null;
-		int temp = 0;
+                ListNode current = head;
+                ListNode next = null;
+                int temp = 0;
 
-		while( current != null )
-		{
-			next = current.next;
-			while( next != null )
-			{
-				if( current.val > next.val )
-				{
-					temp = current.val;
-					current.val = next.val;
-					next.val = temp;
-				}
-				next = next.next;
-			}
-			current = current.next;
-		}
+                while( current != null )
+                {
+                        next = current.next;
+                        while( next != null )
+                        {
+                                if( current.val > next.val )
+                                {
+                                        temp = current.val;
+                                        current.val = next.val;
+                                        next.val = temp;
+                                }
+                                next = next.next;
+                        }
+                        current = current.next;
+                }
 
-		return head;
+                return head;
 
         }
 }
