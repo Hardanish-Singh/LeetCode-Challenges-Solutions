@@ -1,4 +1,4 @@
-// Leetcode: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+// Leetcode: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
 
 /*
         // Definition for Singly-Linked List
@@ -25,32 +25,32 @@ class Solution
 {
         public ListNode deleteDuplicates(ListNode head) 
         {
-                ListNode prev = null;
-                ListNode curr = head;
+                ListNode previous = null;
+                ListNode current = head;
 
-                while(curr != null && curr.next != null)
+                while(current != null && current.next != null)
                 {
-                        if(curr.val == curr.next.val)
+                        if(current.val == current.next.val)
                         {
-                                while(curr.next != null && curr.val == curr.next.val)
+                                while(current.next != null && current.val == current.next.val)
                                 {
-                                        curr = curr.next;
+                                        current = current.next;
                                 }
-                                curr = curr.next;
-                                if(prev == null)
+                                current = current.next;
+                                if(previous == null)
                                 {
-                                        head = curr;
+                                        head = current;
                                 }
                                 else
                                 {
-                                        prev.next = curr;
+                                        previous.next = current;
                                 }
                         }
                         else
                         {
-                                //UPDATE PREVIOUS & CURRENT NODE
-                                prev = curr;
-                                curr = curr.next;
+                                //UPDATE PREVIOUSIOUS & CURRENTENT NODE
+                                previous = current;
+                                current = current.next;
                         }
                 }
 
