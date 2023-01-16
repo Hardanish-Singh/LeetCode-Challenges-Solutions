@@ -30,27 +30,27 @@ class Solution
 
                 while(curr != null && curr.next != null)
                 {
-                        //UPDATE PREVIOUS & CURRENT NODE
-                        if(curr.val != curr.next.val)
-                        {
-                                prev = curr;
-                                curr = curr.next;
-                        }
-                        else
+                        if(curr.val == curr.next.val)
                         {
                                 while(curr.next != null && curr.val == curr.next.val)
                                 {
                                         curr = curr.next;
                                 }
                                 curr = curr.next;
-                                if(prev != null)
-                                {
-                                        prev.next = curr;
-                                }
-                                else
+                                if(prev == null)
                                 {
                                         head = curr;
                                 }
+                                else
+                                {
+                                        prev.next = curr;
+                                }
+                        }
+                        else
+                        {
+                                //UPDATE PREVIOUS & CURRENT NODE
+                                prev = curr;
+                                curr = curr.next;
                         }
                 }
 
