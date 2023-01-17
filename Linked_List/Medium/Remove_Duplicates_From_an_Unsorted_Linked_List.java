@@ -23,36 +23,36 @@
 
 class Solution 
 {
-    public ListNode deleteDuplicatesUnsorted(ListNode head) 
-    {
-        ListNode current = head;
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-
-        while(current != null)
+        public ListNode deleteDuplicatesUnsorted(ListNode head) 
         {
-            if(map.containsKey(current.val))
-            {
-                map.put(current.val, map.get(current.val) + 1);
-            }
-            else
-            {
-                map.put(current.val, 1);
-            }
-            current = current.next;
-        }
+                ListNode current = head;
+                HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
-        current = head;
-        ListNode temp = new ListNode(-1);
-        ListNode prev = temp;
-        while(current != null)
-        {
-            if (map.get(current.val) == 1)
-            {
-                prev.next = new ListNode( current.val );
-                prev = prev.next;
-            }
-            current = current.next;
+                while(current != null)
+                {
+                        if(map.containsKey(current.val))
+                        {
+                                map.put(current.val, map.get(current.val) + 1);
+                        }
+                        else
+                        {
+                                map.put(current.val, 1);
+                        }
+                        current = current.next;
+                }
+
+                current = head;
+                ListNode temp = new ListNode(-1);
+                ListNode prev = temp;
+                while(current != null)
+                {
+                        if (map.get(current.val) == 1)
+                        {
+                                prev.next = new ListNode( current.val );
+                                prev = prev.next;
+                        }
+                        current = current.next;
+                }
+                return temp.next;
         }
-        return temp.next;
-    }
 }
