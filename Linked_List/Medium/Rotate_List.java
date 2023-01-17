@@ -1,28 +1,5 @@
-/*
-        Given the head of a linked list, rotate the list to the right by k places.
+// Leetcode: https://leetcode.com/problems/rotate-list/
 
-        Example 1:
-                        head: 1 → 2 → 3 → 4 → 5
-                        k: 2
-
-                        Rotate 1: 5 → 1 → 2 → 3 → 4
-                        Rotate 2: 4 → 5 → 1 → 2 → 3
-        
-        Example 2:
-                        head: 0 → 1 → 2
-                        k: 4
-
-                        Rotate 1: 2 → 0 → 1
-                        Rotate 2: 1 → 2 → 0
-                        Rotate 3: 0 → 1 → 2
-                        Rotate 4: 2 → 0 → 1
-        
-        Constraints:
-
-                        1) The number of nodes in the list is in the range [0, 500].
-                        2) -100 <= Node.val <= 100
-                        3) 0 <= k <= 2 * 1000000000
-*/
 /*
         // Definition for Singly-Linked List
         public class ListNode
