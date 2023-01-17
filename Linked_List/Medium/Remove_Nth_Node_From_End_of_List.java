@@ -1,3 +1,5 @@
+// Leetcode: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
 /*
         // Definition for Singly-Linked List
         public class ListNode
@@ -98,8 +100,6 @@ class Solution
 
 		// REVERSE THE LINKED LIST AGAIN
 		head = reverse( head );
-
 	        return head;
-
 	}
 }
