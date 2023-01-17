@@ -99,33 +99,44 @@ class Solution
                         previous.next = current.next;
                 }
                 return head;
+        }
+}
 
-                /*
-                        SOLUTION 2
+// SOLUTION 2
+class Solution 
+{
+        public ListNode removeElements( ListNode head, int val ) 
+        {
+                if( head == null )
+                {
+                        return head;
+                }
+                
+                ListNode current = head;
+                ListNode previous = null;
 
-                        while( current != null )
+                while( current != null )
+                {
+                        if( current.val == val )
                         {
-                                if( current.val == val )
+                                // IF HEAD NODE ITSELF HOLDS THE KEY
+                                if( current == head )
                                 {
-                                        // IF HEAD NODE ITSELF HOLDS THE KEY
-                                        if( current == head )
-                                        {
-                                                head = current.next;
-                                        }
-                                        // UNLINK/DELETE THE CURRENT NODE/POINTER FROM THE LINKED LIST
-                                        else
-                                        {
-                                                previous.next = current.next;
-                                        }
-                                        current = current.next;
+                                        head = current.next;
                                 }
+                                // UNLINK/DELETE THE CURRENT NODE/POINTER FROM THE LINKED LIST
                                 else
                                 {
-                                        previous = current;
-                                        current = current.next;
+                                        previous.next = current.next;
                                 }
+                                current = current.next;
                         }
-                        return head;
-                */
+                        else
+                        {
+                                previous = current;
+                                current = current.next;
+                        }
+                }
+                return head;
         }
 }
