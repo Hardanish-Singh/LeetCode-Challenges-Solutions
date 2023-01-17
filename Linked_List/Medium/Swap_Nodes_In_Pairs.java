@@ -67,6 +67,6 @@ class Solution
 			current = previous.next;
 		}
 
-		return head; 
+		return head;
 	}
 }
