@@ -19,16 +19,15 @@ WITH users AS
                 calls
 )
 
-select 
+SELECT 
         person1,
         person2,
-        count(*) as call_count,
-        sum(duration) as total_duration
-from
+        COUNT(*) AS call_count,
+        SUM(duration) AS total_duration
+FROM
         users
-where
+WHERE
         person1 < person2
-group by 
+GROUP BY 
         person1,
-        person2
-;
+        person2;
