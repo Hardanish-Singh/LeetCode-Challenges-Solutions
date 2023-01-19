@@ -1,19 +1,21 @@
 -- Leetcode: https://leetcode.com/problems/number-of-calls-between-two-persons/
 
-with users as
+WITH users AS
 (
-        select
-                from_id as person1,
-                to_id as person2,
-                duration as duration
-        from
+        SELECT
+                from_id AS person1,
+                to_id AS person2,
+                duration AS duration
+        FROM
                 calls
-        union all
-        select
-                to_id as person1,
-                from_id as person2,
-                duration as duration
-        from
+        
+        UNION ALL
+        
+        SELECT
+                to_id AS person1,
+                from_id AS person2,
+                duration AS duration
+        FROM
                 calls
 )
 
