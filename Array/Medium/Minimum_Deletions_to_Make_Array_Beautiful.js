@@ -1,8 +1,8 @@
 // Leetcode: https://leetcode.com/problems/minimum-deletions-to-make-array-beautiful/
 
 /**
- * @param {number[]} nums
- * @return {number}
+ * @param { number[] } nums
+ * @return { number }
  */
 
 var minDeletion = function (nums) {
