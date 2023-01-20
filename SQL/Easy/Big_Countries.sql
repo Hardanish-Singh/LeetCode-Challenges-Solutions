@@ -7,4 +7,4 @@ SELECT
 FROM
     World
 WHERE population >= 25000000
-OR area >= 3000000
+OR area >= 3000000;
