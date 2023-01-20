@@ -1,16 +1,14 @@
 -- Leetcode: https://leetcode.com/problems/classes-more-than-5-students/
 
 -- SOLUTION 1
-
 SELECT
     class
 FROM
     courses
 GROUP BY class
-HAVING COUNT(DISTINCT student) >= 5;
+HAVING COUNT( DISTINCT student ) >= 5;
 
 -- SOLUTION 2
-
 SELECT
     class
 FROM
@@ -19,10 +17,8 @@ GROUP BY class
 HAVING COUNT( * ) >= 5;
 
 -- SOLUTION 3
-
 SELECT
-    DISTINCT
-        c2.class
+    DISTINCT c2.class
 FROM
     courses AS c1
 JOIN
