@@ -1,7 +1,7 @@
 -- Leetcode: https://leetcode.com/problems/biggest-single-number/
 
 -- SOLUTION 1
-SELECT 
+SELECT
         MAX(num) AS num
 FROM
 (
@@ -11,16 +11,16 @@ FROM
         FROM
                 mynumbers
         GROUP BY num
-)AS x
-WHERE x.count_num = 1
+)AS SubQuery
+WHERE SubQuery.count_num = 1;
 
 -- SOLUTION 2
 SELECT
         IFNULL(
                 (
-                        SELECT 
-                                num 
-                        FROM 
+                        SELECT
+                                num
+                        FROM
                                 mynumbers
                         GROUP BY num
                         HAVING COUNT(num) = 1
@@ -28,4 +28,4 @@ SELECT
                         LIMIT 1
                 ),
                 NULL
-              ) AS num
+              ) AS num;
