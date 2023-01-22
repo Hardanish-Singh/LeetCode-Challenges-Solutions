@@ -13,6 +13,7 @@ class Solution
                 {
                         score[i] = pq.remove();
                 }
+
                 return score;
         }
 }
