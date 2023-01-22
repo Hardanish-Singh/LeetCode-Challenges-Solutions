@@ -20,12 +20,12 @@ class Solution
                         }
                 }
 
-                List<Integer> ans = new ArrayList<>();
+                List<Integer> result = new ArrayList<Integer>();
                 while (pq.size() > 0)
                 {
-                        ans.add(pq.remove());
+                        result.add(pq.remove());
                 }
-                Collections.sort(ans);
-                return ans;
+                Collections.sort(result);
+                return result;
         }
 }
