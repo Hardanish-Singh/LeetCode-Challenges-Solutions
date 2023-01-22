@@ -1,15 +1,15 @@
-class Solution 
+class Solution
 {
-        public int[][] sortTheStudents(int[][] score, int k) 
+        public int[][] sortTheStudents(int[][] score, int k)
         {
                 PriorityQueue<int[]> pq=new PriorityQueue<int[]>( (a,b) -> b[k] - a[k] );
 
-                for(int[] i:score) 
+                for(int[] i:score)
                 {
                         pq.add(i);
                 }
 
-                for(int i=0;i<score.length;i++) 
+                for(int i=0; i<score.length; i++)
                 {
                         score[i] = pq.remove();
                 }
