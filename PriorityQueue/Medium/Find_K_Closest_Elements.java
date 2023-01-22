@@ -27,6 +27,7 @@ class Solution
                         result.add(pq.poll());
                 }
                 Collections.sort(result, (a,b) -> a - b);
+
                 return result;
         }
 }
