@@ -11,9 +11,10 @@ class Solution
                         pq.add(i);
                 }
 
-                for(int i=0; i<score.length; i++)
+                int i = 0;
+                while(!pq.isEmpty())
                 {
-                        score[i] = pq.remove();
+                        score[i++] = pq.remove();
                 }
 
                 return score;
