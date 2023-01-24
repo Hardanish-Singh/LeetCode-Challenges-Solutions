@@ -25,7 +25,7 @@ JOIN
         FROM
                 sales
         GROUP BY seller_id   
-)AS s ON s.price = Subquery2.p
+)AS s ON s.price = Subquery2.p;
 
 -- SOLUTION 2
 SELECT
@@ -44,4 +44,4 @@ HAVING SUM( price ) = (
                         sales
                 GROUP BY seller_id 
         )AS Subquery1
-)
+);
