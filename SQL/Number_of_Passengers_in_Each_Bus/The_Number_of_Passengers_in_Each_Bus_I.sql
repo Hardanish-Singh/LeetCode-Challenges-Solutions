@@ -12,7 +12,6 @@ SELECT
     bus_id,
     COUNT(M.arrival_time) AS passengers_cnt
 FROM Buses B
-LEFT JOIN minPassengersTime M
-    ON B.arrival_time = M.arrival_time
+LEFT JOIN minPassengersTime M ON B.arrival_time = M.arrival_time
 GROUP BY bus_id
 ORDER BY bus_id;
