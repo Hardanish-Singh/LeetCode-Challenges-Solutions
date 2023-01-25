@@ -1,17 +1,17 @@
 WITH minPassengersTime AS
 (
     SELECT
-        Passengers.passenger_id,
-        MIN(Buses.arrival_time) AS arrival_time
-    FROM Passengers
-    JOIN Buses ON Passengers.arrival_time <= Buses.arrival_time
-    GROUP BY Passengers.passenger_id
+        passengers.passenger_id,
+        MIN(buses.arrival_time) AS arrival_time
+    FROM passengers
+    JOIN buses ON passengers.arrival_time <= buses.arrival_time
+    GROUP BY passengers.passenger_id
 )
 
 SELECT
     bus_id,
-    COUNT(M.arrival_time) AS passengers_cnt
-FROM Buses B
-LEFT JOIN minPassengersTime M ON B.arrival_time = M.arrival_time
+    COUNT(minPassengersTime.arrival_time) AS passengers_cnt
+FROM buses
+LEFT JOIN minPassengersTime ON buses.arrival_time = minPassengersTime.arrival_time
 GROUP BY bus_id
 ORDER BY bus_id;
