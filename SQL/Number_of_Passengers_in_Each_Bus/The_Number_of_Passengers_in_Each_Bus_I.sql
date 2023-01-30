@@ -16,4 +16,4 @@ SELECT
 FROM buses
 LEFT JOIN minPassengersTime ON buses.arrival_time = minPassengersTime.arrival_time
 GROUP BY bus_id
-ORDER BY bus_id;
+ORDER BY bus_id; 
