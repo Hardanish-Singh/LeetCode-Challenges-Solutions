@@ -14,14 +14,14 @@ WITH TEMP AS
 
 SELECT bus_id, passengers_cnt from
 (
-    SELECT 
-          bus_id, 
-          capacity, 
-          num,
-          @passengers_cnt := LEAST(capacity, num - @accum) AS passengers_cnt, 
-          @accum := @accum + @passengers_cnt
-    FROM TEMP, 
-    ( SELECT @accum := 0 ) AS accum,
-    ( SELECT @passengers_cnt := 0 ) AS passengers_cnt
+        SELECT 
+                bus_id, 
+                capacity, 
+                num,
+                @passengers_cnt := LEAST(capacity, num - @accum) AS passengers_cnt, 
+                @accum := @accum + @passengers_cnt
+        FROM TEMP, 
+        ( SELECT @accum := 0 ) AS accum,
+        ( SELECT @passengers_cnt := 0 ) AS passengers_cnt
 ) temp
 ORDER BY bus_id
