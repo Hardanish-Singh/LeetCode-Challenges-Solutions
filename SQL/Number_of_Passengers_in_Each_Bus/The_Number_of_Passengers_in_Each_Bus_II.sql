@@ -11,7 +11,7 @@ WITH TEMP AS
         LEFT JOIN Passengers p  ON p.arrival_time <= b.arrival_time
         WHERE bus_id is not NULL
         GROUP BY bus_id
-        ORDER BY arrival_time
+        ORDER BY arrival_time 
 )
 
 SELECT bus_id, passengers_cnt from
