@@ -26,4 +26,4 @@ SELECT bus_id, passengers_cnt from
         ( SELECT @accum := 0 ) AS accum,
         ( SELECT @passengers_cnt := 0 ) AS passengers_cnt
 ) temp
-ORDER BY bus_id 
+ORDER BY bus_id
