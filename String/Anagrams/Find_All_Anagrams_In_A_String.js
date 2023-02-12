@@ -1,8 +1,5 @@
 // Leetcode: https://leetcode.com/problems/find-all-anagrams-in-a-string/
 
-/*
-        This function checks if two dictionaries are Anagrams or not
-*/
 function isAnagram(word1, { ...word2 }) {
         for (key1 in word1) {
                 let isFound = false;
