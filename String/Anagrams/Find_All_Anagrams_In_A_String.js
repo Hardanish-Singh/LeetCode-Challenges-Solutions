@@ -14,7 +14,6 @@ function isAnagram(word1, { ...word2 }) {
                         return false;
                 }
         }
-
         return true;
 }
 
@@ -23,9 +22,7 @@ function adjustCharacterOccurrences(start, end, words) {
         if (words[start] == 0) {
                 delete words[start];
         }
-
         end in words ? (words[end] = words[end] + 1) : (words[end] = 1);
-
         return words;
 }
 
@@ -40,7 +37,6 @@ function countCharacterOccurrences(word) {
 var findAnagrams = function (s, p) {
         let substr = "";
         let anagrams = [];
-
         let words = countCharacterOccurrences(p);
         let breakwords = {};
 
