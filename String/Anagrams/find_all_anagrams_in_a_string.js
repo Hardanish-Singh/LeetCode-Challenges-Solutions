@@ -36,27 +36,16 @@ function adjustSubStringCounts(start, words, end) {
         return words;
 }
 
-/*
-        This function counts character occurrences in a word, and returns dictionary
-*/
 function countCharacterOccurrences(word) {
-        let words = {};
-        let count = 1;
-
+        let countOccurrences = {};
         for (let i = 0; i < word.length; i++) {
-                if (word[i] in words) {
-                        continue;
+                if (word[i] in countOccurrences) {
+                        countOccurrences[word[i]] += 1;
+                } else {
+                        countOccurrences[word[i]] = 1;
                 }
-                for (let j = i + 1; j < word.length; j++) {
-                        if (word[i] == word[j]) {
-                                count++;
-                        }
-                }
-                words[word[i]] = count;
-                count = 1;
         }
-
-        return words;
+        return countOccurrences;
 }
 
 var findAnagrams = function (s, p) {
