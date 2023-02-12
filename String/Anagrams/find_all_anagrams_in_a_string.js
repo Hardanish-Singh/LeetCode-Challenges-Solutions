@@ -21,17 +21,13 @@ function isAnagram(word1, { ...word2 }) {
         return true;
 }
 
-function adjustSubStringCounts(start, words, end) {
+function adjustSubStringCounts(start, end, words) {
         words[start] = words[start] - 1;
         if (words[start] == 0) {
                 delete words[start];
         }
 
-        if (end in words) {
-                words[end] = words[end] + 1;
-        } else {
-                words[end] = 1;
-        }
+        end in words ? (words[end] = words[end] + 1) : (words[end] = 1);
 
         return words;
 }
@@ -59,7 +55,7 @@ var findAnagrams = function (s, p) {
                         if (i == 0) {
                                 breakwords = countCharacterOccurrences(substr);
                         } else {
-                                breakwords = adjustSubStringCounts(s[i - 1], breakwords, substr[substr.length - 1]);
+                                breakwords = adjustSubStringCounts(s[i - 1], substr[substr.length - 1], breakwords);
                         }
                         if (isAnagram(breakwords, words)) {
                                 anagrams.push(i);
