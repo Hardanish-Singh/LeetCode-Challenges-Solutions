@@ -39,11 +39,7 @@ function adjustSubStringCounts(start, words, end) {
 function countCharacterOccurrences(word) {
         let countOccurrences = {};
         for (let i = 0; i < word.length; i++) {
-                if (word[i] in countOccurrences) {
-                        countOccurrences[word[i]] += 1;
-                } else {
-                        countOccurrences[word[i]] = 1;
-                }
+                word[i] in countOccurrences ? (countOccurrences[word[i]] += 1) : (countOccurrences[word[i]] = 1);
         }
         return countOccurrences;
 }
