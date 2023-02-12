@@ -1,10 +1,10 @@
 // Leetcode: https://leetcode.com/problems/group-anagrams/
 
-var groupAnagrams = function (strs) {
-        let groupingAnagrams = {};
+var groupAnagrams = function (strs: Array<string>): Array<Array<string>> {
+        let groupingAnagrams: { [key: string]: Array<string> } = {};
 
-        for (let i = 0; i < strs.length; i++) {
-                let sortedAnagram = strs[i].split("").sort().join("");
+        for (let i: number = 0; i < strs.length; i++) {
+                let sortedAnagram: string = strs[i].split("").sort().join("");
 
                 if (!(sortedAnagram in groupingAnagrams)) {
                         groupingAnagrams[sortedAnagram] = [strs[i]];
