@@ -2,10 +2,9 @@
 
 var removeAnagrams = function (words: Array<string>): Array<string> {
         for (let i: number = 1; i < words.length; i++) {
-                const firstWord = words[i - 1];
-                const secondWord = words[i];
-                const remove = isAnagram(firstWord, secondWord);
-                if (remove) {
+                const firstWord: string = words[i - 1];
+                const secondWord: string = words[i];
+                if (isAnagram(firstWord, secondWord)) {
                         words.splice(i, 1);
                         i--;
                 }
