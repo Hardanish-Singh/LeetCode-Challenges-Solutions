@@ -61,14 +61,13 @@ function countCharacterOccurrences(word) {
 
 var findAnagrams = function (s, p) {
         let substr = "";
-        let anagramSize = p.length;
         let anagrams = [];
 
         let words = countCharacterOccurrences(p);
         let breakwords = {};
 
         for (let i = 0; i < s.length; i++) {
-                substr = s.slice(i, anagramSize + i);
+                substr = s.slice(i, p.length + i);
                 if (substr.length != p.length) {
                         break;
                 } else {
