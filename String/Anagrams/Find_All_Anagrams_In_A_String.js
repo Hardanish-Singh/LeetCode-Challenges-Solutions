@@ -34,7 +34,7 @@ function countCharacterOccurrences(word) {
         return countOccurrences;
 }
 
-var findAnagrams = function (s, p) {
+var findAnagrams = function (s, pp) {
         let substr = "";
         let anagrams = [];
         let words = countCharacterOccurrences(p);
