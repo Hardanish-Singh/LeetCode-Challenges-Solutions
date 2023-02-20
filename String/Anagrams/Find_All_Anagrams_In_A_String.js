@@ -21,7 +21,7 @@ var isAnagram = function (s, t) {
         return true;
 };
 
-var findAnagrams = function (s, pp) {
+var findAnagrams = function (s, p) {
         let res = [];
         for (let i = 0; i < s.length; i++) {
                 let substr = s.slice(i, p.length + i);
