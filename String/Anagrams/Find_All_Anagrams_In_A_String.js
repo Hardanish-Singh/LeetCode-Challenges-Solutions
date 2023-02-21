@@ -40,11 +40,9 @@ var findAnagrams = function (s, p) {
 
         for (let i = 0; i <= s.length - p.length; i++) {
                 let substr = s.slice(i, p.length + i);
-                if (i === 0) {
-                        hashmap1 = countCharacterOccurrences(substr);
-                } else {
-                        hashmap1 = adjustCharacterOccurrences(s[i - 1], substr[substr.length - 1], hashmap1);
-                }
+                i === 0
+                        ? (hashmap1 = countCharacterOccurrences(substr))
+                        : (hashmap1 = adjustCharacterOccurrences(s[i - 1], substr[substr.length - 1], hashmap1));
                 if (isAnagram(hashmap1, hashmap2)) {
                         anagrams.push(i);
                 }
