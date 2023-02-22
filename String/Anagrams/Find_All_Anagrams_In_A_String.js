@@ -47,5 +47,6 @@ var findAnagrams = function (s, p) {
                         anagrams.push(i);
                 }
         }
+
         return anagrams;
 };
