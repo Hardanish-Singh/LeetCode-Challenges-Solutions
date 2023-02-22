@@ -37,7 +37,6 @@ var findAnagrams = function (s, p) {
         let anagrams = [];
         let hashmap1 = {};
         let hashmap2 = countCharacterOccurrences(p);
-
         for (let i = 0; i <= s.length - p.length; i++) {
                 let substr = s.slice(i, p.length + i);
                 i === 0
@@ -47,6 +46,5 @@ var findAnagrams = function (s, p) {
                         anagrams.push(i);
                 }
         }
-
         return anagrams;
 };
