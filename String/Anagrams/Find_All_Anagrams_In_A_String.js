@@ -33,7 +33,7 @@ const countCharacterOccurrences = (word) => {
         return countOccurrences;
 };
 
-var findAnagrams = function (s, pp) {
+var findAnagrams = function (s, p) {
         let anagrams = [];
         let hashmap1 = {};
         let hashmap2 = countCharacterOccurrences(p);
