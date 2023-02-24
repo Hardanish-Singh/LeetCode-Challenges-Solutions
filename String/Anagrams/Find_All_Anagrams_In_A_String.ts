@@ -1,6 +1,10 @@
 // Leetcode: https://leetcode.com/problems/find-all-anagrams-in-a-string/
 
-const isAnagram = (hashmap1: { [key: string]: number }, hashmap2: { [key: string]: number }): boolean => {
+type HashMap = {
+        [key: string]: number;
+};
+
+const isAnagram = (hashmap1: HashMap, hashmap2: HashMap): boolean => {
         for (const [key1, value1] of Object.entries(hashmap1)) {
                 let isFound = false;
                 for (const [key2, value2] of Object.entries(hashmap2)) {
@@ -16,11 +20,7 @@ const isAnagram = (hashmap1: { [key: string]: number }, hashmap2: { [key: string
         return true;
 };
 
-const adjustCharacterOccurrences = (
-        start: string,
-        end: string,
-        words: { [key: string]: number }
-): { [key: string]: number } => {
+const adjustCharacterOccurrences = (start: string, end: string, words: HashMap): HashMap => {
         words[start] = words[start] - 1;
         if (words[start] === 0) {
                 delete words[start];
@@ -29,7 +29,7 @@ const adjustCharacterOccurrences = (
         return words;
 };
 
-const countCharacterOccurrences = (word: string): { [key: string]: number } => {
+const countCharacterOccurrences = (word: string): HashMap => {
         let countOccurrences = {};
         for (let i = 0; i < word.length; i++) {
                 word[i] in countOccurrences ? (countOccurrences[word[i]] += 1) : (countOccurrences[word[i]] = 1);
@@ -39,8 +39,8 @@ const countCharacterOccurrences = (word: string): { [key: string]: number } => {
 
 var findAnagrams = function (s: string, p: string): Array<number> {
         let anagrams: Array<number> = [];
-        let hashmap1: { [key: string]: number } = {};
-        let hashmap2: { [key: string]: number } = countCharacterOccurrences(p);
+        let hashmap1: HashMap = {};
+        let hashmap2: HashMap = countCharacterOccurrences(p);
         for (let i: number = 0; i <= s.length - p.length; i++) {
                 let substr: string = s.slice(i, p.length + i);
                 i === 0
