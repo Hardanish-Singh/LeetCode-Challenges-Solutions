@@ -10,7 +10,7 @@ var addBinary = function (a, b) {
         if (b.length > a.length) {
                 return addBinary(b, a);
         }
-        let carry = 0;
+        let carryOver = 0;
         let sum = "";
         let answer = "";
         let j = b.length - 1;
@@ -18,17 +18,17 @@ var addBinary = function (a, b) {
         for (let i = a.length - 1; i >= 0; i--) {
                 let temp = b[j] ? b[j--] : "0";
                 if (a[i] === "1" && temp === "1") {
-                        sum = carry === 1 ? "1" : "0";
-                        carry = 1;
+                        sum = carryOver === 1 ? "1" : "0";
+                        carryOver = 1;
                 } else if ((a[i] === "1" && temp === "0") || (a[i] === "0" && temp === "1")) {
-                        carry === 1 ? ((sum = "0"), (carry = 1)) : ((sum = "1"), (carry = 0));
+                        carryOver === 1 ? ((sum = "0"), (carryOver = 1)) : ((sum = "1"), (carryOver = 0));
                 } else {
-                        carry === 1 ? (sum = "1") : (sum = "0");
-                        carry = 0;
+                        carryOver === 1 ? (sum = "1") : (sum = "0");
+                        carryOver = 0;
                 }
                 answer = String(+sum[sum.length - 1]) + answer;
         }
 
-        carry > 0 ? (answer = carry + answer) : null;
+        carryOver > 0 ? (answer = carryOver + answer) : null;
         return answer.length > 1 && answer.startsWith("0") ? answer.slice(1) : answer;
 };
