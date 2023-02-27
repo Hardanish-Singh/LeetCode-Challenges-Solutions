@@ -14,10 +14,9 @@ var addBinary = function (a, b) {
         let sum = "";
         let answer = "";
         let j = b.length - 1;
-        let temp = b[j];
 
         for (let i = a.length - 1; i >= 0; i--) {
-                temp = b[j--];
+                let temp = b[j--];
                 if (temp === undefined) {
                         temp = "0";
                 }
