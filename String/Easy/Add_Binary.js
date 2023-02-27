@@ -16,10 +16,7 @@ var addBinary = function (a, b) {
         let j = b.length - 1;
 
         for (let i = a.length - 1; i >= 0; i--) {
-                let temp = b[j--];
-                if (temp === undefined) {
-                        temp = "0";
-                }
+                let temp = b[j] ? b[j--] : "0";
                 if (a[i] === "1" && temp === "1") {
                         carry === 1 ? (sum = String(1)) : (sum = String(0));
                         carry = 1;
