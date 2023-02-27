@@ -10,7 +10,8 @@ var addStrings = function (num1, num2) {
         if (num2.length > num1.length) {
                 return addStrings(num2, num1);
         }
-        let carry = (sum = 0);
+        let carry = 0;
+        let sum = 0;
         let answer = "";
         let j = num2.length - 1;
         for (let i = num1.length - 1; i >= 0; i--) {
