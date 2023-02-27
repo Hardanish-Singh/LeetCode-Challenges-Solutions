@@ -18,12 +18,12 @@ var addBinary = function (a, b) {
         for (let i = a.length - 1; i >= 0; i--) {
                 let temp = b[j] ? b[j--] : "0";
                 if (a[i] === "1" && temp === "1") {
-                        carry === 1 ? (sum = "1") : (sum = "0");
+                        sum = carry === 1 ? "1" : "0";
                         carry = 1;
                 } else if ((a[i] === "1" && temp === "0") || (a[i] === "0" && temp === "1")) {
-                        carry === 1 ? ((sum = String(0)), (carry = 1)) : ((sum = String(1)), (carry = 0));
+                        carry === 1 ? ((sum = "0"), (carry = 1)) : ((sum = "1"), (carry = 0));
                 } else {
-                        carry === 1 ? (sum = String(1)) : (sum = String(0));
+                        carry === 1 ? (sum = "1") : (sum = "0");
                         carry = 0;
                 }
                 answer = String(+sum[sum.length - 1]) + answer;
