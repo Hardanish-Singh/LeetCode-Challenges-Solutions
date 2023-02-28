@@ -1,46 +1,30 @@
-/*
-        Given a string, find the first non-repeating character in it and return its index. If it does not exist, return -1.
-        
-        Example 1:
-                Input: string = "leetcode"
-                Output: 0
-        Example 2:
-                Input: string = "loveleetcode"
-                Output: 2
-        Example 3:
-                Input: string = "aabb"
-                Output: -1
-
-        Constraints:
-                1) 1 <= s.length <= 10^5
-                2) s consists of only lowercase English letters.
-*/
+// Leetcode: https://leetcode.com/problems/first-unique-character-in-a-string/
 
 /*
  * @param { string } string
  * @return { number }
-*/
+ */
 
 // SOLUTION 1
-var firstUniqChar = function( string ) {
-        for( let i = 0; i < string.length; i++ ) {
+var firstUniqChar = function (string) {
+        for (let i = 0; i < string.length; i++) {
                 let isUnique = true;
-                for( let b = 0; b < i; b++ ) {
-                        if( string[b] === string[i] ) {
+                for (let b = 0; b < i; b++) {
+                        if (string[b] === string[i]) {
                                 isUnique = false;
                                 break;
                         }
                 }
-                if( !isUnique ) {
+                if (!isUnique) {
                         continue;
                 }
-                for( let j = i + 1; j < string.length; j++ ) {
-                        if( string[i] === string[j] ) {
+                for (let j = i + 1; j < string.length; j++) {
+                        if (string[i] === string[j]) {
                                 isUnique = false;
                                 break;
                         }
-                } 
-                if( isUnique ) {
+                }
+                if (isUnique) {
                         return i;
                 }
         }
@@ -48,21 +32,21 @@ var firstUniqChar = function( string ) {
 };
 
 // SOLUTION 2
-var firstUniqChar = function( string ) {
+var firstUniqChar = function (string) {
         let duplicates = {};
-        for( let i = 0; i < string.length; i++ ) {
+        for (let i = 0; i < string.length; i++) {
                 let isUnique = true;
-                if( string[i] in duplicates ) {
+                if (string[i] in duplicates) {
                         continue;
                 }
-                for( let j = i + 1; j < string.length; j++ ) {
-                        if( string[i] === string[j] ) {
+                for (let j = i + 1; j < string.length; j++) {
+                        if (string[i] === string[j]) {
                                 duplicates[string[i]] = true;
                                 isUnique = false;
                                 break;
                         }
-                } 
-                if( isUnique ) {
+                }
+                if (isUnique) {
                         return i;
                 }
         }
