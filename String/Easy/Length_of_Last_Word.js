@@ -11,6 +11,11 @@ var lengthOfLastWord = function (s) {
         return s[s.length - 1].length;
 };
 
+/**
+ * @param { string } s
+ * @return { number }
+ */
+
 // SOLUTION 2
 var lengthOfLastWord = function (s) {
         s = s.trim();
