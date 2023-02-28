@@ -10,3 +10,11 @@ var lengthOfLastWord = function (s) {
         s = s.trim().split(" ");
         return s[s.length - 1].length;
 };
+
+// SOLUTION 2
+
+var lengthOfLastWord = function (s) {
+        s = s.trim();
+        let lastIndexOfSpace = s.lastIndexOf(" ");
+        return s.slice(lastIndexOfSpace + 1).length;
+};
