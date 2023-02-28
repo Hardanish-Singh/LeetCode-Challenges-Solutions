@@ -31,6 +31,11 @@ var firstUniqChar = function (string) {
         return -1;
 };
 
+/**
+ * @param { string } string
+ * @return { number }
+ */
+
 // SOLUTION 2
 var firstUniqChar = function (string) {
         let duplicates = {};
