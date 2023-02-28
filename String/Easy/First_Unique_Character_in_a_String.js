@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/first-unique-character-in-a-string/
 
-/*
+/**
  * @param { string } string
  * @return { number }
  */
