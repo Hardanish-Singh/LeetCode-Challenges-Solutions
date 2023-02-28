@@ -12,7 +12,6 @@ var lengthOfLastWord = function (s) {
 };
 
 // SOLUTION 2
-
 var lengthOfLastWord = function (s) {
         s = s.trim();
         let lastIndexOfSpace = s.lastIndexOf(" ");
