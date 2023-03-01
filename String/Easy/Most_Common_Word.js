@@ -1,9 +1,9 @@
 // Leetcode: https://leetcode.com/problems/most-common-word/
 
 /**
- * @param {string} paragraph
- * @param {string[]} banned
- * @return {string}
+ * @param { string } paragraph
+ * @param { string[] } banned
+ * @return { string }
  */
 
 var mostCommonWord = function (paragraph, banned) {
