@@ -14,11 +14,7 @@ var mostCommonWord = function (paragraph, banned) {
                 if (banned.includes(word) || word.length === 0) {
                         continue;
                 }
-                if (word in hashmap) {
-                        hashmap[word] += 1;
-                } else {
-                        hashmap[word] = 1;
-                }
+                word in hashmap ? (hashmap[word] += 1) : (hashmap[word] = 1);
         }
         const sortedObjectByValue = Object.fromEntries(Object.entries(hashmap).sort(([, a], [, b]) => b - a));
         return Object.keys(sortedObjectByValue)[0];
