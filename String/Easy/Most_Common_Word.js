@@ -7,52 +7,20 @@
  */
 
 var mostCommonWord = function (paragraph, banned) {
-        paragraph = paragraph.toLowerCase();
-        let new_paragraph = [];
-        let temp = "";
-
-        for (let i = 0; i < paragraph.length; i++) {
-                if (paragraph[i] >= "a" && paragraph[i] <= "z") {
-                        temp += paragraph[i];
-                        if (i === paragraph.length - 1) {
-                                new_paragraph.push(temp);
-                        }
+        paragraph = paragraph.replace(/\.|\,|\;|\?|\!|'/g, " ").trim();
+        let words = paragraph.split(/\s+/g);
+        let hashmap = {};
+        for (let i = 0; i < words.length; i++) {
+                let word = words[i].toLowerCase();
+                if (banned.includes(word)) {
+                        continue;
+                }
+                if (word in hashmap) {
+                        hashmap[word] += 1;
                 } else {
-                        if (temp.length > 0) {
-                                new_paragraph.push(temp);
-                        }
-                        temp = "";
+                        hashmap[word] = 1;
                 }
         }
-
-        let new_count = 1;
-        let max = 0;
-        let old_count = 0;
-        let isBackward = false;
-        for (let i = 0; i < new_paragraph.length; i++) {
-                if (banned.includes(new_paragraph[i])) {
-                        continue;
-                }
-                isBackward = false;
-                for (let b = 0; b < i; b++) {
-                        if (new_paragraph[i] === new_paragraph[b]) {
-                                isBackward = true;
-                                break;
-                        }
-                }
-                if (isBackward) {
-                        continue;
-                }
-                for (let j = i + 1; j < new_paragraph.length; j++) {
-                        if (new_paragraph[j] == new_paragraph[i]) {
-                                new_count++;
-                        }
-                }
-                if (new_count >= old_count) {
-                        old_count = new_count;
-                        max = i;
-                }
-                new_count = 1;
-        }
-        return new_paragraph[max];
+        const sortable = Object.fromEntries(Object.entries(hashmap).sort(([, a], [, b]) => b - a));
+        return Object.keys(sortable)[0];
 };
