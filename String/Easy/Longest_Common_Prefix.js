@@ -27,13 +27,12 @@ var longestCommonPrefix = function (strs) {
         return "";
 };
 
-// SOLUTION 2
-
 /**
  * @param { string[] } strs
  * @return { string }
  */
 
+// SOLUTION 2
 var longestCommonPrefix = function (strs) {
         strs.sort((a, b) => a.length - b.length);
         if (strs.length === 1) {
