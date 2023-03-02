@@ -7,12 +7,11 @@
  */
 
 var mostCommonWord = function (paragraph, banned) {
-        paragraph = paragraph.replace(/\.|\,|\;|\?|\!|'/g, " ").trim();
-        let words = paragraph.split(/\s+/g);
+        let words = paragraph.replace(/[^a-zA-Z]/g, " ").split(" ");
         let hashmap = {};
         for (let i = 0; i < words.length; i++) {
                 let word = words[i].toLowerCase();
-                if (banned.includes(word)) {
+                if (banned.includes(word) || word.length === 0) {
                         continue;
                 }
                 if (word in hashmap) {
