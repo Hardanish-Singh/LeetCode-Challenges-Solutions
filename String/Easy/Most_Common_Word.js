@@ -20,6 +20,6 @@ var mostCommonWord = function (paragraph, banned) {
                         hashmap[word] = 1;
                 }
         }
-        const sortable = Object.fromEntries(Object.entries(hashmap).sort(([, a], [, b]) => b - a));
-        return Object.keys(sortable)[0];
+        const sortedObjectByValue = Object.fromEntries(Object.entries(hashmap).sort(([, a], [, b]) => b - a));
+        return Object.keys(sortedObjectByValue)[0];
 };
