@@ -22,5 +22,3 @@ var addStrings = function (num1, num2) {
         carry > 0 ? (answer = carry + answer) : null;
         return answer.length > 1 && answer.startsWith("0") ? answer.slice(1) : answer;
 };
-
-//sumStrings('00103', '08567'): expected '08670' to equal '8670
