@@ -1,9 +1,9 @@
 // Leetcode: https://leetcode.com/problems/reverse-string-ii/
 
 /**
- * @param {string} s
- * @param {number} k
- * @return {string}
+ * @param { string } s
+ * @param { number } k
+ * @return { string }
  */
 
 var reverseStr = function (s, k) {
