@@ -21,7 +21,7 @@ var longestCommonPrefix = function (strs) {
                 if (isLongestPrefix) {
                         return word;
                 }
-                word = strs[0].slice(0, word.length - 1);
+                word = word.slice(0, word.length - 1);
         }
 
         return "";
