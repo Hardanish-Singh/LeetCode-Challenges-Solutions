@@ -16,47 +16,10 @@
 
 */
 
-/*
+/**
  * @param { string } num1
  * @param { string } num2
  * @return { string }
-*/
-var addStrings = function( num1, num2 ) {
-        let carry = sum = 0;
-        let answer = '';
-        let j = num2.length-1;
-        for( let i = num1.length-1; i>=0; i-- ){
-                sum = String( +num1[i] + ( num2[j] ? +num2[j--] : 0 ) + carry );
-                answer = String( +sum[sum.length-1] ) + answer;
-                sum.length > 1 ? carry = +sum[0] : carry = 0;
-        }
-        return carry > 0 ? carry + answer : answer;
-};
+ */
 
-var multiply = function( num1, num2 ) {
-        if( num2.length < num1.length ) {
-                return multiply( num2, num1 );
-        }
-        if( [...new Set(num1.split(""))].join("") === "0" ) {
-                return "0";
-        }
-        let answer = temp = '';
-        let carry = product = 0;
-        for( let i = num1.length-1; i>=0; i-- ) {
-                carry = product = 0;
-                for( let j = num2.length-1; j>=0; j-- ) {
-                        product = String( ( +num1[i] * +num2[j] ) + carry ) ;
-                        answer = String( +product[product.length-1] ) + answer;
-                        product.length > 1 ? carry = +product[0] : carry = 0 ;
-                }
-                if( carry > 0 ) {
-                        answer = carry + answer;
-                }
-                for( let k=num1.length-1; k>i; k-- ) {
-                        answer = answer + "0";
-                }
-                temp = addStrings( answer, temp );
-                answer = '';
-        }
-        return temp;
-};
+var multiply = (num1, num2) => (BigInt(num1) * BigInt(num2)).toString();
