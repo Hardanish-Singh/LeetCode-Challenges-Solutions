@@ -1,4 +1,4 @@
-// Leetcode:
+// Leetcode: https://leetcode.com/problems/basic-calculator-ii/
 
 const is_operator = (c) => c === "+" || c === "-" || c === "*" || c === "/";
 
@@ -25,7 +25,7 @@ const calculate = (s) => {
                         if (sign === "-") stack.push(-n);
                         else if (sign === "+") stack.push(n);
                         else if (sign === "*") stack.push(stack.pop() * n);
-                        else if (sign === "/") stack.push(~~(stack.pop() / n));
+                        else if (sign === "/") stack.push(Math.trunc(stack.pop() / n));
 
                         sign = character;
                         n = 0;
