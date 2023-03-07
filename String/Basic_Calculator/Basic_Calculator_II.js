@@ -1,18 +1,10 @@
-// Helper functions
+// Leetcode:
 
-function is_operator(c) {
-        return c === "+" || c === "-" || c === "*" || c === "/";
-}
+const is_operator = (c) => c === "+" || c === "-" || c === "*" || c === "/";
 
-function is_digit(c) {
-        return "0" <= c && c <= "9";
-}
+const is_digit = (c) => "0" <= c && c <= "9";
 
 const calculate = (s) => {
-        if (s == null || s.length === 0) {
-                return null;
-        }
-
         // remove space
         s = s.replace(/\s/g, "");
 
