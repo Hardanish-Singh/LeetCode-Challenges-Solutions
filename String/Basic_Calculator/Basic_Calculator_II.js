@@ -6,30 +6,29 @@ const is_digit = (c) => "0" <= c && c <= "9";
 
 const calculate = (s) => {
         // remove space from the string
-        s = s.replace(/\s/g, "");
-
-        let stack = [];
-        let n = 0;
-        let sign = "+";
-
+        s.replace(/\s/g, "");
+        let num = "";
+        let calc = [];
+        let prevSign = "+";
         for (let i = 0; i < s.length; i++) {
-                const character = s[i];
-
                 // number
-                if (is_digit(character)) {
-                        n = n * 10 + Number(character); // e.g. '14' -> 1 * 10 + 4
+                if (!isNaN(s[i])) {
+                        num += s[i];
                 }
-
                 // sign or last number
-                if (is_operator(character) || i === s.length - 1) {
-                        if (sign === "-") stack.push(-n);
-                        else if (sign === "+") stack.push(n);
-                        else if (sign === "*") stack.push(stack.pop() * n);
-                        else if (sign === "/") stack.push(Math.trunc(stack.pop() / n));
-
-                        sign = character;
-                        n = 0;
+                if (isNaN(s[i]) || i == s.length - 1) {
+                        if (prevSign == "+") {
+                                calc.push(Number(num));
+                        } else if (prevSign == "-") {
+                                calc.push(Number(-num));
+                        } else if (prevSign == "*") {
+                                calc.push(Math.floor(calc.pop() * num));
+                        } else {
+                                calc.push(Math.trunc(calc.pop() / num));
+                        }
+                        prevSign = s[i];
+                        num = "";
                 }
         }
-        return stack.reduce((a, b) => a + b);
+        return calc.reduce((a, b) => a + b);
 };
