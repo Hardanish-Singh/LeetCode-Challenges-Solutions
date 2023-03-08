@@ -12,8 +12,7 @@ const calculate = (s) => {
         let prevSign = "+";
 
         for (let i = 0; i < s.length; i++) {
-                // number
-                if (is_digit(s[i])) {
+                if (Number.isInteger(Number(s[i]))) {
                         num += s[i];
                 }
                 // sign or last number
