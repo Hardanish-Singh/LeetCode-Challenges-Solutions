@@ -8,27 +8,29 @@ const calculate = (s) => {
         // remove space from the string
         s.replace(/\s/g, "");
         let num = "";
-        let calc = [];
+        let stack = [];
         let prevSign = "+";
+
         for (let i = 0; i < s.length; i++) {
                 // number
-                if (!isNaN(s[i])) {
+                if (is_digit(s[i])) {
                         num += s[i];
                 }
                 // sign or last number
-                if (isNaN(s[i]) || i == s.length - 1) {
+                if (is_operator(s[i]) || i == s.length - 1) {
                         if (prevSign == "+") {
-                                calc.push(Number(num));
+                                stack.push(Number(num));
                         } else if (prevSign == "-") {
-                                calc.push(Number(-num));
+                                stack.push(Number(-num));
                         } else if (prevSign == "*") {
-                                calc.push(Math.floor(calc.pop() * num));
+                                stack.push(Math.floor(stack.pop() * num));
                         } else {
-                                calc.push(Math.trunc(calc.pop() / num));
+                                stack.push(Math.trunc(stack.pop() / num));
                         }
                         prevSign = s[i];
                         num = "";
                 }
         }
-        return calc.reduce((a, b) => a + b);
+
+        return stack.reduce((a, b) => a + b);
 };
