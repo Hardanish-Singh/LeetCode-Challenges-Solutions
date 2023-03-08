@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/basic-calculator-ii/
 
-const is_operator = (c) => c === "+" || c === "-" || c === "*" || c === "/";
+const isOperator = (c) => c === "+" || c === "-" || c === "*" || c === "/";
 
 const calculate = (s) => {
         // remove space from the string
@@ -14,7 +14,7 @@ const calculate = (s) => {
                         num += s[i];
                 }
                 // sign or last number
-                if (is_operator(s[i]) || i == s.length - 1) {
+                if (isOperator(s[i]) || i === s.length - 1) {
                         if (prevSign == "+") {
                                 stack.push(Number(num));
                         } else if (prevSign == "-") {
