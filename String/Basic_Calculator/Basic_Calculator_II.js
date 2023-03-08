@@ -5,7 +5,7 @@ const is_operator = (c) => c === "+" || c === "-" || c === "*" || c === "/";
 const is_digit = (c) => "0" <= c && c <= "9";
 
 const calculate = (s) => {
-        // remove space
+        // remove space from the string
         s = s.replace(/\s/g, "");
 
         let stack = [];
