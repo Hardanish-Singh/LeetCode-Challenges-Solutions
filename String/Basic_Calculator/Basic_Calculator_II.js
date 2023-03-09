@@ -13,7 +13,7 @@ const calculate = (s) => {
                 if (Number.isInteger(Number(s[i]))) {
                         num += s[i];
                 }
-                //sign or last number
+                // sign or last number
                 if (isOperator(s[i]) || i === s.length - 1) {
                         if (prevSign == "+") {
                                 stack.push(Number(num));
