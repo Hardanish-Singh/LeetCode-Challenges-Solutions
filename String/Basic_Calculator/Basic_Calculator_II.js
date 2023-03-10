@@ -10,6 +10,14 @@
                                At the end, we just need to add all the numbers from our call stack.
         Note: Substraction can be regarded as adding a negative number, that is, a - b = a + (-b)
 
+        For example: "2+3*2", where we initialize calcStack = [] & prevSign = +
+                2 -> a number, calcStack = []
+                + -> calc w/ prevSign +, calcStack = [2], set prevSign +
+                3 -> a number
+                * -> calc w/ prevSign + , calcStack = [2, 3], set prevSign *
+                2 -> a number
+                end -> calc w/ prevSign * using 3, calStack [2, 6]
+                Sum of array is 8.
 */
 
 const isOperator = (c) => c === "+" || c === "-" || c === "*" || c === "/";
