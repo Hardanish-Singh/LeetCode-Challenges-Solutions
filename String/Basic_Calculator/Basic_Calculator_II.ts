@@ -20,16 +20,16 @@
                 Sum of array is 8.
 */
 
-const isOperator = (c) => c === "+" || c === "-" || c === "*" || c === "/";
+const isOperator = (c: string): boolean => c === "+" || c === "-" || c === "*" || c === "/";
 
-const calculate = (s) => {
+const calculate = (s: string): number => {
         // remove space from the string
         s.replace(/\s/g, "");
-        let num = "";
-        let stack = [];
-        let prevSign = "+";
+        let num: string = "";
+        let stack: Array<number> = [];
+        let prevSign: string = "+";
 
-        for (let i = 0; i < s.length; i++) {
+        for (let i: number = 0; i < s.length; i++) {
                 // number
                 if (Number.isInteger(Number(s[i]))) {
                         num += s[i];
@@ -41,9 +41,9 @@ const calculate = (s) => {
                         } else if (prevSign == "-") {
                                 stack.push(Number(-num));
                         } else if (prevSign == "*") {
-                                stack.push(Math.floor(stack.pop() * num));
+                                stack.push(Math.floor(stack.pop() * Number(num)));
                         } else {
-                                stack.push(Math.trunc(stack.pop() / num));
+                                stack.push(Math.trunc(stack.pop() / Number(num)));
                         }
                         prevSign = s[i];
                         num = "";
