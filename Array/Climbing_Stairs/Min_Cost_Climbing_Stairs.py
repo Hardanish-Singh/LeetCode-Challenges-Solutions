@@ -4,7 +4,6 @@ from typing import Dict, List
 
 class Solution:
         def minCostClimbingStairs(self, cost: List[int]) -> int:
-        
                 def minSteps( stepIndex: int, cache: Dict[int, int] = {} ) -> int:
                         if stepIndex in cache.keys():
                                 return cache[stepIndex]
