@@ -1,32 +1,24 @@
 // Leetcode: https://leetcode.com/problems/search-in-rotated-sorted-array/
 
-/*
- * @param {number[]} nums
- * @param {number} target
- * @return {number}
+/**
+ * @param { number[] } nums
+ * @param { number } target
+ * @return { number }
  */
 
 var search = function (array, target) {
-        let startIndex = 0;
-        let endIndex = array.length - 1;
+        let start = 0;
+        let end = array.length - 1;
 
-        while (startIndex <= endIndex) {
-                let middleIndex = Math.floor((startIndex + endIndex) / 2);
-                if (target === array[middleIndex]) {
-                        return middleIndex;
+        while (start <= end) {
+                let mid = Math.floor((start + end) / 2);
+                if (target === array[mid]) {
+                        return mid;
                 }
-                if (array[startIndex] <= array[middleIndex]) {
-                        if (target < array[middleIndex] && target >= array[startIndex]) {
-                                endIndex = middleIndex - 1;
-                        } else {
-                                startIndex = middleIndex + 1;
-                        }
+                if (array[start] <= array[mid]) {
+                        target >= array[start] && target < array[mid] ? (end = mid - 1) : (start = mid + 1);
                 } else {
-                        if (target > array[middleIndex] && target <= array[endIndex]) {
-                                startIndex = middleIndex + 1;
-                        } else {
-                                endIndex = middleIndex - 1;
-                        }
+                        target > array[mid] && target <= array[end] ? (start = mid + 1) : (end = mid - 1);
                 }
         }
 
