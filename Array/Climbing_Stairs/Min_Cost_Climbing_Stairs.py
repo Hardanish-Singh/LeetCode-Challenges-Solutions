@@ -9,12 +9,7 @@ class Solution:
                                 return cache[stepIndex]
                         if stepIndex >= len(cost):
                                 return 0
-                        
-                        minCost = min( 
-                                        cost[stepIndex] + minSteps( stepIndex + 1, cache ),
-                                        cost[stepIndex] + minSteps( stepIndex + 2, cache ),
-                                     )
-                        # minCost = cost[stepIndex] + min( minSteps( stepIndex + 1, cache ), minSteps( stepIndex + 2, cache ) )
+                        minCost = cost[stepIndex] + min( minSteps( stepIndex + 1, cache ), minSteps( stepIndex + 2, cache ) )
                         cache[stepIndex] = minCost
                         return minCost
 
