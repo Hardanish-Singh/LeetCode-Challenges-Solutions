@@ -1,17 +1,11 @@
 // Leetcode: https://leetcode.com/problems/coin-change-ii/
 
-/**
- * @param { number } amount
- * @param { number[] } coins
- * @return { number }
- */
-
 // SOLUTION 1: RECURSION (TLE)
-var change = function (amount, coins) {
-        let count = 0;
+var change = function (amount: number, coins: number[]): number {
+        let count: number = 0;
         coins.sort((a, b) => a - b);
 
-        function combinationSum(sum = 0, idx = 0) {
+        const combinationSum = (sum: number = 0, idx: number = 0): number => {
                 if (sum < 0 || sum > amount) {
                         return 0;
                 }
@@ -21,49 +15,45 @@ var change = function (amount, coins) {
                         return count;
                 }
 
-                for (let i = idx; i < coins.length; i++) {
+                for (let i: number = idx; i < coins.length; i++) {
                         combinationSum(sum + coins[i], i);
                 }
-        }
+        };
 
         combinationSum();
         return count;
 };
 
-/**
- * @param { number } amount
- * @param { number[] } coins
- * @return { number }
- */
-
 // SOLUTION 2: RECURSION WITH MEMOIZATION
-var change = function (amount, coins) {
-        let cache = {};
+var change = function (amount: number, coins: number[]): number {
+        let cache: {
+                [key: string]: number;
+        } = {};
         coins.sort((a, b) => a - b);
 
-        function combinationSum(sum = 0, idx = 0) {
-                let count = 0;
+        const combinationSum = (sum: number = 0, idx: number = 0): number => {
+                let count: number = 0;
                 if (sum < 0 || sum > amount) {
                         return count;
                 }
 
-                const key = `${sum},${idx}`;
+                const key: string = `${sum},${idx}`;
                 if (key in cache) {
                         count += cache[key];
                         return count;
                 }
 
-                if (sum == amount) {
+                if (sum === amount) {
                         count = count + 1;
                         return count;
                 }
 
-                for (let i = idx; i < coins.length; i++) {
+                for (let i: number = idx; i < coins.length; i++) {
                         count += combinationSum(sum + coins[i], i);
                 }
                 cache[key] = count;
                 return count;
-        }
+        };
 
         return combinationSum();
 };
