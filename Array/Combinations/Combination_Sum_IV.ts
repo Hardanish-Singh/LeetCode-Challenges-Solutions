@@ -1,18 +1,11 @@
 // Leetcode: https://leetcode.com/problems/combination-sum-iv
 
-/**
- *
- * @param { number[] } nums
- * @param { number } target
- * @returns { number }
- */
-
 // SOLUTION 1: RECURSION
-var combinationSum4 = function (nums, target) {
-        let count = 0;
+var combinationSum4 = function (nums: Array<number>, target: number): number {
+        let count: number = 0;
         nums.sort((a, b) => a - b);
 
-        function permutationSum(sum = 0) {
+        const permutationSum = (sum: number = 0) => {
                 if (sum < 0 || sum > target) {
                         return count;
                 }
@@ -25,26 +18,21 @@ var combinationSum4 = function (nums, target) {
                 for (let num of nums) {
                         permutationSum(sum + num);
                 }
-        }
+        };
 
         permutationSum();
         return count;
 };
 
-/**
- *
- * @param { number[] } nums
- * @param { number } target
- * @returns { number }
- */
-
 // SOLUTION 2: RECURSION WITH MEMOIZATION
-var combinationSum4 = function (nums, target) {
-        const memo = {};
+var combinationSum4 = function (nums: Array<number>, target: number): number {
+        const memo: {
+                [key: number]: number;
+        } = {};
         nums.sort((a, b) => a - b);
 
-        function permutationSum(sum = 0) {
-                let count = 0;
+        const permutationSum = (sum: number = 0) => {
+                let count: number = 0;
                 if (sum < 0 || sum > target) {
                         return count;
                 }
@@ -62,9 +50,10 @@ var combinationSum4 = function (nums, target) {
                 for (const num of nums) {
                         count += permutationSum(sum + num);
                 }
+
                 memo[sum] = count;
                 return count;
-        }
+        };
 
         return permutationSum();
 };
