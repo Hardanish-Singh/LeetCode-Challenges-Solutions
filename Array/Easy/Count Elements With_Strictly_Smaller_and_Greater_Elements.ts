@@ -5,7 +5,7 @@ const countElements = (nums: number[]): number => {
         const max = Math.max.apply(null, nums);
         let count = 0;
 
-        for (let i = 0; i < nums.length; i++) {
+        for (let i: number = 0; i < nums.length; i++) {
                 if (nums[i] > min && nums[i] < max) {
                         count++;
                 }
