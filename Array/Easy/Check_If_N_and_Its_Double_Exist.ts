@@ -5,7 +5,7 @@ var checkIfExist = (arr: Array<number>): boolean => {
                 [key: number]: boolean;
         } = {};
 
-        for (let i = 0; i < arr.length; i++) {
+        for (let i: number = 0; i < arr.length; i++) {
                 if (arr[i] * 2 in map || arr[i] / 2 in map) {
                         return true;
                 }
