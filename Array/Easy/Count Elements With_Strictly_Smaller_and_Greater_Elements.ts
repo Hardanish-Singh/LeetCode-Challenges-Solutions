@@ -3,7 +3,7 @@
 const countElements = (nums: number[]): number => {
         const min: number = Math.min.apply(null, nums);
         const max: number = Math.max.apply(null, nums);
-        let count = 0;
+        let count: number = 0;
 
         for (let i: number = 0; i < nums.length; i++) {
                 if (nums[i] > min && nums[i] < max) {
