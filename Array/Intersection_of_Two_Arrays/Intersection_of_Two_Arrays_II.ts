@@ -12,8 +12,8 @@ const intersect = (nums1: Array<number>, nums2: Array<number>): Array<number> =>
                 [key: number]: boolean;
         } = {};
 
-        for (let i = 0; i < nums1.length; i++) {
-                for (let j = 0; j < nums2.length; j++) {
+        for (let i: number = 0; i < nums1.length; i++) {
+                for (let j: number = 0; j < nums2.length; j++) {
                         if (!isIncluded[j] && nums1[i] === nums2[j]) {
                                 commonElements.push(nums1[i]);
                                 isIncluded[j] = true;
