@@ -2,10 +2,10 @@
 
 import java.util.*;
 
-class MaxStack 
+class MaxStack
 {
         ArrayList<Integer> stack = null;
-        public MaxStack() 
+        public MaxStack()
         {
                 stack = new ArrayList<Integer>();
         }
@@ -15,7 +15,7 @@ class MaxStack
                 stack.add( x );
         }
 
-        public int pop() 
+        public int pop()
         {
                 return stack.remove( stack.size() - 1 );
         }
@@ -25,7 +25,7 @@ class MaxStack
                 return stack.get( stack.size() - 1 );
         }
 
-        public int peekMax() 
+        public int peekMax()
         {
                 int maximum = stack.get(0);
                 for (int i = 1; i < stack.size(); i++) {
@@ -36,7 +36,7 @@ class MaxStack
                 return maximum;
         }
 
-        public int popMax() 
+        public int popMax()
         {
                 int maximum = stack.get(0);
                 int index = 0;
@@ -51,13 +51,3 @@ class MaxStack
                 return stack.remove( index );
         }
 }
-
-/*
-        * Your MaxStack object will be instantiated and called as such:
-        * MaxStack obj = new MaxStack();
-        * obj.push(x);
-        * int param_2 = obj.pop();
-        * int param_3 = obj.top();
-        * int param_4 = obj.peekMax();
-        * int param_5 = obj.popMax();
-*/
