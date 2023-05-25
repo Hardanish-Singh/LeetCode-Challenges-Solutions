@@ -1,8 +1,8 @@
 // Leetcode: https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/
 
-class Solution 
+class Solution
 {
-        public int maximumCount(int[] nums) 
+        public int maximumCount(int[] nums)
         {
                 int max = 0;
                 int min = 0;
