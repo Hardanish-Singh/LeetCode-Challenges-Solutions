@@ -1,4 +1,4 @@
-// Leetcode: https://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/ 
+// Leetcode: https://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/
 
 var minOperations = function (nums: Array<number>): number {
     let moves: number = 0;
