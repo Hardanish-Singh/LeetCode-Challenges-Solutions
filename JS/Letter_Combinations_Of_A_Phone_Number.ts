@@ -19,8 +19,8 @@ const letterCombinations = (digits: string): Array<string> => {
     if (digits.length < 1) {
         return [];
     } else {
-        let letterCombinationsOfPhoneNumber = [];
-        for (let i = 0; i < digits.length; i++) {
+        let letterCombinationsOfPhoneNumber = [...phoneNumberLetterCombinations[digits[0]]];
+        for (let i = 1; i < digits.length; i++) {
             makeLetterCombinations(letterCombinationsOfPhoneNumber, phoneNumberLetterCombinations[digits[i]]);
         }
         return letterCombinationsOfPhoneNumber;
@@ -31,18 +31,12 @@ const makeLetterCombinations = (
     letterCombinationsOfPhoneNumber: Array<string>,
     phoneNumberLetterCombinationValue: string
 ): void => {
-    if (letterCombinationsOfPhoneNumber.length === 0) {
-        letterCombinationsOfPhoneNumber.push(...phoneNumberLetterCombinationValue);
-    } else {
-        let length = letterCombinationsOfPhoneNumber.length;
-        for (let i = 0; i < length; i++) {
-            const word = letterCombinationsOfPhoneNumber[i];
-            [...phoneNumberLetterCombinationValue].forEach((letter) =>
-                letterCombinationsOfPhoneNumber.push(word + letter)
-            );
-        }
-        for (let i = 0; i < length; i++) {
-            letterCombinationsOfPhoneNumber.shift();
-        }
+    let length = letterCombinationsOfPhoneNumber.length;
+    for (let i = 0; i < length; i++) {
+        const word = letterCombinationsOfPhoneNumber[i];
+        [...phoneNumberLetterCombinationValue].forEach((letter) => letterCombinationsOfPhoneNumber.push(word + letter));
+    }
+    for (let i = 0; i < length; i++) {
+        letterCombinationsOfPhoneNumber.shift();
     }
 };
