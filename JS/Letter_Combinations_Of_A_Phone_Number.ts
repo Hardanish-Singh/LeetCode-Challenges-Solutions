@@ -1,6 +1,4 @@
-/*
-    Leetcode: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
-*/
+// Leetcode: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
 const phoneNumberLetterCombinations = {
     "0": "0",
