@@ -12,6 +12,7 @@
     Easier to manage as we don't have to create a new list/ worry about needing to pop elements.
 
 */
+
 const maxArrayValue = (nums: number[]): number => {
     for (let i: number = nums.length - 2; i >= 0; i--) {
         if (nums[i + 1] >= nums[i]) {
