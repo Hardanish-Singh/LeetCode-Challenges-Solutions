@@ -1,4 +1,4 @@
-// Leetcode: https://leetcode.com/problems/product-of-array-except-self/ 
+// Leetcode: https://leetcode.com/problems/product-of-array-except-self/
 
 const productExceptSelf = (nums: number[]): number[] => {
     let sum = nums.reduce((a, b) => a * b, 1);
