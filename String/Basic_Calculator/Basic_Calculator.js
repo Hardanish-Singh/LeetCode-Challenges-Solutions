@@ -31,7 +31,7 @@ var calculate = function (s) {
                     sum += stack.pop();
                 }
                 stack.pop(); // remove "X"
-                stack.push(Number(stack.pop()) * sum);
+                stack.push(stack.pop() * sum);
             }
             num = "";
         }
