@@ -34,10 +34,10 @@ const calculate = (s: string): number => {
 
     for (let i: number = 0; i < s.length; i++) {
         // number
-        if (Number.isInteger(Number(s[i]))) {
+        if (!isNaN(Number(s[i]))) {
             num += s[i];
         }
-        // sign or last number
+        // isOperator or last character
         if (isOperator(s[i]) || i === s.length - 1) {
             if (prevSign == "+") {
                 stack.push(Number(num));
