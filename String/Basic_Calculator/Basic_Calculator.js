@@ -22,7 +22,7 @@ var calculate = function (s) {
             } else if (s[i] === "-") {
                 prevSign = "-";
             } else if (s[i] === "(") {
-                stack.push(prevSign === "+" ? 1 : -1);
+                stack.push(prevSign);
                 stack.push("X");
                 prevSign = "+"; // reset prevSign to +
             } else if (s[i] === ")") {
@@ -31,7 +31,7 @@ var calculate = function (s) {
                     sum += stack.pop();
                 }
                 stack.pop(); // remove "X"
-                stack.push(stack.pop() * sum);
+                stack.push(stack.pop() === "+" ? sum : -sum);
             }
             num = "";
         }
