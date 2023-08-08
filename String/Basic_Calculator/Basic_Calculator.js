@@ -36,5 +36,6 @@ var calculate = function (s) {
             num = "";
         }
     }
+
     return stack.reduce((a, b) => a + b, 0);
 };
