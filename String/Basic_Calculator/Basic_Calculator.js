@@ -11,7 +11,7 @@ var calculate = function (s) {
 
     for (let i = 0; i < s.length; i++) {
         // Number
-        if (!isNaN(Number(s[i]))) {
+        if (!isNaN(s[i])) {
             num += s[i];
         }
         // isOperator or last character
