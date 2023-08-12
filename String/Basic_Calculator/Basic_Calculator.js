@@ -10,7 +10,7 @@ var calculate = function (s) {
     let prevSign = "+";
 
     for (let i = 0; i < s.length; i++) {
-        // number
+        // Number
         if (!isNaN(Number(s[i]))) {
             num += s[i];
         }
