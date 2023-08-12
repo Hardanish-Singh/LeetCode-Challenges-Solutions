@@ -7,7 +7,7 @@ var calculate = function (s) {
     s.replace(/\s/g, "");
     let num = "";
     let stack = [];
-    let prevSign = "+";
+    let sign = "+";
 
     for (let i = 0; i < s.length; i++) {
         // Number
@@ -16,16 +16,16 @@ var calculate = function (s) {
         }
         // isOperator or last character
         if (isOperator(s[i]) || i === s.length - 1) {
-            stack.push(prevSign === "+" ? Number(num) : Number(-num));
+            stack.push(sign === "+" ? Number(num) : Number(-num));
             if (s[i] === "+") {
-                prevSign = "+";
+                sign = "+";
             } else if (s[i] === "-") {
-                prevSign = "-";
+                sign = "-";
             } else if (s[i] === "(") {
-                stack.push(prevSign);
+                stack.push(sign);
                 // Pushed dummy character "X" to stack so that when we encounter closing bracker ")" it can be used as a stopping condition
                 stack.push("X");
-                prevSign = "+"; // reset prevSign to +
+                sign = "+"; // reset sign to +
             } else if (s[i] === ")") {
                 let sum = 0;
                 // Dummy character "X" is used for stopping condition here
