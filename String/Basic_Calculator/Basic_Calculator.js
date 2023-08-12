@@ -3,7 +3,7 @@
 const isOperator = (c) => c === "+" || c === "-" || c === "(" || c === ")";
 
 var calculate = function (s) {
-    // remove space from the string
+    // Remove all spaces from the string
     s.replace(/\s/g, "");
     let num = "";
     let stack = [];
