@@ -26,7 +26,6 @@ var calculate = function (s) {
                 sign = "+"; // reset sign to +
             } else if (s[i] === ")") {
                 let sum = 0;
-                // Dummy character "X" is used for stopping condition here
                 while (typeof(stack[stack.length - 1]) === "number") {
                     sum += stack.pop();
                 }
