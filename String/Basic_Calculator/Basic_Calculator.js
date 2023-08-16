@@ -24,21 +24,20 @@ var calculate = function (s) {
         }
         // isOperator or last character
         if (isOperator(s[i]) || i === s.length - 1) {
-            helper(stack, sign, num);
-            if (s[i] === "+") {
-                sign = "+";
-            } else if (s[i] === "-") {
-                sign = "-";
-            } else if (s[i] === "(") {
+            if (s[i] === "(") {
                 stack.push(sign);
                 sign = "+"; // reset sign to +
-            } else if (s[i] === ")") {
-                let sum = 0;
-                while (typeof stack[stack.length - 1] === "number") {
-                    sum += stack.pop();
+            } else {
+                helper(stack, sign, num);
+                if (s[i] === ")") {
+                    let sum = 0;
+                    while (typeof stack[stack.length - 1] === "number") {
+                        sum += stack.pop();
+                    }
+                    sign = stack.pop();
+                    helper(stack, sign, sum);
                 }
-                sign = stack.pop();
-                helper(stack, sign, sum);
+                sign = s[i];
             }
             num = "";
         }
