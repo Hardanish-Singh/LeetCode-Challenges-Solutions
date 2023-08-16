@@ -26,14 +26,14 @@
 const isOperator = (c: string): boolean => c === "+" || c === "-" || c === "*" || c === "/";
 
 const calculate = (s: string): number => {
-    // remove space from the string
+    // Remove all spaces from the string
     s.replace(/\s/g, "");
     let num: string = "";
     let stack: Array<number> = [];
     let sign: string = "+";
 
     for (let i: number = 0; i < s.length; i++) {
-        // number
+        // Number
         if (!isNaN(Number(s[i]))) {
             num += s[i];
         }
