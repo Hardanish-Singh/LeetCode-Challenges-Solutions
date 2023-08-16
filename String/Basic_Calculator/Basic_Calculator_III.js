@@ -1,16 +1,16 @@
-const isOperator = (c) => c === "+" || c === "-" || c === "*" || c === "/" || c === "(" || c === ")";;
+const isOperator = (c) => c === "+" || c === "-" || c === "*" || c === "/" || c === "(" || c === ")";
 
-const helper = ( stack, sign, num ) => {
+const helper = (stack, sign, num) => {
     if (sign == "+") {
         stack.push(Number(num));
     } else if (sign == "-") {
         stack.push(Number(-num));
     } else if (sign == "*") {
         stack.push(Math.floor(stack.pop() * Number(num)));
-    } else if(sign == "/" ) {
+    } else if (sign == "/") {
         stack.push(Math.trunc(stack.pop() / Number(num)));
     }
-}
+};
 
 var calculate = function (s) {
     // Remove all spaces from the string
@@ -33,7 +33,7 @@ var calculate = function (s) {
                 helper(stack, sign, num);
                 if (s[i] === ")") {
                     let sum = 0;
-                    while (typeof(stack[stack.length - 1]) === "number") {
+                    while (typeof stack[stack.length - 1] === "number") {
                         sum += stack.pop();
                     }
                     sign = stack.pop();
