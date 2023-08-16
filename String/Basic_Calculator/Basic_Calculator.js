@@ -33,7 +33,8 @@ var calculate = function (s) {
                     sum += stack.pop();
                 }
                 stack.pop(); // remove "X"
-                stack.push(stack.pop() === "+" ? sum : -sum);
+                sign = stack.pop();
+                stack.push(sign === "+" ? sum : -sum);
             }
             num = "";
         }
