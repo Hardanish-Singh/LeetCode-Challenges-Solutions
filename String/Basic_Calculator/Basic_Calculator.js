@@ -23,16 +23,13 @@ var calculate = function (s) {
                 sign = "-";
             } else if (s[i] === "(") {
                 stack.push(sign);
-                // Pushed dummy character "X" to stack so that when we encounter closing bracker ")" it can be used as a stopping condition
-                stack.push("X");
                 sign = "+"; // reset sign to +
             } else if (s[i] === ")") {
                 let sum = 0;
                 // Dummy character "X" is used for stopping condition here
-                while (stack[stack.length - 1] !== "X") {
+                while (typeof(stack[stack.length - 1]) === "number") {
                     sum += stack.pop();
                 }
-                stack.pop(); // remove "X"
                 sign = stack.pop();
                 stack.push(sign === "+" ? sum : -sum);
             }
