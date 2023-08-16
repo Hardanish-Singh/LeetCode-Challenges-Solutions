@@ -25,6 +25,18 @@
 
 const isOperator = (c: string): boolean => c === "+" || c === "-" || c === "*" || c === "/";
 
+const helper = (stack: Array<number>, sign: string, num: string): void => {
+    if (sign == "+") {
+        stack.push(Number(num));
+    } else if (sign == "-") {
+        stack.push(Number(-num));
+    } else if (sign == "*") {
+        stack.push(Math.floor(stack.pop() * Number(num)));
+    } else if (sign == "/") {
+        stack.push(Math.trunc(stack.pop() / Number(num)));
+    }
+};
+
 const calculate = (s: string): number => {
     // Remove all spaces from the string
     s.replace(/\s/g, "");
@@ -39,15 +51,7 @@ const calculate = (s: string): number => {
         }
         // isOperator or last character
         if (isOperator(s[i]) || i === s.length - 1) {
-            if (sign == "+") {
-                stack.push(Number(num));
-            } else if (sign == "-") {
-                stack.push(Number(-num));
-            } else if (sign == "*") {
-                stack.push(Math.floor(stack.pop() * Number(num)));
-            } else {
-                stack.push(Math.trunc(stack.pop() / Number(num)));
-            }
+            helper(stack, sign, num);
             sign = s[i];
             num = "";
         }
