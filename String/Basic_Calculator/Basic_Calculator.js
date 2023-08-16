@@ -2,13 +2,13 @@
 
 const isOperator = (c) => c === "+" || c === "-" || c === "(" || c === ")";
 
-const helper = ( stack, sign, num ) => {
+const helper = (stack, sign, num) => {
     if (sign == "+") {
         stack.push(Number(num));
     } else if (sign == "-") {
         stack.push(Number(-num));
     }
-}
+};
 
 var calculate = function (s) {
     // Remove all spaces from the string
@@ -34,7 +34,7 @@ var calculate = function (s) {
                 sign = "+"; // reset sign to +
             } else if (s[i] === ")") {
                 let sum = 0;
-                while (typeof(stack[stack.length - 1]) === "number") {
+                while (typeof stack[stack.length - 1] === "number") {
                     sum += stack.pop();
                 }
                 sign = stack.pop();
