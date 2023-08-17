@@ -3,9 +3,9 @@
 const isOperator = (c) => c === "+" || c === "-" || c === "(" || c === ")";
 
 const helper = (stack, sign, num) => {
-    if (sign == "+") {
+    if (sign === "+") {
         stack.push(Number(num));
-    } else if (sign == "-") {
+    } else if (sign === "-") {
         stack.push(Number(-num));
     }
 };
