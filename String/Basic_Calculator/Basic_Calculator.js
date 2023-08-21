@@ -16,10 +16,11 @@ var calculate = function (s) {
     let num = "";
     let stack = [];
     let sign = "+";
+    const isNumber = new RegExp(/^\d+$/);
 
     for (let i = 0; i < s.length; i++) {
         // Number
-        if (!isNaN(s[i])) {
+        if (isNumber.test(s[i])) {
             num += s[i];
         }
         // isOperator or last character
