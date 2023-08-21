@@ -1,13 +1,15 @@
+// Leetcode: https://leetcode.com/problems/basic-calculator-iii/
+
 const isOperator = (c) => c === "+" || c === "-" || c === "*" || c === "/" || c === "(" || c === ")";
 
 const helper = (stack, sign, num) => {
-    if (sign == "+") {
+    if (sign === "+") {
         stack.push(Number(num));
-    } else if (sign == "-") {
+    } else if (sign === "-") {
         stack.push(Number(-num));
-    } else if (sign == "*") {
+    } else if (sign === "*") {
         stack.push(Math.floor(stack.pop() * Number(num)));
-    } else if (sign == "/") {
+    } else if (sign === "/") {
         stack.push(Math.trunc(stack.pop() / Number(num)));
     }
 };
@@ -18,10 +20,11 @@ var calculate = function (s) {
     let num = "";
     let stack = [];
     let sign = "+";
+    const isNumber = new RegExp(/^\d+$/);
 
     for (let i = 0; i < s.length; i++) {
         // Number
-        if (!isNaN(s[i])) {
+        if (isNumber.test(s[i])) {
             num += s[i];
         }
         // isOperator or last character
