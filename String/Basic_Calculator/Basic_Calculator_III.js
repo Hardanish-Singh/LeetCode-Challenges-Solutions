@@ -11,10 +11,10 @@ const helper = (stack, sign, num) => {
             stack.push(Number(-num));
             break;
         case "*":
-            stack.push(Math.floor(stack.pop() * Number(num)));
+            stack.push(Math.floor((stack.pop() ?? 1) * Number(num)));
             break;
         case "/":
-            stack.push(Math.trunc(stack.pop() / Number(num)));
+            stack.push(Math.trunc((stack.pop() ?? 0) / Number(num)));
             break;
     }
 };
