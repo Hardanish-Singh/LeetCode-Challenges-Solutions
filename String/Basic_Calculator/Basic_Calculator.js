@@ -3,10 +3,13 @@
 const isOperator = (c) => c === "+" || c === "-" || c === "(" || c === ")";
 
 const helper = (stack, sign, num) => {
-    if (sign === "+") {
-        stack.push(Number(num));
-    } else if (sign === "-") {
-        stack.push(Number(-num));
+    switch (sign) {
+        case "+":
+            stack.push(Number(num));
+            break;
+        case "-":
+            stack.push(Number(-num));
+            break;
     }
 };
 
