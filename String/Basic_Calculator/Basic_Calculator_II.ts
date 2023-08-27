@@ -8,9 +8,9 @@ const helper = (stack: Array<number>, sign: string, num: string): void => {
     } else if (sign === "-") {
         stack.push(Number(-num));
     } else if (sign === "*") {
-        stack.push(Math.floor(stack.pop() * Number(num)));
+        stack.push(Math.floor((stack.pop() ?? 1) * Number(num)));
     } else if (sign === "/") {
-        stack.push(Math.trunc(stack.pop() / Number(num)));
+        stack.push(Math.trunc((stack.pop() ?? 0) / Number(num)));
     }
 };
 
