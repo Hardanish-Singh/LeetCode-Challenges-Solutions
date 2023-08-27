@@ -2,15 +2,20 @@
 
 const isOperator = (c: string): boolean => c === "+" || c === "-" || c === "*" || c === "/";
 
-const helper = (stack: Array<number>, sign: string, num: string): void => {
-    if (sign === "+") {
-        stack.push(Number(num));
-    } else if (sign === "-") {
-        stack.push(Number(-num));
-    } else if (sign === "*") {
-        stack.push(Math.floor((stack.pop() ?? 1) * Number(num)));
-    } else if (sign === "/") {
-        stack.push(Math.trunc((stack.pop() ?? 0) / Number(num)));
+const helper = (stack, sign, num) => {
+    switch (sign) {
+        case "+":
+            stack.push(Number(num));
+            break;
+        case "-":
+            stack.push(Number(-num));
+            break;
+        case "*":
+            stack.push(Math.floor((stack.pop() ?? 1) * Number(num)));
+            break;
+        case "/":
+            stack.push(Math.trunc((stack.pop() ?? 0) / Number(num)));
+            break;
     }
 };
 
