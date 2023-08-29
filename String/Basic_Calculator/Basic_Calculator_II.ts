@@ -2,7 +2,7 @@
 
 const isOperator = (c: string): boolean => c === "+" || c === "-" || c === "*" || c === "/";
 
-const helper = (stack, sign, num) => {
+const helper = (stack: Array<number>, sign: string, num: string): void => {
     switch (sign) {
         case "+":
             stack.push(Number(num));
