@@ -19,7 +19,7 @@ const helper = (stack, sign, num) => {
     }
 };
 
-var calculate = function (s) {
+const calculate = (s) => {
     // Remove all spaces from the string
     s.replace(/\s/g, "");
     let num = "";
