@@ -1,8 +1,8 @@
 // Leetcode: https://leetcode.com/problems/minimum-operations-to-make-a-special-number/
 
 /*
-    Idea: A number is divisible by 25 if and only if the two rightmost digits (the last two digits) of the number are either 00, 25, 50, or 75
-    So our goal is to find the pairs [00, 25, 50, 75] in the input string.
+    Idea: A number is divisible by 25 if and only if the LAST TWO DIGITS of the number are either 00, 25, 50, or 75
+    So our goal is to find the pairs [00, 25, 50, 75] in the input string from end of the string to the beginning.
 */
 
 const minimumOperations = (n: string): number => {
@@ -18,9 +18,9 @@ const minimumOperations = (n: string): number => {
                     (current === "0" && (previous === "0" || previous === "5"))
                 ) {
                     let variableFirst: number = i - j - 1; // Calculate the number of characters between i and j exclusive.
-                    let variableLast: number = n.length - 1 - i; // Calculate the number of characters from i to the end of the string.
-                    min = Math.min(variableFirst + variableLast, min);
-                    break;
+                    let variableLast: number = n.length - 1 - i; // Calculate the number of characters from end of the string to i.
+                    let minOperationsRequired = variableFirst + variableLast; // minimum operations required to make the string special by deleting characters
+                    min = Math.min(minOperationsRequired, min);
                 }
             }
         }
