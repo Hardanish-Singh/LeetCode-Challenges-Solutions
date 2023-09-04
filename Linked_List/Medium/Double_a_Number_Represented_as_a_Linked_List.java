@@ -1,8 +1,8 @@
 // Leetcode: https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/
 
 /*
-        // Definition for Singly-Linked List
-        public class ListNode
+    // Definition for Singly-Linked List
+    public class ListNode
 	{
                 int val;
                 ListNode next;
