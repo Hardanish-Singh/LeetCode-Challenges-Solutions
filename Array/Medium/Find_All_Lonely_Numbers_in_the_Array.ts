@@ -8,7 +8,7 @@ var findLonely = function (nums: Array<number>): Array<number> {
     let lonelyNumbers: Array<number> = [];
     let map: map = {};
 
-    for (let i = 0; i < nums.length; i++) {
+    for (let i: number = 0; i < nums.length; i++) {
         map[nums[i]] ? (map[nums[i]] += 1) : (map[nums[i]] = 1);
     }
 
