@@ -4,7 +4,7 @@ type map = {
     [key: number]: number;
 };
 
-var findLonely = function (nums: Array<number>): Array<number> {
+const findLonely = (nums: Array<number>): Array<number> => {
     let lonelyNumbers: Array<number> = [];
     let map: map = {};
 
