@@ -7,10 +7,6 @@
     2) Better Approach: from x2, y2 climb up to x1, y1, they key difference is to subtract bigger number from smaller number to avoid negative number
 */
 var reachingPoints = (x1, y1, x2, y2) => {
-    if (x1 == x2 && y1 == y2) {
-        return true;
-    }
-
     while (x2 > x1 && y2 > y1) {
         if (y2 > x2) {
             y2 -= x2;
