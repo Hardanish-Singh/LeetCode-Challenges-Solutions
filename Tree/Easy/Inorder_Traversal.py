@@ -28,7 +28,7 @@ class Solution:
         SOLUTION 2: RECURSIVE
 """
 
-def inorderRecursiveTraversal(self, root: TreeNode, inOrderList: List[int]) -> List[int]:
+def inorderRecursiveTraversal(root: TreeNode, inOrderList: List[int]) -> List[int]:
         if root is None:
                 return None
         inorderRecursiveTraversal( root.left, inOrderList )
