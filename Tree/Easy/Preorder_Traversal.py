@@ -11,58 +11,44 @@
         SOLUTION 1: RECURSIVE
 """
 
-def preorderRecursiveTraversal( root, preOrderList ):
+class Solution:
+        def preorderRecursiveTraversal(self, root: TreeNode, preOrderList: List[int]) -> List[int]:
+                if root is None:
+                        return None
+                preOrderList.append(root.val)
+                self.preorderRecursiveTraversal(root.left, preOrderList)
+                self.preorderRecursiveTraversal(root.right, preOrderList)
+        def preorderTraversal(self, root: TreeNode) -> List[int]:
+                preOrderList = []
+                self.preorderRecursiveTraversal(root, preOrderList)
+                return preOrderList
+
+
+"""
+        SOLUTION 2: RECURSIVE
+"""
+
+def preorderRecursiveTraversal(root: TreeNode, preOrderList: List[int]) -> List[int]:
                 if root is None:
                         return None
                 preOrderList.append( root.val )
                 preorderRecursiveTraversal( root.left, preOrderList )
                 preorderRecursiveTraversal( root.right, preOrderList )
                 
-class Solution( object ):
-        def preorderTraversal( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: List[int]
-                """
+class Solution:
+        def preorderTraversal(self, root: TreeNode) -> List[int]:
                 preOrderList = []
                 preorderRecursiveTraversal( root, preOrderList )
                 return preOrderList
 
 """
-        SOLUTION 2: RECURSIVE
-"""
-
-class Solution( object ):
-        def preorderTraversal( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: List[int]
-                """
-                preOrderList = []
-                self.preorderRecursiveTraversal( root, preOrderList )
-                return preOrderList
-        
-        def preorderRecursiveTraversal( self, root, preOrderList ):
-                if root is None:
-                        return None
-                preOrderList.append( root.val )
-                self.preorderRecursiveTraversal( root.left, preOrderList )
-                self.preorderRecursiveTraversal( root.right, preOrderList )
-
-"""
         SOLUTION 3: ITERATIVE
 """
 
-class Solution( object ):
-        def preorderTraversal( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: List[int]
-                """
-
+class Solution:
+        def preorderTraversal(self, root: TreeNode) -> List[int]:
                 if root is None:
                         return []
-
                 preOrderList = []
                 stack = [ root ]
                 
