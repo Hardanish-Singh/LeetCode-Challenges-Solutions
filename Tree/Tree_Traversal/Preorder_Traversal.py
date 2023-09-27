@@ -1,24 +1,26 @@
 # Leetcode: https://leetcode.com/problems/binary-tree-preorder-traversal/
 
-# Definition for a binary tree node.
-# class TreeNode( object ):
-#     def __init__( self, val = 0, left = None, right = None ):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+"""
+        # Definition for a binary tree node.
+        class TreeNode:
+                def __init__( self, val = 0, left = None, right = None ):
+                        self.val = val
+                        self.left = left
+                        self.right = right
+"""
 
 """
         SOLUTION 1: RECURSIVE
 """
 
 class Solution:
-        def preorderRecursiveTraversal(self, root: TreeNode, preOrderList: List[int]) -> List[int]:
+        def preorderRecursiveTraversal(self, root: 'TreeNode', preOrderList: List[int]) -> List[int]:
                 if root is None:
                         return None
                 preOrderList.append(root.val)
                 self.preorderRecursiveTraversal(root.left, preOrderList)
                 self.preorderRecursiveTraversal(root.right, preOrderList)
-        def preorderTraversal(self, root: TreeNode) -> List[int]:
+        def preorderTraversal(self, root: 'TreeNode') -> List[int]:
                 preOrderList = []
                 self.preorderRecursiveTraversal(root, preOrderList)
                 return preOrderList
@@ -28,7 +30,7 @@ class Solution:
         SOLUTION 2: RECURSIVE
 """
 
-def preorderRecursiveTraversal(root: TreeNode, preOrderList: List[int]) -> List[int]:
+def preorderRecursiveTraversal(root: 'TreeNode', preOrderList: List[int]) -> List[int]:
                 if root is None:
                         return None
                 preOrderList.append( root.val )
@@ -36,7 +38,7 @@ def preorderRecursiveTraversal(root: TreeNode, preOrderList: List[int]) -> List[
                 preorderRecursiveTraversal( root.right, preOrderList )
                 
 class Solution:
-        def preorderTraversal(self, root: TreeNode) -> List[int]:
+        def preorderTraversal(self, root: 'TreeNode') -> List[int]:
                 preOrderList = []
                 preorderRecursiveTraversal( root, preOrderList )
                 return preOrderList
@@ -46,7 +48,7 @@ class Solution:
 """
 
 class Solution:
-        def preorderTraversal(self, root: TreeNode) -> List[int]:
+        def preorderTraversal(self, root: 'TreeNode') -> List[int]:
                 if root is None:
                         return []
                 preOrderList = []
