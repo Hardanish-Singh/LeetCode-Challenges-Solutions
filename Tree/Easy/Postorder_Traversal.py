@@ -11,51 +11,42 @@
         SOLUTION 1: RECURSIVE
 """
 
-def postorderRecursiveTraversal( root, postOrderList ):
-        if root is None:
-                return None
-        postorderRecursiveTraversal( root.left, postOrderList )
-        postorderRecursiveTraversal( root.right, postOrderList )
-        postOrderList.append( root.val )
-        
-class Solution( object ):
-        def postorderTraversal( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: List[int]
-                """
+class Solution:
+        def postorderRecursiveTraversal(self, root: TreeNode, postOrderList: List[int]) -> List[int]:
+                if root is None:
+                        return None
+                self.postorderRecursiveTraversal( root.left, postOrderList )
+                self.postorderRecursiveTraversal( root.right, postOrderList )
+                postOrderList.append( root.val )
+        def postorderTraversal(self, root: TreeNode) -> List[int]:
                 postOrderList = []
-                postorderRecursiveTraversal( root, postOrderList )
+                self.postorderRecursiveTraversal( root, postOrderList )
                 return postOrderList
 
 """
         SOLUTION 2: RECURSIVE
 """
 
-class Solution( object ):
-        def postorderTraversal( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: List[int]
-                """
-                postOrderList = []
-                self.postorderRecursiveTraversal( root, postOrderList )
-                return postOrderList
+def postorderRecursiveTraversal(root: TreeNode, postOrderList: List[int]) -> List[int]:
+        if root is None:
+                return None
+        postorderRecursiveTraversal( root.left, postOrderList )
+        postorderRecursiveTraversal( root.right, postOrderList )
+        postOrderList.append( root.val )
         
-        def postorderRecursiveTraversal( self, root, postOrderList  ):
-                if root is None:
-                        return None
-                self.postorderRecursiveTraversal( root.left, postOrderList )
-                self.postorderRecursiveTraversal( root.right, postOrderList )
-                postOrderList.append( root.val )
+class Solution:
+        def postorderTraversal(self, root: TreeNode) -> List[int]:
+                postOrderList = []
+                postorderRecursiveTraversal( root, postOrderList )
+                return postOrderList
 
 
 """
         SOLUTION 3: ITERATIVE
 """
 
-class Solution( object ):
-        def postorderTraversal( self, root ):
+class Solution:
+        def postorderTraversal(self, root: TreeNode) -> List[int]:
                 postOrderList = []
                 stack = [ root ]
 
