@@ -8,30 +8,23 @@
                         self.children = children
 """
 
-class Solution(object):
-        def levelOrder(self, root):
-                """
-                :type root: Node
-                :rtype: List[List[int]]
-                """
+class Solution:
+        def levelOrder(self, root: 'Node') -> List[List[int]]:
                 if root is None:
                         return []
 
-                queue = [ root ]
-                result = [ ]
+                queue = [root]
+                result = []
 
                 while len( queue ) > 0:
-                        temp = []
-                        # GET ALL ELEMENTS FROM QUEUE
-                        for node in queue:
-                                temp.append( node.val )
-                        result.append( temp )
-                        
-                        # POP ALL ELEMENTS FROM QUEUE
+                        level = []
                         n = len( queue )
-                        for i in range( n ):
+                        for i in range(n):
                                 node = queue.pop(0)
+                                level.append(node.val)
                                 for child in node.children:
                                         queue.append( child )
+                                
+                        result.append(level)
+                
                 return result
-        
