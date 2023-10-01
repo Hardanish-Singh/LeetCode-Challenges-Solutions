@@ -38,7 +38,7 @@ class Solution:
                         root: None 
                 }
                 stack = [ root ]
-                
+                # Preorder Traversal
                 while len( stack ) > 0:
                         currentNode = stack.pop()
                         if currentNode.right:
@@ -60,13 +60,9 @@ class Solution:
                         qList.append( parentNodeReference[ key ].val )
                         key = parentNodeReference[ key ]
                 
-                commonElement = None
-                for i in pList:
-                        if i in qList:
-                                commonElement = i
-                                break
-                if commonElement is None:
-                        return None
+                # Intersection/Common Elements between 2 Lists
+                commonElement = [i for i in pList if i in qList]
+                commonElement = commonElement.pop(0) or 0
 
                 for node in parentNodeReference:
                         if node.val == commonElement:
