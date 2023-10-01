@@ -49,13 +49,12 @@ class Solution:
                                 parentNodeReference[ currentNode.left ] = currentNode
                 
                 pList = [ p.val ]
-                qList = [ q.val ]
-                
                 key = p
                 while( key in parentNodeReference and parentNodeReference[ key ] ):
                         pList.append( parentNodeReference[ key ].val )
                         key = parentNodeReference[ key ]
                 
+                qList = [ q.val ]
                 key = q
                 while( key in parentNodeReference and parentNodeReference[ key ] ):
                         qList.append( parentNodeReference[ key ].val )
@@ -66,7 +65,9 @@ class Solution:
                         if i in qList:
                                 commonElement = i
                                 break
-                
+                if commonElement is None:
+                        return None
+
                 for node in parentNodeReference:
                         if node.val == commonElement:
                                 return node
