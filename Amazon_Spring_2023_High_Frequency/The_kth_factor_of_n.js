@@ -18,6 +18,9 @@
         Input: n = 4, k = 4
         Output: -1
         Explanation: Factors list is [1, 2, 4], there is only 3 factors. We should return -1.
+
+    Constraints:
+        1) 1 <= k <= n <= 1000
 */
 
 /**
