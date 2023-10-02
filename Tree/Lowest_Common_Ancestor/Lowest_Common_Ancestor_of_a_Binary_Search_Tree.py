@@ -19,4 +19,3 @@ class Solution:
                 currentNode = currentNode.left
             else:
                 return currentNode
-        
