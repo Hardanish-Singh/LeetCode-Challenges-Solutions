@@ -1,3 +1,5 @@
+// Leetcode: https://leetcode.com/problems/jump-game-ii/
+
 function jump(nums: number[]): number {
         let reachable: number = 0;
         let curPosition: number = 0;
@@ -10,4 +12,4 @@ function jump(nums: number[]): number {
             }
         }
         return jumps;
-    };
+};
