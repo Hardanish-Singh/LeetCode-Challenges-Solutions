@@ -10,6 +10,10 @@
 """
 
 """
+        NOTE: left is mirror of right, and right is mirror of left,then left and right is mirror
+"""
+
+"""
         SOLUTION 1: RECURSIVE
 """
 class Solution:
@@ -21,7 +25,7 @@ class Solution:
         def isTreeSymmetric( self, left, right ):
                 if left is None and right is None:
                         return True
-                if left is None or right is None:
+                if left is None and right is not None or right is None and left is not None:
                         return False
                 if left.val != right.val:
                         return False
@@ -47,7 +51,7 @@ class Solution:
                         leftNode, rightNode = stack.pop()
                         if leftNode is None and rightNode is None:
                                 continue
-                        if leftNode is None or rightNode is None:
+                        if leftNode is None and rightNode is not None or rightNode is None and leftNode is not None:
                                 return False
                         if leftNode.val != rightNode.val:
                                 return False
