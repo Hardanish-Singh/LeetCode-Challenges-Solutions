@@ -1,23 +1,19 @@
 # Leetcode: https://leetcode.com/problems/symmetric-tree/
 
-# Definition for a binary tree node.
-# class TreeNode( object ):
-#     def __init__( self, val = 0, left = None, right = None ):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
 """
-        SOLUTION 1:
-                RECURSIVE
+        # Definition for a binary tree node.
+        class TreeNode:
+                def __init__( self, val = 0, left = None, right = None ):
+                        self.val = val
+                        self.left = left
+                        self.right = right
 """
 
-class Solution( object ):
-        def isSymmetric( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: bool
-                """
+"""
+        SOLUTION 1: RECURSIVE
+"""
+class Solution:
+        def isSymmetric( self, root: TreeNode ) -> bool:
                 if root is None:
                         return False
                 return self.isTreeSymmetric( root.left, root.right )
@@ -39,30 +35,24 @@ class Solution( object ):
                         return False
 
 """
-        SOLUTION 2:
-                ITERATIVE
+        SOLUTION 2: ITERATIVE
 """
+class Solution:
+        def isSymmetric( self, root: TreeNode ) -> bool:
+                if root is None:
+                        return False
+                stack = [ [ root.left, root.right ] ]
 
-        class Solution( object ):
-                def isSymmetric( self, root ):
-                        """
-                        :type root: TreeNode
-                        :rtype: bool
-                        """
-                        if root is None:
+                while len( stack ) > 0:
+                        leftNode, rightNode = stack.pop()
+                        if leftNode is None and rightNode is None:
+                                continue
+                        if leftNode is None or rightNode is None:
                                 return False
-                        stack = [ [ root.left, root.right ] ]
+                        if leftNode.val != rightNode.val:
+                                return False
+                        else:
+                                stack.append( [ leftNode.right, rightNode.left ]  )
+                                stack.append( [ leftNode.left, rightNode.right ] )
 
-                        while len( stack ) > 0:
-                                leftNode, rightNode = stack.pop()
-                                if leftNode is None and rightNode is None:
-                                        continue
-                                if leftNode is None or rightNode is None:
-                                        return False
-                                if leftNode.val != rightNode.val:
-                                        return False
-                                else:
-                                        stack.append( [ leftNode.right, rightNode.left ]  )
-                                        stack.append( [ leftNode.left, rightNode.right ] )
-
-                        return True
+                return True
