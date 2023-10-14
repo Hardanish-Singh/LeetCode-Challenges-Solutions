@@ -10,7 +10,7 @@
 """
 
 """
-        NOTE: left is mirror of right, and right is mirror of left,then left and right is mirror
+        NOTE: if left is mirror of right, and right is mirror of left, then left and right is mirror image ( symmetric tree )
 """
 
 """
@@ -48,15 +48,15 @@ class Solution:
                 stack = [ [ root.left, root.right ] ]
 
                 while len( stack ) > 0:
-                        leftNode, rightNode = stack.pop()
-                        if leftNode is None and rightNode is None:
+                        left, right = stack.pop()
+                        if left is None and right is None:
                                 continue
-                        if leftNode is None and rightNode is not None or rightNode is None and leftNode is not None:
+                        if left is None and right is not None or right is None and left is not None:
                                 return False
-                        if leftNode.val != rightNode.val:
+                        if left.val != right.val:
                                 return False
                         else:
-                                stack.append( [ leftNode.right, rightNode.left ]  )
-                                stack.append( [ leftNode.left, rightNode.right ] )
+                                stack.append( [ left.right, right.left ]  )
+                                stack.append( [ left.left, right.right ] )
 
                 return True
