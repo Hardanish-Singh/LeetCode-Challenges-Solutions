@@ -18,13 +18,17 @@ const isAnagram = (s: string, t: string): boolean => {
         dictionaryTwo[t[i]] ? (dictionaryTwo[t[i]] += 1) : (dictionaryTwo[t[i]] = 1);
     }
 
-    for (const [key, value] of Object.entries(dictionaryOne)) {
-        if (dictionaryTwo[key] !== value) {
-            return false;
+    for (const [key1, value1] of Object.entries(dictionaryOne)) {
+        for (const [key2, value2] of Object.entries(dictionaryTwo)) {
+            if( key1 === key2 && value1 === value2 ) {
+                delete dictionaryTwo[key2];
+                delete dictionaryOne[key1];
+                break;
+            }
         }
     }
 
-    return true;
+    return Object.keys(dictionaryOne).length === 0 && Object.keys(dictionaryTwo).length === 0;
 };
 
 // SOLUTION 2 ( One Liner )
