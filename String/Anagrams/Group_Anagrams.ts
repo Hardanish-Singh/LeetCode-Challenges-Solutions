@@ -1,17 +1,16 @@
 // Leetcode: https://leetcode.com/problems/group-anagrams/
 
-var groupAnagrams = function (strs: Array<string>): Array<Array<string>> {
-        let groupingAnagrams: { [key: string]: Array<string> } = {};
+type GroupedAnagrams = {
+        [key: string]: Array<string>;
+};
+
+const groupAnagrams = (strs: Array<string>): Array<Array<string>> => {
+        let groupedAnagrams: GroupedAnagrams = {};
 
         for (let i: number = 0; i < strs.length; i++) {
                 let sortedAnagram: string = strs[i].split("").sort().join("");
-
-                if (!(sortedAnagram in groupingAnagrams)) {
-                        groupingAnagrams[sortedAnagram] = [strs[i]];
-                } else {
-                        groupingAnagrams[sortedAnagram].push(strs[i]);
-                }
+                sortedAnagram in groupedAnagrams ? groupedAnagrams[sortedAnagram].push(strs[i]) : groupedAnagrams[sortedAnagram] = [strs[i]];
         }
 
-        return Object.values(groupingAnagrams);
+        return Object.values(groupedAnagrams);
 };
