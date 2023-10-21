@@ -7,7 +7,7 @@ type Anagram = {
 const isAnagram = (dictionaryOne: Anagram, dictionaryTwo: Anagram): boolean => {
         for (const [key1, value1] of Object.entries(dictionaryOne)) {
                 for (const [key2, value2] of Object.entries(dictionaryTwo)) {
-                        if( key1 === key2 && value1 === value2 ) {
+                        if (key1 === key2 && value1 === value2) {
                                 delete dictionaryTwo[key2];
                                 delete dictionaryOne[key1];
                                 break;
@@ -19,7 +19,9 @@ const isAnagram = (dictionaryOne: Anagram, dictionaryTwo: Anagram): boolean => {
     
 const adjustCharacterOccurrences = (start: string, end: string, hashmap1: Anagram): Anagram => {
         hashmap1[start] -= 1;
-        hashmap1[start] == 0 && delete hashmap1[start];
+        if (hashmap1[start] == 0) {
+                delete hashmap1[start];
+        } 
         end in hashmap1 ? (hashmap1[end] += 1) : (hashmap1[end] = 1);
         return hashmap1;
 };
@@ -38,10 +40,12 @@ const findAnagrams = (s: string, p: string): Array<number> => {
         let hashmap1: Anagram = {};
         let hashmap2: Anagram = countCharacterOccurrences(p);
 
-        while( (leftPointer + p.length) <= s.length ) {
+        while ((leftPointer + p.length) <= s.length) {
                 let subString: string = s.slice(leftPointer, leftPointer + p.length);
                 leftPointer === 0 ? (hashmap1 = countCharacterOccurrences(subString)) : (hashmap1 = adjustCharacterOccurrences(s[leftPointer - 1], subString[subString.length - 1], hashmap1));
-                isAnagram( JSON.parse(JSON.stringify(hashmap1)), JSON.parse(JSON.stringify(hashmap2)) ) && result.push(leftPointer);
+                if (isAnagram( JSON.parse(JSON.stringify(hashmap1)), JSON.parse(JSON.stringify(hashmap2)) ) ) {
+                        result.push(leftPointer);
+                } 
                 leftPointer++;
         }
 
