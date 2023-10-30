@@ -4,11 +4,9 @@ const finalString = (s: string): string => {
     let stringOnLaptopScreen = "";
 
     for (let i = 0; i < s.length; i++) {
-        if (s[i] === "i") {
-            stringOnLaptopScreen = stringOnLaptopScreen.split("").reverse().join("");
-        } else {
-            stringOnLaptopScreen += s[i];
-        }
+        s[i] === "i"
+            ? (stringOnLaptopScreen = stringOnLaptopScreen.split("").reverse().join(""))
+            : (stringOnLaptopScreen += s[i]);
     }
 
     return stringOnLaptopScreen;
