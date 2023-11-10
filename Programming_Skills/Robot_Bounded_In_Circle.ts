@@ -25,7 +25,7 @@ const isRobotBounded = (directions: string): boolean => {
             currentDirection = turn(currentDirection, direction);
         }
     }
-    return x == 0 && y == 0;
+    return x === 0 && y === 0;
 };
 
 const turn = (currentDirection: string, direction: string): string => {
@@ -33,11 +33,11 @@ const turn = (currentDirection: string, direction: string): string => {
         case "N":
             return direction === "L" ? "W" : "E";
         case "W":
-            return direction == "L" ? "S" : "N";
+            return direction === "L" ? "S" : "N";
         case "S":
-            return direction == "L" ? "E" : "W";
+            return direction === "L" ? "E" : "W";
         case "E":
-            return direction == "L" ? "N" : "S";
+            return direction === "L" ? "N" : "S";
         default:
             throw new Error("Direction not found");
     }
