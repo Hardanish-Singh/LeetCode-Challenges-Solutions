@@ -35,7 +35,7 @@ var generateMatrix = function (n) {
                 num++;
             }
         }
-        // // Move Top
+        // Move Top
         rowEnd--;
         if (colBegin <= colEnd) {
             for (let i = rowEnd; i >= rowBegin; i--) {
