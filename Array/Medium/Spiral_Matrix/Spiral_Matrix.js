@@ -24,11 +24,8 @@ var spiralOrder = function (matrix) {
             return;
         }
         for (let row = 0; row < matrix.length; row++) {
-            let column = matrix[row].length - 1;
-            result.push(matrix[row][column]);
-        }
-        for (let row = 0; row < matrix.length; row++) {
-            matrix[row].splice(-1, 1);
+            let element = matrix[row].pop();
+            result.push(element);
             if (matrix[row].length === 0) {
                 matrix.splice(row, 1);
                 row--;
