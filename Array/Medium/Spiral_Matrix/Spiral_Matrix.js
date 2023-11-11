@@ -37,11 +37,11 @@ var spiralOrder = function (matrix) {
         if (matrix.length === 0) {
             return;
         }
-        let last = matrix.length - 1;
-        for (let i = matrix[last].length - 1; i >= 0; i--) {
-            result.push(matrix[last][i]);
+        let lastIndex = matrix.length - 1;
+        for (let i = matrix[lastIndex].length - 1; i >= 0; i--) {
+            result.push(matrix[lastIndex][i]);
         }
-        matrix.splice(last, 1);
+        matrix.splice(lastIndex, 1);
     };
 
     const moveUp = () => {
@@ -49,11 +49,8 @@ var spiralOrder = function (matrix) {
             return;
         }
         for (let i = matrix.length - 1; i >= 0; i--) {
-            result.push(matrix[i][0]);
-        }
-
-        for (let i = matrix.length - 1; i >= 0; i--) {
-            matrix[i].splice(0, 1);
+            let element = matrix[i].shift();
+            result.push(element);
             if (matrix[i].length === 0) {
                 matrix.splice(i, 1);
             }
