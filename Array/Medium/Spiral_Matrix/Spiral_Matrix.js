@@ -6,7 +6,7 @@
  */
 
 var spiralOrder = function (matrix) {
-    let resultArray = [];
+    let result = [];
 
     const moveRight = () => {
         if (matrix.length === 0) {
@@ -14,7 +14,7 @@ var spiralOrder = function (matrix) {
         }
         const row = 0;
         for (let column = 0; column < matrix[row].length; column++) {
-            resultArray.push(matrix[row][column]);
+            result.push(matrix[row][column]);
         }
         matrix.splice(row, 1);
     };
@@ -25,7 +25,7 @@ var spiralOrder = function (matrix) {
         }
         for (let row = 0; row < matrix.length; row++) {
             let column = matrix[row].length - 1;
-            resultArray.push(matrix[row][column]);
+            result.push(matrix[row][column]);
         }
         for (let row = 0; row < matrix.length; row++) {
             matrix[row].splice(-1, 1);
@@ -42,7 +42,7 @@ var spiralOrder = function (matrix) {
         }
         let last = matrix.length - 1;
         for (let i = matrix[last].length - 1; i >= 0; i--) {
-            resultArray.push(matrix[last][i]);
+            result.push(matrix[last][i]);
         }
         matrix.splice(last, 1);
     };
@@ -52,7 +52,7 @@ var spiralOrder = function (matrix) {
             return;
         }
         for (let i = matrix.length - 1; i >= 0; i--) {
-            resultArray.push(matrix[i][0]);
+            result.push(matrix[i][0]);
         }
 
         for (let i = matrix.length - 1; i >= 0; i--) {
@@ -70,5 +70,5 @@ var spiralOrder = function (matrix) {
         moveUp();
     }
 
-    return resultArray;
+    return result;
 };
