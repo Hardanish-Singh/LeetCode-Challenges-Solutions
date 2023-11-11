@@ -16,13 +16,17 @@ var spiralOrder = function (matrix) {
 
     while (rowBegin <= rowEnd && colBegin <= colEnd) {
         // Move Right
-        for (let i = colBegin; i <= colEnd; i++) {
-            result.push(matrix[rowBegin][i]);
+        if (rowBegin <= rowEnd) {
+            for (let i = colBegin; i <= colEnd; i++) {
+                result.push(matrix[rowBegin][i]);
+            }
         }
         // Move Bottom
         rowBegin++;
-        for (let i = rowBegin; i <= rowEnd; i++) {
-            result.push(matrix[i][colEnd]);
+        if (colBegin <= colEnd) {
+            for (let i = rowBegin; i <= rowEnd; i++) {
+                result.push(matrix[i][colEnd]);
+            }
         }
         // Move Left
         colEnd--;
@@ -40,6 +44,5 @@ var spiralOrder = function (matrix) {
         }
         colBegin++;
     }
-
     return result;
 };
