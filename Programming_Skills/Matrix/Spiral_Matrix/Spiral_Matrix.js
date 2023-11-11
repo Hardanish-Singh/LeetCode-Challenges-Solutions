@@ -40,5 +40,6 @@ var spiralOrder = function (matrix) {
         }
         colBegin++;
     }
+
     return result;
 };
