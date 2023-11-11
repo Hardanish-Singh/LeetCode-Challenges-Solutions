@@ -45,5 +45,6 @@ var generateMatrix = function (n) {
         }
         colBegin++;
     }
+
     return result;
 };
