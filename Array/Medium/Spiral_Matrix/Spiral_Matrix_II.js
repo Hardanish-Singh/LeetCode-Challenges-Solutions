@@ -16,15 +16,18 @@ var generateMatrix = function (n) {
 
     let num = 1;
     while (rowBegin <= rowEnd && colBegin <= colEnd) {
+        // Move Right
         for (let i = colBegin; i <= colEnd; i++) {
             result[rowBegin][i] = num;
             num++;
         }
+        // Move Bottom
         rowBegin++;
         for (let i = rowBegin; i <= rowEnd; i++) {
             result[i][colEnd] = num;
             num++;
         }
+        // Move Left
         colEnd--;
         if (rowBegin <= rowEnd) {
             for (let i = colEnd; i >= colBegin; i--) {
@@ -32,6 +35,7 @@ var generateMatrix = function (n) {
                 num++;
             }
         }
+        // // Move Top
         rowEnd--;
         if (colBegin <= colEnd) {
             for (let i = rowEnd; i >= rowBegin; i--) {
