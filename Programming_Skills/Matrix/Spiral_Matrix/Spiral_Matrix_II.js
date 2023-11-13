@@ -5,7 +5,7 @@
  * @return {number[][]}
  */
 
-var generateMatrix = function (n) {
+const generateMatrix = (n) => {
     let result = new Array(n).fill().map(() => new Array(n).fill(0));
     // row variables
     let rowStart = 0;
