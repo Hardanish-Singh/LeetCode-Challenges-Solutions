@@ -9,13 +9,12 @@
  */
 
 const spiralMatrixIII = (rows, cols, rStart, cStart) => {
-    // column variables
-    let colBegin = cStart;
-    let colEnd = cStart;
     // row variables
     let rowBegin = rStart;
     let rowEnd = rStart;
-
+    // column variables
+    let colBegin = cStart;
+    let colEnd = cStart;
     const result = [];
 
     // checks if a coordinate is within the matrix
