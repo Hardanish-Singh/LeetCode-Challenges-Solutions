@@ -13,8 +13,8 @@ const generateMatrix = (n) => {
     // column variables
     let columnStart = 0;
     let columnEnd = n - 1;
-
     let num = 1;
+
     while (rowStart <= rowEnd && columnStart <= columnEnd) {
         // Move Right
         if (rowStart <= rowEnd) {
