@@ -24,7 +24,9 @@ const spiralMatrixIII = (rows, cols, rStart, cStart) => {
         // Move Right
         if (rowBegin <= rowEnd) {
             while (cStart < colEnd) {
-                if (isWithInMatrix(rStart, cStart)) result.push([rStart, cStart]);
+                if (isWithInMatrix(rStart, cStart)) {
+                    result.push([rStart, cStart]);
+                }
                 cStart++;
             }
         }
@@ -32,7 +34,9 @@ const spiralMatrixIII = (rows, cols, rStart, cStart) => {
         colEnd++;
         if (colBegin <= colEnd) {
             while (rStart < rowEnd) {
-                if (isWithInMatrix(rStart, cStart)) result.push([rStart, cStart]);
+                if (isWithInMatrix(rStart, cStart)) {
+                    result.push([rStart, cStart]);
+                }
                 rStart++;
             }
         }
@@ -40,7 +44,9 @@ const spiralMatrixIII = (rows, cols, rStart, cStart) => {
         rowEnd++;
         if (rowBegin <= rowEnd) {
             while (cStart > colBegin) {
-                if (isWithInMatrix(rStart, cStart)) result.push([rStart, cStart]);
+                if (isWithInMatrix(rStart, cStart)) {
+                    result.push([rStart, cStart]);
+                }
                 cStart--;
             }
         }
@@ -48,7 +54,9 @@ const spiralMatrixIII = (rows, cols, rStart, cStart) => {
         colBegin--;
         if (colBegin <= colEnd) {
             while (rStart > rowBegin) {
-                if (isWithInMatrix(rStart, cStart)) result.push([rStart, cStart]);
+                if (isWithInMatrix(rStart, cStart)) {
+                    result.push([rStart, cStart]);
+                }
                 rStart--;
             }
         }
