@@ -44,5 +44,6 @@ const spiralOrder = (matrix) => {
         }
         columnStart++;
     }
+
     return result;
 };
