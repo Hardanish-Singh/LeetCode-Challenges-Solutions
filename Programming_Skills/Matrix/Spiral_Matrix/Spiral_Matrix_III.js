@@ -17,7 +17,7 @@ const spiralMatrixIII = (rows, cols, rStart, cStart) => {
     let colEnd = cStart;
     const result = [];
 
-    // checks if a coordinate is within the matrix
+    // Checks if coordinate is within the matrix
     const isWithInMatrix = (row, col) => row >= 0 && row < rows && col >= 0 && col < cols;
 
     while (result.length < rows * cols) {
