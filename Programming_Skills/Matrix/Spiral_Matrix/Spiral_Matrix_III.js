@@ -8,7 +8,7 @@
  * @return {number[][]}
  */
 
-var spiralMatrixIII = function (rows, cols, rStart, cStart) {
+const spiralMatrixIII = (rows, cols, rStart, cStart) => {
     // column variables
     let colBegin = cStart;
     let colEnd = cStart;
@@ -55,5 +55,6 @@ var spiralMatrixIII = function (rows, cols, rStart, cStart) {
         }
         rowBegin--;
     }
+
     return result;
 };
