@@ -9,40 +9,40 @@ const spiralOrder = (matrix) => {
     let result = [];
     // row variables
     let rowStart = 0;
-    let rowEnd = matrix[0].length - 1;
+    let rowEnd = matrix.length - 1;
     // column variables
     let columnStart = 0;
-    let columnEnd = matrix.length - 1;
+    let columnEnd = matrix[0].length - 1;
 
     while (rowStart <= rowEnd && columnStart <= columnEnd) {
         // Move Right
-        if (columnStart <= columnEnd) {
-            for (let i = rowStart; i <= rowEnd; i++) {
-                result.push(matrix[columnStart][i]);
+        if (rowStart <= rowEnd) {
+            for (let column = columnStart; column <= columnEnd; column++) {
+                result.push(matrix[rowStart][column]);
             }
         }
         // Move Bottom
-        columnStart++;
-        if (rowStart <= rowEnd) {
-            for (let i = columnStart; i <= columnEnd; i++) {
-                result.push(matrix[i][rowEnd]);
+        rowStart++;
+        if (columnStart <= columnEnd) {
+            for (let row = rowStart; row <= rowEnd; row++) {
+                result.push(matrix[row][columnEnd]);
             }
         }
         // Move Left
-        rowEnd--;
-        if (columnStart <= columnEnd) {
-            for (let i = rowEnd; i >= rowStart; i--) {
-                result.push(matrix[columnEnd][i]);
+        columnEnd--;
+        if (rowStart <= rowEnd) {
+            for (let column = columnEnd; column >= columnStart; column--) {
+                result.push(matrix[rowEnd][column]);
             }
         }
         // Move Top
-        columnEnd--;
-        if (rowStart <= rowEnd) {
-            for (let i = columnEnd; i >= columnStart; i--) {
-                result.push(matrix[i][rowStart]);
+        rowEnd--;
+        if (columnStart <= columnEnd) {
+            for (let row = rowEnd; row >= rowStart; row--) {
+                result.push(matrix[row][columnStart]);
             }
         }
-        rowStart++;
+        columnStart++;
     }
     return result;
 };
