@@ -8,46 +8,42 @@
 var generateMatrix = function (n) {
     let result = new Array(n).fill().map(() => new Array(n).fill(0));
     // row variables
-    let rowBegin = 0;
+    let rowStart = 0;
     let rowEnd = n - 1;
     // column variables
-    let colBegin = 0;
-    let colEnd = n - 1;
+    let columnStart = 0;
+    let columnEnd = n - 1;
 
     let num = 1;
-    while (rowBegin <= rowEnd && colBegin <= colEnd) {
+    while (rowStart <= rowEnd && columnStart <= columnEnd) {
         // Move Right
-        if (rowBegin <= rowEnd) {
-            for (let i = colBegin; i <= colEnd; i++) {
-                result[rowBegin][i] = num;
-                num++;
+        if (rowStart <= rowEnd) {
+            for (let column = columnStart; column <= columnEnd; column++) {
+                result[rowStart][column] = num++;
             }
         }
         // Move Bottom
-        rowBegin++;
-        if (colBegin <= colEnd) {
-            for (let i = rowBegin; i <= rowEnd; i++) {
-                result[i][colEnd] = num;
-                num++;
+        rowStart++;
+        if (columnStart <= columnEnd) {
+            for (let row = rowStart; row <= rowEnd; row++) {
+                result[row][columnEnd] = num++;
             }
         }
         // Move Left
-        colEnd--;
-        if (rowBegin <= rowEnd) {
-            for (let i = colEnd; i >= colBegin; i--) {
-                result[rowEnd][i] = num;
-                num++;
+        columnEnd--;
+        if (rowStart <= rowEnd) {
+            for (let column = columnEnd; column >= columnStart; column--) {
+                result[rowEnd][column] = num++;
             }
         }
         // Move Top
         rowEnd--;
-        if (colBegin <= colEnd) {
-            for (let i = rowEnd; i >= rowBegin; i--) {
-                result[i][colBegin] = num;
-                num++;
+        if (columnStart <= columnEnd) {
+            for (let row = rowEnd; row >= rowStart; row--) {
+                result[row][columnStart] = num++;
             }
         }
-        colBegin++;
+        columnStart++;
     }
 
     return result;
