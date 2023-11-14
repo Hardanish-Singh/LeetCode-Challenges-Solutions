@@ -9,58 +9,52 @@
  */
 
 const spiralMatrixIII = (rows, cols, rStart, cStart) => {
-    // row variables
-    let rowBegin = rStart;
-    let rowEnd = rStart;
-    // column variables
-    let colBegin = cStart;
-    let colEnd = cStart;
     const result = [];
+    let sequence;
+    let count = 0;
 
     // Checks if coordinate is within the matrix
     const isWithInMatrix = (row, col) => row >= 0 && row < rows && col >= 0 && col < cols;
 
     while (result.length < rows * cols) {
+        count++;
+
         // Move Right
-        if (rowBegin <= rowEnd) {
-            while (cStart < colEnd) {
-                if (isWithInMatrix(rStart, cStart)) {
-                    result.push([rStart, cStart]);
-                }
-                cStart++;
+        sequence = count;
+        while (--sequence >= 0) {
+            if (isWithInMatrix(rStart, cStart)) {
+                result.push([rStart, cStart]);
             }
+            cStart++;
         }
+
         // Move Bottom
-        colEnd++;
-        if (colBegin <= colEnd) {
-            while (rStart < rowEnd) {
-                if (isWithInMatrix(rStart, cStart)) {
-                    result.push([rStart, cStart]);
-                }
-                rStart++;
+        sequence = count;
+        while (--sequence >= 0) {
+            if (isWithInMatrix(rStart, cStart)) {
+                result.push([rStart, cStart]);
             }
+            rStart++;
         }
-        // Move Left
-        rowEnd++;
-        if (rowBegin <= rowEnd) {
-            while (cStart > colBegin) {
-                if (isWithInMatrix(rStart, cStart)) {
-                    result.push([rStart, cStart]);
-                }
-                cStart--;
+        count++;
+
+        //Move Left
+        sequence = count;
+        while (--sequence >= 0) {
+            if (isWithInMatrix(rStart, cStart)) {
+                result.push([rStart, cStart]);
             }
+            cStart--;
         }
-        // Move Top
-        colBegin--;
-        if (colBegin <= colEnd) {
-            while (rStart > rowBegin) {
-                if (isWithInMatrix(rStart, cStart)) {
-                    result.push([rStart, cStart]);
-                }
-                rStart--;
+
+        // Move Up
+        sequence = count;
+        while (--sequence >= 0) {
+            if (isWithInMatrix(rStart, cStart)) {
+                result.push([rStart, cStart]);
             }
+            rStart--;
         }
-        rowBegin--;
     }
 
     return result;
