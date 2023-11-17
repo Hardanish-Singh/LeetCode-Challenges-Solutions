@@ -6,11 +6,11 @@
  */
 
 const generateMatrix = (n) => {
-    let result = new Array(n).fill().map(() => new Array(n).fill(0));
-    // row variables
+    const spiralOrderMatrix = new Array(n).fill().map(() => new Array(n).fill(0));
+    // Row variables
     let rowStart = 0;
     let rowEnd = n - 1;
-    // column variables
+    // Column variables
     let columnStart = 0;
     let columnEnd = n - 1;
     let num = 1;
@@ -19,32 +19,32 @@ const generateMatrix = (n) => {
         // Move Right
         if (rowStart <= rowEnd) {
             for (let column = columnStart; column <= columnEnd; column++) {
-                result[rowStart][column] = num++;
+                spiralOrderMatrix[rowStart][column] = num++;
             }
         }
         // Move Bottom
         rowStart++;
         if (columnStart <= columnEnd) {
             for (let row = rowStart; row <= rowEnd; row++) {
-                result[row][columnEnd] = num++;
+                spiralOrderMatrix[row][columnEnd] = num++;
             }
         }
         // Move Left
         columnEnd--;
         if (rowStart <= rowEnd) {
             for (let column = columnEnd; column >= columnStart; column--) {
-                result[rowEnd][column] = num++;
+                spiralOrderMatrix[rowEnd][column] = num++;
             }
         }
         // Move Top
         rowEnd--;
         if (columnStart <= columnEnd) {
             for (let row = rowEnd; row >= rowStart; row--) {
-                result[row][columnStart] = num++;
+                spiralOrderMatrix[row][columnStart] = num++;
             }
         }
         columnStart++;
     }
 
-    return result;
+    return spiralOrderMatrix;
 };
