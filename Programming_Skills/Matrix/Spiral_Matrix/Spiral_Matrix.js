@@ -6,11 +6,11 @@
  */
 
 const spiralOrder = (matrix) => {
-    let spiralOrderMatrix = [];
-    // row variables
+    const spiralOrderMatrix = [];
+    // Row variables
     let rowStart = 0;
     let rowEnd = matrix.length - 1;
-    // column variables
+    // Column variables
     let columnStart = 0;
     let columnEnd = matrix[0].length - 1;
 
