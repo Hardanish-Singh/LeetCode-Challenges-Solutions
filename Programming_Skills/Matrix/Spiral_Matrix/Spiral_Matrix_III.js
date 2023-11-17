@@ -9,21 +9,21 @@
  */
 
 const spiralMatrixIII = (rows, cols, rStart, cStart) => {
-    const result = [];
+    const spiralOrderMatrix = [];
     let sequence;
     let count = 0;
 
     // Checks if coordinate is within the matrix
     const isWithInMatrix = (row, col) => row >= 0 && row < rows && col >= 0 && col < cols;
 
-    while (result.length < rows * cols) {
+    while (spiralOrderMatrix.length < rows * cols) {
         count++;
 
         // Move Right
         sequence = count;
         while (--sequence >= 0) {
             if (isWithInMatrix(rStart, cStart)) {
-                result.push([rStart, cStart]);
+                spiralOrderMatrix.push([rStart, cStart]);
             }
             cStart++;
         }
@@ -32,7 +32,7 @@ const spiralMatrixIII = (rows, cols, rStart, cStart) => {
         sequence = count;
         while (--sequence >= 0) {
             if (isWithInMatrix(rStart, cStart)) {
-                result.push([rStart, cStart]);
+                spiralOrderMatrix.push([rStart, cStart]);
             }
             rStart++;
         }
@@ -43,7 +43,7 @@ const spiralMatrixIII = (rows, cols, rStart, cStart) => {
         sequence = count;
         while (--sequence >= 0) {
             if (isWithInMatrix(rStart, cStart)) {
-                result.push([rStart, cStart]);
+                spiralOrderMatrix.push([rStart, cStart]);
             }
             cStart--;
         }
@@ -52,11 +52,11 @@ const spiralMatrixIII = (rows, cols, rStart, cStart) => {
         sequence = count;
         while (--sequence >= 0) {
             if (isWithInMatrix(rStart, cStart)) {
-                result.push([rStart, cStart]);
+                spiralOrderMatrix.push([rStart, cStart]);
             }
             rStart--;
         }
     }
 
-    return result;
+    return spiralOrderMatrix;
 };
