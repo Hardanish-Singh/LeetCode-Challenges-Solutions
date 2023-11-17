@@ -16,11 +16,11 @@
  */
 
 var spiralMatrix = function (m, n, head) {
-    let result = new Array(m).fill().map(() => new Array(n).fill(-1));
-    // row variables
+    let spiralOrderMatrix = new Array(m).fill().map(() => new Array(n).fill(-1));
+    // Row variables
     let rowStart = 0;
     let rowEnd = m - 1;
-    // column variables
+    // Column variables
     let columnStart = 0;
     let columnEnd = n - 1;
 
@@ -28,7 +28,7 @@ var spiralMatrix = function (m, n, head) {
         // Move Right
         if (rowStart <= rowEnd) {
             for (let column = columnStart; column <= columnEnd && head != null; column++) {
-                result[rowStart][column] = head.val;
+                spiralOrderMatrix[rowStart][column] = head.val;
                 head = head.next;
             }
         }
@@ -36,7 +36,7 @@ var spiralMatrix = function (m, n, head) {
         rowStart++;
         if (columnStart <= columnEnd) {
             for (let row = rowStart; row <= rowEnd && head != null; row++) {
-                result[row][columnEnd] = head.val;
+                spiralOrderMatrix[row][columnEnd] = head.val;
                 head = head.next;
             }
         }
@@ -44,7 +44,7 @@ var spiralMatrix = function (m, n, head) {
         columnEnd--;
         if (rowStart <= rowEnd) {
             for (let column = columnEnd; column >= columnStart && head != null; column--) {
-                result[rowEnd][column] = head.val;
+                spiralOrderMatrix[rowEnd][column] = head.val;
                 head = head.next;
             }
         }
@@ -52,12 +52,12 @@ var spiralMatrix = function (m, n, head) {
         rowEnd--;
         if (columnStart <= columnEnd) {
             for (let row = rowEnd; row >= rowStart && head != null; row--) {
-                result[row][columnStart] = head.val;
+                spiralOrderMatrix[row][columnStart] = head.val;
                 head = head.next;
             }
         }
         columnStart++;
     }
 
-    return result;
+    return spiralOrderMatrix;
 };
