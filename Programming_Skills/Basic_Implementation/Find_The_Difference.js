@@ -1,4 +1,5 @@
 // Leetcode: https://leetcode.com/problems/find-the-difference/
+
 /**
  * @param {string} s
  * @param {string} t
