@@ -1,9 +1,9 @@
 // Leetcode: https://leetcode.com/problems/merge-strings-alternately/
 
 /**
- * @param { string } word1
- * @param { string } word2
- * @return { string }
+ * @param {string} word1
+ * @param {string} word2
+ * @return {string}
  */
 
 const mergeAlternately = (word1, word2) => {
