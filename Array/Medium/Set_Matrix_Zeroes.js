@@ -12,14 +12,14 @@ var setZeroes = function (matrix) {
                 matrix[i][j] = "X";
                 let row = 0;
                 let column = 0;
-                // Change the entire row to 0
+                // Change the entire row to X if value is != 0
                 while (column <= matrix[i].length - 1) {
                     if (matrix[i][column] != 0) {
                         matrix[i][column] = "X";
                     }
                     column++;
                 }
-                // Change the entire column to 0
+                // Change the entire column to X if value is != 0
                 while (row <= matrix.length - 1) {
                     if (matrix[row][j] != 0) {
                         matrix[row][j] = "X";
