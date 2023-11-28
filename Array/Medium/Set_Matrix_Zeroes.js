@@ -19,7 +19,7 @@ var setZeroes = function (matrix) {
                     }
                     column++;
                 }
-                // Change the entire column to X if value is != 0
+                // Change the entire column to X if value != 0
                 while (row <= matrix.length - 1) {
                     if (matrix[row][j] != 0) {
                         matrix[row][j] = "X";
