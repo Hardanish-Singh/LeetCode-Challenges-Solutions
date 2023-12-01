@@ -1,9 +1,9 @@
 // Leetcode: https://leetcode.com/problems/powx-n/
 
 /**
- * @param { number } x
- * @param { number } n
- * @return { number }
+ * @param {number} x
+ * @param {number} n
+ * @return {number}
 */
 
 // SOLUTION 1: BRUTE FORCE
@@ -19,7 +19,7 @@ var myPow = function (x, n) {
 var myPow = function (x, n) {
         let power = 1;
         let product = x;
-        for (let i = Math.abs(n); i > 0; i = parseInt(i / 2)) {
+        for (let i = Math.abs(n); i > 0; i = parseInt(String(i / 2))) {
                 if (i % 2 !== 0) {
                         power = power * product;
                 }
