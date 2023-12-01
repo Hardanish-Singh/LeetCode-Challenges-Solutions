@@ -1,4 +1,6 @@
-function checkStraightLine(coordinates: number[][]): boolean {
+// Leetcode: https://leetcode.com/problems/check-if-it-is-a-straight-line/
+
+const checkStraightLine = (coordinates: number[][]): boolean => {
     const [x1, y1] = coordinates[0];
     const [x2, y2] = coordinates[1];
 
@@ -11,4 +13,4 @@ function checkStraightLine(coordinates: number[][]): boolean {
     }
 
     return true; // All points are collinear
-}
+};
