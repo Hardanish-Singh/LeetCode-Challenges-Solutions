@@ -6,12 +6,7 @@
  * @return { number }
 */
 
-/*
-        SOLUTION 1
-                BRUTE FORCE
-                        Time Complexity: O(n)
-                        Space Complexity: O(1)
-*/
+// SOLUTION 1: BRUTE FORCE
 var myPow = function (x, n) {
         let power = 1;
         for (let i = 1; i <= Math.abs(n); i++) {
@@ -20,12 +15,7 @@ var myPow = function (x, n) {
         return n < 0 ? 1 / power : power;
 };
 
-/*
-        SOLUTION 2
-                FAST  POWER ALGORITHM
-                        Time Complexity: O(log n)
-                        Space Complexity: O(log n)
-*/
+// SOLUTION 2: FAST POWER ALGORITHM
 var myPow = function (x, n) {
         let power = 1;
         let product = x;
