@@ -7,7 +7,7 @@
 */
 
 // SOLUTION 1: BRUTE FORCE
-var myPow = function (x, n) {
+var myPow = (x, n) => {
         let power = 1;
         for (let i = 1; i <= Math.abs(n); i++) {
                 power *= x;
@@ -16,7 +16,7 @@ var myPow = function (x, n) {
 };
 
 // SOLUTION 2: FAST POWER ALGORITHM
-var myPow = function (x, n) {
+var myPow = (x, n) => {
         let power = 1;
         let product = x;
         for (let i = Math.abs(n); i > 0; i = parseInt(String(i / 2))) {
