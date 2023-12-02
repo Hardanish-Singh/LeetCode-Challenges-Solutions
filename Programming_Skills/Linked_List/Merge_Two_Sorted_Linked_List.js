@@ -43,10 +43,7 @@ const mergeTwoLists = (list1, list2) => {
 	}
 
 	// Loop until any of the list becomes null
-	while (list1 && list2) {
-		list1.val < list2.val ? parseList1() : parseList2();
-		addToLinkedList();
-	}
+	while (list1 && list2) list1.val < list2.val ? parseList1() : parseList2(), addToLinkedList();
 
 	// Add all the nodes of list1, if remaining
 	while (list1) parseList1(), addToLinkedList();
