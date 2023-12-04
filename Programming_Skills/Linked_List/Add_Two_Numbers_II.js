@@ -32,7 +32,7 @@ const reverseList = (head) => {
     return head = previous;
 };
 
-var addTwoNumbers = function (l1, l2) {
+const addTwoNumbers = (l1, l2) => {
     l1 = reverseList(l1);
     l2 = reverseList(l2);
     let node = new ListNode();
