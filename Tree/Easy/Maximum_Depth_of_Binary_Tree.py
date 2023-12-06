@@ -47,8 +47,8 @@ class Solution:
                         temp = []
                         # POP ALL ELEMENTS FROM QUEUE
                         for item in queue:
-                                temp.append( item.val )
-                        result.append( temp )
+                                temp.append(item.val)
+                        result.append(temp)
 
                         n = len(queue)
                         for i in range(n):
@@ -58,4 +58,4 @@ class Solution:
                                 if item.right:
                                         queue.append(item.right)
 
-                return len( result )
+                return len(result)
