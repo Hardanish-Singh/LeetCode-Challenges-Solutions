@@ -12,7 +12,7 @@
         SOLUTION 1: RECURSIVE DFS
 """
 
-class Solution( object ):
+class Solution:
         def maxDepth(self, root: TreeNode) -> int:                
                 if root is None:
                         return 0
@@ -24,7 +24,7 @@ class Solution( object ):
         SOLUTION 2: RECURSIVE DFS
 """
 
-class Solution( object ):
+class Solution:
         def maxDepth(self, root: TreeNode) -> int:
                 if root is None:
                         return 0
@@ -36,7 +36,7 @@ class Solution( object ):
         SOLUTION 3: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 """
 
-class Solution( object ):
+class Solution:
         def maxDepth(self, root: TreeNode) -> int:
                 if root is None:
                         return 0
