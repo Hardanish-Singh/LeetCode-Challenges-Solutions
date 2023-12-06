@@ -13,15 +13,9 @@
 """
 
 class Solution( object ):
-        def maxDepth( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: int
-                """
-                
+        def maxDepth(self, root: TreeNode) -> int:                
                 if root is None:
                         return 0
-                
                 left = self.maxDepth( root.left )
                 right = self.maxDepth( root.right )
                 return 1 + max( left, right )
@@ -31,18 +25,11 @@ class Solution( object ):
 """
 
 class Solution( object ):
-        def maxDepth( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: int
-                """
-                
+        def maxDepth(self, root: TreeNode) -> int:
                 if root is None:
                         return 0
-                
                 left = 1 + self.maxDepth( root.left )
                 right = 1 + self.maxDepth( root.right )
-                
                 return max( left, right )
 
 """
@@ -50,31 +37,25 @@ class Solution( object ):
 """
 
 class Solution( object ):
-        def maxDepth( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: int
-                """
-
+        def maxDepth(self, root: TreeNode) -> int:
                 if root is None:
                         return 0
+                queue = [root]
+                result = []
 
-                queue = [ root ]
-                result = [ ]
-
-                while len( queue ) > 0:
+                while len(queue) > 0:
                         temp = []
                         # POP ALL ELEMENTS FROM QUEUE
                         for item in queue:
                                 temp.append( item.val )
                         result.append( temp )
 
-                        n = len( queue )
-                        for i in range( n ):
+                        n = len(queue)
+                        for i in range(n):
                                 item = queue.pop(0)
                                 if item.left:
-                                        queue.append( item.left )
+                                        queue.append(item.left)
                                 if item.right:
-                                        queue.append( item.right )
+                                        queue.append(item.right)
 
                 return len( result )
