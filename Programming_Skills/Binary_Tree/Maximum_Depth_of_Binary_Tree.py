@@ -16,9 +16,9 @@ class Solution:
         def maxDepth(self, root: TreeNode) -> int:                
                 if root is None:
                         return 0
-                left = self.maxDepth( root.left )
-                right = self.maxDepth( root.right )
-                return 1 + max( left, right )
+                left = self.maxDepth(root.left)
+                right = self.maxDepth(root.right)
+                return 1 + max(left, right)
 
 """
         SOLUTION 2: RECURSIVE DFS
@@ -28,9 +28,9 @@ class Solution:
         def maxDepth(self, root: TreeNode) -> int:
                 if root is None:
                         return 0
-                left = 1 + self.maxDepth( root.left )
-                right = 1 + self.maxDepth( root.right )
-                return max( left, right )
+                left = 1 + self.maxDepth(root.left)
+                right = 1 + self.maxDepth(root.right)
+                return max(left, right)
 
 """
         SOLUTION 3: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
