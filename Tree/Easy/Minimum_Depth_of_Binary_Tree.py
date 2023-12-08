@@ -13,19 +13,19 @@
 """
 
 class Solution:
-        def minDepth( self, root: TreeNode ) -> int:
+        def minDepth(self, root: TreeNode) -> int:
                 # BASE CASE
                 if root is None:
                         return 0
                 # IF THERE IS ONLY LEFT CHILD, THEN WE GET ITS DEPTH
                 if root.left and root.right is None:
-                        return 1 + self.minDepth( root.left )
+                        return 1 + self.minDepth(root.left)
                 # IF THERE IS ONLY RIGHT CHILD, THEN WE GET ITS DEPTH
                 elif root.right and root.left is None:
-                        return 1 + self.minDepth( root.right )
+                        return 1 + self.minDepth(root.right)
                 # WHEN BOTH LEFT AND RIGHT CHILD EXISTS
                 else:
-                        return 1 + min( self.minDepth( root.right ), self.minDepth( root.left ) )
+                        return 1 + min(self.minDepth(root.right), self.minDepth(root.left))
 
 
 """
@@ -33,30 +33,30 @@ class Solution:
 """
 
 class Solution:
-        def minDepth( self, root: TreeNode ) -> int:
+        def minDepth(self, root: TreeNode) -> int:
                 if root is None:
                         return 0
 
-                queue = [ root ]
-                result = [ ]
+                queue = [root]
+                result = []
                 count = 1
 
-                while len( queue ) > 0:
+                while len(queue) > 0:
                         temp = []
                         # POP ALL ELEMENTS FROM QUEUE
                         for item in queue:
-                                temp.append( item.val )
-                        result.append( temp )
+                                temp.append(item.val)
+                        result.append(temp)
 
-                        n = len( queue )
-                        for i in range( n ):
+                        n = len(queue)
+                        for i in range(n):
                                 item = queue.pop(0)
                                 if item.left is None and item.right is None:
                                         return count
                                 if item.left:
-                                        queue.append( item.left )
+                                        queue.append(item.left)
                                 if item.right:
-                                        queue.append( item.right )
+                                        queue.append(item.right)
 
                         count = count + 1
 
