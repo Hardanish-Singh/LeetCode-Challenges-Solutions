@@ -59,5 +59,3 @@ class Solution:
                                         queue.append(item.right)
 
                         count = count + 1
-
-        
