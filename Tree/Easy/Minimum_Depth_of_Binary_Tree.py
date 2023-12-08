@@ -12,12 +12,8 @@
         SOLUTION 1: RECURSIVE SOLUTION
 """
 
-class Solution( object ):
-        def minDepth( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: int
-                """
+class Solution:
+        def minDepth( self, root: TreeNode ) -> int:
                 # BASE CASE
                 if root is None:
                         return 0
@@ -36,12 +32,8 @@ class Solution( object ):
         SOLUTION 2: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 """
 
-class Solution( object ):
-        def minDepth( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: int
-                """
+class Solution:
+        def minDepth( self, root: TreeNode ) -> int:
                 if root is None:
                         return 0
 
