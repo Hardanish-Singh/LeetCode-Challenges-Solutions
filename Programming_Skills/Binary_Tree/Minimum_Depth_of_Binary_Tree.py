@@ -29,9 +29,30 @@ class Solution:
                         right = self.minDepth(root.right)
                         return 1 + min(left, right)
 
+"""
+        SOLUTION 2: RECURSIVE SOLUTION
+"""
+
+class Solution:
+        def minDepth(self, root: TreeNode) -> int:
+                # BASE CASE
+                if root is None:
+                        return 0
+                # IF THERE IS ONLY LEFT CHILD, THEN WE GET ITS DEPTH
+                if root.left and root.right is None:
+                        return 1 + self.minDepth(root.left)
+                # IF THERE IS ONLY RIGHT CHILD, THEN WE GET ITS DEPTH
+                elif root.right and root.left is None:
+                        return 1 + self.minDepth(root.right)
+                # WHEN BOTH LEFT AND RIGHT CHILD EXISTS
+                else:
+                        left = 1 + self.minDepth(root.left)
+                        right = 1 + self.minDepth(root.right)
+                        return min(left, right)
+
 
 """
-        SOLUTION 2: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
+        SOLUTION 3: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 """
 
 class Solution:
