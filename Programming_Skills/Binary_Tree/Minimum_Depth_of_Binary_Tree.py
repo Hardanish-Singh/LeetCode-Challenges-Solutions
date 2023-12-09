@@ -25,7 +25,9 @@ class Solution:
                         return 1 + self.minDepth(root.right)
                 # WHEN BOTH LEFT AND RIGHT CHILD EXISTS
                 else:
-                        return 1 + min(self.minDepth(root.right), self.minDepth(root.left))
+                        left = self.minDepth(root.left)
+                        right = self.minDepth(root.right)
+                        return 1 + min(left, right)
 
 
 """
