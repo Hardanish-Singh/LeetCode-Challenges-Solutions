@@ -59,7 +59,6 @@ class Solution:
         def minDepth(self, root: TreeNode) -> int:
                 if root is None:
                         return 0
-
                 queue = [root]
                 result = []
                 count = 1
