@@ -44,7 +44,6 @@ class Solution:
                 result = []
 
                 while queue:
-                        temp = []
                         # POP ALL ELEMENTS FROM QUEUE
                         result.append( item.val for item in queue )
 
