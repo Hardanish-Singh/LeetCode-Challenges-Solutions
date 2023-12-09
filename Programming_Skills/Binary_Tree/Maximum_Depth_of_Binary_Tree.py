@@ -43,12 +43,10 @@ class Solution:
                 queue = [root]
                 result = []
 
-                while len(queue) > 0:
+                while queue:
                         temp = []
                         # POP ALL ELEMENTS FROM QUEUE
-                        for item in queue:
-                                temp.append(item.val)
-                        result.append(temp)
+                        result.append( item.val for item in queue )
 
                         n = len(queue)
                         for i in range(n):
