@@ -18,6 +18,6 @@ class Solution:
                         n = len(queue)
                         for i in range(n):
                                 item = queue.pop(0)
-                                queue += [ child for child in item.children ]
+                                queue.extend(child for child in item.children)
 
                 return len(result)
