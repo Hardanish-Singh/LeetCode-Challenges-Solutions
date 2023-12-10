@@ -66,7 +66,7 @@ class Solution:
                 count = 1
 
                 while queue:
-                        result.append( item.val for item in queue ) # POP ALL ELEMENTS FROM QUEUE
+                        result.append(item.val for item in queue) # POP ALL ELEMENTS FROM QUEUE
                         n = len(queue)
                         for i in range(n):
                                 item = queue.pop(0)
