@@ -1,11 +1,13 @@
 # Leetcode: https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__( self, val = 0, left = None, right = None ):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+"""
+        # Definition for a binary tree node.
+        class TreeNode:
+                def __init__(self, val = 0, left = None, right = None):
+                        self.val = val
+                        self.left = left
+                        self.right = right
+"""
 
 
 """
@@ -44,7 +46,7 @@ class Solution:
                 result = []
 
                 while queue:
-                        result.append( item.val for item in queue ) # POP ALL ELEMENTS FROM QUEUE
+                        result.append(item.val for item in queue) # POP ALL ELEMENTS FROM QUEUE
                         n = len(queue)
                         for i in range(n):
                                 item = queue.pop(0)
