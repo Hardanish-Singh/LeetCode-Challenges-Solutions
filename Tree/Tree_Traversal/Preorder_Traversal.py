@@ -54,7 +54,7 @@ class Solution:
                 preOrderList = []
                 stack = [root]
                 
-                while len(stack) > 0:
+                while stack:
                         currentNode = stack.pop()
                         preOrderList.append(currentNode.val)
                         if currentNode.right:
