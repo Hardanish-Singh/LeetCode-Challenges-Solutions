@@ -32,7 +32,6 @@ class Solution:
                         return None
                 queue = [root]
                 
-                # POP ALL ELEMENTS FROM QUEUE
                 while queue:
                         n = len(queue)
                         for i in range(n):
