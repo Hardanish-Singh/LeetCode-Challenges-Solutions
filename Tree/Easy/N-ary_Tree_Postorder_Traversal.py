@@ -21,7 +21,7 @@ class Solution:
                 postOrderList.append(root.val)
         def postorder(self, root: 'Node') -> List[int]:
                 postOrderList = []
-                self.postorderRecursiveTraversal( root, postOrderList )
+                self.postorderRecursiveTraversal(root, postOrderList)
                 return postOrderList
 
 """
@@ -32,16 +32,13 @@ class Solution:
         def postorder(self, root: 'Node') -> List[int]:
                 if root is None:
                         return []
-        
                 postOrderList = []
-                stack = [ root ]
+                stack = [root]
                 
-                while len( stack ) > 0:
+                while len(stack) > 0:
                         currentNode = stack.pop()
-                        postOrderList.append( currentNode.val )
-
-                        for child in currentNode.children:
-                                stack.append( child )
+                        postOrderList.append(currentNode.val)
+                        stack.extend(child for child in currentNode.children)
 
                 return postOrderList[::-1]
         
