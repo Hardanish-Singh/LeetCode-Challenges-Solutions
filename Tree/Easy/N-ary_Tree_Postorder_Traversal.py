@@ -35,7 +35,7 @@ class Solution:
                 postOrderList = []
                 stack = [root]
                 
-                while len(stack) > 0:
+                while stack:
                         currentNode = stack.pop()
                         postOrderList.append(currentNode.val)
                         stack.extend(child for child in currentNode.children)
