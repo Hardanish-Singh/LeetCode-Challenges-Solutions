@@ -32,16 +32,13 @@ class Solution:
         def preorder(self, root: 'Node') -> List[int]:
                 if root is None:
                         return []
-
                 preOrderList = []
-                stack = [ root ]
+                stack = [root]
                 
-                while len( stack ) > 0:
+                while stack:
                         currentNode = stack.pop()
-                        preOrderList.append( currentNode.val )
-                        
-                        for child in currentNode.children[::-1]:
-                                stack.append( child )
+                        preOrderList.append(currentNode.val)
+                        stack.extend(child for child in currentNode.children[::-1])
                 
                 return preOrderList
         
