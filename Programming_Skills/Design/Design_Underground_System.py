@@ -9,8 +9,8 @@ class UndergroundSystem:
         self.checkin[id] = (stationName, t)
 
     def checkOut(self, id: int, stationName: str, t: int) -> None:
-        start_station, check_in_time = self.checkin.pop(id)
-        travel = (start_station, stationName)
+        check_in_station, check_in_time = self.checkin.pop(id)
+        travel = (check_in_station, stationName)
         time = t - check_in_time
 
         if travel in self.time:
