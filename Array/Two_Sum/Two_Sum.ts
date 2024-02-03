@@ -3,7 +3,7 @@
 /*
         SOLUTION 1: BRUTE FORCE
                 Time Complexity: O( n ^ 2 )
-                Space Complexity: O( n )
+                Space Complexity: O( 1 )
 */
 
 var twoSum = (nums: number[], target: number): number[] => {
