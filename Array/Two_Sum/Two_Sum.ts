@@ -36,7 +36,7 @@ var twoSum = (nums: number[], target: number): number[] => {
 };
 
 /*
-        SOLUTION 2: USING MAP
+        SOLUTION 3: USING MAP
                 Time Complexity: O( n )
                 Space Complexity: O( n )
 */
