@@ -6,11 +6,11 @@
                 Space Complexity: O( n )
 */
 
-var maxOperations = (nums: number[], k: number): number => {
+var maxOperations = (nums: number[], target: number): number => {
     const map = new Map<number, number>();
     let operations = 0;
     for (const num of nums) {
-        const complement = k - num;
+        const complement = target - num;
         if (map.get(complement)) {
             operations++;
             map.set(complement, (map.get(complement) as number) - 1);
