@@ -18,6 +18,12 @@ var numPairsDivisibleBy60 = (time: number[]): number => {
     return count;
 };
 
+/*
+        SOLUTION 1: USING MAP
+                Time Complexity: O( n ^ 2 )
+                Space Complexity: O( n )
+*/
+
 var numPairsDivisibleBy60 = (times: number[]): number => {
     /* 
         Because the maximum value in the array is only 500, the maximum value of the sum of the two numbers is only 1000. 
@@ -36,6 +42,30 @@ var numPairsDivisibleBy60 = (times: number[]): number => {
                 count += map.get(compliment) as number;
             }
         }
+        map.set(time, (map.get(time) ?? 0) + 1);
+    }
+
+    return count;
+};
+
+/*
+        SOLUTION 1: USING MAP
+                Time Complexity: O( n )
+                Space Complexity: O( n )
+*/
+
+var numPairsDivisibleBy60 = (times: number[]): number => {
+    let count = 0;
+    let map = new Map<number, number>();
+
+    for (let i = 0; i < times.length; i++) {
+        times[i] = times[i] % 60;
+    }
+
+    for (let i = 0; i < times.length; i++) {
+        const time = times[i];
+        let compliment = (60 - time) % 60;
+        count += map.get(compliment) ?? 0;
         map.set(time, (map.get(time) ?? 0) + 1);
     }
 
