@@ -25,6 +25,7 @@ var numPairsDivisibleBy60 = (times: number[]): number => {
     */
     const numbers: number[] = [];
     for (let i = 60; i <= 1000; i += 60) numbers.push(i);
+
     let count = 0;
     let map = new Map<number, number>();
 
