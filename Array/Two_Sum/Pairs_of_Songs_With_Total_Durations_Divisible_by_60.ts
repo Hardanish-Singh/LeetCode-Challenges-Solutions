@@ -19,10 +19,12 @@ var numPairsDivisibleBy60 = (time: number[]): number => {
 };
 
 var numPairsDivisibleBy60 = (times: number[]): number => {
-    const numbers = [
-        60, 120, 180, 240, 300, 360, 420, 480, 540, 600, 660, 720, 780, 840,
-        900, 960,
-    ];
+    /* 
+        Because the maximum value in the array is only 500, the maximum value of the sum of the two numbers is only 1000. 
+        So we create an array that stores all integers that can be divided by 60 and less than 1000
+    */
+    const numbers: number[] = [];
+    for (let i = 60; i <= 1000; i += 60) numbers.push(i);
     let count = 0;
     let map = new Map<number, number>();
 
