@@ -11,7 +11,7 @@ var maxOperations = (nums: number[], target: number): number => {
     let operations = 0;
     for (const num of nums) {
         const complement = target - num;
-        if (map.get(complement)) {
+        if ((map.get(complement) as number) > 1) {
             operations++;
             map.set(complement, (map.get(complement) as number) - 1);
         } else {
