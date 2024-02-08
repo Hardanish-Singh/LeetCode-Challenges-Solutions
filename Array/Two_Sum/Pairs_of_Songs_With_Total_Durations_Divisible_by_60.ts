@@ -62,8 +62,7 @@ var numPairsDivisibleBy60 = (times: number[]): number => {
         times[i] = times[i] % 60;
     }
 
-    for (let i = 0; i < times.length; i++) {
-        const time = times[i];
+    for (const time of times) {
         let compliment = (60 - time) % 60;
         count += map.get(compliment) ?? 0;
         map.set(time, (map.get(time) ?? 0) + 1);
