@@ -10,10 +10,10 @@ var maxOperations = (nums: number[], target: number): number => {
     const map = new Map<number, number>();
     let operations = 0;
     for (const num of nums) {
-        const complement = target - num;
-        if ((map.get(complement) as number) > 1) {
+        const compliment = target - num;
+        if ((map.get(compliment) as number) > 1) {
             operations++;
-            map.set(complement, (map.get(complement) as number) - 1);
+            map.set(compliment, (map.get(compliment) as number) - 1);
         } else {
             map.set(num, (map.get(num) ?? 0) + 1);
         }
