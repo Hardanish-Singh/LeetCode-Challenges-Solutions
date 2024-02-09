@@ -21,17 +21,13 @@ class Solution:
 
                 preOrderList1 = []
                 self.preorderRecursiveTraversal( root1, preOrderList1 )
-                preOrderList1 = list( set( preOrderList1 ) )
                 
                 preOrderList2 = []
                 self.preorderRecursiveTraversal( root2, preOrderList2 )
-                preOrderList2 = list( set( preOrderList2 ) )
                 
                 for i in range( 0, len( preOrderList2 ) ):
-                        difference = target - preOrderList2[i]
-                        if difference in preOrderList1:
+                        compliment = target - preOrderList2[i]
+                        if compliment in preOrderList1:
                                 return True
-                        else:
-                                preOrderList1.append(preOrderList2[i])
                 
                 return False
