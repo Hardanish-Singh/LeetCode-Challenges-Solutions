@@ -26,9 +26,9 @@ var twoSum = (nums: number[], target: number): number[] => {
 var twoSum = (nums: number[], target: number): number[] => {
     const set = new Set<number>();
     for (let i = 0; i < nums.length; i++) {
-        let complement = target - nums[i];
-        if (set.has(complement)) {
-            return [nums.indexOf(complement), i];
+        let compliment = target - nums[i];
+        if (set.has(compliment)) {
+            return [nums.indexOf(compliment), i];
         }
         set.add(nums[i]);
     }
@@ -44,9 +44,9 @@ var twoSum = (nums: number[], target: number): number[] => {
 var twoSum = (nums: number[], target: number): number[] => {
     const map = new Map<number, number>();
     for (let i = 0; i < nums.length; i++) {
-        let complement = target - nums[i];
-        if (map.has(complement)) {
-            return [map.get(complement) as number, i];
+        let compliment = target - nums[i];
+        if (map.has(compliment)) {
+            return [map.get(compliment) as number, i];
         }
         map.set(nums[i], i);
     }
