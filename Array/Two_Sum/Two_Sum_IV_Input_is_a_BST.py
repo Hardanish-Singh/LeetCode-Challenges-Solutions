@@ -25,8 +25,8 @@ class Solution:
                 hash_table = { }
                 
                 for i in range( 0, len( preOrderList ) ):
-                        difference = k - preOrderList[ i ]
-                        if difference in hash_table:
+                        compliment = k - preOrderList[ i ]
+                        if compliment in hash_table:
                                 return True
                         else:
                                 hash_table[ preOrderList[ i ] ] = True
