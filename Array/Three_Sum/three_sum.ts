@@ -1,37 +1,36 @@
 // Leetcode: https://leetcode.com/problems/3sum/
 
-/**
- * @param { number[] } nums
- * @return { number[][] }
- */
+type ThreeSum = {
+    [key: string]: any;
+};
 
-function threeSum(nums: Array<number>): Array<Array<number>> {
-        nums.sort((a, b) => a - b);
-        let hash_table: {
-                [key: string]: boolean;
-        } = {};
-        let target: number = 0;
+const threeSum = (nums: number[]): number[][] => {
+    nums.sort((a, b) => a - b);
+    let target: number = 0;
+    let hash_table: ThreeSum = {};
+    let triplets: number[][] = [];
 
-        for (let i: number = 0; i < nums.length; i++) {
-                let leftPointer: number = i + 1;
-                let rightPointer: number = nums.length - 1;
+    for (let i: number = 0; i < nums.length; i++) {
+        let leftPointer: number = i + 1;
+        let rightPointer: number = nums.length - 1;
 
-                while (leftPointer < rightPointer) {
-                        if (nums[leftPointer] + nums[rightPointer] + nums[i] < target) {
-                                leftPointer++;
-                        } else if (nums[leftPointer] + nums[rightPointer] + nums[i] > target) {
-                                rightPointer--;
-                        } else if (nums[leftPointer] + nums[rightPointer] + nums[i] === target) {
-                                hash_table[nums[i] + "," + nums[leftPointer] + "," + nums[rightPointer]] = true;
-                                leftPointer++;
-                                rightPointer--;
-                        }
+        while (leftPointer < rightPointer) {
+            const sum = nums[leftPointer] + nums[rightPointer] + nums[i];
+            if (sum < target) {
+                leftPointer++;
+            } else if (sum > target) {
+                rightPointer--;
+            } else if (sum === target) {
+                const key = nums[i] + "," + nums[leftPointer] + "," + nums[rightPointer];
+                if (!(key in hash_table)) {
+                    triplets.push([nums[i], nums[leftPointer], nums[rightPointer]]);
                 }
+                hash_table[key] = true;
+                leftPointer++;
+                rightPointer--;
+            }
         }
+    }
 
-        let triplets: Array<Array<number>> = [];
-        for (const key of Object.keys(hash_table)) {
-                triplets.push(key.split(",").map(Number));
-        }
-        return triplets;
-}
+    return triplets;
+};
