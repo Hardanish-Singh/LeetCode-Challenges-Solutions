@@ -21,7 +21,7 @@ const threeSum = (nums: number[]): number[][] => {
             } else if (sum > target) {
                 rightPointer--;
             } else if (sum === target) {
-                const key = nums[i] + "," + nums[leftPointer] + "," + nums[rightPointer];
+                const key = `${nums[i]}, ${nums[leftPointer]}, ${nums[rightPointer]}`;
                 if (!(key in hash_table)) {
                     triplets.push([nums[i], nums[leftPointer], nums[rightPointer]]);
                 }
