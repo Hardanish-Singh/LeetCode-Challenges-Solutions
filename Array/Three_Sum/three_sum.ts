@@ -20,12 +20,12 @@ const threeSum = (nums: number[]): number[][] => {
             } else if (sum > target) {
                 rightPointer--;
             } else if (sum === target) {
-                const key = `${nums[i]}, ${nums[leftPointer]}, ${nums[rightPointer]}`;
-                set.add(key);
+                set.add(`${nums[i]}, ${nums[leftPointer]}, ${nums[rightPointer]}`);
                 leftPointer++;
                 rightPointer--;
             }
         }
     }
+
     return Array.from(set).map((key) => key.split(",").map(Number));
 };
