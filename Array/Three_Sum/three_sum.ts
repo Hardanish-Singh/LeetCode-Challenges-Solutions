@@ -7,8 +7,7 @@ type ThreeSum = {
 const threeSum = (nums: number[]): number[][] => {
     nums.sort((a, b) => a - b);
     let target: number = 0;
-    let hash_table: ThreeSum = {};
-    let triplets: number[][] = [];
+    let set = new Set<string>();
 
     for (let i: number = 0; i < nums.length; i++) {
         let leftPointer: number = i + 1;
@@ -22,15 +21,11 @@ const threeSum = (nums: number[]): number[][] => {
                 rightPointer--;
             } else if (sum === target) {
                 const key = `${nums[i]}, ${nums[leftPointer]}, ${nums[rightPointer]}`;
-                if (!(key in hash_table)) {
-                    triplets.push([nums[i], nums[leftPointer], nums[rightPointer]]);
-                }
-                hash_table[key] = true;
+                set.add(key);
                 leftPointer++;
                 rightPointer--;
             }
         }
     }
-
-    return triplets;
+    return Array.from(set).map((key) => key.split(",").map(Number));
 };
