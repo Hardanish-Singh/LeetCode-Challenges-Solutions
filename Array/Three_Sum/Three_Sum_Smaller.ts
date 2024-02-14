@@ -13,8 +13,8 @@ var threeSumSmaller = (nums: number[], target: number): number => {
             if (nums[leftPointer] + nums[rightPointer] + nums[i] < target) {
                 count++;
                 /*
-                        NOW WE NEED TO FIND HOW MANY PAIRS WITH leftPointer index THAT SATISFY THIS CONDITION?
-                        FIX LEFT POINTER & MOVE RIGHT POINTER
+                    NOW WE NEED TO FIND HOW MANY PAIRS WITH leftPointer index THAT SATISFY THIS CONDITION?
+                    FIX LEFT POINTER & MOVE RIGHT POINTER
                 */
                 let start: number = leftPointer;
                 let end: number = rightPointer - 1;
