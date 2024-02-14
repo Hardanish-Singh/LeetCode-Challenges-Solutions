@@ -1,5 +1,6 @@
 // Leetcode: https://leetcode.com/problems/3sum-smaller/
 
+// Solution 1
 var threeSumSmaller = (nums: number[], target: number): number => {
     nums.sort((a, b) => a - b);
     let count: number = 0;
@@ -35,6 +36,7 @@ var threeSumSmaller = (nums: number[], target: number): number => {
     return count;
 };
 
+// Solution 2
 var threeSumSmaller = (nums: number[], target: number): number => {
     nums.sort((a, b) => a - b);
     let count: number = 0;
