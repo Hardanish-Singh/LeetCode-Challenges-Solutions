@@ -33,7 +33,7 @@ var threeSumSmaller = (nums: number[], target: number): number => {
     return count;
 };
 
-// Solution 2
+// Solution 2 ( Most Efficient )
 var threeSumSmaller = (nums: number[], target: number): number => {
     nums.sort((a, b) => a - b);
     let count: number = 0;
