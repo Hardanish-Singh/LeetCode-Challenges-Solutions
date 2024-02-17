@@ -9,11 +9,12 @@ var threeSumMulti = (nums: Array<number>, target: number): number => {
         let rightPointer: number = nums.length - 1;
 
         while (leftPointer < rightPointer) {
-            if (nums[leftPointer] + nums[rightPointer] + nums[i] < target) {
+            const sum = nums[leftPointer] + nums[rightPointer] + nums[i];
+            if (sum < target) {
                 leftPointer++;
-            } else if (nums[leftPointer] + nums[rightPointer] + nums[i] > target) {
+            } else if (sum > target) {
                 rightPointer--;
-            } else if (nums[leftPointer] + nums[rightPointer] + nums[i] === target) {
+            } else if (sum === target) {
                 if (nums[leftPointer] === nums[rightPointer]) {
                     let n: number = rightPointer - leftPointer;
                     count += Math.floor((n * (n + 1)) / 2);
@@ -26,9 +27,10 @@ var threeSumMulti = (nums: Array<number>, target: number): number => {
                 let start: number = leftPointer;
                 let end: number = rightPointer - 1;
                 while (start < end) {
-                    if (nums[i] + nums[start] + nums[end] === target) {
+                    const sum = nums[i] + nums[start] + nums[end];
+                    if (sum === target) {
                         count++;
-                    } else if (nums[i] + nums[start] + nums[end] < target) {
+                    } else if (sum < target) {
                         break;
                     }
                     end--;
@@ -38,9 +40,10 @@ var threeSumMulti = (nums: Array<number>, target: number): number => {
                 start = leftPointer + 1;
                 end = rightPointer;
                 while (start < end) {
-                    if (nums[i] + nums[start] + nums[end] === target) {
+                    const sum = nums[i] + nums[start] + nums[end];
+                    if (sum === target) {
                         count++;
-                    } else if (nums[i] + nums[start] + nums[end] > target) {
+                    } else if (sum > target) {
                         break;
                     }
                     start++;
