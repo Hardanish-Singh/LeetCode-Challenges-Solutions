@@ -1,8 +1,8 @@
 // Leetcode: https://leetcode.com/problems/3sum-closest/
 
-function threeSumClosest(nums: Array<number>, target: number): number {
+const threeSumClosest = (nums: Array<number>, target: number): number => {
     nums.sort((a, b) => a - b);
-    let closestSumClosest: number = 0;
+    let closestSum: number = 0;
     let min: number = Number.MAX_VALUE;
 
     for (let i: number = 0; i < nums.length - 1; i++) {
@@ -12,20 +12,19 @@ function threeSumClosest(nums: Array<number>, target: number): number {
         while (leftPointer < rightPointer) {
             const sum: number = nums[i] + nums[leftPointer] + nums[rightPointer];
             const absoluteDifference = Math.abs(target - sum);
-            if (absoluteDifference < min) {
-                closestSumClosest = sum;
+            if (min > absoluteDifference) {
+                closestSum = sum;
                 min = absoluteDifference;
             }
-            //     closestSumArray.push(sum);
-            if (nums[leftPointer] + nums[rightPointer] + nums[i] < target) {
+            if (sum < target) {
                 leftPointer++;
-            } else if (nums[leftPointer] + nums[rightPointer] + nums[i] > target) {
+            } else if (sum > target) {
                 rightPointer--;
-            } else if (nums[leftPointer] + nums[rightPointer] + nums[i] === target) {
+            } else if (sum === target) {
                 return sum;
             }
         }
     }
 
-    return closestSumClosest;
-}
+    return closestSum;
+};
