@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/3sum-with-multiplicity/
 
-var threeSumMulti = (nums: Array<number>, target: number): number => {
+const threeSumMulti = (nums: Array<number>, target: number): number => {
     nums.sort((a, b) => a - b);
     let count: number = 0;
 
