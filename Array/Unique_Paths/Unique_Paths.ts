@@ -16,7 +16,7 @@ var uniquePaths1 = (m: number, n: number, row: number = 0, column: number = 0): 
     return moveDown + moveRight;
 };
 
-// Solution 1: Recursion with Memoization/Caching
+// Solution 2: Recursion with Memoization/Caching
 var uniquePaths2 = (
     m: number,
     n: number,
