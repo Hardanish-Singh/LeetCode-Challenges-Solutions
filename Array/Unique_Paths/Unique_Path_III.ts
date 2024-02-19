@@ -5,6 +5,7 @@ const uniquePathsIII = (grid: number[][]): number => {
     let startRow = 0;
     let startCol = 0;
     let result = 0;
+    let count = 1;
 
     for (let r = 0; r < grid.length; r++) {
         for (let c = 0; c < grid[0].length; c++) {
@@ -39,6 +40,6 @@ const uniquePathsIII = (grid: number[][]): number => {
         grid[row][column] = original;
     };
 
-    DFSWithBacktrack(startRow, startCol, 1);
+    DFSWithBacktrack(startRow, startCol, count);
     return result;
 };
