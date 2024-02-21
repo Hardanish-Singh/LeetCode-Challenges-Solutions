@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/minimum-path-sum/
 
-// Solution 1: Recursion (TLE)
+// Solution 1: Recursion(TLE)
 const minPathSum1 = (grid: number[][], row: number = 0, column: number = 0): number => {
     if (row >= grid.length || column >= grid[0].length) {
         return Number.MAX_VALUE;
