@@ -2,10 +2,11 @@
 
 // Solution 1: Recursion (TLE)
 const minPathSum1 = (grid: number[][], row: number = 0, column: number = 0): number => {
+    // Out of Bounds/Grid Check
     if (row >= grid.length || column >= grid[0].length) {
         return Number.MAX_VALUE;
     }
-
+    // Base Case / Reach Destination
     if (row === grid.length - 1 && column === grid[0].length - 1) {
         return grid[row][column];
     }
@@ -20,23 +21,23 @@ const minPathSum2 = (
     grid: number[][],
     row: number = 0,
     column: number = 0,
-    cache: Record<string, number> = {}
+    map: Map<string, number> = new Map<string, number>()
 ): number => {
+    // Out of Bounds/Grid Check
     if (row >= grid.length || column >= grid[0].length) {
         return Number.MAX_VALUE;
     }
-
+    // Base Case / Reach Destination
     if (row === grid.length - 1 && column === grid[0].length - 1) {
         return grid[row][column];
     }
-
     const key = `${row},${column}`;
-    if (key in cache) {
-        return cache[key];
+    if (map.has(key)) {
+        return map.get(key) as number;
     }
 
-    const moveDown = minPathSum2(grid, row + 1, column, cache);
-    const moveRight = minPathSum2(grid, row, column + 1, cache);
-    cache[key] = grid[row][column] + Math.min(moveDown, moveRight);
-    return cache[key];
+    const moveDown = minPathSum2(grid, row + 1, column, map);
+    const moveRight = minPathSum2(grid, row, column + 1, map);
+    map.set(key, grid[row][column] + Math.min(moveDown, moveRight));
+    return grid[row][column] + Math.min(moveDown, moveRight);
 };
