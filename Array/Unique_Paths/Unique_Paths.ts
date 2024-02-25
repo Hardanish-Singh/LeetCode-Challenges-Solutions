@@ -22,7 +22,7 @@ var uniquePaths2 = (
     n: number,
     row: number = 0,
     column: number = 0,
-    cache: Record<string, number> = {}
+    map: Map<string, number> = new Map<string, number>()
 ): number => {
     // Base Case / Reach Destination
     if (row === m - 1 && column === n - 1) {
@@ -34,14 +34,14 @@ var uniquePaths2 = (
     }
     // Memoization/Caching
     const key = `${row},${column}`;
-    if (key in cache) {
-        return cache[key];
+    if (map.has(key)) {
+        return map.get(key) as number;
     }
 
-    const moveDown = uniquePaths2(m, n, row + 1, column, cache);
-    const moveRight = uniquePaths2(m, n, row, column + 1, cache);
-    cache[key] = moveDown + moveRight;
-    return cache[key];
+    const moveDown = uniquePaths2(m, n, row + 1, column, map);
+    const moveRight = uniquePaths2(m, n, row, column + 1, map);
+    map.set(key, moveDown + moveRight);
+    return moveDown + moveRight;
 };
 
 // Solution 3: Dynamic Programming
