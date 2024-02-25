@@ -31,6 +31,7 @@ const minPathSum2 = (
     if (row === grid.length - 1 && column === grid[0].length - 1) {
         return grid[row][column];
     }
+    // Memoization/Caching
     const key = `${row},${column}`;
     if (map.has(key)) {
         return map.get(key) as number;
