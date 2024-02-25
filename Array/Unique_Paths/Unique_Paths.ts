@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/unique-paths/
 
 // Solution 1: Recursion (TLE)
-var uniquePaths1 = (m: number, n: number, row: number = 0, column: number = 0): number => {
+const uniquePaths1 = (m: number, n: number, row: number = 0, column: number = 0): number => {
     // Base Case / Reach Destination
     if (row === m - 1 && column === n - 1) {
         return 1;
@@ -17,7 +17,7 @@ var uniquePaths1 = (m: number, n: number, row: number = 0, column: number = 0): 
 };
 
 // Solution 2: Recursion with Memoization/Caching
-var uniquePaths2 = (
+const uniquePaths2 = (
     m: number,
     n: number,
     row: number = 0,
@@ -45,7 +45,7 @@ var uniquePaths2 = (
 };
 
 // Solution 3: Dynamic Programming
-var uniquePaths3 = (m: number, n: number): number => {
+const uniquePaths3 = (m: number, n: number): number => {
     // Construct a 2D Array of size m x n with default array values as 1
     const matrix = Array(m);
     for (let i = 0; i < m; i++) {
