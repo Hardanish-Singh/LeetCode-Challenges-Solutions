@@ -8,9 +8,11 @@ const numberOfWays = (
     k: number,
     map: Map<string, number> = new Map<string, number>()
 ): number => {
+    // Base Case
     if (k === 0) {
         return startPos === endPos ? 1 : 0;
     }
+    // Memoization/Caching
     const key = `${startPos},${k}`;
     if (map.has(key)) {
         return map.get(key) as number;
