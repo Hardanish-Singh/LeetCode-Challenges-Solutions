@@ -4,17 +4,24 @@ const solve = (board: string[][]): void => {
     const m = board.length;
     const n = board[0].length;
 
-    const dfs = (i: number, j: number): void => {
-        if (i < 0 || i > m - 1 || j < 0 || j > n - 1 || board[i][j] === "X" || board[i][j] === "*") {
+    const dfs = (row: number, column: number): void => {
+        if (
+            row < 0 ||
+            row >= m ||
+            column < 0 ||
+            column >= n ||
+            board[row][column] === "X" ||
+            board[row][column] === "*"
+        ) {
             return;
         }
 
-        board[i][j] = "*";
+        board[row][column] = "*";
 
-        dfs(i - 1, j); // move up
-        dfs(i + 1, j); // move down
-        dfs(i, j - 1); // move left
-        dfs(i, j + 1); // move right
+        dfs(row - 1, column); // move up
+        dfs(row + 1, column); // move down
+        dfs(row, column - 1); // move left
+        dfs(row, column + 1); // move right
     };
 
     // NOTE: Any 'O' connected to a boundary can't be turned to 'X'
