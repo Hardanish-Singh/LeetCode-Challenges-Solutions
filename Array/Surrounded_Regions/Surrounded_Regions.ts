@@ -5,34 +5,23 @@ const solve = (board: string[][]): void => {
     const n = board[0].length;
 
     const dfs = (i: number, j: number): void => {
-        // Out of bounds check
-        if (i < 0 || i > m - 1 || j < 0 || j > n - 1) {
+        if (i < 0 || i > m - 1 || j < 0 || j > n - 1 || board[i][j] === "X" || board[i][j] === "*") {
             return;
         }
 
-        if (board[i][j] === "O") {
-            board[i][j] = "*";
-            // move up
-            if (i > 1) {
-                dfs(i - 1, j);
-            }
-            // move down
-            if (i < m - 2) {
-                dfs(i + 1, j);
-            }
-            // move left
-            if (j > 1) {
-                dfs(i, j - 1);
-            }
-            // move right
-            if (j < n - 2) {
-                dfs(i, j + 1);
-            }
-        }
+        board[i][j] = "*";
+
+        dfs(i - 1, j); // move up
+        dfs(i + 1, j); // move down
+        dfs(i, j - 1); // move left
+        dfs(i, j + 1); // move right
     };
 
-    // Any 'O' connected to a boundary can't be turned to 'X'
-    // Start from first and last column, turn 'O' to '*'.
+    // NOTE: Any 'O' connected to a boundary can't be turned to 'X'
+    /*
+        Traverse along the first and last column to find if there is any "O"
+            1) If we find any "O" we will do DFS and find all adjacent "O" which should not be flipped and turn 'O' to '*'.
+    */
     for (let i = 0; i < m; i++) {
         if (board[i][0] === "O") {
             dfs(i, 0);
@@ -42,7 +31,10 @@ const solve = (board: string[][]): void => {
         }
     }
 
-    // Start from first and last row, turn '0' to '*'
+    /*
+        Traverse along the first and last row to find if there is any "O"
+            1) If we find any "O" we will do DFS and find all adjacent "O" which should not be flipped and turn 'O' to '*'.
+    */
     for (let j = 0; j < n; j++) {
         if (board[0][j] === "O") {
             dfs(0, j);
@@ -52,7 +44,7 @@ const solve = (board: string[][]): void => {
         }
     }
 
-    // post-processing, turn 'O' to 'X', '*' back to 'O', keep 'X' intact.
+    // Post-processing, turn 'O' to 'X', '*' back to 'O', keep 'X' intact.
     for (let i = 0; i < m; i++) {
         for (let j = 0; j < n; j++) {
             if (board[i][j] === "O") {
