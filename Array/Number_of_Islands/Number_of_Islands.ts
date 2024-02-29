@@ -1,9 +1,6 @@
 // Leetcode: https://leetcode.com/problems/number-of-islands/
 
 const numIslands = (grid: string[][]): number => {
-    if (!grid || grid.length === 0 || grid[0].length === 0) {
-        return 0;
-    }
     let numberOfIslands: number = 0;
     const m = grid.length;
     const n = grid[0].length;
