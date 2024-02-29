@@ -1,4 +1,4 @@
-// Leetcode: https://leetcode.com/problems/find-words-containing-character/.
+// Leetcode: https://leetcode.com/problems/find-words-containing-character/
 
 // Solution 1
 var findWordsContaining = (words: string[], x: string): number[] =>
