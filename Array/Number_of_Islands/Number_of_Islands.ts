@@ -5,9 +5,11 @@ const numIslands = (grid: string[][]): number => {
         return 0;
     }
     let numberOfIslands: number = 0;
+    const m = grid.length;
+    const n = grid[0].length;
 
     const dfs = (row: number, column: number) => {
-        if (row < 0 || row >= grid.length || column < 0 || column >= grid[0].length || grid[row][column] === "0") {
+        if (row < 0 || row >= m || column < 0 || column >= n || grid[row][column] === "0") {
             return 0;
         }
 
@@ -20,8 +22,8 @@ const numIslands = (grid: string[][]): number => {
     };
 
     // Iterate through the grid
-    for (let i = 0; i < grid.length; i++) {
-        for (let j = 0; j < grid[0].length; j++) {
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
             if (grid[i][j] === "1") {
                 numberOfIslands++;
                 dfs(i, j); // Start DFS from the current land cell
