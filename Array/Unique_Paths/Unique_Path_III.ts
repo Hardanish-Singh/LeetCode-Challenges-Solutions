@@ -1,6 +1,8 @@
 // Leetcode: https://leetcode.com/problems/unique-paths-iii/
 
 const uniquePathsIII = (grid: number[][]): number => {
+    let m = grid.length;
+    let n = grid[0].length;
     let nonObstacleSquares = 0;
     let startRow = 0;
     let startCol = 0;
@@ -19,10 +21,16 @@ const uniquePathsIII = (grid: number[][]): number => {
         }
     }
 
-    const DFSWithBacktrack = (row: number, column: number, count: number) => {
-        if (row < 0 || column < 0 || row >= grid.length || column >= grid[0].length || grid[row][column] === -1) {
+    const DFSWithBacktrack = (row: number, column: number, count: number): void => {
+        // out of bounds
+        if (row < 0 || row >= m || column < 0 || column >= n) {
             return;
         }
+        // encountered an obstacle
+        if (grid[row][column] === -1) {
+            return;
+        }
+        // reached destination
         if (grid[row][column] === 2) {
             if (count === nonObstacleSquares) {
                 result++;
