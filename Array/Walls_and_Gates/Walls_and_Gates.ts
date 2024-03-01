@@ -1,13 +1,8 @@
 // Leetcode: https://leetcode.com/problems/walls-and-gates/
 
-/**
- Do not return anything, modify rooms in-place instead.
-*/
-
 const wallsAndGates = (rooms: number[][]): void => {
     let m = rooms.length;
     let n = rooms[0].length;
-    let count = 0;
 
     const dfs = (row: number, column: number, count: number): void => {
         // out of bounds
@@ -20,13 +15,8 @@ const wallsAndGates = (rooms: number[][]): void => {
             return;
         }
 
-        // encountered another gate
-        if (rooms[row][column] === 0 && count !== 0) {
-            return;
-        }
-
-        // current count value > current room value
-        if (count > rooms[row][column]) {
+        // encountered another gate and count > 0 ( which means we have made atleast 1 move down, up, left and right )
+        if (rooms[row][column] === 0 && count > 0) {
             return;
         }
 
@@ -51,7 +41,7 @@ const wallsAndGates = (rooms: number[][]): void => {
         for (let j = 0; j < n; j++) {
             // Found a gate, we need to run DFS to find minimum distance to its nearest gate
             if (rooms[i][j] === 0) {
-                dfs(i, j, count);
+                dfs(i, j, 0);
             }
         }
     }
