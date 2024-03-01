@@ -13,7 +13,8 @@ const minPathSum1 = (grid: number[][], row: number = 0, column: number = 0): num
 
     const moveDown = minPathSum1(grid, row + 1, column);
     const moveRight = minPathSum1(grid, row, column + 1);
-    return grid[row][column] + Math.min(moveDown, moveRight);
+    const sum = grid[row][column] + Math.min(moveDown, moveRight);
+    return sum;
 };
 
 // Solution 2: Recursion with Memoization/Caching
