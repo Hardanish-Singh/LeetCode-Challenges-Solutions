@@ -39,6 +39,7 @@ const minPathSum2 = (
 
     const moveDown = minPathSum2(grid, row + 1, column, map);
     const moveRight = minPathSum2(grid, row, column + 1, map);
-    map.set(key, grid[row][column] + Math.min(moveDown, moveRight));
-    return grid[row][column] + Math.min(moveDown, moveRight);
+    const sum = grid[row][column] + Math.min(moveDown, moveRight);
+    map.set(key, sum);
+    return sum;
 };
