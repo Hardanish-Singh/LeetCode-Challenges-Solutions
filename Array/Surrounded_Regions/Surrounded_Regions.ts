@@ -5,14 +5,12 @@ const solve = (board: string[][]): void => {
     const n = board[0].length;
 
     const dfs = (row: number, column: number): void => {
-        if (
-            row < 0 ||
-            row >= m ||
-            column < 0 ||
-            column >= n ||
-            board[row][column] === "X" ||
-            board[row][column] === "*"
-        ) {
+        // out of bounds
+        if (row < 0 || row >= m || column < 0 || column >= n) {
+            return;
+        }
+        // if current position is an 'X' or '*', we don't need to do anything
+        if (board[row][column] === "X" || board[row][column] === "*") {
             return;
         }
 
