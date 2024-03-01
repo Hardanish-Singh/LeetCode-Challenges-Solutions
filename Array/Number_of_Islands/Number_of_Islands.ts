@@ -6,7 +6,12 @@ const numIslands = (grid: string[][]): number => {
     const n = grid[0].length;
 
     const dfs = (row: number, column: number) => {
-        if (row < 0 || row >= m || column < 0 || column >= n || grid[row][column] === "0") {
+        // out of bounds
+        if (row < 0 || row >= m || column < 0 || column >= n) {
+            return 0;
+        }
+        // we skip "0" as it is either visited or not an island
+        if (grid[row][column] === "0") {
             return 0;
         }
 
