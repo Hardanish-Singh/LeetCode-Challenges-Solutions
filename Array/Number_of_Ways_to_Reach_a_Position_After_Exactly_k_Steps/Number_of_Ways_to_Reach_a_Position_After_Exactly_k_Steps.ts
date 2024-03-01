@@ -11,10 +11,12 @@ const numberOfWays = (
     if (k === 0) {
         return startPos === endPos ? 1 : 0;
     }
+    // Memoization/Caching
     const key = `${startPos},${k}`;
     if (map.has(key)) {
         return map.get(key) as number;
     }
+
     const moveLeft = numberOfWays(startPos - 1, endPos, k - 1, map);
     const moveRight = numberOfWays(startPos + 1, endPos, k - 1, map);
     const sum = (moveLeft + moveRight) % MOD;
