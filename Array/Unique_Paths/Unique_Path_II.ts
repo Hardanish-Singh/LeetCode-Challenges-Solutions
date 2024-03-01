@@ -13,7 +13,8 @@ const uniquePathsWithObstacles1 = (obstacleGrid: number[][], row: number = 0, co
 
     const moveDown = uniquePathsWithObstacles1(obstacleGrid, row + 1, column);
     const moveRight = uniquePathsWithObstacles1(obstacleGrid, row, column + 1);
-    return moveDown + moveRight;
+    const sum = moveDown + moveRight;
+    return sum;
 };
 
 // Solution 2: Recursion with Memoization/Caching
@@ -39,6 +40,7 @@ const uniquePathsWithObstacles2 = (
 
     const moveDown = uniquePathsWithObstacles2(obstacleGrid, row + 1, column, map);
     const moveRight = uniquePathsWithObstacles2(obstacleGrid, row, column + 1, map);
-    map.set(key, moveDown + moveRight);
-    return moveDown + moveRight;
+    const sum = moveDown + moveRight;
+    map.set(key, sum);
+    return sum;
 };
