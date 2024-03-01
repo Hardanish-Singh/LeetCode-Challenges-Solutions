@@ -13,7 +13,8 @@ const uniquePaths1 = (m: number, n: number, row: number = 0, column: number = 0)
 
     const moveDown = uniquePaths1(m, n, row + 1, column);
     const moveRight = uniquePaths1(m, n, row, column + 1);
-    return moveDown + moveRight;
+    const sum = moveDown + moveRight;
+    return sum;
 };
 
 // Solution 2: Recursion with Memoization/Caching
@@ -40,8 +41,9 @@ const uniquePaths2 = (
 
     const moveDown = uniquePaths2(m, n, row + 1, column, map);
     const moveRight = uniquePaths2(m, n, row, column + 1, map);
-    map.set(key, moveDown + moveRight);
-    return moveDown + moveRight;
+    const sum = moveDown + moveRight;
+    map.set(key, sum);
+    return sum;
 };
 
 // Solution 3: Dynamic Programming
