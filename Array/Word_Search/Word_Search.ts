@@ -5,6 +5,7 @@ const exist = (board: string[][], word: string): boolean => {
     const n = board[0].length;
 
     const dfs = (row: number, column: number, index: number = 0): boolean => {
+        // word matched
         if (index === word.length) {
             return true;
         }
@@ -16,20 +17,18 @@ const exist = (board: string[][], word: string): boolean => {
         if (word[index] !== board[row][column]) {
             return false;
         }
-        if (board[row][column] === ".") {
+        // skip "-1"
+        if (board[row][column] === "-1") {
             return false;
         }
 
         const original = board[row][column]; // Save visited cell
-        board[row][column] = ".";
-
+        board[row][column] = "-1"; // // Simply replace "original cell" with a "-1" when visiting an empty cell and put back the "original cell" after returning. This will avoid revisiting the same cell again.
         const moveDown = dfs(row + 1, column, index + 1);
         const moveUp = dfs(row - 1, column, index + 1);
         const moveRight = dfs(row, column + 1, index + 1);
         const moveLeft = dfs(row, column - 1, index + 1);
-
-        board[row][column] = original;
-
+        board[row][column] = original; // // After backtrack free visited cell to Original Position for other possible paths
         return moveDown || moveUp || moveRight || moveLeft;
     };
 
