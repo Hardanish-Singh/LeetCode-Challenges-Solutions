@@ -17,8 +17,8 @@ var findWords = function (board, words) {
         if (row < 0 || row >= m || column < 0 || column >= n) {
             return;
         }
-        // skip "."
-        if (board[row][column] === ".") {
+        // skip "-1"
+        if (board[row][column] === "-1") {
             return;
         }
         // current word length > max word length
@@ -32,7 +32,7 @@ var findWords = function (board, words) {
         }
 
         let original = board[row][column];
-        board[row][column] = ".";
+        board[row][column] = "-1";
 
         DFSWithBacktrack(row + 1, column, word);
         DFSWithBacktrack(row, column + 1, word);
