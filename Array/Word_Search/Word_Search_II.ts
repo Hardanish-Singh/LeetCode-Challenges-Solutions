@@ -1,18 +1,18 @@
 // Leetcode: https://leetcode.com/problems/word-search-ii/
 
-var findWords = function (board, words) {
+const findWords = (board: string[][], words: string): string[] => {
     const m = board.length;
     const n = board[0].length;
-    let set = new Set();
-    let list = new Set();
-    let max = Number.NEGATIVE_INFINITY;
+    let set = new Set<string>();
+    let list = new Set<string>();
+    let max: number = Number.NEGATIVE_INFINITY;
 
     for (const word of words) {
         set.add(word);
         max = Math.max(max, word.length);
     }
 
-    const DFSWithBacktrack = (row, column, word = "") => {
+    const DFSWithBacktrack = (row: number, column: number, word: string = "") => {
         // out of bounds
         if (row < 0 || row >= m || column < 0 || column >= n) {
             return;
