@@ -5,15 +5,12 @@ class Solution:
                 nums.sort()
                 stack, result = [], []
                 
-                for num in nums:
-                        stack.append( [num] )
+                [stack.append([num]) for num in nums]
 
                 while stack:
                         item = stack.pop()
                         if len(item) == len(nums):
                                 result.append(item)
                         else:
-                                for num in nums:
-                                        if num not in item:
-                                                stack.append( item + [num] )
+                                [stack.append( item + [num] ) for num in nums if num not in item]
                 return result
