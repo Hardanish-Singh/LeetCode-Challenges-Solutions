@@ -1,5 +1,6 @@
 # Leetcode: https://leetcode.com/problems/permutations-ii/
 
+# Solution 1
 class Solution:
         def permuteUnique(self, nums: List[int]) -> List[List[int]]:
                 nums.sort()
@@ -15,3 +16,9 @@ class Solution:
                                 [ stack.append( [ item + [nums[i]], indexes + [i] ] ) for i in range(len(nums)) if i not in indexes]
 
                 return result
+
+# Solution 2
+from itertools import permutations
+class Solution:
+        def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+            return list(set(permutations(nums)))
