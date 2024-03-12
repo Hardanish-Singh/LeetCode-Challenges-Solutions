@@ -1,5 +1,6 @@
 # Leetcode: https://leetcode.com/problems/permutations/
 
+# Solution 1
 class Solution:
         def permute(self, nums: List[int]) -> List[List[int]]:
                 nums.sort()
@@ -15,3 +16,10 @@ class Solution:
                                 [stack.append( item + [num] ) for num in nums if num not in item]
 
                 return result
+
+# Solution 2
+from itertools import permutations
+
+class Solution:
+        def permute(self, nums: List[int]) -> List[List[int]]:
+                return list(permutations(nums))
