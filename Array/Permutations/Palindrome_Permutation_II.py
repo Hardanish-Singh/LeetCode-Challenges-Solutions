@@ -2,13 +2,13 @@
 
 """
 Step 1) 
-    It might be possible that no palindromic permutation could be possible for the given string s. 
+    It might be possible that no palindromic permutation could be possible for the given string "s". 
     Thus, it is useless to generate the permutations in such a case. 
-    Taking this idea, firstly we check if a palindromic permutation is possible for string s.
+    Taking this idea, firstly we check if a palindromic permutation is possible for string "s".
     If yes, then only we proceed further with generating the permutations, otherwise we don't generate permutations.
 
 Step 2)
-    Once we are sure that a palindromic permutation is possible for string s. 
+    Once we are sure that a palindromic permutation is possible for string "s". 
     we go for the generation of the required permutations. 
     But, instead of wildly generating all the permutations, 
     we can include some smartness in the generation of permutations 
@@ -27,16 +27,18 @@ Step 3)
 from collections import Counter
 from itertools import permutations
 class Solution:
-    def generatePalindromes(self, s: str) -> bool:
-        result = set()
-        counter = Counter(s)
-        odd_chars = [ value % 2 for value in counter.values() ]
-        if sum(odd_chars) <= 1:
-            string = ''
-            middleChar = ''
-            for char, count in counter.items():
-                if count % 2 == 1:
-                    middleChar = char
-                string += "".join([char for item in range(0, count // 2)])
-            [result.add("".join(str) + middleChar + "".join(str[::-1])) for str in list(permutations(string))]
-        return result
+        def generatePalindromes(self, s: str) -> bool:
+                result = set()
+                counter = Counter(s)
+                odd_chars = [ value % 2 for value in counter.values() ]
+                if sum(odd_chars) <= 1:
+                        string, middleChar = '', ''
+                        for char, count in counter.items():
+                                # There is special case here. In case of a string "s" with odd length, one of the characters in string "s" must be occuring an odd number of times.
+                                if count % 2 == 1:
+                                        middleChar = char
+                                # Then we need to construct variable "string" with the number of occurences of these characters in counter reduced to half their original number of occurences in string s.
+                                string += "".join([char for item in range(0, count // 2)])
+                        # Formula = str + middleChar + str[::-1]
+                        [result.add("".join(str) + middleChar + "".join(str[::-1])) for str in list(permutations(string))]
+                return result
