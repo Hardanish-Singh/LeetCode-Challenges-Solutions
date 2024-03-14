@@ -1,20 +1,12 @@
 // Leetcode: https://leetcode.com/problems/valid-parentheses/
 
-type openingBrackets = {
-    [key: string]: boolean;
-};
-
 type validBrackets = {
     [key: string]: string;
 };
 
 const isValid = (str: string): boolean => {
     let stack: Array<string> = [];
-    let openingBrackets: openingBrackets = {
-        "(": true,
-        "[": true,
-        "{": true,
-    };
+    const openingBrackets: Set<string> = new Set(["(", "[", "{"]);
     let validBrackets: validBrackets = {
         ")": "(",
         "]": "[",
@@ -23,7 +15,7 @@ const isValid = (str: string): boolean => {
 
     for (let i: number = 0; i < str.length; i++) {
         let bracket: string = str[i];
-        if (bracket in openingBrackets) {
+        if (openingBrackets.has(bracket)) {
             stack.push(bracket);
         } else {
             if (stack.length > 0 && stack[stack.length - 1] === validBrackets[bracket]) {
