@@ -6,7 +6,7 @@ type validBrackets = {
 
 const isValid = (str: string): boolean => {
     let stack: Array<string> = [];
-    const openingBrackets: Set<string> = new Set(["(", "[", "{"]);
+    const openingBrackets = new Set(["(", "[", "{"]);
     let validBrackets: validBrackets = {
         ")": "(",
         "]": "[",
@@ -18,9 +18,8 @@ const isValid = (str: string): boolean => {
         if (openingBrackets.has(bracket)) {
             stack.push(bracket);
         } else {
-            if (stack.length > 0 && stack[stack.length - 1] === validBrackets[bracket]) {
-                stack.pop();
-            } else {
+            const top = stack.pop();
+            if (top !== validBrackets[bracket]) {
                 return false;
             }
         }
