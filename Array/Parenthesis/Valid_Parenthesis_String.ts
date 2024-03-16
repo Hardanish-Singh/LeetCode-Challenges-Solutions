@@ -25,5 +25,6 @@ function checkValidString(str: string): boolean {
             return false;
         }
     }
+
     return true;
 }
