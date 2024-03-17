@@ -1,22 +1,19 @@
 // Leetcode: https://leetcode.com/problems/score-of-parentheses/
 
-/**
- * @param { string } str
- * @return { number }
- */
+const scoreOfParentheses = (str: string): number => {
+    let score = 0;
+    const stack: Array<number> = [score];
 
-function scoreOfParentheses(str: string): number {
-        const stack: Array<number> = [];
-
-        for (let i: number = 0; i < str.length; i++) {
-                let bracket: string = str[i];
-                if (bracket === "(") {
-                        stack.push(0);
-                } else {
-                        let score = 2 * stack.pop() || 1;
-                        stack.length > 0 ? (stack[stack.length - 1] += score) : (stack[0] = score);
-                }
+    for (let i: number = 0; i < str.length; i++) {
+        let bracket: string = str[i];
+        if (bracket === "(") {
+            stack.push(0);
+        } else {
+            const top = stack.pop() as number;
+            score = 2 * top || 1;
+            stack[stack.length - 1] += score;
         }
+    }
 
-        return stack.pop();
-}
+    return stack.pop() as number;
+};
