@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/valid-parenthesis-string/
 
-function checkValidString(str: string): boolean {
+const checkValidString = (str: string): boolean => {
     let openCount: number = 0;
     let closedCount: number = 0;
 
@@ -27,4 +27,4 @@ function checkValidString(str: string): boolean {
     }
 
     return true;
-}
+};
