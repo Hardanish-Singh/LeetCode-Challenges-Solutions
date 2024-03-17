@@ -1,27 +1,27 @@
 // Leetcode: https://leetcode.com/problems/valid-parenthesis-string/
 
 const checkValidString = (str: string): boolean => {
-    let openCount: number = 0;
-    let closedCount: number = 0;
+    let openingParenthesis: number = 0;
+    let closingParenthesis: number = 0;
 
     for (let i: number = 0; i < str.length; i++) {
         if (str[i] == "*" || str[i] == "(") {
-            openCount++;
+            openingParenthesis++;
         } else {
-            openCount--;
+            openingParenthesis--;
         }
-        if (openCount < 0) {
+        if (openingParenthesis < 0) {
             return false;
         }
     }
 
     for (let i: number = str.length - 1; i >= 0; i--) {
         if (str[i] == "*" || str[i] == ")") {
-            closedCount++;
+            closingParenthesis++;
         } else {
-            closedCount--;
+            closingParenthesis--;
         }
-        if (closedCount < 0) {
+        if (closingParenthesis < 0) {
             return false;
         }
     }
