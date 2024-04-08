@@ -13,6 +13,7 @@ class Solution:
                 else:
                     return False
         return len(stack) == 0
+
     def removeInvalidParentheses(self, s: str) -> List[str]:
         result = []
         visit = set()
