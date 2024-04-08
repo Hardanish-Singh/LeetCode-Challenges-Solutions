@@ -54,13 +54,13 @@ class Solution:
         count = Solution.get_invalid_paranthesis_count(s)
         
         @cache
-        def recursion(st: str, count: int) -> None:
-            if count == 0 and Solution.get_invalid_paranthesis_count(st) == 0:
-                visit.add(st)
+        def recursion(node: str, count: int) -> None:
+            if count == 0 and Solution.get_invalid_paranthesis_count(node) == 0:
+                visit.add(node)
             else:
-                for i in range(len(st)):
-                    new_st = st[0:i] + st[i+1:]
-                    recursion(new_st, count - 1)
+                for i in range(len(node)):
+                    new_node = node[:i] + node[i+1:]
+                    recursion(new_node, count - 1)
 
         recursion(s, count)
         return visit
