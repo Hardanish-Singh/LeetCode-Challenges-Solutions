@@ -55,9 +55,8 @@ class Solution:
         
         @cache
         def recursion(st: str, count: int) -> None:
-            if count == 0:
-                if Solution.get_invalid_paranthesis_count(st) == 0:
-                    visit.add(st)
+            if count == 0 and Solution.get_invalid_paranthesis_count(st) == 0:
+                visit.add(st)
             else:
                 for i in range(len(st)):
                     new_st = st[0:i] + st[i+1:]
