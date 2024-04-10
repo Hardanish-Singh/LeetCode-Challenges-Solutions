@@ -4,6 +4,7 @@
 const minRemoveToMakeValid = (str: string): string => {
     let stack: number[] = [];
     let charArray: string[] = str.split("");
+
     for (let i = 0; i < charArray.length; i++) {
         if (charArray[i] === "(") {
             stack.push(i);
