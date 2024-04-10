@@ -40,10 +40,10 @@ class Solution:
     def get_invalid_paranthesis_count(s: str) -> int:
         stack = []
         for c in s:
-            if c=='(':
+            if c == '(':
                 stack.append(c)
-            elif c==')':
-                if stack and stack[-1]=='(':
+            elif c == ')':
+                if stack and stack[-1] == '(':
                     stack.pop()
                 else:
                     stack.append(c)
