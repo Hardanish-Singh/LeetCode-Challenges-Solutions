@@ -22,7 +22,7 @@ const minInsertions = (str: string): number => {
             } else {
                 /* 
                         There is '(' in stack, so we pop & increment closing bracket counter for a filled stack -> ')' bracket and atleast 1 '(' in stack would need 1 ')' to make '())' 
-                        */
+                */
                 if (stack.length > 0) {
                     close++;
                     stack.pop();
