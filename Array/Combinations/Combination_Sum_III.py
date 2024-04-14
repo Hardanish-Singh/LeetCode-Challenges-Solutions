@@ -11,9 +11,6 @@ class Solution:
                         if combinationSum == n and len(currentCombination) == k: 
                                 combinations.append(currentCombination)
                         else:
-                                for i in range(integer, 10):
-                                        if combinationSum + i > n: 
-                                                break
-                                        stack.append( [currentCombination + [i], i + 1] )
+                                [stack.append( [currentCombination + [i], i + 1] ) for i in range(integer, 10) if combinationSum + i <= n]
                 
                 return combinations
