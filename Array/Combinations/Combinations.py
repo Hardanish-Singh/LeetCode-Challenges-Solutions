@@ -3,9 +3,8 @@
 class Solution:
         def combine(self, n: int, k: int) -> List[List[int]]:
                 stack, result = [], []
-                
-                for i in range(1, n + 1):
-                        stack.append( [i] )
+
+                [stack.append( [i] ) for i in range(1, n + 1)]
                 
                 while stack:
                         item = stack.pop()
@@ -13,7 +12,6 @@ class Solution:
                         if len(item) == k:
                                 result.append( item )
                         else:
-                                for i in range( index+1, n+1 ):
-                                        stack.append( item + [i] )
+                                [stack.append( item + [i] ) for i in range( index+1, n+1 )]
                 
                 return result
