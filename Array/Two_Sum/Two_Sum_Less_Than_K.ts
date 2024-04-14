@@ -10,17 +10,17 @@ const twoSumLessThanK = (nums: number[], k: number): number => {
     nums.sort((a, b) => a - b);
     let leftIndex = 0;
     let rightIndex = nums.length - 1;
-    let maximumSumClosestToK = -1;
+    let maxSumClosestToK = -1;
 
     while (leftIndex < rightIndex) {
-        let sum = nums[leftIndex] + nums[rightIndex];
+        const sum = nums[leftIndex] + nums[rightIndex];
         if (sum < k) {
-            maximumSumClosestToK = Math.max(maximumSumClosestToK, sum);
+            maxSumClosestToK = Math.max(maxSumClosestToK, sum);
             leftIndex++;
-        } else if (sum >= k) {
+        } else {
             rightIndex--;
         }
     }
 
-    return maximumSumClosestToK;
+    return maxSumClosestToK;
 };
