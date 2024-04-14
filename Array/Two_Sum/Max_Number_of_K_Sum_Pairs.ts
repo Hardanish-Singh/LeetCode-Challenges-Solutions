@@ -1,9 +1,9 @@
 // Leetcode: https://leetcode.com/problems/max-number-of-k-sum-pairs/
 
 /*
-        SOLUTION 1: USING MAP
-                Time Complexity: O( n )
-                Space Complexity: O( n )
+    SOLUTION 1: USING MAP
+        Time Complexity: O( n )
+        Space Complexity: O( n )
 */
 
 var maxOperations = (nums: number[], target: number): number => {
@@ -22,9 +22,9 @@ var maxOperations = (nums: number[], target: number): number => {
 };
 
 /*
-        SOLUTION 1: TWO POINTER APPROACH USING SORT
-                Time Complexity: O( nlogn )
-                Space Complexity: O( n ) or O( logn ) The space complexity of the sorting algorithm depends on the implementation of each program language
+    SOLUTION 2: TWO POINTER APPROACH USING SORT
+        Time Complexity: O( nlogn )
+        Space Complexity: O( n ) or O( logn ) The space complexity of the sorting algorithm depends on the implementation of each program language
 */
 
 var maxOperations = (nums: number[], target: number): number => {
