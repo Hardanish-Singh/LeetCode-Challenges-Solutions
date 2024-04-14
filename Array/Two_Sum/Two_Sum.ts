@@ -1,9 +1,9 @@
 // Leetcode: https://leetcode.com/problems/two-sum/
 
 /*
-        SOLUTION 1: BRUTE FORCE
-                Time Complexity: O( n ^ 2 )
-                Space Complexity: O( 1 )
+    SOLUTION 1: BRUTE FORCE
+        Time Complexity: O( n ^ 2 )
+        Space Complexity: O( 1 )
 */
 
 var twoSum = (nums: number[], target: number): number[] => {
@@ -18,9 +18,9 @@ var twoSum = (nums: number[], target: number): number[] => {
 };
 
 /*
-        SOLUTION 2: USING SETS
-                Time Complexity: O( n )
-                Space Complexity: O( n )
+    SOLUTION 2: USING SETS
+        Time Complexity: O( n )
+        Space Complexity: O( n )
 */
 
 var twoSum = (nums: number[], target: number): number[] => {
@@ -36,9 +36,9 @@ var twoSum = (nums: number[], target: number): number[] => {
 };
 
 /*
-        SOLUTION 3: USING MAP
-                Time Complexity: O( n )
-                Space Complexity: O( n )
+    SOLUTION 3: USING MAP
+        Time Complexity: O( n )
+        Space Complexity: O( n )
 */
 
 var twoSum = (nums: number[], target: number): number[] => {
