@@ -1,9 +1,9 @@
 // Leetcode: https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/
 
 /*
-        SOLUTION 1: BRUTE FORCE
-                Time Complexity: O( n ^ 2 )
-                Space Complexity: O( 1 )
+    SOLUTION 1: BRUTE FORCE
+        Time Complexity: O( n ^ 2 )
+        Space Complexity: O( 1 )
 */
 
 var numPairsDivisibleBy60 = (time: number[]): number => {
@@ -19,9 +19,9 @@ var numPairsDivisibleBy60 = (time: number[]): number => {
 };
 
 /*
-        SOLUTION 1: USING MAP
-                Time Complexity: O( n ^ 2 )
-                Space Complexity: O( n )
+    SOLUTION 2: USING MAP
+        Time Complexity: O( n ^ 2 )
+        Space Complexity: O( n )
 */
 
 var numPairsDivisibleBy60 = (times: number[]): number => {
@@ -49,18 +49,16 @@ var numPairsDivisibleBy60 = (times: number[]): number => {
 };
 
 /*
-        SOLUTION 1: USING MAP
-                Time Complexity: O( n )
-                Space Complexity: O( n )
+    SOLUTION 3: USING MAP
+        Time Complexity: O( n )
+        Space Complexity: O( n )
 */
 
 var numPairsDivisibleBy60 = (times: number[]): number => {
     let count = 0;
     let map = new Map<number, number>();
 
-    for (let i = 0; i < times.length; i++) {
-        times[i] = times[i] % 60;
-    }
+    for (let i = 0; i < times.length; i++) times[i] = times[i] % 60;
 
     for (const time of times) {
         let compliment = (60 - time) % 60;
