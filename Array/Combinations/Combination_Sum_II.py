@@ -5,8 +5,7 @@ class Solution:
                 candidates.sort()
                 stack, result, combinationsTried = [], [], []
                 
-                for i in range(len(candidates)):
-                        stack.append( [ [candidates[i]], [i] ] )
+                [stack.append( [ [candidates[i]], [i] ] ) for i in range(len(candidates))]
 
                 while stack:
                         item, indexes = stack.pop()
@@ -16,8 +15,9 @@ class Solution:
                         else:
                                 for i in range(len(candidates)):
                                         if i not in indexes and combinationSum + candidates[i] <= target:
-                                                temp = sorted(item + [candidates[i]])
-                                                if temp not in combinationsTried:
-                                                        combinationsTried.append(temp)
-                                                        stack.append( [ temp , indexes + [i] ] )
+                                                sortedItem = sorted(item + [candidates[i]])
+                                                if sortedItem not in combinationsTried:
+                                                        combinationsTried.append(sortedItem)
+                                                        stack.append( [ sortedItem , indexes + [i] ] )
+
                 return result
