@@ -29,3 +29,16 @@ class Solution:
                         return cost[stepIndex] + min( minSteps( stepIndex + 1 ), minSteps( stepIndex + 2 ) )
 
                 return min( minSteps( 0 ), minSteps( 1 ) )
+
+# Solution 3: SRecursion with inbuild Python caching
+from typing import List
+
+class Solution:
+        def minCostClimbingStairs(self, cost: List[int]) -> int:
+                @cache
+                def minSteps( stepIndex: int ) -> int:
+                        if stepIndex >= len(cost):
+                                return 0
+                        return cost[stepIndex] + min( minSteps( stepIndex + 1 ), minSteps( stepIndex + 2 ) )
+
+                return min( minSteps( 0 ), minSteps( 1 ) )
