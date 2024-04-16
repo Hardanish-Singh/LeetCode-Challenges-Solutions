@@ -3,6 +3,7 @@
 const threeSumMulti = (nums: Array<number>, target: number): number => {
     nums.sort((a, b) => a - b);
     let count: number = 0;
+    const MOD = 1000000007;
 
     for (let i: number = 0; i < nums.length; i++) {
         let leftPointer: number = i + 1;
@@ -54,6 +55,6 @@ const threeSumMulti = (nums: Array<number>, target: number): number => {
             }
         }
     }
-    let mod = 1000000007;
-    return count % mod;
+
+    return count % MOD;
 };
