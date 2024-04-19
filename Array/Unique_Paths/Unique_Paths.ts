@@ -6,7 +6,7 @@ const uniquePaths1 = (m: number, n: number, row: number = 0, column: number = 0)
     if (row === m - 1 && column === n - 1) {
         return 1;
     }
-    // Out of Bounds/Grid Check
+    // Out of Bounds / Grid Check
     if (row >= m || column >= n) {
         return 0;
     }
@@ -29,11 +29,11 @@ const uniquePaths2 = (
     if (row === m - 1 && column === n - 1) {
         return 1;
     }
-    // Out of Bounds/Grid Check
+    // Out of Bounds / Grid Check
     if (row >= m || column >= n) {
         return 0;
     }
-    // Memoization/Caching
+    // Memoization / Caching
     const key = `${row},${column}`;
     if (map.has(key)) {
         return map.get(key) as number;
