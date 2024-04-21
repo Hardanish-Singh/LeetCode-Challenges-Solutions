@@ -22,15 +22,15 @@ const uniquePathsIII = (grid: number[][]): number => {
     }
 
     const DFSWithBacktrack = (row: number, column: number, count: number): void => {
-        // out of bounds
+        // Out of Bounds
         if (row < 0 || row >= m || column < 0 || column >= n) {
             return;
         }
-        // encountered an obstacle
+        // Encountered an Obstacle
         if (grid[row][column] === -1) {
             return;
         }
-        // reached destination
+        // Base Case / Reach Destination
         if (grid[row][column] === 2) {
             if (count === nonObstacleSquares) {
                 result++;
