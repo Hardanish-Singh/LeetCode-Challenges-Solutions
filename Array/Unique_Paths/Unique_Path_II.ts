@@ -2,7 +2,7 @@
 
 // Solution 1: Recursion (TLE)
 const uniquePathsWithObstacles1 = (obstacleGrid: number[][], row: number = 0, column: number = 0): number => {
-    // Out of Bounds/Grid Check or Obstacle Check
+    // Out of Bounds / Grid Check or Obstacle Check
     if (row >= obstacleGrid.length || column >= obstacleGrid[0].length || obstacleGrid[row][column] === 1) {
         return 0;
     }
@@ -17,14 +17,14 @@ const uniquePathsWithObstacles1 = (obstacleGrid: number[][], row: number = 0, co
     return sum;
 };
 
-// Solution 2: Recursion with Memoization/Caching
+// Solution 2: Recursion with Memoization / Caching
 const uniquePathsWithObstacles2 = (
     obstacleGrid: number[][],
     row: number = 0,
     column: number = 0,
     map: Map<string, number> = new Map<string, number>()
 ): number => {
-    // Out of Bounds/Grid Check or Obstacle Check
+    // Out of Bounds / Grid Check or Obstacle Check
     if (row >= obstacleGrid.length || column >= obstacleGrid[0].length || obstacleGrid[row][column] === 1) {
         return 0;
     }
@@ -32,7 +32,7 @@ const uniquePathsWithObstacles2 = (
     if (row === obstacleGrid.length - 1 && column === obstacleGrid[0].length - 1) {
         return 1;
     }
-    // Memoization/Caching
+    // Memoization / Caching
     const key = `${row},${column}`;
     if (map.has(key)) {
         return map.get(key) as number;
