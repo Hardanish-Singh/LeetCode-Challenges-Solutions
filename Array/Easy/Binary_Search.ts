@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/binary-search/
 
-const search = (array: Array<number>, key: number): number => {
+const search = (array: number[], key: number): number => {
     array.sort((a, b) => a - b);
     let start: number = 0;
     let end: number = array.length - 1;
