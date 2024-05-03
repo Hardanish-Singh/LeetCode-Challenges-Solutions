@@ -1,10 +1,12 @@
 // Leetcode: https://leetcode.com/problems/find-the-duplicate-number/
 
 const findDuplicate = (nums: number[]): number => {
-        nums.sort((a, b) => a - b);
-        for (let i = 0; i < nums.length; i++) {
-                if (nums[i] === nums[i + 1]) {
-                        return nums[i];
-                }
+    const map = new Map<number, number>();
+    for (const num of nums) {
+        if (map.has(num)) {
+            return num;
         }
+        map.set(num, 1);
+    }
+    return -1;
 };
