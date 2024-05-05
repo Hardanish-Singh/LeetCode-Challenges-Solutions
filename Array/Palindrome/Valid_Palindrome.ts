@@ -13,14 +13,14 @@ var isPalindrome = (str: string): boolean =>
 // SOLUTION 2
 var isPalindrome = (str: string): boolean => {
     str = str.toLowerCase().replace(/[^0-9a-z]/gi, "");
-    let leftPointer = 0;
-    let rightPointer = str.length - 1;
-    while (leftPointer <= rightPointer) {
-        if (str[leftPointer] !== str[rightPointer]) {
+    let left = 0;
+    let right = str.length - 1;
+    while (left <= right) {
+        if (str[left] !== str[right]) {
             return false;
         }
-        leftPointer++;
-        rightPointer--;
+        left++;
+        right--;
     }
     return true;
 };
