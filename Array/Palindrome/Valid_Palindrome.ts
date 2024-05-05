@@ -9,7 +9,7 @@ var isPalindrome = (str: string): boolean =>
         .join("");
 
 // SOLUTION 2
-var isPalindrome = function (str: string): boolean {
+var isPalindrome = (str: string): boolean => {
     str = str.toLowerCase().replace(/[^0-9a-z]/gi, "");
     let leftPointer = 0;
     let rightPointer = str.length - 1;
