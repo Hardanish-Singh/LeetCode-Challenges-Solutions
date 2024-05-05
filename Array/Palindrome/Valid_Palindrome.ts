@@ -1,3 +1,5 @@
+// Leetcode: https://leetcode.com/problems/valid-palindrome/
+
 // SOLUTION 1
 var isPalindrome = (str: string): boolean =>
     str.toLowerCase().replace(/[^0-9a-z]/gi, "") ===
