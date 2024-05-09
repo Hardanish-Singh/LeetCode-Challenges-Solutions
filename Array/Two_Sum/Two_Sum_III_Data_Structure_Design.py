@@ -8,13 +8,13 @@ class TwoSum:
                 self.numbers.append(number)
 
         def find(self, target: int) -> bool:
-                hash_table = { }
-                for i in range( 0, len( self.numbers ) ):
-                        compliment = target - self.numbers[ i ]
-                        if compliment in hash_table:
+                map = { }
+                for i in range(0, len(self.numbers)):
+                        compliment = target - self.numbers[i]
+                        if compliment in map:
                                 return True
                         else:
-                                hash_table[ self.numbers[ i ] ] = True
+                                map[self.numbers[i]] = True
                 return False
 
 # Your TwoSum object will be instantiated and called as such:
