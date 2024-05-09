@@ -25,9 +25,9 @@ class Solution:
                 preOrderList2 = []
                 self.preorderRecursiveTraversal(root2, preOrderList2)
                 
-                for i in range(0, len(preOrderList2)):
-                        compliment = target - preOrderList2[i]
-                        if compliment in preOrderList1:
+                for i in range(0, len(preOrderList1)):
+                        compliment = target - preOrderList1[i]
+                        if compliment in preOrderList2:
                                 return True
 
                 return False
