@@ -8,28 +8,26 @@
 #         self.right = right
 
 class Solution:
-        def preorderRecursiveTraversal( self, root: Optional[TreeNode], preOrderList: List[int] ) -> List[int]:
+        def preorderRecursiveTraversal(self, root: Optional[TreeNode], preOrderList: List[int]) -> List[int]:
                 if root is None:
                         return None
-                preOrderList.append( root.val )
-                self.preorderRecursiveTraversal( root.left, preOrderList )
-                self.preorderRecursiveTraversal( root.right, preOrderList )
+                preOrderList.append(root.val)
+                self.preorderRecursiveTraversal(root.left, preOrderList)
+                self.preorderRecursiveTraversal(root.right, preOrderList)
                 
         def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
                 if root is None:
                         return None
-
                 preOrderList = []
-                self.preorderRecursiveTraversal( root, preOrderList )
+                self.preorderRecursiveTraversal(root, preOrderList)
+                map = {}
                 
-                hash_table = { }
-                
-                for i in range( 0, len( preOrderList ) ):
-                        compliment = k - preOrderList[ i ]
-                        if compliment in hash_table:
+                for i in range(0, len(preOrderList)):
+                        compliment = k - preOrderList[i]
+                        if compliment in map:
                                 return True
                         else:
-                                hash_table[ preOrderList[ i ] ] = True
+                                map[preOrderList[i]] = True
                 
                 return False
         
