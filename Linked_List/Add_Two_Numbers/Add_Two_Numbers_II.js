@@ -29,7 +29,7 @@ const reverseList = (head) => {
         current = next;
     }
 
-    return head = previous;
+    return (head = previous);
 };
 
 const addTwoNumbers = (l1, l2) => {
