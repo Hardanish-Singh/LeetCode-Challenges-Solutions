@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/two-sum-less-than-k/
 
 /*
-	SOLUTION 1( MOST OPTIMAL )
+	SOLUTION 1
 		Time Complexity: O( nlog(n) )
 		Space Complexity: O( 1 )
 */
