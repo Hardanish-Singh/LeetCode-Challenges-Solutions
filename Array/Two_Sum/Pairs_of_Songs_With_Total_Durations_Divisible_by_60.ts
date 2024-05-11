@@ -57,7 +57,7 @@ var numPairsDivisibleBy60 = (times: number[]): number => {
 var numPairsDivisibleBy60 = (times: number[]): number => {
     let count = 0;
     let map = new Map<number, number>();
-
+    // Convert all times to the remainder of 60
     for (let i = 0; i < times.length; i++) times[i] = times[i] % 60;
 
     for (const time of times) {
