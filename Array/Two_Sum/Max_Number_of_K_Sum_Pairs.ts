@@ -9,15 +9,17 @@
 var maxOperations = (nums: number[], target: number): number => {
     const map = new Map<number, number>();
     let operations = 0;
+
     for (const num of nums) {
         const compliment = target - num;
-        if ((map.get(compliment) as number) > 1) {
+        if ((map.get(compliment) as number) > 0) {
             operations++;
             map.set(compliment, (map.get(compliment) as number) - 1);
         } else {
             map.set(num, (map.get(num) ?? 0) + 1);
         }
     }
+
     return operations;
 };
 
