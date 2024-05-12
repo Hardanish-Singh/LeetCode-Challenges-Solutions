@@ -1,9 +1,5 @@
 // Leetcode: https://leetcode.com/problems/3sum/
 
-type ThreeSum = {
-    [key: string]: any;
-};
-
 const threeSum = (nums: number[]): number[][] => {
     nums.sort((a, b) => a - b);
     let target: number = 0;
