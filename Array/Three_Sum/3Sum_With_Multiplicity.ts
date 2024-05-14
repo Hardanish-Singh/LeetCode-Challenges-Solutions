@@ -1,9 +1,9 @@
 // Leetcode: https://leetcode.com/problems/3sum-with-multiplicity/
 
-const threeSumMulti = (nums: Array<number>, target: number): number => {
+const threeSumMulti = (nums: number[], target: number): number => {
     nums.sort((a, b) => a - b);
     let count: number = 0;
-    const MOD = 1000000007;
+    const MOD = 1e9 + 7; // 1000000007
 
     for (let i: number = 0; i < nums.length; i++) {
         let leftPointer: number = i + 1;
