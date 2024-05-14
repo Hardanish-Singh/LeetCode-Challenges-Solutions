@@ -21,7 +21,8 @@ const threeSumClosest = (nums: number[], target: number): number => {
             } else if (sum > target) {
                 rightPointer--;
             } else if (sum === target) {
-                return sum;
+                closestSum = sum;
+                break;
             }
         }
     }
