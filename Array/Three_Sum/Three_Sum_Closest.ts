@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/3sum-closest/
 
-const threeSumClosest = (nums: Array<number>, target: number): number => {
+const threeSumClosest = (nums: number[], target: number): number => {
     nums.sort((a, b) => a - b);
     let closestSum: number = 0;
     let min: number = Number.MAX_VALUE;
