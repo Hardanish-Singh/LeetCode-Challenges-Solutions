@@ -8,7 +8,6 @@ const fourSum = (nums: number[], target: number): number[][] => {
         for (let j: number = i + 1; j < nums.length; j++) {
             let leftPointer: number = j + 1;
             let rightPointer: number = nums.length - 1;
-
             while (leftPointer < rightPointer) {
                 const sum: number = nums[i] + nums[j] + nums[leftPointer] + nums[rightPointer];
                 if (sum < target) {
