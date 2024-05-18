@@ -3,11 +3,11 @@
 // Solution 1
 var findDisappearedNumbers = (nums: number[]): number[] => {
     const unqiues: Set<number> = new Set(nums);
-    return nums.reduce((acc: number[], _, i) => {
+    return nums.reduce((accumulator: number[], _, i) => {
         if (!unqiues.has(i + 1)) {
-            acc.push(i + 1);
+            accumulator.push(i + 1);
         }
-        return acc;
+        return accumulator;
     }, []);
 };
 
