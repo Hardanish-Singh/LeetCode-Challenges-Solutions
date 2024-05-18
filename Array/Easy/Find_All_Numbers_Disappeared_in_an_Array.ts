@@ -1,12 +1,18 @@
 // Leetcode: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 
-const findDisappearedNumbers = (nums: number[]): number[] => {
-    let uniques = new Set(nums);
-    let result: number[] = [];
-    for (let i = 1; i <= nums.length; i++) {
-        if (!uniques.has(i)) {
-            result.push(i);
+// Solution 1
+var findDisappearedNumbers = (nums: number[]): number[] => {
+    const unqiues: Set<number> = new Set(nums);
+    return nums.reduce((acc: number[], _, i) => {
+        if (!unqiues.has(i + 1)) {
+            acc.push(i + 1);
         }
-    }
-    return result;
+        return acc;
+    }, []);
+};
+
+// Solution 2
+var findDisappearedNumbers = (nums: number[]): number[] => {
+    const unqiues: Set<number> = new Set(nums);
+    return Array.from({ length: nums.length }, (_, i) => i + 1).filter((num) => !unqiues.has(num));
 };
