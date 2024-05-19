@@ -1,53 +1,23 @@
 // Leetcode: https://leetcode.com/problems/most-profit-assigning-work/
-/**
- * @param {number[]} difficulty
- * @param {number[]} profit
- * @param {number[]} worker
- * @return {number}
- */
-var maxProfitAssignment = function (difficulty, profit, worker) {
-        let maxProfit = 0;
-        let hash_map = {};
-        worker.sort((a, b) => a - b);
 
-        for (let i = 0; i < profit.length; i++) {
-                if (difficulty[i] in hash_map) {
-                        hash_map[difficulty[i]] = Math.max(hash_map[difficulty[i]], profit[i]);
-                } else {
-                        hash_map[difficulty[i]] = profit[i];
-                }
-        }
+const maxProfitAssignment = (difficulty, profit, worker) => {
+    // Create a map of job's difficulty and its corresponding maximum profit.
+    const jobMap = difficulty.reduce((map, difficult, index) => {
+        const currentProfit = map.get(difficult) ?? 0;
+        const maxProfit = Math.max(currentProfit, profit[index]);
+        return map.set(difficult, maxProfit);
+    }, new Map());
 
-        const ordered = Object.keys(hash_map)
-                .sort()
-                .reduce((obj, key) => {
-                        obj[key] = hash_map[key];
-                        return obj;
-                }, {});
+    let maxProfit = 0;
+    let index = 0;
 
-        //         for( let i = 0; i < worker.length; i++ ) {
-        //                 let maxs = 0;
-        //                 for( const[key, value] of Object.entries( ordered ) ) {
-        //                         if( worker[i] < +key ) break;
-        //                         maxs = Math.max( maxs, value );
-        //                 }
-        //                 maxProfit += maxs;
-        //         }
+    difficulty.sort((a, b) => a - b);
+    worker.sort((a, b) => a - b);
 
-        //         return maxProfit;
-
-        let k = Object.keys(ordered);
-        let v = Object.values(ordered);
-        let index = 0;
-        let maxs = 0;
-
-        for (let i = 0; i < worker.length; i++) {
-                for (let j = index; j < k.length; j++) {
-                        if (worker[i] < +k[j]) break;
-                        maxs = Math.max(maxs, v[j]);
-                        index++;
-                }
-                maxProfit += maxs;
-        }
-        return maxProfit;
+    // For each worker, find the maximum profit that can be made by assigning jobs to workers.
+    return worker.reduce((result, ability) => {
+        // while loop that continues as long as the current job's difficulty is less than or equal to the worker's ability.
+        while (difficulty[index] <= ability) maxProfit = Math.max(maxProfit, jobMap.get(difficulty[index++]));
+        return result + maxProfit;
+    }, 0);
 };
