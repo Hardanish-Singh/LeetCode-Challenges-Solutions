@@ -24,3 +24,18 @@ var findDuplicate = (nums: number[]): number => {
         return accumulator;
     }, new Map<number, number>());
 };
+
+// Solution 3
+var findDuplicate = (nums: number[]): number => {
+    nums.sort((a, b) => a - b);
+    let duplicatedNumber: number = -1;
+    nums.reduce((accumulator: Map<number, number>, num: number, _, nums: number[]) => {
+        if (accumulator.has(num)) {
+            duplicatedNumber = num;
+            nums.length = 0;
+        }
+        accumulator.set(num, 1);
+        return accumulator;
+    }, new Map<number, number>());
+    return duplicatedNumber;
+};
