@@ -17,7 +17,7 @@ var findDuplicate = (nums: number[]): number => {
     nums.sort((a, b) => a - b);
     return nums.reduce((accumulator: any, num: number, _, nums: number[]) => {
         if (accumulator.has(num)) {
-            nums.splice(1); // eject early by mutating iterated copy
+            nums.length = 0; // eject early by mutating iterated copy and emptying the array
             return num;
         }
         accumulator.set(num, 1);
@@ -31,8 +31,8 @@ var findDuplicate = (nums: number[]): number => {
     let duplicatedNumber: number = -1;
     nums.reduce((accumulator: Map<number, number>, num: number, _, nums: number[]) => {
         if (accumulator.has(num)) {
+            nums.length = 0; // eject early by mutating iterated copy and emptying the array
             duplicatedNumber = num;
-            nums.length = 0;
         }
         accumulator.set(num, 1);
         return accumulator;
