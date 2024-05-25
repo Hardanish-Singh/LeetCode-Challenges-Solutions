@@ -4,7 +4,7 @@
     Note: Don't fall for the test cases, you can pair any two number which have the same greater/maximum digit and the sum need not to be in form of 11 22 33 44 88 etc.
 */
 
-var maxSum = (nums: number[]): number => {
+const maxSum = (nums: number[]): number => {
     let max: number = -1;
 
     for (let i: number = 0; i < nums.length; i++) {
