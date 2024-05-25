@@ -6,13 +6,13 @@ class Solution
         {
                 int max = 0;
                 int min = 0;
-                for( int num : nums )
+                for(int num : nums)
                 {
-                        if( num < 0 )
+                        if(num < 0)
                         {
                                 min++;
                         }
-                        else if( num > 0 )
+                        else if(num > 0)
                         {
                                 max++;
                         }
