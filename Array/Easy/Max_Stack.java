@@ -12,17 +12,17 @@ class MaxStack
 
         public void push(int x)
         {
-                stack.add( x );
+                stack.add(x);
         }
 
         public int pop()
         {
-                return stack.remove( stack.size() - 1 );
+                return stack.remove(stack.size() - 1);
         }
 
         public int top() 
         {
-                return stack.get( stack.size() - 1 );
+                return stack.get(stack.size() - 1);
         }
 
         public int peekMax()
@@ -48,6 +48,6 @@ class MaxStack
                                 index = i;
                         }
                 }
-                return stack.remove( index );
+                return stack.remove(index);
         }
 }
