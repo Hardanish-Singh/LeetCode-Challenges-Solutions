@@ -1,6 +1,5 @@
 -- Leetcode: https://leetcode.com/problems/reported-posts/
 
--- Solution 1
 SELECT
     extra AS report_reason,
     COUNT( DISTINCT post_id ) AS report_count
