@@ -46,7 +46,7 @@ JOIN
     FROM
         courses
     GROUP BY class
+    HAVING class_count >= 5
 ) AS c2 ON c2.class = c1.class
 
-WHERE c2.class_count >= 5
 GROUP BY c2.class;
