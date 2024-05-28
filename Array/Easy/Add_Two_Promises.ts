@@ -9,7 +9,7 @@ var addTwoPromises = async (promise1: P, promise2: P): P => {
 };
 
 // Solution 2
-var addTwoPromises = async (promise1: P, promise2: P): P =>
+var addTwoPromises = (promise1: P, promise2: P): P =>
     Promise.all([promise1, promise2]).then(([num1, num2]) => num1 + num2);
 
 /**
