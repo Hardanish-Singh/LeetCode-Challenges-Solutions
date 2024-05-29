@@ -10,9 +10,6 @@ var maximumUnits = (boxTypes: number[][], truckSize: number): number => {
         let boxCount = Math.min(truckSize, numberOfBoxes);
         truckSize -= boxCount;
         totalUnits += boxCount * numberOfUnitsPerBox;
-        if (truckSize <= 0) {
-            break;
-        }
     }
     return totalUnits;
 };
@@ -30,9 +27,6 @@ var maximumUnits = (boxTypes: number[][], truckSize: number): number => {
             totalUnits += truckSize * numberOfUnitsPerBox;
         }
         truckSize -= numberOfBoxes;
-        if (truckSize <= 0) {
-            break;
-        }
     }
     return totalUnits;
 };
