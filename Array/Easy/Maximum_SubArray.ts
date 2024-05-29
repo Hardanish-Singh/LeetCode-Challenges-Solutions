@@ -6,7 +6,7 @@
                         Space Complexity: O(1)
 */
 
-var maxSubArray = (nums: Array<number>): number => {
+var maxSubArray = (nums: number[]): number => {
     let sum = Number.NEGATIVE_INFINITY;
     for (let i = 0; i < nums.length; i++) {
         let temp = 0;
@@ -27,7 +27,7 @@ var maxSubArray = (nums: Array<number>): number => {
                         Space Complexity: O(1)
 */
 
-var maxSubArray = (nums: Array<number>): number => {
+var maxSubArray = (nums: number[]): number => {
     let sum = Number.NEGATIVE_INFINITY;
     for (let i = 0; i < nums.length; i++) {
         let temp = nums[i];
@@ -49,7 +49,7 @@ var maxSubArray = (nums: Array<number>): number => {
                         Space Complexity: O(1)
 */
 
-var maxSubArray = (nums: Array<number>): number => {
+var maxSubArray = (nums: number[]): number => {
     let max = nums[0];
     for (let i = 1; i < nums.length; i++) {
         nums[i] = Math.max(nums[i], nums[i] + nums[i - 1]);
