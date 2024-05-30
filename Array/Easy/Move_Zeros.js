@@ -15,9 +15,9 @@ var moveZeroes = (nums) => {
 
 // Solution 2
 var moveZeroes = (nums) =>
-    nums.reduceRight((total, currentValue, index, array) => {
-        if (nums[index] === 0) {
-            nums.splice(index, 1);
+    nums.reduceRight((accumulator, currentValue, currentIndex, array) => {
+        if (nums[currentIndex] === 0) {
+            nums.splice(currentIndex, 1);
             nums.push(0);
         }
     });
@@ -25,9 +25,9 @@ var moveZeroes = (nums) =>
 // Solution 3
 var moveZeroes = (nums) =>
     nums.reduceRight((...args) => {
-        const index = args[2];
-        if (nums[index] === 0) {
-            nums.splice(index, 1);
+        const currentIndex = args[2];
+        if (nums[currentIndex] === 0) {
+            nums.splice(currentIndex, 1);
             nums.push(0);
         }
     });
