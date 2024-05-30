@@ -22,3 +22,14 @@ var moveZeroes = (nums: number[]): number[] =>
             nums.push(0);
         }
     });
+
+// Solution 3
+var moveZeroes = (nums: number[]): number[] =>
+    /* @ts-ignore */
+    nums.reduceRight((...args) => {
+        const index = args[2];
+        if (nums[index] === 0) {
+            nums.splice(index, 1);
+            nums.push(0);
+        }
+    });
