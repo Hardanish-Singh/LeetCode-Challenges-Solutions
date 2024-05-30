@@ -16,11 +16,8 @@ const findMissingRanges = (nums: number[], lower: number, upper: number): number
         // Skip if there is no missing ranges between elements
         if (nums[i] - nums[i - 1] === 1) continue;
 
-        // Skip if elements smaller than lower
-        if (nums[i] < lower) continue;
-
-        // Skip if elements larger than upper
-        if (nums[i] > upper) continue;
+        // Skip if elements smaller than lower or Skip if elements larger than upper
+        if (nums[i] < lower || nums[i] > upper) continue;
 
         missings.push([nums[i - 1] + 1, nums[i] - 1]);
     }
