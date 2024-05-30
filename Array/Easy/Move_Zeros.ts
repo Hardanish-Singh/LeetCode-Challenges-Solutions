@@ -12,3 +12,13 @@ var moveZeroes = (nums: number[]): number[] => {
     }
     return nums;
 };
+
+// Solution 2
+var moveZeroes = (nums: number[]): number[] =>
+    /* @ts-ignore */
+    nums.reduceRight((total, currentValue, index, array) => {
+        if (nums[index] === 0) {
+            nums.splice(index, 1);
+            nums.push(0);
+        }
+    });
