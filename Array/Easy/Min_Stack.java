@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/min-stack/
 
-import java.util.*;
+import java.util.ArrayList;
 
 class MinStack 
 {
@@ -12,17 +12,17 @@ class MinStack
 
         public void push(int val) 
         {
-                stack.add( val );
+                stack.add(val);
         }
 
         public void pop() 
         {
-                stack.remove( stack.size() - 1 );
+                stack.remove(stack.size() - 1);
         }
 
         public int top() 
         {
-                return stack.get( stack.size() - 1 );
+                return stack.get(stack.size() - 1);
         }
 
         public int getMin() 
