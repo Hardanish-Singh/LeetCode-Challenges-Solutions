@@ -2,6 +2,7 @@
 
 const arithmeticTriplets = (nums: number[], diff: number): number =>
     nums.reduce(
-        (acc: number, curr: number) => acc + (nums.includes(curr + diff) && nums.includes(curr + diff + diff) ? 1 : 0),
+        (accumulator: number, curr: number) =>
+            accumulator + (nums.includes(curr + diff) && nums.includes(curr + diff + diff) ? 1 : 0),
         0
     );
