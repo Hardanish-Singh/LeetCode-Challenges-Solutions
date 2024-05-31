@@ -1,5 +1,6 @@
 # Leetcode: https://leetcode.com/problems/next-greater-element-iii/
 
+# This Problem is similar to Next Permutation Problem
 class Solution:
     def nextGreaterElement(self, n: int) -> int:
         """        
