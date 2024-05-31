@@ -1,5 +1,13 @@
+# Leetcode: https://leetcode.com/problems/next-greater-element-iii/
+
 class Solution:
     def nextGreaterElement(self, n: int) -> int:
+        """        
+        Step-1) Find The element and its index (say i) which is JUST SMALLER THAN ITS LATER (from n-2 to 0)
+        Step-2) Find the element which is JUST GREATER THAN that element (from n-1 to 0)
+        Step-3) Swap the elements.
+        Step-4) Now sort the element from (i+1th to end index)
+        """
         nums = list(map(int, str(n)))
         index = -1
         for i in range(len(nums)-2, -1, -1):
