@@ -1,6 +1,7 @@
 // Leetcode: https://leetcode.com/problems/pascals-triangle/
 
-const generate = (numRows: number): number[][] => {
+// Solution 1
+var generate = (numRows: number): number[][] => {
     if (numRows == 1) {
         return [[1]];
     }
@@ -18,6 +19,23 @@ const generate = (numRows: number): number[][] => {
         }
         prev = currentRow; // Update the previous row
         pascalTriangleResult.push(currentRow); // Add the new row to the pascalTriangleResult
+    }
+    return pascalTriangleResult;
+};
+
+// Solution 2
+var generate = (numRows: number): number[][] => {
+    const pascalTriangleResult: number[][] = [];
+    for (let i = 0; i < numRows; i++) {
+        const currentRow: number[] = [];
+        for (let j = 0; j <= i; j++) {
+            if (j === 0 || j === i) {
+                currentRow.push(1);
+            } else {
+                currentRow.push(pascalTriangleResult[i - 1][j - 1] + pascalTriangleResult[i - 1][j]);
+            }
+        }
+        pascalTriangleResult.push(currentRow);
     }
     return pascalTriangleResult;
 };
