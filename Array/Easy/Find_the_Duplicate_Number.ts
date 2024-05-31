@@ -46,7 +46,7 @@ var findDuplicate = (nums: number[]): number => {
     return (
         nums
             .sort((a, b) => a - b)
-            .reduceRight((accumulator, currentValue, currentIndex, array) => {
+            .reduceRight((accumulator, currentValue) => {
                 if (map.has(currentValue)) {
                     accumulator = currentValue;
                 }
