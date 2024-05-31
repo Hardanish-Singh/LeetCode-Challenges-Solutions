@@ -1,30 +1,27 @@
+// Leetcode: https://leetcode.com/problems/prime-in-diagonal/
+
 const isPrime = (num: number): boolean => {
-        if (num <= 1) {
-                return true;
+    if (num < 2) {
+        return false;
+    }
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
         }
-        let flag: boolean = false;
-        for (let i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i == 0) {
-                        flag = true;
-                        break;
-                }
-        }
-        return flag;
+    }
+    return true;
 };
 
-const diagonalPrime = (nums: number[][]): number => {
-        let diagonalNumbers = new Set<number>();
-        let maxPrime: number = 0;
-        for (let i: number = 0; i < nums.length; i++) {
-                diagonalNumbers.add(nums[i][i]);
-                diagonalNumbers.add(nums[i][nums.length - i - 1]);
-        }
-        for (const diagonalNumber of diagonalNumbers) {
-                if (!isPrime(diagonalNumber)) {
-                        if (diagonalNumber > maxPrime) {
-                                maxPrime = diagonalNumber;
-                        }
+const primeInDiagonal = (nums: number[][]): number => {
+    let total = 0;
+    for (let row = 0; row < nums.length; row++) {
+        for (let column = 0; column < nums[row].length; column++) {
+            if (row === column || row + column === nums.length - 1) {
+                if (isPrime(nums[row][column])) {
+                    total += nums[row][column];
                 }
+            }
         }
-        return maxPrime;
+    }
+    return total;
 };
