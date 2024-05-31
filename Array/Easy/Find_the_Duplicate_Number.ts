@@ -39,3 +39,19 @@ var findDuplicate = (nums: number[]): number => {
     }, new Map<number, number>());
     return duplicatedNumber;
 };
+
+// Solution 4
+var findDuplicate = (nums: number[]): number => {
+    const map = new Map<number, number>();
+    return (
+        nums
+            .sort((a, b) => a - b)
+            .reduceRight((accumulator, currentValue, currentIndex, array) => {
+                if (map.has(currentValue)) {
+                    accumulator = currentValue;
+                }
+                map.set(currentValue, 1);
+                return accumulator;
+            }) ?? -1
+    );
+};
