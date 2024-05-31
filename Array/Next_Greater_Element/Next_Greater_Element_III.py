@@ -23,4 +23,4 @@ class Solution:
         
         nums[index+1:] = list(reversed(nums[index+1:]))
         nextGreaterNumber = int(''.join(map(str, nums)))
-        return nextGreaterNumber if nextGreaterNumber < 2147483648 else -1
+        return nextGreaterNumber if nextGreaterNumber < 2 ** 31 else -1
