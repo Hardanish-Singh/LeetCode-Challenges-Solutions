@@ -12,8 +12,9 @@ const isStrictlyIncreasing = (sequence) =>
 const canBeIncreasing = (sequence) =>
     sequence.reduce((accumulator, currentValue, i, array) => {
         let answer = [...sequence];
-        answer.splice(i, 1).map(Number);
+        answer.splice(i, 1);
         if (isStrictlyIncreasing(answer)) {
+            array.length = 0; // eject early by mutating the iterated array
             return true;
         }
         return accumulator;
