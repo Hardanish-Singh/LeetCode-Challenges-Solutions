@@ -22,7 +22,7 @@ var duplicateNumbersXOR = (nums: number[]): number => {
         map.set(num, (map.get(num) || 0) + 1);
     }
     return Array.from(map.entries()).reduce((accumulator, [key, value]) => {
-        if (accumulator === 2) {
+        if (value === 2) {
             accumulator ^= key;
         }
         return accumulator;
