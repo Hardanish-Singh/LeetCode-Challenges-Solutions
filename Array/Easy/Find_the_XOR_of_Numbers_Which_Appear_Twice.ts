@@ -6,7 +6,6 @@ var duplicateNumbersXOR = (nums: number[]): number => {
     for (let num of nums) {
         map.set(num, (map.get(num) || 0) + 1);
     }
-
     let result = 0;
     for (const [key, value] of map.entries()) {
         if (value === 2) {
