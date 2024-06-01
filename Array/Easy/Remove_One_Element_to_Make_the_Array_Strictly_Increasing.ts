@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/remove-one-element-to-make-the-array-strictly-increasing/
 
-const isStrictlyIncreasing = (sequence) =>
-    sequence.reduce((accumulator, currentValue, currentIndex, array) => {
+const isStrictlyIncreasing = (sequence: number[]): boolean =>
+    sequence.reduce((accumulator, _, currentIndex, array) => {
         if (sequence[currentIndex] >= sequence[currentIndex + 1]) {
             array.length = 0; // eject early by mutating the iterated array
             return false;
@@ -9,11 +9,11 @@ const isStrictlyIncreasing = (sequence) =>
         return accumulator;
     }, true);
 
-const canBeIncreasing = (sequence) =>
-    sequence.reduce((accumulator, currentValue, i, array) => {
-        let answer = [...sequence];
-        answer.splice(i, 1);
-        if (isStrictlyIncreasing(answer)) {
+const canBeIncreasing = (sequence: number[]): boolean =>
+    sequence.reduce((accumulator, _, i, array) => {
+        let clonedArray = [...sequence];
+        clonedArray.splice(i, 1); // remove the current index element from the array
+        if (isStrictlyIncreasing(clonedArray)) {
             array.length = 0; // eject early by mutating the iterated array
             return true;
         }
