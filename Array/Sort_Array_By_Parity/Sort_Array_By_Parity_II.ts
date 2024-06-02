@@ -91,7 +91,7 @@ var sortArrayByParityII = (nums: number[]): number[] => {
 };
 
 // Solution 5
-// @ts-ignore
+// @ts-ignore for ignoring type error
 var sortArrayByParityII = (nums: number[], evenIndex?: number, oddIndex?: number): number[] =>
     nums.reduce((accumulator: number[], _, i, nums) => {
         if (i % 2 === 0) {
