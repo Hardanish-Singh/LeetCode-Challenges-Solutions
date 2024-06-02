@@ -68,3 +68,42 @@ var sortArrayByParityII = (nums: number[]): number[] => {
         return accumulator;
     }, []);
 };
+
+// Solution 4
+var sortArrayByParityII = (nums: number[]): number[] => {
+    let evenIndex = -1;
+    let oddIndex = -1;
+
+    return nums.reduce((accumulator: number[], _, i, nums) => {
+        if (i % 2 === 0) {
+            evenIndex = nums.findIndex((num: number, index: number) => {
+                return num % 2 === 0 && index > evenIndex;
+            });
+            accumulator.push(nums[evenIndex]);
+        } else {
+            oddIndex = nums.findIndex((num: number, index: number) => {
+                return num % 2 !== 0 && index > oddIndex;
+            });
+            accumulator.push(nums[oddIndex]);
+        }
+        return accumulator;
+    }, []);
+};
+
+// Solution 5
+// @ts-ignore
+var sortArrayByParityII = (nums: number[], evenIndex?: number, oddIndex?: number): number[] =>
+    nums.reduce((accumulator: number[], _, i, nums) => {
+        if (i % 2 === 0) {
+            evenIndex = nums.findIndex((num: number, index: number) => {
+                return num % 2 === 0 && index > (evenIndex ?? -1);
+            });
+            accumulator.push(nums[evenIndex]);
+        } else {
+            oddIndex = nums.findIndex((num: number, index: number) => {
+                return num % 2 !== 0 && index > (oddIndex ?? -1);
+            });
+            accumulator.push(nums[oddIndex]);
+        }
+        return accumulator;
+    }, []);
