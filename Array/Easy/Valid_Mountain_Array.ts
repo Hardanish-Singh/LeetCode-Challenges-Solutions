@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/valid-mountain-array/
 
-var validMountainArray = (arr: number[]): boolean => {
+const validMountainArray = (arr: number[]): boolean => {
     let peak = arr.indexOf(Math.max(...arr));
     if (peak == 0 || peak == arr.length - 1) {
         return false;
