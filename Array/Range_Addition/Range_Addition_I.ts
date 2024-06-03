@@ -1,6 +1,7 @@
 // Leetcode: https://leetcode.com/problems/range-addition/
 
-const getModifiedArray = (length: number, updates: number[][]): number[] => {
+// Solution 1
+var getModifiedArray = (length: number, updates: number[][]): number[] => {
     const result = new Array(length).fill(0);
     for (const update of updates) {
         const [start, end, inc] = update;
@@ -10,3 +11,12 @@ const getModifiedArray = (length: number, updates: number[][]): number[] => {
     }
     return result;
 };
+
+// Solution 2
+var getModifiedArray = (length: number, updates: number[][]): number[] =>
+    updates.reduce((accumulator, [start, end, inc]) => {
+        for (let i = start; i <= end; i++) {
+            accumulator[i] += inc;
+        }
+        return accumulator;
+    }, new Array(length).fill(0));
