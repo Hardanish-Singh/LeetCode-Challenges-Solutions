@@ -1,11 +1,6 @@
 // Leetcode: https://leetcode.com/problems/optimal-partition-of-string/description/
 
-/**
- * @param { string } s
- * @return { number }
- */
-
-const partitionString = (s) => {
+const partitionString = (s: string): number => {
     const set = new Set();
     let minimumNumberOfSubstringsInAPartition = 0;
 
