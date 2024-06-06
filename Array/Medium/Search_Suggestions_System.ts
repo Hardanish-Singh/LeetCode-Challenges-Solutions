@@ -4,16 +4,16 @@
 var suggestedProducts = (products: string[], searchWord: string): string[][] => {
     // LEXICOGRAPHICAL SORTING
     products.sort((a, b) => a.localeCompare(b));
-    let suggested_products: string[][] = [];
+    const suggestedProducts: string[][] = [];
     for (let i = 0; i < searchWord.length; i++) {
-        let temp: string[] = [];
+        const suggestions: string[] = [];
         for (let j = 0; j < products.length; j++) {
-            if (temp.length === 3) break;
+            if (suggestions.length === 3) break;
             if (products[j].startsWith(searchWord.slice(0, i + 1))) {
-                temp.push(products[j]);
+                suggestions.push(products[j]);
             }
         }
-        suggested_products.push(temp);
+        suggestedProducts.push(suggestions);
     }
-    return suggested_products;
+    return suggestedProducts;
 };
