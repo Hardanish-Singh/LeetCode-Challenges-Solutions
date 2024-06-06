@@ -17,3 +17,14 @@ var suggestedProducts = (products: string[], searchWord: string): string[][] => 
     }
     return suggestedProducts;
 };
+
+// Solution 2
+var suggestedProducts = (products: string[], searchWord: string): string[][] =>
+    searchWord.split("").reduce((suggestedProducts: string[][], _, index: number) => {
+        const suggestions = products
+            .sort((a, b) => a.localeCompare(b))
+            .filter((product) => product.startsWith(searchWord.slice(0, index + 1)))
+            .slice(0, 3);
+        suggestedProducts.push(suggestions);
+        return suggestedProducts;
+    }, []);
