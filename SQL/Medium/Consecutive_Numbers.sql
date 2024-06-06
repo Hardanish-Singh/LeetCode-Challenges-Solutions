@@ -14,10 +14,10 @@ WITH cte AS
 (
      SELECT
           *,
-          LEAD(num, 1) OVER(ORDER BY id) AS num1,
-          LEAD(num, 2) OVER(ORDER BY id) AS num2,
-          LEAD(id, 1)  OVER(ORDER BY id) AS id1,
-          LEAD(id, 2)  OVER(ORDER BY id) AS id2
+          LEAD(num, 1) OVER(ORDER BY id) AS num1, -- LEAD function will check for the next row for LEAD(num, 1)
+          LEAD(num, 2) OVER(ORDER BY id) AS num2, -- LEAD function will check for the next to next row for LEAD(num, 2)
+          LEAD(id, 1)  OVER(ORDER BY id) AS id1,  -- LEAD function will check for the next row for LEAD(id, 1)
+          LEAD(id, 2)  OVER(ORDER BY id) AS id2   -- LEAD function will check for the next to next row for LEAD(id, 2)
      FROM Logs
 )
 
