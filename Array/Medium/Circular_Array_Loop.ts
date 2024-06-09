@@ -20,13 +20,13 @@ const circularArrayLoop = (nums: number[]): boolean => {
         let currentIndex = i;
 
         while (true) {
-            const jumpedIndex = nums[currentIndex];
-            currentIndex = (currentIndex + jumpedIndex) % n;
+            const jumpedIndexValue = nums[currentIndex];
+            currentIndex = (currentIndex + jumpedIndexValue) % n;
             if (currentIndex < 0) {
                 currentIndex = currentIndex + n;
             }
-            // If current value is positive and jumpedIndex value is negative or current value is negative and jumpedIndex value is negative, then we need to break the loop
-            if ((nums[i] > 0 && jumpedIndex < 0) || (nums[i] < 0 && jumpedIndex > 0)) {
+            // If current value is positive and jumpedIndexValue value is negative or current value is negative and jumpedIndexValue value is negative, then we need to break the loop
+            if ((nums[i] > 0 && jumpedIndexValue < 0) || (nums[i] < 0 && jumpedIndexValue > 0)) {
                 break;
             }
 
@@ -39,7 +39,7 @@ const circularArrayLoop = (nums: number[]): boolean => {
                 }
             }
 
-            map.set(currentIndex, jumpedIndex);
+            map.set(currentIndex, jumpedIndexValue);
         }
     }
     return false;
