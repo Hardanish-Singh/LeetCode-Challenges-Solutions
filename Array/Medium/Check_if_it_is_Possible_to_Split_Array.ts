@@ -1,6 +1,7 @@
 // Leetcode: https://leetcode.com/problems/check-if-it-is-possible-to-split-array/
 
-const canSplitArray = (nums: number[], m: number): boolean => {
+// Solution 1
+var canSplitArray = (nums: number[], m: number): boolean => {
     if (nums.length <= 2) {
         return true;
     }
@@ -11,3 +12,7 @@ const canSplitArray = (nums: number[], m: number): boolean => {
     }
     return false;
 };
+
+// Solution 2
+var canSplitArray = (nums: number[], m: number): boolean =>
+    nums.length <= 2 || nums.some((num, i, nums) => num + nums[i + 1] >= m);
