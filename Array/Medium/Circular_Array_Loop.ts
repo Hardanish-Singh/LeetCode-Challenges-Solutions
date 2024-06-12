@@ -27,7 +27,6 @@ const circularArrayLoop = (nums: number[]): boolean => {
             if ((nums[i] > 0 && nums[jumpedIndex] < 0) || (nums[i] < 0 && nums[jumpedIndex] > 0)) {
                 break;
             }
-
             if (map.has(currentIndex)) {
                 // We have a cycle and we have visited atleast one of the nodes apart from the current node
                 if (i === currentIndex && Array.from(map.keys()).length > 1) {
