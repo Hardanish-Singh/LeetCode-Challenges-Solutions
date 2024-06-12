@@ -10,9 +10,9 @@ var maxScoreIndices = (nums) => {
 
         const sum = left + right;
         if (map.has(sum)) {
-            let temp = map.get(sum);
-            temp.push(i);
-            map.set(sum, temp);
+            const indices = map.get(sum);
+            indices.push(i);
+            map.set(sum, indices);
         } else {
             map.set(sum, [i]);
         }
@@ -36,9 +36,10 @@ var maxScoreIndices = (nums) => {
         }
         const sum = ones + zeros;
         if (map.has(sum)) {
-            let temp = map.get(sum);
-            temp.push(i);
-            map.set(sum, temp);
+            const indices = map.get(sum);
+            indices.push(i);
+            map.set(sum, indices);
+            // map.set(sum, [...map.get(sum), i]);
         } else {
             map.set(sum, [i]);
         }
