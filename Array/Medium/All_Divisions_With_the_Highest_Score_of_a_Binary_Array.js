@@ -39,7 +39,6 @@ var maxScoreIndices = (nums) => {
             const indices = map.get(sum);
             indices.push(i);
             map.set(sum, indices);
-            // map.set(sum, [...map.get(sum), i]);
         } else {
             map.set(sum, [i]);
         }
