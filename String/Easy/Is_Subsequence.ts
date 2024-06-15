@@ -1,6 +1,7 @@
 // Leetcode: https://leetcode.com/problems/is-subsequence/
 
-const isSubsequence = (source: string, target: string): boolean => {
+// Solution 1
+var isSubsequence = (source: string, target: string): boolean => {
     let leftPointer1 = 0;
     let leftPointer2 = 0;
 
@@ -18,4 +19,16 @@ const isSubsequence = (source: string, target: string): boolean => {
     }
     // At the end of the iteration, the result solely depends on the fact that whether we have consumed all the characters in the source string.
     return leftPointer1 === source.length;
+};
+
+// Solution 2
+var isSubsequence = (source: string, target: string): boolean => {
+    let index = -1;
+    for (const s of source) {
+        index = target.indexOf(s, index + 1);
+        if (index == -1) {
+            return false;
+        }
+    }
+    return true;
 };
