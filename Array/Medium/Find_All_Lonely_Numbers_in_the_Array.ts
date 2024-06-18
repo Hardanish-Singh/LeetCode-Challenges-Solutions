@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
 
-const findLonely = (nums: Array<number>): Array<number> => {
-    const map = new Map();
+const findLonely = (nums: number[]): number[] => {
+    const map = new Map<number, number>();
     for (let i: number = 0; i < nums.length; i++) {
         map.set(nums[i], (map.get(nums[i]) || 0) + 1);
     }
