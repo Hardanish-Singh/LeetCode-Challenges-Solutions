@@ -18,7 +18,9 @@ const recurse = (houses: number[], i: number = 0, map: Map<number, number> = new
 };
 
 const rob = (houses: number[]): number => {
-    if (houses.length === 1) return houses[0];
+    if (houses.length === 1) {
+        return houses[0];
+    }
     return Math.max(
         recurse(houses.slice(1)), // recurse from houses with index 1 to the end
         recurse(houses.slice(0, houses.length - 1)) // recurse from houses with index 0 to houses.length - 1 (excluding last index)
