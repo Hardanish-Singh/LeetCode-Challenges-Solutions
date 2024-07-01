@@ -14,12 +14,8 @@ class TreeNode {
 
 type T = TreeNode | null | undefined;
 
-const grandChildren = (root: T): T[] => {
-    if (!root) {
-        return [];
-    }
-    return [root.left?.left, root.left?.right, root.right?.left, root.right?.right].filter(Boolean);
-};
+const grandChildren = (root: T): T[] =>
+    !root ? [] : [root.left?.left, root.left?.right, root.right?.left, root.right?.right].filter(Boolean);
 
 // Solution 1: Recursion (TLE)
 var rob1 = (root: T): number => {
@@ -36,14 +32,13 @@ var rob1 = (root: T): number => {
 };
 
 // Solution 2: Recursion with Memoization / Caching
-var rob2 = (root: T, map: Map<TreeNode, number> = new Map()) => {
+var rob2 = (root: T, map: Map<TreeNode, number> = new Map<TreeNode, number>()) => {
     if (!root) {
         return 0;
     }
     if (map.has(root)) {
         return map.get(root) as number;
     }
-
     let max = Math.max(
         grandChildren(root).reduce((accumulator, child) => accumulator + rob2(child, map), root.val),
         rob2(root.left, map) + rob2(root.right, map)
