@@ -5,9 +5,5 @@ const largestNumber = (nums: number[]): string =>
         ? "0"
         : nums
               .map(String)
-              .sort((a, b) => {
-                  const num1 = Number(a + b);
-                  const num2 = Number(b + a);
-                  return num1 > num2 ? -1 : 1;
-              })
+              .sort((a, b) => (Number(a + b) > Number(b + a) ? -1 : 1))
               .join("");
