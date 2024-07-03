@@ -25,6 +25,26 @@ var maxAbsoluteSum = (nums: number[]): number => {
 // Solution 2 (KADANE'S ALGORITHM)
 // Here the idea is to run Kadane Algorithm twice, Once calculating the max sum & Once calculating the min sum
 var maxAbsoluteSum = (nums: number[]): number => {
+    let max = nums[0];
+    let maxSubarray = nums[0];
+    for (let i = 1; i < nums.length; i++) {
+        maxSubarray = Math.max(nums[i], nums[i] + maxSubarray);
+        max = Math.max(max, maxSubarray);
+    }
+
+    let min = nums[0];
+    let minSubarray = nums[0];
+    for (let i = 1; i < nums.length; i++) {
+        minSubarray = Math.min(nums[i], nums[i] + minSubarray);
+        min = Math.min(min, minSubarray);
+    }
+
+    return Math.max(max, Math.abs(min));
+};
+
+// Solution 3 (KADANE'S ALGORITHM)
+// Here the idea is to run Kadane Algorithm twice, Once calculating the max sum & Once calculating the min sum
+var maxAbsoluteSum = (nums: number[]): number => {
     let max = Number.NEGATIVE_INFINITY; // or -Infinity;
     let min = Number.POSITIVE_INFINITY; // or Infinity;
     let currentMax = 0;
