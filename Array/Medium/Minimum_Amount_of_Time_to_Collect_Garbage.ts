@@ -8,8 +8,8 @@ var garbageCollection = (garbage: string[], travel: number[]): number => {
     let res = 0;
 
     // Prefix sum of travel time
-    for (let i = 1; i < travel.length; i++) {
-        travel[i] += travel[i - 1];
+    for (let i = 0; i < travel.length; i++) {
+        travel[i] += travel[i - 1] || 0;
     }
 
     for (let i = 0; i < garbage.length; i++) {
