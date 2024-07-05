@@ -3,12 +3,10 @@
 // Solution 1
 var doesValidArrayExist = (derived: number[]): boolean => {
     let n = derived.length;
-
     let ans = 0;
     for (let i = 0; i < n; i++) {
         ans = ans ^ derived[i];
     }
-
     return ans == 0;
 };
 
