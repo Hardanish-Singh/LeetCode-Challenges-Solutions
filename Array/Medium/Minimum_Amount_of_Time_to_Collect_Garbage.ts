@@ -13,9 +13,9 @@ var garbageCollection = (garbage: string[], travel: number[]): number => {
 
     for (let i = 0; i < garbage.length; i++) {
         // update the last seen index of 'G', 'P' and 'M' garbeges
-        if (garbage[i].includes("G")) g = i - 1;
-        if (garbage[i].includes("P")) p = i - 1;
-        if (garbage[i].includes("M")) m = i - 1;
+        if (garbage[i].includes("G")) g = i - 1; // why i - 1 ? because travel.length == garbage.length - 1
+        if (garbage[i].includes("P")) p = i - 1; // why i - 1 ? because travel.length == garbage.length - 1
+        if (garbage[i].includes("M")) m = i - 1; // why i - 1 ? because travel.length == garbage.length - 1
         time = time + garbage[i].length;
     }
 
