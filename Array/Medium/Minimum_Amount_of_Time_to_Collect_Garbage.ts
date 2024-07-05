@@ -1,56 +1,27 @@
 // Leetcode: https://leetcode.com/problems/minimum-amount-of-time-to-collect-garbage/
 
-type garbageCount = {
-        [key: string]: number;
-};
+var garbageCollection = (garbage: string[], travel: number[]): number => {
+    let g = -1;
+    let m = -1;
+    let p = -1;
 
-/**
- * @param { string[] } garbage
- * @param { number[] } travel
- * @param { garbageCount } map
- * @param { string } key
- * @return { number }
- */
+    let res = 0;
 
-var calculateCost = function (garbage: Array<string>, travel: Array<number>, map: garbageCount, key: string): number {
-        if (!map.hasOwnProperty(key)) {
-                return 0;
-        }
-        let cost: number = 0;
-        for (let i: number = 0; i < garbage.length; i++) {
-                if (map[key] <= 0) {
-                        return cost;
-                }
-                cost += travel[i - 1] || 0;
-                let garbageType: Array<string> = garbage[i].split("");
-                for (let j: number = 0; j < garbageType.length; j++) {
-                        if (garbageType[j] === key) {
-                                cost++;
-                                map[garbageType[j]] -= 1;
-                        }
-                }
-        }
-        return cost;
-};
+    // Prefix sum of travel time
+    for (let i = 1; i < travel.length; i++) {
+        travel[i] += travel[i - 1];
+    }
 
-/**
- * @param { string[] } garbage
- * @param { number[] } travel
- * @return { number }
- */
+    for (let i = 0; i < garbage.length; i++) {
+        // update the last seen index of 'G', 'P' and 'M' garbeges
+        if (garbage[i].includes("G")) g = i - 1;
+        if (garbage[i].includes("P")) p = i - 1;
+        if (garbage[i].includes("M")) m = i - 1;
+        res = res + garbage[i].length;
+    }
 
-var garbageCollection = function (garbage: Array<string>, travel: Array<number>): number {
-        let map: garbageCount = {};
-        for (let i: number = 0; i < garbage.length; i++) {
-                let garbageType: Array<string> = garbage[i].split("");
-                for (let j: number = 0; j < garbageType.length; j++) {
-                        garbageType[j] in map ? (map[garbageType[j]] += 1) : (map[garbageType[j]] = 1);
-                }
-        }
-        let cost: number = 0;
-        let garbageTypes: Array<string> = ["M", "P", "G"];
-        for (let i: number = 0; i < garbageTypes.length; i++) {
-                cost += calculateCost(garbage, travel, map, garbageTypes[i]);
-        }
-        return cost;
+    res += travel[g] ?? 0;
+    res += travel[p] ?? 0;
+    res += travel[m] ?? 0;
+    return res;
 };
