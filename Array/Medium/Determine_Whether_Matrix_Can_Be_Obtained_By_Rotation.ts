@@ -17,7 +17,7 @@ const rotate = (matrix: number[][]): void => {
     }
 };
 
-var findRotation = function (matrix: number[][], target: number[][]): boolean {
+const findRotation = function (matrix: number[][], target: number[][]): boolean {
     // maximum number of rotation = 4 because of 90, 180, 270, 360
     for (let i = 0; i < 4; i++) {
         rotate(matrix);
