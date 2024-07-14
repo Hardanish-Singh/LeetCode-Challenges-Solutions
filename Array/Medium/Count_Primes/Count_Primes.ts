@@ -12,7 +12,7 @@ const countPrimes = (n: number): number => {
         } else {
             count++;
             isNotPrime[i] = true;
-            for (let j: number = i + i; j <= n; j = j + i) {
+            for (let j: number = i + i; j <= n; j += i) {
                 if (isNotPrime[j] === false) {
                     isNotPrime[j] = true;
                 }
