@@ -5,7 +5,7 @@ const countPrimes = (n: number): number => {
         return 0;
     }
     let count: number = 0;
-    const isNotPrime = new Array(n).fill(true);
+    const isNotPrime = new Array(n).fill(false);
     for (let i: number = 2; i < n; i++) {
         if (isNotPrime[i]) {
             continue;
