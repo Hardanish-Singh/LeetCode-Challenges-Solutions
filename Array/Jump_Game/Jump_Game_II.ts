@@ -1,4 +1,6 @@
-function jump(nums: number[]): number {
+// Leetcode: https://leetcode.com/problems/jump-game-ii/
+
+const jump = (nums: number[]): number => {
     let reachable: number = 0;
     let curPosition: number = -1;
     let jumps: number = 0;
@@ -7,4 +9,4 @@ function jump(nums: number[]): number {
         reachable = Math.max(reachable, i + nums[i]);
     }
     return jumps;
-}
+};
