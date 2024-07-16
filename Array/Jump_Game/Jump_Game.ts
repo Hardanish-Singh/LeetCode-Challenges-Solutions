@@ -19,7 +19,7 @@ var canJump = (nums: number[]): boolean =>
               if (index > accumulator) {
                   return false;
               }
-              accumulator = Math.max(accumulator, index + nums[index]);
+              accumulator = Math.max(accumulator, index + num);
               return accumulator;
           }, 0)
         : true;
