@@ -1,4 +1,5 @@
 // Leetcode: https://leetcode.com/problems/json-deep-equal/
+
 /**
  * @param {null|boolean|number|string|Array|Object} o1
  * @param {null|boolean|number|string|Array|Object} o2
