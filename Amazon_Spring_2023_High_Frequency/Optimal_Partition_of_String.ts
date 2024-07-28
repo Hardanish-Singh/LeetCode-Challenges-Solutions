@@ -1,6 +1,7 @@
 // Leetcode: https://leetcode.com/problems/optimal-partition-of-string/description/
 
-const partitionString = (s: string): number => {
+// Solution 1
+var partitionString = (s: string): number => {
     const set = new Set();
     let minimumNumberOfSubstringsInAPartition = 0;
 
@@ -17,3 +18,34 @@ const partitionString = (s: string): number => {
 
     return minimumNumberOfSubstringsInAPartition;
 };
+
+// Solution 2
+var partitionString = (s: string): number => {
+    const set = new Set();
+    return s.split("").reduce((accumulator, item, index, s) => {
+        if (set.has(item)) {
+            set.clear();
+            accumulator++;
+        }
+        if (index === s.length - 1) {
+            accumulator++;
+        }
+        set.add(item);
+        return accumulator;
+    }, 0);
+};
+
+// Solution 3
+// @ts-ignore
+var partitionString = (s: string, set = new Set()): number =>
+    s.split("").reduce((accumulator, item, index, s) => {
+        if (set.has(item)) {
+            set.clear();
+            accumulator++;
+        }
+        if (index === s.length - 1) {
+            accumulator++;
+        }
+        set.add(item);
+        return accumulator;
+    }, 0);
