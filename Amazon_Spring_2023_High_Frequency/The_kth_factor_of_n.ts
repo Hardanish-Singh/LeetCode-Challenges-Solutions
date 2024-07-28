@@ -1,6 +1,10 @@
 // Leetcode: https://leetcode.com/problems/the-kth-factor-of-n/description/
 
-const kthFactor = (n: number, k: number): number => {
+// Solution 1
+var kthFactor = (n: number, k: number): number => [...Array(n + 1).keys()].filter((i) => n % i === 0)[k - 1] ?? -1;
+
+// Solution 2
+var kthFactor = (n: number, k: number): number => {
     let count = 0;
     for (let i = 1; i <= n; i++) {
         if (n % i === 0) {
