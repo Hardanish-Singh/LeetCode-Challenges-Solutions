@@ -6,7 +6,6 @@
     cnt1: Respresents the number of 1s in the string
     cnt01: Represents the number of 01 combinations
     cnt10: Represents the number of 10 combinations
-
 */
 const numberOfWays = (s: string, cnt0: number = 0, cnt1: number = 0, cnt01: number = 0, cnt10: number = 0): number =>
     s.split("").reduce((accumulator, curr) => {
