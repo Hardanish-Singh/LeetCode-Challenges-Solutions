@@ -13,6 +13,8 @@
         SOLUTION 1: RECURSIVE
 """
 
+from typing import List
+
 class Solution:
         def inorderRecursiveTraversal(self, root: 'TreeNode', inOrderList: List[int]) -> List[int]:
                 if root is None:
