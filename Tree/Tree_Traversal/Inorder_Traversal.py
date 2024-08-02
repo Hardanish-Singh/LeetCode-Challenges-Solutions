@@ -10,7 +10,6 @@ class TreeNode:
 """
         SOLUTION 1: RECURSIVE
 """
-
 class Solution:
         def inorderRecursiveTraversal(self, root: Union['TreeNode', None], inOrderList: List[int]) -> List[int]:
                 if root is None:
@@ -44,7 +43,6 @@ class Solution:
 """
         SOLUTION 3: ITERATIVE
 """
-
 class Solution:
         def inorderTraversal(self, root: Union['TreeNode', None]) -> List[int]:
                 if root is None:
