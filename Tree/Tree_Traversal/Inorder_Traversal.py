@@ -1,6 +1,6 @@
 # Leetcode: https://leetcode.com/problems/binary-tree-inorder-traversal/
 
-from typing import List
+from typing import List, Union
 class TreeNode:
         def __init__(self, val = 0, left = None, right = None):
                 self.val = val
@@ -12,7 +12,7 @@ class TreeNode:
 """
 
 class Solution:
-        def inorderRecursiveTraversal(self, root: 'TreeNode', inOrderList: List[int]) -> List[int]:
+        def inorderRecursiveTraversal(self, root: Union['TreeNode', None], inOrderList: List[int]) -> List[int]:
                 if root is None:
                         return None
                 self.inorderRecursiveTraversal(root.left, inOrderList)
@@ -27,8 +27,7 @@ class Solution:
 """
         SOLUTION 2: RECURSIVE
 """
-
-def inorderRecursiveTraversal(root: 'TreeNode', inOrderList: List[int]) -> List[int]:
+def inorderRecursiveTraversal(root: Union['TreeNode', None], inOrderList: List[int]) -> List[int]:
         if root is None:
                 return None
         inorderRecursiveTraversal(root.left, inOrderList)
@@ -47,7 +46,7 @@ class Solution:
 """
 
 class Solution:
-        def inorderTraversal(self, root: 'TreeNode') -> List[int]:
+        def inorderTraversal(self, root: Union['TreeNode', None]) -> List[int]:
                 if root is None:
                         return []
                 inOrderList = []
