@@ -12,9 +12,33 @@ const helper = (string1: string, string2: string): boolean => {
     return true;
 };
 
+// Solution 1
 var isIsomorphic = (s: string, t: string): boolean => {
     if (s.length != t.length) {
         return false;
     }
     return helper(s, t) && helper(t, s);
+};
+
+// Solution 2
+var isIsomorphic = (s: string, t: string): boolean => {
+    if (s.length != t.length) {
+        return false;
+    }
+    const map: Map<string, string> = new Map();
+    const set: Set<string> = new Set();
+    for (let i = 0; i < s.length; i++) {
+        if (map.has(s[i])) {
+            if (map.get(s[i]) != t[i]) {
+                return false;
+            }
+        } else {
+            if (set.has(t[i])) {
+                return false;
+            }
+            map.set(s[i], t[i]);
+            set.add(t[i]);
+        }
+    }
+    return true;
 };
