@@ -11,7 +11,7 @@
 var shortestDistance = (wordsDict, word1, word2) => {
     let index1 = -1;
     let index2 = -1;
-    return wordsDict.reduce((accumulator, currentValue, currentIndex, wordsDict) => {
+    return wordsDict.reduce((accumulator, currentValue, currentIndex) => {
         if (currentValue === word1) {
             index1 = currentIndex;
         }
@@ -34,7 +34,7 @@ var shortestDistance = (wordsDict, word1, word2) => {
 
 // Solution 2
 var shortestDistance = (wordsDict, word1, word2, index1 = -1, index2 = -1) =>
-    wordsDict.reduce((accumulator, currentValue, currentIndex, wordsDict) => {
+    wordsDict.reduce((accumulator, currentValue, currentIndex) => {
         if (currentValue === word1) {
             index1 = currentIndex;
         }
