@@ -1,16 +1,9 @@
 // Leetcode: https://leetcode.com/problems/shortest-word-distance/
 
-/**
- * @param {string[]} wordsDict
- * @param {string} word1
- * @param {string} word2
- * @return {number}
- */
-
 // Solution 1
-var shortestDistance = (wordsDict, word1, word2) => {
-    let index1 = -1;
-    let index2 = -1;
+var shortestDistance = (wordsDict: string[], word1: string, word2: string): number => {
+    let index1: number = -1;
+    let index2: number = -1;
     return wordsDict.reduce((accumulator, currentValue, currentIndex) => {
         if (currentValue === word1) {
             index1 = currentIndex;
@@ -25,15 +18,9 @@ var shortestDistance = (wordsDict, word1, word2) => {
     }, Number.POSITIVE_INFINITY);
 };
 
-/**
- * @param {string[]} wordsDict
- * @param {string} word1
- * @param {string} word2
- * @return {number}
- */
-
 // Solution 2
-var shortestDistance = (wordsDict, word1, word2, index1 = -1, index2 = -1) =>
+// @ts-ignore
+var shortestDistance = (wordsDict: string[], word1: string, word2: string, index1: number = -1, index2: number = -1) =>
     wordsDict.reduce((accumulator, currentValue, currentIndex) => {
         if (currentValue === word1) {
             index1 = currentIndex;
