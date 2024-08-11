@@ -34,3 +34,22 @@ var canBeIncreasing = (sequence: number[]): boolean => {
     }
     return true;
 };
+
+// Solution 3
+var canBeIncreasing = (sequence: number[]): boolean => {
+    if (isStrictlyIncreasing(sequence)) {
+        return true;
+    }
+    for (let i = 1; i < sequence.length; i++) {
+        if (sequence[i - 1] >= sequence[i]) {
+            let copy1 = [...sequence.slice(0, i - 1), ...sequence.slice(i)];
+            let copy2 = [...sequence.slice(0, i), ...sequence.slice(i + 1)];
+            if (!isStrictlyIncreasing(copy1) && !isStrictlyIncreasing(copy2)) {
+                continue;
+            } else {
+                return true;
+            }
+        }
+    }
+    return false;
+};
