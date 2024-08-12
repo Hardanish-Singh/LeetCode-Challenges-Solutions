@@ -1,5 +1,6 @@
 // Leetcode: https://leetcode.com/problems/shortest-word-distance-ii/
 
+// Solution 1
 class WordDistance {
     #map: Record<string, number[]>;
     constructor(wordsDict: string[]) {
