@@ -24,3 +24,5 @@ class WordDistance {
         return min;
     }
 }
+
+// Solution 2
