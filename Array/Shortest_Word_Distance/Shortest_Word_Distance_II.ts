@@ -25,4 +25,4 @@ class WordDistance {
     }
 }
 
-// Solution 2
+// Solution
