@@ -1,4 +1,4 @@
-// Leetcode:
+// Leetcode: https://leetcode.com/problems/fizz-buzz/
 
 /**
  * @param {number} n
