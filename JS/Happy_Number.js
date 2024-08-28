@@ -26,8 +26,8 @@
 */
 
 /**
- * @param { number } n
- * @return { boolean }
+ * @param {number} n
+ * @return {boolean}
  */
 
 var isHappy = function (n) {
