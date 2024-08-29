@@ -4,7 +4,7 @@
  * @param {number} n
  * @return {boolean}
  */
-var isHappy = function (n) {
+const isHappy = (n) => {
     while (true) {
         n = String(n)
             .split("")
