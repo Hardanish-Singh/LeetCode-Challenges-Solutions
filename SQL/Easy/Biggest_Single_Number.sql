@@ -15,6 +15,19 @@ FROM
 WHERE SubQuery.count_num = 1;
 
 -- SOLUTION 2
+SELECT 
+    MAX(num) AS num 
+FROM 
+(
+    SELECT
+        num
+    FROM
+        mynumbers
+    GROUP BY num
+    HAVING COUNT(num) = 1
+) AS SubQuery
+
+-- SOLUTION 3
 SELECT
     IFNULL
         (
@@ -31,7 +44,7 @@ SELECT
             NULL
         ) AS num;
 
--- SOLUTION 3
+-- SOLUTION 4
 SELECT
     COALESCE
         (
