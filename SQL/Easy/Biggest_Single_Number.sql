@@ -25,7 +25,7 @@ FROM
         mynumbers
     GROUP BY num
     HAVING COUNT(num) = 1
-) AS SubQuery
+) AS SubQuery;
 
 -- SOLUTION 3
 SELECT
