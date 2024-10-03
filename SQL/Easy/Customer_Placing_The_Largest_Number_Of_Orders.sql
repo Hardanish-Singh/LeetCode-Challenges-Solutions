@@ -6,4 +6,4 @@ FROM
     Orders
 GROUP BY customer_number
 ORDER BY COUNT(customer_number) DESC
-LIMIT 1;
+LIMIT 1
