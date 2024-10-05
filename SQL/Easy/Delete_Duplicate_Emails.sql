@@ -4,7 +4,7 @@ WITH ranked_emails AS (
     SELECT 
         id,
         email,
-        ROW_NUMBER() OVER (PARTITION BY email ORDER BY id) as rn
+        ROW_NUMBER() OVER (PARTITION BY email ORDER BY id) AS rn
     FROM Person
 )
 DELETE FROM Person
