@@ -1,43 +1,13 @@
-/*
-    Table: Person
+-- Leetcode: https://leetcode.com/problems/delete-duplicate-emails/
 
-                +-------------+---------+
-                | Column Name | Type    |
-                +-------------+---------+
-                | Id          | int     |
-                | Email       | varchar |
-                +-------------+---------+
-                
-                Id is the primary key column for this table.
-    
-    Write a SQL query to delete all duplicate email entries in a table named Person, keeping only unique emails based on its smallest Id.
-    Note: Your output is the whole Person table after executing your sql. Use delete statement.
-*/
-DELETE FROM PERSON  
+WITH ranked_emails AS (
+    SELECT 
+        id,
+        email,
+        ROW_NUMBER() OVER (PARTITION BY email ORDER BY id) as rn
+    FROM Person
+)
+DELETE FROM Person
 WHERE id IN (
-                SELECT 
-                        * 
-                FROM
-                (
-                    SELECT 
-                            id 
-                    FROM 
-                            PERSON
-                    WHERE email IN (
-                                    SELECT 
-                                            email
-                                    FROM 
-                                            PERSON
-                                    GROUP BY email
-                                    HAVING COUNT(*) > 1
-                                   )
-                    AND id NOT IN (
-                                    SELECT 
-                                            MIN(id)
-                                    FROM 
-                                            PERSON
-                                    GROUP BY email
-                                    HAVING COUNT(*) > 1
-                                  )
-                )AS x
-            );
+    SELECT id FROM ranked_emails WHERE rn > 1
+);
