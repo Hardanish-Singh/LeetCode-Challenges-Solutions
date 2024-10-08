@@ -1,33 +1,20 @@
--- Leetcode: https://leetcode.com/problems/find-cumulative-salary-of-an-employee/description/
+-- Leetcode: https://leetcode.com/problems/find-cumulative-salary-of-an-employee/
 
-SELECT 
-        id,
-        month,
-        sums AS salary
-FROM 
-(
+WITH CTE AS (
         SELECT
-                *,
-                SUM(salary) OVER 
-                        (
-                                PARTITION BY Subquery1.id 
-                                ORDER BY Subquery1.id , Subquery1.month
-                                ROWS 2 PRECEDING 
-                        ) AS sums 
-        FROM 
-        (
-                SELECT
-                        *,
-                        ROW_NUMBER() OVER
-                                        (
-                                                PARTITION BY employee.id 
-                                                ORDER BY employee.id ASC, employee.month DESC
-                                        ) AS row_num
-                FROM
-                        employee
-                ORDER BY id ASC, month DESC
-        ) AS Subquery1
-        WHERE 
-                Subquery1.row_num > 1 
-) AS Subquery2
-ORDER BY Subquery2.id ASC, Subquery2.month DESC, Subquery2.sums DESC;
+                id,
+                month,
+                SUM(salary) OVER (
+                        PARTITION BY id
+                        ORDER BY month
+                        ROWS 2 PRECEDING
+                ) AS salary,
+                ROW_NUMBER() OVER (
+                        PARTITION BY id
+                        ORDER BY month DESC
+                ) AS rn
+        FROM Employee
+)
+SELECT id, month, salary FROM CTE
+WHERE rn > 1
+ORDER BY id ASC, month DESC
