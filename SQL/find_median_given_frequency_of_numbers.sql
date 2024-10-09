@@ -1,25 +1,46 @@
-/*
-    The Numbers table keeps the value of number and its frequency.
+-- Leetcode: https://leetcode.com/problems/find-median-given-frequency-of-numbers/
 
-    +----------+-------------+
-    |  Number  |  Frequency  |
-    +----------+-------------|
-    |  0       |  7          |
-    |  1       |  1          |
-    |  2       |  3          |
-    |  3       |  1          |
-    +----------+-------------+
-    
-    In this table, the numbers are 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 3, so the median is (0 + 0) / 2 = 0.
+-- Solution 1
+WITH RECURSIVE recursive_cte AS (
+  SELECT
+    num,
+    frequency,
+    1 AS cnt
+  FROM Numbers
+  
+  UNION ALL
+  
+  SELECT 
+    num,
+    frequency, 
+    cnt + 1 AS cnt
+  FROM recursive_cte
+  WHERE cnt < Frequency
+), CTE1 AS (
+    SELECT 
+      num,
+      frequency,
+      ROW_NUMBER() OVER( ORDER BY num ) AS rn,
+      (SELECT COUNT(*) FROM recursive_cte) AS total
+    FROM 
+      recursive_cte 
+    ORDER BY num
+), CTE2 AS (
+      SELECT 
+        *,
+        CASE 
+          WHEN MOD(total, 2) = 0 AND rn = (total/2) OR rn = (total/2) + 1 THEN 'T'
+          WHEN MOD(total, 2) != 0 AND rn = (total/2) THEN 'T'
+          ELSE 'F'
+        END AS flag
+      FROM CTE1
+)
+SELECT 
+  ROUND(AVG(num), 1) AS median 
+FROM CTE2
+WHERE flag = 'T';
 
-    +--------+
-    | median |
-    +--------|
-    | 0.0000 |
-    +--------+
-    
-    Write a query to find the median of all numbers and name the result as median.
-*/
+-- Solution 2
 SELECT 
     SUM(median) AS median 
 FROM 
@@ -50,4 +71,4 @@ FROM
     )AS xx
     where vals >=1
     group by vals
-) AS xxx
+) AS xxx;
