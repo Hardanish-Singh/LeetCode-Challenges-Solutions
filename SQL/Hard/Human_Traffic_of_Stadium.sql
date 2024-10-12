@@ -1,14 +1,25 @@
 -- Leetcode: https://leetcode.com/problems/human-traffic-of-stadium/
 
 WITH CTE AS (
-        select *, 
-                count(*) over( order by id range between current row and 2 following ) following_cnt,
-                count(*) over( order by id range between 2 preceding and current row ) preceding_cnt,
-                count(*) over( order by id range between 1 preceding and 1 following ) current_cnt
-        from stadium
-        where people > 99
+        SELECT 
+                *, 
+                COUNT(*) OVER( ORDER BY id RANGE BETWEEN CURRENT ROW AND 2 FOLLOWING ) following_cnt,
+                COUNT(*) OVER( ORDER BY id RANGE BETWEEN 2 PRECEDING AND CURRENT ROW ) preceding_cnt,
+                COUNT(*) OVER( ORDER BY id RANGE BETWEEN 1 PRECEDING AND 1 FOLLOWING ) current_cnt
+        FROM 
+                stadium
+        WHERE people >= 100
 )
-select id, visit_date, people
-from CTE
-where following_cnt = 3 or preceding_cnt = 3 or current_cnt = 3
-order by visit_date
+SELECT 
+        id, 
+        visit_date, 
+        people
+FROM 
+        CTE
+WHERE 
+        following_cnt = 3 
+OR 
+        preceding_cnt = 3 
+OR 
+        current_cnt = 3
+ORDER BY visit_date;
