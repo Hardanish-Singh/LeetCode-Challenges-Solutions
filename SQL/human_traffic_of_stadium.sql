@@ -1,3 +1,5 @@
+-- Leetcode: https://leetcode.com/problems/human-traffic-of-stadium/
+
 WITH CTE AS (
         select *, 
                 count(*) over( order by id range between current row and 2 following ) following_cnt,
