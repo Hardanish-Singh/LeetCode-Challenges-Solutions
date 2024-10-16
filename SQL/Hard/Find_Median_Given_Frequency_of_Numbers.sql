@@ -37,7 +37,7 @@ WITH RECURSIVE recursive_cte AS (
         *,
         CASE 
           WHEN MOD(total, 2) = 0 AND rn = (total/2) OR rn = (total/2) + 1 THEN 'T'
-          WHEN MOD(total, 2) != 0 AND rn = (total/2) THEN 'T'
+          WHEN MOD(total, 2) != 0 AND rn = CEIL(total/2) THEN 'T'
           ELSE 'F'
         END AS flag
       FROM CTE1
