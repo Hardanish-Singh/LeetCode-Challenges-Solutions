@@ -38,8 +38,7 @@ BEGIN
                 END AS SecondHighestSalary
         FROM (
                 SELECT
-                        DISTINCT 
-                        Employee.Salary
+                        DISTINCT Employee.Salary
                 FROM 
                         Employee
                 ORDER BY Employee.Salary DESC
