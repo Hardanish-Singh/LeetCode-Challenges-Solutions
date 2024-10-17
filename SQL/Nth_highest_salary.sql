@@ -37,13 +37,13 @@ BEGIN
                         NULL 
                 END AS SecondHighestSalary
         FROM (
-        SELECT
-                DISTINCT 
-                    Employee.Salary
-        FROM 
-                Employee
-        ORDER BY Employee.Salary DESC
-        LIMIT N
+                SELECT
+                        DISTINCT 
+                        Employee.Salary
+                FROM 
+                        Employee
+                ORDER BY Employee.Salary DESC
+                LIMIT N
         )AS x
 
   );
