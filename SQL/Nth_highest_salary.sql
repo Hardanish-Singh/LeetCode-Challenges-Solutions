@@ -1,50 +1,35 @@
-/*
-        Write a SQL query to get the nth highest salary from the Employee table.
+-- Leetcode: https://leetcode.com/problems/nth-highest-salary/
 
-                +----+--------+
-                | Id | Salary |
-                +----+--------+
-                | 1  | 100    |
-                | 2  | 200    |
-                | 3  | 300    |
-                +----+--------+
-        
-        For example, given the above Employee table, the nth highest salary where n = 2 is 200. 
-        If there is no nth highest salary, then the query should return null.
-
-                +------------------------+
-                | getNthHighestSalary(2) |
-                +------------------------+
-                | 200                    |
-                +------------------------+
-*/
-
+-- Solution 1
 CREATE FUNCTION getNthHighestSalary(N INT) 
 
 RETURNS INT
 
 BEGIN
-  
-  RETURN
-  (
-        SELECT 
-                CASE 
-                    WHEN 
-                        COUNT(*) >= N 
-                            THEN 
-                                MIN(Salary)
-                    ELSE 
-                        NULL 
-                END AS SecondHighestSalary
-        FROM (
-                SELECT
-                        DISTINCT Employee.Salary
-                FROM 
-                        Employee
-                ORDER BY Employee.Salary DESC
-                LIMIT N
-        )AS x
+        -- Subtract 1 from N to get the correct index in the ordered salary list.
+        SET N = N - 1;
+        RETURN ( SELECT DISTINCT(salary) from Employee order by salary DESC LIMIT 1 OFFSET N );
 
-  );
+END;
+
+-- Solution 2
+CREATE FUNCTION getNthHighestSalary(N INT) 
+
+RETURNS INT
+
+BEGIN
+
+        DECLARE result INT;
+        SELECT salary INTO result
+        FROM
+        (
+                SELECT 
+                        DISTINCT salary, 
+                        ROW_NUMBER() OVER (ORDER BY salary DESC) AS RowNum
+                FROM employee
+                GROUP BY salary
+        ) AS RankedSalaries
+        WHERE RowNum = N;
+        RETURN result;
 
 END
