@@ -1,26 +1,17 @@
-/*
-        Write a SQL query to get the second highest salary from the Employee table.
+-- Leetcode: https://leetcode.com/problems/second-highest-salary/
 
-                +----+--------+
-                | Id | Salary |
-                +----+--------+
-                | 1  | 100    |
-                | 2  | 200    |
-                | 3  | 300    |
-                +----+--------+
-        For example, given the above Employee table, the query should return 200 as the second highest salary. 
-        If there is no second highest salary, then the query should return null.
+-- Solution 1
+SELECT
+    IFNULL
+        (
+            (
+                SELECT DISTINCT Salary
+                FROM Employee ORDER BY Salary DESC 
+                LIMIT 1 OFFSET 1
+            ), NULL
+        )AS SecondHighestSalary;
 
-                +---------------------+
-                | SecondHighestSalary |
-                +---------------------+
-                | 200                 |
-                +---------------------+
-*/
-
-/*
-        SOLUTION 1
-*/
+-- Solution 2
 SELECT 
         CASE 
             WHEN 
@@ -32,18 +23,13 @@ SELECT
         END AS SecondHighestSalary
 FROM 
 (
-        SELECT
-                DISTINCT 
-                        Employee.Salary
-        FROM 
-                Employee
+        SELECT DISTINCT Employee.Salary
+        FROM Employee
         ORDER BY Employee.Salary DESC
         LIMIT 2
 )AS SubQuery
 
-/*
-        SOLUTION 2
-*/
+-- Solution 3
 SELECT 
     MAX(salary) AS SecondHighestSalary 
 FROM employee 
@@ -53,9 +39,7 @@ WHERE salary != (
                     FROM employee 
                 )
 
-/*
-        SOLUTION 3
-*/
+-- Solution 4
 SELECT 
     MAX(salary) AS SecondHighestSalary 
 FROM employee 
