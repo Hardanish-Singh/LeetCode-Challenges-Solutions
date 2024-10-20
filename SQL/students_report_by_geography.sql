@@ -1,25 +1,4 @@
-/*
-        SQL Schema
-                A U.S graduate school has students from Asia, Europe and America. The students' location information are stored in table student as below.
-
-                | name   | continent |
-                |--------|-----------|
-                | Jack   | America   |
-                | Pascal | Europe    |
-                | Xi     | Asia      |
-                | Jane   | America   |
-                
-
-                Pivot the continent column in this table so that each name is sorted alphabetically and displayed underneath its corresponding continent. 
-                The output headers should be America, Asia and Europe respectively. It is guaranteed that the student number from America is no less than either Asia or Europe.
-                
-                For the sample input, the output is:
-
-                | America | Asia | Europe |
-                |---------|------|--------|
-                | Jack    | Xi   | Pascal |
-                | Jane    |      |        |
-*/
+-- Leetcode: https://leetcode.com/problems/students-report-by-geography/
 
 /*
         SOLUTION 1 USING WINDOW FUNCTION
@@ -43,7 +22,7 @@ from
                 WHEN continent = 'Europe' 
                         THEN name 
         END AS 'Europe',
-        row_number() OVER (PARTITION BY continent ORDER BY name) AS rownumber
+        ROW_NUMBER() OVER (PARTITION BY continent ORDER BY name) AS rownumber
     FROM
         student
 )AS SubQuery
