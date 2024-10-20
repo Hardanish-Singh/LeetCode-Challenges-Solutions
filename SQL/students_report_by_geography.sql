@@ -1,8 +1,23 @@
 -- Leetcode: https://leetcode.com/problems/students-report-by-geography/
 
-/*
-        SOLUTION 1 USING WINDOW FUNCTION
-*/
+-- Solution 1
+WITH CTE AS (
+        SELECT
+            *,
+            ROW_NUMBER() OVER (
+                PARTITION BY continent
+                ORDER BY name
+            ) AS rownumber
+        FROM Student
+    )
+SELECT
+    MAX(IF(continent = 'America', name, NULL)) AS 'America',
+    MAX(IF(continent = 'Asia', name, NULL)) AS 'Asia',
+    MAX(IF(continent = 'Europe', name, NULL)) AS 'Europe'
+FROM CTE
+GROUP BY rownumber;
+
+-- Solution 2 USING WINDOW FUNCTION
 SELECT 
     MAX(america) AS America,
     MAX(asia) AS Asia,
@@ -28,9 +43,7 @@ from
 )AS SubQuery
 GROUP BY rownumber;
 
-/*
-        SOLUTION 2 WITHOUT USING WINDOW FUNCTION
-*/
+-- Solution 3 WITHOUT USING WINDOW FUNCTION
 SELECT
     MAX(America) AS America,
     MAX(Asia) AS Asia,
