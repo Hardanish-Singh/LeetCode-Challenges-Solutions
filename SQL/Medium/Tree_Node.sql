@@ -1,4 +1,4 @@
--- Leetcode: https://leetcode.com/problems/tree-node/ 
+-- Leetcode: https://leetcode.com/problems/tree-node/
 
 SELECT 
     id,
