@@ -1,10 +1,5 @@
 // Leetcode: https://leetcode.com/problems/fizz-buzz/
 
-/**
- * @param {number} n
- * @return {string[]}
- */
-
 // Solution 1
 var fizzBuzz = (n) => {
     let result = [];
@@ -24,12 +19,6 @@ var fizzBuzz = (n) => {
 
 // Solution 2
 var fizzBuzz = (n) =>
-    Array.from({ length: n }, (_, i) =>
-        (i + 1) % 3 === 0 && (i + 1) % 5 === 0
-            ? "FizzBuzz"
-            : (i + 1) % 3 === 0
-            ? "Fizz"
-            : (i + 1) % 5 === 0
-            ? "Buzz"
-            : String(i + 1)
+    Array.from({ length: n }, (_, i) => i + 1).map((num) =>
+        num % 3 === 0 && num % 5 === 0 ? "FizzBuzz" : num % 3 === 0 ? "Fizz" : num % 5 === 0 ? "Buzz" : String(num)
     );
