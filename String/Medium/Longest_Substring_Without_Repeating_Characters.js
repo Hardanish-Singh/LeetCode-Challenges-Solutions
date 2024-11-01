@@ -6,6 +6,7 @@ const lengthOfLongestSubstring = (s) => {
     let left = 0;
     let right = 0;
     let max = 0;
+
     while (right < s.length) {
         if (set.has(s[right])) {
             set.delete(s[left]);
@@ -16,5 +17,6 @@ const lengthOfLongestSubstring = (s) => {
         }
         max = Math.max(max, set.size);
     }
+
     return max;
 };
