@@ -2,7 +2,7 @@
 
 // Solution 1: Sliding Window Approach
 const lengthOfLongestSubstring = (s) => {
-    let set = new Set();
+    const set = new Set();
     let left = 0;
     let right = 0;
     let max = 0;
