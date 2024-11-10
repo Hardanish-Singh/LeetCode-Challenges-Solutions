@@ -1,9 +1,7 @@
 // Leetcode: https://leetcode.com/problems/array-partition/
 
-const arrayPairSum = (nums: Array<number>): number =>
+const arrayPairSum = (nums: number[]): number =>
     nums
         .sort((a, b) => a - b)
-        .reduce(
-            (accumulator: number, num: number, index: number) => (index % 2 === 0 ? accumulator + num : accumulator),
-            0
-        );
+        .filter((_, index) => index % 2 === 0) // Select only even indices
+        .reduce((accumulator: number, currentItem: number) => accumulator + currentItem, 0);
