@@ -15,7 +15,7 @@ class Solution {
             // Sort the merge vector in ascending order to find the median
             sort(v.begin(), v.end());
             int n = v.size();
-            return n % 2 ? v[n/2] : (v[n/2-1] + v[n/2] ) / 2.0;
+            return n % 2 ? v[n/2] : ( v[n/2-1] + v[n/2] ) / 2.0;
         }
 };
 
@@ -37,6 +37,6 @@ class Solution {
             sort(v.begin(), v.end());
 
             int n = v.size();
-            return n % 2 ? v[n/2] : (v[n/2-1] + v[n/2] ) / 2.0;
+            return n % 2 ? v[n/2] : ( v[n/2-1] + v[n/2] ) / 2.0;
         }
 };
