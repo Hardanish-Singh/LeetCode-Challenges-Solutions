@@ -17,7 +17,10 @@ var addTwoPromises = (promise1: P, promise2: P): P =>
 // Solution 3
 var addTwoPromises = async (promise1: P, promise2: P): P =>
     Promise.allSettled([promise1, promise2]).then((values) =>
-        values.reduce((accumulator, value) => accumulator + (value.status === "fulfilled" ? value.value : 0), 0)
+        values.reduce(
+            (accumulator, currentItem) => accumulator + (currentItem.status === "fulfilled" ? currentItem.value : 0),
+            0
+        )
     );
 
 /**
