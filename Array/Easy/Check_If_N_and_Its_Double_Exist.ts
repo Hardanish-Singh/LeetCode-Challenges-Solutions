@@ -13,7 +13,6 @@ var checkIfExist = (arr: number[]): boolean => {
 };
 
 // Solution 2
-
 var checkIfExist = (arr: number[]): boolean =>
     arr.reduce((accumulator: Map<number, boolean> & { found?: boolean }, currentElement) => {
         if (accumulator.has(currentElement * 2) || accumulator.has(currentElement / 2)) {
