@@ -12,7 +12,7 @@ var checkIfExist1 = (arr: number[]): boolean => {
     return false;
 };
 
-// Solution 2
+// Solution 2a
 var checkIfExist2 = (arr: number[], map = new Map<number, boolean>()): boolean =>
     arr.reduce((accumulator, currentElement) => {
         if (map.has(currentElement * 2) || map.has(currentElement / 2)) {
