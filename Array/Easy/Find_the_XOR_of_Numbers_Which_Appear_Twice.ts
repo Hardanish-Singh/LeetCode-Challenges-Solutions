@@ -2,7 +2,7 @@
 
 // Solution 1
 var duplicateNumbersXOR = (nums: number[]): number => {
-    let map = new Map();
+    const map = new Map();
     for (let num of nums) {
         map.set(num, (map.get(num) || 0) + 1);
     }
