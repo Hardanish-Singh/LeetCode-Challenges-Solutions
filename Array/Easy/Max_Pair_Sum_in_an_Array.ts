@@ -5,7 +5,7 @@
 */
 
 const maxSum = (nums: number[]): number => {
-    let max: number = -1; // Number
+    let max: number = -1;
 
     for (let i: number = 0; i < nums.length; i++) {
         let maxDigitI: number = Math.max.apply(null, String(nums[i]).split("").map(Number));
