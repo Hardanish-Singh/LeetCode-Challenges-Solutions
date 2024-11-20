@@ -1,6 +1,6 @@
 //  Leetcode: https://leetcode.com/problems/max-stack/
 
-import java.util.*;
+import java.util.*; 
 
 class MaxStack
 {
