@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/move-zeroes/
 
-// Solution 1
+// Solution 1a
 var moveZeroes = (nums) => {
     let zeros = 0;
     for (let i = nums.length - 1; i >= 0; i--) {
