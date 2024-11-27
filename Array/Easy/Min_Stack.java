@@ -2,35 +2,35 @@
 
 import java.util.ArrayList;
 
-class MinStack 
+class MinStack
 {
         ArrayList<Integer> stack = null;
-        public MinStack() 
+        public MinStack()
         {
                 stack = new ArrayList<Integer>();
         }
 
-        public void push(int val) 
+        public void push(int val)
         {
                 stack.add(val);
         }
 
-        public void pop() 
+        public void pop()
         {
                 stack.remove(stack.size() - 1);
         }
 
-        public int top() 
+        public int top()
         {
                 return stack.get(stack.size() - 1);
         }
 
-        public int getMin() 
+        public int getMin()
         {
                 int minimum = stack.get(0);
-                for (int i = 1; i < stack.size(); i++) 
+                for (int i = 1; i < stack.size(); i++)
                 {
-                        if (minimum > stack.get(i)) 
+                        if (minimum > stack.get(i))
                         {
                                 minimum = stack.get(i);
                         }
