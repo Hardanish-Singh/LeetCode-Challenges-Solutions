@@ -48,11 +48,7 @@ const uniquePaths2 = (
 
 // Solution 3: Dynamic Programming
 const uniquePaths3 = (m: number, n: number): number => {
-    // Construct a 2D Array of size m x n with default array values as 1
-    const matrix = Array(m);
-    for (let i = 0; i < m; i++) {
-        matrix[i] = Array(n).fill(1);
-    }
+    const matrix = Array.from({ length: m }, () => new Array(n).fill(1)); // intialized a 2D array
     for (let i = 1; i < m; i++) {
         for (let j = 1; j < n; j++) {
             matrix[i][j] = matrix[i - 1][j] + matrix[i][j - 1];
