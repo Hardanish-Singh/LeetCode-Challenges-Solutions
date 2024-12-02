@@ -6,16 +6,12 @@ const validMountainArray = (arr: number[]): boolean => {
         return false;
     }
     // Check for strickly increasing elements
-    for (let i = 0; i < peak; i++) {
-        if (arr[i] >= arr[i + 1]) {
-            return false;
-        }
-    }
+    const isStrictlyIncreasing = arr.slice(0, peak).some((el, i, subArr) => el >= subArr[i + 1]);
+    if (isStrictlyIncreasing) return false;
+
     // Check for strickly decresing elements
-    for (let i = peak; i < arr.length - 1; i++) {
-        if (arr[i] <= arr[i + 1]) {
-            return false;
-        }
-    }
+    const isStrictlyDecreasing = arr.slice(peak).some((el, i, subArr) => el <= subArr[i + 1]);
+    if (isStrictlyDecreasing) return false;
+
     return true;
 };
