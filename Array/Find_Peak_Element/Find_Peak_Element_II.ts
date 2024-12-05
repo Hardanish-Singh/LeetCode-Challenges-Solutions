@@ -1,6 +1,7 @@
 // Leetcode: https://leetcode.com/problems/find-a-peak-element-ii/
 
-const findPeakGrid = (mat: number[][]): number[] => {
+// Solution 1
+var findPeakGrid = (mat: number[][]): number[] => {
     const max: number = Math.max.apply(null, mat.flat());
     for (let i = 0; i < mat.length; i++) {
         for (let j = 0; j < mat[i].length; j++) {
@@ -10,4 +11,22 @@ const findPeakGrid = (mat: number[][]): number[] => {
         }
     }
     return [];
+};
+
+// Solution 2
+var findPeakGrid = (mat: number[][]): number[] => {
+    const { max, position } = mat.reduce(
+        (acc, row, i) => {
+            row.forEach((val, j) => {
+                if (val > acc.max) {
+                    acc.max = val;
+                    acc.position = [i, j];
+                }
+            });
+            return acc;
+        },
+        { max: -Infinity, position: [] }
+    );
+
+    return position;
 };
