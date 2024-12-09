@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/first-missing-positive/
 
-const firstMissingPositive = (nums: Array<number>): number => {
+const firstMissingPositive = (nums: number[]): number => {
     const set = new Set();
 
     // Create a set with non-duplicates
