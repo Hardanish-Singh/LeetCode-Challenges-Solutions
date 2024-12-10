@@ -14,14 +14,14 @@ var isArraySpecial = (nums: number[]): boolean => {
 
 // Solution 2
 var isArraySpecial = (nums: number[]): boolean =>
-    nums.reduce((acc, currentElement, currentIndex) => {
+    nums.reduce((accumulator, currentElement, currentIndex) => {
         const parity_1 = currentElement % 2;
         const parity_2 = nums[currentIndex - 1] % 2;
         if (parity_1 === parity_2) {
-            nums.length = 0;
+            nums.length = 0; // eject early by mutating the iterated array
             return false;
         }
-        return acc;
+        return accumulator;
     }, true);
 
 // Solution 3
