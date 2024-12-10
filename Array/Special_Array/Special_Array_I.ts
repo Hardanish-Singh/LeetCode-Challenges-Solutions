@@ -1,5 +1,6 @@
 // Leetcode: https://leetcode.com/problems/special-array-i/
 
+// Solution 1
 var isArraySpecial = (nums: number[]): boolean => {
     for (let i = 1; i < nums.length; ++i) {
         const parity_1 = nums[i] % 2;
@@ -11,6 +12,7 @@ var isArraySpecial = (nums: number[]): boolean => {
     return true;
 };
 
+// Solution 2
 var isArraySpecial = (nums: number[]): boolean =>
     nums.reduce((acc, currentElement, currentIndex) => {
         const parity_1 = currentElement % 2;
@@ -22,4 +24,5 @@ var isArraySpecial = (nums: number[]): boolean =>
         return acc;
     }, true);
 
+// Solution 3
 var isArraySpecial = (nums: number[]): boolean => nums.every((num, i) => i === 0 || num % 2 !== nums[i - 1] % 2);
