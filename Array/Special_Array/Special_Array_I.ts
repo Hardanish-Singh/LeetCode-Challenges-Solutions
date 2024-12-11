@@ -12,7 +12,7 @@ var isArraySpecial = (nums: number[]): boolean => {
     return true;
 };
 
-// Solution 2a
+// Solution 2
 var isArraySpecial = (nums: number[]): boolean =>
     nums.reduce((accumulator, currentElement, currentIndex) => {
         const parity_1 = currentElement % 2;
