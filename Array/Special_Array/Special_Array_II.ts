@@ -11,7 +11,7 @@ var isArraySpecial = (nums: number[], queries: number[][]): boolean[] => {
     return result;
 };
 
-// Solution 2a
+// Solution 2
 var isArraySpecial = (nums: number[], queries: number[][]): boolean[] => {
     const prefixSum = [0];
     for (let i = 1; i < nums.length; ++i) {
