@@ -10,7 +10,7 @@
                         self.right = right
 """
 
-from typing import List, Union
+from typing import List
 class TreeNode:
         def __init__(self, val = 0, left = None, right = None):
                 self.val = val
@@ -21,7 +21,7 @@ class TreeNode:
         SOLUTION 1: RECURSIVE
 """
 class Solution:
-        def inorderRecursiveTraversal(self, root: Union['TreeNode', None], inOrderList: List[int]) -> List[int]:
+        def inorderRecursiveTraversal(self, root: 'TreeNode', inOrderList: List[int]) -> List[int]:
                 if root is None:
                         return None
                 self.inorderRecursiveTraversal(root.left, inOrderList)
@@ -36,7 +36,7 @@ class Solution:
 """
         SOLUTION 2: RECURSIVE
 """
-def inorderRecursiveTraversal(root: Union['TreeNode', None], inOrderList: List[int]) -> List[int]:
+def inorderRecursiveTraversal(root: 'TreeNode', inOrderList: List[int]) -> List[int]:
         if root is None:
                 return None
         inorderRecursiveTraversal(root.left, inOrderList)
@@ -54,7 +54,7 @@ class Solution:
         SOLUTION 3: ITERATIVE
 """
 class Solution:
-        def inorderTraversal(self, root: Union['TreeNode', None]) -> List[int]:
+        def inorderTraversal(self, root: 'TreeNode') -> List[int]:
                 if root is None:
                         return []
                 inOrderList = []
