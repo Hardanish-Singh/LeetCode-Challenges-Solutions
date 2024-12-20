@@ -34,7 +34,6 @@ def preorderRecursiveTraversal(root: 'TreeNode', preOrderList: List[int]) -> Lis
                 preOrderList.append(root.val)
                 preorderRecursiveTraversal(root.left, preOrderList)
                 preorderRecursiveTraversal(root.right, preOrderList)
-                
 class Solution:
         def preorderTraversal(self, root: 'TreeNode') -> List[int]:
                 preOrderList = []
@@ -48,15 +47,15 @@ class Solution:
         def preorderTraversal(self, root: 'TreeNode') -> List[int]:
                 if root is None:
                         return []
-                preOrderList = []
-                stack = [root]
+                stack, preOrderList = [root], []
                 
                 while stack:
-                        currentNode = stack.pop()
-                        preOrderList.append(currentNode.val)
-                        if currentNode.right:
-                                stack.append(currentNode.right)
-                        if currentNode.left:
-                                stack.append(currentNode.left)
+                        node = stack.pop()
+                        if node:
+                                preOrderList.append(node.val)
+                                if node.right:
+                                        stack.append(node.right)
+                                if node.left:
+                                        stack.append(node.left)
                 
                 return preOrderList
