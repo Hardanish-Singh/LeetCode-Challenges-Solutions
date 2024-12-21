@@ -46,22 +46,21 @@ class Solution:
                 inorderRecursiveTraversal(root, inOrderList)
                 return inOrderList
 
-
 # SOLUTION 4: ITERATIVE
 class Solution:
         def inorderTraversal(self, root: 'TreeNode') -> List[int]:
                 if root is None:
                         return []
-                stack, inOrderList, currentNode = [], [], root
+                stack, inOrderList, node = [], [], root
 
-                while stack or currentNode:
-                        # This loop traverses the left subtree by pushing nodes onto the stack until it reaches a None node. currentNode is updated to its left child in each iteration.
-                        while currentNode:
-                                stack.append(currentNode)
-                                currentNode = currentNode.left
-                        # When the left subtree is fully traversed, the current node is popped from the stack, its value is added to the result list, and currentNode is updated to its right child.
-                        currentNode = stack.pop()
-                        inOrderList.append(currentNode.val)
-                        currentNode = currentNode.right
+                while stack or node:
+                        # This loop traverses the left subtree by pushing nodes onto the stack until it reaches a None node. node is updated to its left child in each iteration.
+                        while node:
+                                stack.append(node)
+                                node = node.left
+                        # When the left subtree is fully traversed, the current node is popped from the stack, its value is added to the result list, and node is updated to its right child.
+                        node = stack.pop()
+                        inOrderList.append(node.val)
+                        node = node.right
 
                 return inOrderList
