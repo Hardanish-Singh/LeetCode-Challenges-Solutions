@@ -11,7 +11,7 @@ class TreeNode:
 
 # SOLUTION 1: RECURSIVE
 class Solution:
-    def inorderTraversal(self, root: 'TreeNode') -> List[int]:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
         if root is None:
             return []
         # Inorder: left -> root -> right
@@ -20,20 +20,20 @@ class Solution:
 
 # SOLUTION 2: RECURSIVE
 class Solution:
-        def inorderRecursiveTraversal(self, root: 'TreeNode', inOrderList: List[int]) -> List[int]:
+        def inorderRecursiveTraversal(self, root: TreeNode, inOrderList: List[int]) -> List[int]:
                 if root is None:
                         return []
                 self.inorderRecursiveTraversal(root.left, inOrderList)
                 inOrderList.append(root.val)
                 self.inorderRecursiveTraversal(root.right, inOrderList)
                 return inOrderList
-        def inorderTraversal(self, root: 'TreeNode') -> List[int]:
+        def inorderTraversal(self, root: TreeNode) -> List[int]:
                 inOrderList = []
                 self.inorderRecursiveTraversal(root, inOrderList)
                 return inOrderList
 
 # SOLUTION 3: RECURSIVE
-def inorderRecursiveTraversal(root: 'TreeNode', inOrderList: List[int]) -> List[int]:
+def inorderRecursiveTraversal(root: TreeNode, inOrderList: List[int]) -> List[int]:
         if root is None:
                 return []
         inorderRecursiveTraversal(root.left, inOrderList)
@@ -41,14 +41,14 @@ def inorderRecursiveTraversal(root: 'TreeNode', inOrderList: List[int]) -> List[
         inorderRecursiveTraversal(root.right, inOrderList)
         
 class Solution:
-        def inorderTraversal(self, root: 'TreeNode') -> List[int]:
+        def inorderTraversal(self, root: TreeNode) -> List[int]:
                 inOrderList = []
                 inorderRecursiveTraversal(root, inOrderList)
                 return inOrderList
 
 # SOLUTION 4: ITERATIVE
 class Solution:
-        def inorderTraversal(self, root: 'TreeNode') -> List[int]:
+        def inorderTraversal(self, root: TreeNode) -> List[int]:
                 if root is None:
                         return []
                 stack, inOrderList, node = [], [], root
