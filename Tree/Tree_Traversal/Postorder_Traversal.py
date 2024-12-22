@@ -9,10 +9,16 @@ class TreeNode:
                 self.left = left
                 self.right = right
 
-"""
-        SOLUTION 1: RECURSIVE
-"""
+# SOLUTION 1: RECURSIVE
+class Solution:
+        def postorderTraversal(self, root: 'TreeNode') -> List[int]:
+                if root is None:
+                        return []
+                # Postorder: left -> right -> root
+                # First, recursively traverse the left subtrees, then recursively traverse the right subtrees, then add the current node's value to the result list
+                return self.postorderTraversal(root.left) + self.postorderTraversal(root.right) + [root.val]
 
+# SOLUTION 2: RECURSIVE
 class Solution:
         def postorderRecursiveTraversal(self, root: 'TreeNode', postOrderList: List[int]) -> List[int]:
                 if root is None:
@@ -25,10 +31,7 @@ class Solution:
                 self.postorderRecursiveTraversal(root, postOrderList)
                 return postOrderList
 
-"""
-        SOLUTION 2: RECURSIVE
-"""
-
+# SOLUTION 3: RECURSIVE
 def postorderRecursiveTraversal(root: 'TreeNode', postOrderList: List[int]) -> List[int]:
         if root is None:
                 return None
@@ -42,11 +45,7 @@ class Solution:
                 postorderRecursiveTraversal(root, postOrderList)
                 return postOrderList
 
-
-"""
-        SOLUTION 3: ITERATIVE
-"""
-
+# SOLUTION 4: ITERATIVE
 class Solution:
         def postorderTraversal(self, root: 'TreeNode') -> List[int]:
                 postOrderList = []
