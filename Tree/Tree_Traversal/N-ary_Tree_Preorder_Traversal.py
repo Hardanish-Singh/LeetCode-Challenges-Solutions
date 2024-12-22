@@ -1,8 +1,9 @@
 # Leetcode: https://leetcode.com/problems/n-ary-tree-preorder-traversal/
 
 from typing import List, Optional
+# from itertools import chain
 
-# Definition for a binary tree node.
+# Definition for a Node.
 class Node:
     def __init__(self, val: Optional[int] = None, children: Optional[List['Node']] = None):
         self.val = val
@@ -14,6 +15,8 @@ class Solution:
         def preorder(self, root: Node) -> List[int]:
                 if root is None:
                         return []
+                # return [root.val] + [val for child in root.children for val in self.preorder(child)]
+                # return [root.val] + list(chain.from_iterable(self.preorder(child) for child in root.children))
                 return [root.val] + sum([self.preorder(child) for child in root.children], []) #  sum(..., []) is used to concatenate lists or flattens the list of lists.
 
 # SOLUTION 2: RECURSIVE
