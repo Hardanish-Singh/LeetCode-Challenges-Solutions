@@ -30,7 +30,7 @@ class Solution:
                 return result
         
 # Solution 2
-from collections import deque
+from collections import deque # deque is a double-ended queue
 
 class Solution:
         def levelOrder(self, root: TreeNode) -> List[List[int]]:
