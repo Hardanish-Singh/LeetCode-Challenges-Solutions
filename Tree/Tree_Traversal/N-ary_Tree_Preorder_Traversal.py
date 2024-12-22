@@ -27,7 +27,7 @@ class Solution:
                 preOrderList.append(root.val)
                 for child in root.children:
                         self.preorderRecursiveTraversal(child, preOrderList)
-        def preorder(self, root: 'Node') -> List[int]:
+        def preorder(self, root: Node) -> List[int]:
                 preOrderList = []
                 self.preorderRecursiveTraversal(root, preOrderList)
                 return preOrderList
