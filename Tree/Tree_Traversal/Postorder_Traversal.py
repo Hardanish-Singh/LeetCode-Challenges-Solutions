@@ -48,14 +48,16 @@ class Solution:
 # SOLUTION 4: ITERATIVE
 class Solution:
         def postorderTraversal(self, root: 'TreeNode') -> List[int]:
-                postOrderList = []
-                stack = [root]
+                if root is None:
+                        return []
+                stack, postOrderList = [root], []
 
                 while stack:
-                        currentNode = stack.pop()
-                        if currentNode:
-                                postOrderList.append(currentNode.val)
-                                stack.append(currentNode.left)
-                                stack.append(currentNode.right)
+                        node = stack.pop()
+                        postOrderList.append(node.val)
+                        if node.left:
+                                stack.append(node.left)
+                        if node.right:
+                                stack.append(node.right)
 
-                return postOrderList[::-1]
+                return postOrderList[::-1] # Reverse the list to get the postorder traversal
