@@ -11,7 +11,7 @@ class TreeNode:
 
 # SOLUTION 1: RECURSIVE
 class Solution:
-    def preorderTraversal(self, root: 'TreeNode') -> List[int]:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
         if root is None:
             return []
         # Preorder: root -> left -> right
@@ -20,34 +20,34 @@ class Solution:
 
 # SOLUTION 2: RECURSIVE
 class Solution:
-        def preorderRecursiveTraversal(self, root: 'TreeNode', preOrderList: List[int]) -> List[int]:
+        def preorderRecursiveTraversal(self, root: TreeNode, preOrderList: List[int]) -> List[int]:
                 if root is None:
                         return []
                 preOrderList.append(root.val)
                 self.preorderRecursiveTraversal(root.left, preOrderList)
                 self.preorderRecursiveTraversal(root.right, preOrderList)
-        def preorderTraversal(self, root: 'TreeNode') -> List[int]:
+        def preorderTraversal(self, root: TreeNode) -> List[int]:
                 preOrderList = []
                 self.preorderRecursiveTraversal(root, preOrderList)
                 return preOrderList
 
 
 # SOLUTION 3: RECURSIVE
-def preorderRecursiveTraversal(root: 'TreeNode', preOrderList: List[int]) -> List[int]:
+def preorderRecursiveTraversal(root: TreeNode, preOrderList: List[int]) -> List[int]:
                 if root is None:
                         return []
                 preOrderList.append(root.val)
                 preorderRecursiveTraversal(root.left, preOrderList)
                 preorderRecursiveTraversal(root.right, preOrderList)
 class Solution:
-        def preorderTraversal(self, root: 'TreeNode') -> List[int]:
+        def preorderTraversal(self, root: TreeNode) -> List[int]:
                 preOrderList = []
                 preorderRecursiveTraversal(root, preOrderList)
                 return preOrderList
 
 # SOLUTION 4: ITERATIVE
 class Solution:
-        def preorderTraversal(self, root: 'TreeNode') -> List[int]:
+        def preorderTraversal(self, root: TreeNode) -> List[int]:
                 if root is None:
                         return []
                 stack, preOrderList = [root], []
