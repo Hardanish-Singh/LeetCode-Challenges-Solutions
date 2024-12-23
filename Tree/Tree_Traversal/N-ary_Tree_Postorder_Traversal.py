@@ -36,13 +36,12 @@ class Solution:
         def postorder(self, root: 'Node') -> List[int]:
                 if root is None:
                         return []
-                postOrderList = []
-                stack = [root]
+                postOrderList, stack = [], [root]
                 
                 while stack:
-                        currentNode = stack.pop()
-                        postOrderList.append(currentNode.val)
-                        stack.extend(child for child in currentNode.children)
+                        node = stack.pop()
+                        postOrderList.append(node.val)
+                        stack.extend(node.children)
 
-                return postOrderList[::-1]
+                return postOrderList[::-1] # Reversing the list to get the postorder traversal in the correct order.
         
