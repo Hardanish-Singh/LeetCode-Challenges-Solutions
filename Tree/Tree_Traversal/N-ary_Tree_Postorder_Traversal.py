@@ -1,21 +1,17 @@
 # Leetcode: https://leetcode.com/problems/n-ary-tree-postorder-traversal/
 
-"""
-        # Definition for a Node.
-        class Node:
-                def __init__(self, val = None, children = None):
-                        self.val = val
-                        self.children = children
-"""
+from typing import List, Optional
 
-"""
-        SOLUTION 1: RECURSIVE
-"""
+class Node:
+    def __init__(self, val: Optional[int] = None, children: Optional[List['Node']] = None):
+        self.val = val
+        self.children = children
 
+# SOLUTION 2: RECURSIVE
 class Solution:
-        def postorderRecursiveTraversal(self, root: 'TreeNode', postOrderList: List[int]) -> List[int]:
+        def postorderRecursiveTraversal(self, root: Node, postOrderList: List[int]) -> List[int]:
                 if root is None:
-                        return None
+                        return []
                 for child in root.children:
                         self.postorderRecursiveTraversal(child, postOrderList)
                 postOrderList.append(root.val)
@@ -24,10 +20,8 @@ class Solution:
                 self.postorderRecursiveTraversal(root, postOrderList)
                 return postOrderList
 
-"""
-        SOLUTION 2: ITERATIVE
-"""
 
+# SOLUTION 3: ITERATIVE
 class Solution:
         def postorder(self, root: 'Node') -> List[int]:
                 if root is None:
