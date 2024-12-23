@@ -43,7 +43,8 @@ class Solution:
                         node = stack.pop()
                         preOrderList.append(node.val)
                         # stack.extend(child for child in node.children[::-1])
-                        stack.extend(child for child in reversed(node.children)) # Reversing the list of children to get the preorder traversal in the correct order.
+                        # stack.extend(node.children[::-1])
+                        stack.extend(reversed(node.children)) # Reversing the list of children to get the preorder traversal in the correct order.
                 
                 return preOrderList
         
