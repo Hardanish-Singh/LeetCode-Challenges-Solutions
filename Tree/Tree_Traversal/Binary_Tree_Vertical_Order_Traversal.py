@@ -30,6 +30,7 @@ class Solution:
                                         dictionary[order].append(node.val)
                                 else:
                                         dictionary[order] = [node.val]
+                                # dictionary.setdefault(order, []).append(node.val)
                                 queue.append([node.left, order - 1])
                                 queue.append([node.right, order + 1])
                 
@@ -53,6 +54,7 @@ class Solution:
                                         dictionary[order].append(node.val)
                                 else:
                                         dictionary[order] = [node.val]
+                                # dictionary.setdefault(order, []).append(node.val)
                                 queue.append((node.left, order - 1))
                                 queue.append((node.right, order + 1))
                 
