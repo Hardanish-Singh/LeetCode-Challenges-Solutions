@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/shortest-word-distance-ii/
 // @ts-nocheck
 
-// Solution 1
+// Solution 1 (using Typescript classes)
 class WordDistance {
     #map: Record<string, number[]>; // private property
     constructor(wordsDict: string[]) {
@@ -26,7 +26,7 @@ class WordDistance {
     }
 }
 
-// Solution 2
+// Solution 2 (using Javascript prototypes)
 var WordDistance = (wordsDict: string[]) => {
     this.map = {};
     wordsDict.forEach((word, index) => (this.map[word] ? this.map[word].push(index) : (this.map[word] = [index])));
