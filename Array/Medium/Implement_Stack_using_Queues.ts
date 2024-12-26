@@ -1,3 +1,4 @@
+// Leetcode: https://leetcode.com/problems/implement-stack-using-queues/
 // @ts-nocheck
 
 // Solution 1 (using Typescript classes)
