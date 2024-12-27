@@ -25,8 +25,27 @@ class Solution:
                 left = 1 + self.maxDepth(root.left)
                 right = 1 + self.maxDepth(root.right)
                 return max(left, right)
-
+        
 # SOLUTION 3: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
+class Solution:
+        def maxDepth(self, root: TreeNode) -> int:
+                if root is None:
+                        return 0
+                queue, depth = [root], 0
+
+                while queue:
+                        depth += 1
+                        n = len(queue)
+                        for _ in range(n):
+                                item = queue.pop(0)
+                                if item.left:
+                                        queue.append(item.left)
+                                if item.right:
+                                        queue.append(item.right)
+
+                return depth
+
+# SOLUTION 4: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 class Solution:
         def maxDepth(self, root: TreeNode) -> int:
                 if root is None:
