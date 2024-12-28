@@ -6,9 +6,9 @@ class Solution
         {
                 PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a,b) -> b-a);
 
-                for(int i=0; i<nums.length; i++)
+                for (int num: nums)
                 {
-                        pq.add(nums[i]);
+                        pq.add(num);
                 }
 
                 int element1 = pq.poll();
