@@ -6,7 +6,7 @@ class Solution
         {
                 PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 
-                for (int num : nums)
+                for (int num: nums)
                 {
                         if(num != 0)
                         {
