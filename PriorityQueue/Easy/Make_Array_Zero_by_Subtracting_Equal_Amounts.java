@@ -1,16 +1,16 @@
 // Leetcode: https://leetcode.com/problems/make-array-zero-by-subtracting-equal-amounts/
 
-class Solution 
+class Solution
 {
-        public int minimumOperations(int[] nums) 
+        public int minimumOperations(int[] nums)
         {
                 PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 
-                for(int i=0; i<nums.length; i++)
+                for (int num : nums)
                 {
-                        if( nums[i] != 0 )
+                        if(num != 0)
                         {
-                                pq.add(nums[i]);
+                                pq.add(num);
                         }
                 }
 
