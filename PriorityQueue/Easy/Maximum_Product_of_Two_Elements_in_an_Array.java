@@ -1,8 +1,8 @@
 // Leetcode: https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
 
-class Solution 
+class Solution
 {
-        public int maxProduct(int[] nums) 
+        public int maxProduct(int[] nums)
         {
                 PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a,b) -> b-a);
 
