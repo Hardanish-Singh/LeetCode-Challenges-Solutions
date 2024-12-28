@@ -1,8 +1,8 @@
 // Leetcode: https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
 
-class Solution 
+class Solution
 {
-        public int[] kWeakestRows(int[][] mat, int k) 
+        public int[] kWeakestRows(int[][] mat, int k)
         {
                 HashMap<Integer, Integer> map= new HashMap<Integer, Integer>();
                 for(int i=0; i<mat.length; i++)
@@ -18,7 +18,7 @@ class Solution
                         map.put(i, count);
                 }
 
-                PriorityQueue<Map.Entry<Integer, Integer>> pq= new PriorityQueue<>((a,b)->{
+                PriorityQueue<Map.Entry<Integer, Integer>> pq= new PriorityQueue<>((a,b) -> {
                         if(a.getValue() == b.getValue())
                         {
                                 return a.getKey() - b.getKey();
