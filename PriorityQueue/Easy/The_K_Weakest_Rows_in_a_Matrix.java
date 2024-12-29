@@ -30,6 +30,7 @@ class Solution
                                 return a.getValue() - b.getValue();
                         }
                 });
+                // pq.addAll(map.entrySet());
                 for(Map.Entry<Integer, Integer> key: map.entrySet())
                 {
                         pq.add(key);
