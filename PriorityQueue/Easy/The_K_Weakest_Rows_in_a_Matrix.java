@@ -31,9 +31,9 @@ class Solution
                         }
                 });
                 // pq.addAll(map.entrySet());
-                for(Map.Entry<Integer, Integer> key: map.entrySet())
+                for(Map.Entry<Integer, Integer> entry: map.entrySet())
                 {
-                        pq.add(key);
+                        pq.add(entry);
                 }
 
                 int[] result = new int[k];
