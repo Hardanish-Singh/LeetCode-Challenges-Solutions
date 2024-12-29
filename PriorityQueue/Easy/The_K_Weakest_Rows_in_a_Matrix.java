@@ -19,10 +19,12 @@ class Solution
                 }
 
                 PriorityQueue<Map.Entry<Integer, Integer>> pq= new PriorityQueue<>((a,b) -> {
+                        // If the values are same, then sort by key in ascending order
                         if(a.getValue() == b.getValue())
                         {
                                 return a.getKey() - b.getKey();
                         }
+                        // Else sort by value in ascending order
                         else 
                         {
                                 return a.getValue() - b.getValue();
@@ -34,11 +36,8 @@ class Solution
                 }
 
                 int[] result = new int[k];
-                int index = 0;
-                while(!pq.isEmpty() && k > 0)
-                {
-                        result[index++] = pq.poll().getKey();
-                        k--;
+                for(int i=0; i<k; i++) {
+                    result[i] = pq.poll().getKey();
                 }
                 return result;
         }
