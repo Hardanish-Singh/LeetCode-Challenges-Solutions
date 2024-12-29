@@ -5,7 +5,7 @@ class Solution
         public List<Integer> findClosestElements(int[] arr, int k, int x)
         {
                 PriorityQueue<Integer> pq = new PriorityQueue<Integer>( (Integer a , Integer b) -> {
-                        if(Math.abs(a-x) < Math.abs(b-x) || (Math.abs(a-x) == Math.abs(b-x) && a < b))
+                        if(Math.abs(a - x) < Math.abs(b - x) || (Math.abs(a - x) == Math.abs(b - x) && a < b))
                         {
                                 return -1;
                         }
@@ -15,18 +15,23 @@ class Solution
                         }
                 });
                 
-                
                 for(int i = 0; i < arr.length; i++)
                 {
                         pq.add(arr[i]);
                 }
                 
-                List<Integer> result = new ArrayList<Integer>();
-                for(int i =0; i< k; i++)
+                ArrayList<Integer> result = new ArrayList<Integer>();
+                for(int i = 0; i < k; i++)
                 {
                         result.add(pq.poll());
                 }
-                Collections.sort(result, (a,b) -> a - b);
+
+                // Sorting the result array in ascending order
+                Collections.sort(result);
+                // Collections.sort(result, (a, b) -> a - b);
+
+                // Uncomment the following line to sort the result array in descending order
+                // Collections.sort(result, (a, b) -> b - a);
 
                 return result;
         }
