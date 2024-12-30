@@ -1,23 +1,23 @@
 // Leetcode: https://leetcode.com/problems/maximal-score-after-applying-k-operations/
 
-class Solution 
+class Solution
 {
-        public long maxKelements(int[] nums, int k) 
+        public long maxKelements(int[] nums, int k)
         {
-                PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a,b) -> b-a);
+                PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a, b) -> b - a);
 
-                for(int i=0; i<nums.length; i++)
+                for(int num: nums)
                 {
-                        pq.add(nums[i]);
+                        pq.add(num);
                 }
 
                 long result = 0;
-                while ( k > 0) 
+                while (k > 0)
                 {
-                        int val = pq.poll();
-                        result += val;
-                        val = (int)Math.ceil(val/(double)3);
-                        pq.add(val);
+                        int value = pq.poll();
+                        result += value;
+                        value = (int)Math.ceil(value/(double)3);
+                        pq.add(value);
                         k--;
                 }
 
