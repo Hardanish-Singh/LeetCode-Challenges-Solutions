@@ -4,17 +4,16 @@ class Solution
 {
         public int[][] sortTheStudents(int[][] score, int k)
         {
-                PriorityQueue<int[]> pq=new PriorityQueue<int[]>( (a,b) -> b[k] - a[k] );
+                PriorityQueue<int[]> pq = new PriorityQueue<int[]>( (a,b) -> b[k] - a[k] );
 
-                for(int[] i:score)
+                for(int[] s: score)
                 {
-                        pq.add(i);
+                        pq.add(s);
                 }
 
-                int i = 0;
-                while(!pq.isEmpty())
+                for(int i = 0; i < score.length; i++)
                 {
-                        score[i++] = pq.remove();
+                    score[i] = pq.poll();
                 }
 
                 return score;
