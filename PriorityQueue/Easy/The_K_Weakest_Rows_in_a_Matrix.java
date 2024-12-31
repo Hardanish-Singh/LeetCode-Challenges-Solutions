@@ -18,7 +18,7 @@ class Solution
                         map.put(i, count);
                 }
 
-                PriorityQueue<Map.Entry<Integer, Integer>> pq= new PriorityQueue<>((a, b) -> {
+                PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>((a, b) -> {
                         // If the values are same, then sort by key in ascending order
                         if(a.getValue() == b.getValue())
                         {
