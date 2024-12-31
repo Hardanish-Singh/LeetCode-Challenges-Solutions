@@ -25,7 +25,7 @@ class Solution
                                 return a.getKey() - b.getKey();
                         }
                         // Else sort by value in ascending order
-                        else 
+                        else
                         {
                                 return a.getValue() - b.getValue();
                         }
