@@ -1,7 +1,9 @@
 // Leetcode: https://leetcode.com/problems/find-x-sum-of-all-k-long-subarrays-i
 
-class Solution {
-        public int[] findXSum(int[] nums, int k, int x) {
+class Solution 
+{
+        public int[] findXSum(int[] nums, int k, int x) 
+        {
                 int n = nums.length;
                 int[] res = new int[n - k + 1];
                 for (int i = 0; i < n - k + 1; i++) {
