@@ -1,4 +1,4 @@
-// Leetcode: https://leetcode.com/problems/find-x-sum-of-all-k-long-subarrays-i 
+// Leetcode: https://leetcode.com/problems/find-x-sum-of-all-k-long-subarrays-i
 
 class Solution {
         public int[] findXSum(int[] nums, int k, int x) {
