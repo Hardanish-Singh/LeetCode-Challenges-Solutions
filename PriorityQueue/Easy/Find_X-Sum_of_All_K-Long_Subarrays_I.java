@@ -6,10 +6,12 @@ class Solution
         {
                 int n = nums.length;
                 int[] res = new int[n - k + 1];
-                for (int i = 0; i < n - k + 1; i++) {
+                for (int i = 0; i < n - k + 1; i++)
+                {
                         HashMap<Integer, Integer> map = new HashMap<>();
 
-                        for (int j = i; j < i + k; j++) {
+                        for (int j = i; j < i + k; j++)
+                        {
                                 map.put(nums[j], map.getOrDefault(nums[j], 0) + 1);
                         }
 
@@ -28,7 +30,8 @@ class Solution
                         pq.addAll(map.entrySet());
 
                         int sum = 0;
-                        for (int j = 0; j < x && !pq.isEmpty(); j++) {
+                        for (int j = 0; j < x && !pq.isEmpty(); j++)
+                        {
                                 Map.Entry<Integer, Integer> e = pq.poll();
                                 sum += e.getKey() * e.getValue();
                         }
