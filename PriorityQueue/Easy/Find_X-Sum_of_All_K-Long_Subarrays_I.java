@@ -5,7 +5,7 @@ class Solution
         public int[] findXSum(int[] nums, int k, int x)
         {
                 int n = nums.length;
-                int[] res = new int[n - k + 1];
+                int[] result = new int[n - k + 1];
                 for (int i = 0; i < n - k + 1; i++)
                 {
                         HashMap<Integer, Integer> map = new HashMap<>();
@@ -34,8 +34,8 @@ class Solution
                                 Map.Entry<Integer, Integer> e = pq.poll();
                                 sum += e.getKey() * e.getValue();
                         }
-                        res[i] = sum;
+                        result[i] = sum;
                 }
-                return res;
+                return result;
         }
 }
