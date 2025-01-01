@@ -9,7 +9,6 @@ class Solution
                 for (int i = 0; i < n - k + 1; i++)
                 {
                         HashMap<Integer, Integer> map = new HashMap<>();
-
                         for (int j = i; j < i + k; j++)
                         {
                                 map.put(nums[j], map.getOrDefault(nums[j], 0) + 1);
