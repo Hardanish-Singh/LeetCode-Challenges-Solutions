@@ -9,7 +9,8 @@ class Solution
                 {
                         pq.add(gift);
                 }
-                for (int i = 0; i < k; i++) {
+                for (int i = 0; i < k; i++)
+                {
                         int gift = pq.poll();
                         int left = (int) Math.floor(Math.sqrt(gift));
                         pq.add(left);
