@@ -16,7 +16,8 @@ class Solution
                         pq.add(left);
                 }
                 long sum = 0;
-                while (!pq.isEmpty()) {
+                while (!pq.isEmpty()) 
+                {
                         sum += pq.poll();
                 }
                 return sum;
