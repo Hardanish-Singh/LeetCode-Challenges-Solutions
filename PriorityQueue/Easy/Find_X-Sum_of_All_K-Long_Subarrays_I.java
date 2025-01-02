@@ -26,7 +26,11 @@ class Solution
                                 return b.getKey() - a.getKey();
                             }
                         });
-                        pq.addAll(map.entrySet());
+                        // pq.addAll(map.entrySet());
+                        for(Map.Entry<Integer, Integer> entry: map.entrySet())
+                        {
+                                pq.add(entry);
+                        }
 
                         int sum = 0;
                         for (int j = 0; j < x && !pq.isEmpty(); j++)
