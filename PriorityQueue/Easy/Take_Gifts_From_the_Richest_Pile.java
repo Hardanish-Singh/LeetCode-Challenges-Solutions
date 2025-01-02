@@ -1,6 +1,7 @@
 // Leetcode: https://leetcode.com/problems/take-gifts-from-the-richest-pile
 
-class Solution {
+class Solution
+{
         public long pickGifts(int[] gifts, int k) {
                 PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
                 for (int i : gifts) {
