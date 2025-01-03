@@ -18,6 +18,6 @@ class Solution:
                         result.append(item.val for item in queue) # POP ALL ELEMENTS FROM QUEUE
                         n = len(queue)
                         for i in range(n):
-                                queue.extend(child for child in queue.pop(0).children)
+                               queue.extend(queue.pop(0).children) # POP ALL ELEMENTS FROM QUEUE AND ADD THEIR CHILDREN TO QUEUE
 
                 return len(result)
