@@ -12,8 +12,7 @@ class Solution:
         def maxDepth( self, root: 'Node' ) -> int:
                 if root is None:
                         return 0
-                queue = [root]
-                result = []
+                queue, result = [root], []
 
                 while queue:
                         result.append(item.val for item in queue) # POP ALL ELEMENTS FROM QUEUE
