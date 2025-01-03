@@ -3,6 +3,7 @@
 from typing import List, Optional
 # from itertools import chain
 
+# Definition for a Node.
 class Node:
     def __init__(self, val: Optional[int] = None, children: Optional[List['Node']] = None):
         self.val = val
