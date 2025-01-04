@@ -50,9 +50,7 @@ class Solution:
         def minDepth(self, root: TreeNode) -> int:
                 if root is None:
                         return 0
-                queue = [root]
-                result = []
-                count = 1
+                queue, result, count = [root], [], 1
 
                 while queue:
                         result.append(item.val for item in queue) # POP ALL ELEMENTS FROM QUEUE
