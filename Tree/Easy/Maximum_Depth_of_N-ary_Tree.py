@@ -27,7 +27,7 @@ class Solution:
 from collections import deque # deque is a double-ended queue
 
 class Solution:
-        def maxDepth( self, root: 'Node' ) -> int:
+        def maxDepth( self, root: Node ) -> int:
                 if root is None:
                         return 0
                 queue, depth = deque([root]), 0
