@@ -30,12 +30,12 @@ class Solution:
         def maxDepth( self, root: 'Node' ) -> int:
                 if root is None:
                         return 0
-                queue, result = deque([root]), []
+                queue, depth = deque([root]), 0
 
                 while queue:
-                        result.append(item.val for item in queue) # POP ALL ELEMENTS FROM QUEUE
+                        depth += 1
                         n = len(queue)
-                        for i in range(n):
+                        for _ in range(n):
                                queue.extend(queue.popleft().children) # POP ALL ELEMENTS FROM QUEUE AND ADD THEIR CHILDREN TO QUEUE
 
-                return len(result)
+                return depth
