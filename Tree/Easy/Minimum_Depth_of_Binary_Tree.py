@@ -55,7 +55,7 @@ class Solution:
                 while queue:
                         result.append(item.val for item in queue) # POP ALL ELEMENTS FROM QUEUE
                         n = len(queue)
-                        for i in range(n):
+                        for _ in range(n):
                                 item = queue.pop(0)
                                 if item.left is None and item.right is None:
                                         return count
