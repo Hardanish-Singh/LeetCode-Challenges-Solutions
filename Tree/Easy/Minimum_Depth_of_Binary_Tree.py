@@ -26,10 +26,7 @@ class Solution:
                         right = self.minDepth(root.right)
                         return 1 + min(left, right)
 
-"""
-        SOLUTION 2: RECURSIVE SOLUTION
-"""
-
+# Solution 2: RECURSIVE
 class Solution:
         def minDepth(self, root: TreeNode) -> int:
                 # BASE CASE
@@ -48,10 +45,7 @@ class Solution:
                         return min(left, right)
 
 
-"""
-        SOLUTION 3: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
-"""
-
+# Solution 3: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 class Solution:
         def minDepth(self, root: TreeNode) -> int:
                 if root is None:
