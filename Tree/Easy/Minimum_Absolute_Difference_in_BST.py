@@ -25,8 +25,4 @@ class Solution( object ):
                 preorderRecursiveTraversal( root, preOrderList )
                 
                 preOrderList.sort()
-                difference = [ ]
-                for i in range( 0, len( preOrderList ) - 1 ):
-                        difference.append( preOrderList[ i + 1 ] - preOrderList[ i ] )
-
-                return min( difference )
+                return min(preOrderList[i + 1] - preOrderList[i] for i in range(len(preOrderList) - 1))
