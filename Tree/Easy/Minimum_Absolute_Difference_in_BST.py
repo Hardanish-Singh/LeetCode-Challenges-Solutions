@@ -9,7 +9,7 @@ class TreeNode:
                 self.left = left
                 self.right = right
 
-# Solution 1
+# Solution 1 (Using InderOrder Traversal)
 class Solution:
         def getMinimumDifference(self, root: TreeNode) -> int:
                 inorderTraversalList = []
@@ -17,7 +17,7 @@ class Solution:
                 inorderTraversal(root)
                 return min(inorderTraversalList[i + 1] - inorderTraversalList[i] for i in range(len(inorderTraversalList) - 1))
 
-# Solution 2
+# Solution 2 (Using PreOrder Traversal)
 def preorderRecursiveTraversal(root: TreeNode, preOrderList: List[int]) -> None:
         if root is None:
                 return None
