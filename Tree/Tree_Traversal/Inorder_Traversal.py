@@ -17,6 +17,12 @@ class Solution:
         # Inorder: left -> root -> right
         # First, recursively traverse the left subtrees, then add the current node's value to the result list, then recursively traverse the right subtrees
         return  self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
+    
+# SOLUTION 2: RECURSIVE USING LAMBDA FUNCTION
+class Solution:
+        def inorderTraversal(self, root: TreeNode) -> List[int]:
+                inorderTraversal = lambda node: [] if not node else inorderTraversal(node.left) + [node.val] + inorderTraversal(node.right)
+                return inorderTraversal(root)
 
 # SOLUTION 2: RECURSIVE
 class Solution:
