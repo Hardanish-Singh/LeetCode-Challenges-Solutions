@@ -17,8 +17,14 @@ class Solution:
         # Preorder: root -> left -> right
         # First, add the current node's value to the result list, then recursively traverse the left and right subtrees
         return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
+    
+# SOLUTION 2: RECURSIVE USING LAMBDA FUNCTION
+class Solution:
+        def preorderTraversal(self, root: TreeNode) -> List[int]:
+                preorderTraversal = lambda node: [] if not node else [node.val] + preorderTraversal(node.left) + preorderTraversal(node.right)
+                return preorderTraversal(root)
 
-# SOLUTION 2: RECURSIVE
+# SOLUTION 3: RECURSIVE
 class Solution:
         def preorderRecursiveTraversal(self, root: TreeNode, preOrderList: List[int]) -> List[int]:
                 if root is None:
@@ -32,7 +38,7 @@ class Solution:
                 return preOrderList
 
 
-# SOLUTION 3: RECURSIVE
+# SOLUTION 4: RECURSIVE
 def preorderRecursiveTraversal(root: TreeNode, preOrderList: List[int]) -> List[int]:
                 if root is None:
                         return []
@@ -45,7 +51,7 @@ class Solution:
                 preorderRecursiveTraversal(root, preOrderList)
                 return preOrderList
 
-# SOLUTION 4: ITERATIVE
+# SOLUTION 5: ITERATIVE
 class Solution:
         def preorderTraversal(self, root: TreeNode) -> List[int]:
                 if root is None:
