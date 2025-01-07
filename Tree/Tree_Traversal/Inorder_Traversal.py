@@ -23,6 +23,11 @@ class Solution:
         def inorderTraversal(self, root: TreeNode) -> List[int]:
                 inorderTraversal = lambda node: [] if not node else inorderTraversal(node.left) + [node.val] + inorderTraversal(node.right)
                 return inorderTraversal(root)
+        
+# SOLUTION 3: RECURSIVE USING INLINE LAMBDA FUNCTION
+class Solution:
+        def inorderTraversal(self, root: TreeNode) -> List[int]:
+                return (lambda node: self.inorderTraversal(node.left) + [node.val] + self.inorderTraversal(node.right) if node else [])(root)
 
 # SOLUTION 2: RECURSIVE
 class Solution:
