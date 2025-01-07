@@ -57,7 +57,7 @@ class Solution:
                 inorderRecursiveTraversal(root, inOrderList)
                 return inOrderList
 
-# SOLUTION 4: ITERATIVE
+# SOLUTION 6: ITERATIVE
 class Solution:
         def inorderTraversal(self, root: TreeNode) -> List[int]:
                 if root is None:
