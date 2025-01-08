@@ -18,6 +18,12 @@ class Solution:
                 # First, recursively traverse the left subtrees, then recursively traverse the right subtrees, then add the current node's value to the result list
                 return self.postorderTraversal(root.left) + self.postorderTraversal(root.right) + [root.val]
 
+# SOLUTION 2: RECURSIVE USING LAMBDA FUNCTION
+class Solution:
+        def postorderTraversal(self, root: TreeNode) -> List[int]:
+                postorderTraversal = lambda node: self.postorderTraversal(node.left) + self.postorderTraversal(node.right) + [node.val] if node else []
+                return postorderTraversal(root)
+
 # SOLUTION 2: RECURSIVE
 class Solution:
         def postorderRecursiveTraversal(self, root: TreeNode, postOrderList: List[int]) -> List[int]:
