@@ -23,6 +23,11 @@ class Solution:
         def postorderTraversal(self, root: TreeNode) -> List[int]:
                 postorderTraversal = lambda node: self.postorderTraversal(node.left) + self.postorderTraversal(node.right) + [node.val] if node else []
                 return postorderTraversal(root)
+        
+# SOLUTION 3: RECURSIVE USING INLINE LAMBDA FUNCTION
+class Solution:
+        def postorderTraversal(self, root: TreeNode) -> List[int]:
+                return (lambda node: self.postorderTraversal(node.left) + self.postorderTraversal(node.right) + [node.val] if node else [])(root)
 
 # SOLUTION 2: RECURSIVE
 class Solution:
