@@ -56,7 +56,7 @@ class Solution:
                 postorderRecursiveTraversal(root, postOrderList)
                 return postOrderList
 
-# SOLUTION 4: ITERATIVE
+# SOLUTION 6: ITERATIVE
 class Solution:
         def postorderTraversal(self, root: TreeNode) -> List[int]:
                 if root is None:
