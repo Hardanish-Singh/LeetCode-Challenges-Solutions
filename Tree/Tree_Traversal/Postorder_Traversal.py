@@ -42,7 +42,7 @@ class Solution:
                 self.postorderRecursiveTraversal(root, postOrderList)
                 return postOrderList
 
-# SOLUTION 3: RECURSIVE
+# SOLUTION 5: RECURSIVE
 def postorderRecursiveTraversal(root: TreeNode, postOrderList: List[int]) -> List[int]:
         if root is None:
                 return None
