@@ -40,7 +40,7 @@ class Solution:
                 self.preorderRecursiveTraversal(root, preOrderList)
                 return preOrderList
 
-# SOLUTION 3: ITERATIVE
+# SOLUTION 4: ITERATIVE
 class Solution:
         def preorder(self, root: Node) -> List[int]:
                 if root is None:
