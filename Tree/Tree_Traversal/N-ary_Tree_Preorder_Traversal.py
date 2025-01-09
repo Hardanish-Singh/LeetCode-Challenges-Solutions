@@ -19,6 +19,14 @@ class Solution:
                 # return [root.val] + list(chain.from_iterable(self.preorder(child) for child in root.children))
                 return [root.val] + sum([self.preorder(child) for child in root.children], []) #  sum(..., []) is used to concatenate lists or flattens the list of lists.
 
+# SOLUTION 2: RECURSIVE USING LAMBDA FUNCTION
+class Solution:
+        def preorder(self, root: Optional[Node]) -> List[int]:
+                result = []
+                preorderTraversal = lambda node: [result.append(node.val)] + [preorderTraversal(child) for child in node.children] if node else []
+                preorderTraversal(root)
+                return result
+
 # SOLUTION 2: RECURSIVE
 class Solution:
         def preorderRecursiveTraversal(self, root: Node, preOrderList: List[int]) -> List[int]:
