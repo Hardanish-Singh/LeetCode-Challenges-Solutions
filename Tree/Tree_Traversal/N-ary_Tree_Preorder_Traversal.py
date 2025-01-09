@@ -27,7 +27,7 @@ class Solution:
                 preorderTraversal(root)
                 return result
 
-# SOLUTION 2: RECURSIVE
+# SOLUTION 3: RECURSIVE
 class Solution:
         def preorderRecursiveTraversal(self, root: Node, preOrderList: List[int]) -> List[int]:
                 if root is None:
