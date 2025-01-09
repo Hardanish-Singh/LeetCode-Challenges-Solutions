@@ -9,7 +9,7 @@ class Node:
         self.val = val
         self.children = children
 
-# Solution 1: RECURSIVE
+# SOLUTION 1: RECURSIVE
 class Solution:
         def postorder(self, root: 'Node') -> List[int]:
                 if root is None:
@@ -18,7 +18,20 @@ class Solution:
                 # return list(chain.from_iterable(self.postorder(child) for child in root.children)) + [root.val]
                 return sum([self.postorder(child) for child in root.children], []) + [root.val]
 
-# SOLUTION 2: RECURSIVE
+# SOLUTION 2: RECURSIVE USING LAMBDA FUNCTION
+class Solution:
+        def postorder(self, root: 'Node') -> List[int]:
+                result = []
+                postorderTraversal = lambda node: [postorderTraversal(child) for child in node.children] + [result.append(node.val)] if node else []
+                postorderTraversal(root)
+                return result
+
+# SOLUTION 3: RECURSIVE USING INLINE LAMBDA FUNCTION
+class Solution:
+        def postorder(self, root: 'Node') -> List[int]:
+                return (lambda node: sum([self.postorder(child) for child in node.children], []) + [node.val] if node else [])(root)
+
+# SOLUTION 4: RECURSIVE
 class Solution:
         def postorderRecursiveTraversal(self, root: Node, postOrderList: List[int]) -> List[int]:
                 if root is None:
@@ -32,7 +45,7 @@ class Solution:
                 return postOrderList
 
 
-# SOLUTION 3: ITERATIVE
+# SOLUTION 5: ITERATIVE
 class Solution:
         def postorder(self, root: 'Node') -> List[int]:
                 if root is None:
