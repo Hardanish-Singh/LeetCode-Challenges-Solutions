@@ -32,7 +32,7 @@ class Solution:
         def preorder(self, root: Optional[Node]) -> List[int]:
                 return (lambda node: [node.val] + sum([self.preorder(child) for child in node.children], []) if node else [])(root)
 
-# SOLUTION 3: RECURSIVE
+# SOLUTION 4: RECURSIVE
 class Solution:
         def preorderRecursiveTraversal(self, root: Node, preOrderList: List[int]) -> List[int]:
                 if root is None:
@@ -45,7 +45,7 @@ class Solution:
                 self.preorderRecursiveTraversal(root, preOrderList)
                 return preOrderList
 
-# SOLUTION 4: ITERATIVE
+# SOLUTION 5: ITERATIVE
 class Solution:
         def preorder(self, root: Node) -> List[int]:
                 if root is None:
