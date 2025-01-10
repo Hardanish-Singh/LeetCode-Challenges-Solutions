@@ -9,7 +9,7 @@ class TreeNode:
                 self.left = left
                 self.right = right
 
-# Solution 1
+# SOLUTION 1: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 class Solution:
         def levelOrder(self, root: TreeNode) -> List[List[int]]:
                 if root is None:
@@ -29,7 +29,7 @@ class Solution:
                 
                 return result
         
-# Solution 2
+# SOLUTION 2: ITERATIVE BFS / LEVEL ORDER TRAVERSAL USING DEQUE
 from collections import deque # deque is a double-ended queue
 
 class Solution:
