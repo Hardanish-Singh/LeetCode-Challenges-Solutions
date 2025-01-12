@@ -17,7 +17,7 @@ class TreeNode:
         3. For every node we process, we enqueue its left child (if not null) with the horizontal distance decremented by 1, and its right child (if not null) with the horizontal distance incremented by 1.
         4. After we have traversed the entire tree, we will have a dictionary filled with vertical levels as keys and lists of node values as values. The only thing left would be to sort these keys and output the associated lists in the sorted order.
 """
-# Solution 1: ITERATIVE WITHOUT USING DEQUE
+# SOLUTION 1: ITERATIVE WITHOUT USING DEQUE
 class Solution:
         def verticalOrder(self, root: TreeNode) -> List[List[int]]:
                 dictionary = {}
@@ -36,7 +36,7 @@ class Solution:
                 
                 return [dictionary[key] for key in sorted(dictionary.keys())]
         
-# Solution 2: ITERATIVE USING DEQUEUE
+# SOLUTION 2: ITERATIVE USING DEQUEUE
 from collections import deque
 
 class Solution:
