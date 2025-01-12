@@ -8,7 +8,7 @@ class Node:
         self.val = val = val
         self.children = children
 
-# Solution 1: RECURSIVE
+# SOLUTION 1: RECURSIVE
 class Solution:
     def levelOrder(self, root: Node) -> List[List[int]]:
         def traverse(node, level):
@@ -24,7 +24,7 @@ class Solution:
         traverse(root, 0)
         return result
 
-# Solution 2: ITERATIVE
+# SOLUTION 2: ITERATIVE
 class Solution:
         def levelOrder(self, root: Node) -> List[List[int]]:
                 if root is None:
@@ -42,7 +42,7 @@ class Solution:
                 
                 return result
 
-# Solution 3: ITERATIVE USING DEQUE
+# SOLUTION 3: ITERATIVE USING DEQUE
 from collections import deque
 
 class Solution:
