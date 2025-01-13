@@ -8,7 +8,7 @@ class Node:
         self.val = val
         self.children = children
 
-# Solution 1
+# SOLUTION 1: ITERATIVE BFS / LEVEL ORDER TRAVERSAL
 class Solution:
         def maxDepth( self, root: Node ) -> int:
                 if root is None:
@@ -23,7 +23,7 @@ class Solution:
 
                 return len(result)
         
-# Solution 2
+# SOLUTION 2: ITERATIVE BFS / LEVEL ORDER TRAVERSAL (Using deque)
 from collections import deque # deque is a double-ended queue
 
 class Solution:
