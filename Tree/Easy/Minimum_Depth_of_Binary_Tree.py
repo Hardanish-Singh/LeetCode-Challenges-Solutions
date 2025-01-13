@@ -8,7 +8,7 @@ class TreeNode:
                 self.right = right
 
 
-# Solution 1: RECURSIVE
+# SOLUTION 1: RECURSIVE
 class Solution:
         def minDepth(self, root: TreeNode) -> int:
                 # BASE CASE
@@ -26,7 +26,7 @@ class Solution:
                         right = self.minDepth(root.right)
                         return 1 + min(left, right)
 
-# Solution 2: RECURSIVE
+# SOLUTION 2: RECURSIVE
 class Solution:
         def minDepth(self, root: TreeNode) -> int:
                 # BASE CASE
@@ -57,6 +57,27 @@ class Solution:
                         n = len(queue)
                         for _ in range(n):
                                 item = queue.pop(0)
+                                if item.left is None and item.right is None:
+                                        return count
+                                if item.left:
+                                        queue.append(item.left)
+                                if item.right:
+                                        queue.append(item.right)
+                        count = count + 1
+
+# SOLUTION 4: ITERATIVE BFS / LEVEL ORDER TRAVERSAL (Using deque)
+from collections import deque # deque is a double-ended queue
+
+class Solution:
+        def minDepth(self, root: TreeNode) -> int:
+                if root is None:
+                        return 0
+                queue, count = deque([root]), 1
+
+                while queue:
+                        depth = len(queue)
+                        for _ in range(depth):
+                                item = queue.popleft()
                                 if item.left is None and item.right is None:
                                         return count
                                 if item.left:
