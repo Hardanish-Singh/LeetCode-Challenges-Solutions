@@ -24,7 +24,7 @@ def preorderRecursiveTraversal(root: TreeNode, preOrderList: List[int]) -> None:
         preorderRecursiveTraversal(root.left, preOrderList)
         preorderRecursiveTraversal(root.right, preOrderList)
        
-# SOLUTION 2: USING PreOrder TRAVERSAL 
+# SOLUTION 2: USING PreOrder TRAVERSAL
 class Solution:
         def getMinimumDifference(self, root: TreeNode) -> int:
                 preOrderList = []
