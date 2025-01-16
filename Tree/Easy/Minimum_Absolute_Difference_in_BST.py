@@ -1,6 +1,6 @@
 # Leetcode: https://leetcode.com/problems/minimum-absolute-difference-in-bst/
 
-from typing import List 
+from typing import List
 
 # Definition for a binary tree node.
 class TreeNode:
