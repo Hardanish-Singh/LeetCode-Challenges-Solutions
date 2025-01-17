@@ -15,10 +15,12 @@ class Solution:
                         nonlocal isBalanced # Declares that the isBalanced variable from the outer scope will be used within this function.
                         if node is None:
                                 return 0
-                        left = dfs(node.left)
-                        right = dfs(node.right)
+                        left = dfs(node.left) # Recursively calculates the height of the left subtree.
+                        right = dfs(node.right) # Recursively calculates the height of the right subtree.
+                        # If the absolute difference between the heights of the left and right subtrees is more than 1, then the tree is not balanced.
                         if abs(left - right) > 1:
                                 isBalanced = False
+                        # Returns the height of the subtree rooted at the current node, which is 1 plus the maximum of the heights of the left and right subtrees.
                         return 1 + max(left, right)
                 dfs(root)
                 return isBalanced
