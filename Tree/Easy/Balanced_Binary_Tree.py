@@ -7,16 +7,13 @@ class TreeNode:
                 self.left = left
                 self.right = right
 
-"""
-        SOLUTION 1: RECURSIVE
-"""
-
+# SOLUTION 1: RECURSIVE
 class Solution:
         def isBalanced(self, root: TreeNode) -> bool:
                 isBalanced = True
                 def dfs(node: TreeNode) -> int:
-                        nonlocal isBalanced
-                        if not node:
+                        nonlocal isBalanced # Declares that the isBalanced variable from the outer scope will be used within this function.
+                        if node is None:
                                 return 0
                         left = dfs(node.left)
                         right = dfs(node.right)
