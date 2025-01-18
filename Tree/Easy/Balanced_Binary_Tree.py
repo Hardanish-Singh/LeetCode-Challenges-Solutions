@@ -1,5 +1,15 @@
 # Leetcode: https://leetcode.com/problems/balanced-binary-tree/
 
+"""
+A height-balanced binary tree is defined as a binary tree where the difference in height between the left and right subtrees of any node is at most 1. The height of a tree is the number of edges on the longest path from the root to any leaf node.
+
+To determine if a binary tree is height-balanced, we need to check two conditions for every node:
+
+        1) The left subtree and right subtree must be balanced.
+        2) The height difference between the left and right subtrees should not exceed 1.
+If both conditions hold true for all nodes, then the tree is height-balanced.
+"""
+
 # Definition for a binary tree node.
 class TreeNode:
         def __init__(self, val = 0, left = None, right = None):
