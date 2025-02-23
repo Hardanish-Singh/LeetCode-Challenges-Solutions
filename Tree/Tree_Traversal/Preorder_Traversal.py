@@ -29,7 +29,7 @@ class Solution:
         def preorderTraversal(self, root: TreeNode) -> List[int]:
                 return (lambda node: [node.val] + self.preorderTraversal(node.left) + self.preorderTraversal(node.right) if node else [])(root)
 
-# SOLUTION 4: RECURSIVE
+# SOLUTION 4: RECURSIVE WITH RECURSIVE/HELPER FUNCTION INSIDE THE CLASS
 class Solution:
         def preorderRecursiveTraversal(self, root: TreeNode, preOrderList: List[int]) -> List[int]:
                 if root is None:
@@ -43,7 +43,7 @@ class Solution:
                 return preOrderList
 
 
-# SOLUTION 5: RECURSIVE
+# SOLUTION 5: RECURSIVE WITH RECURSIVE/HELPER FUNCTION OUTSIDE THE CLASS
 def preorderRecursiveTraversal(root: TreeNode, preOrderList: List[int]) -> List[int]:
                 if root is None:
                         return []
