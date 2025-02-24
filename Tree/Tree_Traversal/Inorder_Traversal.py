@@ -50,7 +50,6 @@ def inorderRecursiveTraversal(root: TreeNode, inOrderList: List[int]) -> List[in
         inorderRecursiveTraversal(root.left, inOrderList)
         inOrderList.append(root.val)
         inorderRecursiveTraversal(root.right, inOrderList)
-        
 class Solution:
         def inorderTraversal(self, root: TreeNode) -> List[int]:
                 inOrderList = []
