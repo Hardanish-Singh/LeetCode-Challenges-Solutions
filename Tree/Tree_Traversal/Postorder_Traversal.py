@@ -49,7 +49,6 @@ def postorderRecursiveTraversal(root: TreeNode, postOrderList: List[int]) -> Lis
         postorderRecursiveTraversal(root.left, postOrderList)
         postorderRecursiveTraversal(root.right, postOrderList)
         postOrderList.append(root.val)
-        
 class Solution:
         def postorderTraversal(self, root: TreeNode) -> List[int]:
                 postOrderList = []
