@@ -29,7 +29,7 @@ class Solution:
         def postorderTraversal(self, root: TreeNode) -> List[int]:
                 return (lambda node: self.postorderTraversal(node.left) + self.postorderTraversal(node.right) + [node.val] if node else [])(root)
 
-# SOLUTION 4: RECURSIVE
+# SOLUTION 4: RECURSIVE WITH RECURSIVE/HELPER FUNCTION INSIDE THE CLASS
 class Solution:
         def postorderRecursiveTraversal(self, root: TreeNode, postOrderList: List[int]) -> List[int]:
                 if root is None:
