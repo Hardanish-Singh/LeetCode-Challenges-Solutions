@@ -20,8 +20,7 @@ class TreeNode:
 # SOLUTION 1: ITERATIVE WITHOUT USING DEQUE
 class Solution:
         def verticalOrder(self, root: TreeNode) -> List[List[int]]:
-                dictionary = {}
-                queue = [[root, 0]]
+                dictionary, queue = {}, [[root, 0]]
 
                 while queue:
                         node, order = queue.pop(0)
