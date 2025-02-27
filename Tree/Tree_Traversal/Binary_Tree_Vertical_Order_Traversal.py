@@ -44,8 +44,7 @@ class Solution:
                 if not root:
                         return []
                 
-                dictionary = {}
-                queue = deque([(root, 0)])
+                dictionary, queue = {}, deque([(root, 0)])
                 
                 while queue:
                         node, order = queue.popleft()
