@@ -47,10 +47,8 @@ class Solution:
                         node = stack.pop()
                         if node:
                                 postOrderList.append(node)
-                                if node.left:
-                                        stack.append(node.left)
-                                if node.right:
-                                        stack.append(node.right)
+                                stack.append(node.left)
+                                stack.append(node.right)
 
                 return postOrderList[::-1]
         def isBalanced(self, root: TreeNode) -> bool:
