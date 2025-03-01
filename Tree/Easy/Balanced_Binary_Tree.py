@@ -1,5 +1,7 @@
 # Leetcode: https://leetcode.com/problems/balanced-binary-tree/
 
+from typing import List
+
 # Definition for a binary tree node.
 class TreeNode:
         def __init__(self, val = 0, left = None, right = None):
@@ -39,40 +41,26 @@ class Solution:
 
 # SOLUTION 2: ITERATIVE
 class Solution:
-        def isBalanced(self, root: TreeNode) -> bool:
-                def postorderTraversal( root ):
-                        stack, postOrderList = [root], []
-
-                        while stack:
-                                node = stack.pop()
-                                postOrderList.append(node.val)
+        def postorderTraversal(self, root: TreeNode) -> List[int]:  
+                stack, postOrderList = [root], []
+                while stack:
+                        node = stack.pop()
+                        if node:
+                                postOrderList.append(node)
                                 if node.left:
                                         stack.append(node.left)
                                 if node.right:
                                         stack.append(node.right)
 
-                        return postOrderList[::-1]
-
-                postOrderList = postorderTraversal(root)
-
-                height = {
-                        
-                }
-                left = None
-                right = None
+                return postOrderList[::-1]
+        def isBalanced(self, root: TreeNode) -> bool:
+                postOrderList = self.postorderTraversal(root)
+                height = {}
                 for currentNode in postOrderList:
-                        if currentNode.left is None:
-                                left = 0
-                        else:
-                                left = height[ currentNode.left ]
-                        if currentNode.right is None:
-                                right = 0
-                        else:
-                                right = height[ currentNode.right ]
-                        
-                        if abs( left - right ) > 1:
+                        left = height[currentNode.left] if currentNode.left else 0
+                        right = height[currentNode.right] if currentNode.right else 0
+                        if abs(left - right) > 1:
                                 return False
-                        
-                        height[ currentNode ] = 1 + max( left, right )
+                        height[currentNode] = 1 + max(left, right)
 
                 return True
