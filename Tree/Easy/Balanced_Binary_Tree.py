@@ -41,14 +41,15 @@ class Solution:
 class Solution:
         def isBalanced(self, root: TreeNode) -> bool:
                 def postorderTraversal( root ):
-                        postOrderList, stack = [], [root]
+                        stack, postOrderList = [root], []
 
-                        while len(stack) > 0:
-                                currentNode = stack.pop()
-                                if currentNode:
-                                        postOrderList.append( currentNode )
-                                        stack.append( currentNode.left )
-                                        stack.append( currentNode.right )
+                        while stack:
+                                node = stack.pop()
+                                postOrderList.append(node.val)
+                                if node.left:
+                                        stack.append(node.left)
+                                if node.right:
+                                        stack.append(node.right)
 
                         return postOrderList[::-1]
 
