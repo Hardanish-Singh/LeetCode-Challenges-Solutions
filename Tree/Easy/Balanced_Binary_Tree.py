@@ -38,17 +38,12 @@ class Solution:
                 return isBalanced
 
 # SOLUTION 2: ITERATIVE
-class Solution( object ):
-        def isBalanced( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: bool
-                """
+class Solution:
+        def isBalanced(self, root: TreeNode) -> bool:
                 def postorderTraversal( root ):
-                        postOrderList = []
-                        stack = [ root ]
+                        postOrderList, stack = [], [root]
 
-                        while len( stack ) > 0:
+                        while len(stack) > 0:
                                 currentNode = stack.pop()
                                 if currentNode:
                                         postOrderList.append( currentNode )
