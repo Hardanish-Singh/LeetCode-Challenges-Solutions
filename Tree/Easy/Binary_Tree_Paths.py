@@ -1,23 +1,20 @@
 # Leetcode: https://leetcode.com/problems/binary-tree-paths/
 
+from typing import List
+
 # Definition for a binary tree node.
-# class TreeNode( object ):
-#     def __init__( self, val = 0, left = None, right = None ):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode( object ):
+    def __init__( self, val = 0, left = None, right = None ):
+        self.val = val
+        self.left = left
+        self.right = right
 
 # SOLUTION 1: ITERATIVE
-class Solution( object ):
-        def binaryTreePaths( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: List[str]
-                """
-                paths = [ ]
-                stack = [ [ root, str( root.val ) ]  ]
+class Solution:
+        def binaryTreePaths(self, root: TreeNode) -> List[str]:
+                paths, stack = [], [[root, str( root.val )]]
 
-                while len( stack ) > 0:
+                while stack:
                         currentNode, path = stack.pop()
                         if currentNode.left is None and currentNode.right is None:
                                 paths.append( path )
