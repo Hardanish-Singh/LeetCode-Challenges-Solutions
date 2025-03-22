@@ -9,11 +9,6 @@ class TreeNode:
 
 # SOLUTION 1: RECURSIVE
 class Solution:
-        def diameterOfBinaryTree(self, root: TreeNode) -> int:
-                self.diameter = 0
-                self.findDiameterOfBinaryTree( root )
-                return self.diameter
-        
         def findDiameterOfBinaryTree(self, root: TreeNode) -> int:
                 if root is None:
                         return 0
@@ -24,6 +19,10 @@ class Solution:
                 # AT EACH NODE LEVEL, WE FIND THE DIAMETER & HEIGHT OF THAT NODE IN THE TREE
                 self.diameter = max(self.diameter, left + right)
                 return 1 + max(left, right)
+        def diameterOfBinaryTree(self, root: TreeNode) -> int:
+                self.diameter = 0
+                self.findDiameterOfBinaryTree( root )
+                return self.diameter
 
 # SOLUTION 2: ITERATIVE
 class Solution:
