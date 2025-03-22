@@ -19,6 +19,7 @@ class Solution:
                 # AT EACH NODE LEVEL, WE FIND THE DIAMETER & HEIGHT OF THAT NODE IN THE TREE
                 self.diameter = max(self.diameter, left + right)
                 return 1 + max(left, right)
+
         def diameterOfBinaryTree(self, root: TreeNode) -> int:
                 self.diameter = 0
                 self.findDiameterOfBinaryTree( root )
