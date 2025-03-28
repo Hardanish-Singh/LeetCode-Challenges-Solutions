@@ -15,7 +15,7 @@ class Solution:
                         if currentNode.val == target.val:
                                 return currentNode
                         if currentNode.left:
-                                queue.append( currentNode.left )
+                                queue.append(currentNode.left)
                         if currentNode.right:
-                                queue.append( currentNode.right )
+                                queue.append(currentNode.right)
                 return None
