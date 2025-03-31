@@ -1,31 +1,24 @@
 # Leetcode: https://leetcode.com/problems/leaf-similar-trees/
 
 # Definition for a binary tree node.
-# class TreeNode( object ):
-#     def __init__( self, val = 0, left = None, right = None ):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val = 0, left = None, right = None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-class Solution( object ):
-        def leafSimilar( self, root1, root2 ):
-                """
-                :type root1: TreeNode
-                :type root2: TreeNode
-                :rtype: bool
-                """
-                treeOneLeafs = self.fetchLeafs( [ root1 ] )
-                treeTwoLeafs = self.fetchLeafs( [ root2 ] )
-                return True if treeOneLeafs == treeTwoLeafs else False
+class Solution:
+        def leafSimilar(self, root1: TreeNode, root2: TreeNode) -> bool:
+                return self.getLeafValues(root1) == self.getLeafValues(root2)
 
-        def fetchLeafs( self, stack ):
-                leafs = [ ]
-                while len( stack ) > 0:
+        def fetchLeafs(self, stack):
+                leafs = []
+                while stack:
                         currentNode= stack.pop()
                         if currentNode.left is None and currentNode.right is None:
-                                leafs.append( currentNode.val )
+                                leafs.append(currentNode.val)
                         if currentNode.right:
-                                stack.append( currentNode.right )
+                                stack.append(currentNode.right)
                         if currentNode.left:
-                                stack.append( currentNode.left )
+                                stack.append(currentNode.left)
                 return leafs
