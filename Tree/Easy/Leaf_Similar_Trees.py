@@ -11,8 +11,8 @@ class Solution:
         def leafSimilar(self, root1: TreeNode, root2: TreeNode) -> bool:
                 return self.getLeafValues(root1) == self.getLeafValues(root2)
 
-        def fetchLeafs(self, stack):
-                leafs = []
+        def getLeafValues(self, node: list[TreeNode]) -> list[int]:
+                stack, leafs = [node], []
                 while stack:
                         currentNode= stack.pop()
                         if currentNode.left is None and currentNode.right is None:
