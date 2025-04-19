@@ -26,7 +26,7 @@ class WordDistance {
     }
 }
 
-// Solution 2 (using Javascript prototypes)
+// Solution 2 (using prototypes)
 var WordDistance = (wordsDict: string[]) => {
     this.map = {};
     wordsDict.forEach((word, index) => (this.map[word] ? this.map[word].push(index) : (this.map[word] = [index])));
