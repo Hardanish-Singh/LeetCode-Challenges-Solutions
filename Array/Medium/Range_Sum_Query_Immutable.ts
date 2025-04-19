@@ -19,7 +19,7 @@ class NumArray {
     }
 }
 
-// Solution 2 ( using Typescript classes )
+// Solution 2 (using Typescript classes)
 class NumArray {
     constructor(private nums: number[]) {}
 
@@ -33,7 +33,7 @@ class NumArray {
     }
 }
 
-// Solution 3 ( using Typescript classes )
+// Solution 3 (using Typescript classes)
 class NumArray {
     private nums: number[];
 
@@ -50,3 +50,5 @@ class NumArray {
         return sum;
     }
 }
+
+// Solution 4 (using Javascript prototypes)
