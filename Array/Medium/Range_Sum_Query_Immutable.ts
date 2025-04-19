@@ -51,7 +51,7 @@ class NumArray {
     }
 }
 
-// Solution 4 (using Javascript prototypes)
+// Solution 4 (using prototypes)
 var NumArray = function (nums: number[]) {
     this.nums = nums;
 };
