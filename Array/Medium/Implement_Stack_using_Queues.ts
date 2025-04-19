@@ -34,7 +34,7 @@ class MyStack {
  * var param_4 = obj.empty()
  */
 
-// Solution 2 (using Javascript prototypes)
+// Solution 2 (using prototypes)
 var MyStack = function () {
     this.myStack = [];
 };
