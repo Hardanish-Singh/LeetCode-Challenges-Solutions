@@ -7,15 +7,13 @@ class TreeNode:
                 self.left = left
                 self.right = right
 
-
 def preorderRecursiveTraversal(root, preOrderList: list[int]) -> None:
         if root is None:
                 return None
         preOrderList.append(root.val)
         preorderRecursiveTraversal(root.left, preOrderList)
         preorderRecursiveTraversal(root.right, preOrderList)
-        
-        
+
 class Solution:
         def minDiffInBST(self, root: TreeNode) -> int:
                 preOrderList = []
