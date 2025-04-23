@@ -11,24 +11,24 @@ class TreeNode:
         SOLUTION 1
 """
 class Solution:
-        def hasPathSum( self, root: TreeNode, targetSum: int ) -> bool:
+        def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
                 if root is None:
                         return False
-                paths = [ ]
-                stack = [ [ root, str( root.val ) ]  ]
+                paths = []
+                stack = [[root, str(root.val)]]
 
-                while len( stack ) > 0:
+                while stack:
                         currentNode, path = stack.pop()
                         if currentNode.left is None and currentNode.right is None:
-                                paths.append( path )
+                                paths.append(path)
                         if currentNode.right:
-                                stack.append( [ currentNode.right, path + "->" + str( currentNode.right.val ) ] )
+                                stack.append([currentNode.right, path + "->" + str(currentNode.right.val)])
                         if currentNode.left:
-                                stack.append( [ currentNode.left, path + "->" + str( currentNode.left.val ) ] )
+                                stack.append([currentNode.left, path + "->" + str(currentNode.left.val)])
 
                 for path in paths:
-                        temp = map(int, path.split("->") )
-                        if sum( temp ) == targetSum:
+                        pathSum = map(int, path.split("->") )
+                        if sum(pathSum) == targetSum:
                                 return True
                 
                 return False
