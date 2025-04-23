@@ -10,14 +10,8 @@ class TreeNode:
 """
         SOLUTION 1
 """
-
-class Solution( object ):
-        def hasPathSum( self, root, targetSum ):
-                """
-                :type root: TreeNode
-                :type targetSum: int
-                :rtype: bool
-                """
+class Solution:
+        def hasPathSum( self, root: TreeNode, targetSum: int ) -> bool:
                 if root is None:
                         return False
                 paths = [ ]
@@ -42,14 +36,8 @@ class Solution( object ):
 """
         SOLUTION 2
 """
-
-class Solution( object ):
-        def hasPathSum( self, root, targetSum ):
-                """
-                :type root: TreeNode
-                :type targetSum: int
-                :rtype: bool
-                """
+class Solution:
+        def hasPathSum( self, root: TreeNode, targetSum: int ) -> bool:
                 if root is None:
                         return False
                 
