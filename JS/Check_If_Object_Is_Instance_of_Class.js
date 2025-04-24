@@ -17,6 +17,7 @@ var checkIfInstanceOf = function (obj, classFunction) {
         }
         prototype = Object.getPrototypeOf(prototype); // Move to the next prototype in the chain
     }
+
     return false;
 };
 
@@ -30,7 +31,7 @@ var checkIfInstanceOf = function (obj, classFunction) {
         if (obj.constructor === classFunction) {
             return true;
         }
-
+        // The function retrieves the prototype of the object. Every object in JavaScript has a prototype, which represents the object it inherits properties and methods from.
         obj = Object.getPrototypeOf(obj);
     }
 
