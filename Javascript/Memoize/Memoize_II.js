@@ -15,18 +15,18 @@
 function memoize(fn) {
     const cache = new Map();
     return function (...args) {
-        let curr = cache;
+        let currentCache = cache;
         for (const arg of args) {
-            if (!curr.has(arg)) {
-                curr.set(arg, new Map());
+            if (!currentCache.has(arg)) {
+                currentCache.set(arg, new Map());
             }
-            curr = curr.get(arg);
+            currentCache = currentCache.get(arg);
         }
-        if (curr.has("result")) {
-            return curr.get("result");
+        if (currentCache.has("result")) {
+            return currentCache.get("result");
         }
         const result = fn(...args);
-        curr.set("result", result);
+        currentCache.set("result", result);
         return result;
     };
 }
@@ -55,19 +55,19 @@ function memoize(fn) {
 function memoize(fn) {
     const cache = new Map();
     return function (...args) {
-        let curr = cache;
+        let currentCache = cache;
         for (const arg of args) {
             const isObject = arg !== null && (typeof arg === "object" || typeof arg === "function");
-            if (!curr.has(arg)) {
-                curr.set(arg, isObject ? new WeakMap() : new Map());
+            if (!currentCache.has(arg)) {
+                currentCache.set(arg, isObject ? new WeakMap() : new Map());
             }
-            curr = curr.get(arg);
+            currentCache = currentCache.get(arg);
         }
-        if (curr.has("result")) {
-            return curr.get("result");
+        if (currentCache.has("result")) {
+            return currentCache.get("result");
         }
         const result = fn(...args);
-        curr.set("result", result);
+        currentCache.set("result", result);
         return result;
     };
 }
