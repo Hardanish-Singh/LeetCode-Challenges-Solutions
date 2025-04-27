@@ -13,9 +13,9 @@
  * @return {Function}
  */
 function memoize(fn) {
-    const cache = new Map();
+    const globalCache = new Map();
     return function (...args) {
-        let currentCache = cache;
+        let currentCache = globalCache;
         for (const arg of args) {
             if (!currentCache.has(arg)) {
                 currentCache.set(arg, new Map());
@@ -53,9 +53,9 @@ function memoize(fn) {
  * @return {Function}
  */
 function memoize(fn) {
-    const cache = new Map();
+    const globalCache = new Map();
     return function (...args) {
-        let currentCache = cache;
+        let currentCache = globalCache;
         for (const arg of args) {
             const isObject = arg !== null && (typeof arg === "object" || typeof arg === "function");
             if (!currentCache.has(arg)) {
