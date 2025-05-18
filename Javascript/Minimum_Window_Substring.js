@@ -1,54 +1,72 @@
 // Leetcode: https://leetcode.com/problems/minimum-window-substring/
 
-var minWindow = function (string, target) {
-    let targetDictionary = {};
-    let stringDictionary = {};
-    for (let i = 0; i < target.length; i++) {
-        if (target[i] in targetDictionary) targetDictionary[target[i]] += 1;
-        else targetDictionary[target[i]] = 1;
+/**
+ * Finds the smallest substring of 's' that contains all characters from 't'.
+ *
+ * @param {string} s The string to search within.
+ * @param {string} t The string containing the characters to find.
+ * @return {string} The smallest substring of 's' that contains all characters from 't'.
+ * Returns "" if no such substring exists.
+ */
+const minWindow = (s, t) => {
+    // If 't' is longer than 's', no window in 's' can contain 't'.
+    if (t.length > s.length) {
+        return "";
     }
-    let leftPointer = 0;
-    let rightPointer = 0;
-    let subStringLength = 2147483647;
-    let lp = 0;
-    let rp = 0;
-    while (true) {
-        if (leftPointer > rightPointer || rightPointer > string.length) break;
-        let flag = checkObjectKeysArray(
-            Object.keys(targetDictionary),
-            Object.keys(stringDictionary),
-            targetDictionary,
-            stringDictionary
-        );
-        if (flag === true) {
-            if (rightPointer - leftPointer + 1 <= subStringLength) {
-                subStringLength = rightPointer - leftPointer + 1;
-                lp = leftPointer;
-                rp = rightPointer;
-            }
-            if (string[leftPointer] in stringDictionary) stringDictionary[string[leftPointer]] -= 1;
-            leftPointer++;
-        } else {
-            if (string[rightPointer] in stringDictionary) stringDictionary[string[rightPointer]] += 1;
-            else stringDictionary[string[rightPointer]] = 1;
-            rightPointer++;
-        }
-    }
-    return string.substring(lp, rp);
-};
 
-function checkObjectKeysArray(array1, array2, targetDictionary, stringDictionary) {
-    if (array2.length === 0 || array1.length > array2.length) return false;
-    let temp = false;
-    for (let i = 0; i < array1.length; i++) {
-        temp = false;
-        for (let j = 0; j < array2.length; j++) {
-            if (array1[i] === array2[j] && targetDictionary[array1[i]] <= stringDictionary[array2[j]]) {
-                temp = true;
-                break;
-            }
-        }
-        if (temp === false) break;
+    // 1. Count the frequency of each character in 't'.
+    const targetCharCounts = new Map();
+    for (const char of t) {
+        targetCharCounts.set(char, (targetCharCounts.get(char) || 0) + 1);
     }
-    return temp;
-}
+
+    const requiredChars = targetCharCounts.size; // Number of unique characters in 't'.
+
+    // 2. Initialize variables to track the sliding window.
+    let windowStart = 0;
+    let windowEnd = 0;
+    let formedChars = 0; // Counts how many required chars are satisfied in the window.
+    const windowCharCounts = new Map(); // Counts chars in the current window.
+    let minWindowStart = -1; // Start index of the smallest window found.
+    let minWindowLength = Infinity; // Length of the smallest window found.
+
+    // 3. Slide the window through 's'.
+    while (windowEnd < s.length) {
+        const currentChar = s[windowEnd]; // The character at the right edge of the window.
+        windowCharCounts.set(currentChar, (windowCharCounts.get(currentChar) || 0) + 1);
+
+        // If this character is needed and its count is satisfied, update formedChars.
+        if (
+            targetCharCounts.has(currentChar) &&
+            windowCharCounts.get(currentChar) === targetCharCounts.get(currentChar)
+        ) {
+            formedChars++;
+        }
+
+        // 4. Shrink the window if it contains all required characters.
+        while (formedChars === requiredChars) {
+            const currentWindowLength = windowEnd - windowStart + 1;
+
+            // Update the minimum window if a smaller one is found.
+            if (currentWindowLength < minWindowLength) {
+                minWindowLength = currentWindowLength;
+                minWindowStart = windowStart;
+            }
+
+            const startChar = s[windowStart]; // The character at the left edge of the window.
+            windowCharCounts.set(startChar, windowCharCounts.get(startChar) - 1); // Reduce its count.
+
+            // If removing this character makes the window no longer satisfy 't', update formedChars.
+            if (targetCharCounts.has(startChar) && windowCharCounts.get(startChar) < targetCharCounts.get(startChar)) {
+                formedChars--;
+            }
+
+            windowStart++; // Move the left edge to shrink the window.
+        }
+
+        windowEnd++; // Expand the window to the right.
+    }
+
+    // 5. Return the result.
+    return minWindowStart === -1 ? "" : s.substring(minWindowStart, minWindowStart + minWindowLength);
+};
