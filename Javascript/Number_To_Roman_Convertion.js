@@ -1,5 +1,9 @@
 // Leetcode: https://leetcode.com/problems/integer-to-roman/
 
+/**
+ * @param {number} num
+ * @return {string}
+ */
 var intToRoman = function (n) {
     let numberLength = String(n).length;
     let romanNumerals = {
