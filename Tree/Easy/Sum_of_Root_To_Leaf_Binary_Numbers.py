@@ -1,29 +1,24 @@
 # Leetcode: https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/
 
 # Definition for a binary tree node.
-# class TreeNode( object ):
-#     def __init__( self, val = 0, left = None, right = None ):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+        def __init__(self, val = 0, left = None, right = None):
+                self.val = val
+                self.left = left
+                self.right = right
 
-class Solution( object ):
-        def sumRootToLeaf( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: int
-                """
-                paths = [ ]
-                stack = [ [ root, str( root.val ) ]  ]
+class Solution:
+        def sumRootToLeaf(self, root: TreeNode) -> int:
+                paths, stack = [], [[root, str(root.val)]]
 
-                while len( stack ) > 0:
+                while stack:
                         currentNode, path = stack.pop()
                         if currentNode.left is None and currentNode.right is None:
-                                paths.append( path )
+                                paths.append(path)
                         if currentNode.right:
-                                stack.append( [ currentNode.right, path + "->" + str( currentNode.right.val ) ] )
+                                stack.append([currentNode.right, path + "->" + str( currentNode.right.val)])
                         if currentNode.left:
-                                stack.append( [ currentNode.left, path + "->" + str( currentNode.left.val ) ] )
+                                stack.append([currentNode.left, path + "->" + str( currentNode.left.val)])
                 
                 result = 0
                 for path in paths:
