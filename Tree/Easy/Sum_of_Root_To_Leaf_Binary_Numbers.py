@@ -16,11 +16,11 @@ class Solution:
                         if currentNode.left is None and currentNode.right is None:
                                 paths.append(path)
                         if currentNode.right:
-                                stack.append([currentNode.right, path + "->" + str( currentNode.right.val)])
+                                stack.append([currentNode.right, f"{path}->{currentNode.right.val}"])
                         if currentNode.left:
-                                stack.append([currentNode.left, path + "->" + str( currentNode.left.val)])
+                                stack.append([currentNode.left, f"{path}->{currentNode.left.val}"])
                 
                 result = 0
                 for path in paths:
-                        result = result + int(''.join(path.split("->")), 2)
+                        result += int(''.join(path.split("->")), 2)
                 return result
