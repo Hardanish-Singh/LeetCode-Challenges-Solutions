@@ -20,5 +20,4 @@ class Solution:
                         if currentNode.left:
                                 stack.append([currentNode.left, f"{path}->{currentNode.left.val}"])
 
-                result = sum(int(''.join(path.split("->")), 2) for path in paths)
-                return result
+                return sum(int(''.join(path.split("->")), 2) for path in paths)
