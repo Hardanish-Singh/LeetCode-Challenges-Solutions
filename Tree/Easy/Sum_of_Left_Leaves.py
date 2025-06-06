@@ -12,6 +12,7 @@ class Solution:
                 if root is None:
                         return 0
                 total, stack = 0, [root]
+
                 while stack:
                         node = stack.pop()
                         if node.left:
@@ -21,4 +22,5 @@ class Solution:
                                         stack.append(node.left)
                         if node.right:
                                 stack.append(node.right)
+
                 return total
