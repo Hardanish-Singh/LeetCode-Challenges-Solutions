@@ -29,25 +29,22 @@ class Solution:
 
                 return True if outterPair and innerPair else False
 
-"""
-        SOLUTION 2: ITERATIVE
-"""
+# SOLUTION 2: ITERATIVE
 class Solution:
-        def isSymmetric( self, root: TreeNode ) -> bool:
+        def isSymmetric(self, root: TreeNode) -> bool:
                 if root is None:
                         return False
-                stack = [ [ root.left, root.right ] ]
+                stack = [(root.left, root.right)]
 
-                while len( stack ) > 0:
+                while stack:
                         left, right = stack.pop()
                         if left is None and right is None:
                                 continue
-                        if left is None and right is not None or right is None and left is not None:
+                        if left is None or right is None:
                                 return False
                         if left.val != right.val:
                                 return False
-                        else:
-                                stack.append( [ left.right, right.left ]  )
-                                stack.append( [ left.left, right.right ] )
+                        stack.append((left.left, right.right))
+                        stack.append((left.right, right.left))
 
                 return True
