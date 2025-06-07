@@ -26,11 +26,8 @@ class Solution:
 
                 outterPair = self.isTreeSymmetric(left.left, right.right)
                 innerPair = self.isTreeSymmetric(left.right, right.left)
-                
-                if outterPair and innerPair:
-                        return True
-                else:
-                        return False
+
+                return True if outterPair and innerPair else False
 
 """
         SOLUTION 2: ITERATIVE
