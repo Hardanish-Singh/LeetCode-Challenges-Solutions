@@ -1,23 +1,17 @@
 # Leetcode: https://leetcode.com/problems/symmetric-tree/
 
-"""
-        # Definition for a binary tree node.
-        class TreeNode:
-                def __init__( self, val = 0, left = None, right = None ):
-                        self.val = val
-                        self.left = left
-                        self.right = right
-"""
+# Definition for a binary tree node.
+class TreeNode:
+        def __init__(self, val = 0, left = None, right = None):
+                self.val = val
+                self.left = left
+                self.right = right
 
-"""
-        NOTE: if left is mirror of right, and right is mirror of left, then left and right is mirror image ( symmetric tree )
-"""
+# NOTE: if left is mirror of right, and right is mirror of left, then left and right is mirror image ( symmetric tree )
 
-"""
-        SOLUTION 1: RECURSIVE
-"""
+# SOLUTION 1: RECURSIVE
 class Solution:
-        def isSymmetric( self, root: TreeNode ) -> bool:
+        def isSymmetric(self, root: TreeNode) -> bool:
                 if root is None:
                         return False
                 return self.isTreeSymmetric( root.left, root.right )
