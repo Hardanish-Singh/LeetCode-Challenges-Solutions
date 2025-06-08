@@ -26,7 +26,6 @@ class Solution:
                 for currentNode in postOrderList:
                         leftMax = height.get(currentNode.left, 0)
                         rightMax = height.get(currentNode.right, 0)
-
                         height[currentNode] = max(0, currentNode.val + max(leftMax, rightMax))
                         maxPathSum = max(maxPathSum, leftMax + currentNode.val + rightMax)
 
