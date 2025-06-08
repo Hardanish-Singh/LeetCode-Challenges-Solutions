@@ -8,7 +8,7 @@ class TreeNode:
                 self.right = right
 
 class Solution:
-        def postorderTraversal(self, root):
+        def postorderTraversal(self, root: TreeNode) -> list[TreeNode]:
                 postOrderList, stack = [], [root]
                 while stack:
                         currentNode = stack.pop()
@@ -22,18 +22,10 @@ class Solution:
                 postOrderList = self.postorderTraversal(root)
                 maxPathSum = float("-inf")
                 height = {}
-                leftMax = None
-                rightMax = None
 
                 for currentNode in postOrderList:
-                        if currentNode.left is None:
-                                leftMax = 0
-                        else:
-                                leftMax = height[ currentNode.left ]
-                        if currentNode.right is None:
-                                rightMax = 0
-                        else:
-                                rightMax = height[ currentNode.right ]
+                        leftMax = height.get(currentNode.left, 0)
+                        rightMax = height.get(currentNode.right, 0)
 
 
                         if currentNode.val + max( leftMax, rightMax ) < 0:
@@ -48,4 +40,3 @@ class Solution:
                         maxPathSum = max( maxPathSum, leftMax + currentNode.val + rightMax )
 
                 return maxPathSum
-        
