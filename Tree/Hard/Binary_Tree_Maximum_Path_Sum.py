@@ -27,16 +27,7 @@ class Solution:
                         leftMax = height.get(currentNode.left, 0)
                         rightMax = height.get(currentNode.right, 0)
 
-
-                        if currentNode.val + max( leftMax, rightMax ) < 0:
-                                height[ currentNode ] = 0
-                        else:
-                                # Same as max height/depth of binary tree
-                                # height[ currentNode ] = 1 + max( leftMax, rightMax )
-                                height[ currentNode ] = currentNode.val + max( leftMax, rightMax )
-                        
-                        # Same as finding diameter
-                        # diameter = max( diameter, left + right )
-                        maxPathSum = max( maxPathSum, leftMax + currentNode.val + rightMax )
+                        height[currentNode] = max(0, currentNode.val + max(leftMax, rightMax))
+                        maxPathSum = max(maxPathSum, leftMax + currentNode.val + rightMax)
 
                 return maxPathSum
