@@ -47,7 +47,7 @@ class Solution:
                         if currentNode.left:
                                 stack.append(currentNode.left)
                                 parentNodeReference[currentNode.left] = currentNode
-                
+
                 pList = [p.val]
                 key = p
                 while(key in parentNodeReference and parentNodeReference[key]):
