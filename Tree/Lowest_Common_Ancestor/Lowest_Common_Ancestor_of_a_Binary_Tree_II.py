@@ -1,18 +1,13 @@
 # Leetcode: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/
 
-"""
-        # Definition for a binary tree node.
-        class TreeNode:
-                def __init__( self, x ):
-                        self.val = x
-                        self.left = None
-                        self.right = None
-"""
+# Definition for a binary tree node.
+class TreeNode:
+        def __init__(self, val = 0, left = None, right = None):
+                self.val = val
+                self.left = left
+                self.right = right
 
-"""
-        SOLUTION 1: RECURSIVE
-"""
-
+# SOLUTION 1: RECURSIVE
 class Solution:
         def lowestCommonAncestor( self, root: TreeNode, p: TreeNode, q: TreeNode ) -> TreeNode:
                 self.pFound = False
@@ -39,10 +34,7 @@ class Solution:
                 else:
                         return left or right
 
-"""
-        SOLUTION 2: ITERATIVE
-"""
-
+# SOLUTION 2: ITERATIVE
 class Solution:
         def lowestCommonAncestor( self, root: TreeNode, p: TreeNode, q: TreeNode ) -> TreeNode:
                 parentNodeReference = { 
