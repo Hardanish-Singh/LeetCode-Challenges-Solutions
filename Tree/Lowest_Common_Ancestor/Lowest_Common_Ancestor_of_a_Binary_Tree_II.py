@@ -53,13 +53,13 @@ class Solution:
                 while(key in parentNodeReference and parentNodeReference[key]):
                         pList.append(parentNodeReference[key].val)
                         key = parentNodeReference[key]
-                
+
                 qList = [q.val]
                 key = q
                 while(key in parentNodeReference and parentNodeReference[key]):
                         qList.append(parentNodeReference[key].val)
                         key = parentNodeReference[key]
-                
+
                 # Intersection/Common Elements between 2 Lists
                 commonElement = [i for i in pList if i in qList]
                 commonElement = commonElement.pop(0) if len(commonElement) > 0 else None
