@@ -42,23 +42,23 @@ class Solution:
                 while stack:
                         currentNode = stack.pop()
                         if currentNode.right:
-                                stack.append( currentNode.right )
-                                parentNodeReference[ currentNode.right ] = currentNode
+                                stack.append(currentNode.right)
+                                parentNodeReference[currentNode.right] = currentNode
                         if currentNode.left:
-                                stack.append( currentNode.left )
-                                parentNodeReference[ currentNode.left ] = currentNode
+                                stack.append(currentNode.left)
+                                parentNodeReference[currentNode.left] = currentNode
                 
-                pList = [ p.val ]
+                pList = [p.val]
                 key = p
-                while( key in parentNodeReference and parentNodeReference[ key ] ):
-                        pList.append( parentNodeReference[ key ].val )
-                        key = parentNodeReference[ key ]
+                while(key in parentNodeReference and parentNodeReference[key]):
+                        pList.append(parentNodeReference[key].val)
+                        key = parentNodeReference[key]
                 
-                qList = [ q.val ]
+                qList = [q.val]
                 key = q
-                while( key in parentNodeReference and parentNodeReference[ key ] ):
-                        qList.append( parentNodeReference[ key ].val )
-                        key = parentNodeReference[ key ]
+                while(key in parentNodeReference and parentNodeReference[key]):
+                        qList.append(parentNodeReference[key].val)
+                        key = parentNodeReference[key]
                 
                 # Intersection/Common Elements between 2 Lists
                 commonElement = [i for i in pList if i in qList]
