@@ -18,10 +18,10 @@ class Solution:
         def findLowestCommonAncestor( self, root: TreeNode, p: TreeNode, q: TreeNode ) -> TreeNode:
                 if root is None:
                         return None
-                
+
                 left = self.findLowestCommonAncestor( root.left, p, q )
                 right = self.findLowestCommonAncestor( root.right, p, q )
-                
+
                 if root == p or root == q:
                         if root == p:
                                 self.pFound = True
@@ -29,10 +29,7 @@ class Solution:
                                 self.qFound = True
                         return root
                 
-                if left and right:
-                        return root
-                else:
-                        return left or right
+                return root if left and right else left or right
 
 # SOLUTION 2: ITERATIVE
 class Solution:
