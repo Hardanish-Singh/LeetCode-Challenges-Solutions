@@ -63,11 +63,11 @@ class Solution:
                 # Intersection/Common Elements between 2 Lists
                 commonElement = [i for i in pList if i in qList]
                 commonElement = commonElement.pop(0) if len(commonElement) > 0 else None
-                
+
                 for node in parentNodeReference:
                         if node.val == commonElement:
                                 return node
-                
+
                 return None
         
 # SOLUTION 3: ITERATIVE
