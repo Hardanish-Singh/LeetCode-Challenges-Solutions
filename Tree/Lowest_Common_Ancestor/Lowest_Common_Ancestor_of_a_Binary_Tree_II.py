@@ -9,18 +9,18 @@ class TreeNode:
 
 # SOLUTION 1: RECURSIVE
 class Solution:
-        def lowestCommonAncestor( self, root: TreeNode, p: TreeNode, q: TreeNode ) -> TreeNode:
+        def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
                 self.pFound = False
                 self.qFound = False
                 result = self.findLowestCommonAncestor( root, p, q )
                 return result if self.pFound and self.qFound else None
         
-        def findLowestCommonAncestor( self, root: TreeNode, p: TreeNode, q: TreeNode ) -> TreeNode:
+        def findLowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
                 if root is None:
                         return None
 
-                left = self.findLowestCommonAncestor( root.left, p, q )
-                right = self.findLowestCommonAncestor( root.right, p, q )
+                left = self.findLowestCommonAncestor(root.left, p, q)
+                right = self.findLowestCommonAncestor(root.right, p, q)
 
                 if root == p or root == q:
                         if root == p:
@@ -33,13 +33,13 @@ class Solution:
 
 # SOLUTION 2: ITERATIVE
 class Solution:
-        def lowestCommonAncestor( self, root: TreeNode, p: TreeNode, q: TreeNode ) -> TreeNode:
+        def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
                 parentNodeReference = { 
                         root: None 
                 }
-                stack = [ root ]
+                stack = [root]
                 # Preorder Traversal
-                while len( stack ) > 0:
+                while stack:
                         currentNode = stack.pop()
                         if currentNode.right:
                                 stack.append( currentNode.right )
@@ -68,4 +68,32 @@ class Solution:
                         if node.val == commonElement:
                                 return node
                 
+                return None
+        
+# SOLUTION 3: ITERATIVE
+class Solution:
+        def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+                parent = {root: None}
+                stack = [root]
+                # Preorder Traversal
+                while stack:
+                        node = stack.pop()
+                        if node.right:
+                                stack.append(node.right)
+                                parent[node.right] = node
+                        if node.left:
+                                stack.append(node.left)
+                                parent[node.left] = node
+
+                # Build ancestor set for p
+                ancestors = set()
+                while p:
+                        ancestors.add(p)
+                        p = parent.get(p)
+
+                # Traverse q's ancestors and return the first common node
+                while q:
+                        if q in ancestors:
+                                return q
+                        q = parent.get(q)
                 return None
