@@ -23,7 +23,7 @@ class Solution:
 class Solution:
         def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
                 parentNodeReference = {
-                        root: None 
+                        root: None
                 }
                 stack = [root]
                 # Preorder Traversal
