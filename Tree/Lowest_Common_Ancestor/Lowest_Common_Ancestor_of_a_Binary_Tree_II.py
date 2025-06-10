@@ -34,8 +34,8 @@ class Solution:
 # SOLUTION 2: ITERATIVE
 class Solution:
         def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
-                parentNodeReference = { 
-                        root: None 
+                parentNodeReference = {
+                        root: None
                 }
                 stack = [root]
                 # Preorder Traversal
