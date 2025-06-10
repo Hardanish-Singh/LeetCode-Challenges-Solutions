@@ -6,10 +6,7 @@ class TreeNode:
                 self.left = None
                 self.right = None
 
-"""
-        SOLUTION 1: RECURSIVE
-"""
-
+# SOLUTION 1: RECURSIVE
 class Solution:
         def lowestCommonAncestor( self, root: TreeNode, p: TreeNode, q: TreeNode ) -> TreeNode:
                 if root is None:
