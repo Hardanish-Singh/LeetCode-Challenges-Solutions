@@ -19,25 +19,22 @@ class Solution:
 
                 return root if left and right else left or right
 
-"""
-        SOLUTION 2: ITERATIVE
-"""
-
+# SOLUTION 2: ITERATIVE
 class Solution:
-        def lowestCommonAncestor( self, root: TreeNode, p: TreeNode, q: TreeNode ) -> TreeNode:
-                parentNodeReference = { 
+        def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+                parentNodeReference = {
                         root: None 
                 }
-                stack = [ root ]
+                stack = [root]
                 # Preorder Traversal
-                while len( stack ) > 0:
+                while stack:
                         currentNode = stack.pop()
                         if currentNode.right:
-                                stack.append( currentNode.right )
-                                parentNodeReference[ currentNode.right ] = currentNode
+                                stack.append(currentNode.right)
+                                parentNodeReference[currentNode.right] = currentNode
                         if currentNode.left:
-                                stack.append( currentNode.left )
-                                parentNodeReference[ currentNode.left ] = currentNode
+                                stack.append(currentNode.left)
+                                parentNodeReference[currentNode.left] = currentNode
                 
                 pList = [ p.val ]
                 key = p
