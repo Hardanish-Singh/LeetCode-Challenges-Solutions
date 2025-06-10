@@ -35,19 +35,19 @@ class Solution:
                         if currentNode.left:
                                 stack.append(currentNode.left)
                                 parentNodeReference[currentNode.left] = currentNode
-                
-                pList = [ p.val ]
+
+                pList = [p.val]
                 key = p
-                while( key in parentNodeReference and parentNodeReference[ key ] ):
-                        pList.append( parentNodeReference[ key ].val )
-                        key = parentNodeReference[ key ]
+                while(key in parentNodeReference and parentNodeReference[key]):
+                        pList.append(parentNodeReference[key].val)
+                        key = parentNodeReference[key]
                 
-                qList = [ q.val ]
+                qList = [q.val]
                 key = q
-                while( key in parentNodeReference and parentNodeReference[ key ] ):
-                        qList.append( parentNodeReference[ key ].val )
-                        key = parentNodeReference[ key ]
-                
+                while(key in parentNodeReference and parentNodeReference[key]):
+                        qList.append(parentNodeReference[key].val)
+                        key = parentNodeReference[key]
+
                 # Intersection/Common Elements between 2 Lists
                 commonElement = [i for i in pList if i in qList]
                 commonElement = commonElement.pop(0) or 0
@@ -55,5 +55,5 @@ class Solution:
                 for node in parentNodeReference:
                         if node.val == commonElement:
                                 return node
-                
+
                 return None
