@@ -4,7 +4,7 @@ from typing import List
 
 # Definition for a binary tree node.
 class TreeNode:
-        def __init__(self, x: int ) -> None:
+        def __init__(self, x: int) -> None:
                 self.val = x
                 self.left = None
                 self.right = None
@@ -18,11 +18,9 @@ class Solution:
 
                 left = self.findLowestCommonAncestor(root.left, s)
                 right = self.findLowestCommonAncestor(root.right, s)
-                
-                if left and right:
-                        return root
-                else:
-                        return left or right
+
+                return root if left and right else left or right
+
         def lowestCommonAncestor(self, root: TreeNode, nodes: List[TreeNode]) -> TreeNode:
                 s = [node.val for node in nodes]
                 return self.findLowestCommonAncestor(root, s)
