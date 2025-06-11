@@ -30,7 +30,7 @@ class Solution:
         queue = [root]
         result = []
 
-        while len( queue ) > 0:
+        while queue:
             level = []
             n = len( queue )
             for i in range(n):
