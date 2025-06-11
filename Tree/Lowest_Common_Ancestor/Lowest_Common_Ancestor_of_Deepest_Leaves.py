@@ -44,4 +44,5 @@ class Solution:
         deepestNodes = result[-1]
         p = deepestNodes[0]
         q = deepestNodes[-1] if p != deepestNodes[-1] else None
+
         return self.lowestCommonAncestor(root, p, q)
