@@ -26,7 +26,6 @@ class Solution:
 
         return root if left and right else left or right
 
-
     def subtreeWithAllDeepest(self, root: TreeNode) -> TreeNode:
         # Step 1
         queue, result = [root], []
@@ -42,7 +41,7 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
             result.append(level)
-        
+
         # Step 2
         deepestNodes = result[-1]
         # Step 3
