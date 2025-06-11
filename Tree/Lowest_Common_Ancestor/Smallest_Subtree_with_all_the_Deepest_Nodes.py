@@ -31,10 +31,10 @@ class Solution:
         # Step 1
         queue, result = [root], []
 
-        while len( queue ) > 0:
+        while queue:
             level = []
-            n = len( queue )
-            for i in range(n):
+            n = len(queue)
+            for _ in range(n):
                 node = queue.pop(0)
                 level.append(node)
                 if node.left:
