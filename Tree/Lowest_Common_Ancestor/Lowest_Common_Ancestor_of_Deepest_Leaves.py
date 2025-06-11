@@ -40,7 +40,7 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
             result.append(level)
-        
+
         deepestNodes = result[-1]
         p = deepestNodes[0]
         q = deepestNodes[-1] if p != deepestNodes[-1] else None
