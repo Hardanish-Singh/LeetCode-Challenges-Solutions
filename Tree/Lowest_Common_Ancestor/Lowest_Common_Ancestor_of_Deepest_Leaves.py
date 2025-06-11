@@ -27,11 +27,12 @@ class Solution:
         return root if left and right else left or right
 
     def lcaDeepestLeaves(self, root: TreeNode) -> TreeNode:
+        # Step 1
         queue, result = [root], []
 
         while queue:
             level = []
-            n = len( queue )
+            n = len(queue)
             for _ in range(n):
                 node = queue.pop(0)
                 level.append(node)
@@ -40,9 +41,10 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
             result.append(level)
-
+        # Step 2
         deepestNodes = result[-1]
+        # Step 3
         p = deepestNodes[0]
         q = deepestNodes[-1] if p != deepestNodes[-1] else None
-
+        # Step 4
         return self.lowestCommonAncestor(root, p, q)
