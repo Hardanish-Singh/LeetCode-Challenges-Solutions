@@ -27,8 +27,7 @@ class Solution:
         return root if left and right else left or right
 
     def lcaDeepestLeaves(self, root: TreeNode) -> TreeNode:
-        queue = [root]
-        result = []
+        queue, result = [root], []
 
         while queue:
             level = []
