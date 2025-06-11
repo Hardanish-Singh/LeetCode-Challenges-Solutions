@@ -1,13 +1,11 @@
 # Leetcode: https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/
 
-"""
-        # Definition for a binary tree node.
-        class TreeNode:
-                def __init__( self, val = 0, left = None, right = None ):
-                        self.val = val
-                        self.left = left
-                        self.right = right
-"""
+# Definition for a binary tree node.
+class TreeNode:
+        def __init__(self, val = 0, left = None, right = None):
+                self.val = val
+                self.left = left
+                self.right = right
 
 """
     Step 1) First do a Level Order Traversal and stores all the nodes in result array
