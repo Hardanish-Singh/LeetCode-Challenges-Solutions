@@ -23,11 +23,9 @@ class Solution:
 
         left = self.lowestCommonAncestor(root.left, p, q)
         right = self.lowestCommonAncestor(root.right, p, q)
-        
-        if left and right:
-            return root
-        else:
-            return left or right
+
+        return root if left and right else left or right
+
     def lcaDeepestLeaves(self, root: TreeNode) -> TreeNode:
         queue = [root]
         result = []
