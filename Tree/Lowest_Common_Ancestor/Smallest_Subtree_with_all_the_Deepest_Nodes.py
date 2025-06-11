@@ -23,16 +23,13 @@ class Solution:
 
         left = self.lowestCommonAncestor(root.left, p, q)
         right = self.lowestCommonAncestor(root.right, p, q)
-        
-        if left and right:
-            return root
-        else:
-            return left or right
+
+        return root if left and right else left or right
+
 
     def subtreeWithAllDeepest(self, root: TreeNode) -> TreeNode:
         # Step 1
-        queue = [root]
-        result = []
+        queue, result = [root], []
 
         while len( queue ) > 0:
             level = []
