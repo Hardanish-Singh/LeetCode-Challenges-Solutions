@@ -32,7 +32,7 @@ class Solution:
         while queue:
             level = []
             n = len( queue )
-            for i in range(n):
+            for _ in range(n):
                 node = queue.pop(0)
                 level.append(node)
                 if node.left:
