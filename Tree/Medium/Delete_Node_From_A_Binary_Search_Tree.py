@@ -20,13 +20,13 @@ class Solution:
                 while root:
                         if key > root.val:
                                 if root.right is not None and root.right.val == key:
-                                        root.right = self.moveNodePointers( root.right )
+                                        root.right = self.moveNodePointers(root.right)
                                         break
                                 else:
                                         root = root.right
                         else:
                                 if root.left is not None and root.left.val == key:
-                                        root.left = self.moveNodePointers( root.left )
+                                        root.left = self.moveNodePointers(root.left)
                                         break
                                 else:
                                         root = root.left
