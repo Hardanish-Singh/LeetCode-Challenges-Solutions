@@ -7,7 +7,6 @@ class TreeNode:
                 self.left = left
                 self.right = right
 
-
 class Solution:
         def deleteNode(self, root: TreeNode, key: int) -> TreeNode:
                 if root is None:
@@ -40,7 +39,7 @@ class Solution:
                         return root.left
                 else:
                         rootRightNodePointer = root.right
-                        rootLeftNodeLastRightPointer = self.findLastRight( root.left )
+                        rootLeftNodeLastRightPointer = self.findLastRight(root.left)
                         rootLeftNodeLastRightPointer.right = rootRightNodePointer
                         return root.left
         
