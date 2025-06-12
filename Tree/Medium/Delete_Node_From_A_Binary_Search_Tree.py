@@ -13,8 +13,8 @@ class Solution:
                 if root is None:
                         return None
                 if root.val == key:
-                        return self.moveNodePointers( root )
-                
+                        return self.moveNodePointers(root)
+
                 currentNode = root
 
                 while root:
@@ -33,7 +33,7 @@ class Solution:
 
                 return currentNode
 
-        def moveNodePointers( self, root ):
+        def moveNodePointers(self, root: TreeNode) -> TreeNode:
                 if root.left is None:
                         return root.right
                 elif root.right is None:
@@ -44,7 +44,7 @@ class Solution:
                         rootLeftNodeLastRightPointer.right = rootRightNodePointer
                         return root.left
         
-        def findLastRight( self, root ):
+        def findLastRight(self, root: TreeNode) -> TreeNode:
                 while root:
                         if root.right is None:
                                 return root
