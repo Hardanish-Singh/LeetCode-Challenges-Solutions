@@ -8,13 +8,8 @@ class TreeNode:
                 self.right = right
 
 
-class Solution( object ):
-        def deleteNode( self, root, key ):
-                """
-                :type root: TreeNode
-                :type key: int
-                :rtype: TreeNode
-                """
+class Solution:
+        def deleteNode(self, root: TreeNode, key: int) -> TreeNode:
                 if root is None:
                         return None
                 if root.val == key:
