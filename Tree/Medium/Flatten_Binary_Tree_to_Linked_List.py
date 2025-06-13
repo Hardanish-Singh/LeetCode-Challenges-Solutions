@@ -13,13 +13,13 @@ class Solution:
                 self.prev = None
                 return self.flattenBinaryTreeToLinkedList( root )
         
-        def flattenBinaryTreeToLinkedList( self, root ):
+        def flattenBinaryTreeToLinkedList(self, root):
                 if root is None:
                         return None
-                
+
                 self.flattenBinaryTreeToLinkedList( root.right )
                 self.flattenBinaryTreeToLinkedList( root.left )
-                
+
                 root.right = self.prev
                 root.left = None
                 self.prev = root
