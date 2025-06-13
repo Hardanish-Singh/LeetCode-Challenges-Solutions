@@ -10,10 +10,6 @@ class TreeNode:
 # SOLUTION 1: RECURSIVE
 class Solution:
         def flatten( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: None Do not return anything, modify root in-place instead.
-                """
                 self.prev = None
                 return self.flattenBinaryTreeToLinkedList( root )
         
