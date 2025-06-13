@@ -25,12 +25,8 @@ class Solution:
                 self.prev = root
 
 # SOLUTION 2: USING AN EXTRA TREE
-class Solution( object ):
+class Solution:
         def flatten( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: None Do not return anything, modify root in-place instead.
-                """
                 if root is None:
                         return []
                 linkedListRoot = TreeNode()
