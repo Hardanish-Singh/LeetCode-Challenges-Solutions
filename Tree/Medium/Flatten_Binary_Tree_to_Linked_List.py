@@ -46,13 +46,13 @@ class Solution:
         def flatten(self, root: TreeNode) -> None:
                 while root:
                         if root.left:
-                                node = self.findLastRight( root.left )
+                                node = self.findLastRight(root.left)
                                 node.right = root.right
                                 root.right = root.left
                                 root.left = None
                         root = root.right
                 
-        def findLastRight( self, root ):
+        def findLastRight(self, root: TreeNode) -> TreeNode:
                 while root:
                         if root.right is None:
                                 return root
