@@ -9,7 +9,7 @@ class TreeNode:
 
 # SOLUTION 1: RECURSIVE
 class Solution:
-        def flatten( self, root ):
+        def flatten(self, root: TreeNode ) -> None:
                 self.prev = None
                 return self.flattenBinaryTreeToLinkedList( root )
         
