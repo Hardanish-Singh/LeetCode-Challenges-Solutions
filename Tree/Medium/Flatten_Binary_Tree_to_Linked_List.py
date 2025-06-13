@@ -17,17 +17,14 @@ class Solution:
                 if root is None:
                         return None
 
-                self.flattenBinaryTreeToLinkedList( root.right )
-                self.flattenBinaryTreeToLinkedList( root.left )
+                self.flattenBinaryTreeToLinkedList(root.right)
+                self.flattenBinaryTreeToLinkedList(root.left)
 
                 root.right = self.prev
                 root.left = None
                 self.prev = root
 
-"""
-        SOLUTION 2: USING AN EXTRA TREE 
-"""
-
+# SOLUTION 2: USING AN EXTRA TREE
 class Solution( object ):
         def flatten( self, root ):
                 """
