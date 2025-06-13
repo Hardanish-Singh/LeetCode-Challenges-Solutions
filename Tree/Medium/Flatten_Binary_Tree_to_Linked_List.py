@@ -7,11 +7,8 @@ class TreeNode:
                 self.left = left
                 self.right = right
 
-"""
-        SOLUTION 1: RECURSIVE
-"""
-
-class Solution( object ):
+# SOLUTION 1: RECURSIVE
+class Solution:
         def flatten( self, root ):
                 """
                 :type root: TreeNode
