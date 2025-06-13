@@ -9,7 +9,7 @@ class TreeNode:
 
 # SOLUTION 1: RECURSIVE
 class Solution:
-        def flatten(self, root: TreeNode ) -> None:
+        def flatten(self, root: TreeNode) -> None:
                 self.prev = None
                 return self.flattenBinaryTreeToLinkedList(root)
         
@@ -26,7 +26,7 @@ class Solution:
 
 # SOLUTION 2: USING AN EXTRA TREE
 class Solution:
-        def flatten(self, root: TreeNode ) -> None:
+        def flatten(self, root: TreeNode) -> None:
                 if root is None:
                         return []
                 linkedListRoot = TreeNode()
@@ -41,12 +41,9 @@ class Solution:
                                 stack.append(currentNode.left)
                         linkedListRoot = currentNode
 
-"""
-        SOLUTION 3: ITERATIVE
-"""
-
-class Solution( object ):
-        def flatten( self, root ):
+# SOLUTION 3: ITERATIVE
+class Solution:
+        def flatten(self, root: TreeNode) -> None:
                 while root:
                         if root.left:
                                 node = self.findLastRight( root.left )
