@@ -11,7 +11,7 @@ class TreeNode:
 class Solution:
         def flatten(self, root: TreeNode ) -> None:
                 self.prev = None
-                return self.flattenBinaryTreeToLinkedList( root )
+                return self.flattenBinaryTreeToLinkedList(root)
         
         def flattenBinaryTreeToLinkedList(self, root):
                 if root is None:
@@ -26,7 +26,7 @@ class Solution:
 
 # SOLUTION 2: USING AN EXTRA TREE
 class Solution:
-        def flatten( self, root ):
+        def flatten(self, root: TreeNode ) -> None:
                 if root is None:
                         return []
                 linkedListRoot = TreeNode()
