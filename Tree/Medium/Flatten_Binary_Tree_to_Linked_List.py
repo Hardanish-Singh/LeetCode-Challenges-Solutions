@@ -30,15 +30,15 @@ class Solution:
                 if root is None:
                         return []
                 linkedListRoot = TreeNode()
-                stack = [ root ]
-                while len( stack ) > 0:
+                stack = [root]
+                while stack:
                         currentNode = stack.pop()
                         linkedListRoot.right = currentNode
                         linkedListRoot.left = None
                         if currentNode.right:
-                                stack.append( currentNode.right )
+                                stack.append(currentNode.right)
                         if currentNode.left:
-                                stack.append( currentNode.left )
+                                stack.append(currentNode.left)
                         linkedListRoot = currentNode
 
 """
