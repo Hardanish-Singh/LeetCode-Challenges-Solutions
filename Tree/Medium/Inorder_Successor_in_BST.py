@@ -9,11 +9,6 @@ class TreeNode:
 
 class Solution:
         def inorderSuccessor( self, root, p ):
-                """
-                :type root: TreeNode
-                :type p: TreeNode
-                :rtype: TreeNode
-                """
                 if root is None:
                         return []
 
