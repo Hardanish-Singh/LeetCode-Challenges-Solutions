@@ -12,11 +12,9 @@ class Solution:
                 if root is None:
                         return []
 
-                inOrderList = []
-                stack = []
-                currentNode = root
+                inOrderList, stack, currentNode = [], [], root
 
-                while len( stack ) > 0 or currentNode:
+                while stack or currentNode:
                         if currentNode:
                                 stack.append( currentNode )
                                 currentNode = currentNode.left
