@@ -20,7 +20,7 @@ class Solution:
                                 currentNode = currentNode.left
                         else:
                                 currentNode = stack.pop()
-                                inOrderList.append( currentNode )
+                                inOrderList.append(currentNode)
                                 currentNode = currentNode.right
 
                 isSuccessorFound = False
