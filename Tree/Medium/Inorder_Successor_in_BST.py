@@ -7,7 +7,7 @@ class TreeNode:
                 self.left = None
                 self.right = None
 
-class Solution( object ):
+class Solution:
         def inorderSuccessor( self, root, p ):
                 """
                 :type root: TreeNode
