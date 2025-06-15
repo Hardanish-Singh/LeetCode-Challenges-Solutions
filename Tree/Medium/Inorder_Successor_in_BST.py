@@ -8,7 +8,7 @@ class TreeNode:
                 self.right = None
 
 class Solution:
-        def inorderSuccessor( self, root, p ):
+        def inorderSuccessor(self, root: TreeNode, p: TreeNode ) -> TreeNode:
                 if root is None:
                         return []
 
