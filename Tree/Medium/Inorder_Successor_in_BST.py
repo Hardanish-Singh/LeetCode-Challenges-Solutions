@@ -8,7 +8,7 @@ class TreeNode:
                 self.right = None
 
 class Solution:
-        def inorderSuccessor(self, root: TreeNode, p: TreeNode ) -> TreeNode:
+        def inorderSuccessor(self, root: TreeNode, p: TreeNode) -> TreeNode:
                 if root is None:
                         return []
 
@@ -16,7 +16,7 @@ class Solution:
 
                 while stack or currentNode:
                         if currentNode:
-                                stack.append( currentNode )
+                                stack.append(currentNode)
                                 currentNode = currentNode.left
                         else:
                                 currentNode = stack.pop()
