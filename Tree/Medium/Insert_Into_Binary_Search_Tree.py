@@ -20,12 +20,11 @@ class Solution:
 
 # SOLUTION 2: ITERATIVE
 class Solution:
-        def insertIntoBST(self, root: TreeNode, val: int ) -> TreeNode:
+        def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
                 if root is None:
                         return TreeNode(val)
 
-                previousNode = None
-                currentNode = root
+                previousNode, currentNode = None, root
 
                 while currentNode:
                         previousNode = currentNode
@@ -33,10 +32,10 @@ class Solution:
                                 currentNode = currentNode.right
                         elif val < currentNode.val:
                                 currentNode = currentNode.left
-                
+
                 if val > previousNode.val:
-                        previousNode.right = TreeNode ( val )
+                        previousNode.right = TreeNode (val)
                 else:
-                        previousNode.left = TreeNode( val )
+                        previousNode.left = TreeNode(val)
 
                 return root
