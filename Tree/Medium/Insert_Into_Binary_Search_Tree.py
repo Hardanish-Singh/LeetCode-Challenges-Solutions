@@ -9,14 +9,9 @@ class TreeNode:
 
 # SOLUTION 1: RECURSIVE
 class Solution:
-        def insertIntoBST( self, root, val ):
-                """
-                :type root: TreeNode
-                :type val: int
-                :rtype: TreeNode
-                """
+        def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
                 if root is None:
-                        return TreeNode( val )
+                        return TreeNode(val)
                 if val > root.val:
                         root.right = self.insertIntoBST( root.right, val )
                 else:
