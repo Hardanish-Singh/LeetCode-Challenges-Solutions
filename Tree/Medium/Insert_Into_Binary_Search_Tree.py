@@ -18,11 +18,8 @@ class Solution:
                         root.left = self.insertIntoBST(root.left, val)
                 return root
 
-"""
-        SOLUTION 2: ITERATIVE
-"""
-
-class Solution( object ):
+# SOLUTION 2: ITERATIVE
+class Solution:
         def insertIntoBST( self, root, val ):
                 """
                 :type root: TreeNode
