@@ -7,12 +7,8 @@ class TreeNode:
                 self.left = left
                 self.right = right
 
-class Solution( object ):
-        def widthOfBinaryTree( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: int
-                """
+class Solution:
+        def widthOfBinaryTree(self, root: TreeNode) -> int:
                 if root is None:
                         return 0
 
