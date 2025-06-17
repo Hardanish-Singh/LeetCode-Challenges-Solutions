@@ -19,7 +19,7 @@ class Solution:
                         for item in queue:
                                 node, position = item
                                 if node.left:
-                                        temp.append([ node.left, 2 * position ])
+                                        temp.append([node.left, 2 * position])
                                 if node.right:
                                         temp.append([ node.right, (2 * position) + 1 ])
 
