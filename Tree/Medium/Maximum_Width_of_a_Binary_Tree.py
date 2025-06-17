@@ -13,8 +13,8 @@ class Solution:
                         return 0
 
                 width, queue = 0, [[root, 1]]
-                
-                while len( queue ) > 0:
+
+                while queue:
                         temp = []
                         for item in queue:
                                 node, position = item
