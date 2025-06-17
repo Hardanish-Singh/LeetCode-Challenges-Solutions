@@ -12,8 +12,7 @@ class Solution:
                 if root is None:
                         return 0
 
-                width = 1
-                queue = [ [ root, 1 ] ]
+                width, queue = 0, [[root, 1]]
                 
                 while len( queue ) > 0:
                         temp = []
