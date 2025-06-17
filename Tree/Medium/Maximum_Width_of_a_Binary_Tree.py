@@ -23,7 +23,7 @@ class Solution:
                                 if node.right:
                                         temp.append([ node.right, (2 * position) + 1 ])
 
-                        if len( temp ) > 0:
+                        if temp:
                                 width = max(width, ((temp[-1][1] - temp[0][1]) + 1))
                         queue = temp
 
