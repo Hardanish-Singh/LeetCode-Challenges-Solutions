@@ -23,10 +23,7 @@ class Solution:
                 left = self.checkIsValidBST(root.left, root.val, rightParentValue)
                 right = self.checkIsValidBST(root.right, leftParentValue, root.val)
 
-                if left and right:
-                        return True
-                else:
-                        return False
+                return True if left and right else False
 
 #  SOLUTION 2: ITERATIVE
 # IF THE TREE IS VALID BST, THEN WE WILL USE INORDER TRAVERSAL ON BST WHICH WILL LEAD TO SORTED LIST
