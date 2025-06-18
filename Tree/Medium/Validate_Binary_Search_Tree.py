@@ -11,7 +11,7 @@ class TreeNode:
         SOLUTION 1: RECURSIVE
 """
 
-class Solution( object ):
+class Solution:
         def isValidBST( self, root ):
                 """
                 :type root: TreeNode
