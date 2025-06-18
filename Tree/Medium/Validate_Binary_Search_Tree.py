@@ -7,16 +7,9 @@ class TreeNode:
                 self.left = left
                 self.right = right
 
-"""
-        SOLUTION 1: RECURSIVE
-"""
-
+# SOLUTION 1: RECURSIVE
 class Solution:
-        def isValidBST( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: bool
-                """
+        def isValidBST(self, root: TreeNode) -> bool:
                 return self.checkIsValidBST( root, float("inf"), -float("inf") )
         
         def checkIsValidBST( self, root, leftParentValue, rightParentValue ):
