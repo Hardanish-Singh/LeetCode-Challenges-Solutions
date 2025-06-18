@@ -28,20 +28,13 @@ class Solution:
                 else:
                         return False
 
-"""
-        SOLUTION 2: ITERATIVE
-                        IF THE TREE IS VALID BST, THEN WE WILL USE INORDER TRAVERSAL ON BST WHICH WILL LEAD TO SORTED LIST
-"""
-
+#  SOLUTION 2: ITERATIVE
+# IF THE TREE IS VALID BST, THEN WE WILL USE INORDER TRAVERSAL ON BST WHICH WILL LEAD TO SORTED LIST
 class Solution:
-        def isValidBST( self, root ):
-                """
-                :type root: TreeNode
-                :rtype: bool
-                """
+        def isValidBST(self, root: TreeNode) -> bool:
                 if root is None:
                         return False
-                inOrderList = [ ]
+                inOrderList = []
                 currentNode = root
                 stack = [ ]
 
