@@ -34,13 +34,11 @@ class Solution:
         def isValidBST(self, root: TreeNode) -> bool:
                 if root is None:
                         return False
-                inOrderList = []
-                currentNode = root
-                stack = [ ]
+                inOrderList, stack, currentNode = [], [], root
 
-                while currentNode or len( stack ) > 0:
+                while currentNode or stack:
                         if currentNode:
-                                stack.append( currentNode )
+                                stack.append(currentNode)
                                 currentNode = currentNode.left
                         else:
                                 currentNode = stack.pop()
