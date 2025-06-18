@@ -42,11 +42,8 @@ class Solution:
                                 currentNode = currentNode.left
                         else:
                                 currentNode = stack.pop()
-                                inOrderList.append( currentNode.val )
+                                inOrderList.append(currentNode.val)
                                 currentNode = currentNode.right
 
-                clonedList = list( sorted( set( inOrderList ) ) )
-                if clonedList == inOrderList:
-                        return True
-                else:
-                        return False
+                clonedList = list(sorted(set(inOrderList)))
+                return True if clonedList == inOrderList else False
