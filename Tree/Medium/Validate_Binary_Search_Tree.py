@@ -12,7 +12,7 @@ class Solution:
         def isValidBST(self, root: TreeNode) -> bool:
                 return self.checkIsValidBST(root, float("inf"), -float("inf"))
         
-        def checkIsValidBST(self, root: TreeNode, leftParentValue: int, rightParentValue: int) -> bool:
+        def checkIsValidBST(self, root: TreeNode, leftParentValue: float, rightParentValue: float) -> bool:
                 if root is None:
                         return True
                 if root.val >= leftParentValue:
@@ -33,7 +33,7 @@ class Solution:
                         IF THE TREE IS VALID BST, THEN WE WILL USE INORDER TRAVERSAL ON BST WHICH WILL LEAD TO SORTED LIST
 """
 
-class Solution( object ):
+class Solution:
         def isValidBST( self, root ):
                 """
                 :type root: TreeNode
