@@ -20,7 +20,7 @@ const isAnagram = (s: string, t: string): boolean => {
 
     for (const [key1, value1] of Object.entries(dictionaryOne)) {
         for (const [key2, value2] of Object.entries(dictionaryTwo)) {
-            if( key1 === key2 && value1 === value2 ) {
+            if (key1 === key2 && value1 === value2) {
                 delete dictionaryTwo[key2];
                 delete dictionaryOne[key1];
                 break;
