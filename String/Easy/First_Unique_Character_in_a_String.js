@@ -32,7 +32,7 @@ var firstUniqChar = function (string) {
 };
 
 /**
- * @param { string } string
+ * @param {string} string
  * @return { number }
  */
 
