@@ -20,7 +20,7 @@ var isIsomorphic = (s: string, t: string): boolean => {
     return helper(s, t) && helper(t, s);
 };
 
-// Solution 2
+// SOLUTION 2
 var isIsomorphic = (s: string, t: string): boolean => {
     if (s.length != t.length) {
         return false;
