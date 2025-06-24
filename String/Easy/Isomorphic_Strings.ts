@@ -12,7 +12,7 @@ const helper = (string1: string, string2: string): boolean => {
     return true;
 };
 
-// Solution 1
+// SOLUTION 1
 var isIsomorphic = (s: string, t: string): boolean => {
     if (s.length != t.length) {
         return false;
