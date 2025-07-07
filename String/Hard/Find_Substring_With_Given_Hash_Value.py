@@ -1,8 +1,9 @@
+# Leetcode: https://leetcode.com/problems/find-substring-with-given-hash-value/
 """
-(a+b) % modulo = ( (a % modulo) + (b % modulo) ) % modulo;
-(a-b) % modulo = ( (a % modulo) - (b % modulo) + modulo ) % modulo;
-(a*b) % modulo = ( (a % modulo) * (b % modulo) ) % modulo;
-(a/b) % modulo = ( (a % modulo) * ( (b^-1) % modulo) ) % modulo;
+        (a+b) % modulo = ( (a % modulo) + (b % modulo) ) % modulo;
+        (a-b) % modulo = ( (a % modulo) - (b % modulo) + modulo ) % modulo;
+        (a*b) % modulo = ( (a % modulo) * (b % modulo) ) % modulo;
+        (a/b) % modulo = ( (a % modulo) * ( (b^-1) % modulo) ) % modulo;
 """
 class Solution(object):
     def subStrHash(self, s, power, modulo, k, hashValue):
@@ -27,7 +28,7 @@ class Solution(object):
         for item in range(97, 123):
                 dictionary[chr(item)] = item - 96
                 
-        for c in reversed(s):
+        for _ in reversed(s):
                 if( i < k - 1 ):
                         break
                 substring = s[i - k + 1 : i + 1]
