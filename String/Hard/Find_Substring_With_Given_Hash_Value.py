@@ -15,12 +15,12 @@ class Solution:
         addCharacterValue = 0
         deleteCharacter = ''
         deleteCharacterValue = 0
-        i = len( s ) - 1
+        i = len(s) - 1
         result = ''
         dictionary = {}
         for item in range(97, 123):
                 dictionary[chr(item)] = item - 96
-                
+
         for _ in reversed(s):
                 if( i < k - 1 ):
                         break
@@ -48,5 +48,5 @@ class Solution:
                 if( hash == hashValue ):
                         result = substring
                 i -= 1
-        
+
         return result
