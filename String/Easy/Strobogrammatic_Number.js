@@ -20,7 +20,6 @@ var isStrobogrammatic = function (n) {
         5: true,
         7: true,
     };
-
     var s1 = String(n);
     var s2 = "";
 
