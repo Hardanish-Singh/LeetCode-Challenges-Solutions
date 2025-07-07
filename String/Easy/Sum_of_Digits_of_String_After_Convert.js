@@ -6,6 +6,16 @@
  * @return { number }
  */
 
+// SOLUTION 1
+var getLucky = function (s, k) {
+    let numStr = [...s].map((ch) => ch.charCodeAt(0) - 96).join("");
+    for (let i = 0; i < k; i++) {
+        numStr = [...numStr].reduce((sum, d) => sum + Number(d), 0).toString();
+    }
+    return Number(numStr);
+};
+
+// SOLUTION 2
 var getLucky = function (s, k) {
     let string = "";
     for (let i = 0; i < s.length; i++) {
