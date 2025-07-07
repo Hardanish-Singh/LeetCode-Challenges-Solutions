@@ -15,6 +15,12 @@ var getLucky = function (s, k) {
     return Number(numStr);
 };
 
+/*
+ * @param { string } s
+ * @param { number } k
+ * @return { number }
+ */
+
 // SOLUTION 2
 var getLucky = function (s, k) {
     let string = "";
