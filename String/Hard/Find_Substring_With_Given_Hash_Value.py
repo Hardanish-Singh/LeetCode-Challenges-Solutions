@@ -5,17 +5,9 @@
         (a*b) % modulo = ( (a % modulo) * (b % modulo) ) % modulo;
         (a/b) % modulo = ( (a % modulo) * ( (b^-1) % modulo) ) % modulo;
 """
-class Solution(object):
-    def subStrHash(self, s, power, modulo, k, hashValue):
-        """
-        :type s: str
-        :type power: int
-        :type modulo: int
-        :type k: int
-        :type hashValue: int
-        :rtype: str
-        """
-        hash = 0;
+class Solution:
+    def subStrHash(self, s: str, power: int, modulo: int, k: int, hashValue: str) -> str:
+        hash = 0
         product = 0
         powerData = 1
         addCharacter = ''
