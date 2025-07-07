@@ -32,5 +32,5 @@ var isStrobogrammatic = function (n) {
         }
     }
 
-    return s1 === s2 ? true : false;
+    return s1 === s2;
 };
