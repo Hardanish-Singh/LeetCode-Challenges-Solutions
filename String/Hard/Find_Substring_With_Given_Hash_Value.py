@@ -6,6 +6,7 @@
         (a*b) % modulo = ( (a % modulo) * (b % modulo) ) % modulo;
         (a/b) % modulo = ( (a % modulo) * ( (b^-1) % modulo) ) % modulo;
 """
+
 class Solution:
     def subStrHash(self, s: str, power: int, modulo: int, k: int, hashValue: str) -> str:
         hash = 0
@@ -22,7 +23,7 @@ class Solution:
                 dictionary[chr(item)] = item - 96
 
         for _ in reversed(s):
-                if( i < k - 1 ):
+                if i < k - 1:
                         break
                 substring = s[i - k + 1 : i + 1]
                 if( i != len( s ) - 1 ):
@@ -45,7 +46,7 @@ class Solution:
                         hash = ( ( hash % modulo ) + ( addCharacterValue % modulo ) ) % modulo
                         
                         hash = ( ( hash % modulo ) - deleteCharacterValue + modulo ) % modulo
-                if( hash == hashValue ):
+                if hash == hashValue:
                         result = substring
                 i -= 1
 
