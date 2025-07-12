@@ -26,10 +26,10 @@ class Solution:
                 if i < k - 1:
                         break
                 substring = s[i - k + 1 : i + 1]
-                if( i != len( s ) - 1 ):
+                if i != len(s) - 1:
                         addCharacter = substring[0]
                         deleteCharacter = s[ i + 1 ]
-                if( i == len( s ) - 1 ):
+                if i == len(s) - 1:
                         for j in range(0, len(substring)):
                                 product = ( ( dictionary[ substring[j] ] % modulo ) * ( powerData % modulo ) ) % modulo
                                 hash = ( ( hash % modulo ) + ( product % modulo ) ) % modulo
