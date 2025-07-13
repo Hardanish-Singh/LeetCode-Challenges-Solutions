@@ -13,7 +13,7 @@ const subStrHash = (s, p, m, k, hashValue) => {
     m = BigInt(m);
     hashValue = BigInt(hashValue);
     let tmp = BigInt(0);
-    let res = 0;
+    let result = 0;
     let pk = BigInt(1);
     let n = s.length;
     for (let i = n - 1; i >= 0; i--) {
@@ -24,8 +24,8 @@ const subStrHash = (s, p, m, k, hashValue) => {
             tmp = (tmp - ((BigInt(s[i + k].charCodeAt() - 96) * pk) % m) + m) % m;
         }
         if (tmp === hashValue) {
-            res = i;
+            result = i;
         }
     }
-    return s.slice(res, res + k);
+    return s.slice(result, result + k);
 };
