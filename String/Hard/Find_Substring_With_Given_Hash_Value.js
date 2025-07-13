@@ -18,8 +18,11 @@ var subStrHash = function (s, p, m, k, hashValue) {
     let n = s.length;
     for (let i = n - 1; i >= 0; i--) {
         tmp = (tmp * p + BigInt(s[i].charCodeAt() - 96)) % m;
-        if (i + k >= n) pk = (pk * p) % m;
-        else tmp = (tmp - ((BigInt(s[i + k].charCodeAt() - 96) * pk) % m) + m) % m;
+        if (i + k >= n) {
+            pk = (pk * p) % m;
+        } else {
+            tmp = (tmp - ((BigInt(s[i + k].charCodeAt() - 96) * pk) % m) + m) % m;
+        }
         if (tmp === hashValue) res = i;
     }
     return s.slice(res, res + k);
