@@ -23,7 +23,9 @@ var subStrHash = function (s, p, m, k, hashValue) {
         } else {
             tmp = (tmp - ((BigInt(s[i + k].charCodeAt() - 96) * pk) % m) + m) % m;
         }
-        if (tmp === hashValue) res = i;
+        if (tmp === hashValue) {
+            res = i;
+        }
     }
     return s.slice(res, res + k);
 };
