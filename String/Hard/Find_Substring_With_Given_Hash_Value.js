@@ -8,7 +8,7 @@
  * @param {number} hashValue
  * @return {string}
  */
-var subStrHash = function (s, p, m, k, hashValue) {
+const subStrHash = (s, p, m, k, hashValue) => {
     p = BigInt(p);
     m = BigInt(m);
     hashValue = BigInt(hashValue);
