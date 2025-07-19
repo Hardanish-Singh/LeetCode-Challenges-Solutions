@@ -12,19 +12,19 @@ const subStrHash = (s, p, m, k, hashValue) => {
     p = BigInt(p);
     m = BigInt(m);
     hashValue = BigInt(hashValue);
-    let tmp = BigInt(0);
+    let currentHash = BigInt(0);
     let result = 0;
     let pk = BigInt(1);
     let n = s.length;
 
     for (let i = n - 1; i >= 0; i--) {
-        tmp = (tmp * p + BigInt(s[i].charCodeAt() - 96)) % m;
+        currentHash = (currentHash * p + BigInt(s[i].charCodeAt() - 96)) % m;
         if (i + k >= n) {
             pk = (pk * p) % m;
         } else {
-            tmp = (tmp - ((BigInt(s[i + k].charCodeAt() - 96) * pk) % m) + m) % m;
+            currentHash = (currentHash - ((BigInt(s[i + k].charCodeAt() - 96) * pk) % m) + m) % m;
         }
-        if (tmp === hashValue) {
+        if (currentHash === hashValue) {
             result = i;
         }
     }
