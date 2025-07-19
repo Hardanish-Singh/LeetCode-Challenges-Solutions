@@ -28,5 +28,6 @@ const subStrHash = (s, p, m, k, hashValue) => {
             result = i;
         }
     }
+
     return s.slice(result, result + k);
 };
