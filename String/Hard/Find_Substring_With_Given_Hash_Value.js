@@ -16,6 +16,7 @@ const subStrHash = (s, p, m, k, hashValue) => {
     let result = 0;
     let pk = BigInt(1);
     let n = s.length;
+
     for (let i = n - 1; i >= 0; i--) {
         tmp = (tmp * p + BigInt(s[i].charCodeAt() - 96)) % m;
         if (i + k >= n) {
