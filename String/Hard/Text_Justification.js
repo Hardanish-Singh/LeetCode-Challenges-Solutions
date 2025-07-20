@@ -33,7 +33,6 @@ function createJustifiedLine(words, startIndex, endIndex, spacesArray) {
 
     for (let i = startIndex; i < endIndex; i++) {
         line += words[i];
-
         // Add spaces after word (except for last word)
         if (i < endIndex - 1) {
             const spacesToAdd = spacesArray[spaceIndex] || 0;
