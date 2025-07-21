@@ -4,7 +4,6 @@
  * @param {string} str
  * @return {boolean}
  */
-
 var isPalindrome = function (str) {
     var leftPointer = 0;
     var rightPointer = str.length - 1;
