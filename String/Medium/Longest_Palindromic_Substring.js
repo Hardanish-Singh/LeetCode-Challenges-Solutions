@@ -41,6 +41,5 @@ var longestPalindrome = function (s) {
             count++;
         }
     }
-
     return max === -1 ? s[0] : longestPalindromeString;
 };
