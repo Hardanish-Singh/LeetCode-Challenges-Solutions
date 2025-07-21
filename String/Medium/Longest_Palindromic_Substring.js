@@ -22,17 +22,17 @@ var longestPalindrome = function (s) {
     var longestPalindromeString = "";
     var i;
     var j;
-    var temp = "";
+    var currentSubstring = "";
     var count = 0;
     var max = -1;
 
     for (i = 0; i < s.length; i++) {
         count = 0;
         for (j = i + 1; j < s.length; j++) {
-            temp = s[i] + s.slice(i + 1, s.length - count);
-            if (temp.length > max && isPalindrome(temp)) {
-                longestPalindromeString = temp;
-                max = temp.length;
+            currentSubstring = s[i] + s.slice(i + 1, s.length - count);
+            if (currentSubstring.length > max && isPalindrome(currentSubstring)) {
+                longestPalindromeString = currentSubstring;
+                max = currentSubstring.length;
                 break;
             }
             count++;
