@@ -1,10 +1,5 @@
 // Leetcode: https://leetcode.com/problems/longest-palindromic-substring/
 
-/*
- * @param { string } s
- * @return { string }
- */
-
 var isPalindrome = function (str) {
     var leftPointer = 0;
     var rightPointer = str.length - 1;
@@ -18,6 +13,10 @@ var isPalindrome = function (str) {
     return true;
 };
 
+/*
+ * @param { string } s
+ * @return { string }
+ */
 var longestPalindrome = function (s) {
     var longestPalindromeString = "";
     var i;
