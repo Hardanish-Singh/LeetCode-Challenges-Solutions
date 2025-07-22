@@ -19,7 +19,7 @@ var isPalindrome = function (str) {
 
 /*
  * @param {string} s
- * @return {string }
+ * @return {string}
  */
 var longestPalindrome = function (s) {
     var longestPalindromeString = "";
