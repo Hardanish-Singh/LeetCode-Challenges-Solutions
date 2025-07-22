@@ -1,6 +1,11 @@
 // Leetcode: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 // Solution 1: Sliding Window Approach
+
+/*
+ * @param {string} s
+ * @return {number}
+ */
 const lengthOfLongestSubstring = (s) => {
     let set = new Set();
     let left = 0;
