@@ -2,7 +2,7 @@
 
 // Solution 1: Sliding Window Approach
 /*
- * @param {string} s
+ * @param { string } s
  * @return {number}
  */
 const lengthOfLongestSubstring = (s) => {
