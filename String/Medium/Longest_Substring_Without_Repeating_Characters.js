@@ -3,7 +3,7 @@
 // Solution 1: Sliding Window Approach
 /*
  * @param {string} s
- * @return {number}
+ * @return { number}
  */
 const lengthOfLongestSubstring = (s) => {
     let set = new Set();
