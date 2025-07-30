@@ -1,6 +1,7 @@
 // Leetcode: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 // Solution 1: Sliding Window Approach
+
 /*
  * @param {string} s
  * @return {number}
