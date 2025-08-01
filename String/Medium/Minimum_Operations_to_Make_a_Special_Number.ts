@@ -26,9 +26,5 @@ const minimumOperations = (n: string): number => {
         }
     }
 
-    if (min === Number.MAX_VALUE) {
-        return n.includes("0") ? n.length - 1 : n.length;
-    } else {
-        return min;
-    }
+    return min === Number.MAX_VALUE ? (n.includes("0") ? n.length - 1 : n.length) : min;
 };
