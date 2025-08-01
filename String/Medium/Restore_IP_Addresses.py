@@ -20,8 +20,8 @@ class Solution:
                                                 ip_address = s1 + "." + s2 + "." + s3 + "." + s4
                                                 ip_addresses.append( ip_address )
                 return ip_addresses
-        
-        def isIpAddressValid( self, ip_list ):
+
+        def isIpAddressValid(self, ip_list: list[str]) -> bool:
                 for ip in ip_list:
                         if ip[0] == "0" and len( ip ) > 1:
                                 return False
