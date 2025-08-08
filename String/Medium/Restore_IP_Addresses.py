@@ -1,7 +1,7 @@
 # Leetcode: https://leetcode.com/problems/restore-ip-addresses/
         
 class Solution:
-        def restoreIpAddresses(self,s:str)->list[str]:
+        def restoreIpAddresses(self, s:str) -> list[str]:
                 if len( s ) > 12 or len( s ) < 4:
                         return []
                 
