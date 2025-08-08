@@ -2,11 +2,9 @@
         
 class Solution:
         def restoreIpAddresses(self, s:str) -> list[str]:
-                if len( s ) > 12 or len( s ) < 4:
+                if len(s) > 12 or len(s) < 4:
                         return []
-                
                 ip_addresses = []
-                
                 for i in [1, 2, 3]:
                         for j in [i+1, i+2, i+3]:
                                 for k in [j+1, j+2, j+3]:
@@ -23,8 +21,8 @@ class Solution:
 
         def isIpAddressValid(self, ip_list: list[str]) -> bool:
                 for ip in ip_list:
-                        if ip[0] == "0" and len( ip ) > 1:
+                        if ip[0] == "0" and len(ip) > 1:
                                 return False
-                        if int( ip ) > 255:
+                        if int(ip) > 255:
                                 return False
                 return True
