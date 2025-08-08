@@ -5,6 +5,7 @@ class Solution:
                 if len(s) > 12 or len(s) < 4:
                         return []
                 ip_addresses = []
+
                 for i in [1, 2, 3]:
                         for j in [i+1, i+2, i+3]:
                                 for k in [j+1, j+2, j+3]:
@@ -14,9 +15,10 @@ class Solution:
                                         s2 = s[i:j]
                                         s3 = s[j:k]
                                         s4 = s[k:]
-                                        if self.isIpAddressValid( [s1, s2, s3, s4] ):
+                                        if self.isIpAddressValid([s1, s2, s3, s4]):
                                                 ip_address = s1 + "." + s2 + "." + s3 + "." + s4
-                                                ip_addresses.append( ip_address )
+                                                ip_addresses.append(ip_address)
+
                 return ip_addresses
 
         def isIpAddressValid(self, ip_list: list[str]) -> bool:
