@@ -1,5 +1,9 @@
 // Leetcode: https://leetcode.com/problems/contains-duplicate-ii/
 
+type CountOccurrences = {
+    [key: number]: number;
+};
+
 // SOLUTION 1: BRUTE FORCE
 var containsNearbyDuplicate = (nums: Array<number>, k: number): boolean => {
     for (let i: number = 0; i < nums.length - 1; i++) {
@@ -14,9 +18,7 @@ var containsNearbyDuplicate = (nums: Array<number>, k: number): boolean => {
 
 // SOLUTION 2: HASH TABLE
 var containsNearbyDuplicate = (nums: Array<number>, k: number): boolean => {
-    let countOccurrences: {
-        [key: number]: number;
-    } = {};
+    let countOccurrences: CountOccurrences = {};
     for (let i: number = 0; i < nums.length; i++) {
         if (nums[i] in countOccurrences && Math.abs(i - countOccurrences[nums[i]]) <= k) {
             return true;
