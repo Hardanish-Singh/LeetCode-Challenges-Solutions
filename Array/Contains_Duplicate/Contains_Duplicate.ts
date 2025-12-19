@@ -1,14 +1,14 @@
 // Leetcode: https://leetcode.com/problems/contains-duplicate/
 
 const containsDuplicate = (nums: Array<number>): boolean => {
-        let countOccurrences: {
-                [key: number]: boolean;
-        } = {};
-        for (const num of nums) {
-                if (num in countOccurrences) {
-                        return true;
-                }
-                countOccurrences[num] = true;
+    let countOccurrences: {
+        [key: number]: boolean;
+    } = {};
+    for (const num of nums) {
+        if (num in countOccurrences) {
+            return true;
         }
-        return false;
+        countOccurrences[num] = true;
+    }
+    return false;
 };
