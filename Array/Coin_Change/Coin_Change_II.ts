@@ -18,6 +18,8 @@ var change = function (amount: number, coins: number[]): number {
         for (let i: number = idx; i < coins.length; i++) {
             combinationSum(sum + coins[i], i);
         }
+
+        return count;
     };
 
     combinationSum();
