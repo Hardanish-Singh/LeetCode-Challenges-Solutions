@@ -17,7 +17,7 @@ class Solution:
                 return min( minSteps( 0 ), minSteps( 1 ) )
 
 # Solution 2: Recursion with inbuild Python LRU cache
-from functools import lru_cache
+from functools import cache, lru_cache
 from typing import List
 
 class Solution:
@@ -42,3 +42,4 @@ class Solution:
                         return cost[stepIndex] + min( minSteps( stepIndex + 1 ), minSteps( stepIndex + 2 ) )
 
                 return min( minSteps( 0 ), minSteps( 1 ) )
+        
