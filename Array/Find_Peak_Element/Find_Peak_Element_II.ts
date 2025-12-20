@@ -15,7 +15,7 @@ var findPeakGrid = (mat: number[][]): number[] => {
 
 // Solution 2
 var findPeakGrid = (mat: number[][]): number[] => {
-    const { max, position } = mat.reduce<{
+    const { position } = mat.reduce<{
         max: number;
         position: number[];
     }>(
