@@ -2,7 +2,7 @@
 
 class Solution {
     public:
-        int arrangeCoins(int n, int k = 1) {
+        int arrangeCoins( int n, int k = 1 ) {
             if( n < k ) {
                 return k - 1;
             }
