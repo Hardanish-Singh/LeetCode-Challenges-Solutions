@@ -19,6 +19,6 @@ var findDifference = (nums1: number[], nums2: number[]): number[][] => {
     // prettier-ignore
     return [
         Array.from(set1).filter(x => !set2.has(x)),
-        Array.from(set2).filter(x =>!set1.has(x))
+        Array.from(set2).filter(x => !set1.has(x))
     ]
 };
