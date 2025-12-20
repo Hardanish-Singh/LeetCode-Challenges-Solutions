@@ -6,6 +6,6 @@ class Solution {
             if( n < k ) {
                 return k - 1;
             }
-            return arrangeCoins(n - k, k + 1);
+            return arrangeCoins( n - k, k + 1 );
         }
 };
