@@ -1,4 +1,5 @@
 // Leetcode: https://leetcode.com/problems/find-the-peaks/
+
 // Solution 1
 var findPeaks = (mountain: number[]): number[] =>
     mountain.reduce((accumulator: number[], currentValue, index, mountain) => {
