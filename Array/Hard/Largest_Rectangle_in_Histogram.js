@@ -1,6 +1,7 @@
 // Leetcode: https://leetcode.com/problems/largest-rectangle-in-histogram/
 
-const largestRectangleArea = (buildings) => {
+// Solution 1
+var largestRectangleArea = (buildings) => {
     let maxArea = 0;
 
     for (let i = 0; i < buildings.length; i++) {
@@ -16,3 +17,17 @@ const largestRectangleArea = (buildings) => {
 
     return maxArea;
 };
+
+// Solution 2
+var largestRectangleArea = (buildings) =>
+    buildings.reduce((maxArea, _, i) => {
+        let height = Number.MAX_VALUE;
+
+        const areaFromI = buildings.slice(i).reduce((localMax, h, idx) => {
+            height = Math.min(height, h);
+            const width = idx + 1;
+            return Math.max(localMax, width * height);
+        }, 0);
+
+        return Math.max(maxArea, areaFromI);
+    }, 0);
