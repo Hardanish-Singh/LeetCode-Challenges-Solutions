@@ -1,5 +1,4 @@
 // Leetcode: https://leetcode.com/problems/largest-rectangle-in-histogram/
-
 // Solution 1
 var largestRectangleArea = (buildings) => {
     let maxArea = 0;
