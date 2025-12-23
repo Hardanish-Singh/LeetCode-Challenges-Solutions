@@ -1,5 +1,4 @@
 // Leetcode: https://leetcode.com/problems/4sum-ii/
-
 // Solution 1: Using HashMap
 const fourSumCount = (nums1: number[], nums2: number[], nums3: number[], nums4: number[]): number => {
     let map = new Map<number, number>();
