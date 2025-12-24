@@ -1,5 +1,4 @@
 // Leetcode: https://leetcode.com/problems/house-robber/
-
 // Solution 1: Recursion (TLE)
 const rob1 = (houses: number[], i: number = 0): number => {
     if (i >= houses.length) {
