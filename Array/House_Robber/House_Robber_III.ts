@@ -1,5 +1,4 @@
 // Leetcode: https://leetcode.com/problems/house-robber-iii/
-
 class TreeNode {
     public val: number;
     public left: TreeNode | null;
