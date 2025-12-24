@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/reaching-points/
 
 /*
-  SOLUTION 1
+  Solution 1
     Bottom up approach - from x2, y2 climb up to x1, y1
     1) From (x, y) we can move to (x, x+y) or (x+y, y) ( This will give TLE due to exhaustive search )
     2) Better Approach: from x2, y2 climb up to x1, y1, they key difference is to subtract bigger number from smaller number to avoid negative number
