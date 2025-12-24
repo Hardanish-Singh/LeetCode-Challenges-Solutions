@@ -1,5 +1,9 @@
 // Leetcode: https://leetcode.com/problems/intersection-of-two-arrays-ii/
 
+type IncludedMap = {
+    [key: number]: boolean;
+};
+
 const intersect = (nums1: Array<number>, nums2: Array<number>): Array<number> => {
     if (nums2.length > nums1.length) {
         return intersect(nums2, nums1);
@@ -8,9 +12,7 @@ const intersect = (nums1: Array<number>, nums2: Array<number>): Array<number> =>
     nums2.sort((a, b) => a - b);
 
     var commonElements: Array<number> = [];
-    var isIncluded: {
-        [key: number]: boolean;
-    } = {};
+    var isIncluded: IncludedMap = {};
 
     for (let i: number = 0; i < nums1.length; i++) {
         for (let j: number = 0; j < nums2.length; j++) {
