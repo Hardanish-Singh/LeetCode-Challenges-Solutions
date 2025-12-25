@@ -44,7 +44,9 @@ var checkIfInstanceOf = function (obj, classFunction) {
 
 // Solution 3
 var checkIfInstanceOf = function (obj, classFunction) {
-    if (obj == null || typeof classFunction !== "function") return false;
+    if (obj == null || typeof classFunction !== "function") {
+        return false;
+    }
     return Object(obj) instanceof classFunction;
 };
 
