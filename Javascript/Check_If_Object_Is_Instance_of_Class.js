@@ -1,7 +1,6 @@
 // Leetcode: https://leetcode.com/problems/check-if-object-instance-of-class
 
 // The function checks if the object is an instance of the classFunction by comparing the prototype of the object with the prototype of the classFunction.
-
 // Solution 1
 var checkIfInstanceOf = function (obj, classFunction) {
     if (obj == null || typeof classFunction !== "function") {
