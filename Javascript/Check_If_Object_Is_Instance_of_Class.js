@@ -26,6 +26,7 @@ var checkIfInstanceOf = function (obj, classFunction) {
  */
 
 // Solution 2
+
 var checkIfInstanceOf = function (obj, classFunction) {
     while (obj != null) {
         if (obj.constructor === classFunction) {
