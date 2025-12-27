@@ -14,5 +14,6 @@ const intersection = (nums1: Array<number>, nums2: Array<number>): Array<number>
             }
         }
     }
+
     return intersection_of_arrays;
 };
