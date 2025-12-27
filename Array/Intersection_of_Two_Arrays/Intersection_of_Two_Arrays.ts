@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/intersection-of-two-arrays/
 
-const intersection = (nums1: number[], nums2: Array<number>): Array<number> => {
+const intersection = (nums1: number[], nums2: number[]): Array<number> => {
     nums1.sort((a, b) => a - b);
     nums2.sort((a, b) => a - b);
     const intersection_of_arrays: Array<number> = [];
