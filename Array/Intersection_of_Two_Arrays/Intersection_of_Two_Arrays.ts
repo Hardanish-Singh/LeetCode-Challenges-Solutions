@@ -3,7 +3,7 @@
 const intersection = (nums1: Array<number>, nums2: Array<number>): Array<number> => {
     nums1.sort((a, b) => a - b);
     nums2.sort((a, b) => a - b);
-    let intersection_of_arrays: Array<number> = [];
+    const intersection_of_arrays: Array<number> = [];
 
     for (let i: number = 0; i < nums1.length; i++) {
         for (let j: number = 0; j < nums2.length; j++) {
