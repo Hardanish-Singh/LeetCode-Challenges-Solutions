@@ -5,7 +5,7 @@
  * @return { number[][] }
  */
 
-var merge = function (intervals: Array<Array<number>>): Array<Array<number>> {
+var merge = function (intervals: number[][]): Array<Array<number>> {
     intervals.sort((a, b) => a[0] - b[0]);
     for (let i: number = 0; i < intervals.length - 1; i++) {
         let j: number = i + 1;
