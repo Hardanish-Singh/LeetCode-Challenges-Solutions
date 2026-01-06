@@ -25,7 +25,7 @@ var merge = function (intervals: number[][]): number[][] {
  * @param { number[] } newInterval
  * @return { number[][] }
  */
-var insert = function (intervals: Array<Array<number>>, newInterval: Array<number>): Array<Array<number>> {
+var insert = function (intervals: number[][], newInterval: number[]): number[][] {
     intervals = [...intervals, newInterval];
     return merge(intervals);
 };
