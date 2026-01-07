@@ -9,5 +9,6 @@ const jump = (nums: number[]): number => {
         if (i > curPosition) (curPosition = reachable), jumps++;
         reachable = Math.max(reachable, i + nums[i]);
     }
+
     return jumps;
 };
