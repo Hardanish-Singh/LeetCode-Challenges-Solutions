@@ -1,6 +1,6 @@
 // Leetcode: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
-const phoneNumberLetterCombinations = {
+const phoneNumberLetterCombinations: { [key: string]: string } = {
     "0": "0",
     "1": "1",
     "2": "abc",
