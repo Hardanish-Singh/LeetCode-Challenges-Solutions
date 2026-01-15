@@ -16,32 +16,32 @@
  */
 
 const reverseBetween = (head, left, right) => {
-        if (head == null || left >= right) {
-                return head;
-        }
+    if (head == null || left >= right) {
+        return head;
+    }
 
-        let current = head;
-        let leftBefore = head;
-        let index = 1;
-        while (index < left) {
-                leftBefore = current;
-                current = current.next;
-                index++;
-        }
+    let current = head;
+    let leftBefore = head;
+    let index = 1;
+    while (index < left) {
+        leftBefore = current;
+        current = current.next;
+        index++;
+    }
 
-        let tail = current;
-        let previous = null;
-        // Reverse the Linked List between left & right pointer
-        while (index >= left && index <= right) {
-                const next = current.next;
-                current.next = previous;
-                previous = current;
-                current = next;
-                index++;
-        }
+    let tail = current;
+    let previous = null;
+    // Reverse the Linked List between left & right pointer
+    while (index >= left && index <= right) {
+        const next = current.next;
+        current.next = previous;
+        previous = current;
+        current = next;
+        index++;
+    }
 
-        leftBefore.next = previous;
-        tail.next = current;
+    leftBefore.next = previous;
+    tail.next = current;
 
-        return left > 1 ? head : previous;
+    return left > 1 ? head : previous;
 };
