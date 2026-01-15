@@ -14,19 +14,19 @@
  */
 
 const reverseList = (head) => {
-        if (head == null) {
-                return null;
-        }
+    if (head == null) {
+        return null;
+    }
 
-        let previous = null;
-        let current = head;
+    let previous = null;
+    let current = head;
 
-        while (current != null) {
-                const next = current.next;
-                current.next = previous;
-                previous = current;
-                current = next;
-        }
+    while (current != null) {
+        const next = current.next;
+        current.next = previous;
+        previous = current;
+        current = next;
+    }
 
-        return head = previous;
+    return (head = previous);
 };
