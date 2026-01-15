@@ -1,10 +1,9 @@
 // Leetcode: https://leetcode.com/problems/smallest-value-of-the-rearranged-number/
 
 /*
- * @param { number } num
- * @return { number }
+ * @param {number} num
+ * @return {number}
  */
-
 var smallestNumber = function (num) {
     let arr = Array.from(String(num));
     if (num > 0) {
