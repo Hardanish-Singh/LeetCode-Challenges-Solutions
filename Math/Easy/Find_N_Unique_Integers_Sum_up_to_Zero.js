@@ -6,12 +6,12 @@
  */
 
 var sumZero = function (n) {
-        const arr = [];
-        for (let i = 1; i <= parseInt(n / 2); i++) {
-                arr.push(i, -i);
-        }
-        if (n % 2 != 0) {
-                arr.push(0);
-        }
-        return arr;
+    const arr = [];
+    for (let i = 1; i <= parseInt(n / 2); i++) {
+        arr.push(i, -i);
+    }
+    if (n % 2 != 0) {
+        arr.push(0);
+    }
+    return arr;
 };
