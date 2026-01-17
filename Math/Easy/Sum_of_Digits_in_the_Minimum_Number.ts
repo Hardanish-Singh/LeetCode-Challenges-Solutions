@@ -6,14 +6,10 @@
  */
 
 var sumOfDigits = function (nums: number[]): number {
-        return Math.min
-                .apply(null, nums)
-                .toString()
-                .split("")
-                .map(Number)
-                .reduce((a: number, b: number) => a + b, 0) %
-                2 ===
-                0
-                ? 1
-                : 0;
+    // prettier-ignore
+    return Math.min.apply(null, nums)
+                   .toString()
+                   .split("")
+                   .map(Number)
+                   .reduce((a: number, b: number) => a + b, 0) % 2 === 0 ? 1 : 0;
 };
