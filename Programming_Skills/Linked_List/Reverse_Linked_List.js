@@ -28,5 +28,5 @@ const reverseList = (head) => {
         current = next;
     }
 
-    return head = previous;
+    return (head = previous);
 };
