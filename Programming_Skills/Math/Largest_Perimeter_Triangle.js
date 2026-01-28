@@ -15,7 +15,7 @@ const largestPerimeter = (nums) => {
         let side2 = nums[i + 1];
         let side3 = nums[i + 2];
         // Perform the check depending on the rule
-        if (side1 < (side2 + side3)) {
+        if (side1 < side2 + side3) {
             return side1 + side2 + side3;
         }
     }
