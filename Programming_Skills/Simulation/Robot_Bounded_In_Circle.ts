@@ -3,7 +3,7 @@
 const isRobotBounded = (directions: string): boolean => {
     let x = 0;
     let y = 0;
-    const turnDirections = {
+    const turnDirections: Record<string, Record<string, string>> = {
         N: {
             L: "W",
             R: "E",
