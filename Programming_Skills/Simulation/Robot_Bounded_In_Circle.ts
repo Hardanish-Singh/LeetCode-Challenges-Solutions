@@ -21,8 +21,9 @@ const isRobotBounded = (directions: string): boolean => {
             R: "N",
         },
     };
-    directions = directions.repeat(4); // repeat four times to make sure if a round exists
     let currentDirection = "N";
+    directions = directions.repeat(4); // repeat four times to make sure if a round exists
+
     for (const direction of directions) {
         if (direction === "G") {
             switch (currentDirection) {
@@ -45,5 +46,6 @@ const isRobotBounded = (directions: string): boolean => {
             currentDirection = turnDirections[currentDirection][direction];
         }
     }
+
     return x == 0 && y == 0;
 };
