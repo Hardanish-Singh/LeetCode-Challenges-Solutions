@@ -27,16 +27,16 @@ const adjustCharacterOccurrences = (start: string, end: string, hashmap1: Anagra
 };
 
 const countCharacterOccurrences = (word: string): Anagram => {
-    let countOccurrences = {};
+    let countOccurrences: Anagram = {};
     for (let i = 0; i < word.length; i++) {
         word[i] in countOccurrences ? (countOccurrences[word[i]] += 1) : (countOccurrences[word[i]] = 1);
     }
     return countOccurrences;
 };
 
-const findAnagrams = (s: string, p: string): Array<number> => {
+const findAnagrams = (s: string, p: string): number[] => {
     let leftPointer: number = 0;
-    let result: Array<number> = [];
+    let result: number[] = [];
     let hashmap1: Anagram = {};
     let hashmap2: Anagram = countCharacterOccurrences(p);
 
