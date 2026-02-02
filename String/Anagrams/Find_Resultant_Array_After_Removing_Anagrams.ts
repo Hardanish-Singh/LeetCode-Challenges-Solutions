@@ -29,7 +29,7 @@ const isAnagram = (s: string, t: string): boolean => {
     return Object.keys(dictionaryOne).length === 0 && Object.keys(dictionaryTwo).length === 0;
 };
 
-const removeAnagrams = (words: Array<string>): Array<string> => {
+const removeAnagrams = (words: string[]): string[] => {
     for (let i: number = 1; i < words.length; i++) {
         const firstWord: string = words[i - 1];
         const secondWord: string = words[i];
