@@ -1,10 +1,10 @@
 // Leetcode: https://leetcode.com/problems/group-anagrams/
 
 type GroupedAnagrams = {
-    [key: string]: Array<string>;
+    [key: string]: string[];
 };
 
-const groupAnagrams = (strs: Array<string>): Array<Array<string>> => {
+const groupAnagrams = (strs: string[]): string[][] => {
     let groupedAnagrams: GroupedAnagrams = {};
 
     for (let i: number = 0; i < strs.length; i++) {
