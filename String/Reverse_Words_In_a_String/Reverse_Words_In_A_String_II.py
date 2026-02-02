@@ -1,16 +1,14 @@
 # Leetcode: https://leetcode.com/problems/reverse-words-in-a-string-ii/
 
+from typing import List
+
 # Solution 1
-class Solution( object ):    
-        def reverseWords( self, str ):
-                """
-                :type s: List[str]
-                :rtype: None Do not return anything, modify str in-place instead.
-                """
+class Solution:    
+        def reverseWords(self, str: List[str]) -> None:
                 str.reverse()
                 str.append(" ")
                 left = 0
-                for i in range( len( str ) ):
+                for i in range(len(str)):
                         if str[i] == " ":
                                 part_before = str[:left]
                                 part_to_reverse = str[left:i]
