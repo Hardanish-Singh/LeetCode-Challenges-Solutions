@@ -2,7 +2,7 @@
 
 const canReach = (arr: number[], start: number): boolean => {
     const seen: Set<number> = new Set();
-    const stack: Array<number> = [start];
+    const stack: number[] = [start];
 
     while (stack.length) {
         const curr = stack.pop() as number;
