@@ -4,7 +4,7 @@ type CountOccurrences = {
     [key: number]: boolean;
 };
 
-const containsDuplicate = (nums: Array<number>): boolean => {
+const containsDuplicate = (nums: number[]): boolean => {
     let countOccurrences: CountOccurrences = {};
     for (const num of nums) {
         if (num in countOccurrences) {
