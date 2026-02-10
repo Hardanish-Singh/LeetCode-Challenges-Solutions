@@ -4,14 +4,15 @@ type IncludedMap = {
     [key: number]: boolean;
 };
 
-const intersect = (nums1: Array<number>, nums2: Array<number>): Array<number> => {
+const intersect = (nums1: number[], nums2: number[]): number[] => {
     if (nums2.length > nums1.length) {
         return intersect(nums2, nums1);
     }
+
     nums1.sort((a, b) => a - b);
     nums2.sort((a, b) => a - b);
 
-    var commonElements: Array<number> = [];
+    var commonElements: number[] = [];
     var isIncluded: IncludedMap = {};
 
     for (let i: number = 0; i < nums1.length; i++) {
