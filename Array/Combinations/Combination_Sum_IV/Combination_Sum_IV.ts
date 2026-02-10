@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/combination-sum-iv
 
 // SOLUTION 1: RECURSION
-var combinationSum4 = function (nums: Array<number>, target: number): number {
+var combinationSum4 = function (nums: number[], target: number): number {
     let count: number = 0;
     nums.sort((a, b) => a - b);
 
@@ -25,7 +25,7 @@ var combinationSum4 = function (nums: Array<number>, target: number): number {
 };
 
 // SOLUTION 2: RECURSION WITH MEMOIZATION
-var combinationSum4 = function (nums: Array<number>, target: number): number {
+var combinationSum4 = function (nums: number[], target: number): number {
     const memo: {
         [key: number]: number;
     } = {};
