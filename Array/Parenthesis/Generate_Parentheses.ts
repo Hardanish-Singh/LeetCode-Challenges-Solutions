@@ -10,8 +10,8 @@
                 3) We get a valid combination IIF,  open == close && close == n && open == n
 */
 
-const generateParenthesis = (n: number): Array<string> => {
-    const parenthesis: Array<[string, number, number]> = [["(", 1, 0]];
+const generateParenthesis = (n: number): string[] => {
+    const parenthesis: [string, number, number][] = [["(", 1, 0]];
     while (true) {
         const [bracket, open, close]: [string, number, number] = parenthesis[0];
         // RULE 3
