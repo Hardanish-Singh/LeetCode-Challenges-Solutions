@@ -5,7 +5,6 @@ var reverse = function (x) {
     if (x === 0) {
         return 0;
     }
-
     var reversedNumber = "";
     if (x < 0) {
         x = Math.abs(x);
