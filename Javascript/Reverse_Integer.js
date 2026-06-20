@@ -11,7 +11,6 @@ var reverse = function (x) {
         x = Math.abs(x);
         reversedNumber += "-";
     }
-
     while (x > 0) {
         let remainder = x % 10;
         reversedNumber += remainder;
