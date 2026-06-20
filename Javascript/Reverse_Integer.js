@@ -17,7 +17,6 @@ var reverse = function (x) {
         reversedNumber += remainder;
         x = parseInt(x / 10);
     }
-
     if (parseInt(reversedNumber) < Math.pow(2, 31) * -1 || parseInt(reversedNumber) > Math.pow(2, 31) - 1) {
         return 0;
     }
