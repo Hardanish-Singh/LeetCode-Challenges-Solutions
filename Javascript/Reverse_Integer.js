@@ -33,7 +33,6 @@ var reverse = function (x) {
         x = x.slice(1);
     }
     x = x.split("").reverse().join("");
-
     if (isNegative) {
         x = "-" + x;
     }
