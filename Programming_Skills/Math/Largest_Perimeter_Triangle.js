@@ -18,7 +18,6 @@ const largestPerimeter = (nums) => {
             return side1 + side2 + side3;
         }
     }
-
     // If we cannot form a triangle, we return 0
     return 0;
 };
