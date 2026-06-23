@@ -7,6 +7,5 @@ const countOdds = (low: number, high: number): number => {
             count++;
         }
     }
-
     return count;
 };
