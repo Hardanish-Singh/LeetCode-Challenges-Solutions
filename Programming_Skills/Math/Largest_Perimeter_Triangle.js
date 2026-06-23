@@ -8,7 +8,6 @@
 const largestPerimeter = (nums) => {
     // Sort in DESC order
     nums.sort((a, b) => b - a);
-
     for (let i = 0; i < nums.length; i++) {
         // Decalre the three sides of the triangle
         let side1 = nums[i];
