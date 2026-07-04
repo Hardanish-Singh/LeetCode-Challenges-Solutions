@@ -1,11 +1,10 @@
 // Leetcode: https://leetcode.com/problems/valid-anagram/
 
-// SOLUTION 1
-
 type Anagram = {
     [key: string]: number;
 };
 
+// SOLUTION 1
 const isAnagram = (s: string, t: string): boolean => {
     if (s.length !== t.length) {
         return false;
@@ -32,5 +31,4 @@ const isAnagram = (s: string, t: string): boolean => {
 };
 
 // SOLUTION 2 (One Liner)
-
 const isAnagram2 = (s: string, t: string): boolean => s.split("").sort().join("") === t.split("").sort().join("");
