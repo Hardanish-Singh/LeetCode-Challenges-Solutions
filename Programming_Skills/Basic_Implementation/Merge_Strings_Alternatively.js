@@ -8,9 +8,7 @@
 
 const mergeAlternately = (word1, word2) => {
     let result = "";
-    for (let i in word1) {
-        result += word1[i] + (word2[i] || "");
-    }
+    for (let i in word1) result += word1[i] + (word2[i] || "");
     result += word2.slice(word1.length);
     return result;
 };
