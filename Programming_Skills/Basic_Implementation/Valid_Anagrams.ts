@@ -31,6 +31,6 @@ const isAnagram = (s: string, t: string): boolean => {
     return Object.keys(dictionaryOne).length === 0 && Object.keys(dictionaryTwo).length === 0;
 };
 
-// SOLUTION 2 ( One Liner )
+// SOLUTION 2 (One Liner)
 
 const isAnagram2 = (s: string, t: string): boolean => s.split("").sort().join("") === t.split("").sort().join("");
