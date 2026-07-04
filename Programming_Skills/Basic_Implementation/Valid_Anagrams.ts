@@ -10,7 +10,6 @@ const isAnagram = (s: string, t: string): boolean => {
     if (s.length !== t.length) {
         return false;
     }
-
     let dictionaryOne: Anagram = {};
     let dictionaryTwo: Anagram = {};
 
