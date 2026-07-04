@@ -7,6 +7,8 @@
  */
 
 const findTheDifference = (s, t) => {
-    for (let char of s) t = t.replace(char, "");
+    for (let char of s) {
+        t = t.replace(char, "");
+    }
     return t;
 };
