@@ -3,7 +3,7 @@
 /**
  * @param {number[]} nums
  * @return {boolean}
- */
+*/
 
 const isMonotonic = (nums) => {
     const isIncreasing = nums.every((num, index) => index === 0 || num >= nums[index - 1]);
