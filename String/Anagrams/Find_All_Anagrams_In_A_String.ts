@@ -39,6 +39,7 @@ const findAnagrams = (s: string, p: string): number[] => {
     let result: number[] = [];
     let hashmap1: Anagram = {};
     let hashmap2: Anagram = countCharacterOccurrences(p);
+
     while (leftPointer + p.length <= s.length) {
         let subString: string = s.slice(leftPointer, leftPointer + p.length);
         leftPointer === 0
@@ -49,5 +50,6 @@ const findAnagrams = (s: string, p: string): number[] => {
         }
         leftPointer++;
     }
+
     return result;
 };
