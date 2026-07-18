@@ -10,7 +10,10 @@ const calPoints = (operations) => {
     for (const operation of operations) {
         switch (operation) {
             case "+":
-                let sum = scores.slice(-2).map(Number).reduce((a, b) => a + b, 0);
+                let sum = scores
+                    .slice(-2)
+                    .map(Number)
+                    .reduce((a, b) => a + b, 0);
                 scores.push(sum);
                 break;
             case "D":
