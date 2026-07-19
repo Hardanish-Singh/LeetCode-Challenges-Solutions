@@ -9,5 +9,6 @@ const diagonalSum = (matrix: number[][]): number => {
             }
         }
     }
+
     return total;
 };
