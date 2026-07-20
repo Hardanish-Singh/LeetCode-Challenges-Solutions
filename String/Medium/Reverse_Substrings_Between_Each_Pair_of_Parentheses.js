@@ -8,6 +8,7 @@
 var reverseParentheses = function (inputString) {
     let lastIndex = inputString.indexOf(")");
     let firstIndex = inputString.lastIndexOf("(", lastIndex);
+
     while (firstIndex != -1) {
         let before = inputString.slice(0, firstIndex);
         // prettier-ignore
@@ -21,5 +22,6 @@ var reverseParentheses = function (inputString) {
         lastIndex = inputString.indexOf(")");
         firstIndex = inputString.lastIndexOf("(", lastIndex);
     }
+
     return inputString;
 };
