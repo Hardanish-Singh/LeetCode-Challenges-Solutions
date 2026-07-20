@@ -9,5 +9,6 @@ const maximumWealth = (accounts: number[][]): number => {
             maxWealth = sum;
         }
     }
+
     return maxWealth;
 };
