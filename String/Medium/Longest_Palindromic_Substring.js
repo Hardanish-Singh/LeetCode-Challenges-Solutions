@@ -7,6 +7,7 @@
 var isPalindrome = function (str) {
     var leftPointer = 0;
     var rightPointer = str.length - 1;
+
     while (leftPointer < rightPointer) {
         if (str[leftPointer] !== str[rightPointer]) {
             return false;
