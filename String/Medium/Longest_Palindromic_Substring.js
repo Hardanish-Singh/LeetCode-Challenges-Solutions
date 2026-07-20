@@ -15,6 +15,7 @@ var isPalindrome = function (str) {
         leftPointer++;
         rightPointer--;
     }
+
     return true;
 };
 
