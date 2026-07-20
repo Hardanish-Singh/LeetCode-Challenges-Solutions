@@ -1,7 +1,7 @@
 // Leetcode: https://leetcode.com/problems/reverse-string/
 
 /**
- * @param {character[]} s
+ * @param { character[] } s
  * @return { void } Do not return anything, modify s in-place instead.
  */
 
