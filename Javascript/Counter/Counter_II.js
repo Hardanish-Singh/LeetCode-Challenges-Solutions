@@ -19,6 +19,7 @@ var createCounter = function (init) {
         current = init;
         return current;
     }
+
     return { increment, decrement, reset };
 };
 
