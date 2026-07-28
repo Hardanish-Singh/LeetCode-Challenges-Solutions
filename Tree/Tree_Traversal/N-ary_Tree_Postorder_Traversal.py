@@ -58,4 +58,3 @@ class Solution:
                         stack.extend(node.children)
 
                 return postOrderList[::-1] # Reversing the list to get the postorder traversal in the correct order.
-        
