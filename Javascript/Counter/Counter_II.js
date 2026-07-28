@@ -14,6 +14,7 @@ var createCounter = function (init) {
     function decrement() {
         return --current;
     }
+
     function reset() {
         current = init;
         return current;
