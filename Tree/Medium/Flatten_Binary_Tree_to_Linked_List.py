@@ -58,4 +58,3 @@ class Solution:
                                 return root
                         else:
                                 root = root.right
-
