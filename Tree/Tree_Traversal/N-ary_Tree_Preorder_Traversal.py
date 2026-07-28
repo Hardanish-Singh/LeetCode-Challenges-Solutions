@@ -60,4 +60,3 @@ class Solution:
                         stack.extend(reversed(node.children)) # Reversing the list of children to get the preorder traversal in the correct order.
                 
                 return preOrderList
-        
