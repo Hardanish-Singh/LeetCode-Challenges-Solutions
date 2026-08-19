@@ -39,5 +39,6 @@ var intToRoman = function (n) {
         n = n % place;
         numberLength--;
     }
+
     return numeral;
 };
