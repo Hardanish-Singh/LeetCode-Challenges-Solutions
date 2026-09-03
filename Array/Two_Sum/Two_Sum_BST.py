@@ -1,16 +1,18 @@
 # Leetcode: https://leetcode.com/problems/two-sum-bsts/
 
+from typing import Optional, List
+
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__( self, val = 0, left = None, right = None ):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__( self, val = 0, left = None, right = None ):
+        self.val = val
+        self.left = left
+        self.right = right
 
 class Solution:
         def preorderRecursiveTraversal(self, root: Optional[TreeNode], preOrderList: List[int]) -> List[int]:
                 if root is None:
-                        return None
+                        return preOrderList
                 preOrderList.append(root.val)
                 self.preorderRecursiveTraversal(root.left, preOrderList)
                 self.preorderRecursiveTraversal(root.right, preOrderList)
