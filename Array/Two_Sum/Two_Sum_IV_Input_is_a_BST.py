@@ -1,11 +1,13 @@
 # Leetcode: https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
 
+from typing import Optional, List
+
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__( self, val = 0, left = None, right = None ):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__( self, val = 0, left = None, right = None ):
+        self.val = val
+        self.left = left
+        self.right = right
 
 class Solution:
         def preorderRecursiveTraversal(self, root: Optional[TreeNode], preOrderList: List[int]) -> List[int]:
@@ -30,4 +32,3 @@ class Solution:
                                 map[preOrderList[i]] = True
                 
                 return False
-        
